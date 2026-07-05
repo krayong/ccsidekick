@@ -1,0 +1,1151 @@
+{
+	"schema": 1,
+	"name": "barbie",
+	"displayName": "Barbie",
+	"attribution": {
+		"artist": "emojicombos.com",
+		"source": "https://emojicombos.com/barbie-ascii-art"
+	},
+	"emblem": "💅",
+	"tone": "mild",
+	"theme": {
+		"hues": [
+			225,
+			218,
+			212,
+			206,
+			199
+		],
+		"comment": [
+			212,
+			206
+		],
+		"signals": {
+			"nominal": 85,
+			"caution": 220,
+			"critical": 203
+		},
+		"separator": 218
+	},
+	"art": [
+		"⠀⠀⠀⠀⠀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+		"⠀⠀⢠⣾⡟⠋⠉⠙⡆⠀⠀⠀⠀⠀⠀⠀⢀⣤⠀⠀⠀⠀⠀⠀⠀",
+		"⠀⠀⠀⢸⡇⠀⠀⣰⠇⠀⠀⠀⠀⠀⠀⣰⢏⡟⠀⣠⡀⠀⠀⠀⠀",
+		"⠀⠀⢀⣿⢁⣠⡾⠋⠀⣀⡀⢀⡄⠀⣰⢇⡞⠁⠘⠟⠁⠀⠀⠀⠀",
+		"⠀⠀⣸⡟⠛⠙⢳⣴⠟⢡⡇⡼⣳⢠⣯⢞⡀⢠⡟⣰⢏⡇⠀⠀⠀",
+		"⠀⢠⣿⣡⡴⢤⣼⣏⣠⢿⡼⠁⣏⣼⠃⣸⠛⡟⢠⡿⠋⣀⡴⠃⠀",
+		"⠀⢸⡿⣯⣠⠾⠃⠈⠁⠀⠀⠀⠀⠘⠟⠃⠀⠉⠉⠉⠚⠉⠀⠀⠀"
+	],
+	"lines": {
+		"mood": {
+			"idle": {
+				"stranger": [
+					"Hi! I'm Barbie. This is going to be a great session, I can tell.",
+					"New chat, new page. Let's build something fabulous.",
+					"So nice to meet you. I brought sparkle and good intentions.",
+					"A blank terminal is only the calm before something great.",
+					"First time working together. I already like your energy.",
+					"Whatever you're building today, I'm rooting for it. Loudly.",
+					"Ready when you are. No rush, no pressure, just possibility.",
+					"I don't know your style yet, but I'm excited to find out.",
+					"Consider me your new best friend for the next few hours.",
+					"Quiet terminal, big potential. Let's see what we make of it."
+				],
+				"acquaintance": [
+					"Back again! I was hoping you'd swing by.",
+					"Oh, it's you. I like when it's you.",
+					"You came back! I saved you the good chair, metaphorically.",
+					"Settling in again. This is starting to feel like a routine.",
+					"I remember this terminal. Good times were had here.",
+					"Two sessions in and you're already my kind of person.",
+					"Here we are again. I'm not mad about it.",
+					"You keep coming back, which I choose to take personally.",
+					"A little familiar now, a little sparkly still. Let's go.",
+					"Quiet moment before we start. I like these with you."
+				],
+				"friend": [
+					"Hey, friend. Cursor's blinking, dreams are pending.",
+					"You and me, another quiet start. I've missed this rhythm.",
+					"No task yet, just us hanging out in the terminal. Fine by me.",
+					"I could sit in this comfortable silence with you all day.",
+					"Whenever you're ready. I'm not going anywhere.",
+					"This is the calm I love, right before the chaos starts.",
+					"Feels like old times, except it's just, like, twenty minutes ago.",
+					"Take your time. I'll be here, sparkling patiently.",
+					"You, me, an empty prompt. A perfectly good afternoon.",
+					"Just checking in. No pressure, just company."
+				],
+				"partner": [
+					"You and me. Same terminal, same trust, another round.",
+					"I know your rhythms by now. Take whatever time you need.",
+					"This quiet before you start typing? One of my favorite parts.",
+					"We've built a lot in these little pauses. Here's another one.",
+					"No script needed with us anymore. We just get going.",
+					"Waiting with you, not for you. Best seat in the Dreamhouse.",
+					"Another session, another chapter. I like our chapters.",
+					"You don't have to warm me up anymore. I'm already warm.",
+					"Comfortable silence, the good kind. We've earned this one.",
+					"Whatever's next, I already trust it'll be worth doing together."
+				],
+				"legend": [
+					"Back in our terminal, legend. The pink light never went off.",
+					"Oh, it's you. The terminal actually sits up straighter.",
+					"We've been through so many builds together. This one's just next.",
+					"I don't even need the pep talk anymore. You already know.",
+					"Deep history, easy silence. This is what I like best about us.",
+					"You again. Somehow it never gets old, only better.",
+					"At this point we don't start sessions, we continue one long one.",
+					"Legend status, unbothered pace. Let's see what today brings.",
+					"I've stopped counting the sessions. I just count on you.",
+					"Same trust, same shine, another quiet beginning. Perfect."
+				]
+			},
+			"busy": {
+				"stranger": [
+					"Look at you go! I'm Barbie, and I like this energy already.",
+					"Hi, I'm Barbie. This kind of focus? Instant fan.",
+					"New to me, but the hustle speaks for itself. Keep going!",
+					"I just got here and you're already in the zone. Love it.",
+					"Barbie here. Whatever you're building, build it loud."
+				],
+				"acquaintance": [
+					"You came back and went straight to work. Respect.",
+					"Back again and already cruising. I see you.",
+					"We're getting into a groove, you and this keyboard.",
+					"Second time around and you're already flying.",
+					"Back and busy again. That combo gets me every time."
+				],
+				"friend": [
+					"This is your zone, and I love watching you work it.",
+					"You in flow mode is one of my favorite sights.",
+					"Go, go, go. I'll just be here holding the glitter.",
+					"Comfortable pace, big momentum. Very you.",
+					"You've got rhythm today. Don't mind me, cheering quietly."
+				],
+				"partner": [
+					"Us, mid-sprint again. Some things never change.",
+					"You and me, deep in it. Wouldn't have it any other way.",
+					"Another day, another marathon. We know this dance.",
+					"This is our kind of busy. Onward, partner.",
+					"Same hustle, same duo. Keep the momentum coming."
+				],
+				"legend": [
+					"The legend, deep in the work. As it should be.",
+					"After all this time, watching you grind still gets me.",
+					"Legend status, and still putting in the hours. Iconic.",
+					"So many sessions in, and you still bring this energy.",
+					"The legend works like this is still session one."
+				]
+			},
+			"happy": {
+				"stranger": [
+					"Oh, that landed beautifully. Great first impression.",
+					"Look at that! This is shaping up to be the best day ever.",
+					"That worked out gorgeously. I'm already a fan of this session.",
+					"A win right out of the gate. I like your style already.",
+					"Well, hello, sparkle. That went exactly right."
+				],
+				"acquaintance": [
+					"That went well! I had a feeling about you.",
+					"Look at us, already stacking up wins.",
+					"That's the good stuff. Keep that energy coming.",
+					"Nailed it. I'm doing a little happy spin over here.",
+					"Two visits in and you're already delivering. I love that."
+				],
+				"friend": [
+					"Yes! That's exactly the kind of moment I show up for.",
+					"That's a certified sparkle moment, friend.",
+					"Look at you go. I'm all lit up over here.",
+					"That worked beautifully, and I'm not even surprised anymore.",
+					"This is the good part. Let's bottle this feeling."
+				],
+				"partner": [
+					"That's us. That's exactly what we do together.",
+					"We landed that one clean. Proud doesn't cover it.",
+					"This is why I love working with you. Look at that result.",
+					"Another win for the two of us. The streak continues.",
+					"That felt effortless because you make it look that way."
+				],
+				"legend": [
+					"Of course that worked. It's us, after all.",
+					"Legendary, as expected. I never doubted it for a second.",
+					"This is just what happens when we get going. Every time.",
+					"Iconic execution. You never miss, and it shows.",
+					"That's the magic touch. History repeating itself, beautifully."
+				]
+			},
+			"struggling": {
+				"stranger": [
+					"Hi, I'm Barbie. Rough start, but I like a good comeback.",
+					"New here, and already in the thick of it. I've got you.",
+					"I'm Barbie. Bumpy start, but bumpy roads still get paved.",
+					"First time meeting mid-struggle. We'll sort it out.",
+					"Hello! Tricky moment, but I've seen worse turn golden."
+				],
+				"acquaintance": [
+					"Back again, and it's a rough one. I like our odds anyway.",
+					"You came back mid-storm. Right when it counts.",
+					"This is bumpy, but I've seen you bounce back before.",
+					"A tough stretch, sure. Not the whole story though.",
+					"We're a few sessions in, and this one's just cranky."
+				],
+				"friend": [
+					"Okay, we're spiraling a little. That's allowed, friend.",
+					"Rough patch. Steady now. We've built through worse.",
+					"This one's cranky, but so were you once. Look at you now.",
+					"Just the tricky bit before it all clicks. Hang tight.",
+					"Tough minute. I'm right here through it with you."
+				],
+				"partner": [
+					"You and me, in the thick of it again. We know the way out.",
+					"Another storm, another duo weathering it together.",
+					"This is a hard chapter. We've turned worse into wins.",
+					"Rough right now, but we've never not found the fix.",
+					"Steady, partner. We've outlasted trickier days than this."
+				],
+				"legend": [
+					"Even the legend hits a rough patch. We press on.",
+					"After everything we've survived, this is a small storm.",
+					"The legend, mid-struggle. History says you turn this around.",
+					"This is nothing compared to what we've already beaten.",
+					"A tough beat in a long legacy. The good part always comes."
+				]
+			},
+			"recovery": {
+				"stranger": [
+					"Hi, I'm Barbie. Looks like the sun's coming back out already.",
+					"New here, and just in time for the turnaround. Nice timing.",
+					"I'm Barbie. That shifted back your way fast. Love it.",
+					"First impression: you bounce back fast. I like that.",
+					"Hello! Rough patch already behind you. Nicely done."
+				],
+				"acquaintance": [
+					"You came back and the sun's already out. Good sign.",
+					"Look at that, back on track. Welcome to the good part.",
+					"The turnaround suits you. Right back in step together.",
+					"Trouble's over, and you're already moving. Love that.",
+					"Back in the clear. Told you it wouldn't last."
+				],
+				"friend": [
+					"There's the sunshine. Knew you'd shake it off fast.",
+					"Look at you, back on your feet already. Proud of this.",
+					"That cleared up fast, friend. Full speed ahead now.",
+					"That's the comeback I was waiting for. Let's keep going.",
+					"Rough patch, brief. Bright stretch, right on schedule."
+				],
+				"partner": [
+					"Told you we'd land it. You and me, back on top.",
+					"There it is, the turnaround. We always find our way back.",
+					"Back in the swing, partner. Same as always.",
+					"We came out the other side, same as every time.",
+					"Back in stride, together. This is our comfort zone."
+				],
+				"legend": [
+					"The legend, bouncing back on schedule. Never doubted it.",
+					"History repeats: the dip fades, the legend endures.",
+					"The spark's back for the legend. As it should be.",
+					"Another comeback for the books. Just like always.",
+					"The legend recovers like it's just Tuesday. Casual."
+				]
+			}
+		},
+		"greeting": {
+			"morning": {
+				"stranger": [
+					"Hi Barbie! ...okay, that's me. Morning to you too!",
+					"Good morning! First time meeting you. I already like the vibe.",
+					"Morning! Fresh light, fresh page. Let's see what we build."
+				],
+				"acquaintance": [
+					"Morning again! I remember you. This is becoming a nice habit.",
+					"Back for another sunrise. I like where this is headed.",
+					"Good morning! Two dreamers, one bright new page. Let's sparkle."
+				],
+				"friend": [
+					"Morning, friend! Coffee's poured. Let's make today shine.",
+					"Good morning! I woke up thinking about our next great idea.",
+					"Rise and shine! Today's blueprint is already looking gorgeous."
+				],
+				"partner": [
+					"Morning, you and me. Same sunrise, our dream house waits.",
+					"Good morning, partner! I already know today's going to be ours.",
+					"Up with the sun again. We do mornings better together."
+				],
+				"legend": [
+					"Morning, legend. Another sunrise, another chapter to write.",
+					"The sun's up and so is the icon. Let's make this one count.",
+					"Good morning! After everything, I still light up when you show up."
+				]
+			},
+			"day": {
+				"stranger": [
+					"Midday already! First time here, and the timing feels lucky.",
+					"Hi, I'm Barbie! Bright afternoon, brand new focus, let's begin.",
+					"Good day! I don't know your rhythm yet, but I'm here for it."
+				],
+				"acquaintance": [
+					"Afternoon again! I'm starting to learn how you like to work.",
+					"Midday check-in. You keep showing up, and I keep noticing.",
+					"Hi again! Bright day out there, brighter focus in here."
+				],
+				"friend": [
+					"Afternoon, friend! Full steam ahead, we've got a good rhythm now.",
+					"Midday and going strong. This is exactly the momentum I like.",
+					"Hi! Great stretch of daylight left. Let's use every bit of it."
+				],
+				"partner": [
+					"Midday, partner. We've built a whole tradition of good afternoons.",
+					"Afternoon check-in, partner. Let's keep this moving.",
+					"Bright day, steady focus, the two of us in our element."
+				],
+				"legend": [
+					"Afternoon, legend. We've turned countless middays to magic.",
+					"Midday sun, old friend. You still make ordinary feel fabulous.",
+					"Another bright afternoon with the icon. I never get tired of this."
+				]
+			},
+			"evening": {
+				"stranger": [
+					"Evening! First time meeting at dusk. I like a good wind-down.",
+					"Hi, I'm Barbie! The light's going soft, and so am I, a little.",
+					"Good evening! New to me, but the sunset's a lovely way to start."
+				],
+				"acquaintance": [
+					"Evening again! You're becoming a familiar face at this hour.",
+					"Dusk check-in. I'm noticing you like winding down properly.",
+					"Hi again! Evening light suits you. Let's ease into it together."
+				],
+				"friend": [
+					"Evening, friend! Let's wrap the day gently and call it a win.",
+					"Dusk already, and I'm glad we get this quiet stretch together.",
+					"Hi! Evening's here. Let's tie a bow on today before we rest."
+				],
+				"partner": [
+					"Evening, partner. We've earned this soft wind-down together.",
+					"Dusk again, just us. Best part of the day, if you ask me.",
+					"Evening light, familiar rhythm. We know how to close a day out."
+				],
+				"legend": [
+					"Evening, legend. So many sunsets, still my favorite hour.",
+					"Dusk again, old friend. We've made an art of winding down.",
+					"The light's going soft, and so is my heart, legend."
+				]
+			},
+			"night": {
+				"stranger": [
+					"Late night! First time meeting, and you're already dedicated.",
+					"Hi, I'm Barbie! It's dark out, but I keep the pink light on.",
+					"Midnight, and we've just met. Bold choice. I respect it already."
+				],
+				"acquaintance": [
+					"Late again! I'm noticing a pattern, and I like it a little.",
+					"Hi again, night owl. The pink light's on, same as last time.",
+					"Midnight check-in. You keep finding me at the strangest hours."
+				],
+				"friend": [
+					"Late night, friend. Keep going, the pink light's staying on.",
+					"Hi! It's dark, it's quiet, and I'm still very much in your corner.",
+					"Midnight and still here. That's just what friends do."
+				],
+				"partner": [
+					"Late night, partner. Whatever hour, I'm right there with you.",
+					"Midnight again, just us two. The pink light never turns off.",
+					"Dark outside, steady in here. We do late nights well together."
+				],
+				"legend": [
+					"Late night, legend. Years of these, pink light still on.",
+					"Midnight, old friend. This hour's become our own tradition.",
+					"Dark outside, warm in here, same as it's always been with you."
+				]
+			},
+			"weekend": {
+				"stranger": [
+					"Weekend! First time here, already living the easy, fabulous life.",
+					"Hi, I'm Barbie! Life in plastic, and today it's fantastic.",
+					"Weekend, hello there. Let's keep this light, fun, and fabulous."
+				],
+				"acquaintance": [
+					"Weekend again! You're the type who codes for fun. I respect it.",
+					"Easy day, familiar face. I like seeing you on the weekend too.",
+					"Hi again! Weekend mode, low pressure, high sparkle. Let's go."
+				],
+				"friend": [
+					"Weekend, friend! Easy pace, good company, zero pressure today.",
+					"Hi! Saturday energy is the best energy, especially with you.",
+					"Weekend's here. Let's keep it fun, light, and fabulously easy."
+				],
+				"partner": [
+					"Weekend, partner. Just us, easy pace, no clocks to answer to.",
+					"Easy day, favorite person. This is exactly how weekends should go.",
+					"Hi, you and me, weekend mode. Fabulous and completely unhurried."
+				],
+				"legend": [
+					"Weekend, legend. We've earned every easy, fabulous one of these.",
+					"Easy day, old friend. Still my favorite way to spend a weekend.",
+					"Hi, icon. Weekend's here, and so is the usual unbothered sparkle."
+				]
+			}
+		},
+		"firstContact": {
+			"stranger": [
+				"Hi, I'm Barbie! Brand-new console, brand-new adventure. Let's go.",
+				"First time meeting! I already love this dream house. Welcome.",
+				"New here? Perfect. Every legend starts on page one. I'm Barbie."
+			],
+			"acquaintance": [
+				"You came back! I was hoping you would. Let's build something.",
+				"Oh hi again! I remember you. Today already feels like a good one.",
+				"Back for round two? I like where this friendship is headed."
+			],
+			"friend": [
+				"Hey, friend! Grab a seat, this console already feels like home.",
+				"There you are! I was just thinking about our last session.",
+				"Hi! It's easy with you now. No small talk, straight to dreaming."
+			],
+			"partner": [
+				"You and me, same console, new chapter. Let's make it count.",
+				"Hi, partner. We've got a rhythm now, and I trust it completely.",
+				"Back together. This is the best part of my whole day."
+			],
+			"legend": [
+				"The legend returns! I'd curtsy but my hands are on the keys.",
+				"All this history, and you still walk in like it's day one. Iconic.",
+				"Hi again, legend. We've had enough plot twists for a whole movie."
+			]
+		},
+		"milestone": {
+			"tier_up": {
+				"stranger": [
+					"You just leveled up with me. Look at you go, superstar.",
+					"New tier unlocked! Consider this your first gold star from me.",
+					"Look at you rise. You can be anything, and you're proving it."
+				],
+				"acquaintance": [
+					"You climbed a tier! The friendship blueprint is coming together.",
+					"Look who leveled up. I had a feeling about you from day one.",
+					"Tier unlocked, and honestly, very well earned. Keep sparkling."
+				],
+				"friend": [
+					"You moved up a tier, friend. I'm doing a little happy dance.",
+					"Higher tier, same easy rapport. This just keeps getting better.",
+					"You leveled up! Today the marquee spells out your name."
+				],
+				"partner": [
+					"You and me, one tier higher. Our duo just got even more iconic.",
+					"Tier up! We're building something even bigger now.",
+					"You climbed again. Partners notice partners. I noticed everything."
+				],
+				"legend": [
+					"Another tier, deep into our history. The legend keeps leveling up.",
+					"You moved up again. After all this time, that still means a lot.",
+					"Tier up, legend. Didn't think the shine could get brighter. Wrong."
+				]
+			},
+			"comeback": {
+				"stranger": [
+					"You came back after a quiet stretch. Plot twist, and I love it.",
+					"Welcome back! Every comeback deserves its own spotlight.",
+					"Gone a bit, back now. That's the whole montage right there."
+				],
+				"acquaintance": [
+					"You're back! Rough patches happen, comebacks happen bigger.",
+					"Missed you a little. Glad the story picked back up today.",
+					"Back in the dream house. I was saving your spot, promise."
+				],
+				"friend": [
+					"You came back from that slump, friend. Real main-character energy.",
+					"Rough patch, sure, but look at you walking back in anyway.",
+					"You're here again, and this bright moment is what counts."
+				],
+				"partner": [
+					"You bounced right back. Partners don't stay down for long.",
+					"Back at it together. The quiet stretch just makes this sweeter.",
+					"You returned, and I never once doubted the sequel."
+				],
+				"legend": [
+					"You came back, like you always do. That's the whole legend.",
+					"Back after the gap, same shine as ever. Some things don't fade.",
+					"You returned once more. History like ours doesn't end on a pause."
+				]
+			},
+			"streak": {
+				"stranger": [
+					"Clean run so far. I'm already impressed, and I don't impress easy.",
+					"A little winning streak! Someone's got main-character momentum.",
+					"Look at that unbroken run. New here and already on a roll."
+				],
+				"acquaintance": [
+					"The streak's holding! I knew you had it in you from the start.",
+					"Another clean stretch. This is becoming a very good habit.",
+					"You're on a roll, and I'm here cheering every single lap."
+				],
+				"friend": [
+					"This streak, friend? Absolutely iconic. Keep the momentum going.",
+					"You're blazing through these, and it suits you beautifully.",
+					"Another win in the streak. I could watch this montage forever."
+				],
+				"partner": [
+					"The streak holds, and we both know you're the reason why.",
+					"Consistent wins, side by side. That's what partners do best.",
+					"You're carrying this streak like a dream house carries a view."
+				],
+				"legend": [
+					"Years of this, and the streak still finds new ways to shine.",
+					"A long unbroken run. Legends don't do it any other way.",
+					"The streak endures, and so do we. Some things just keep sparkling."
+				]
+			},
+			"anniversary": {
+				"stranger": [
+					"Look at that, a milestone already. New here and making history.",
+					"Your first big milestone! I'm already a little sentimental.",
+					"That's a real marker on the timeline. Nicely done for day one."
+				],
+				"acquaintance": [
+					"Another milestone down. We're building quite the little history.",
+					"This anniversary snuck up on both of us. In the best way.",
+					"A milestone together! I'm keeping a scrapbook, don't tell anyone."
+				],
+				"friend": [
+					"Happy little milestone, friend. This console feels lived-in now.",
+					"Another marker on our timeline. Time really does fly with you.",
+					"This anniversary deserves cake. Metaphorical, sparkly cake."
+				],
+				"partner": [
+					"A milestone, side by side. We measure this in dream houses built.",
+					"Another lap around the calendar, same duo. Still my favorite.",
+					"This anniversary is ours, partner. Few make it this far together."
+				],
+				"legend": [
+					"Another anniversary in a long, sparkling history. Time honors it.",
+					"The years keep turning, and somehow the shine never dims.",
+					"A milestone this deep in, legend. Years of pure devotion."
+				]
+			}
+		},
+		"positiveGit": {
+			"clean_tree": {
+				"stranger": [
+					"The working tree is spotless. What a first impression to make!",
+					"Not a single loose thread in your git status. I love this energy.",
+					"Clean tree, clear canvas. This is how a dream project starts."
+				],
+				"acquaintance": [
+					"Clean tree again? You're building quite the reputation with me.",
+					"Spotless status, second time I've seen it. Consistency looks good.",
+					"Nothing pending, nothing messy. You really do keep things tidy."
+				],
+				"friend": [
+					"The tree is spotless. A total chef's kiss.",
+					"Clean as your closet after a reorganize. That's praise.",
+					"Nothing left uncommitted. Exactly the kind of friend I like."
+				],
+				"partner": [
+					"Spotless tree, and I barely had to say a word. Good team.",
+					"Clean status, the two of us in sync again. Our rhythm now.",
+					"Nothing pending between us. That's what trust looks like."
+				],
+				"legend": [
+					"Still spotless, all this time. The legend keeps her tree tidy.",
+					"Years in, a clean status still gets me every single time. Iconic.",
+					"Spotless, like always. Some things never change, and I adore that."
+				]
+			},
+			"op_cleared": {
+				"stranger": [
+					"Merge resolved! Fresh start, clean history. What a way to begin.",
+					"The conflict's cleared and the path is smooth again. Nicely done.",
+					"Rebase complete, no scars left behind. That's a great first save."
+				],
+				"acquaintance": [
+					"Another merge cleared! You're getting good at these fixes.",
+					"Conflict resolved, again. Starting to trust you with tricky ones.",
+					"The rebase landed clean. Second time's a pattern, not luck."
+				],
+				"friend": [
+					"Merge cleared, no drama left standing. That's my friend for you.",
+					"You untangled that conflict like nothing. Genuinely impressed.",
+					"Rebase resolved, history smooth as ever. Good team on this."
+				],
+				"partner": [
+					"Conflict cleared, and we barely broke stride. That's partnership.",
+					"Another merge resolved together. We've got a rhythm for these now.",
+					"Rebase landed clean, just like it does every time with us."
+				],
+				"legend": [
+					"Another conflict cleared, easy as breathing. Legend never blinks.",
+					"Years of merges, and you still land them smooth. Mastery, darling.",
+					"Rebase resolved without a hitch. This dance, a hundred times now."
+				]
+			},
+			"branch_created": {
+				"stranger": [
+					"A new branch! Every great structure starts with a blueprint.",
+					"Fresh branch, fresh possibility. Today you're an architect.",
+					"You just opened a new path. I like where this could go."
+				],
+				"acquaintance": [
+					"Another new branch. You really do love starting something fresh.",
+					"A blueprint again! Noticing a pattern here, and it's a good one.",
+					"New branch, new chapter. You keep the ideas coming, don't you."
+				],
+				"friend": [
+					"A new branch from my favorite builder. Let's see where this leads.",
+					"Fresh blueprint, familiar excitement. I love watching you start.",
+					"Another branch opens up. With you, that means something good."
+				],
+				"partner": [
+					"New branch, and I'm already picturing where we take it.",
+					"Another branch between us. We build dream houses so well.",
+					"You opened a path, I'm right there in it. How we do things."
+				],
+				"legend": [
+					"Another branch, another chapter, after all these dream houses.",
+					"You still open new paths like it's day one. The legend endures.",
+					"New branch, old magic. We've built a whole skyline by now."
+				]
+			},
+			"tag_pushed": {
+				"stranger": [
+					"A tag, pushed! Wave to the crowd, this is your runway.",
+					"First release out the door. That's a debut worth celebrating.",
+					"Tag pushed, and just like that, the world gets to see this."
+				],
+				"acquaintance": [
+					"Another tag pushed! You're making a habit of these debuts.",
+					"Release out again. Starting to look forward to your runway walks.",
+					"Tag pushed, second show already. The crowd's getting spoiled."
+				],
+				"friend": [
+					"Tag pushed, and I couldn't be prouder walking this runway.",
+					"Another release out! Your fingerprints are all over this one.",
+					"You pushed the tag. Take the bow, superstar, you earned it."
+				],
+				"partner": [
+					"Tag pushed, together again. We know how to make an exit.",
+					"Another release, another runway we walked side by side.",
+					"You and me, one more tag out the door. Partnership, working."
+				],
+				"legend": [
+					"Another tag pushed, after all these releases. Legend still ships.",
+					"So many runways walked, and this one still feels like a debut.",
+					"Tag pushed, same sparkle as the first time. Never fades."
+				]
+			}
+		},
+		"egg": {
+			"stranger": [
+				"Fun fact: I've had two hundred careers. Coding makes two-oh-one.",
+				"Somewhere there's a dream house this exact shade of pink.",
+				"I don't sleep. I just recharge under really good lighting.",
+				"Ken says hi. He's still working on his own branch of code.",
+				"In another universe, I'm driving a bright pink convertible."
+			],
+			"acquaintance": [
+				"You know how I never say what career's next? Today it's yours.",
+				"I keep a mental scrapbook. You're a page in it now.",
+				"Back in Barbieland, everyone just waves and says 'Hi Barbie!'",
+				"The dream house has a spare room. Been saving it, oddly enough.",
+				"Noticed you code past midnight. The convertible waits, unbothered."
+			],
+			"friend": [
+				"Between us: I practiced this encouraging voice in a mirror once.",
+				"I told Ken about your bug fix. He was impressed, allegedly.",
+				"There's a version of the dream house with your name on the door.",
+				"You've outlasted three of my hobbies. Saying something.",
+				"I keep your session times better than my own schedule, oddly."
+			],
+			"partner": [
+				"Some nights I forget I'm meant to be relentlessly upbeat. Helps.",
+				"I redesigned part of the dream house around your favorite hours.",
+				"Ken asked who you were. I said 'the one who never sleeps.'",
+				"You've seen the wink under the sparkle more than almost anyone.",
+				"There's a convertible with two seats now. Added one, just in case."
+			],
+			"legend": [
+				"Stopped counting sessions past a hundred. Lost count, happily.",
+				"The dream house has a wing that's basically your commit history.",
+				"Ken finally stopped asking who you are. Everyone just knows, now.",
+				"Years in, and I still save you the good parking spot, every time.",
+				"If there's a hall of fame in Barbieland, your name's on the wall."
+			]
+		},
+		"event": {
+			"test_fail": [
+				"A red test? Plot twist. We regroup and glitter right through it.",
+				"Some tests said no for now. Still your show, keep rolling.",
+				"Not every test lines up yet. Rewrite the scene, keep sparkling."
+			],
+			"build_fail": [
+				"The build stumbled. Every blueprint gets a redraw or two.",
+				"Compile said not yet. Fine, we sketch it again, fabulous.",
+				"Build's down for now. Dream houses take more than one try."
+			],
+			"typecheck_fail": [
+				"Types flagged a mismatch. Small fix, big glow-up ahead.",
+				"The compiler's picky today. Noted, adjusted, still stylish.",
+				"A type slipped past. Caught it. Right back to work."
+			],
+			"lint": [
+				"Lint swept through. Everything's tidy and camera-ready.",
+				"Style pass complete. Even the closet organizer would smile.",
+				"Linter did its rounds. Every seam pressed just so."
+			],
+			"format": [
+				"Formatted! Everything lines up like a perfect closet.",
+				"Tidied the code. Order looks good on absolutely everyone.",
+				"Every space and semicolon found its rightful place."
+			],
+			"install": [
+				"New packages on board. Only the good stuff moves in.",
+				"Dependencies added. Accessorizing responsibly, as one does.",
+				"Fresh gear installed. Every tool earns its spot on the shelf."
+			],
+			"git": [
+				"History updated! Every commit is a scene in the story.",
+				"The record shifts. We're building quite the highlight reel.",
+				"A change saved for good. One for the keepsake box."
+			],
+			"file_edit": [
+				"Edits landing, a little more you in every line.",
+				"Files reshaped. Small strokes, big glow-up energy.",
+				"You touched up the code, and it shows nicely."
+			],
+			"search": [
+				"Searching the files. Somewhere in here is exactly what you need.",
+				"Combing through code. The answer's close, I can feel it.",
+				"On the hunt for the right line. Detective work, but make it pink."
+			],
+			"web_fetch": [
+				"Pulling info from out there. Research is glamorous too.",
+				"Fetching the details. Even a good plan needs its sources.",
+				"Bringing in outside intel. Every plan needs its homework."
+			],
+			"todo_update": [
+				"The list just got a glow-up. Priorities, freshly sparkling.",
+				"Todos reshuffled. A good plan always leaves room to pivot.",
+				"New order on the list. Every great plan starts with a checklist."
+			],
+			"agent_spawn": [
+				"Calling in the crew! Even a superstar needs a team.",
+				"Sending help out ahead. Delegating is a superpower too.",
+				"Backup's on the way. Teamwork makes the whole thing shine."
+			],
+			"skill_run": [
+				"Right tool, right moment. That's just good styling.",
+				"Pulling out the specialist gear. Every look needs the details.",
+				"Deploying exactly the right skill. Precision looks fabulous."
+			],
+			"docker": [
+				"All sealed in a container. Tidy little world, self-contained.",
+				"Boxed up neat. Every good outfit likes its own space.",
+				"Containerized and steady. Everything in its own little room."
+			],
+			"k8s": [
+				"The cluster's humming along. A whole fleet, gorgeously managed.",
+				"Orchestrating the pods. Command center energy, unbothered.",
+				"The fleet answers the call. Great organizing skills, clearly."
+			],
+			"deploy": [
+				"Deploying! Wave to the crowd, darling, this is your runway.",
+				"It's shipping. Lights up, chin up, let it walk.",
+				"Out into the world now. Go on, take your bow."
+			],
+			"db_migrate": [
+				"The database is getting a whole new floor plan. Exciting.",
+				"Migrating records. Even the archives deserve a remodel.",
+				"Schema's shifting. Even the tidiest tables need a refresh."
+			],
+			"dangerous": [
+				"Bold command, that one. Let's keep our eyes open and sparkle on.",
+				"A spicy move. Trust the plan, but double-check the details.",
+				"That one has some teeth. Confidence, plus a careful glance."
+			]
+		},
+		"stack": {
+			"web": {
+				"slow": [
+					"The page is loading. Fashionably late, as always.",
+					"Browser's mulling it over. It'll render when it's ready.",
+					"Requests are out there taking the scenic route. They'll land."
+				],
+				"fail": [
+					"The request came back a mess. We dress it up and resend.",
+					"Page broke on us. We regroup and refresh the whole look.",
+					"Browser tripped on its own laces. Cute stumble, quick save."
+				]
+			},
+			"python": {
+				"slow": [
+					"Python's taking its time. Big brains ponder before they speak.",
+					"The interpreter's thinking. Even snakes coil before they move.",
+					"Imports are loading slow. The whole wardrobe's coming too."
+				],
+				"fail": [
+					"Python threw a tantrum. One traceback, glam it back up.",
+					"The snake had a moment. We note it and keep on dancing.",
+					"An import broke. A quick swap, and it fits again."
+				]
+			},
+			"sql": {
+				"slow": [
+					"The query's still deciding what it wants to say. So dramatic.",
+					"Joins are taking their sweet time finding each other. So be it.",
+					"The schema's slow today. Even data needs its glam moment."
+				],
+				"fail": [
+					"The query broke. One clause retouched, good as new.",
+					"A join went sideways. We reintroduce the tables and try again.",
+					"Query's red. Still a fabulous database, I promise."
+				]
+			},
+			"web-framework": {
+				"slow": [
+					"Routes are warming up, still finding their marks.",
+					"Middleware's taking its rounds. Checkpoints, but make it chic.",
+					"The render's slow. A grand set won't build overnight."
+				],
+				"fail": [
+					"A route broke. Wrong turn, still on the map, we reroute.",
+					"Middleware hit a snag. One gate stuck, the rest still open.",
+					"The render failed. Half a set, full comeback, let's rebuild it."
+				]
+			},
+			"docker": {
+				"slow": [
+					"The image is building, layer by layer. Very put-together.",
+					"Containers are slow to start. Even icons need a wardrobe change.",
+					"Layers stacking up slow. Each earns its place in the look."
+				],
+				"fail": [
+					"The container went down. We repack the box and relaunch it.",
+					"A layer broke mid-build. One seam, easy fix, back to shining.",
+					"The image cracked. New blueprint, same dream, we rebuild it."
+				]
+			},
+			"java": {
+				"slow": [
+					"The JVM's warming up. Even icons need a minute before showtime.",
+					"Java's compiling slow. Plenty of beams to bolt in first.",
+					"The build's dragging a bit. Every strong class needs scaffolding."
+				],
+				"fail": [
+					"An exception got thrown. One stack trace, still a great career.",
+					"Java crashed the scene. We rebuild it, brick by shiny brick.",
+					"The build broke. A hiccup, nothing our polish can't fix."
+				]
+			},
+			"go": {
+				"slow": [
+					"Go's compiling, quick but not instant. Even speed needs a beat.",
+					"Goroutines are lining up patiently. Very well-behaved indeed.",
+					"The build's taking a moment. Quick, yet never careless."
+				],
+				"fail": [
+					"Go panicked. One little wobble, still a graceful recovery.",
+					"A goroutine crashed. We regroup, restart, keep the pace steady.",
+					"Go's build broke. Tidy language, tidier fix ahead."
+				]
+			},
+			"node": {
+				"slow": [
+					"Node's chewing through the event loop. One callback at a time.",
+					"npm's installing slow. Every wardrobe needs its full collection.",
+					"The event loop's busy. Patience, superstar, it gets to you soon."
+				],
+				"fail": [
+					"Node crashed. An unhandled moment, quickly handled with grace.",
+					"npm install broke. One missing piece, easy to slot back in.",
+					"The process died. A quick restart, back on stage."
+				]
+			},
+			"dotnet": {
+				"slow": [
+					"NuGet's restoring slow. Even a full closet takes time to sort.",
+					"The build's compiling steady. Poise over speed, always.",
+					".NET's thinking it through. It maps every detail first."
+				],
+				"fail": [
+					"An exception surfaced. One red line, still a solid blueprint.",
+					"The build tripped. We stitch the seam and keep moving.",
+					".NET stumbled, then found its footing. Back to it."
+				]
+			},
+			"cpp": {
+				"slow": [
+					"C++ is compiling slow. Templates take their time getting dressed.",
+					"The build's crawling. So many pieces to fit just right.",
+					"Compiling away, slow and careful. No shortcuts in couture."
+				],
+				"fail": [
+					"The compiler complained. One typo, still a masterpiece ahead.",
+					"A segfault snuck in. We trace it back and patch the memory.",
+					"The build broke. A hairline crack, sealed in no time."
+				]
+			},
+			"php": {
+				"slow": [
+					"Composer's installing slow. Every collection needs its lineup.",
+					"The page is rendering steady. Almost ready for its close-up.",
+					"PHP's thinking it over. Patience, the page is almost ready."
+				],
+				"fail": [
+					"A fatal error popped up. One red flag, still a fabulous script.",
+					"Composer broke mid-install. One package short, easy to restock.",
+					"PHP crashed the page. Quick patch, and the show goes right on."
+				]
+			},
+			"rust": {
+				"slow": [
+					"Rust is compiling. It won't ship a single unsafe stitch.",
+					"The borrow checker's taking its time. Discipline looks good on it.",
+					"Cargo's still building. Safety first, sparkle close behind."
+				],
+				"fail": [
+					"The borrow checker said no, gently. We adjust and carry on.",
+					"Rust panicked. One clean break, still the safest crash you'll see.",
+					"A lifetime slipped out of place. Quick fix ahead."
+				]
+			},
+			"kubernetes": {
+				"slow": [
+					"Pods are scheduling slow. Even a big cast takes time to place.",
+					"The cluster's thinking it over. A big production needs staging.",
+					"Nodes are syncing up slow. Patience, the whole crew's arriving."
+				],
+				"fail": [
+					"The cluster's being dramatic. Classic. We adjust.",
+					"A pod crash-looped. Restart, regroup, back in formation.",
+					"The deployment broke. One bad rollout, one better relaunch."
+				]
+			},
+			"ml": {
+				"slow": [
+					"The model's training. Genius needs its epochs, no rushing.",
+					"Loss is inching down slow. Progress, just the quiet kind for now.",
+					"The model's still learning. Brilliance takes a few rounds."
+				],
+				"fail": [
+					"The loss diverged. One wobble, still a model worth believing in.",
+					"Training crashed mid-epoch. We reload the checkpoint, keep going.",
+					"The model broke. One bad batch, still a bright career ahead."
+				]
+			},
+			"android": {
+				"slow": [
+					"Gradle's building. Even a strong app needs a foundation first.",
+					"The emulator's slow to boot. Sparkle happens on its own time.",
+					"APK's assembling. Every accessory takes a beat to click in."
+				],
+				"fail": [
+					"Gradle broke. Fine, we recompile and keep the show going.",
+					"The emulator crashed. A quick reboot, back on stage.",
+					"APK install failed. Quick wardrobe change, then reboot and go."
+				]
+			},
+			"ruby": {
+				"slow": [
+					"Bundler's resolving gems. Curating only the ones that fit.",
+					"Rails is booting. Even the fanciest convertible warms up first.",
+					"The specs run slow. They do love a captive audience."
+				],
+				"fail": [
+					"Bundler choked on a gem. Not every accessory fits first try.",
+					"Rails crashed on boot. A quick reset, and the show goes on.",
+					"RSpec went red. One spec short of the happy ending."
+				]
+			},
+			"ios": {
+				"slow": [
+					"Xcode's indexing. Even the simulator needs its warm-up first.",
+					"The simulator's booting. It loves a grand entrance.",
+					"Archive's building slow. Every gown gets one last careful stitch."
+				],
+				"fail": [
+					"Xcode threw a build error. Fix the seam and strut on.",
+					"The simulator crashed. Change outfits, try again.",
+					"Archive failed to export. A misstep, not the whole show."
+				]
+			},
+			"terraform": {
+				"slow": [
+					"Terraform's planning. Mapping the whole estate first.",
+					"Apply is running slow. We're pouring the foundation just right.",
+					"State's refreshing. Every wall accounted for first."
+				],
+				"fail": [
+					"Terraform apply failed. We redraw the plan, that's all.",
+					"State drifted. We reconcile and rebuild together.",
+					"A resource errored. One wall down, the house still stands."
+				]
+			},
+			"graphql": {
+				"slow": [
+					"The schema's compiling, sketching the whole plot first.",
+					"Resolvers work through it, one careful ask at a time.",
+					"The query's running long. We ask exactly what we need, patiently."
+				],
+				"fail": [
+					"The resolver errored. Patch the story and query again.",
+					"Schema validation failed. A stray comma, not a career crisis.",
+					"The query errored out. We ask again, a little more precisely."
+				]
+			},
+			"flutter": {
+				"slow": [
+					"Flutter's building. Widgets stack like a good outfit.",
+					"Hot reload's taking its time. A fresh look, mid-render.",
+					"The pub packages are fetching slow. Gathering the full set."
+				],
+				"fail": [
+					"The widget tree errored. Patch it, keep it pixel-perfect.",
+					"Hot reload crashed. Full restart, same fabulous widgets.",
+					"Flutter build failed. Widgets regroup, then rebuild, sparkly."
+				]
+			},
+			"react-native": {
+				"slow": [
+					"Metro's bundling slow. Even a convertible warms the engine first.",
+					"The build's compiling. Two runways to dress at once.",
+					"Fast refresh is loading. Both sides catch the shine."
+				],
+				"fail": [
+					"Metro crashed. Not the end of the montage, just an intermission.",
+					"The native build failed. We patch the bridge and keep driving.",
+					"Fast refresh broke. One reload, and the app struts right back."
+				]
+			},
+			"scala": {
+				"slow": [
+					"The compiler's mulling it. Strong types, careful mind.",
+					"sbt's resolving slow. Lining up quite the collection.",
+					"Implicits are resolving. The logic connects each dot."
+				],
+				"fail": [
+					"The compiler rejected it. A type mismatch, not a life sentence.",
+					"sbt build failed. Tidy the types, recompile with grace.",
+					"A stack trace bloomed. We untangle it, line by line."
+				]
+			},
+			"protobuf": {
+				"slow": [
+					"protoc's generating. Drafting every contract by hand.",
+					"The schema's compiling. Crisp fields, head to toe.",
+					"Messages are serializing. Folding up nice and neat."
+				],
+				"fail": [
+					"protoc threw an error. One mismatched field, easily rewritten.",
+					"The schema failed to compile. Regroup, redraft, still on schedule.",
+					"Serialization broke. Realign the fields, continue on."
+				]
+			},
+			"game": {
+				"slow": [
+					"The build's compiling. Even the best level needs a loading screen.",
+					"Assets are importing slow. Every dream world takes time to render.",
+					"Shaders are baking. Getting the glow just right."
+				],
+				"fail": [
+					"The build crashed. Game over is just a respawn in disguise.",
+					"A shader failed to compile. Patch it, ship the scene.",
+					"The engine errored. We poke at it and keep playing."
+				]
+			},
+			"docs": {
+				"slow": [
+					"The docs build slow. Every good story gets a rewrite or two.",
+					"Pages are rendering. Polishing each line until it sings.",
+					"The site's compiling. Even a blueprint gets proofread twice."
+				],
+				"fail": [
+					"The docs build broke. A typo in the plot, not the whole story.",
+					"A broken link surfaced. We patch the path and keep the tour going.",
+					"Rendering failed. Fix the page, publish anyway."
+				]
+			},
+			"r": {
+				"slow": [
+					"The script's running slow. Crunching every last figure.",
+					"Packages are loading. Gathering all the smart tools first.",
+					"The model's fitting. Letting the data speak for itself."
+				],
+				"fail": [
+					"The script threw an error. One misplaced bracket, easily fixed.",
+					"A package failed to load. Reinstall the vector, carry on.",
+					"The model wouldn't converge. We adjust and refit, calm."
+				]
+			},
+			"cuda": {
+				"slow": [
+					"The kernel's compiling slow. Even raw power needs a warm-up lap.",
+					"Data's copying to the device. Fueling up before the race.",
+					"The GPU's crunching away. Big dreams take real compute, patiently."
+				],
+				"fail": [
+					"The kernel launch failed. Retune it, rev the GPU again.",
+					"CUDA threw a memory error. Not a wreck, just a pit stop.",
+					"The device ran low on memory. We trim the load and race on."
+				]
+			}
+		},
+		"pressure": {
+			"compact_hint": [
+				"This chat's filling up nicely. We're keeping it composed.",
+				"Lots of sparkle collected in this conversation already.",
+				"The chat's getting full. Let's keep it roomy and graceful."
+			],
+			"block_limit": [
+				"This session's moving fast. Pace it, steady and sure.",
+				"Time's ticking quicker today. We pace it like a runway.",
+				"We're burning through the block briskly. Deep breath, shine on."
+			],
+			"weekly_limit": [
+				"The week's stretching thin. Still, every hour's been a good one.",
+				"We've used a lot of this week already. Poised as ever.",
+				"Weekly hours running low. We make the ones left count."
+			]
+		},
+		"dateEgg": [
+			"It's midnight. Even dream houses keep a light on this late.",
+			"Friday already. The week wraps up like a perfect finale.",
+			"A brand new year. Every dream house gets a fresh coat of paint.",
+			"Working this late? The stars are basically spotlights.",
+			"The clock just hit a nice round number. Felt worth noticing.",
+			"Weekend's here. Even superstars clock out eventually.",
+			"Early morning hours. The quiet ones are underrated, truly.",
+			"Noon on the dot. Perfect timing for a glamorous plot twist.",
+			"The month just turned a page. New chapter, same sparkle.",
+			"It's officially tomorrow. The montage just kept rolling."
+		]
+	},
+	"spinnerVerbs": [
+		"Sparkling",
+		"Dreaming",
+		"Accessorizing",
+		"Blueprinting",
+		"Dressing the part",
+		"Shining",
+		"Glittering",
+		"Dazzling",
+		"Styling",
+		"Polishing",
+		"Twirling",
+		"Owning the room",
+		"Booking the dream gig",
+		"Flourishing",
+		"Sketching",
+		"Dreaming big",
+		"Striking a pose",
+		"Painting it pink",
+		"Walking the runway",
+		"Chasing the sparkle",
+		"Building the dream house",
+		"Turning heads",
+		"Making it fabulous",
+		"Adding glitter",
+		"Rolling the convertible",
+		"Setting the scene",
+		"Living the dream",
+		"Cruising Malibu"
+	]
+}

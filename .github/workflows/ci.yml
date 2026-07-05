@@ -1,0 +1,99 @@
+name: CI
+
+on:
+  push: { branches: [main] }
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: typecheck, lint, format
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: ./.github/actions/setup
+
+      - run: bun run typecheck
+
+      - run: bun run lint
+
+      - run: bun run format:check
+
+      - run: bun run readme:drift # README badge/prose counts must match the code
+
+  test:
+    name: test
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: ./.github/actions/setup
+
+      - run: bun run test # includes the .claude pack-author scripts (a dot-dir a bare `bun test` skips)
+
+      - name: lint-pack every pack (full content gate)
+        run: |
+          for d in packages/packs/*/; do
+            echo "== lint-pack $d =="
+            bun run lint-pack "$d"
+          done
+
+  build:
+    name: build, bundle smoke, secret scan
+
+    needs: [check, test]
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+        with: { fetch-depth: 0 } # full history so trufflehog can diff-scan the push
+
+      - uses: ./.github/actions/setup
+
+      - run: bun run build # emits the two ESM bundles into packages/core/dist
+
+      - name: package publishability (publint)
+        run: |
+          set -euo pipefail
+
+          for dir in packages/core packages/packs/*/; do
+            echo "== publint $dir =="
+            bunx publint "$dir"
+          done
+
+      # Informational until a package ships type definitions: the engine is CLI-only and packs are pure data, so
+      # there are no `.d.ts` to resolve today — this guards the exports/types resolution once that changes.
+      - name: type-resolution check (are-the-types-wrong)
+        continue-on-error: true
+        run: |
+          for dir in packages/core packages/packs/*/; do
+            echo "== attw $dir =="
+            bunx --bun @arethetypeswrong/cli --pack "$dir" || true
+          done
+
+      - name: bundle smoke (render bundle under plain node)
+        run: |
+          cfg="$(mktemp -d)"
+          mkdir -p "$cfg/ccsidekick"
+          printf 'schema_version = 1\n\n[network]\nfx_refresh = false\nusage_fetch = false\n' > "$cfg/ccsidekick/config.toml"
+          out="$(CLAUDE_CONFIG_DIR="$cfg" node packages/core/dist/ccsidekick-render.js render < packages/core/test/fixtures/payloads/canonical.json)"
+          test -n "$out" || { echo "render bundle produced no output"; exit 1; }
+          printf '%s\n' "$out"
+
+      - name: trufflehog secret scan (authoritative gate)
+        uses: trufflesecurity/trufflehog@30d5bb91af1a771378349dbbb0c82129392acf70 # v3.95.6
+        # The action injects --fail itself; the trufflehog CLI (pinned to latest) now rejects a repeated --fail,
+        # so keep only --only-verified here to avoid `flag 'fail' cannot be repeated`.
+        with: { extra_args: --only-verified }

@@ -1,0 +1,30 @@
+schema_version = 1
+
+[character]
+enabled = true
+mode = "fixed"
+name = "joker"
+roster = ["batman", "joker"]
+
+[comments]
+enabled = false
+
+[line]
+currency = "USD"
+
+[line.widgets]
+todo = true
+agent = true
+git_hash = false
+
+[theme]
+mode = "default"
+separator = "pipe"
+
+[theme.icons]
+dir = "D"
+git_operation = "G"
+
+[network]
+usage_fetch = true
+balance_path = "/home/dev/balance.json"

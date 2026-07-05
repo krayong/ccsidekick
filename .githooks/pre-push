@@ -1,0 +1,14 @@
+#!/bin/sh
+set -e
+if command -v trufflehog >/dev/null 2>&1; then
+  echo "[pre-push] trufflehog"
+  trufflehog git "file://$(git rev-parse --show-toplevel)" --since-commit HEAD --only-verified --fail
+else
+  echo "############################################################" >&2
+  echo "[pre-push] WARNING: trufflehog NOT installed — LOCAL SECRET SCAN SKIPPED." >&2
+  echo "           This push is NOT scanned for secrets on your machine." >&2
+  echo "           Install it: https://github.com/trufflesecurity/trufflehog" >&2
+  echo "           CI runs trufflehog as the authoritative gate and will fail the build" >&2
+  echo "           if a verified secret reached the remote — install locally to catch it first." >&2
+  echo "############################################################" >&2
+fi

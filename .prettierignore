@@ -1,0 +1,7 @@
+dist
+node_modules
+
+assets
+
+packages/packs/*/pack.json
+packages/core/test/fixtures/**/pack.json

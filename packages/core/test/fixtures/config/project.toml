@@ -1,0 +1,13 @@
+[character]
+mode = "random"
+
+[line]
+currency = "EUR"
+
+[line.widgets]
+git_hash = true
+session_duration = true
+
+[theme.icons]
+dir = "📁"
+git_operation = { primary = "G" }

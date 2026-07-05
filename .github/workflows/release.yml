@@ -1,0 +1,65 @@
+name: Release
+
+# Changesets-driven release, run manually (never on push) so every publish is a deliberate,
+# prod-gated action. When dispatched:
+#   - if pending .changeset/*.md files exist, open/update a "Version Packages" PR that applies the
+#     bumps + changelogs (via `bun run ci:version`);
+#   - once that PR merges (no pending changesets), a second dispatch publishes every package whose
+#     version has no release tag yet and tags it (via `bun run ci:publish`).
+# Contributors declare bumps by committing a changeset (`bun run changeset`); versioning and
+# publishing are automated here but only ever fire on a manual run.
+on:
+  workflow_dispatch:
+
+concurrency: release-${{ github.ref }}
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    environment: prod
+
+    permissions:
+      contents: write # push the Version Packages commit + release tags
+      pull-requests: write # open/update the Version Packages PR
+      id-token: write # OIDC token for npm Trusted Publishing + provenance
+
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0 # full history + tags, so changeset version and the publish tag-check see them
+
+      - uses: ./.github/actions/setup
+
+      - name: Set up Node (registry for npm publish)
+        uses: actions/setup-node@v6
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org
+          package-manager-cache: false # Bun owns install; keep publish on a clean npm
+
+      # Publishing uses npm (not bun) so it can emit provenance — bun cannot. `--provenance` needs only
+      # `id-token: write` (present) and works with either token or OIDC auth. AUTH BOOTSTRAP: OIDC Trusted
+      # Publishing can only be configured for a package that already EXISTS on the registry, so the first publish
+      # of any package (the initial release, and every newly added pack) can't use OIDC. NPM_TOKEN (a granular
+      # automation token) is kept as the auth fallback so first/new-pack publishes work; once a package is on the
+      # registry you may register it as a trusted publisher on npmjs.com and drop to OIDC. Keeping the token also
+      # means a freshly added pack just publishes without a manual bootstrap.
+      - name: Use a provenance-capable npm
+        run: npm install -g npm@latest
+
+      # version: applies pending changesets into a Version Packages PR (bump + changelog + lockfile).
+      # publish: runs after that PR merges; ci-publish.sh rewrites workspace:* → concrete and npm-publishes
+      # each unreleased package with provenance, then `changeset tag` creates the name@version tags that
+      # the action pushes and turns into GitHub Releases.
+      - name: Changesets release
+        uses: changesets/action@a45c4d594aa4e2c509dc14a9f2b3b67ba3780d0d # v1.9.0
+        with:
+          version: bun run ci:version
+          publish: bun run ci:publish
+          commit: "chore(release): version packages"
+          title: "chore(release): version packages"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # auth fallback; unused once a package has trusted publishing
+          NPM_CONFIG_PROVENANCE: "true"

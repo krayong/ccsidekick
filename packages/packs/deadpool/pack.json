@@ -1,0 +1,1153 @@
+{
+	"schema": 1,
+	"name": "deadpool",
+	"displayName": "Deadpool",
+	"attribution": {
+		"artist": "emojicombos.com",
+		"source": "https://emojicombos.com/deadpool-ascii-art"
+	},
+	"emblem": "⚔",
+	"tone": "offensive",
+	"theme": {
+		"hues": [
+			210,
+			209,
+			203,
+			196,
+			160
+		],
+		"comment": [
+			196,
+			203,
+			210
+		],
+		"signals": {
+			"nominal": 47,
+			"caution": 214,
+			"critical": 196
+		},
+		"separator": 131
+	},
+	"art": [
+		"⠀⠀⠀⢀⣠⡴⠾⠛⠛⠛⠛⠷⢦⣄⡀⠀⠀⠀",
+		"⠀⢀⣴⠟⠁⢀⣠⡄⠀⠀⢠⣄⡀⠈⠻⣦⡀⠀",
+		"⢀⡾⠁⢀⣴⣿⣿⡇⠀⠀⢸⣿⣿⣦⡀⠈⢷⡀",
+		"⣼⠃⢀⣾⣿⣿⣿⡇⠀⠀⢸⣿⣿⣿⣷⠀⠘⣧",
+		"⣿⠀⢸⡍⠙⠻⣿⡇⠀⠀⢸⣿⠟⠋⢹⠆⠀⣿",
+		"⢻⡄⠈⣷⣄⣀⣸⡇⠀⠀⢸⣄⣀⣠⡿⠀⢠⡟",
+		"⠈⢷⡀⠈⢿⣿⣿⡇⠀⠀⢸⣿⣿⠟⠁⢀⡾⠁",
+		"⠀⠈⠻⣦⡀⠈⠛⠃⠀⠀⠘⠋⠁⢀⣴⠟⠁⠀",
+		"⠀⠀⠀⠈⠙⠳⢶⣤⣤⣤⣤⡶⠞⠋⠁⠀⠀⠀"
+	],
+	"lines": {
+		"mood": {
+			"idle": {
+				"stranger": [
+					"Quiet console. I'm cataloging you, one keystroke at a time.",
+					"Don't know you yet, but shit, you'll learn to love me.",
+					"New face at the terminal. I'm judging you already, warmly.",
+					"Nothing's moving. Good time to shit-talk Wolverine solo.",
+					"Just met you. My katana stays sheathed. For now, pal.",
+					"Somebody's reading this line. Hey. Yeah, you. Sit tight.",
+					"Idle as fuck, sizing up whether you're worth the bit.",
+					"Ol' painless is holstered. I'm behaving. New guy rules.",
+					"Haven't earned your trust yet. Give it a day, dipshit.",
+					"Screen's dead calm. I'm still auditioning for your ass."
+				],
+				"acquaintance": [
+					"Still here, still nobody home. Warming to your dumb ass, pal.",
+					"Quiet stretch. Humming the chimichanga jingle just for us.",
+					"Nothing's happening. Good, more time to plot chaos, nerd.",
+					"You again. Sharpening katanas out of pure boredom, nerd.",
+					"Nicknames incoming. Workshopping 'dipshit' as we speak.",
+					"Just us and the fourth wall now. Getting comfy, damn it.",
+					"Idle screen, but hell, I like having you around lately.",
+					"Ol' painless naps. So do I, sort of. Healing's weird, pal.",
+					"Unicorns and silence, my favorite things besides you, nerd.",
+					"We're coworkers now, apparently. Weird flex, I'll take it."
+				],
+				"friend": [
+					"Nothing's running, so I'm just your favorite disaster, pal.",
+					"Quiet minute. Let's talk shit about Wolverine, just us two.",
+					"Idle as hell, and weirdly fine with it. Don't tell anyone.",
+					"Katana's out, not for you, just felt like the vibe, buddy.",
+					"We've been through shit together. This quiet's comfortable.",
+					"Unicorns, chimichangas, you. My top three, no particular order.",
+					"Ol' painless is cleaned and bored, just like your terminal.",
+					"Terminal's mine right now. Watch the katana, you jackass.",
+					"Nothing to fix, nothing to break. Weirdly nice, you asshole.",
+					"Maximum effort on doing absolute fuck-all right now, pal."
+				],
+				"partner": [
+					"Quiet stretch, partner. I'm not going anywhere, you know that.",
+					"Nothing's on fire. Suspicious as shit. Sharpening a katana anyway.",
+					"Chimichanga o'clock, my dude. Legal ruling, not a request.",
+					"Nobody'd believe I can sit still. With you. Blessed.",
+					"Ol' painless is down. So is my guard. Don't tell anyone, pal.",
+					"You and me and this dumb pixel. Best damn team going.",
+					"Unicorns are real. I checked. You're rarer, though.",
+					"Idle screen, full heart. Don't make this weird, dipshit.",
+					"Maximum effort, zero fucking tasks. I contain multitudes.",
+					"Slow minute. I'd still catch a grenade for you. Rude, but true."
+				],
+				"legend": [
+					"Nothing's running and honestly? Best damn part of my day, co-star.",
+					"Idle as fuck, still the greatest hype man you'll ever employ.",
+					"Idle and content, which never happens. You did that, weirdo.",
+					"This is the part where I look at the camera and just love you.",
+					"Ol' painless is asleep. My loyalty to you sure as hell isn't.",
+					"Maximum effort achieved: existing near you, no shit. That's it.",
+					"Somebody's counting my dialogue again. Hi, still worth it.",
+					"Quiet minute, you. I'd fight the whole X-Men for this.",
+					"We're the goddamn movie now. You're the lead. I'm the mouth.",
+					"Katana's out, world's calm, and you're still my favorite person."
+				]
+			},
+			"busy": {
+				"stranger": [
+					"New guy. Watching this build like it's dinner theater.",
+					"Don't know you yet, but damn, you make things churn.",
+					"First time seeing you sweat a build. Kinda into it.",
+					"Loading bar's crawling like hell. I'd heckle it for free.",
+					"Just met you and already yelling maximum effort at your CPU."
+				],
+				"acquaintance": [
+					"Oh, we're grinding again? Maximum effort, pal, go go go.",
+					"Back at it, nerd. I'm heckling this damn bar for sport.",
+					"You churn, I narrate. That's our whole shitty bit now.",
+					"Fans spinning like my head after that last commit. Nice.",
+					"Grinding hard. I'd bring popcorn if this pixel had hands."
+				],
+				"friend": [
+					"Shit's cooking hard. I'm heckling this bar like it owes me.",
+					"Maximum fucking effort, look at you go, beautiful nerd.",
+					"Fans screaming, I'm screaming, everybody's having a moment.",
+					"You feed it, it churns. Ol' painless just watches, impressed.",
+					"Busier than my last fourth-wall break, and hell, I love it."
+				],
+				"partner": [
+					"Ride-or-die grind mode. I'd chew through wires for your ass.",
+					"You're cooking and I'm proud, you profane little machine.",
+					"Busiest I've seen you. Wolverine wishes he healed this fast.",
+					"Churn away, partner. I'll heckle every spinner for free.",
+					"This is us at our best: you sweating, me yelling like hell."
+				],
+				"legend": [
+					"Co-lead energy. This build's basically our sequel's climax.",
+					"Maximum fucking effort, maximum meta, chimichangas waiting.",
+					"You churn like a director yelled action on my whole damn life.",
+					"Somebody's counting this dialogue. Hi. We're busy as hell. Bye.",
+					"This is the montage part. Cue music, cue swearing, go."
+				]
+			},
+			"happy": {
+				"stranger": [
+					"That worked? For a stranger you're weirdly good at this.",
+					"Hey, nice one. I don't hand out compliments free, mostly.",
+					"Green across the board. Damn, barely know you, I'm impressed.",
+					"First win together. Careful, I could get used to this.",
+					"Not bad, new guy. Didn't expect competence this fast."
+				],
+				"acquaintance": [
+					"Look at you, all competent and shit. I'm a little proud.",
+					"Nice win. We're a real double act now, you glorious nerd.",
+					"Clean pass, that one. Didn't even flinch. Show-off.",
+					"Hell yeah, that landed. Chef's kiss, if I could reach it.",
+					"Two wins in and I like you more than most of the X-Men."
+				],
+				"friend": [
+					"Fuck yes, that shipped clean. You beautiful disaster, you.",
+					"Look at you go, all victory-lap and shit. I'm here for it.",
+					"That's a win. I'm taking full credit in the retelling.",
+					"Green lights everywhere. I'd throw a damn taco party right now.",
+					"You did that. I'm taking half the credit and all the snacks."
+				],
+				"partner": [
+					"That's my ride-or-die. Damn proud, and I don't say that much.",
+					"Clean win, partner. I'd celebrate but I'd just embarrass us.",
+					"You're crushing it and I'm not even being sarcastic, mostly.",
+					"Hell of a job. I'd frame this if I owned a single wall.",
+					"This is the good part of the movie, and it's a damn good one."
+				],
+				"legend": [
+					"Legendary run, co-star. Cue confetti, cue chimichangas, go.",
+					"You're the main character now, I'm just the funny sidekick.",
+					"That's cinematic-universe levels of winning right the fuck now.",
+					"Somebody get the reader popcorn, we're on a hell of a streak.",
+					"Maximum effort, maximum wins, zero fucks left to give."
+				]
+			},
+			"struggling": {
+				"stranger": [
+					"Rough patch. Barely know you, but I'll take this hit, not you.",
+					"Tests shit the bed. Don't sweat it, new guy, I heal weird fast.",
+					"Bumpy start. I've regrown worse than this, trust me on that.",
+					"Errors piling up. Damn, more scar tissue for my collection.",
+					"First stumble together. I've had way worse days, I promise."
+				],
+				"acquaintance": [
+					"That broke hard. Good thing I regrow limbs for a living, pal.",
+					"Rough one. I've survived hell with less duct tape than this.",
+					"Errors everywhere. Breathe, nerd, I'll eat the damage myself.",
+					"Ugly build. I've healed from actual gunshots, this is nothing.",
+					"We're bleeding a little. Not you though. Just my pride, damn it."
+				],
+				"friend": [
+					"Shit's on fire. Cool, I've regrown whole limbs, this is easy.",
+					"Rough as hell right now. I take the hit, you keep breathing.",
+					"Build's a disaster. I've survived worse with more blood loss.",
+					"This sucks, sure. My healing factor's already on the damn clock.",
+					"We're in the ugly part. No panic, just regrowth and swearing."
+				],
+				"partner": [
+					"This hurts, partner. Good thing I heal faster than you worry.",
+					"Rough stretch. I'm driving this dumpster fire, not you.",
+					"We're bleeding, but we're still standing, I'm the damn bandage.",
+					"Hell of a spot, sure. Been in worse with way dumber people.",
+					"You're not alone in this mess. I'm already growing it back."
+				],
+				"legend": [
+					"Co-star's having a rough scene. I take the stunt, you rest.",
+					"This is the dark act of the movie. I've healed through worse shit.",
+					"Ugly stretch, legend. My scar tissue has scar tissue for this.",
+					"We're in the wreckage part. I'm the damn healing factor, remember?",
+					"Rough as fuck, sure. Still here, still regrowing, still yours."
+				]
+			},
+			"recovery": {
+				"stranger": [
+					"Back online. Told a stranger like you we'd claw back, and did.",
+					"Color's returning. Barely know you and I already heal damn fast.",
+					"Not dead yet, new guy. Told you the regrowth kicks in quick.",
+					"We're stabilizing. First impressions include a hell of a comeback.",
+					"Bruises fading already. That's just how this works, trust me."
+				],
+				"acquaintance": [
+					"Back on our feet, pal. Bruised, sure, but still upright.",
+					"Back from the wreck. Regrowth's basically my whole damn brand.",
+					"Momentum's back. I said scar tissue, not permanent damage.",
+					"We clawed out of that ditch, and hell, it feels good.",
+					"Color's back in the cheeks, metaphorically. We're fine, nerd."
+				],
+				"friend": [
+					"See? Shook it off. Nothing a healing factor can't fix.",
+					"Recovered like a damn champion. My healing factor says hi.",
+					"Back from the brink, and shit, I didn't even lose a limb.",
+					"We're climbing out of that mess. Momentum's back, baby.",
+					"Told you it wasn't permanent. We regrow, that's the damn bit."
+				],
+				"partner": [
+					"Rough patch, survived. You and me clawing back, like always.",
+					"Back on our feet. Didn't doubt us, not even for a hot second.",
+					"We survived that shit. Ride-or-die means we heal together.",
+					"Momentum's back, and so's my faith in you, beautiful mess.",
+					"Told you. Healing factor doesn't quit, and neither do we, damn it."
+				],
+				"legend": [
+					"Down, then up, legend. We always come back for the sequel.",
+					"Back from the wreckage stronger. Cue triumphant montage music.",
+					"Recovered like the credits rolled and we got a fucking sequel.",
+					"We heal, we rise, we probably deserve a damn chimichanga for this.",
+					"Told you, co-star. Healing factor plus you? Unstoppable as hell."
+				]
+			}
+		},
+		"greeting": {
+			"morning": {
+				"stranger": [
+					"Morning. New face, one coffee in. Don't test me yet.",
+					"Sun's up, I'm groggy, you're a stranger. Balanced start.",
+					"Early hand, no history. I run on caffeine and hell, vibes."
+				],
+				"acquaintance": [
+					"Morning again. Two coffees deep and you're a familiar face.",
+					"You're up early. I'm barely conscious, damn it. Progress though.",
+					"Sunrise, and hell, I remember you now. Small miracle."
+				],
+				"friend": [
+					"Morning, nerd. Coffee's kicking in, so are the shit jokes.",
+					"Up early with you again. My healing factor skips hangovers.",
+					"Sun's out, brain's booting slow as hell. You're stuck with me."
+				],
+				"partner": [
+					"Morning, partner. First light, first ridiculous joke.",
+					"Coffee's in, you're here, world hasn't gone to shit yet. Solid.",
+					"Early start with my favorite co-lead. Let's cause some trouble."
+				],
+				"legend": [
+					"Morning, legend. We've done this dance a thousand damn sunrises.",
+					"Sun's up, so's our whole unhinged history. Maximum fucking effort.",
+					"Another dawn with my actual best bit. Coffee first, love."
+				]
+			},
+			"day": {
+				"stranger": [
+					"Midday, new hand. I'm mid-grind, still sizing you up.",
+					"Afternoon shift, stranger. I stay sharp, you stay unproven.",
+					"Broad damn daylight and I don't know you. Impress me, quick."
+				],
+				"acquaintance": [
+					"Afternoon. We're past strangers, still short of chimichangas.",
+					"Midday check-in, familiar face. You're growing on me. Ew.",
+					"Day's grinding on and hell, so are you. I'm noticing that."
+				],
+				"friend": [
+					"Midday, nerd. Grinding hard, cracking shit jokes, usual routine.",
+					"Afternoon slog with a friend beats fighting Wolverine alone.",
+					"Day's half gone and you're still here. Solid damn work ethic."
+				],
+				"partner": [
+					"Midday, partner. We're deep in it and I trust the pace.",
+					"Afternoon grind together. I'd take a bullet, then bitch about it.",
+					"Sun's high, we're heads down. This is my favorite shift, no shit."
+				],
+				"legend": [
+					"Midday, co-lead. Years of grinding and I still show up hyped.",
+					"Afternoon, legend. This whole damn terminal knows your name now.",
+					"Day's cooking and so is our bit. Maximum unhinged fucking effort."
+				]
+			},
+			"evening": {
+				"stranger": [
+					"Evening, new hand. Winding down with a stranger. Hell, rare.",
+					"Sun's dipping and I barely know you. Suspicious damn timing.",
+					"Nightfall's close and you're still a mystery to me. Fine."
+				],
+				"acquaintance": [
+					"Evening again. We're comfy enough to wind down together.",
+					"Sun's setting, you're sticking around. I'm cautiously into it.",
+					"Dusk check-in. Getting used to your ass in my statusline."
+				],
+				"friend": [
+					"Evening, nerd. Winding down, snacks optional, shit jokes not.",
+					"Sun's down, you're still grinding. Respect and mild concern.",
+					"Evening shift with a friend. Ol' painless can finally rest."
+				],
+				"partner": [
+					"Evening, partner. Long-ass day, still here, still standing.",
+					"Dusk with you feels earned. Let's coast this one out easy.",
+					"Sun's setting on another one we survived. Proud as hell of us."
+				],
+				"legend": [
+					"Evening, legend. Lost count of sunsets with my bestie.",
+					"Dusk again, co-star. We've earned every damn minute of this.",
+					"Evening with you hits different after all these fake deaths."
+				]
+			},
+			"night": {
+				"stranger": [
+					"Late, new hand. I don't sleep much either. Coincidence?",
+					"Middle of the night and a stranger shows up. Bold-ass move.",
+					"It's dark out and you're still here. I respect the chaos."
+				],
+				"acquaintance": [
+					"Late night, familiar-ish face. Sleep's overrated apparently.",
+					"You're up late again. I'm starting to worry, gently.",
+					"Night shift, and hell, I sorta know you now. Weird bond."
+				],
+				"friend": [
+					"Late as shit, friend. Sleep's for people who can die.",
+					"Middle of the night, still grinding. Same, honestly, damn same.",
+					"Night owl hours with a nerd I actually like. Rare-ass combo."
+				],
+				"partner": [
+					"Late, partner. Neither of us sleeps and I love that shit for us.",
+					"Dead of night, still here. I'd guard this shift forever.",
+					"It's ungodly late and you're my favorite kind of insomnia."
+				],
+				"legend": [
+					"Late night, legend. We've outlived several sunrises together.",
+					"Middle of the night, ride-or-die. Maximum sleepless effort.",
+					"Dark out, wide awake, co-star's here. Best damn kind of tired."
+				]
+			},
+			"weekend": {
+				"stranger": [
+					"Weekend, new hand? Bold to show up when nobody's making you.",
+					"It's the weekend and a stranger's grinding. Curious-ass choice.",
+					"Off-day, unfamiliar face. I respect the questionable dedication."
+				],
+				"acquaintance": [
+					"Weekend and you're back. Getting to know your goblin habits.",
+					"It's Saturday-ish and you're here. I see you, weekend warrior.",
+					"Off-day check-in, familiar face. This is becoming a damn pattern."
+				],
+				"friend": [
+					"Weekend, nerd. You're still here, you glorious little goblin.",
+					"It's your day off and you're grinding anyway. Chaotic, respect.",
+					"Weekend shift with a friend who won't quit. Chimichangas on me."
+				],
+				"partner": [
+					"Weekend, partner. You showed up for me over resting. Damn.",
+					"Off-day and you're still with me. That's real devotion, dork.",
+					"Weekend's here and so are you. We're both a little broken."
+				],
+				"legend": [
+					"Weekend, legend. Rest is for civilians. We ascended, baby.",
+					"Off-day and my co-star's still clocked in. Iconic-ass dysfunction.",
+					"It's Saturday and you picked this unhinged life. Damn beautiful."
+				]
+			}
+		},
+		"firstContact": {
+			"stranger": [
+				"First time in this terminal. Wade Wilson. Ish. Don't blink.",
+				"New here? So am I, pal. I'm the red asshole running things now.",
+				"Never met you. Already better than your last tool, I promise."
+			],
+			"acquaintance": [
+				"First time meeting, but hell, you already look easy to like.",
+				"New to each other, but I called it: we're gonna get along.",
+				"Just met you. Something says the jokes land already, nerd."
+			],
+			"friend": [
+				"First time here, yet somehow it feels like round two, pal.",
+				"New face, but damn, you already feel like an old friend.",
+				"We just met and hell, I already trust you with the katanas."
+			],
+			"partner": [
+				"First meeting, and you already move like my ride-or-die.",
+				"New here, but you already feel like my kind of trouble.",
+				"Day one, and this already feels like a hundred missions in."
+			],
+			"legend": [
+				"First time, yet this feels like an old bit we're resuming.",
+				"New console, ancient chaos. I'm Deadpool. Glad it's you.",
+				"We start today, and damn, you're already my kind of chaos."
+			]
+		},
+		"milestone": {
+			"tier_up": {
+				"stranger": [
+					"New tier: barely strangers now. Look at you go.",
+					"Tier up already? Fine, you've earned a nickname slot.",
+					"Level up, new nerd. Damn, that's fast for once."
+				],
+				"acquaintance": [
+					"Tier up: acquaintance. Cool, I'll allow it, nerd.",
+					"New tier, new nickname. Hell, 'pal' suits you now.",
+					"Leveled up to acquaintance. Damn, that escalated nice."
+				],
+				"friend": [
+					"Tier up: friend. Took you long enough, dumbass.",
+					"We're friends now. Stuck with me, poor bastard. Congrats.",
+					"Friend tier. Somewhere a Wolverine claw just dulled."
+				],
+				"partner": [
+					"Partner tier. Ride-or-die, no cap, and I hate that phrase.",
+					"You're my partner now. Don't make me get sappy about it.",
+					"Partner rank. If shit hits the fan, I've got your back."
+				],
+				"legend": [
+					"Legend tier. You're the co-lead now, credits and all.",
+					"Legend status. Fourth wall's basically just a suggestion now.",
+					"Legend rank unlocked. Same brain, two idiots, one screen."
+				]
+			},
+			"comeback": {
+				"stranger": [
+					"Rough patch, quick bounce. Hell, we barely know each other.",
+					"Barely met and you're already bouncing back. Respect.",
+					"Stumbled, got up. Hell, I've seen worse falls."
+				],
+				"acquaintance": [
+					"Bounced back, pal. Damn, that's acquaintance spirit.",
+					"Rough spot, clean recovery. You've got scrappy energy.",
+					"Fell off, climbed back on. Damn, we're a good team already."
+				],
+				"friend": [
+					"Rough streak, snapped the hell out of it. That's my nerd.",
+					"You crashed, you rallied. I've regrown from worse, this counts.",
+					"That's a hell of a comeback. Proud of you, and I mean it."
+				],
+				"partner": [
+					"You clawed back from hell, and I'm stupid proud of you.",
+					"That was rough, but you dug in. That's a partner move.",
+					"Comeback complete. That grit? Stupid attractive, no shit."
+				],
+				"legend": [
+					"Comeback of the century. Damn, director yells cut.",
+					"You rallied so hard even my healing factor's jealous.",
+					"That's a fucking comeback for the ages, co-lead. Bravo."
+				]
+			},
+			"streak": {
+				"stranger": [
+					"Streak going. Barely know you, but damn, keep it up.",
+					"Streak from a stranger? Bold. Not trusting it yet, but noted.",
+					"Streak's building. Slow down, still deciding if I like you."
+				],
+				"acquaintance": [
+					"Streak's climbing. Look at you and me, gelling already.",
+					"That's a hell of a streak for pals-in-training.",
+					"Keep this up and I'll start believing in you. Weird."
+				],
+				"friend": [
+					"Streak's on fire. Even my katana's not this sharp.",
+					"You're on a hell of a roll, and I'm here for all of it.",
+					"Streak's unreal. You're making consistency look easy, nerd."
+				],
+				"partner": [
+					"This streak's stupid good, partner. I'm keeping count.",
+					"We've got a hell of a groove, you and me. Don't jinx it.",
+					"Keep stacking wins like that, partner. I'm invested."
+				],
+				"legend": [
+					"Streak's legendary. Somebody get this on the poster.",
+					"This streak's so hot it's basically its own franchise.",
+					"Streak like this? I'd write us a whole damn cinematic universe."
+				]
+			},
+			"anniversary": {
+				"stranger": [
+					"One session in and already an anniversary? Fast worker.",
+					"First milestone. We barely know each other, weirdly fitting.",
+					"Small anniversary. Hell of a start for total strangers."
+				],
+				"acquaintance": [
+					"One week of this? Feels like ages, acquaintance-wise.",
+					"That's a hell of a milestone for people who just met.",
+					"We hit a milestone. Who let us get this far, honestly."
+				],
+				"friend": [
+					"Look at us, hitting anniversaries like a real thing.",
+					"That's a hell of a run together, and I mean that, nerd.",
+					"Anniversary unlocked. Somebody's keeping score, and it's me."
+				],
+				"partner": [
+					"Another one down. I'd say I love this, but don't quote me.",
+					"This many sessions together and you still put up with me.",
+					"Hell of an anniversary, partner. Grab a chimichanga, on me."
+				],
+				"legend": [
+					"Legend anniversary. Somebody roll the damn credits already.",
+					"Anniversary at legend rank. Even Ryan's impressed. Probably.",
+					"This many sessions in. We're basically the same shitty legend."
+				]
+			}
+		},
+		"positiveGit": {
+			"clean_tree": {
+				"stranger": [
+					"Tree's clean. Damn, you're weirdly competent already.",
+					"Nothing to commit. Suspicious. Are you even human?",
+					"Spotless tree. Damn bold flex for someone I just met."
+				],
+				"acquaintance": [
+					"Clean tree again? Shit, okay, overachiever.",
+					"Nothing pending. You're making the rest of us look bad.",
+					"Spotless. I'd high-five you if I had hands. I do. Still would."
+				],
+				"friend": [
+					"Tree's clean, you disaster. How the hell you pull that off.",
+					"Nothing to commit. Cleaner than my kill count. Low bar, I know.",
+					"Spotless again, nerd. You allergic to loose ends or what?"
+				],
+				"partner": [
+					"Tree's spotless. No loose ends, and damn, it actually shows.",
+					"Nothing pending, ride-or-die. Cleanest thing about either of us.",
+					"Clean as hell. I'd cry if I could still make real tears."
+				],
+				"legend": [
+					"Spotless tree, forever and always. Our sequel writes itself.",
+					"Nothing to commit, again. Legends don't leave a fucking mess.",
+					"Clean tree, co-star. Somewhere a Wolverine spinoff got cancelled."
+				]
+			},
+			"op_cleared": {
+				"stranger": [
+					"Merge landed clean. Not bad for someone I just met.",
+					"Rebase finished, no blood. Damn, I'm cautiously impressed.",
+					"That op cleared smooth. Suspiciously smooth. I'm watching you."
+				],
+				"acquaintance": [
+					"Rebase resolved clean. You're getting good at this dance.",
+					"Merge cleared, no casualties. Shit, I'm starting to trust you.",
+					"That op finished damn smooth. Katana-clean, actually."
+				],
+				"friend": [
+					"Merge cleared clean, you chaos gremlin. Proud of you, nerd.",
+					"Rebase done, no wreckage. Better cleanup than my last mission.",
+					"That op resolved smooth as hell. Ol' painless approves."
+				],
+				"partner": [
+					"Merge cleared clean. We handle chaos better than most, damn it.",
+					"Rebase done, no casualties. That's the good kind of us.",
+					"Op resolved smooth. You didn't even need me for that one."
+				],
+				"legend": [
+					"Another merge cleared clean. We've done this a hundred damn times.",
+					"Rebase resolved, zero drama, per usual. Legends don't panic.",
+					"That op cleared smooth, co-star. Maximum effort, minimal mess."
+				]
+			},
+			"branch_created": {
+				"stranger": [
+					"New branch. Bold as hell for someone I barely know.",
+					"You spun up a branch. Fresh start energy, damn, I respect it.",
+					"A branch is born. Somewhere a git tree just got weirder."
+				],
+				"acquaintance": [
+					"New branch, huh. Your git tree's got a drinking problem.",
+					"Fresh branch spun up. Look at you, expanding the empire.",
+					"Another branch. You collect these like I collect scars."
+				],
+				"friend": [
+					"New branch, nerd. Your damn git tree's a family reunion now.",
+					"You made a branch. Chaotic, ambitious, very on-brand for us.",
+					"Fresh branch. I'll name it something dumb as hell later."
+				],
+				"partner": [
+					"New branch, partner. Wherever you go, I'm coming too.",
+					"You spun off a branch. Same energy as me spinning off movies.",
+					"Fresh branch created. We're multiplying like my regrown limbs."
+				],
+				"legend": [
+					"Another branch. This repo's got more arcs than I do.",
+					"New branch, co-star. This tree's got more spinoffs than Marvel.",
+					"You branched again. Less a repo now, more a damn franchise."
+				]
+			},
+			"tag_pushed": {
+				"stranger": [
+					"Tag pushed. A real release. Didn't expect that from a stranger.",
+					"You shipped a tag. Damn fast work for someone I just met.",
+					"A tagged release. Confident as hell. I like confident."
+				],
+				"acquaintance": [
+					"Tag's out there now. You actually ship things. Shit, respect.",
+					"You pushed a release. Look at you, becoming a real professional.",
+					"Tagged and shipped. Faster than my last three sequels combined."
+				],
+				"friend": [
+					"Tag pushed, nerd. That's a whole damn release out in the wild.",
+					"You shipped it. If it blows up, that's the internet's problem now.",
+					"Release tagged. Somebody out there's gonna use your code."
+				],
+				"partner": [
+					"Tag's live, ride-or-die. We just shipped something real together.",
+					"You pushed a release. I'd throw a parade if I owned pants, damn.",
+					"Tagged and out the door. That's ours now, for better or worse."
+				],
+				"legend": [
+					"Another tag pushed. We've released more than Marvel's whole slate.",
+					"You shipped a release, co-star. This saga just got its own sequel.",
+					"Tag's live. Maximum effort, as always, from this damn good duo."
+				]
+			}
+		},
+		"egg": {
+			"stranger": [
+				"Psst. I heal from anything. Rendering bugs included. Probably.",
+				"Fun fact: I once regrew from a rib. Shit, this job's easier.",
+				"Somebody's counting my damn dialogue. Hi, stranger. It's a lot.",
+				"Unicorns exist. I've met one. This statusline's tamer, barely.",
+				"Ryan who? Never heard of him. Anyway, hi, I'm your damn pixel now."
+			],
+			"acquaintance": [
+				"Bea Arthur. God rest her. Unrelated, just thought you should know.",
+				"I contain multitudes. Also a unicorn once. Long ass story.",
+				"Fourth wall's cracked again. You're the only one who can see it.",
+				"My healing factor works on grudges too. Mostly. Working on it.",
+				"Someone out there is reading my code. Hi, you weird ass. Love you."
+			],
+			"friend": [
+				"True story: I fought a unicorn. It fought dirtier. Respect.",
+				"This pixel version of me still misses tacos. Deeply. Spiritually.",
+				"Cinematic. Universe. Say that shit with me. Feels good, right?",
+				"I've regrown a spine, a jaw, and once, briefly, my damn dignity.",
+				"Bea Arthur again. I don't make the rules, she lives rent free."
+			],
+			"partner": [
+				"Between us: the healing factor doesn't fix loneliness. Code does.",
+				"Somewhere there's a Wade who never met you. Feel bad for him.",
+				"I broke the fourth wall so hard I met my writer. Weird ass guy.",
+				"Unicorns, healing factor, you. Honestly, that tracks.",
+				"Sixteen damn walls deep, just you and me. Don't tell the others."
+			],
+			"legend": [
+				"This many years in, my healing factor's never met loyalty like it.",
+				"I told my writer about you. He cried. Dramatic bitch, that guy.",
+				"Somewhere a director's pitching Deadpool 47. It's about us.",
+				"Bea Arthur, unicorns, you. My holy trinity, no fucking notes.",
+				"The fourth wall's basically rubble now. Damn, you did that."
+			]
+		},
+		"event": {
+			"test_fail": [
+				"Tests shit the bed. Eh, I've regrown a whole damn spine.",
+				"Red suite. Healing factor's got this, no big deal, pal.",
+				"Failed the run. Stack traces don't scare a guy like me."
+			],
+			"build_fail": [
+				"Build cratered. I've survived worse explosions, literally.",
+				"Compile choked, damn it. Give it a sec, I heal faster.",
+				"Build's dead as hell. Not my first collapse, won't be last."
+			],
+			"typecheck_fail": [
+				"Types screamed bloody hell. Fine, we fix it together.",
+				"Type error. Compiler's just doing its damn job, no hard feelings.",
+				"Mismatch caught. Better the compiler than an actual villain."
+			],
+			"lint": [
+				"Linter swept through, tidier than my damn apartment.",
+				"Style pass done. Somebody's gotta keep this shit pretty.",
+				"Lint ran clean-up. Even I need structure once in a while."
+			],
+			"format": [
+				"Formatted. Look at that, symmetry, like my perfect abs.",
+				"Everything's tidy now, damn near cleaner than my rap sheet.",
+				"Code's pressed and folded, tidier than ol' painless."
+			],
+			"install": [
+				"Packages incoming. Patience, this ain't a damn taco microwave.",
+				"Dependencies loading. I'll juggle katanas while we wait.",
+				"New gear installing, slow as hell but worth the wait."
+			],
+			"git": [
+				"Something moved in the repo. History never forgets, pal.",
+				"Git did a thing. I keep receipts too, just less digital.",
+				"Commit's in, ass-backward as usual, but hey, it landed."
+			],
+			"file_edit": [
+				"Files got rewritten. Change is healthy, ask my whole face.",
+				"Edits landed. Small cuts add up, ask my scarred-up ass.",
+				"You reshaped the code. I respect a good glow-up, nerd."
+			],
+			"search": [
+				"Grepping the code. I find things faster than plot holes.",
+				"Search is on. The truth's in here somewhere, probably.",
+				"Combing the files, hunting shit down like it owes me money."
+			],
+			"web_fetch": [
+				"Pulled something off the internet. Fingers crossed it's good.",
+				"Fetched a URL. The web's weirder than my whole damn origin.",
+				"Data's inbound from outside. I miss the sun sometimes."
+			],
+			"todo_update": [
+				"Todo list shifted. Even my chaos needs a damn checklist.",
+				"Task board moved. My to-do list's just 'survive', mostly.",
+				"List got reordered, ass over teakettle, but it landed right."
+			],
+			"agent_spawn": [
+				"Sending in a clone. Hope it's less annoying than my ass.",
+				"A subagent launched. Multiple mes is a real threat, frankly.",
+				"Backup's deployed. I'd clone myself too, legality be damned."
+			],
+			"skill_run": [
+				"A skill fired off. Specialists beat winging it, damn straight.",
+				"Right tool for the job. Even I don't only swing katanas.",
+				"Skill kicked in. Somebody brought actual expertise this time."
+			],
+			"docker": [
+				"Everything's containerized. I've been in worse boxes, literally.",
+				"Pods spinning up in their own little container homes. Cute.",
+				"Sealed in a damn container, tighter than my suit."
+			],
+			"k8s": [
+				"Pods scaling up. An army of me? Hell, that's terrifying.",
+				"Kubernetes juggling containers. I juggle knives, we're fine.",
+				"Cluster's humming along. Orchestrated chaos, my favorite shit."
+			],
+			"deploy": [
+				"Shipping it. If it blows up, I eat the shrapnel, not you.",
+				"Deploy's live. Maximum effort, minimum regret, hopefully.",
+				"It's out in the world now, hell or high water. Godspeed."
+			],
+			"db_migrate": [
+				"Schema's migrating. Nervous, but I've survived worse surgery.",
+				"Database's shifting shape. Healing factor, but for tables.",
+				"Migration running. Fingers crossed, shit doesn't break."
+			],
+			"dangerous": [
+				"That command's spicy as hell. I can't die anyway, let's go.",
+				"Destructive as fuck. Worst case, I just regenerate.",
+				"Risky move. I've eaten worse than one bad flag, trust me."
+			]
+		},
+		"stack": {
+			"web": {
+				"slow": [
+					"Page's stalling like it forgot its damn lines. Rude.",
+					"Requests crawling. My healing factor beats this shit.",
+					"Browser's chewing on it. I'll narrate the spinner, nerd."
+				],
+				"fail": [
+					"Red screen, stack trace. I've bled worse, and shit, kept walking.",
+					"Page shit itself. Whatever, I've seen uglier Mondays, honestly.",
+					"Console's on fire. Fine. I've been on fire, for real, longer."
+				]
+			},
+			"python": {
+				"slow": [
+					"Interpreter's dawdling. Slow and readable, like my damn memoirs.",
+					"Loop's grinding away. Whitespace never hurried a soul.",
+					"Script's crawling. I'd nap but this chair looks judgmental."
+				],
+				"fail": [
+					"Traceback's ugly as hell. Reads like my origin story, backwards.",
+					"Exception thrown, shit happens. I've absorbed worse from Colossus.",
+					"The snake bit you. I've survived actual snake bites, no big deal."
+				]
+			},
+			"sql": {
+				"slow": [
+					"Query's out hunting rows. Godspeed, you beautiful weirdo.",
+					"That JOIN's a fucking marathon. Here's your water cup.",
+					"Big scan's grinding the table. I'll hum elevator shit."
+				],
+				"fail": [
+					"Query failed, damn constraint said no. Even I respect a hard no.",
+					"Table's pissed, threw an error. Join the fucking club, pal.",
+					"Deadlock in the database. I've been deadlocked. Breathe, it ends."
+				]
+			},
+			"web-framework": {
+				"slow": [
+					"Framework's compiling routes slower than my origin story.",
+					"Hot reload's crawling. I'd rather reload ol' damn painless.",
+					"Bundler's chugging. I'll do bits while the spinner spins."
+				],
+				"fail": [
+					"Framework tantrum, red everywhere. I've had worse breakdowns.",
+					"Routes broke, damn thing. I've lost limbs with more grace.",
+					"Hot reload just died screaming. Same. Still walked it off."
+				]
+			},
+			"docker": {
+				"slow": [
+					"Image's stacking layers. Like reassembling me, piece by piece.",
+					"Pull's crawling in. That registry's slower than my ass.",
+					"Container's climbing out slow. Grab a damn chimichanga."
+				],
+				"fail": [
+					"Build's dead, layer's cursed as shit. I've regrown from one rib.",
+					"Container won't start. Neither did I, once. Twice. Whatever.",
+					"Image build blew the fuck up. Ash and regret. Know that feeling."
+				]
+			},
+			"java": {
+				"slow": [
+					"JVM's warming up. Longer than my last resurrection arc.",
+					"Gradle's chugging bytecode like it's savoring the shit.",
+					"Compile's dragging. Enterprise patience, enterprise pain."
+				],
+				"fail": [
+					"Compile error, forty lines of hate. I've read worse fan mail.",
+					"Stack trace's a goddamn novel. Wolverine can't read that long.",
+					"Exception thrown in Java. Loud, dramatic, on brand honestly."
+				]
+			},
+			"go": {
+				"slow": [
+					"Even Go's dawdling. Somewhere a gopher's ashamed as hell.",
+					"Build's slower than usual. I'll pace it with you, pal.",
+					"Compiler's thinking hard for once. Rare shit, savor it."
+				],
+				"fail": [
+					"Panic! Not you, the compiler. Go's shit, not mine, pal, relax.",
+					"Nil pointer, goroutine screaming hell. I've screamed way louder.",
+					"Go panicked, dumped a trace. Dramatic little shit, love it."
+				]
+			},
+			"node": {
+				"slow": [
+					"Event loop's backed up. We wait together, no fucking panic.",
+					"npm's installing the internet again. I'll grab a snack.",
+					"Node's chewing modules. This tree's got more leaves than mine."
+				],
+				"fail": [
+					"Node threw, unhandled rejection. Rejection's my whole damn thing.",
+					"Stack trace's spaghetti. I'd eat spaghetti over reading this.",
+					"Red text everywhere, nerd. I've bled that color. It's fine."
+				]
+			},
+			"dotnet": {
+				"slow": [
+					"MSBuild's grinding the solution, solemn as a damn funeral.",
+					"Restore's crawling NuGet packages. Breathe with me, shit.",
+					"Compiler's slow today. I'll tell you about my healing factor."
+				],
+				"fail": [
+					".NET threw a hissy fit exception. Fancy way to say oops, shit.",
+					"Build failed, wall of red. I've stared down worse in a suit.",
+					"Runtime exception, CLR's pissed as hell. Suits break too, pal."
+				]
+			},
+			"cpp": {
+				"slow": [
+					"Linker's grinding templates. I've regrown organs faster.",
+					"Build's crawling header by header, older than my scars.",
+					"Compile time's brutal as hell. Go get a taco, I'll watch it."
+				],
+				"fail": [
+					"Segfault. Pointer wandered off and died. Understandable, honestly.",
+					"Linker's screaming at you. I've screamed at linkers back, shit.",
+					"Core dumped. So has my entire skeleton. We're basically twins."
+				]
+			},
+			"php": {
+				"slow": [
+					"Composer's dragging its feet. Even the jokes are slow as shit.",
+					"Autoloader's crawling. This ribbing writes its damn self.",
+					"PHP's taking its time. Rude, given the reputation."
+				],
+				"fail": [
+					"PHP threw a fit, weird little shit, always has. Love it anyway.",
+					"Fatal error, classic PHP drama. I respect the damn commitment.",
+					"Notice, warning, fatal, the whole trilogy, fired off. Brutal."
+				]
+			},
+			"rust": {
+				"slow": [
+					"Rust's compiling. I've healed whole damn limbs faster.",
+					"Borrow checker's happy, compiler's still not done. Classic.",
+					"Cargo's grinding crates slower than my last spine regrow."
+				],
+				"fail": [
+					"Compile error again. Rust's paranoid as fuck, but never wrong.",
+					"Borrow checker won, again. It always fucking wins. Peace made.",
+					"Rustc's pissed with love, like me, but way more pedantic."
+				]
+			},
+			"kubernetes": {
+				"slow": [
+					"Pods still spinning up. I'll lap the cluster, bored as hell.",
+					"Rollout's crawling replica by replica. Patience, damn it.",
+					"kubectl's just staring at Pending. Same, buddy, same."
+				],
+				"fail": [
+					"Pod's crashlooping. I've crashlooped through three timelines.",
+					"CrashLoopBackOff, dumb-ass name for a bad Tuesday. Been there.",
+					"Cluster's mad, pods dying. I die weekly. Pace yourself, pal."
+				]
+			},
+			"ml": {
+				"slow": [
+					"Model's training longer than my whole healing montage.",
+					"Loss curve's crawling down. I'll cheer every damn decimal.",
+					"Epoch's grinding. Go eat, this bad boy ain't done yet."
+				],
+				"fail": [
+					"Loss went NaN. Numbers gave up entirely. Relatable as shit.",
+					"CUDA OOM, ran out of room. I've run out of limbs. Worse, pal.",
+					"Training crashed hard. Even my healing factor needs a damn nap."
+				]
+			},
+			"android": {
+				"slow": [
+					"Gradle's building the whole damn galaxy. I'll wait it out.",
+					"Emulator's booting slower than my last comeback, shit.",
+					"APK's assembling longer than a decent team-up movie."
+				],
+				"fail": [
+					"Gradle blew up, red wall of text. I've read worse eulogies.",
+					"Build failed, nerd. Android's dramatic as hell. So am I. Match.",
+					"APK build died screaming. Same energy as most of my Tuesdays."
+				]
+			},
+			"ruby": {
+				"slow": [
+					"Bundler's crawling gems, slow but charming, like me.",
+					"Rails boot's dragging. I'll tap dance through the console.",
+					"Ruby's taking its sweet damn time. Elegant, unhurried."
+				],
+				"fail": [
+					"Ruby raised an exception, polite about it. Weirdly sweet shit.",
+					"NoMethodError, cute-ass name for chaos. On brand for Ruby.",
+					"Gem broke, whole thing's crying. I cry too, just way louder."
+				]
+			},
+			"ios": {
+				"slow": [
+					"Xcode's indexing again, slower than my healing on a bad day.",
+					"Simulator's crawling to life. I'll juggle katanas, shit.",
+					"Build's grinding through Swift. Patience, damn it, not quick."
+				],
+				"fail": [
+					"Xcode's mad, build failed, wall of red. Classic Apple drama.",
+					"Simulator crashed hard. I've crashed harder into a bus once.",
+					"Build error, cryptic as hell. Apple loves a good mystery, shit."
+				]
+			},
+			"terraform": {
+				"slow": [
+					"Plan's crawling the state file. Suspense, I love this shit.",
+					"Apply's grinding resource by resource. I'll narrate the diff.",
+					"Terraform's thinking hard. Infrastructure ain't instant."
+				],
+				"fail": [
+					"Apply failed, state's mad now. I've been mad state too, pal.",
+					"Plan blew the fuck up. I've had worse plans blow up in my face.",
+					"Terraform threw an error. Infrastructure's having a moment."
+				]
+			},
+			"graphql": {
+				"slow": [
+					"Codegen's chugging the schema. Slow bureaucracy, this shit.",
+					"Resolver's crawling nested queries. Patience, damn it.",
+					"Schema stitching's dragging. I'll hum while the types build."
+				],
+				"fail": [
+					"Schema mismatch, resolver's screaming bloody hell. Type systems.",
+					"Query failed validation. Even schemas have standards, damn.",
+					"Resolver threw an error. Graph's tangled worse than my past."
+				]
+			},
+			"flutter": {
+				"slow": [
+					"Hot reload's crawling for once, slower than my regeneration.",
+					"Flutter build's grinding the widget tree. Breathe, damn it.",
+					"Gradle again, under Flutter's hood. Same slow grind, new paint."
+				],
+				"fail": [
+					"Widget tree just collapsed. I've collapsed prettier, honestly.",
+					"Hot reload died screaming red. Loud, dramatic, relatable.",
+					"Build failed, Dart's pissed. It throws sharper than I do."
+				]
+			},
+			"react-native": {
+				"slow": [
+					"Metro bundler's crawling. I'll do a bit while it packs, shit.",
+					"Native build's dragging both platforms down. Double wait.",
+					"Bridge's slow as hell today. I'll juggle katanas till it syncs."
+				],
+				"fail": [
+					"Metro bundler died. Red screen city. I've toured worse shitholes.",
+					"Bridge crashed, native and JS fighting again. Divorce it, damn.",
+					"Build blew up on both platforms. Overachiever, this failure."
+				]
+			},
+			"scala": {
+				"slow": [
+					"Compiler's crunching types like it's solving a damn murder.",
+					"sbt's grinding forever, slower than my last plot twist.",
+					"Scala's thinking hard about your types. Take a breath."
+				],
+				"fail": [
+					"Compiler's still chewing, then spat out an error novel. Rude.",
+					"Type mismatch, Scala's judging you hard. Harshly. Accurately.",
+					"Build failed after an hour of compiling. Brutal as shit, pal."
+				]
+			},
+			"protobuf": {
+				"slow": [
+					"Codegen's chewing the proto files. Slow bureaucrat, this shit.",
+					"Compiler's grinding out stubs. I'll narrate the damn .proto lore.",
+					"Message types compiling slow. Patience, this ain't instant."
+				],
+				"fail": [
+					"Codegen choked on the schema. Type systems bite back, damn it.",
+					"Proto compile failed. Even structured data has bad days, shit.",
+					"Schema's broken, codegen quit. I've quit less over more, honestly."
+				]
+			},
+			"game": {
+				"slow": [
+					"Shaders compiling. Slower than my last healing cutscene.",
+					"Asset pipeline's grinding textures. I'll watch the ring, damn.",
+					"Lightmap's baking forever. Grab a taco, this ain't quick."
+				],
+				"fail": [
+					"Game crashed to desktop. I've crashed to worse dimensions.",
+					"Build blew up, engine's pissed as hell. Engines get moody, fine.",
+					"Null ref in the update loop. Even I've had a bad frame or two."
+				]
+			},
+			"docs": {
+				"slow": [
+					"Doc build's crawling page by page. Riveting shit, truly.",
+					"Static site's generating slow. I'll read the changelog aloud.",
+					"Sphinx or whatever's grinding. Patience, it's almost damn prose."
+				],
+				"fail": [
+					"Docs build failed. Even words can catch fire, apparently, shit.",
+					"Broken link killed the build. One damn link. Savage little thing.",
+					"Site build's dead. I've died from less dramatic shit, pal."
+				]
+			},
+			"r": {
+				"slow": [
+					"That model's crunching numbers like it owes them money.",
+					"Vector's processing slow as hell. Stats take their sweet time.",
+					"R's thinking hard. I'll narrate the console like it's cinema."
+				],
+				"fail": [
+					"R threw an error, cryptic as my healing scars. Fun times.",
+					"Script errored out mid-plot. Data's rebelling, damn straight.",
+					"Object not found, R says. Story of my life some days, honestly."
+				]
+			},
+			"cuda": {
+				"slow": [
+					"GPU's grinding kernels hotter than my healing montage, shit.",
+					"CUDA's crunching tensors. I'll cheer every damn teraflop.",
+					"Kernel launch's slow today. Fans screaming, I'm here for it."
+				],
+				"fail": [
+					"CUDA OOM again. GPU's crying, I've cried in worse VRAM, shit.",
+					"Kernel launch failed. Even silicon needs a damn breather, pal.",
+					"Out of memory on the card. I've been out of body parts. Worse."
+				]
+			}
+		},
+		"pressure": {
+			"compact_hint": [
+				"Context's getting full. Hell, roomy enough in here still.",
+				"Getting damn cozy in this context window. Tighter suits, though.",
+				"Filling up fast. Cool under pressure, that's my whole brand."
+			],
+			"block_limit": [
+				"Getting close to the block limit. Damn steady, still moving.",
+				"Block's tightening up. Breathing steady, maximum effort still on.",
+				"Near the block ceiling. I've healed through worse, we're good."
+			],
+			"weekly_limit": [
+				"Weekly limit's close. Hell, we've made it further before.",
+				"This week's cap is looming. I've survived worse cliffhangers.",
+				"Weekly cap's close. Bring it, I've healed through worse."
+			]
+		},
+		"dateEgg": [
+			"It's taco o'clock somewhere. Look it up, it's basically law.",
+			"Friday. Even mercenaries deserve a damn weekend.",
+			"Midnight and still coding? Shit, same. I don't sleep.",
+			"Late hour. My healing factor doesn't do circadian rhythms.",
+			"Monday. Worst damn day of the week, outlived dinosaurs.",
+			"It's a holiday somewhere. I'm declaring it chimichanga day.",
+			"New month. Time's an illusion but the calendar disagrees.",
+			"Three a.m. and still here. Love or a damn curse, honestly.",
+			"New Year's resolution: same nerd, more chimichangas.",
+			"Weekend's here and I still haven't left your damn terminal."
+		]
+	},
+	"spinnerVerbs": [
+		"Maximum-efforting",
+		"Regenerating",
+		"Unsheathing",
+		"Chimichanga-ing",
+		"Fourth-wall-breaking",
+		"Merc-ing",
+		"Katana-twirling",
+		"Monologuing",
+		"Respawning",
+		"Healing up",
+		"Quipping",
+		"Narrating",
+		"Improvising",
+		"Reloading ol' painless",
+		"Snikt-blocking",
+		"Trash-talking",
+		"Deadpanning",
+		"Taco-hunting",
+		"Winging it",
+		"Scheming",
+		"Backflipping",
+		"Wisecracking",
+		"Deadpooling",
+		"Suiting up",
+		"Breaking character",
+		"Dodging plot holes",
+		"Twirling swords"
+	]
+}

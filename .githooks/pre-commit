@@ -1,0 +1,6 @@
+#!/bin/sh
+set -e
+echo "[pre-commit] prettier"; bun run format:check
+echo "[pre-commit] eslint";   bun run lint
+echo "[pre-commit] tsc";      bun run typecheck
+echo "[pre-commit] tests";    bun run test

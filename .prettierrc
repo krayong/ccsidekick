@@ -1,0 +1,18 @@
+{
+	"bracketSameLine": true,
+	"bracketSpacing": true,
+	"experimentalTernaries": true,
+	"printWidth": 100,
+	"quoteProps": "as-needed",
+	"semi": true,
+	"singleQuote": false,
+	"trailingComma": "all",
+	"useTabs": true,
+	"tabWidth": 4,
+	"overrides": [
+		{
+			"files": ["*.yml", "*.yaml"],
+			"options": { "useTabs": false, "tabWidth": 2 }
+		}
+	]
+}

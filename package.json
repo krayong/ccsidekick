@@ -1,0 +1,54 @@
+{
+	"name": "ccsidekick-workspace",
+	"private": true,
+	"packageManager": "bun@1.3.14",
+	"workspaces": [
+		"packages/core",
+		"packages/packs/*"
+	],
+	"type": "module",
+	"scripts": {
+		"test": "bun test && bun test ./.claude/skills/pack-author/scripts/",
+		"typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.eslint.json --noEmit",
+		"lint": "eslint .",
+		"format": "prettier --write .",
+		"format:check": "prettier --check .",
+		"lint-pack": "bun packages/core/src/packs/lint.ts",
+		"pack-shot": "scripts/assets/pack-shot.sh",
+		"pack-readme": "scripts/assets/pack-readme.sh",
+		"readme:drift": "bun packages/core/scripts/readme-drift.ts",
+		"pricing:check": "bun packages/core/scripts/refresh-pricing.ts --check",
+		"pricing:refresh": "bun packages/core/scripts/refresh-pricing.ts --write && prettier --write packages/core/src/data/pricing.json",
+		"build": "bun run --cwd packages/core build",
+		"changeset": "changeset",
+		"ci:version": "changeset version && bun install",
+		"ci:publish": "bash scripts/publish/ci-publish.sh && changeset tag",
+		"link:global": "bun run build && mkdir -p \"$HOME/.local/bin\" && ln -sf \"$PWD/packages/core/dist/ccsidekick-render.js\" \"$HOME/.local/bin/ccsidekick-render\" && ln -sf \"$PWD/packages/core/dist/ccsidekick.js\" \"$HOME/.local/bin/ccsidekick\"",
+		"prepare": "[ -n \"$CI\" ] || git config core.hooksPath .githooks || true"
+	},
+	"devDependencies": {
+		"@changesets/cli": "^2.31.0",
+		"@eslint-community/eslint-plugin-eslint-comments": "^4.7.2",
+		"@types/bun": "^1.3.0",
+		"@types/node": "^20.19.0",
+		"@typescript-eslint/eslint-plugin": "^8.62.0",
+		"@typescript-eslint/parser": "^8.62.0",
+		"eslint": "^9.39.0",
+		"eslint-import-resolver-typescript": "^4.4.5",
+		"eslint-plugin-boundaries": "^6.0.2",
+		"eslint-plugin-import-x": "^4",
+		"eslint-plugin-react-hooks": "^7.1.1",
+		"eslint-plugin-regexp": "^3.1.1",
+		"eslint-plugin-sonarjs": "^4.1.0",
+		"eslint-plugin-unicorn": "^70.0.0",
+		"prettier": "^3.9.0",
+		"typescript": "^5.9.0",
+		"typescript-eslint": "^8.62.0"
+	},
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/krayong/ccsidekick.git"
+	},
+	"author": "Karan Gourisaria <ccsidekick@krayong.com>"
+}

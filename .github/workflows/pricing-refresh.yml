@@ -1,0 +1,112 @@
+# Daily monitor of the published Anthropic pricing page. Regenerates packages/core/src/data/pricing.json from
+# the page and, when the rates have moved, opens (or updates) a single PR for review. If the page shows a model
+# with no key mapping in the generator, it opens an issue instead so a human can decide the canonical key.
+#
+# Note: a PR opened with the default GITHUB_TOKEN does not itself trigger the CI workflow (GitHub's loop guard).
+# Re-run CI by closing/reopening the PR, or wire a PAT here if automatic CI on these PRs becomes important.
+name: Pricing Refresh
+
+on:
+  schedule:
+    - cron: "17 6 * * *" # daily, 06:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: pricing-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: ./.github/actions/setup
+
+      - name: Regenerate pricing.json from the published page
+        id: gen
+        run: |
+          set +e
+
+          bun packages/core/scripts/refresh-pricing.ts --write > refresh.log 2>&1
+
+          echo "code=$?" >> "$GITHUB_OUTPUT"
+
+          set -e
+
+          cat refresh.log
+
+      - name: Fail on an unexpected generator error
+        if: steps.gen.outputs.code != '0' && steps.gen.outputs.code != '2'
+        env:
+          CODE: ${{ steps.gen.outputs.code }}
+        run: |
+          echo "pricing refresh failed (exit $CODE)"
+          exit 1
+
+      - name: Open an issue for an unmapped model
+        if: steps.gen.outputs.code == '2'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="Pricing page has an unmapped model"
+
+          if gh issue list --state open --search "$title in:title" --json number -q '.[0].number' | grep -q .; then
+            echo "an open issue already tracks this; skipping"
+            exit 0
+          fi
+
+          {
+            echo "The daily pricing refresh saw a model on the page with no key mapping in"
+            echo "\`packages/core/scripts/refresh-pricing.ts\` (\`NAME_TO_KEY\`)."
+            echo
+            echo "Add the mapping (or an explicit \`null\` skip), then let the refresh regenerate \`pricing.json\`."
+            echo
+            echo '```'
+            cat refresh.log
+            echo '```'
+          } > issue-body.md
+
+          gh issue create --title "$title" --body-file issue-body.md
+
+      - name: Format the regenerated file
+        if: steps.gen.outputs.code == '0'
+        run: bunx prettier --write packages/core/src/data/pricing.json
+
+      - name: Open or update a PR when pricing changed
+        if: steps.gen.outputs.code == '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- packages/core/src/data/pricing.json; then
+            echo "pricing.json already in sync with the page"
+            exit 0
+          fi
+
+          branch="automated/pricing-refresh"
+
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git checkout -B "$branch"
+
+          git add packages/core/src/data/pricing.json
+
+          git commit -m "chore(pricing): sync pricing.json with published rates"
+
+          git push -f origin "$branch"
+
+          if gh pr list --head "$branch" --state open --json number -q '.[0].number' | grep -q .; then
+            echo "existing PR updated via force-push"
+          else
+            gh pr create --base main --head "$branch" \
+              --title "chore(pricing): sync pricing.json with published rates" \
+              --body "Automated daily sync from the [Anthropic pricing page](https://platform.claude.com/docs/en/about-claude/pricing). Review the rate changes before merging."
+          fi

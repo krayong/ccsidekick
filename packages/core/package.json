@@ -1,0 +1,70 @@
+{
+	"name": "ccsidekick",
+	"version": "0.0.0",
+	"type": "module",
+	"sideEffects": false,
+	"exports": {
+		"./package.json": "./package.json"
+	},
+	"bin": {
+		"ccsidekick-render": "./dist/ccsidekick-render.js",
+		"ccsidekick": "./dist/ccsidekick.js"
+	},
+	"scripts": {
+		"build": "bun scripts/build.ts"
+	},
+	"files": [
+		"dist",
+		"README.md"
+	],
+	"dependencies": {
+		"@ccsidekick/pack-batman": "workspace:*",
+		"@inkjs/ui": "2.0.0",
+		"ink": "^5.2.0",
+		"react": "^18.3.1",
+		"smol-toml": "^1.6.0"
+	},
+	"devDependencies": {
+		"@ccsidekick/pack-barbie": "workspace:*",
+		"@ccsidekick/pack-deadpool": "workspace:*",
+		"@ccsidekick/pack-harry-potter": "workspace:*",
+		"@ccsidekick/pack-hello-kitty": "workspace:*",
+		"@ccsidekick/pack-james-bond": "workspace:*",
+		"@ccsidekick/pack-spiderman": "workspace:*",
+		"ink-testing-library": "^4.0.0",
+		"@types/react": "^18.3.12"
+	},
+	"engines": {
+		"node": ">=20.6"
+	},
+	"keywords": [
+		"claude-code",
+		"claude",
+		"anthropic",
+		"statusline",
+		"status-line",
+		"cli",
+		"ascii-art",
+		"tui",
+		"terminal",
+		"themes",
+		"git",
+		"cost-tracking",
+		"token-usage",
+		"developer-tools",
+		"coding-companion",
+		"character"
+	],
+	"license": "MIT",
+	"description": "A customizable Claude Code status line with a reactive ASCII character and a full widget layer.",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/krayong/ccsidekick.git",
+		"directory": "packages/core"
+	},
+	"homepage": "https://github.com/krayong/ccsidekick#readme",
+	"bugs": {
+		"url": "https://github.com/krayong/ccsidekick/issues"
+	},
+	"author": "Karan Gourisaria <ccsidekick@krayong.com>"
+}

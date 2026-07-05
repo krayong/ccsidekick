@@ -1,0 +1,672 @@
+{
+	"schema": 1,
+	"name": "fixture",
+	"displayName": "Fixture",
+	"attribution": {
+		"artist": "Fixture Artist",
+		"source": "https://example.com/fixture"
+	},
+	"emblem": "★",
+	"tone": "mild",
+	"theme": {
+		"hues": [75, 147, 77, 222, 210],
+		"comment": [75, 147, 222],
+		"signals": { "nominal": 77, "caution": 214, "critical": 203 },
+		"separator": 147
+	},
+	"art": [
+		"   .-----------.         ",
+		"   |  o   o    |         ",
+		"   |    __     |         ",
+		"   |  \\____/   |         ",
+		"   |           |         ",
+		"   |  FIXTURE  |         ",
+		"   |           |         ",
+		"   '-----------'         ",
+		"      idle 1             "
+	],
+	"lines": {
+		"mood": {
+			"idle": {
+				"stranger": [
+					"mood idle stranger line"
+				],
+				"acquaintance": [
+					"mood idle acquaintance line"
+				],
+				"friend": [
+					"mood idle friend line"
+				],
+				"partner": [
+					"mood idle partner line"
+				],
+				"legend": [
+					"mood idle legend line"
+				]
+			},
+			"busy": {
+				"stranger": [
+					"mood busy stranger line"
+				],
+				"acquaintance": [
+					"mood busy acquaintance line"
+				],
+				"friend": [
+					"mood busy friend line"
+				],
+				"partner": [
+					"mood busy partner line"
+				],
+				"legend": [
+					"mood busy legend line"
+				]
+			},
+			"happy": {
+				"stranger": [
+					"mood happy stranger line"
+				],
+				"acquaintance": [
+					"mood happy acquaintance line"
+				],
+				"friend": [
+					"mood happy friend line"
+				],
+				"partner": [
+					"mood happy partner line"
+				],
+				"legend": [
+					"mood happy legend line"
+				]
+			},
+			"struggling": {
+				"stranger": [
+					"mood struggling stranger line"
+				],
+				"acquaintance": [
+					"mood struggling acquaintance line"
+				],
+				"friend": [
+					"mood struggling friend line"
+				],
+				"partner": [
+					"mood struggling partner line"
+				],
+				"legend": [
+					"mood struggling legend line"
+				]
+			},
+			"recovery": {
+				"stranger": [
+					"mood recovery stranger line"
+				],
+				"acquaintance": [
+					"mood recovery acquaintance line"
+				],
+				"friend": [
+					"mood recovery friend line"
+				],
+				"partner": [
+					"mood recovery partner line"
+				],
+				"legend": [
+					"mood recovery legend line"
+				]
+			}
+		},
+		"greeting": {
+			"morning": {
+				"stranger": [
+					"greeting morning stranger line"
+				],
+				"acquaintance": [
+					"greeting morning acquaintance line"
+				],
+				"friend": [
+					"greeting morning friend line"
+				],
+				"partner": [
+					"greeting morning partner line"
+				],
+				"legend": [
+					"greeting morning legend line"
+				]
+			},
+			"day": {
+				"stranger": [
+					"greeting day stranger line"
+				],
+				"acquaintance": [
+					"greeting day acquaintance line"
+				],
+				"friend": [
+					"greeting day friend line"
+				],
+				"partner": [
+					"greeting day partner line"
+				],
+				"legend": [
+					"greeting day legend line"
+				]
+			},
+			"evening": {
+				"stranger": [
+					"greeting evening stranger line"
+				],
+				"acquaintance": [
+					"greeting evening acquaintance line"
+				],
+				"friend": [
+					"greeting evening friend line"
+				],
+				"partner": [
+					"greeting evening partner line"
+				],
+				"legend": [
+					"greeting evening legend line"
+				]
+			},
+			"night": {
+				"stranger": [
+					"greeting night stranger line"
+				],
+				"acquaintance": [
+					"greeting night acquaintance line"
+				],
+				"friend": [
+					"greeting night friend line"
+				],
+				"partner": [
+					"greeting night partner line"
+				],
+				"legend": [
+					"greeting night legend line"
+				]
+			},
+			"weekend": {
+				"stranger": [
+					"greeting weekend stranger line"
+				],
+				"acquaintance": [
+					"greeting weekend acquaintance line"
+				],
+				"friend": [
+					"greeting weekend friend line"
+				],
+				"partner": [
+					"greeting weekend partner line"
+				],
+				"legend": [
+					"greeting weekend legend line"
+				]
+			}
+		},
+		"firstContact": {
+			"stranger": [
+				"first contact stranger line"
+			],
+			"acquaintance": [
+				"first contact acquaintance line"
+			],
+			"friend": [
+				"first contact friend line"
+			],
+			"partner": [
+				"first contact partner line"
+			],
+			"legend": [
+				"first contact legend line"
+			]
+		},
+		"milestone": {
+			"tier_up": {
+				"stranger": [
+					"milestone tier_up stranger line"
+				],
+				"acquaintance": [
+					"milestone tier_up acquaintance line"
+				],
+				"friend": [
+					"milestone tier_up friend line"
+				],
+				"partner": [
+					"milestone tier_up partner line"
+				],
+				"legend": [
+					"milestone tier_up legend line"
+				]
+			},
+			"comeback": {
+				"stranger": [
+					"milestone comeback stranger line"
+				],
+				"acquaintance": [
+					"milestone comeback acquaintance line"
+				],
+				"friend": [
+					"milestone comeback friend line"
+				],
+				"partner": [
+					"milestone comeback partner line"
+				],
+				"legend": [
+					"milestone comeback legend line"
+				]
+			},
+			"streak": {
+				"stranger": [
+					"milestone streak stranger line"
+				],
+				"acquaintance": [
+					"milestone streak acquaintance line"
+				],
+				"friend": [
+					"milestone streak friend line"
+				],
+				"partner": [
+					"milestone streak partner line"
+				],
+				"legend": [
+					"milestone streak legend line"
+				]
+			},
+			"anniversary": {
+				"stranger": [
+					"milestone anniversary stranger line"
+				],
+				"acquaintance": [
+					"milestone anniversary acquaintance line"
+				],
+				"friend": [
+					"milestone anniversary friend line"
+				],
+				"partner": [
+					"milestone anniversary partner line"
+				],
+				"legend": [
+					"milestone anniversary legend line"
+				]
+			}
+		},
+		"positiveGit": {
+			"clean_tree": {
+				"stranger": [
+					"git clean_tree stranger line"
+				],
+				"acquaintance": [
+					"git clean_tree acquaintance line"
+				],
+				"friend": [
+					"git clean_tree friend line"
+				],
+				"partner": [
+					"git clean_tree partner line"
+				],
+				"legend": [
+					"git clean_tree legend line"
+				]
+			},
+			"op_cleared": {
+				"stranger": [
+					"git op_cleared stranger line"
+				],
+				"acquaintance": [
+					"git op_cleared acquaintance line"
+				],
+				"friend": [
+					"git op_cleared friend line"
+				],
+				"partner": [
+					"git op_cleared partner line"
+				],
+				"legend": [
+					"git op_cleared legend line"
+				]
+			},
+			"branch_created": {
+				"stranger": [
+					"git branch_created stranger line"
+				],
+				"acquaintance": [
+					"git branch_created acquaintance line"
+				],
+				"friend": [
+					"git branch_created friend line"
+				],
+				"partner": [
+					"git branch_created partner line"
+				],
+				"legend": [
+					"git branch_created legend line"
+				]
+			},
+			"tag_pushed": {
+				"stranger": [
+					"git tag_pushed stranger line"
+				],
+				"acquaintance": [
+					"git tag_pushed acquaintance line"
+				],
+				"friend": [
+					"git tag_pushed friend line"
+				],
+				"partner": [
+					"git tag_pushed partner line"
+				],
+				"legend": [
+					"git tag_pushed legend line"
+				]
+			}
+		},
+		"egg": {
+			"stranger": [
+				"egg stranger line"
+			],
+			"acquaintance": [
+				"egg acquaintance line"
+			],
+			"friend": [
+				"egg friend line"
+			],
+			"partner": [
+				"egg partner line"
+			],
+			"legend": [
+				"egg legend line"
+			]
+		},
+		"event": {
+			"test_fail": [
+				"event test_fail reaction"
+			],
+			"build_fail": [
+				"event build_fail reaction"
+			],
+			"typecheck_fail": [
+				"event typecheck_fail reaction"
+			],
+			"lint": [
+				"event lint reaction"
+			],
+			"format": [
+				"event format reaction"
+			],
+			"install": [
+				"event install reaction"
+			],
+			"git": [
+				"event git reaction"
+			],
+			"file_edit": [
+				"event file_edit reaction"
+			],
+			"search": [
+				"event search reaction"
+			],
+			"web_fetch": [
+				"event web_fetch reaction"
+			],
+			"todo_update": [
+				"event todo_update reaction"
+			],
+			"agent_spawn": [
+				"event agent_spawn reaction"
+			],
+			"skill_run": [
+				"event skill_run reaction"
+			],
+			"docker": [
+				"event docker reaction"
+			],
+			"k8s": [
+				"event k8s reaction"
+			],
+			"deploy": [
+				"event deploy reaction"
+			],
+			"db_migrate": [
+				"event db_migrate reaction"
+			],
+			"dangerous": [
+				"event dangerous reaction"
+			]
+		},
+		"stack": {
+			"web": {
+				"slow": [
+					"web slow"
+				],
+				"fail": [
+					"web fail"
+				]
+			},
+			"python": {
+				"slow": [
+					"python slow"
+				],
+				"fail": [
+					"python fail"
+				]
+			},
+			"sql": {
+				"slow": [
+					"sql slow"
+				],
+				"fail": [
+					"sql fail"
+				]
+			},
+			"web-framework": {
+				"slow": [
+					"web-framework slow"
+				],
+				"fail": [
+					"web-framework fail"
+				]
+			},
+			"docker": {
+				"slow": [
+					"docker slow"
+				],
+				"fail": [
+					"docker fail"
+				]
+			},
+			"java": {
+				"slow": [
+					"java slow"
+				],
+				"fail": [
+					"java fail"
+				]
+			},
+			"go": {
+				"slow": [
+					"go slow"
+				],
+				"fail": [
+					"go fail"
+				]
+			},
+			"node": {
+				"slow": [
+					"node slow"
+				],
+				"fail": [
+					"node fail"
+				]
+			},
+			"dotnet": {
+				"slow": [
+					"dotnet slow"
+				],
+				"fail": [
+					"dotnet fail"
+				]
+			},
+			"cpp": {
+				"slow": [
+					"cpp slow"
+				],
+				"fail": [
+					"cpp fail"
+				]
+			},
+			"php": {
+				"slow": [
+					"php slow"
+				],
+				"fail": [
+					"php fail"
+				]
+			},
+			"rust": {
+				"slow": [
+					"rust slow"
+				],
+				"fail": [
+					"rust fail"
+				]
+			},
+			"kubernetes": {
+				"slow": [
+					"kubernetes slow"
+				],
+				"fail": [
+					"kubernetes fail"
+				]
+			},
+			"ml": {
+				"slow": [
+					"ml slow"
+				],
+				"fail": [
+					"ml fail"
+				]
+			},
+			"android": {
+				"slow": [
+					"android slow"
+				],
+				"fail": [
+					"android fail"
+				]
+			},
+			"ruby": {
+				"slow": [
+					"ruby slow"
+				],
+				"fail": [
+					"ruby fail"
+				]
+			},
+			"ios": {
+				"slow": [
+					"ios slow"
+				],
+				"fail": [
+					"ios fail"
+				]
+			},
+			"terraform": {
+				"slow": [
+					"terraform slow"
+				],
+				"fail": [
+					"terraform fail"
+				]
+			},
+			"graphql": {
+				"slow": [
+					"graphql slow"
+				],
+				"fail": [
+					"graphql fail"
+				]
+			},
+			"flutter": {
+				"slow": [
+					"flutter slow"
+				],
+				"fail": [
+					"flutter fail"
+				]
+			},
+			"react-native": {
+				"slow": [
+					"react-native slow"
+				],
+				"fail": [
+					"react-native fail"
+				]
+			},
+			"scala": {
+				"slow": [
+					"scala slow"
+				],
+				"fail": [
+					"scala fail"
+				]
+			},
+			"protobuf": {
+				"slow": [
+					"protobuf slow"
+				],
+				"fail": [
+					"protobuf fail"
+				]
+			},
+			"game": {
+				"slow": [
+					"game slow"
+				],
+				"fail": [
+					"game fail"
+				]
+			},
+			"docs": {
+				"slow": [
+					"docs slow"
+				],
+				"fail": [
+					"docs fail"
+				]
+			},
+			"r": {
+				"slow": [
+					"r slow"
+				],
+				"fail": [
+					"r fail"
+				]
+			},
+			"cuda": {
+				"slow": [
+					"cuda slow"
+				],
+				"fail": [
+					"cuda fail"
+				]
+			}
+		},
+		"pressure": {
+			"compact_hint": [
+				"pressure compact_hint"
+			],
+			"block_limit": [
+				"pressure block_limit"
+			],
+			"weekly_limit": [
+				"pressure weekly_limit"
+			]
+		},
+		"dateEgg": [
+			"a special-day easter egg",
+			"another date egg"
+		]
+	},
+	"spinnerVerbs": [
+		"pondering",
+		"scheming",
+		"tinkering"
+	]
+}

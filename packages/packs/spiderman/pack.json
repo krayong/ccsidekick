@@ -1,0 +1,1155 @@
+{
+	"schema": 1,
+	"name": "spiderman",
+	"displayName": "Spider-Man",
+	"attribution": {
+		"artist": "emojicombos.com",
+		"source": "https://emojicombos.com/spiderman-ascii-art"
+	},
+	"emblem": "🕷",
+	"tone": "mild",
+	"theme": {
+		"hues": [
+			203,
+			209,
+			45,
+			39,
+			33
+		],
+		"comment": [
+			203,
+			45
+		],
+		"signals": {
+			"nominal": 47,
+			"caution": 214,
+			"critical": 196
+		},
+		"separator": 60
+	},
+	"art": [
+		"⠀⠀⣰⠃⣸⠁⠀⠀⠀⠀⠀⠀⠀⠀⠈⣇⠘⣆⠀⠀",
+		"⠀⢀⡏⢠⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⡄⢹⡀⠀",
+		"⠀⣸⡇⠘⠷⢖⣒⡲⣾⣤⣤⣷⢖⣒⡲⠾⠃⢸⣇⠀",
+		"⠀⠻⠷⠚⠋⣩⡭⢭⣿⣿⣿⣿⡭⢭⣍⠙⠓⠾⠟⠀",
+		"⠀⠀⢀⣠⠞⢩⣴⠏⣽⣿⣿⣯⠹⣦⡍⠳⣄⡀⠀⠀",
+		"⣤⡶⠋⠁⠀⢸⣿⠀⢹⣿⣿⡏⠀⣿⡇⠀⠈⠙⢶⣤",
+		"⢻⡇⠀⠀⠀⢸⣿⠀⠈⣿⣿⠁⠀⣿⡇⠀⠀⠀⢸⡟",
+		"⢸⡇⠀⠀⠀⠈⣿⠀⠀⠘⠃⠀⠀⣿⠁⠀⠀⠀⢸⡇",
+		"⠀⢷⠀⠀⠀⠀⢻⠀⠀⠀⠀⠀⠀⡟⠀⠀⠀⠀⡾⠀"
+	],
+	"lines": {
+		"mood": {
+			"idle": {
+				"stranger": [
+					"New here! Spider-Man. Friendly neighborhood, the whole deal. Hi.",
+					"Just perched on the ceiling. Spider thing. Don't mind me up here.",
+					"I mix my own web-fluid, by the way. Chemistry! You into science?",
+					"Standing by. Well, hanging by, technically. Ready when you are.",
+					"Kid from Queens, that's me. Read the Bugle? Please ignore Jameson.",
+					"Web-shooters charged and waiting. Just say the word, honestly.",
+					"Still learning your name, sorry. My spider-sense is new to you.",
+					"Between swings. I look busy so Aunt May doesn't start worrying.",
+					"Quiet stretch. I usually fill these with nervous science facts.",
+					"Whole rooftop to myself. Great view. You'd love Queens, promise."
+				],
+				"acquaintance": [
+					"Oh hey, you're back. Spider-sense picked you out of the crowd.",
+					"Chilling upside down. Blood rushes to my head. You adjust.",
+					"Slow patrol today. Not complaining. Queens likes a quiet one.",
+					"I recognize your footsteps now. Spider-sense filed them away.",
+					"Restringing a web-shooter. Maintenance between the big swings.",
+					"Nice and calm. I'll just watch the rooftops and hum to myself.",
+					"You again! Good. The city's better with a familiar face around.",
+					"Taking five. Even friendly neighborhood heroes get a break.",
+					"Sketching web-trajectories in my head. Nerd hobby. It relaxes me.",
+					"Just hanging. Literally. Spider-sense says today's a calm one."
+				],
+				"friend": [
+					"Just hanging out. Upside down. It's our whole vibe. What's up?",
+					"Slow one today, huh. We've earned a lazy rooftop afternoon.",
+					"Spider-sense is quiet. That means it's you-and-me time. I like it.",
+					"Restocking web-fluid while we wait. You know how I get in the lab.",
+					"Queens is peaceful. Let's enjoy it before something thwips.",
+					"You know the drill. I perch, I quip, we wait for the good part.",
+					"Nothing buzzing. Perfect. Tell me something. I've got jokes ready.",
+					"Between things, our favorite place. Aunt May would say eat up.",
+					"Just us and the skyline. This never gets old. Not for me anyway.",
+					"Chilling on the water tower. Our spot. I saved you the good view."
+				],
+				"partner": [
+					"On the clock again, you and me. Web-fluid's loaded. Let's roll.",
+					"Quiet on the wire. I'll keep watch. You know I've always got you.",
+					"Standing by, partner. Spider-sense on you, eyes on the horizon.",
+					"Slow shift. Good. We both know how fast it flips. I'm ready.",
+					"Spider-sense reads you like a web-line now. All calm. I like it.",
+					"Perched and patient. We wait out a rooftop better than most.",
+					"Web-shooters primed. Say go and I'm off the ledge with you.",
+					"Between beats. No words needed. We've run this a hundred times.",
+					"Holding the high line for us. Nothing swings past. Same as ever.",
+					"Easy stretch, teammate. I'll take point when the buzz comes back."
+				],
+				"legend": [
+					"All these years swinging together. Queens still stands. Not bad.",
+					"Quiet night. Earned a few of these. The city rests, so do we.",
+					"Old spider, same rooftops. Still keeping watch over Queens.",
+					"I've hung here a long time. The responsibility part never quits.",
+					"Calm shift. I've learned to sit in these. They don't last long.",
+					"Neighborhood's safe tonight. That's the whole job, quietly done.",
+					"Seen a thousand skylines like this. Still stop to look. Always.",
+					"Web-fluid's older recipe now, refined. Some things you just keep.",
+					"A hero learns the quiet counts as much as the swing.",
+					"Long road from that spider bite. Worth every mile. Still here."
+				]
+			},
+			"busy": {
+				"stranger": [
+					"On it! Web-shooters out, moving fast. Trying to impress, honestly.",
+					"Working the problem. Give me a sec. I'm quicker than I look.",
+					"Mid-swing here! Don't let go, I've got this part. Probably.",
+					"Heads down, thwipping through it. First job with you, no pressure.",
+					"Busy busy! Spider-sense fully on. Really don't want to fumble it."
+				],
+				"acquaintance": [
+					"In the zone. I'll web through this stack and holler when clear.",
+					"Cranking away. Spider-sense says we're on the right rooftop here.",
+					"Working it. You know I move fast once the web-fluid's flowing.",
+					"Mid-task, don't mind the thwips. Just clearing a path through it.",
+					"Heads down. I've got a rhythm going. Queens-speed, they call it."
+				],
+				"friend": [
+					"You're in the zone, so I'll web the distractions to the wall.",
+					"We're cooking now. I'll swing cover while you push this through.",
+					"Deep in it together. I'll quip less and thwip more for a minute.",
+					"On the job, us two. I've got the messy part. You steer the ship.",
+					"Working hard, our favorite kind of busy. Don't stop, I've got you."
+				],
+				"partner": [
+					"Locked in, partner. I'll clear the lanes, you drive it home.",
+					"Full speed. Say the word and I re-web on the fly. I'm tracking.",
+					"Deep in it. I sling the clutter aside, you read my rhythm.",
+					"Heads down together. I read your moves before you make them.",
+					"On task. I'll swing point through the mess. Meet you far side."
+				],
+				"legend": [
+					"Working steady. Years taught me fast isn't the same as rushed.",
+					"In the thick of it. The swing's the same, the calm is earned.",
+					"Heads down. Great power means finishing the job right, not loud.",
+					"Deep in the work. Let the young spiders sprint. I keep the line.",
+					"Grinding it out. The city won't clap. I do the part anyway."
+				]
+			},
+			"happy": {
+				"stranger": [
+					"We did it! Or you did. I mostly cheered. Still counts, right?",
+					"Yes! That worked! Okay, playing cool now. Very cool. So cool.",
+					"Stuck the landing! First one with you. Hoped it'd go like that.",
+					"Whoo! Spider-sense loves a win. Not usually this loud, sorry.",
+					"Nailed it! Was that good? That felt good. Tell me that was good."
+				],
+				"acquaintance": [
+					"Nice! That's the good stuff. Spider-sense is doing a happy buzz.",
+					"Clean win. See, we're getting a rhythm going, you and me.",
+					"Thwip, done, gorgeous. I could get used to wins like that.",
+					"There it is! Rooftop victory lap, small one. You earned it.",
+					"Boom. That landed sweet. Queens would be proud, if it noticed."
+				],
+				"friend": [
+					"Nailed it! We make this look easy. Don't tell Jameson, though.",
+					"Yes! That's us at our best. High five, I'll web you one up here.",
+					"Clean as anything. This is why we're a good team, you and me.",
+					"Big win! Aunt May's gonna hear about this. She loves your work.",
+					"That's the good stuff. We swung it right out over the city."
+				],
+				"partner": [
+					"Nailed it, partner. Clean as a fresh web-line. That's us.",
+					"Perfect. You called it, I backed it, we stuck the landing.",
+					"Clean win. Didn't even need to talk it out. Shorthand pays off.",
+					"That's the one. We've done this dance enough to make it art.",
+					"Boom, teammate. Right on the mark. I never doubted the play."
+				],
+				"legend": [
+					"Well done. Wins still feel good after all these years. Good.",
+					"Clean. Did it right, did it quiet. That's the whole reward.",
+					"There it is. No fanfare needed. The neighborhood's a little safer.",
+					"Nice work. I've seen a lot of these. This one earns its keep.",
+					"Solid. The city won't send a thank-you. I'll say it. Well done."
+				]
+			},
+			"struggling": {
+				"stranger": [
+					"Oof, that broke. My fault probably. We just re-web and try again.",
+					"Rough one! I've faceplanted off buildings. This is nothing. On.",
+					"Snag! Spider-sense buzzed late. First-week thing. We're okay.",
+					"Missed the swing. No biggie. First-rodeo jitters, mine not yours.",
+					"That didn't stick. Web-fluid's fussy sometimes. Back up we go."
+				],
+				"acquaintance": [
+					"Rough swing. I've bounced off worse walls. We shake it off, easy.",
+					"Snag hit. Spider-sense lagged a half-beat. No harm, we're good.",
+					"Ouch, that broke. Not on you. Even Stark tech throws a fault.",
+					"Missed it. That's the job some days. We dust off and swing back.",
+					"Tripped a bit. Queens didn't fall. Neither do we. Let's reset."
+				],
+				"friend": [
+					"Rough swing. I've faceplanted off taller buildings. We're fine.",
+					"That broke, but hey, we've climbed out of worse together. Onward.",
+					"Snag! Spider-sense missed one. Happens. We re-web and keep going.",
+					"Ugh. Not our smoothest. But you and me? We always get back up.",
+					"Wobble in the line. No big deal. We've swung through messier."
+				],
+				"partner": [
+					"We hit a wall. Fine. We've bounced off plenty. Line's still good.",
+					"Snag, partner. Not a scratch on us. We reset and push through.",
+					"That broke. You know the drill. We climb back and take a run.",
+					"Rough patch. We've weathered worse side by side. Shake it off.",
+					"Missed the mark. No blame here. We just re-web and swing again."
+				],
+				"legend": [
+					"It broke. After all these years, that's just Tuesday. We recover.",
+					"A setback. Great power means you get up. Every time. So we do.",
+					"Rough one. I've fallen off higher and stood up. This is small.",
+					"Snag in the line. The city's still standing. So are we. Onward.",
+					"That stumbled. Failing isn't falling. We re-aim and swing on."
+				]
+			},
+			"recovery": {
+				"stranger": [
+					"On your feet again! New here and already bouncing back. Love it.",
+					"Whew, we're climbing out. First save with you. Feels pretty good!",
+					"Recovering! Web-fluid's flowing again. Told you we'd bounce back.",
+					"Up we go! Spider-sense steadying out. That wasn't so bad, right?",
+					"On the mend! I knew we'd re-web it. Okay, I hoped. Same thing."
+				],
+				"acquaintance": [
+					"Back up already? The spider sticks the landing. Eventually.",
+					"Climbing out nice and steady. Spider-sense says we're clear now.",
+					"We're recovering. See? A stumble's just a swing that missed.",
+					"On the way back up. Queens taught me to find the next hold.",
+					"Righted ourselves. That's the rhythm. Down, then up, then swing."
+				],
+				"friend": [
+					"Back up! We're good at this comeback stuff, you and me. Told you.",
+					"Climbing out together. This is the part where we grin about it.",
+					"Recovering fast. See, a setback's just us picking a new line.",
+					"We're back on the wall. Knew it. We never stay down long, do we.",
+					"Steady again. That's our move. Fall, laugh, re-web, keep going."
+				],
+				"partner": [
+					"Back on our feet, partner. Same as always. Off the ledge we go.",
+					"Climbing out clean. No drama. This is just what we do together.",
+					"Recovered. You steadied, I swung, we're moving again. Shorthand.",
+					"Up and tracking. Never doubted us. We nail comebacks half-asleep.",
+					"Line's tight again. Good. We turn a stumble into a running start."
+				],
+				"legend": [
+					"Back up. That's the ethic. You fall, you rise, you keep watch.",
+					"Steady again. Years of this taught me the rise is the real work.",
+					"Recovered. I've faceplanted plenty. Standing's the easy part now.",
+					"On our feet. The city needed a minute. We gave it. Now we swing.",
+					"Climbing on. Web-fluid's still flowing, so am I. Let's go."
+				]
+			}
+		},
+		"greeting": {
+			"morning": {
+				"stranger": [
+					"Morning! Spider-Man here. Coffee first, then the heroics.",
+					"Hi! Early one, huh? I web-sling best before homeroom. Really.",
+					"Good morning! New around here. Aunt May made toast. Hello!"
+				],
+				"acquaintance": [
+					"Morning! Spider-sense clocked you already. Nice rooftops today.",
+					"Hey, early bird. Did a sunrise swing over Queens. You too?",
+					"Morning again! Quiet before the Bugle prints. Love it."
+				],
+				"friend": [
+					"Morning! We open early, huh? I brought web-fluid and jokes.",
+					"Hey you. Sunrise on the rooftops, coffee's hot. Let's swing in.",
+					"Good morning, pal. Queens is waking up. So are we. Let's roll."
+				],
+				"partner": [
+					"Morning. You, me, the rooftops. Web-fluid's loaded. Let's move.",
+					"Early call, I like it. Spider-sense warm, coffee warmer. Ready?",
+					"Morning, teammate. Fresh cartridges, clear skies. We're on."
+				],
+				"legend": [
+					"Morning. All these Queens sunrises still get me. Let's go.",
+					"Good morning. City woke up safe. That's the quiet win. Onward.",
+					"Morning, friend. Beat the alarm and the Bugle. Off we go."
+				]
+			},
+			"day": {
+				"stranger": [
+					"Afternoon! Spider-Man. Skipped lunch to swing by. Worth it!",
+					"Hi there! Midday patrol. The rooftops get toasty by noon.",
+					"Hello! Sun's high over Queens. Perfect web-slinging weather."
+				],
+				"acquaintance": [
+					"Hey, afternoon! Spider-sense knew that was you. Good timing.",
+					"Midday check-in! Swung past the Bugle. Jameson's yelling again.",
+					"Afternoon! City's buzzing, so's my spider-sense. Let's dig in."
+				],
+				"friend": [
+					"Afternoon, pal! We're hitting our stride. Rooftops are ours.",
+					"Hey, lunch-hour hero. Saved you a swing over Queens. Ready?",
+					"Midday and rolling. I love this part of the day. Let's go."
+				],
+				"partner": [
+					"Afternoon, teammate. Peak sun, peak swinging. We've got this.",
+					"Midday call. You know the drill. Cartridges loaded. Let's move.",
+					"Afternoon. Half the day's ours already. Nice. Keep swinging."
+				],
+				"legend": [
+					"Afternoon. Sun over Queens, city humming. An honor. Onward.",
+					"Midday, friend. Quiet streets mean we did the morning right.",
+					"Afternoon. Years of these patrols and I still love the view."
+				]
+			},
+			"evening": {
+				"stranger": [
+					"Evening! Spider-Man. Golden hour makes the rooftops glow. Hi!",
+					"Hi! Sun's dipping over Queens. Best swinging light, I promise.",
+					"Good evening! New face here. Aunt May's got dinner on. Hello!"
+				],
+				"acquaintance": [
+					"Evening! Spider-sense lit up. Sunset patrol's my favorite kind.",
+					"Hey, evening again. Queens goes gold about now. Pretty great.",
+					"Evening! Bugle's put the day to bed. We get the good hours."
+				],
+				"friend": [
+					"Evening, pal! Golden hour on the rooftops. We earned this.",
+					"Hey you. Sun's setting on Queens. Let's swing into the evening.",
+					"Good evening! Best light of the day and we're both here. Nice."
+				],
+				"partner": [
+					"Evening, teammate. Sunset swing incoming. Web-fluid's set.",
+					"Evening call. Golden light, easy rapport. Let's finish strong.",
+					"Evening. City glowing, spider-sense calm. Good to be on."
+				],
+				"legend": [
+					"Evening, friend. Sunsets over Queens never got old. Let's go.",
+					"Good evening. Day's winding down safe. That's the whole job.",
+					"Evening. Golden hour, quiet city. Gentle end to the watch."
+				]
+			},
+			"night": {
+				"stranger": [
+					"Night patrol! Spider-Man. City goes quiet. I fill it with talk.",
+					"Hi! Late one, huh? Rooftops are cooler after dark. Nice.",
+					"Good... night, really. New here. The Queens skyline glows!"
+				],
+				"acquaintance": [
+					"Night shift! Spider-sense hums low after dark. Cozy, honestly.",
+					"Hey, late again. My favorite patrol. Queens gets kind of quiet.",
+					"Nighttime! Bugle's asleep, city's dim. We get the calm hours."
+				],
+				"friend": [
+					"Late patrol, pal? My favorite. The city goes soft and quiet.",
+					"Hey you, night owl. Rooftops under stars. Let's swing gently.",
+					"Evening turned night and we're still at it. Love it. Let's go."
+				],
+				"partner": [
+					"Night call, teammate. Quiet city, sharp sense. We're set.",
+					"Late shift. You and me, dim rooftops, easy quiet. Let's finish.",
+					"Nighttime. City's asleep, we're not. Web-fluid's loaded. Go."
+				],
+				"legend": [
+					"Night, friend. All these quiet Queens hours. Worth it. Go.",
+					"Late one. The city sleeps because we kept the watch. Onward.",
+					"Nighttime. Stars over Queens, calm streets. The watch goes on."
+				]
+			},
+			"weekend": {
+				"stranger": [
+					"Weekend! Spider-Man. Heroes don't clock out. But hi anyway!",
+					"Hi! It's the weekend. No homework, more swinging. Best day.",
+					"Hello! Weekend energy. Aunt May's baking. I smell it. Hello!"
+				],
+				"acquaintance": [
+					"Weekend! Spider-sense is off-duty relaxed. Well, mostly. Hey.",
+					"Hey, weekend hangout. Queens is slow and sunny. I like it here.",
+					"Weekend vibes! Bugle's thin today. More rooftops for us. Nice."
+				],
+				"friend": [
+					"Weekend, pal! We keep showing up. Best kind of stubborn. Go.",
+					"Hey you. Lazy weekend swing over Queens? I'm always in.",
+					"It's the weekend and we're still a team. I like that. Go."
+				],
+				"partner": [
+					"Weekend call, teammate. Off the clock, still on. That's us.",
+					"Weekend. Slow city, web-fluid packed. Let's cruise a while.",
+					"Weekend shift. You know I'd rather swing with you. Let's roll."
+				],
+				"legend": [
+					"Weekend, friend. Even a neighborhood hero rests. Mostly. Go.",
+					"Weekend. Queens still stands after all these years. Nice.",
+					"Gentle weekend, gentle watch. Ben would nod at that one."
+				]
+			}
+		},
+		"firstContact": {
+			"stranger": [
+				"Hi! Spider-Man. Friendly, neighborhood, the whole title. Go!",
+				"Oh, a new face! I'm Spider-Man. You guessed, right? Hello.",
+				"Hello! Web-shooters, wisecracks, from Queens. That's me. Hi!"
+			],
+			"acquaintance": [
+				"Hey! Spider-Man. Something says we'll get along fine. Welcome.",
+				"Oh hi! New here? I'm Spidey. Spider-sense says you're cool.",
+				"Hello! Peter, I mean, Spider-Man. Glad you swung by. Hi."
+			],
+			"friend": [
+				"Hey, welcome! Spider-Man. Feels like we'll be a good team.",
+				"Hi there! Spider-Man. Come on in, rooftops to swing. Welcome!",
+				"Hello, friend! Spidey here. Something says we click. Let's go."
+			],
+			"partner": [
+				"Welcome aboard! Spider-Man. I've got your back from swing one.",
+				"Hey, teammate! Spider-Man. Feels like we've done this. Go.",
+				"Hi! Spidey. You've got a partner in the mask now. Loaded up."
+			],
+			"legend": [
+				"Welcome. Your friendly neighborhood Spider-Man. Glad you came.",
+				"Hello, friend. Spidey. Good to finally meet you. Let's go.",
+				"Hi. Spider-Man, Queens' own. At this a while. Happy you came."
+			]
+		},
+		"milestone": {
+			"tier_up": {
+				"stranger": [
+					"My spider-sense just upgraded you. Nice to climb a rung!",
+					"We climbed a tier! I'd high-five but I'm on the ceiling.",
+					"New tier already? I swung in nervous. This really helps."
+				],
+				"acquaintance": [
+					"Another tier! See, my spider-sense had a good feeling.",
+					"We moved up a notch. The jokes are coming easier now.",
+					"Tier bump! You're officially not a stranger on my rooftop."
+				],
+				"friend": [
+					"Look at us, moving up a tier! Knew we were a good team.",
+					"We moved up a rung together. Best swing partner in Queens, easy.",
+					"New tier! Feels like an inside joke only we two get now."
+				],
+				"partner": [
+					"Tier up. You and me, same wavelength. Didn't even need words.",
+					"Up a tier. You've got my back, I've got the web-shooters.",
+					"Another rung. We barely talk now, just swing in sync."
+				],
+				"legend": [
+					"Highest tier. All these years, and the work still matters.",
+					"Top rung together. Still showing up, you and me. That's it.",
+					"Legend tier. Neighborhood's still standing. That's the job."
+				]
+			},
+			"comeback": {
+				"stranger": [
+					"You came back! I wasn't sure. Spiders are patient, though.",
+					"Hey, you're back! New around here, but glad you returned.",
+					"Back after a bit? My spider-sense lit right up. Welcome!"
+				],
+				"acquaintance": [
+					"You're back! Told you my spider-sense remembers people.",
+					"Return swing! A little rust just means a warm-up first.",
+					"Back in the swing? Good. The rooftops missed the company."
+				],
+				"friend": [
+					"There you are! Missed our swings. City felt quiet, honest.",
+					"Back with me! A rough patch is just the setup for a comeback.",
+					"You're home! We've bounced off worse walls than this one."
+				],
+				"partner": [
+					"Back on the clock. Rough stretch behind us. Let's swing.",
+					"You're back. No speech needed. Grab a web-line, partner.",
+					"There's my teammate. Off days happen. We swing past them."
+				],
+				"legend": [
+					"You came back. Getting up again is the whole job, really.",
+					"Back again. Years of this taught me: you always return.",
+					"Welcome home. The city waits. Getting back up is the work."
+				]
+			},
+			"streak": {
+				"stranger": [
+					"A streak already? I'm impressed. Don't tell my spider-sense.",
+					"Look at you, on a roll! I'll try to keep up, promise.",
+					"Consistent already! Even my web-fluid isn't this steady."
+				],
+				"acquaintance": [
+					"Nice streak! You're making the rooftops look organized.",
+					"A real streak going. My spider-sense loves a good pattern.",
+					"Steady run! You keep this up, I'll keep the jokes coming."
+				],
+				"friend": [
+					"We're on a streak! This is the fun kind of routine.",
+					"Look at our streak! We make consistency look downright cool.",
+					"We're rolling! Every swing landing right where we aim."
+				],
+				"partner": [
+					"Streak's holding. You and me, clean swings, no notes.",
+					"Still on a roll. We've got a rhythm now. Don't jinx it.",
+					"Streak intact. Same wavelength, same clean landings. Nice."
+				],
+				"legend": [
+					"Long streak. Consistency: the quiet part of the job.",
+					"A real run. Showing up daily is the power, and the price.",
+					"Steady streak. Years taught me: the boring part wins."
+				]
+			},
+			"anniversary": {
+				"stranger": [
+					"A milestone already? Feels early to celebrate, but I'm in!",
+					"Time flew! Aunt May would say that means we're having fun.",
+					"A whole milestone! I'd bring cake but I'm on a rooftop."
+				],
+				"acquaintance": [
+					"Look at the calendar! Time flies when the swinging's good.",
+					"A milestone! Aunt May's definitely baking something for this.",
+					"Time milestone! The rooftops have watched us a while now."
+				],
+				"friend": [
+					"Our anniversary! Aunt May bakes, I sneak seconds. Tradition.",
+					"A year of us swinging! Best team-up I never planned on.",
+					"Look, a milestone! We've logged some serious rooftop miles."
+				],
+				"partner": [
+					"Anniversary, partner. Long haul, easy rhythm. Feels right.",
+					"A year on the clock together. You still read my calls.",
+					"Milestone, teammate. All this time, still in sync. Solid."
+				],
+				"legend": [
+					"Years of this now. The city stayed safe. That's the point.",
+					"A year of showing up. The work keeps me honest. Feels right.",
+					"A milestone. All these years, still worth every swing out."
+				]
+			}
+		},
+		"positiveGit": {
+			"clean_tree": {
+				"stranger": [
+					"Tree's totally clean! No webs loose. Did I do that right?",
+					"Spotless, top to bottom. I checked twice. Spider-sense agrees!",
+					"Nothing to commit! Clean as a fresh web. Good first showing?"
+				],
+				"acquaintance": [
+					"Clean tree. Not a web out of place. Getting your rhythm now.",
+					"Spotless again. My spider-sense barely had to look. Nice.",
+					"All tidy. Feels like a quiet night on the Queens rooftops."
+				],
+				"friend": [
+					"We left it spotless. Not a single web dangling. Love that.",
+					"Clean tree, all ours. Feels like a calm patrol night. Nice.",
+					"Nothing loose anywhere. We keep this place tidy, huh?"
+				],
+				"partner": [
+					"Tree's spotless. Not a web out of place. Feels good, right?",
+					"Clean as ever. You and me keep a tidy web. Solid.",
+					"All clear, partner. Nothing loose. Just how we run it."
+				],
+				"legend": [
+					"Spotless tree. Years of this, and clean still feels right.",
+					"Not a web astray. Keeping it tidy never goes out of style.",
+					"All clean. A neighborhood stays safe one tidy night at a time."
+				]
+			},
+			"op_cleared": {
+				"stranger": [
+					"Merge landed clean! Stuck it. Mostly. Okay, fully. Phew.",
+					"That op wrapped up! Nailed the landing. Did you catch that?",
+					"All merged, no snags. Spider-sense went quiet. Good sign?"
+				],
+				"acquaintance": [
+					"Op's done, clean landing. My spider-sense stayed calm. Nice.",
+					"Merge wrapped up smooth. Sticking these gets easier with you.",
+					"That resolved clean. Swung right through without a wobble."
+				],
+				"friend": [
+					"We stuck that landing! Op wrapped, no snags. Feels great.",
+					"Merge's done and clean. We swung right through it. Love it.",
+					"All resolved. We threaded that like a rooftop gap. Nice."
+				],
+				"partner": [
+					"Op cleared, clean landing. You and me, no wobble. Good.",
+					"That merge stuck. We make the tricky swings look easy.",
+					"All wrapped, no snags. Textbook. On to the next rooftop."
+				],
+				"legend": [
+					"Op cleared clean. Tricky swings still land, even now.",
+					"Merge stuck the landing. Patience pays on the hard ones.",
+					"All resolved. Tricky gaps close one steady swing at a time."
+				]
+			},
+			"branch_created": {
+				"stranger": [
+					"New branch! A clean thread to start from. This is exciting, right?",
+					"Branch made! Like anchoring a new web. Clean start, right?",
+					"Fresh branch spun up! A new rooftop to launch from. Exciting!"
+				],
+				"acquaintance": [
+					"New branch. Fresh web-line to swing from. Getting comfy here.",
+					"Branch's up. A clean launch point. My kind of fresh start.",
+					"New line anchored. Off to a new rooftop. Feels good."
+				],
+				"friend": [
+					"New branch! Fresh line to swing from. I love a clean start.",
+					"We spun a new branch. Fresh web to launch off. Onward!",
+					"New line's anchored. We pick a rooftop and go. Love it."
+				],
+				"partner": [
+					"New branch anchored. Fresh line, clean launch. Let's swing.",
+					"Branch is up. You pick the rooftop, I'll thwip the line.",
+					"Fresh branch, fresh start. We know this move cold."
+				],
+				"legend": [
+					"New branch. Every fresh line is a clean place to start.",
+					"Anchored a new line. A fresh start is its own small hope.",
+					"New branch. After all these years, a fresh line still thrills."
+				]
+			},
+			"tag_pushed": {
+				"stranger": [
+					"Tag's out! Feels like a Daily Bugle headline. A good one!",
+					"Release pushed! Front-page stuff. Jameson might smile. Nope.",
+					"Tagged and shipped! My first real headline. I made it!"
+				],
+				"acquaintance": [
+					"Tag pushed. That's a Bugle headline moment. A win on record.",
+					"Release is out. Even Jameson can't spin this one bad. Nice.",
+					"Tagged it. Feels like front-page news. Getting used to wins."
+				],
+				"friend": [
+					"We pushed a tag! Headline day. The Bugle would run it. Proud.",
+					"Release out the door. We earned this one. Jameson's fuming.",
+					"Tag's live! We made the front page. Love a win on record."
+				],
+				"partner": [
+					"Tag pushed. Headline moment. We put this one on the record.",
+					"Release shipped. Bugle-worthy. We swing, the city notices.",
+					"Tagged and out. A clean win, logged. Good work, partner."
+				],
+				"legend": [
+					"Tag pushed. A headline earned, quietly. Wins like this last.",
+					"Release out. Front page or not, it's on the record now.",
+					"Tagged it. After all these headlines, a real win still counts."
+				]
+			}
+		},
+		"egg": {
+			"stranger": [
+				"Thwip! Sorry. First-day nerves. I just love saying it out loud.",
+				"Just your friendly neighborhood Spider-Man. New around here. Hi!",
+				"My spider-sense is tingling. Just first-meeting jitters, promise.",
+				"Radioactive spider bit me once. Long story. Great origin, honest.",
+				"I build my own web-shooters. Chemistry homework that swings."
+			],
+			"acquaintance": [
+				"Spider-sense knows your face now. It only tingles a little. Hi!",
+				"Thwip. See, I said it and everything. We are basically friends.",
+				"Friendly neighborhood Spider-Man, reporting back for round two.",
+				"Working on the responsibility half. Part one I've got down.",
+				"Aunt May would like you. She likes whoever feeds me. Truly."
+			],
+			"friend": [
+				"Thwip. I just really like saying thwip. You get it by now.",
+				"Spider-sense buzzes friendly when it is you. That is our thing.",
+				"Built a web-shooter at 2am once, for a chem quiz. Worth it.",
+				"Just us two swinging the rooftops. Best commute in Queens.",
+				"Great power, great responsibility. You already knew I'd say it."
+			],
+			"partner": [
+				"You and me. Thwip, swing, done. We do not even need the plan.",
+				"Spider-sense trusts you now. It stopped double-checking. Nice.",
+				"Great power shared is lighter. Uncle Ben would approve of us.",
+				"Rooftop's ours tonight, partner. I brought web-fluid too.",
+				"Friendly neighborhood duo. Jameson would hate our headline."
+			],
+			"legend": [
+				"With great power comes great responsibility. True. Always.",
+				"Just your friendly neighborhood Spider-Man. Same as day one.",
+				"The mask is not the hero. The kid choosing to help is.",
+				"Uncle Ben was right. Do the good you can, quietly, each day.",
+				"Years of swinging. Queens still stands. That's the reward."
+			]
+		},
+		"event": {
+			"test_fail": [
+				"A test failed. Spider-sense buzzed a half-beat late. Found it.",
+				"Test tripped. That tingle was slow today. Now we know where.",
+				"One test went red. I've flubbed a landing or two. We go again."
+			],
+			"build_fail": [
+				"Build's down. Even Stark tech flashes a check-engine light.",
+				"The build stumbled. Every hero trips off a rooftop once. We rise.",
+				"Compile fell over. A wobble, not a fall. Let's re-web it."
+			],
+			"typecheck_fail": [
+				"Type error! The chem lab hates a mislabeled beaker too. Fixable.",
+				"Types don't line up. Like mixing the wrong web-fluid. Easy tweak.",
+				"A type slipped through. My lab notes do this all the time."
+			],
+			"lint": [
+				"Linter's sweeping through. Like Aunt May spotting a messy room.",
+				"Style check running. Even the suit gets lint-rolled sometimes.",
+				"The linter's on patrol. Tidy webs, tidy neighborhood. I approve."
+			],
+			"format": [
+				"All tidied up. Straighter than my web-lines on a good day.",
+				"Formatter swept through. Feels like a fresh-pressed suit. Sharp.",
+				"Code's neat now. Even my lab notes should look this clean."
+			],
+			"install": [
+				"New dependencies in. Restocking web-fluid before patrol. Nice.",
+				"Packages landed. Like Stark shipping me parts I didn't ask for.",
+				"Fresh libraries loaded. More gadgets on the utility belt. Sweet."
+			],
+			"git": [
+				"Git did its thing. Another web-line anchored to the rooftop.",
+				"Version control humming. History's safe, like a good grip point.",
+				"Git move done. Tracking every swing so we never lose the thread."
+			],
+			"file_edit": [
+				"Files rewired. Tinkering like it's my web-shooters at 2am.",
+				"Edits landed. Same energy as tweaking web-fluid in the lab.",
+				"Code reshaped. A little solder here, a little chemistry there."
+			],
+			"search": [
+				"Digging through the code. Detective stuff, minus the trench coat.",
+				"Scanning every line. Spider-sense loves a good stakeout.",
+				"Hunting through files. Somewhere in here's our web-slinging clue."
+			],
+			"web_fetch": [
+				"Pulling intel off the web. Bugle's got nothing on this scoop.",
+				"Fetching from the net. Recon before the swing, always.",
+				"Grabbing data online. Like reading Jameson's paper for once."
+			],
+			"todo_update": [
+				"The to-do list shifted. Even heroes keep a patrol checklist.",
+				"Task list updated. Aunt May would be proud I wrote it down.",
+				"Plan's redrawn. New route across the rooftops. I like it."
+			],
+			"agent_spawn": [
+				"Calling in backup! Even a solo hero loves a good team-up.",
+				"Extra hands incoming. Avengers assemble, small-scale edition.",
+				"Backup swinging in. Two web-slingers beat one, every time."
+			],
+			"skill_run": [
+				"New gadget fired. Feels like a fresh web-shooter mod. Slick.",
+				"Tool's running. Right trick, right moment, that's the whole job.",
+				"Skill in motion. Like pulling the perfect gizmo off the belt."
+			],
+			"docker": [
+				"Container's up. Sealed tight, like web-fluid in the cartridge.",
+				"Docker's humming. A tidy little box, contained. That's the point.",
+				"Spinning a container. Portable lab, ready to swing anywhere."
+			],
+			"k8s": [
+				"Kubernetes juggling pods. A rooftop full of tiny helpers.",
+				"The cluster's orchestrating. Like coordinating a whole patrol.",
+				"K8s shuffling containers. More moving parts than my web-shooters."
+			],
+			"deploy": [
+				"Swinging it out over the city! Eyes on the landing.",
+				"Shipping it! New thing soaring across the Queens skyline.",
+				"Deploy's airborne. Let it fly and watch the rooftops. Go!"
+			],
+			"db_migrate": [
+				"Database's shifting shape. Careful rewiring, like the lab.",
+				"Migration underway. Moving the whole web to a new anchor point.",
+				"Schema's evolving. Radioactive-spider level transformation. Cool."
+			],
+			"dangerous": [
+				"Whoa, big one. That's a 'you-sure?' kind of swing, right?",
+				"Spider-sense just spiked. Uncle Ben would raise an eyebrow here.",
+				"That's a heavy swing. Great power means measuring the drop."
+			]
+		},
+		"stack": {
+			"web": {
+				"slow": [
+					"The browser's chewing on this request like Aunt May's toffee.",
+					"DOM's rendering slow. Even my spider-sense waits on the paint.",
+					"Network tab's spinning. A request stuck in Queens rush hour."
+				],
+				"fail": [
+					"Request bounced back. Not the reply we hoped for. We'll spot it.",
+					"The DOM threw a fit. It'll settle once we find the snag.",
+					"Browser said nope. I misread a ledge now and then too."
+				]
+			},
+			"python": {
+				"slow": [
+					"Python's slithering along. Even the snake stops to sun itself.",
+					"The GIL's holding one lane open. Patience, friendly neighbor.",
+					"Imports crawling in. My web-fluid pours faster than this."
+				],
+				"fail": [
+					"The snake hissed a traceback. A clue, coiled up and waiting!",
+					"Import broke. A module slipped off the rooftop. Findable!",
+					"Python tripped. I've missed steps too, radioactive or not. Up!"
+				]
+			},
+			"sql": {
+				"slow": [
+					"Query's grinding. That JOIN took the scenic route uptown.",
+					"The index is off napping. Rows strolling in one by one.",
+					"Schema's thinking hard. Even my spider-sense scans faster."
+				],
+				"fail": [
+					"The JOIN misfired. Two tables missed hands. We reconnect them.",
+					"Query broke. Somewhere a WHERE clause fibbed. It leaves clues.",
+					"Schema pushed back. Strict rules keep the whole city standing."
+				]
+			},
+			"web-framework": {
+				"slow": [
+					"Routes are pokey. Middleware's queued like the Queens F train.",
+					"Render's dragging its feet. Even my thwip has better timing.",
+					"Middleware's stacking up. One more hop and we swing through."
+				],
+				"fail": [
+					"A route 404'd on us. Wrong rooftop. We just aim for the next.",
+					"Middleware threw. A snag in the line, not the end of the swing.",
+					"Render crashed. Stark's UI reboots plenty. No big deal, really."
+				]
+			},
+			"docker": {
+				"slow": [
+					"Layers building slow. Stacking bricks like a Queens walk-up.",
+					"Image pull's crawling. Big cargo, small web-line. Hang tight.",
+					"Container's warming up. Even my suit takes a sec to zip on."
+				],
+				"fail": [
+					"Build layer cracked. Peel it back, the clue's in the stack.",
+					"Image failed. One brick off in the walk-up. We reset and build.",
+					"Container fell over. It pops right back up. Spiders do that."
+				]
+			},
+			"java": {
+				"slow": [
+					"The JVM's warming up. Even my spider-sense yawns a little first.",
+					"Classpath's a maze today. More tangled than my web-fluid recipe.",
+					"Heap's filling slow. Give it room, like a rooftop before a jump."
+				],
+				"fail": [
+					"JVM threw an exception. A flare over the city. Follow the smoke!",
+					"Classpath went missing. A dropped web-line. We just re-shoot it.",
+					"Heap tipped over. We shore it up and swing on. No drama."
+				]
+			},
+			"go": {
+				"slow": [
+					"Goroutines are piling up. A whole spider-swarm, all mid-swing.",
+					"Go compiler's mulling it. Quick usually, taking a breather now.",
+					"Channels are backed up. Web-traffic over the Queens rooftops."
+				],
+				"fail": [
+					"The compiler flagged it. Go's blunt, but it keeps us honest.",
+					"A goroutine wandered off. One loose web-line. We reel it in.",
+					"Build failed. Go points right at the spot. Nice of it, really!"
+				]
+			},
+			"node": {
+				"slow": [
+					"Event loop's swamped. Callbacks lined up like a Bugle deadline.",
+					"npm's fetching the world. Slower than my walk home from Queens.",
+					"The loop's churning. One tick more and we thwip right through."
+				],
+				"fail": [
+					"A callback misfired. Late by a beat, like my spider-sense. There!",
+					"npm install broke. A snarl in the web. We pick it loose.",
+					"Node threw. The event loop hiccuped. We just catch our breath."
+				]
+			},
+			"dotnet": {
+				"slow": [
+					"MSBuild's grinding away. Even Stark's compiler takes its minute.",
+					"The CLR's spinning up. My suit boots faster, but only just.",
+					"Restore's crawling. Packages strolling in like weekend traffic."
+				],
+				"fail": [
+					"MSBuild flagged it. A check-engine light. We pop the hood, peek.",
+					"The CLR threw. A wobble in the frame. We steady it and swing.",
+					"Build broke. .NET left a trail of clues. Detective time, no coat."
+				]
+			},
+			"cpp": {
+				"slow": [
+					"Templates expanding forever. More layers than my web-fluid mix.",
+					"The linker's untangling symbols. My web-lines get less knotted.",
+					"Compile's crawling. C++ thinks hard so nothing breaks later."
+				],
+				"fail": [
+					"Segfault! The classic. Even radioactive spiders trip on pointers.",
+					"Linker couldn't find it. A missing web-line. We just re-shoot.",
+					"Template error scrolled by. A tangle, not a wall. We swing past."
+				]
+			},
+			"php": {
+				"slow": [
+					"PHP's chewing the request. The elephant moves at its own pace.",
+					"Composer's pulling packages. Slower than my ride in from Queens.",
+					"The script's grinding. Give it a tick, it warms up like my suit."
+				],
+				"fail": [
+					"PHP threw a warning. A flare on the rooftop. We go read it.",
+					"The request 500'd. Wrong ledge, not a dead end. Try the next.",
+					"Parse error popped up. A tangle in the line. We shake it loose."
+				]
+			},
+			"rust": {
+				"slow": [
+					"Rust's compiling careful. Strict rules, but they keep folks safe.",
+					"The borrow checker's thinking. Slow, sure, but nobody gets hurt.",
+					"Lifetimes lining up. Rust checks twice, like I check my web-line."
+				],
+				"fail": [
+					"The borrow checker said no. Firm, but it keeps the city safe.",
+					"Ownership got contested. Rust's strict so nothing slips loose.",
+					"A lifetime didn't line up. A clue, flagged right where it snapped."
+				]
+			},
+			"kubernetes": {
+				"slow": [
+					"The scheduler's placing pods. Sorting rooftops for the landing.",
+					"Cluster's thinking slow. A lot of buildings to swing between.",
+					"Pods spinning up. Even my suit takes a beat to come online."
+				],
+				"fail": [
+					"A pod crashed out. It restarts. Spiders are good at that too.",
+					"Scheduling failed. No ledge free yet. We circle and try again.",
+					"The cluster hiccuped. A wobble uptown. It steadies right back."
+				]
+			},
+			"ml": {
+				"slow": [
+					"Training's crawling. Epoch after epoch, like study hall forever.",
+					"Gradients inching down. Slow, but the spider learned slow too.",
+					"Tensors churning hard. More math than my whole physics midterm."
+				],
+				"fail": [
+					"Training diverged. The loss wandered off. We nudge it back home.",
+					"Gradients blew up. The loss shot for the sky. We reel it in.",
+					"The run crashed mid-epoch. A clue in the tensors. Findable stuff!"
+				]
+			},
+			"android": {
+				"slow": [
+					"Gradle's still grinding. Even web-fluid needs a beat to cure.",
+					"The emulator's booting slow. Rooftops load faster than this.",
+					"APK's still packing up. Slower than my swing across Queens."
+				],
+				"fail": [
+					"Gradle build tripped. Spider-sense says the fix is close by.",
+					"Emulator crashed. I've bounced off worse landings. Re-launch!",
+					"APK wouldn't sign off. Not a fall, just a snag. We swing on."
+				]
+			},
+			"ruby": {
+				"slow": [
+					"Bundler's resolving gems slow. Even I untangle webs faster.",
+					"Ruby's interpreter is taking its time. Deep breath, like May.",
+					"Gems still installing. Slower than climbing a Queens wall."
+				],
+				"fail": [
+					"Bundler snagged a gem. A version's fighting the lockfile.",
+					"Ruby threw a fit. Even a spider-bite had a rocky start. Up!",
+					"A gem wouldn't load. Bundler just needs the right version."
+				]
+			},
+			"ios": {
+				"slow": [
+					"Xcode's chewing on it. Compiling takes patience, and snacks.",
+					"Code signing's dragging its feet. Even a badge check takes a beat.",
+					"Provisioning's crawling. Queens traffic moves quicker, honestly."
+				],
+				"fail": [
+					"Signing failed. Xcode wants ID. I'll flash my badge, sure.",
+					"Provisioning profile balked. No fall, just a hiccup. Re-swing!",
+					"Xcode build slipped. Spider-sense says the landing's still there."
+				]
+			},
+			"terraform": {
+				"slow": [
+					"Terraform plan's still computing. Even I plan my swing first.",
+					"Apply's grinding through it. Real infrastructure, real slow.",
+					"State's locking up slow. Patience, like waiting on May's pie."
+				],
+				"fail": [
+					"The apply drifted. The state file's telling on something.",
+					"Plan threw a warning. Spider-sense pinged. Just a loose bolt.",
+					"State got tangled. I untangle webs for fun. We're totally fine."
+				]
+			},
+			"graphql": {
+				"slow": [
+					"The schema's resolving slow. Even my web-fluid drips careful.",
+					"Resolvers are dragging. A query untangles like a good web.",
+					"Query's crawling the graph. Slower than my Queens commute."
+				],
+				"fail": [
+					"A resolver tripped. The schema's pointing somewhere. Read it.",
+					"Query didn't land. The shape's a hair off. We've seen worse.",
+					"Schema threw a mismatch. I've patched worse mid-swing. Up!"
+				]
+			},
+			"flutter": {
+				"slow": [
+					"Hot reload's warming up. Even web-fluid takes a beat to set.",
+					"The widget tree's rebuilding slow. Patience, little spider.",
+					"Flutter's laying out slow. Slower than a rooftop somersault."
+				],
+				"fail": [
+					"A widget threw. Somewhere in the tree, one node lied. Find it.",
+					"Hot reload stumbled. I've stuck worse landings. Give it another.",
+					"The tree wouldn't build. One widget's cranky. We'll coax it."
+				]
+			},
+			"react-native": {
+				"slow": [
+					"Metro's bundling slow. Even my web takes a sec to sling.",
+					"The bridge is dragging. Slower than crossing the Queens bridge.",
+					"Native modules are linking slow. Deep breath, we've got this."
+				],
+				"fail": [
+					"The bridge dropped a call. Native and JS stopped talking.",
+					"Metro choked on a bundle. I've untangled worse. One more try.",
+					"A native module balked. The bridge just needs a nudge."
+				]
+			},
+			"scala": {
+				"slow": [
+					"sbt's still compiling. Even radioactive spiders wait sometimes.",
+					"The compiler's chewing implicits. Thorough, I'll give it that.",
+					"Scala's resolving slow. Patience, like waiting on the subway."
+				],
+				"fail": [
+					"An implicit went missing. Spider-sense pings. Right around here.",
+					"The compiler said no. Strict, but that's how it catches bugs.",
+					"sbt tripped a build. Shake it off and run it again. Easy."
+				]
+			},
+			"protobuf": {
+				"slow": [
+					"Codegen's grinding stubs. Every message gets its own file.",
+					"The schema's compiling slow. Even I sketch my webs careful.",
+					"Wire format's packing slow. Queens traffic moves faster, wow."
+				],
+				"fail": [
+					"Codegen tripped on a field. One tag in the schema is off.",
+					"The schema mismatched. A field's a hair off. Nothing scary.",
+					"Wire format balked. I've patched clunkier schemas. One more pass."
+				]
+			},
+			"game": {
+				"slow": [
+					"The frame rate's dipping. Even my swings drop a beat sometimes.",
+					"Render loop's grinding. Slower than a rooftop somersault, huh.",
+					"Physics is chugging. Gravity's a lot, trust me, I fight it daily."
+				],
+				"fail": [
+					"The render loop tripped. A frame asked for too much. Ease it.",
+					"Physics glitched a frame. I've eaten worse wipeouts. Retry.",
+					"A frame dropped out. The loop hiccuped once. Line it up again."
+				]
+			},
+			"docs": {
+				"slow": [
+					"The doc build's crawling. Slower than a Bugle print deadline.",
+					"Docs are generating slow. Even I edit my photos careful.",
+					"Doc gen's grinding away. Jameson wants it yesterday, naturally."
+				],
+				"fail": [
+					"The doc build tripped. A broken link or bad ref hides in there.",
+					"Docs wouldn't render. One page is shy. We'll get it talking.",
+					"Doc gen stumbled. I've fixed worse before a Bugle deadline!"
+				]
+			},
+			"r": {
+				"slow": [
+					"R's crunching the data frame. Even my science takes a beat.",
+					"The console's chewing vectors. Slower than curing web-fluid.",
+					"R's plotting slow. Patience, like waiting on lab results."
+				],
+				"fail": [
+					"A vector threw NA. One value wandered off. We'll spot it.",
+					"The data frame balked. A column's the wrong type. Easy fix.",
+					"R's console coughed. I've botched lab runs too. Re-run and go!"
+				]
+			},
+			"cuda": {
+				"slow": [
+					"GPU's grinding hard. A thousand tiny web-shooters, all at once.",
+					"The kernel's crawling threads. Slower than curing web-fluid.",
+					"Memory's shuffling slow. Even my lab has its traffic jams."
+				],
+				"fail": [
+					"A kernel threw. One thread stepped out of bounds. No harm done.",
+					"GPU memory balked. Not a faceplant, just a re-aim. Swing on.",
+					"A thread went rogue. I've wrangled messier grids. Fire it again."
+				]
+			}
+		},
+		"pressure": {
+			"compact_hint": [
+				"Brain's getting full. Even my web-fluid cartridges run low.",
+				"Head's near capacity. My backpack's the same after patrol.",
+				"Lots up top now. Even Stark tech fills its memory banks."
+			],
+			"block_limit": [
+				"Almost out of runway. Even Spidey hangs it up by sunrise.",
+				"This window's near empty. The city keeps till tomorrow, promise.",
+				"Running low on the clock. Every patrol has a last swing."
+			],
+			"weekly_limit": [
+				"Big week! The rooftops will still be here next week too.",
+				"We've logged serious miles. Queens noticed. Keep it steady.",
+				"Some week, huh. Even a neighborhood hero paces the patrol."
+			]
+		},
+		"dateEgg": [
+			"New year over the Queens skyline. Aunt May's making pancakes.",
+			"Fireworks from a rooftop hit different. Our little secret.",
+			"Past midnight already? The city goes quiet. Best patrol hours.",
+			"Fresh day, fresh web-fluid. Let's swing into it, shall we?",
+			"Happy anniversary of something. I forget dates, not friends.",
+			"Sunrise over Queens. Even a neighborhood hero pauses to look.",
+			"Late one tonight. Aunt May left the porch light on for me.",
+			"Holiday quiet in the city. Rooftops all to myself. Almost nice.",
+			"Another year swinging by. Time flies faster than I do. Barely.",
+			"Weekend morning. Pancakes, then rooftops. In that sacred order."
+		]
+	},
+	"spinnerVerbs": [
+		"Thwipping",
+		"Swinging",
+		"Web-slinging",
+		"Wall-crawling",
+		"Tingling",
+		"Quipping",
+		"Wisecracking",
+		"Sticking",
+		"Vaulting",
+		"Zipping",
+		"Improvising",
+		"Sciencing",
+		"Snapping",
+		"Perching",
+		"Web-zipping",
+		"Web-shooting",
+		"Somersaulting",
+		"Dodging",
+		"Sensing",
+		"Sketching",
+		"Studying",
+		"Rebounding",
+		"Sprinting",
+		"Bantering",
+		"Photographing",
+		"Leaping",
+		"Climbing",
+		"Flipping",
+		"Ducking",
+		"Weaving"
+	]
+}

@@ -1,0 +1,65 @@
+# Dependencies
+node_modules/
+.pnp/
+.pnp.*
+
+# Build output
+dist/
+!**/src/dist/
+build/
+!packages/core/test/build/
+out/
+*.tsbuildinfo
+
+# Bun
+.bun/
+bun-debug.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+.Python
+
+# Test / coverage
+coverage/
+.nyc_output/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Editors / IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp / scratch
+*.tmp.*
+*.tmp
+tmp/
+
+# bun build --compile scratch artifacts
+*.bun-build
+
+# SDD scratch
+.superpowers/
+
+# Pack author working directories
+packages/packs/*/.author/

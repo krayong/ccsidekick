@@ -1,0 +1,30 @@
+# EditorConfig — https://editorconfig.org
+root = true
+
+# Values mirror .prettierrc (useTabs=true, tabWidth=4, printWidth=100) so
+# editors and Prettier agree on indentation and wrap width.
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = tab
+indent_size = 4
+tab_width = 4
+max_line_length = 100
+
+# YAML forbids tab indentation, so these stay on spaces.
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2
+
+# Markdown: trailing whitespace can be a hard line break, so leave it alone.
+[*.md]
+trim_trailing_whitespace = false
+
+# pack.json is data (2-space, generated). Keep it on spaces, and preserve the
+# meaningful leading/trailing spaces in art rows.
+[**/pack.json]
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = false

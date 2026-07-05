@@ -1,0 +1,40 @@
+{
+	"session_id": "sess-123",
+	"session_name": "rewrite/payload",
+	"version": "1.2.3",
+	"transcript_path": "/home/dev/.claude/projects/proj/sess-123.jsonl",
+	"cwd": "/home/dev/proj",
+	"workspace": {
+		"current_dir": "/home/dev/proj/packages/core",
+		"repo": { "host": "github.com", "owner": "krayong", "name": "ccsidekick" },
+		"added_dirs": ["/home/dev/proj/docs", "/home/dev/proj/scripts"],
+		"git_worktree": "/home/dev/proj"
+	},
+	"worktree": {
+		"name": "core",
+		"path": "/home/dev/proj/packages/core",
+		"branch": "rewrite/packages",
+		"original_cwd": "/home/dev/proj",
+		"original_branch": "main"
+	},
+	"model": { "id": "claude-opus-4-8", "display_name": "Claude Opus 4.8" },
+	"output_style": { "name": "Explanatory" },
+	"thinking": { "enabled": true },
+	"effort": { "level": "high" },
+	"agent": { "name": "general-purpose" },
+	"cost": { "total_cost_usd": 0.4231, "total_duration_ms": 184320 },
+	"context_window": {
+		"used_percentage": 42.5,
+		"total_input_tokens": 85000,
+		"context_window_size": 200000
+	},
+	"rate_limits": {
+		"five_hour": { "used_percentage": 12.5, "resets_at": 1719600000 },
+		"seven_day": { "used_percentage": 63.0, "resets_at": 1720080000 }
+	},
+	"pr": {
+		"number": 42,
+		"url": "https://github.com/krayong/ccsidekick/pull/42",
+		"review_state": "approved"
+	}
+}

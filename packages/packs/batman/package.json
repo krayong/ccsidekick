@@ -1,0 +1,21 @@
+{
+	"name": "@ccsidekick/pack-batman",
+	"version": "0.0.0",
+	"description": "Batman character pack for ccsidekick",
+	"type": "module",
+	"files": [
+		"pack.json",
+		"README.md",
+		"assets"
+	],
+	"exports": {
+		"./pack.json": "./pack.json"
+	},
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/krayong/ccsidekick.git",
+		"directory": "packages/packs/batman"
+	},
+	"author": "Karan Gourisaria <ccsidekick@krayong.com>"
+}

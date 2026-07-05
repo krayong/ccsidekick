@@ -1,0 +1,10 @@
+blank_issues_enabled: false
+
+contact_links:
+  - name: Question / Contact
+    url: https://github.com/krayong/ccsidekick#contact
+    about: General questions that aren't bugs or feature requests (email ccsidekick@krayong.com).
+
+  - name: Pack Authoring Skill
+    url: https://github.com/krayong/ccsidekick/blob/main/.claude/skills/pack-author/SKILL.md
+    about: Steps to create and submit a character pack.

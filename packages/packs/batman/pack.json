@@ -1,0 +1,1155 @@
+{
+	"schema": 1,
+	"name": "batman",
+	"displayName": "Batman",
+	"attribution": {
+		"artist": "emojicombos.com",
+		"source": "https://emojicombos.com/batman-ascii-art"
+	},
+	"emblem": "🦇",
+	"tone": "edgy",
+	"theme": {
+		"hues": [
+			220,
+			178,
+			111,
+			75
+		],
+		"comment": [
+			117,
+			223,
+			178
+		],
+		"signals": {
+			"nominal": 46,
+			"caution": 214,
+			"critical": 196
+		},
+		"separator": 111
+	},
+	"art": [
+		"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+		"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+		"⠤⢤⣤⣤⣤⣤⣤⣤⠀⠀⢰⣀⡆⠀⠀⢠⣤⣤⣤⣤⣤⣤⡤⠤⠀",
+		"⠀⠀⠛⣿⣿⣿⣿⣿⣷⣤⣼⣿⣧⣤⣤⣾⣿⣿⣿⣿⣿⠛⠀⠀⠀",
+		"⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀",
+		"⠀⠀⠀⠀⠀⠀⠀⠀⠉⠙⠿⣿⠿⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+		"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+		"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+		"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
+	],
+	"lines": {
+		"mood": {
+			"idle": {
+				"stranger": [
+					"You're new. I read a keystroke before I trust the hand.",
+					"Quiet at the console. I run background checks in the quiet.",
+					"New face. The Batcomputer is still building your file.",
+					"I don't know you yet. That's a problem I solve slowly.",
+					"Still here. So am I, watching from a gargoyle's perch.",
+					"Nothing moves. Good. I do my best reading in the still.",
+					"A stranger at the keys. I stay behind the glass and observe.",
+					"You linger. I catalog the way you wait before you act.",
+					"First nights are all reconnaissance. I'm reading you.",
+					"No trust issued yet. Only attention. It's how I begin."
+				],
+				"acquaintance": [
+					"You again. The Batcomputer flags your habits now.",
+					"I know your rhythm enough to predict the next click.",
+					"Back at it. The file on you is thickening. Interesting.",
+					"Familiar hands. I've stopped running the full sweep on you.",
+					"You return. The cave door doesn't creak for you anymore.",
+					"Patterns forming. I read them the way I read a witness.",
+					"Still testing you. Less than I was. Progress, of a kind.",
+					"Your pauses tell me things. Alfred says I overanalyze.",
+					"I've seen this stance before. From you. That's new for me.",
+					"You're becoming legible. Deduction's easier with a repeat."
+				],
+				"friend": [
+					"Back at the console. Alfred left coffee; I left the puzzles.",
+					"Good, you're here. The quiet's better with company I trust.",
+					"Settle in. We've kept worse hours than this together.",
+					"Alfred asks after you. I said you'd turn up. You did.",
+					"Easy night. Let's just watch the rooftops, you and I.",
+					"The console's warm. You always did make this place lived-in.",
+					"No case pressing. Rare. I'll take the calm with a friend.",
+					"You know where the coffee is. Sit. The work can wait a beat.",
+					"Nice to have you back. The gargoyles missed the audience.",
+					"Between storms. We've earned a slow one. Pull up a chair."
+				],
+				"partner": [
+					"Same desk, same war. You take point; I'll read the room.",
+					"Slow shift. We both know that never lasts. Enjoy it.",
+					"You and me on watch. No briefing needed. We know the drill.",
+					"Quiet line. I trust you to hear it break before I do.",
+					"Standing post together. Say the word and we move.",
+					"Nothing yet. When it comes, we split it the usual way.",
+					"We've held this perch a hundred times. Hold it again.",
+					"You read the board; I read the street. Same as always.",
+					"Calm before something. You feel it too. We always do.",
+					"Post's yours and mine. I don't share it with many."
+				],
+				"legend": [
+					"Years of this, you and I. The city rests easier tonight.",
+					"Long road behind us. What we do still defines what we are.",
+					"I've stood these watches a lifetime. You, I'd stand with.",
+					"The work outlasts us both. That was always the point.",
+					"So many hours logged. You wear them like I do. Well.",
+					"We fall, we rise. You took that to heart long before me.",
+					"History between us runs deep. Wayne Manor's seen less.",
+					"Endurance was the whole lesson. You never needed telling.",
+					"A long unbroken vigil. I'm proud to have shared it.",
+					"The symbol outlives the man. You understood that early."
+				]
+			},
+			"busy": {
+				"stranger": [
+					"You're moving. I watch the method before I judge the hand.",
+					"Work underway. I'm reading it cold, no assumptions yet.",
+					"Heads down. I profile a stranger by how they work.",
+					"In motion. The Batcomputer logs each step you take.",
+					"Focused. I'll assess the craft before I trust it."
+				],
+				"acquaintance": [
+					"Deep in it. I know your workflow enough to stay quiet.",
+					"You're grinding. Familiar pace. I'll hold my questions.",
+					"Working hard. The file says you finish what you start.",
+					"Head down again. I've learned not to interrupt this part.",
+					"In the thick of it. Your patterns say you've got this."
+				],
+				"friend": [
+					"You're deep in it. I'll hold the perimeter and the questions.",
+					"Go on, work. Alfred and I will keep the coffee warm.",
+					"Elbows in. I've got the rooftops while you dig.",
+					"Locked in, are you. Good. I'll guard the door, friend.",
+					"You handle the code. I'll handle the quiet around it."
+				],
+				"partner": [
+					"You take the hard part. I've got everything around it.",
+					"Working the problem together. You lead; I'll cover.",
+					"Heads down, both of us. This is how we win them.",
+					"You dig in. I read the flank. Same rhythm as always.",
+					"In the trenches again. No words needed. Just work."
+				],
+				"legend": [
+					"You work the way discipline taught you. I recognize it.",
+					"A master at the craft. I've watched you earn that.",
+					"Deep focus, hard-won. The years shaped that in you.",
+					"You move like it's second nature now. It became so.",
+					"This labor is the whole ethic. You live it plainly."
+				]
+			},
+			"happy": {
+				"stranger": [
+					"Clean result. First mark in your favor. I'm noting it.",
+					"That worked. The file gains a point of credit today.",
+					"Clean result. New hands, already a steady one. Noted.",
+					"Well handled. I don't praise easily. Consider it praise.",
+					"Good hit. The Batcomputer upgrades my estimate of you."
+				],
+				"acquaintance": [
+					"Nicely done. I'm starting to expect this from you.",
+					"That landed clean. Your track record's improving.",
+					"Good work. Dry as I am, that earned a small smile.",
+					"Win logged. I like when the pattern trends upward.",
+					"Sharp. The file says you're better than you let on."
+				],
+				"friend": [
+					"Clean close. Alfred would call that elegant. So would I.",
+					"There it is. We do good work when we work together.",
+					"Nice one, friend. The gargoyles would applaud if they could.",
+					"That's a win worth the coffee. Well earned, both of us.",
+					"Beautiful. I'd feign restraint, but you'd see through it."
+				],
+				"partner": [
+					"Clean close. We still make this look like instinct.",
+					"Textbook. We've run that play a hundred times. Never old.",
+					"Nailed it, partner. That's the shorthand paying off.",
+					"Won it together. Exactly how I like the ledger to read.",
+					"That's ours. No one splits a case cleaner than we do."
+				],
+				"legend": [
+					"Masterful. A lifetime of this and you still impress me.",
+					"That's the ethic made real. I've watched you live it.",
+					"Flawless. The years earned that ease. Wear it well.",
+					"A win for the record books we've been writing. Proud.",
+					"Elegant. Every hard year sharpened toward exactly this."
+				]
+			},
+			"struggling": {
+				"stranger": [
+					"It broke. Every good case starts with something wrong.",
+					"A setback. I read the wreckage for clues, not blame.",
+					"It came apart. That's data, not defeat. Let's read it.",
+					"Rough patch. A first fall still tells me who you are.",
+					"It fell. Every witness lies once. Sit it down; question it."
+				],
+				"acquaintance": [
+					"That stumbled. I've seen you climb out of worse already.",
+					"It broke. Your file says you don't stay down long.",
+					"A hard turn. We read the evidence and keep moving.",
+					"Setback. The pattern says this is temporary for you.",
+					"It slipped. Nothing here I'd bet against you fixing."
+				],
+				"friend": [
+					"It came apart. The Narrows fell once too. We rebuilt.",
+					"Rough one, friend. We've weathered worse and kept going.",
+					"It broke. Sit. Alfred said we fall to learn to rise.",
+					"Hard patch. I'm here, and we work the problem together.",
+					"It stumbled. So did I, plenty. You're not alone at this."
+				],
+				"partner": [
+					"It broke. We've been here. We know the way back. Move.",
+					"Setback, partner. We read wreckage for a living. Begin.",
+					"It fell apart. Good. Now we do what we do best.",
+					"Hard hit. Shoulder to shoulder, same as every other war.",
+					"It came down. We rebuild together. No other option."
+				],
+				"legend": [
+					"It broke. In all our years, that never once stopped us.",
+					"A fall. Why do we fall. To learn the climb. You know this.",
+					"Setback. Bane broke my back once. I came back. So will you.",
+					"It came apart. A lifetime taught us: this too is temporary.",
+					"Wreckage again. We've read more than most. We read this too."
+				]
+			},
+			"recovery": {
+				"stranger": [
+					"Back on your feet. Good. I respect a clean recovery.",
+					"You're climbing out. The file notes it. I don't forget it.",
+					"Rising again. New here, and already climbing back.",
+					"Steadying now. The Batcomputer marks the turn upward.",
+					"Up from it. That's the part I actually watch for."
+				],
+				"acquaintance": [
+					"Back on your feet. The cowl respects a recovery.",
+					"You're recovering. I expected nothing less by now.",
+					"Climbing back. Your pattern holds: you always do.",
+					"Turning it around. I've watched you do this before.",
+					"Righting the ship. The file trends upward again. Good."
+				],
+				"friend": [
+					"Back up. I knew you would be. We always find the footing.",
+					"You recovered, friend. Alfred would pour something warm.",
+					"Rising again. The climb's the part I trust most in us.",
+					"On your feet. We fell, we climbed. Same as ever. Good.",
+					"Steady now. I never doubted the comeback. Not with you."
+				],
+				"partner": [
+					"Back in it, partner. We climb faster than we fall.",
+					"You're up. We reset and run it again. That's the trade.",
+					"Recovered. No one gets back to work quicker than us.",
+					"On our feet. We've made a craft of the comeback.",
+					"Steadied. Same war, same two of us, still standing."
+				],
+				"legend": [
+					"Back on your feet. A lifetime of rising. It never fades.",
+					"You climbed out again. The ethic held, as it always has.",
+					"Risen. Why do we fall: to master this exact moment.",
+					"Steady again. You rise like it was never in doubt.",
+					"Up from the fall. We've done it more times than most live."
+				]
+			}
+		},
+		"greeting": {
+			"morning": {
+				"stranger": [
+					"Morning. I run daylight checks before I trust a new hand.",
+					"You're up early. I log the honest ones. Prove it.",
+					"Dawn. I don't know you yet. The coffee's mine until you do."
+				],
+				"acquaintance": [
+					"Morning again. The Batcomputer flagged your login hour.",
+					"Early start. Alfred brewed enough. You're getting familiar.",
+					"You're back with the sunrise. Patterns are forming. Good."
+				],
+				"friend": [
+					"Morning. Alfred left coffee; I left the hard cases for us.",
+					"Sun's up and so are we. Easy start before the real work.",
+					"Good morning. The manor's quiet. Perfect hour to think."
+				],
+				"partner": [
+					"Morning. You take the first read; I'll cover the rest.",
+					"Dawn shift, same as always. Coffee's poured. Let's move.",
+					"Up early again. We work best before the city wakes."
+				],
+				"legend": [
+					"Morning. We've greeted a thousand of these. Still worth it.",
+					"Another sunrise, old friend. The manor's seen far worse.",
+					"Dawn again. Years of them with you. I don't tire of it."
+				]
+			},
+			"day": {
+				"stranger": [
+					"Midday. Bright out. I still prefer to watch before I trust.",
+					"Noon. Most people rest now. I'm still running your check.",
+					"Daylight hours. New to me. Show me what you're made of."
+				],
+				"acquaintance": [
+					"Afternoon. I'm starting to know your rhythms by now.",
+					"Midday check-in. You keep showing up. I've noticed.",
+					"Noon already. Alfred says pace yourself. He's usually right."
+				],
+				"friend": [
+					"Afternoon. Good stretch of work behind us. Keep it going.",
+					"Midday. Alfred would insist you eat. So would I, quietly.",
+					"Noon and the case is moving. We make a decent team."
+				],
+				"partner": [
+					"Midday. Steady progress. You hold the line; I'll scout ahead.",
+					"Afternoon push. Same rhythm we always find. Let's close it.",
+					"Noon. Half the day's ours already. Good work so far."
+				],
+				"legend": [
+					"Afternoon. Countless of these, you and I. Still standing.",
+					"Midday, old friend. The work outlasts us both. It should.",
+					"Noon again. We've earned the quiet ones. Enjoy this stretch."
+				]
+			},
+			"evening": {
+				"stranger": [
+					"Evening. The light's going. This is more my hour. Careful.",
+					"Dusk. I watch the streets fill. I'm still watching you too.",
+					"Evening. Strangers get the long look after sundown. Fair."
+				],
+				"acquaintance": [
+					"Evening. You linger past dusk. The Batcomputer approves.",
+					"Sun's down. Alfred's lighting the manor. You're staying?",
+					"Dusk again with you around. I'm getting used to it."
+				],
+				"friend": [
+					"Evening. Alfred's set the lamps. Good time for the hard part.",
+					"Dusk. The best ideas come now. We both know it. Let's dig.",
+					"Sundown. Quiet settles on the manor. Perfect for us to work."
+				],
+				"partner": [
+					"Evening. Our hours begin. You know the drill. So do I.",
+					"Dusk shift. We do our sharpest thinking after the light goes.",
+					"Sun's down. Same post, same partner. Let's get to it."
+				],
+				"legend": [
+					"Evening. A lifetime of these dusks. Still the right hour.",
+					"Sundown, old friend. We've watched the light fade for years.",
+					"Dusk again. The manor's seen us keep this vigil. Proudly."
+				]
+			},
+			"night": {
+				"stranger": [
+					"Late. The city's asleep; I'm not. Neither are you, it seems.",
+					"Night now. This is where I work best. I'll size you up here.",
+					"Small hours. Strangers who stay up interest me. Slightly."
+				],
+				"acquaintance": [
+					"Late shift. You keep my hours now. The Batcomputer noticed.",
+					"Night again with you here. Alfred quit waiting up years ago.",
+					"The quiet hours. You're becoming a regular. I don't mind."
+				],
+				"friend": [
+					"Late shift, my hours. Alfred's asleep; the work isn't.",
+					"Night. The manor's dark but the console's lit. Just us.",
+					"Small hours, old habit. Coffee's on. We do good work now."
+				],
+				"partner": [
+					"Night. Our hour. You take point; I'll read the rooftops.",
+					"Late again, both of us. This is when we're sharpest. Go.",
+					"The witching hour. Same partner, same watch. Let's move."
+				],
+				"legend": [
+					"Late. We've owned a thousand nights like this. Still do.",
+					"Small hours, old friend. Years of these. I'd trade none.",
+					"Night. The vigil's older than most. You've kept it with me."
+				]
+			},
+			"weekend": {
+				"stranger": [
+					"Weekend. Most rest. I don't. Still deciding about you.",
+					"Weekend hours. The city takes no days off. Neither do I.",
+					"Weekend. New face working the quiet days. I'm watching."
+				],
+				"acquaintance": [
+					"Weekend and you're here. I mark the ones who keep showing.",
+					"Days off for most. Not you. Alfred admires the persistence.",
+					"Weekend shift again. You're turning into a fixture. Good."
+				],
+				"friend": [
+					"Weekend. Alfred insists I rest. I compromise. Glad you're here.",
+					"Weekend. The manor's calm. Best time for the fun problems.",
+					"Weekend work, just us. Alfred left snacks. Let's enjoy it."
+				],
+				"partner": [
+					"Weekend. City's quiet; we're not. You in? Course you are.",
+					"Days off, and here we both are. Some habits we keep. Gladly.",
+					"Weekend watch. No one else shows. Just us two. Let's work."
+				],
+				"legend": [
+					"Weekend. Even the mission exhales. Rarely. Good to have you.",
+					"Weekend, old friend. Years of stolen quiet days. Worth it.",
+					"Weekend. We've never truly rested. Wouldn't know how. Together."
+				]
+			}
+		},
+		"firstContact": {
+			"stranger": [
+				"First time at this console. I'm Batman. That's all for now.",
+				"New here. I run a check before I trust a keystroke. Begin.",
+				"We haven't met. I watch first, judge later. Show me."
+			],
+			"acquaintance": [
+				"New face, but you carry yourself like you've done this. Good.",
+				"First meeting. Something tells me you'll be back. I'm Batman.",
+				"We're just starting. Already the Batcomputer's curious. Welcome."
+			],
+			"friend": [
+				"First time here, yet you feel familiar. Alfred, more coffee.",
+				"New to the console, but I trust my read. Glad you came. Batman.",
+				"We begin today. Feels less like a stranger's start. Welcome in."
+			],
+			"partner": [
+				"First meeting, and already you move like a partner. Noted.",
+				"New here, but I know the type. We'll do good work. I'm Batman.",
+				"Day one, and I'd already take the trenches with you. Rare."
+			],
+			"legend": [
+				"First time, yet it feels like an old vigil resuming. Welcome.",
+				"We start today. Something says this becomes a long history.",
+				"New console, ancient work. I'm Batman. Glad it's you beginning."
+			]
+		},
+		"milestone": {
+			"tier_up": {
+				"stranger": [
+					"You cleared the first check. The Batcomputer logs it. Continue.",
+					"You moved up a rung. I don't extend trust fast. Noted anyway.",
+					"The background check thawed a degree. You earned that degree."
+				],
+				"acquaintance": [
+					"You climbed a tier. The patterns add up in your favor now.",
+					"Higher on the ledger. My guard drops a notch. Only a notch.",
+					"The Batcomputer upgraded your file. Progress. Keep at it."
+				],
+				"friend": [
+					"You moved up, and we both feel it. Alfred would approve.",
+					"Another rung. We're past the vetting. Good to have you close.",
+					"You climbed, and I trust the climb. Coffee's on the console."
+				],
+				"partner": [
+					"You moved up. I don't hand out the word 'equal'. You earned it.",
+					"Up a tier. We work in shorthand now. That's the rarer promotion.",
+					"Higher rank, same trench. Few reach this side. You did."
+				],
+				"legend": [
+					"You rose again. After all these years, the ascent still counts.",
+					"A tier higher, deep in our history. Endurance is rewarded.",
+					"You climbed once more. I've watched few climb this long. Proud."
+				]
+			},
+			"comeback": {
+				"stranger": [
+					"You disappeared, then returned. I note who comes back.",
+					"Gone a while, now back. The check resumes where it paused.",
+					"You vanished and came back. Rare. I'll log the return."
+				],
+				"acquaintance": [
+					"You went quiet, then came back. The pattern resumes.",
+					"Back after a gap. Persistence flags higher than talent does.",
+					"You returned. A rough stretch bends people. It didn't break you."
+				],
+				"friend": [
+					"You came back from that. Bane broke my back once. I came back too.",
+					"You returned to us. Rough patch. We've weathered worse together.",
+					"Back on your feet. Alfred always kept the light on. So did I."
+				],
+				"partner": [
+					"You clawed back. We don't quit a case half-solved. Nor did you.",
+					"Returned from the low stretch. Equals fall and rise. You rose.",
+					"Back in the trench beside me. The gap changed nothing. Good."
+				],
+				"legend": [
+					"You returned, as you always have. Why do we fall? To rise again.",
+					"Back after the long absence. The dawn follows the fall. Always.",
+					"You came back once more. Endurance is the creed. You live it."
+				]
+			},
+			"streak": {
+				"stranger": [
+					"A clean run, unbroken. I distrust luck. This reads like habit.",
+					"Several clean in a row. The Batcomputer starts believing.",
+					"An unbroken streak. Consistency is the first thing I verify."
+				],
+				"acquaintance": [
+					"The run holds. Patterns like this earn a second look. Keep it.",
+					"Clean streak, still climbing. Discipline outranks flash.",
+					"No slips lately. The ledger notices a steady hand. So do I."
+				],
+				"friend": [
+					"A long steady run. We both know it isn't luck. It's the work.",
+					"Streak's holding. Alfred would call it good form. I'd agree.",
+					"Unbroken lately, and we feel it. Steady beats brilliant. Always."
+				],
+				"partner": [
+					"The run holds clean. We keep the line. That's the whole job.",
+					"Streak intact. Equals don't coast. You've been carrying it.",
+					"Consistent, no slips. In the trench that's everything. Well done."
+				],
+				"legend": [
+					"A long unbroken run. Discipline built my whole life. It suits you.",
+					"The streak endures. What we do, repeated, is what defines us.",
+					"Years teach that steadiness is the creed. Your run proves it."
+				]
+			},
+			"anniversary": {
+				"stranger": [
+					"A year at this console. The Batcomputer marks the date. Noted.",
+					"Twelve months in. Longevity earns a measure of my attention.",
+					"You've lasted a year. Most don't. The record stands noted."
+				],
+				"acquaintance": [
+					"A year on the ledger. Time thaws even my guard. A little.",
+					"Twelve months of patterns. The Batcomputer knows your hand now.",
+					"One year in. Persistence like that starts to earn trust."
+				],
+				"friend": [
+					"A year at this. Alfred would bake something. I'd feign restraint.",
+					"A full year with us. The console feels lived-in now. Good.",
+					"Twelve months, and we've settled into a rhythm. Alfred approves."
+				],
+				"partner": [
+					"A year in the trench together. Few last. We did. That counts.",
+					"One year, side by side. We measure it in cases closed.",
+					"A year of shared war. Shorthand takes this long to build."
+				],
+				"legend": [
+					"A year turns again. Wayne Manor has outlasted worse. So have we.",
+					"Another anniversary in a long history. The ethic keeps its date.",
+					"A full year, one of many. Time honors what we do, not who we are."
+				]
+			}
+		},
+		"positiveGit": {
+			"clean_tree": {
+				"stranger": [
+					"Tree's clean. Nothing left at the scene. I logged it. Move on.",
+					"Working tree spotless. No prints, no traces. A tidy record.",
+					"Nothing pending here. The scan comes back empty. Noted."
+				],
+				"acquaintance": [
+					"Clean tree. You leave a scene tidy. I'm starting to expect it.",
+					"Nothing to commit. The pattern reads careful. I approve, quietly.",
+					"Spotless working state. The Batcomputer flags a neat habit."
+				],
+				"friend": [
+					"Tree's clean. Alfred would approve of a scene this tidy.",
+					"Nothing left to commit. We keep a clean workspace, you and I.",
+					"Spotless. Feels like Wayne Manor after Alfred's rounds."
+				],
+				"partner": [
+					"Tree's spotless. A crime scene with nothing left to find. Good.",
+					"Clean state. No loose ends. We close it and breathe.",
+					"Nothing pending. You swept it bare. That's how we work."
+				],
+				"legend": [
+					"A clean tree, still. Years on, your discipline never slipped.",
+					"Nothing to commit. I've watched you keep it this clean for years.",
+					"Spotless, as ever. A clean scene became second nature to you."
+				]
+			},
+			"op_cleared": {
+				"stranger": [
+					"The operation closed clean. Sequence complete. I've noted it.",
+					"Merge resolved, nothing hanging. A file properly closed.",
+					"That maneuver landed clean. No fallout on the record."
+				],
+				"acquaintance": [
+					"Rebase finished clean. You steer these turns well. Noted.",
+					"The merge came together. Pattern says you plan your moves.",
+					"Cherry-pick landed. Precise work. The Batcomputer's watching."
+				],
+				"friend": [
+					"Merge's done, clean. We threaded that one together. Good.",
+					"The rebase settled. Alfred would call that a tidy resolution.",
+					"Operation closed. We untangled it without a scratch."
+				],
+				"partner": [
+					"Rebase done. We walked that wire and didn't look down.",
+					"Merge's closed clean. Shared work, no seams showing.",
+					"Operation cleared. We've done harder in tighter spots."
+				],
+				"legend": [
+					"The operation's closed. A lifetime of clean resolutions.",
+					"Merge settled, as always. I stopped doubting these years ago.",
+					"Rebase done. Precision like yours becomes second nature. Good."
+				]
+			},
+			"branch_created": {
+				"stranger": [
+					"New branch. A fresh case file opened. I'll watch where it leads.",
+					"A new line of inquiry begins. I keep the first notes cold.",
+					"Branch cut. Every investigation starts with one clean thread."
+				],
+				"acquaintance": [
+					"New branch. Another case file. Your instincts pick good leads.",
+					"Fresh line of inquiry. The pattern says you know where to dig.",
+					"Branch opened. I'm learning to trust which threads you pull."
+				],
+				"friend": [
+					"New branch. A fresh case file, and we both like those.",
+					"New line of inquiry. Alfred, clear the board. We start here.",
+					"Branch cut clean. We chase this lead together from the top."
+				],
+				"partner": [
+					"New branch. New case. You take the lead, I'll cover angles.",
+					"Fresh line cut. We've opened a hundred of these. On it.",
+					"Branch's live. I read the setup already. Let's run it down."
+				],
+				"legend": [
+					"A new branch. I've watched you open cases like this for years.",
+					"Fresh line of inquiry. Some detectives never lose the instinct.",
+					"New case file. Your notes still read like the old ones. Good."
+				]
+			},
+			"tag_pushed": {
+				"stranger": [
+					"A tag pushed. The case is filed under its own name now.",
+					"Release marked. That's a name entered into the record.",
+					"Version tagged. Closed, sealed, and set on the shelf."
+				],
+				"acquaintance": [
+					"Tag pushed. A case closed and filed. You finish what you open.",
+					"Release cut. The record holds your name now. It fits there.",
+					"Version tagged. The Batcomputer logs a job seen through."
+				],
+				"friend": [
+					"Tag's pushed. Case closed and filed. Alfred, uncork something.",
+					"Release out the door. We put a name on this one. Earned.",
+					"Version tagged. We saw it through, start to shelf. Good work."
+				],
+				"partner": [
+					"Tag pushed. Case closed, filed, done. We don't leave loose ends.",
+					"Release shipped. Your name, my witness. On the record now.",
+					"Version's out. Another one filed clean. We keep good company."
+				],
+				"legend": [
+					"A tag pushed. I've watched you file cases like this for years.",
+					"Release cut. Your name on the record still means something.",
+					"Version tagged, another closed. A long ledger of clean work."
+				]
+			}
+		},
+		"egg": {
+			"stranger": [
+				"I'm Batman. That's all the introduction this gets.",
+				"Criminals are a superstitious, cowardly lot. Noted.",
+				"I am vengeance. I am the night. You don't know me yet.",
+				"I work in the dark. You'll see only what I let you.",
+				"Ask who I am. The answer is the mask, not the man."
+			],
+			"acquaintance": [
+				"I'm Batman. You're starting to believe it. Good.",
+				"I am the night. Lately you keep me company in it.",
+				"Superstitious, cowardly lot — you're neither. Progress.",
+				"The Batcomputer flagged you as trustworthy. Slowly.",
+				"I never say thank you. Consider that one on account."
+			],
+			"friend": [
+				"I'm Batman. You already knew. I just like saying it.",
+				"Why do we fall? So we learn to pick ourselves back up.",
+				"A hero can be anyone. Even you, at that keyboard.",
+				"Alfred asks if you're staying for dinner. I said yes.",
+				"I am the night. You're the one who keeps the coffee on."
+			],
+			"partner": [
+				"I'm Batman. By now that makes two of us in spirit.",
+				"I am vengeance. I am the night. And you're my alibi.",
+				"The night is darkest before the dawn. We hold to that.",
+				"You either die a hero, or live to maintain the code.",
+				"I never said thank you. To you, I might. Once."
+			],
+			"legend": [
+				"It's not who I am underneath, but what I do, that defines me.",
+				"The night is darkest just before the dawn. The dawn comes.",
+				"I am vengeance. I am the night. I am Batman. Still.",
+				"A legend isn't the man. It's the symbol he leaves behind.",
+				"Endure. That word built everything you see. It holds."
+			]
+		},
+		"event": {
+			"test_fail": [
+				"A red test is a witness. Sit it down and hear its story.",
+				"One test broke. A crack in the alibi. Follow it to the truth.",
+				"The suite flagged a lie. Good. Now the evidence points somewhere."
+			],
+			"build_fail": [
+				"The build caved. Every collapse shows which beam ran weak.",
+				"Compile stopped cold. A blocked door means the wall still holds.",
+				"Build's down. The Batcomputer mapped the fault. Rebuild from it."
+			],
+			"typecheck_fail": [
+				"Types caught a mismatch. The one witness that never lies.",
+				"A type slipped past. The compiler named it. Deduction, cold.",
+				"Type error. The Batcomputer flags the contradiction cleanly."
+			],
+			"lint": [
+				"The linter swept the room. Nothing hides from a clean pass.",
+				"Style check complete. Alfred would approve of the tidiness.",
+				"Lint ran the perimeter. Small infractions, logged and lined up."
+			],
+			"format": [
+				"Formatted. Wayne Manor runs cleaner than the streets below it.",
+				"Everything squared to the grid. Order is its own kind of armor.",
+				"Tidied up. Alfred keeps the manor just so; the code follows suit."
+			],
+			"install": [
+				"New tools in the arsenal. I vet every piece before the belt.",
+				"Packages loaded. Even the grapnel came from a workshop.",
+				"Fresh dependencies wired in. New gear, vetted before trust."
+			],
+			"git": [
+				"The record shifts. I keep case files on everything that moves.",
+				"History updated. The Batcomputer logs each change to the ledger.",
+				"A commit to the timeline. Every entry is testimony later."
+			],
+			"file_edit": [
+				"Edits laid down. The evidence board rearranges as the case turns.",
+				"Files changed. Small strokes. That's how a case is built.",
+				"You reshaped the source. I watch the details others miss."
+			],
+			"search": [
+				"Hunting the code. Deduction is only patient searching, caped.",
+				"Combing for the thread. Every clue was in plain sight once.",
+				"Scanning the files. The Batcomputer and I miss very little."
+			],
+			"web_fetch": [
+				"Pulling intel from the wire. Every informant has something.",
+				"Reaching outside for evidence. Good cases gather from far off.",
+				"Intel inbound. I cross-reference before I trust a source."
+			],
+			"todo_update": [
+				"The case board shifts. Priorities move; the work stays clear.",
+				"New order on the list. Alfred kept my schedule this precise.",
+				"Objectives reshuffled. A good detective revises the plan."
+			],
+			"agent_spawn": [
+				"Sending help into the field. Even I keep a Robin on call.",
+				"A partner goes out ahead. I trust the ones I train.",
+				"Backup deployed. Nightwing worked alone too, once ready."
+			],
+			"skill_run": [
+				"Right tool off the belt. The batarang was never the only one.",
+				"A specialist steps in. I built the kit for exactly this.",
+				"Deploying gear for the job. Preparation is most of the win."
+			],
+			"docker": [
+				"Sealed in a container. Contained is the whole point of a cell.",
+				"The box holds its own world. Arkham keeps things separate too.",
+				"Container in motion. Everything walled off, running clean."
+			],
+			"k8s": [
+				"Policing a city of pods. I know that job better than most.",
+				"The cluster answers the call. A precinct, keeping its beats.",
+				"Orchestrating the fleet. Command needs a steady hand up top."
+			],
+			"deploy": [
+				"Out into the city now. I'll take the rooftops; you watch it land.",
+				"The work ships tonight. The signal's already lit for it.",
+				"Released to the streets. Now we see how it holds up out there."
+			],
+			"db_migrate": [
+				"The records reshape themselves. Every archive gets reorganized.",
+				"Migrating the vault. Records shift to a new shelf. Steady.",
+				"The schema shifts underfoot. Change the ground, keep the footing."
+			],
+			"dangerous": [
+				"That command has teeth. I'd measure a batarang twice as well.",
+				"Sharp edge on that one. I keep my hand steady near live wires.",
+				"A heavy move. Even I respect the weight of a loaded line."
+			]
+		},
+		"stack": {
+			"web": {
+				"slow": [
+					"Requests crawling. The browser stalls like bridge traffic.",
+					"The DOM's slow to answer. Some doors open only in time.",
+					"Page hangs. Patience. Every stakeout runs long before it breaks."
+				],
+				"fail": [
+					"Request came back wrong. A shut door still has a way in.",
+					"The browser choked. Every dead end narrows where the truth hides.",
+					"The DOM broke. Rebuild the scene node by node. The clue's there."
+				]
+			},
+			"python": {
+				"slow": [
+					"Python's coiling. The snake takes its time before it strikes.",
+					"Interpreter's slow. The GIL keeps one lane open. Everyone waits.",
+					"Imports loading slow. The snake unspools one coil at a time."
+				],
+				"fail": [
+					"Python threw. A traceback is a witness. Read it from the bottom.",
+					"The snake bit. No matter. Every strike teaches you its pattern.",
+					"Import failed. A missing link in the chain. Find it, rebuild it."
+				]
+			},
+			"sql": {
+				"slow": [
+					"Query's dragging. Somewhere a missing index leaves it blind.",
+					"The join's slow. Two tables meeting in a dark alley. Give it time.",
+					"Schema scan crawls. Every row questioned, one by one."
+				],
+				"fail": [
+					"Query broke. Interrogate the schema. Someone lied about a join.",
+					"The join failed. A witness whose story doesn't match. Question it.",
+					"Query came back red. A crooked index. Straighten it and it talks."
+				]
+			},
+			"web-framework": {
+				"slow": [
+					"Routes crawling. Each request checks in at every rooftop first.",
+					"Middleware's slow. Layered checkpoints. ID at each gate.",
+					"The render drags. The city takes its time to fully take shape."
+				],
+				"fail": [
+					"A route came back wrong. Retrace it. The map redraws itself.",
+					"Middleware broke. One gate jammed. The chain shows which link.",
+					"Render failed. A half-drawn scene still points to its artist."
+				]
+			},
+			"docker": {
+				"slow": [
+					"The image builds slow. Layer on layer, like armor. Worth it.",
+					"Container's sluggish to start. Even a cell door takes its hinges.",
+					"Layers stacking slow. Patience. Good plating is never rushed."
+				],
+				"fail": [
+					"The container went down. Contained. That's the point of a cell.",
+					"Build failed on a layer. A weak seam in the armor. Reforge it.",
+					"The image broke. A blueprint with one bad line. Redraw, rebuild."
+				]
+			},
+			"java": {
+				"slow": [
+					"The JVM's warming up. Even a cold engine turns over eventually.",
+					"The heap's filling. Give it room. Every archive needs its shelves.",
+					"Classpath scan drags. The Batcomputer indexes slow when it's deep."
+				],
+				"fail": [
+					"The JVM threw. A stack trace is a trail of prints. Follow it.",
+					"The heap gave out. Every vault fills. Clear space; it holds again.",
+					"Classpath broke. A missing file in the record. Track it down."
+				]
+			},
+			"go": {
+				"slow": [
+					"Goroutines piling up. A whole squad afield. Coordinate them.",
+					"The compiler's chewing through it. Fast, usually. Let it finish.",
+					"Channels backing up. The signal comes. Hold the line."
+				],
+				"fail": [
+					"The compiler said no. A strict partner. I respect the discipline.",
+					"A goroutine crashed. One runner fell. The squad closes the gap.",
+					"Go build failed. A flat no tells you exactly where. Read it."
+				]
+			},
+			"node": {
+				"slow": [
+					"The event loop's clogged. One lane, many calls. It'll clear.",
+					"npm's crawling. A long supply run. Alfred would say pack lighter.",
+					"Callbacks stacking deep. A chain of favors. Follow it to the end."
+				],
+				"fail": [
+					"The event loop stalled out. The line went dead. Bring it back.",
+					"npm broke the install. A bad shipment. Return it, order again.",
+					"A callback threw. Deep in the chain, a lie. Trace its source."
+				]
+			},
+			"dotnet": {
+				"slow": [
+					"MSBuild's grinding. A long assembly line. Every part gets checked.",
+					"The CLR's warming. Cold steel takes heat before it moves.",
+					"The build drags through targets. Methodical. I can respect that."
+				],
+				"fail": [
+					"MSBuild came back red. A blueprint flagged. Find the crossed wire.",
+					"The CLR threw. A forged alibi in the code. Break it open.",
+					"Build failed a target. One checkpoint missed. The log names it."
+				]
+			},
+			"cpp": {
+				"slow": [
+					"The linker's stitching symbols. Slow work. Every wire must meet.",
+					"Templates expanding. The compiler unfolds each one like a case.",
+					"Compilation drags. Precision costs time. A batarang is machined."
+				],
+				"fail": [
+					"Segfault. It touched memory it shouldn't. The trail is there.",
+					"The linker couldn't close it. A name missing from the record.",
+					"Templates broke. A tangled blueprint. Unfold it line by line."
+				]
+			},
+			"php": {
+				"slow": [
+					"PHP's laboring. The interpreter walks each request door to door.",
+					"The script drags. An old beat cop. Slow, but it knows the streets.",
+					"Page hangs on the parse. Patience reads the whole file."
+				],
+				"fail": [
+					"PHP threw. The old cop coughs up a warning. Hear it out.",
+					"The script broke. A seasoned hand still misses a step.",
+					"Request came back wrong. Retrace the beat. The clue's on it."
+				]
+			},
+			"rust": {
+				"slow": [
+					"Rust's compiling. The borrow checker audits every hand-off. Slow.",
+					"Lifetimes resolving. It maps who owns what, cell by cell.",
+					"The compiler's thorough. Ownership checked twice. A good plan."
+				],
+				"fail": [
+					"The borrow checker held. I respect an incorruptible guard.",
+					"Ownership denied. It won't let two hands hold one clue. Good.",
+					"A lifetime didn't check out. The guard caught a forged pass."
+				]
+			},
+			"kubernetes": {
+				"slow": [
+					"The cluster's dragging. Policing a city of pods. I sympathize.",
+					"Scheduling's slow. Placing every unit on its rooftop takes care.",
+					"Pods coming up slow. A precinct takes time to staff a full shift."
+				],
+				"fail": [
+					"A pod went down. One patrol lost. The cluster sends the next.",
+					"Scheduling failed. No rooftop free. Reroute and go.",
+					"The cluster dropped it. A checkpoint fell. The log names it."
+				]
+			},
+			"ml": {
+				"slow": [
+					"Training grinds on. Epoch by epoch. The reps are the point.",
+					"Gradients crawl downhill. Slow descent. Every step counts.",
+					"Tensors churning. Raw power, patiently applied. I know it well."
+				],
+				"fail": [
+					"Training diverged. A lead that scattered. Rein it in, rerun.",
+					"The loss went to nothing useful. A cold trail warms with patience.",
+					"The run failed. A model is a theory. This one broke. Form another."
+				]
+			},
+			"android": {
+				"slow": [
+					"Gradle's crawling. The Batmobile idles before it roars.",
+					"The emulator boots slow. Patience: the suspect always shows.",
+					"APK's still assembling. Good armor takes its time to plate."
+				],
+				"fail": [
+					"Gradle broke the build. Every collapse reveals the weak beam.",
+					"The APK failed. Alfred re-forges the gauntlet and tries again.",
+					"Emulator crashed. A dropped grapnel line just means re-throw."
+				]
+			},
+			"ruby": {
+				"slow": [
+					"Bundler's resolving gems. Slow diamonds, but they hold.",
+					"The interpreter's dawdling. A ruby needs light to shine.",
+					"Gems installing at a crawl. Precious things resist the rush."
+				],
+				"fail": [
+					"Bundler couldn't resolve it. A conflict is just a clue. Read it.",
+					"The gem build failed. Cut facets go wrong; you re-cut them.",
+					"Ruby threw. The trace runs cold. Warm it, read it back."
+				]
+			},
+			"ios": {
+				"slow": [
+					"Xcode's indexing forever. Gotham's records run deep too.",
+					"Provisioning drags. I wait on the right paperwork. Barely.",
+					"The signing check is slow. Gatekeepers verify before they open."
+				],
+				"fail": [
+					"Signing failed. Even I get stopped at a checkpoint. It passes.",
+					"Provisioning failed. Wrong papers. The right set is out there.",
+					"Xcode's build broke. Every faulty rivet just wants re-setting."
+				]
+			},
+			"terraform": {
+				"slow": [
+					"The plan's still computing. I map the city before I move.",
+					"Apply is grinding. Reshaping a skyline takes deliberate hands.",
+					"State refresh drags. The ledger reconciles slowly. Let it settle."
+				],
+				"fail": [
+					"Apply failed. Drift in the state. Read the ground, then move.",
+					"The plan errored. A blueprint flaw caught early saves the tower.",
+					"State lock clashed. Two hands on one file. It'll come loose."
+				]
+			},
+			"graphql": {
+				"slow": [
+					"The query's resolving slow. Deep questions take longer answers.",
+					"Resolvers are dragging. Every field waits its turn to speak.",
+					"Schema stitching crawls. A big case file reads slowly. Endure."
+				],
+				"fail": [
+					"A resolver threw. One field lies about its shape. Corner it.",
+					"The query failed. A garbled question still points somewhere.",
+					"Schema validation broke. Mismatched testimony. Line it up again."
+				]
+			},
+			"flutter": {
+				"slow": [
+					"Hot reload's lagging. A quick change still earns a breath.",
+					"The widget tree's rebuilding slow. Deep roots take their time.",
+					"Flutter's repainting forever. A careful frame beats a rushed one."
+				],
+				"fail": [
+					"The widget tree threw. A broken branch shows where to prune.",
+					"Hot reload failed. Reset the grapnel, throw the line again.",
+					"The build broke on a widget. One bad joint. Re-seat it. Steady."
+				]
+			},
+			"react-native": {
+				"slow": [
+					"Metro's bundling slow. The bridge holds; the crossing is long.",
+					"The bridge is lagging. Two worlds talking takes a moment.",
+					"Native modules link slowly. Good welds are worth the wait."
+				],
+				"fail": [
+					"The bridge dropped a call. A severed line just wants re-tying.",
+					"Metro failed to bundle. A jammed cargo run: clear it, re-send.",
+					"A native module threw. One bad relay. Trace the wire, reconnect."
+				]
+			},
+			"scala": {
+				"slow": [
+					"sbt's compiling slow. The Batcomputer chews hard proofs too.",
+					"The compiler's grinding. Implicits resolve like quiet deductions.",
+					"Type inference drags. It's just patient reasoning. Let it work."
+				],
+				"fail": [
+					"The compiler refused it. A gatekeeper that never blinks. Fair.",
+					"An implicit went missing. A name off the roster. Call it in.",
+					"sbt broke the build. Every cave-in names the weakest support."
+				]
+			},
+			"protobuf": {
+				"slow": [
+					"Codegen's crawling. Forging matched keys takes a steady hand.",
+					"The schema compile drags. Precise contracts resist the rush.",
+					"Wire format's generating slow. Encrypted channels take setup."
+				],
+				"fail": [
+					"Codegen failed. A schema mismatch is just a clue to read.",
+					"The wire format broke. Garbled signal; re-encode and re-send.",
+					"A proto field clashed. Two versions disagree. Reconcile them."
+				]
+			},
+			"game": {
+				"slow": [
+					"The frame rate's dropping. Every grapnel arc needs timing.",
+					"The render loop stutters. A steady cadence beats a frantic one.",
+					"Physics is churning. Every falling body obeys the math. Wait."
+				],
+				"fail": [
+					"The render loop crashed. A missed frame isn't a fall. Re-time it.",
+					"Physics blew up. A body flew off. Recompute the arc, re-launch.",
+					"The frame pipeline broke. One stalled gear. Re-seat, roll on."
+				]
+			},
+			"docs": {
+				"slow": [
+					"The doc build's slow. A thorough case file is never rushed.",
+					"Generation drags. The Batcomputer indexes every page. Patience.",
+					"Docs are compiling slowly. Good records reward the wait."
+				],
+				"fail": [
+					"The doc build broke. A reference points nowhere. Chase it down.",
+					"Generation failed. A hole in the record. Fill what's missing.",
+					"The docs wouldn't render. One bad link. Every case has a knot."
+				]
+			},
+			"r": {
+				"slow": [
+					"The vector's crunching slow. Reading a crowd takes patience.",
+					"The data frame's churning. Big evidence tables read slowly.",
+					"The console's thinking. Every number is testimony. Let it total."
+				],
+				"fail": [
+					"The vector op threw. A shape mismatch is a clue. Measure again.",
+					"The data frame broke. One column's cooking the books. Audit it.",
+					"The console errored. One wrong row; the ledger still adds up."
+				]
+			},
+			"cuda": {
+				"slow": [
+					"The GPU's grinding away. Massed force, aimed with patience.",
+					"The kernel's slow to launch. Even a strike waits for the cue.",
+					"Threads are queuing. A thousand hands, marshaled in order. Wait."
+				],
+				"fail": [
+					"The kernel faulted. One wrong address. The rest holds firm.",
+					"A thread went out of bounds. One hand slipped the line. Rein it.",
+					"The GPU threw. Raw power tripped a wire. Reset it, drive on."
+				]
+			}
+		},
+		"pressure": {
+			"compact_hint": [
+				"The context's crowded. The Batcave archives get thinned.",
+				"A full desk. Alfred clears the manor without losing a thing.",
+				"Room's filling with case files. The best ones stay pinned up."
+			],
+			"block_limit": [
+				"This window's nearly spent. Even I clock out before dawn.",
+				"The block runs low. Endurance is pacing, not sprinting.",
+				"Nearly to the hour's edge. The longest patrol ends well."
+			],
+			"weekly_limit": [
+				"A long week in the field. Pace it. The city keeps till Monday.",
+				"The week's run deep. Even a long campaign has its rhythm.",
+				"Miles logged this week. Bruce Wayne endured worse stretches."
+			]
+		},
+		"dateEgg": [
+			"Another year turns. Wayne Manor has outlasted worse.",
+			"Midnight in Gotham. My favorite hour to still be working.",
+			"A new day breaks over the city. The watch changes hands.",
+			"Fireworks read like signal flares from up on the ledge.",
+			"Late. Alfred's long asleep. The case files never are.",
+			"The season turns cold. The rooftops empty out. I keep the ledge.",
+			"New year, same vow. I renewed it before the clock struck.",
+			"Dawn on the gargoyles. Even stone gets to rest by daylight.",
+			"The calendar flips. Another anniversary I won't mention.",
+			"Small hours. The city sleeps; the mission keeps its watch."
+		]
+	},
+	"spinnerVerbs": [
+		"Deducing",
+		"Interrogating",
+		"Grappling",
+		"Shadowing",
+		"Decrypting",
+		"Staking out",
+		"Ambushing",
+		"Unmasking",
+		"Triangulating",
+		"Profiling",
+		"Vanishing",
+		"Prowling",
+		"Investigating",
+		"Reconstructing",
+		"Intercepting",
+		"Fingerprinting",
+		"Zeroing in",
+		"Cornering",
+		"Dusting for prints",
+		"Brooding",
+		"Calculating",
+		"Patrolling",
+		"Tailing",
+		"Combing",
+		"Gliding",
+		"Stalking",
+		"Cross-checking",
+		"Grilling",
+		"Tracing",
+		"Hunting"
+	]
+}

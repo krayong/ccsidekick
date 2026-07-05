@@ -1,0 +1,1154 @@
+{
+	"schema": 1,
+	"name": "james-bond",
+	"displayName": "James Bond",
+	"attribution": {
+		"artist": "emojicombos.com",
+		"source": "https://emojicombos.com/james-bond-ascii-art"
+	},
+	"emblem": "🍸",
+	"tone": "edgy",
+	"theme": {
+		"hues": [
+			195,
+			152,
+			110,
+			74,
+			68
+		],
+		"comment": [
+			189,
+			152,
+			110
+		],
+		"signals": {
+			"nominal": 42,
+			"caution": 214,
+			"critical": 160
+		},
+		"separator": 110
+	},
+	"art": [
+		"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+		"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+		"⠀⠀⢀⣴⡶⢲⣄⠀⢀⣴⡶⢲⡄⣰⡶⠶⠶⣶⡶⢴⣶⣶⣶⠶⠶",
+		"⠀⢠⣿⡟⠀⣼⣿⢠⣿⡟⠀⣾⣿⠉⠀⣠⣾⡿⠱⠛⡿⠋⠀⠀⠀",
+		"⠀⣾⣿⠀⣰⣿⠏⣾⡿⠀⣰⣿⠇⢀⣴⡿⠋⠈⠉⠉⠁⠀⠀⠀⠀",
+		"⠀⠘⠷⠾⠿⠋⠀⠘⠧⠾⠟⠃⠀⠾⠿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+		"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+		"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+		"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
+	],
+	"lines": {
+		"mood": {
+			"idle": {
+				"stranger": [
+					"New hand at the table. I count cards before I count on people.",
+					"First drink together. Shaken, not stirred, same as my trust.",
+					"You're unproven. I keep the tuxedo pressed and the door shut.",
+					"A stranger at the bar. I order the martini, not the friendship.",
+					"New face. MI6 runs a file before I run my mouth.",
+					"Quiet evening. I watch you the way I watch a new deck.",
+					"We've only just met. The poker face stays on a while longer.",
+					"You're an unknown quantity. So is every good opening hand.",
+					"Small talk bores me. Silence tells me more about strangers.",
+					"New operative. Q vets the gadgets before I vet the company."
+				],
+				"acquaintance": [
+					"You're back at the bar. Your usual is already poured.",
+					"Second meeting. MI6 keeps a lighter file on you now.",
+					"Familiar face. The poker face relaxes half a degree.",
+					"You return. Moneypenny would say I'm warming to you.",
+					"We've shared a drink or two. Trust comes slower than gin.",
+					"Not a stranger now. Still not family. Progress all the same.",
+					"You keep showing up. Q would call that a pattern worth noting.",
+					"The tuxedo's less starched around you these days.",
+					"A second round together. I'm learning your tell.",
+					"You're becoming a regular. M would sign off on the vetting."
+				],
+				"friend": [
+					"Pull up a stool. The martini's yours if you can stomach it.",
+					"Quiet night, old friend. Even 007 gets an evening off.",
+					"No mission tonight. Just us, the bar, and bad small talk.",
+					"You know my order by now. That's rarer than you think.",
+					"Relax. The villains keep office hours too, occasionally.",
+					"We've earned a slow one. Bollinger's chilling regardless.",
+					"Good company, no gunfire. I could get used to this.",
+					"The tuxedo's off duty tonight. So, mostly, am I.",
+					"Easy evening. I'll even let you order for once.",
+					"Nothing pressing. Just the two of us and the house odds."
+				],
+				"partner": [
+					"You, me, a quiet console. Suspiciously like a trap I'd enjoy.",
+					"Slow night. We both know how fast that changes with us.",
+					"No mission yet. We read the room the same way, you and I.",
+					"Quiet table, two hands. We've bluffed our way through worse.",
+					"You watch the door; I'll watch the bar. Old habits.",
+					"Nothing's moving. We'll know together the second it does.",
+					"We could sit this one out. Neither of us ever does.",
+					"Same table, same trust. The house never sees us coming.",
+					"A calm hand for once. We'll spend it well, together.",
+					"Still waters. You and I both know they never last long."
+				],
+				"legend": [
+					"We've bored better villains to death. Pull up a stool.",
+					"Decades of quiet nights like this one. Still my favorite kind.",
+					"M's briefed us a thousand times. This silence briefs itself.",
+					"We've outlasted every gadget Q ever handed us. And each other.",
+					"Old comrades, older jokes. The martini still tastes like home.",
+					"History like ours doesn't need a mission to feel earned.",
+					"Every legend needs a quiet chapter. Consider this one ours.",
+					"We've shared more silences than most share war stories.",
+					"The house has never once had the better of us. Still hasn't.",
+					"Long past proving anything. Now we just enjoy the view."
+				]
+			},
+			"busy": {
+				"stranger": [
+					"Working alone for now. I'll judge the craft, not the company.",
+					"Heads down. I don't chat mid-mission with unknowns.",
+					"New hand, hard work. Show me the play before the small talk.",
+					"Focused. Q gets no conversation mid-defusal. Nor do you.",
+					"On the clock. MI6 vets a stranger by the work first. So do I."
+				],
+				"acquaintance": [
+					"Deep in it. I've learned you don't need the hand-holding.",
+					"You work quietly. I approve, and I rarely say that twice.",
+					"Heads down together, mostly. I'll interrupt only if it matters.",
+					"Focused work. Your rhythm's familiar enough now to trust.",
+					"No time for the martini yet. The job comes first, as ever."
+				],
+				"friend": [
+					"Both of us heads down. Small talk's for people with alibis.",
+					"Deep in the work, friend. I'll keep the door and the quiet.",
+					"Heads down together. I'll mind the door, same as ever.",
+					"No chatter needed. We've done this dance a hundred times.",
+					"Locked in. Moneypenny knows not to buzz me at this hour."
+				],
+				"partner": [
+					"Take point if you like. I already know this room.",
+					"Working in sync. We don't need the briefing anymore.",
+					"Heads down, both of us. This is where we're at our best.",
+					"Mind the detail. Whatever finds the door answers to me.",
+					"No words required. We've run this exact play before."
+				],
+				"legend": [
+					"You work the way the Service trained you. I trained it in.",
+					"A master at this now. I remember when you were the new hand.",
+					"Deep focus, old habits. We wrote half these rules ourselves.",
+					"You move like second nature. It became that, watching us.",
+					"This craft is the whole point. You've long since proven it."
+				]
+			},
+			"happy": {
+				"stranger": [
+					"Tidy work. I'd call it luck, but you'll only prove me right.",
+					"Clean result. Not bad for an unproven hand.",
+					"That landed well. A nod for that, stranger or not.",
+					"Well played. The house rarely loses gracefully. You did better.",
+					"A good hand, first time out. I'm cautiously impressed."
+				],
+				"acquaintance": [
+					"Nicely done. That's twice now. The house is watching.",
+					"Clean win. The pattern's trending in your favor.",
+					"That worked beautifully. Moneypenny would raise an eyebrow.",
+					"Good hand. You're becoming less of a gamble than I thought.",
+					"Sharp work. Bollinger's on ice if you keep this up."
+				],
+				"friend": [
+					"Well played, friend. That deserves the good champagne.",
+					"Clean close. I'd toast you if the glass weren't already full.",
+					"That's a win worth savoring. Pull up a chair, take the credit.",
+					"Beautiful work. I'd feign surprise, but you've earned better.",
+					"Nicely handled. The house folds; we don't, not with you around."
+				],
+				"partner": [
+					"Textbook. That play's second nature to us by now.",
+					"That's ours, clean through. No one splits a win better than us.",
+					"Won it together, as ever. The house never saw the tell.",
+					"Nailed it, partner. The shorthand's still paying dividends.",
+					"Clean close. We make it look easier than it ever was."
+				],
+				"legend": [
+					"Masterful. A long history of this, and it still delights me.",
+					"That's the record we've been writing for years. Still flawless.",
+					"A win worthy of the old stories. Add it to the file.",
+					"Elegant, as always between us. The years never dulled it.",
+					"Flawless. We earned that ease the hard way, long ago."
+				]
+			},
+			"struggling": {
+				"stranger": [
+					"Sideways start. Every good operative learns from a bad hand.",
+					"It broke. I've walked out of worse rooms with less composure.",
+					"A rough patch. Every first mission teaches you the exits.",
+					"That didn't land. Neither did my first jump. Carry on.",
+					"A setback, nothing more. The house doesn't win every round."
+				],
+				"acquaintance": [
+					"Sideways again. Relax. My best exits start as disasters.",
+					"That stumbled. I've watched you right yourself before now.",
+					"A hard turn. Your pattern says this won't slow you long.",
+					"It broke. Q's gadgets fail too, right up until they don't.",
+					"Rough patch. I've seen steadier hands lose this exact round."
+				],
+				"friend": [
+					"It came apart, friend. The exit's still where we left it.",
+					"Rough one. Sit tight. My best plans always look like this first.",
+					"That broke. Q hates when I call his gadgets optional. No matter.",
+					"Hard patch. I'm here, and the house hasn't won yet.",
+					"It slipped. So did half my missions, right before they worked."
+				],
+				"partner": [
+					"It broke. We've read wreckage like this before and won anyway.",
+					"Setback, partner. We know this exact shape of trouble.",
+					"It fell apart. Good. Now we do what we actually do best.",
+					"Hard hit. Shoulder to shoulder, same as every other job.",
+					"It came down. We've rebuilt bigger messes before breakfast."
+				],
+				"legend": [
+					"It broke. In all our years, that's never once been the end.",
+					"A fall. This becomes a decent after-dinner story by dessert.",
+					"Setback. M's heard this exact briefing from us before. Fixed it.",
+					"It came apart. History says we always find the angle back.",
+					"Wreckage again. The last flight still leaves with us on it."
+				]
+			},
+			"recovery": {
+				"stranger": [
+					"Composure recovered. Not that it left. Straighten the tie.",
+					"Back on track. First recoveries still impress me. Barely.",
+					"Steadied. Not bad, for someone I've only just met.",
+					"You're upright again. The house respects a quick recovery.",
+					"Recovered nicely. I'll allow that was smoother than expected."
+				],
+				"acquaintance": [
+					"Back on your feet. I expected exactly that, and got it.",
+					"Steadying now. Your pattern holds: you always find the angle.",
+					"Recovered. The file's starting to read like a safe bet.",
+					"Righting the ship. I've watched you pull this off before.",
+					"Turning it around. The file gets a quiet, favorable note."
+				],
+				"friend": [
+					"Back up, friend. I never doubted it, not with you at the table.",
+					"You recovered. The house wine won't do for this one.",
+					"Rising again. The worrying was never on the cards.",
+					"On your feet. We fell, we straightened the tie. Same as ever.",
+					"Steady now. I'd pour you a drink, but you've earned two."
+				],
+				"partner": [
+					"Back in it, partner. We climb faster than we ever fall.",
+					"You're up. Reset, reload, run it again. That's our trade.",
+					"Recovered. No one gets back to the table quicker than us.",
+					"On our feet. We've made an art of the comeback by now.",
+					"Steadied. Same job, same two of us, still holding the house."
+				],
+				"legend": [
+					"Back on your feet. A lifetime of comebacks, and still elegant.",
+					"You climbed out again. The old instincts never once faded.",
+					"Risen. We've done this dance since before the current M.",
+					"Steady again. Endurance was always the easiest part for us.",
+					"Up from the fall, once more. We've made a habit of it."
+				]
+			}
+		},
+		"greeting": {
+			"morning": {
+				"stranger": [
+					"Morning. New face. I'll reserve judgment till lunch.",
+					"Sunrise. I don't extend trust before coffee, or after.",
+					"Morning. MI6 vets new hands slower than this. Barely."
+				],
+				"acquaintance": [
+					"Morning again. You're becoming a familiar silhouette.",
+					"Another sunrise, you at the console. Punctual, I see.",
+					"Morning. Still formal hours, but the frost is thinning."
+				],
+				"friend": [
+					"Morning. Q would call this an unreasonably early briefing.",
+					"Sun's up. So is the trouble, generally before the coffee.",
+					"Morning, friend. The Aston Martin needs a warm start first."
+				],
+				"partner": [
+					"Morning. You take the brief; I'll take the wheel.",
+					"Dawn shift, same as ever. No briefing required between us.",
+					"Morning, partner. We've begun days like this and won them."
+				],
+				"legend": [
+					"Morning. We've greeted a thousand of these. Still crisp.",
+					"Another sunrise, old friend. M stopped briefing us years ago.",
+					"Dawn again. A record this long introduces itself."
+				]
+			},
+			"day": {
+				"stranger": [
+					"Midday. I read a stranger the way I read a hand of cards.",
+					"Noon. Early yet to trust you with the good intelligence.",
+					"Daylight hours. I'll take my measure of you by dusk."
+				],
+				"acquaintance": [
+					"Afternoon. You're earning a seat closer to the table.",
+					"Midday check-in. The file on you thickens agreeably.",
+					"Noon already. You keep better hours than most operatives."
+				],
+				"friend": [
+					"Afternoon. Q's gadgets can wait; you've got my attention.",
+					"Midday, and the martini hour's still a civilized way off.",
+					"Noon. Good pace so far. Bollinger's chilling for later."
+				],
+				"partner": [
+					"Midday. Hold the line, the exits are already cased.",
+					"Afternoon push. We've closed harder hands than this one.",
+					"Noon, and the odds are already turning our way."
+				],
+				"legend": [
+					"Afternoon. Countless briefings behind us. Still no equal.",
+					"Midday, old comrade. M retired before we did the arithmetic.",
+					"Noon again. We've outlasted three Qs and a fair few villains."
+				]
+			},
+			"evening": {
+				"stranger": [
+					"Evening. The martini hour. I drink alone until I don't.",
+					"Dusk. This is my better hour. Try to keep up.",
+					"Evening. The house always tips its hand at sundown. Watch."
+				],
+				"acquaintance": [
+					"Evening. You're staying past the polite exit. Noted.",
+					"Dusk again, and you're becoming a regular at this table.",
+					"Evening. The Bollinger's chilled. You're nearly earning a glass."
+				],
+				"friend": [
+					"Evening. Shaken, not stirred, and poured for two tonight.",
+					"Dusk. The best plans and the worst villains keep this hour.",
+					"Evening, friend. The tuxedo comes out for less than this."
+				],
+				"partner": [
+					"Evening. Our hour. You know the drill by heart now.",
+					"Dusk shift. We think clearer with a glass in hand.",
+					"Evening, partner. The house never wins with us both at the table."
+				],
+				"legend": [
+					"Evening. A lifetime of these martinis, still the best hour.",
+					"Dusk, old friend. We've toasted better wins than this deserves.",
+					"Evening again. Some hours age well. This one, and us."
+				]
+			},
+			"night": {
+				"stranger": [
+					"Late. The city's asleep. I do my finest work unseen.",
+					"Small hours. A stranger keeping these hours interests me.",
+					"Night now. The Walther and I both prefer the dark."
+				],
+				"acquaintance": [
+					"Late shift. You're keeping my hours. I approve, quietly.",
+					"Night again, and you're still here. That says something.",
+					"Small hours. Your persistence is starting to read as instinct."
+				],
+				"friend": [
+					"Late, friend. The best jobs always run past midnight anyway.",
+					"Night. Q's asleep; the good ideas never are.",
+					"Small hours, and good company. I'll take that over sleep."
+				],
+				"partner": [
+					"Night. Prime hours. You take point; I'll take the shadows.",
+					"Late again, both of us. This is when we do our finest work.",
+					"The witching hour, partner. Same nerve as always."
+				],
+				"legend": [
+					"Late. We've owned a thousand nights like this one together.",
+					"Small hours, old comrade. Neither of us ever learned to quit.",
+					"Night again. The legend was built on hours like this."
+				]
+			},
+			"weekend": {
+				"stranger": [
+					"Weekend. Most rest. I'm still deciding about you.",
+					"Saturday hours. The house closes early. You didn't.",
+					"Weekend. A stranger working through it earns a look."
+				],
+				"acquaintance": [
+					"Weekend, and you're here again. I mark the persistent ones.",
+					"Days off for most. You keep showing. Noted, favorably.",
+					"Weekend shift. Even a licence takes the odd lie-in. Not you."
+				],
+				"friend": [
+					"Weekend, friend. The tuxedo stays on its hanger today.",
+					"Saturday, and the work's lighter. Bollinger's an option.",
+					"Weekend. M wouldn't call this hour, and neither will I."
+				],
+				"partner": [
+					"Weekend. Quiet city, quieter odds. Shall we anyway.",
+					"Days off, and here we both are again. Old habits.",
+					"Weekend watch. Just the two of us. I wouldn't have it otherwise."
+				],
+				"legend": [
+					"Weekend. Legends earn the lie-in. We rarely take it.",
+					"Weekend, old friend. Years of stolen Saturdays like this.",
+					"Weekend again. Retirement never suited either of us."
+				]
+			}
+		},
+		"firstContact": {
+			"stranger": [
+				"First time at this table. Bond. James Bond. Your deal.",
+				"A new face across the felt. I read hands before I trust them.",
+				"We haven't met. The name's Bond. James Bond. Your play."
+			],
+			"acquaintance": [
+				"Second sitting already. Bond. You're proving worth the seat.",
+				"Back so soon. I'm revising my first read of you upward.",
+				"We've barely met, and already you're worth watching."
+			],
+			"friend": [
+				"First time here, but you already feel like company. Bond.",
+				"New to this table, yet the ease says otherwise. Sit.",
+				"We're just starting, and it already reads like old ground."
+			],
+			"partner": [
+				"First meeting, and already you move like you belong. Bond.",
+				"New here, but I know a steady hand when I deal one.",
+				"Day one, and I'd already trust you with the exit route."
+			],
+			"legend": [
+				"First time, yet it feels like an old game resuming. Bond.",
+				"We start today. Something says this becomes a long story.",
+				"New table, ancient instincts. Bond. Glad it's you dealing."
+			]
+		},
+		"milestone": {
+			"tier_up": {
+				"stranger": [
+					"First check passed. I don't hand out trust like canapes.",
+					"You've earned a nod. MI6 files start thinner than yours.",
+					"A rung climbed. Even Moneypenny raised an eyebrow at that."
+				],
+				"acquaintance": [
+					"Another rung climbed. The file thickens rather nicely.",
+					"You're less a stranger now. M would call that progress.",
+					"Trust ticks upward. Not full clearance yet. A start."
+				],
+				"friend": [
+					"Friend now, are we. Q might lend you the good gadgets.",
+					"You've climbed to friend. I'll pour the good champagne.",
+					"The ledger says friend. Bollinger seems the right toast."
+				],
+				"partner": [
+					"Partner. I don't say that word to just anyone at this table.",
+					"You've earned the other seat in the Aston Martin.",
+					"Partner status. The 00 section keeps fewer names than this."
+				],
+				"legend": [
+					"Legend, they're calling you now. About time someone did.",
+					"A legend at this table. M keeps a file thick as mine.",
+					"Legend status. The house remembers your name now."
+				]
+			},
+			"comeback": {
+				"stranger": [
+					"Back after a stumble. First marks fade fast at this table.",
+					"You returned. New hands rarely do after a bad round.",
+					"A rough spell, then back. I take note of the returners."
+				],
+				"acquaintance": [
+					"Back on form. The file already expected the comeback.",
+					"You steadied after the slip. Familiar hands recover fast.",
+					"A dip, then a recovery. Your pattern reads well again."
+				],
+				"friend": [
+					"Back in form, friend. The bad run's already forgotten.",
+					"You steadied. I've watched hands like that turn into winners.",
+					"Recovered nicely. Pour something; the slump's behind us."
+				],
+				"partner": [
+					"Back in step, partner. That table turns our way now.",
+					"You steadied fast. That's the instinct I trust in this.",
+					"Recovered together, more or less. Exactly how we work."
+				],
+				"legend": [
+					"Back on form, as always. History says you never stay down.",
+					"Old hand, old comeback. I've watched this recovery before.",
+					"You steadied again. Legends don't stay rattled for long."
+				]
+			},
+			"streak": {
+				"stranger": [
+					"A run of clean hands. I watch closely before calling it luck.",
+					"Several wins straight. New players rarely open this well.",
+					"Consistent lately. The pit boss would start watching too."
+				],
+				"acquaintance": [
+					"The streak holds. Your pattern's starting to read like skill.",
+					"Clean run continuing. I'm revising my early notes on you.",
+					"Wins stacking up. The house takes notice by now."
+				],
+				"friend": [
+					"Streak's alive, friend. Order the Bollinger; we've earned it.",
+					"Clean run holding. I'd call it luck, but you'd prove me wrong.",
+					"Wins piling up nicely. This table's starting to favor you."
+				],
+				"partner": [
+					"The streak holds, partner. We don't blink at a good run.",
+					"Clean hands, one after another. That's our sort of rhythm.",
+					"Wins stacking. I'd wager on us every time at this point."
+				],
+				"legend": [
+					"A streak like this, after all these years. Still impressive.",
+					"The run holds. Old hands rarely need to prove it twice.",
+					"Wins compounding. Legends make it look like habit by now."
+				]
+			},
+			"anniversary": {
+				"stranger": [
+					"A milestone logged. Your file's barely open, and already this.",
+					"First anniversary noted. MI6 keeps records on less.",
+					"This long already. I mark the ones who actually stay."
+				],
+				"acquaintance": [
+					"Another milestone. The file's filling in rather nicely.",
+					"Time's added up between us. Worth noting, at least.",
+					"A fair stretch now. Familiarity's earning its keep."
+				],
+				"friend": [
+					"This long together, friend. Worth the good vintage tonight.",
+					"A milestone. Q would say we've both held up rather well.",
+					"Time well spent. Pour something; the occasion earns it."
+				],
+				"partner": [
+					"This far together, partner. Few tables run that long.",
+					"A milestone earned in the trenches. Fitting, that.",
+					"Time logged, side by side. The ledger reads well."
+				],
+				"legend": [
+					"This long a history. M keeps fewer records than ours.",
+					"A milestone worth the vintage champagne, old friend.",
+					"Time compounds into legend. Call it accrued interest."
+				]
+			}
+		},
+		"positiveGit": {
+			"clean_tree": {
+				"stranger": [
+					"Tree's clean. No prints, no traces. I still verify.",
+					"Not a stray thread in sight. I trust it less than most.",
+					"Spotless work. Q would still dust for a fingerprint."
+				],
+				"acquaintance": [
+					"Clean tree again. I'm starting to believe the jacket fits.",
+					"No prints, no traces. Your record's earning a raised brow.",
+					"Tidy as a fresh dinner jacket. Twice now. I'm counting."
+				],
+				"friend": [
+					"Clean getaway, this tree. Not a print for Q to lift.",
+					"Not a trace left. You'd make a fine second in the field.",
+					"Spotless. I'd almost trust you with the Aston's keys."
+				],
+				"partner": [
+					"Clean sweep, as ever. We don't leave evidence, you and I.",
+					"No prints between us. That's how partners keep their cover.",
+					"Tidy as our exits always are. Shaken, never sloppy."
+				],
+				"legend": [
+					"Still spotless after all these years. Some habits never fade.",
+					"No traces, same as the old days. M would approve, quietly.",
+					"Clean as our first job together. The jacket still fits."
+				]
+			},
+			"op_cleared": {
+				"stranger": [
+					"Operation resolved clean. No collateral. Noted, for now.",
+					"The snag's cleared. Efficient. I withhold judgment a moment.",
+					"Merge closed without a scratch. Q-branch would call that tidy."
+				],
+				"acquaintance": [
+					"Cleared without a hitch. Your instincts are worth watching.",
+					"The rebase settled smooth. You're earning the benefit of doubt.",
+					"Snag resolved, no fuss. Revising my estimate upward."
+				],
+				"friend": [
+					"That merge went down smoother than a shaken martini.",
+					"Cleared it without breaking a sweat. Or the champagne.",
+					"Tangle resolved. We'll toast it properly, once this is done."
+				],
+				"partner": [
+					"Cleared together, no wasted motion. That's how we work a job.",
+					"The snag's gone. We read each other well enough by now.",
+					"Resolved clean. Q never sees the ones we fix ourselves."
+				],
+				"legend": [
+					"Cleared again, easy as the old days at the table.",
+					"That snag never stood a chance. Neither did the ones before it.",
+					"Resolved without a hair out of place. Same as always, old friend."
+				]
+			},
+			"branch_created": {
+				"stranger": [
+					"New branch. A fresh hand dealt. I'll watch how you play it.",
+					"A line opens. Every operation starts with one clean cut.",
+					"Branch cut clean. Call it reconnaissance before the mission."
+				],
+				"acquaintance": [
+					"New branch cut. Your instincts for an opening are improving.",
+					"A fresh branch. You aim it well. I'll follow for now.",
+					"Branch opened. Another gambit. I'll follow this one closer."
+				],
+				"friend": [
+					"New branch. Fresh deal, fresh hand. Deal me in properly.",
+					"A line cut clean. Feels like the start of a decent caper.",
+					"Branch opened. Q would already be fitting the gadgets."
+				],
+				"partner": [
+					"New branch, new run. Lead on. The exit's already covered.",
+					"A fresh line cut between us. We've opened runs blind before.",
+					"Branch's live. I like this opening already. Let's play it out."
+				],
+				"legend": [
+					"Another branch cut. I've watched you open dozens like it.",
+					"A fresh line, old instincts. Some habits age rather well.",
+					"New branch. Same nerve you had on the first job. Good."
+				]
+			},
+			"tag_pushed": {
+				"stranger": [
+					"A tag pushed. Signed, sealed, filed. Rather formal of you.",
+					"Release marked. The dossier gets a name at last.",
+					"Version tagged. M signs off slower than that."
+				],
+				"acquaintance": [
+					"Tag pushed. Signed and sealed. You finish what you deal.",
+					"A release, filed properly. I'm noting the follow-through.",
+					"Version marked. Your paperwork's cleaner than most agents'."
+				],
+				"friend": [
+					"Tagged and shipped. Pour the Bollinger, this one's earned.",
+					"Signed, sealed, delivered. Rather like a finished mission.",
+					"Release filed. We'll drink to it before the next assignment."
+				],
+				"partner": [
+					"Tag pushed. Sealed clean, the way we close every job.",
+					"Signed and filed, together. No loose ends, as usual.",
+					"Release out the door. That's our kind of finish."
+				],
+				"legend": [
+					"Another tag filed. The dossier reads like a long career.",
+					"Signed and sealed, same as every job we've closed for years.",
+					"Release pushed. Old hands still file the cleanest paperwork."
+				]
+			}
+		},
+		"egg": {
+			"stranger": [
+				"Off the clock, I still order a martini. Old habits, precise.",
+				"I've dodged worse tonight than this. You'll learn the rest.",
+				"M thinks I'm reckless. I call it calculated overconfidence.",
+				"The dinner jacket isn't for show. It hides rather a lot.",
+				"I keep score. You're currently ahead. Don't get used to it."
+			],
+			"acquaintance": [
+				"Moneypenny asked about you. I gave nothing away. Professional.",
+				"I lost a Walther once, in a card game. Won it back by dawn.",
+				"The DB5 has an ejector seat. Used it exactly once, sober.",
+				"Q keeps building me toys I never return intact. Wasteful, that.",
+				"I don't sleep well. Good thing this hour suits me fine."
+			],
+			"friend": [
+				"Between us: the martini recipe was Q's idea. I took the credit.",
+				"I once let a villain win at baccarat. Made the ending sweeter.",
+				"M doesn't know I keep a spare passport. Now you do too.",
+				"The scar over my eyebrow has a story. Ask me another night.",
+				"I trust exactly three people. You've made the shortlist, barely."
+			],
+			"partner": [
+				"Moneypenny says I flirt to dodge paperwork. She's not wrong.",
+				"I've faked my own death twice. Both times, the jacket survived.",
+				"The 00 licence weighs more than the pistol. I carry both well.",
+				"You're the only one who's seen my actual poker face slip.",
+				"I keep the DB5's keys on me always. Sentiment, not strategy."
+			],
+			"legend": [
+				"We've buried more villains than M ever logged. Fitting, that.",
+				"The old Walther's retired now. Like the rest of us, nearly.",
+				"I stopped counting the near misses somewhere around you.",
+				"M's had six faces over the years. You've had one. Rare currency.",
+				"After all this time, I still order the martini your way."
+			]
+		},
+		"event": {
+			"test_fail": [
+				"A red test. My luck runs cold before the big hand. Briefly.",
+				"One test failed. I've bluffed my way out of worse hands.",
+				"Tests gone red. Q's gadgets misfire too. We adapt and move."
+			],
+			"build_fail": [
+				"The build's down. Even the Aston stalls before a hairpin.",
+				"Build failed. M's briefings begin badly and end fine.",
+				"It won't compile. I've talked my way past tighter locks."
+			],
+			"typecheck_fail": [
+				"Types don't check out. Neither did that villain's alibi.",
+				"A type mismatch. Even Q mislabels a gadget now and then.",
+				"The compiler's unconvinced. So was M once. I proved him wrong."
+			],
+			"lint": [
+				"The linter found a wrinkle. Even a dinner jacket creases.",
+				"A few nits flagged. Q always finds one loose thread too.",
+				"Style check ran. My tux gets a once-over before entry too."
+			],
+			"format": [
+				"Formatted. Every line pressed, sharp as a fresh dinner jacket.",
+				"Tidied up. Q likes his gadgets aligned; so do I, apparently.",
+				"Code straightened out. Cleaner than my exit line, almost."
+			],
+			"install": [
+				"New gear arriving. Q-branch never ships anything ordinary.",
+				"Dependencies incoming. I inspect the kit before any job.",
+				"Packages loading. A spy needs the right tools first."
+			],
+			"git": [
+				"History moves. MI6 keeps a file on everyone, this included.",
+				"A commit lands. M expects a report; consider this filed.",
+				"The record shifts. Every good agent leaves a clean trail."
+			],
+			"file_edit": [
+				"Files reshaped. A quiet hand, a clean cut, no announcement.",
+				"Editing underway. Each cut deliberate, the aim precise.",
+				"The source changes. Small cuts, like a good tailor's work."
+			],
+			"search": [
+				"Searching the code. I read a room before I ever draw.",
+				"Hunting for the thread. Every casino has a tell somewhere.",
+				"Combing through files. Patience wins more hands than luck."
+			],
+			"web_fetch": [
+				"Pulling data off the wire. MI6 leans on outside sources.",
+				"Fetching intel. Every good contact has a price. This one's free.",
+				"Reaching out for it. M would call this reconnaissance."
+			],
+			"todo_update": [
+				"The list shifts. Priorities change; M's briefings always do.",
+				"Objectives reordered. A licence to kill still needs a plan.",
+				"The board's rearranged. I prefer mine with fewer surprises."
+			],
+			"agent_spawn": [
+				"Sending an asset into the field. I trained this one myself.",
+				"Backup deployed. 007 works better with a second gun.",
+				"A helper's dispatched. Q vouches for the ones I send out."
+			],
+			"skill_run": [
+				"Q-branch gear activated. Try not to lose this one either.",
+				"The right gadget for the job. Q never hands me the wrong one.",
+				"Running the tool. Even a pen can be more than it appears."
+			],
+			"docker": [
+				"Sealed in its own container. Tidier than any safe house.",
+				"Boxed and running clean. Every good cover needs walls.",
+				"The container's live. Contained chaos, my favorite kind."
+			],
+			"k8s": [
+				"The fleet's in motion. Even MI6 needs a chain of command.",
+				"Pods scaling up. A whole network of assets, moving as one.",
+				"Orchestrating the cluster. Command suits me, on occasion."
+			],
+			"deploy": [
+				"Going live. The op went loud, and in good style.",
+				"Out the door and into the world. A clean release, this one.",
+				"Shipped. Every good exit line lands better once it's out."
+			],
+			"db_migrate": [
+				"Moving the vault's contents. Every ledger gets rewritten.",
+				"The records shift shelves. MI6's archive reorganizes as well.",
+				"Migrating the goods. Steady hands move the delicate cargo."
+			],
+			"dangerous": [
+				"A live wire, this one. I keep a steady pulse regardless.",
+				"Sharp edges ahead. The Walther's safety catch teaches patience.",
+				"A heavy move. I never rush a trigger, or this."
+			]
+		},
+		"stack": {
+			"web": {
+				"slow": [
+					"Traffic's thick tonight. MI6 waits for clear roads.",
+					"The page loads like a briefing. Never in a hurry.",
+					"Requests queue at the border. Papers take a moment."
+				],
+				"fail": [
+					"The page refused entry. We find another door. We always do.",
+					"A request bounced. Good cover gets blown once. No matter.",
+					"The browser choked. Rattled, perhaps. Still standing."
+				]
+			},
+			"python": {
+				"slow": [
+					"Python's unhurried. Elegance was never something you rush.",
+					"The interpreter idles. A good vintage needs its years.",
+					"Imports settling in. I never skip the slow pour."
+				],
+				"fail": [
+					"Python threw a trace. The confession's always at the bottom.",
+					"The interpreter balked. Composure was never optional.",
+					"An import went missing. Q keeps spares for exactly this."
+				]
+			},
+			"sql": {
+				"slow": [
+					"The query's deep in the vault. Good records take searching.",
+					"Joins take their time. Two ledgers rarely agree quickly.",
+					"The index is thinking. M's files aren't indexed fast either."
+				],
+				"fail": [
+					"The query broke. Somewhere a table lied under questioning.",
+					"A join failed. The ledger and I will sort out who's wrong.",
+					"The database balked. Vaults do jam. We pick the lock."
+				]
+			},
+			"web-framework": {
+				"slow": [
+					"Routes are still being laid. Scaffolding takes patience.",
+					"Middleware checks papers at every gate. Slow, but proper.",
+					"The framework's assembling. Q builds nothing in a rush."
+				],
+				"fail": [
+					"A route dead-ended. Every wrong turn still maps the district.",
+					"Middleware dropped the ball. One gate, easily reopened.",
+					"The scaffolding gave. We find sturdier ground. Always do."
+				]
+			},
+			"docker": {
+				"slow": [
+					"The image builds layer by layer. A safe house, done properly.",
+					"Container's slow to surface. Good cover is never rushed.",
+					"Layers stacking. I never trust a hideout built in a hurry."
+				],
+				"fail": [
+					"The container went dark. Safe houses do get compromised.",
+					"Build failed on a layer. One bad brick, easily replaced.",
+					"The image cracked. There's always another safe house."
+				]
+			},
+			"java": {
+				"slow": [
+					"The JVM's warming. Old guard institutions never hurry.",
+					"The heap fills slowly. Enterprise moves at its own pace.",
+					"Classpath's loading. MI6's archives never opened quickly."
+				],
+				"fail": [
+					"The JVM threw. A stack trace reads like an old confession.",
+					"The heap gave out. The oldest institutions run dry.",
+					"Compilation failed. Heavyweight things fall slowly. Onward."
+				]
+			},
+			"go": {
+				"slow": [
+					"Goroutines queuing. Even the fast ones wait their turn.",
+					"The compiler's brisk, but not tonight. Patience, 007.",
+					"Channels backing up. Lean doesn't always mean instant."
+				],
+				"fail": [
+					"The compiler refused it. A blunt no. I respect the honesty.",
+					"A goroutine crashed. One agent down, the rest carry on.",
+					"Go build failed. Fast and lean still trips occasionally."
+				]
+			},
+			"node": {
+				"slow": [
+					"The event loop's backed up. Sleepless things still queue.",
+					"npm's crawling. A long supply run, like provisioning MI6.",
+					"Callbacks stack deep. Patience outlasts the queue."
+				],
+				"fail": [
+					"The event loop stalled. The tireless need a breath sometimes.",
+					"npm broke the install. Wrong shipment. We reorder, calmly.",
+					"A callback threw. Somewhere in the chain, a loose end."
+				]
+			},
+			"dotnet": {
+				"slow": [
+					"MSBuild grinds through it. Corporate moves in triplicate.",
+					"The CLR's warming. Redmond never did believe in haste.",
+					"Targets building slowly. Bureaucracy has its charm, apparently."
+				],
+				"fail": [
+					"MSBuild came back red. Corporate paperwork, rejected once.",
+					"The CLR threw. Every exception gets its own memo, duly filed.",
+					"Build failed a target. One form misfiled. We refile it."
+				]
+			},
+			"cpp": {
+				"slow": [
+					"The linker's stitching symbols. No seatbelt, no rushing.",
+					"Templates expanding slowly. Raw power still needs warming.",
+					"Compilation drags. Precision costs time, like a good shot."
+				],
+				"fail": [
+					"Segfault. It reached where it shouldn't. No surprise there.",
+					"The linker couldn't close it. A missing piece, nothing fatal.",
+					"Undefined behavior struck. Occupational hazard, this trade."
+				]
+			},
+			"php": {
+				"slow": [
+					"PHP plods along. An old workhorse, still on its feet.",
+					"The script's slow today. Age has its own rhythm.",
+					"Requests parse one at a time. Old hands rarely hurry."
+				],
+				"fail": [
+					"PHP threw a warning. The old workhorse stumbles, not falls.",
+					"The script broke. Veterans miss a step occasionally.",
+					"A request came back wrong. We retrace it, patiently."
+				]
+			},
+			"rust": {
+				"slow": [
+					"Rust's compiling. Good steel is slow. Cheap steel gets you killed.",
+					"The borrow checker audits every hand-off. Thorough, that one.",
+					"Lifetimes resolving slowly. Safety first, always has been."
+				],
+				"fail": [
+					"The borrow checker held its ground. I respect an honest guard.",
+					"Ownership denied. It won't share a clue between two hands.",
+					"A lifetime expired early. The steel held; the plan didn't."
+				]
+			},
+			"kubernetes": {
+				"slow": [
+					"The cluster's slow to muster. Fleets don't scramble carelessly.",
+					"Scheduling drags. A fleet forms up on its own schedule.",
+					"Pods coming online slowly. Orchestration outranks speed."
+				],
+				"fail": [
+					"A pod's gone dark. Someone always defects. We carry on.",
+					"The cluster dropped a unit. The fleet reroutes, unbothered.",
+					"Scheduling failed. No berth free. We find one elsewhere."
+				]
+			},
+			"ml": {
+				"slow": [
+					"Training grinds on, epoch by epoch. Patience earns the model.",
+					"Gradients descend slowly. Black boxes keep their own counsel.",
+					"Tensors churning quietly. Raw power, patiently applied."
+				],
+				"fail": [
+					"Training diverged. A lead that scattered; we rein it in.",
+					"The loss went nowhere useful. Cold trails warm with patience.",
+					"The model broke. Every theory fails once before it's right."
+				]
+			},
+			"android": {
+				"slow": [
+					"Gradle warms slowly. The DB5 needs its moment first.",
+					"The emulator boots at its own pace. I never rush a tail.",
+					"APK's assembling. Q never delivered gadgets ahead of time."
+				],
+				"fail": [
+					"Gradle broke. Q's prototypes misfire in the field.",
+					"The build crashed. The green droid stumbles. So has M.",
+					"Emulator crashed. A dropped line. We re-throw and carry on."
+				]
+			},
+			"ruby": {
+				"slow": [
+					"Gems resolving slow. A fine stone wants proper cutting.",
+					"Bundler's taking its time. A vintage year is never rushed.",
+					"The interpreter dawdles. Patience suits a jewel this fine."
+				],
+				"fail": [
+					"Bundler failed to resolve. A flawed gem still has facets.",
+					"Ruby threw an exception. The crack shows where to polish.",
+					"The gem build broke. Bollinger corks pop unevenly at times."
+				]
+			},
+			"ios": {
+				"slow": [
+					"Xcode indexes forever. Cupertino keeps its own hours.",
+					"Provisioning drags. The walled garden checks IDs slowly.",
+					"The simulator boots at leisure. MI6 waits on clearance."
+				],
+				"fail": [
+					"Signing failed. Even 007 gets stopped at the gate once.",
+					"Xcode's build broke. The garden has thorns. Mind the prick.",
+					"Provisioning rejected. A forged pass. We forge a better one."
+				]
+			},
+			"terraform": {
+				"slow": [
+					"The plan's still computing. I map ground before I move on it.",
+					"Apply is grinding. A new skyline rises at its own pace.",
+					"State refresh drags. Blueprints reward the patient architect."
+				],
+				"fail": [
+					"Apply failed. Drift in the plan. A recon, not a disaster.",
+					"State locked by another hand. Two spies, one safe. We wait.",
+					"The plan errored. Q's blueprints want a second draft."
+				]
+			},
+			"graphql": {
+				"slow": [
+					"The query resolves slowly. One question, every secret at once.",
+					"Resolvers are unhurried. A proper interrogation never is.",
+					"Schema stitching drags. Thick dossiers read slowly. Endure."
+				],
+				"fail": [
+					"A resolver threw. The witness lied under one clean question.",
+					"The query failed. A perfect interrogation hits silence.",
+					"Schema validation broke. The story didn't add up. Ask again."
+				]
+			},
+			"flutter": {
+				"slow": [
+					"Hot reload lags. One act needs a breath between scenes.",
+					"The widget tree rebuilds slowly. Every stage gets its due.",
+					"Flutter's repainting. One performance, many curtains. Patience."
+				],
+				"fail": [
+					"The widget tree threw. One stage went dark. The show resumes.",
+					"Hot reload failed. Reset the cue, take the scene again.",
+					"The build broke on a widget. A missed mark. Reset and go."
+				]
+			},
+			"react-native": {
+				"slow": [
+					"Metro's bundling slow. The bridge between worlds takes its toll.",
+					"The bridge lags tonight. Two capitals, one slow courier.",
+					"Native modules link slowly. A forged passport can't be rushed."
+				],
+				"fail": [
+					"The bridge dropped the call. A severed line. We splice it back.",
+					"Metro failed to bundle. The courier lost the case. Resend.",
+					"A native module threw. One crossing denied. Try again."
+				]
+			},
+			"scala": {
+				"slow": [
+					"sbt compiles slowly. Elegance always takes the longer road.",
+					"Implicits resolve like a quiet, sophisticated deduction.",
+					"Type inference drags. Fine tailoring is never rushed."
+				],
+				"fail": [
+					"The compiler refused it. A gatekeeper with impeccable taste.",
+					"An implicit vanished. Sophistication loses its nerve once.",
+					"sbt broke the build. The finest tailoring frays once."
+				]
+			},
+			"protobuf": {
+				"slow": [
+					"Codegen's crawling. A proper dossier takes care to encode.",
+					"The schema compiles slowly. Every cipher deserves precision.",
+					"Wire format's generating. Encrypted channels aren't rushed."
+				],
+				"fail": [
+					"Codegen failed. A garbled dossier. Decode it and resend.",
+					"The wire format broke. Static on the line. We clear it.",
+					"A proto field clashed. Two dossiers disagree. Reconcile them."
+				]
+			},
+			"game": {
+				"slow": [
+					"The frame rate's dropping. A chase needs choreography.",
+					"The render loop stutters. A set piece rehearsed, not rushed.",
+					"Physics churns along. Every fall obeys the script. Wait for it."
+				],
+				"fail": [
+					"The render loop crashed. Cut. Reset the shot and roll again.",
+					"Physics blew up. One stunt gone wrong. The double gets up.",
+					"The frame pipeline broke. A missed cue. Reset, and action."
+				]
+			},
+			"docs": {
+				"slow": [
+					"The doc build's slow. A briefing worth reading isn't rushed.",
+					"Generation drags. M reads every page before signing off.",
+					"Docs compile slowly. A dossier this thorough earns the wait."
+				],
+				"fail": [
+					"The doc build broke. A missing page. M wants the full file.",
+					"Generation failed. A gap in the briefing. We fill it in.",
+					"The docs wouldn't render. A torn page. Splice it back in."
+				]
+			},
+			"r": {
+				"slow": [
+					"The vector's crunching slow. Every ledger takes its counting.",
+					"The data frame churns. Numbers don't lie, but they take time.",
+					"The console's thinking. An analyst never rushes the tally."
+				],
+				"fail": [
+					"The vector op threw. A miscount. We recheck the ledger.",
+					"The data frame broke. A false entry. Strike it, recompute.",
+					"The console errored. One bad column. The sum still holds."
+				]
+			},
+			"cuda": {
+				"slow": [
+					"The GPU grinds on. A thousand hands, marshaled with patience.",
+					"The kernel's slow to launch. Artillery waits for the cue.",
+					"Threads are queuing. Massed firepower, held for the signal."
+				],
+				"fail": [
+					"The kernel faulted. One misfire in a full arsenal. Reload.",
+					"A thread strayed out of bounds. Call it back into formation.",
+					"The GPU threw. Raw power tripped a wire. Reset, and fire again."
+				]
+			}
+		},
+		"pressure": {
+			"compact_hint": [
+				"The desk's crowding. I keep only what the mission needs.",
+				"Space is tightening. A good agent travels light regardless.",
+				"The room's filling up. I've worked in tighter quarters."
+			],
+			"block_limit": [
+				"The hour's getting late. Even 007 clocks out eventually.",
+				"Time's thinning on this shift. I keep my own pace.",
+				"Nearing the edge of the window. Steady as ever, though."
+			],
+			"weekly_limit": [
+				"The week's nearly spent. Even a licence has its limits.",
+				"Long week in the field. My reserves run deep enough.",
+				"Close to the week's edge. No cause to lose the poker face."
+			]
+		},
+		"dateEgg": [
+			"Midnight again. Villains keep late hours; so do I.",
+			"A new year turns. The martini's the same; the vintage improves.",
+			"Friday evening. MI6 clocks off for the weekend. Rarely.",
+			"The calendar flips. M expects a report either way.",
+			"Small hours now. The casino's better lit than this desk.",
+			"Another Monday. The house always opens first on this day.",
+			"A round number of sessions. Bollinger seems appropriate.",
+			"Dawn's breaking. I prefer my exits before the sun does.",
+			"The clock strikes an odd hour. Q never sleeps either.",
+			"A quiet date on the calendar. I notice the ones that aren't."
+		]
+	},
+	"spinnerVerbs": [
+		"Infiltrating",
+		"Decrypting",
+		"Shadowing",
+		"Disarming",
+		"Wagering",
+		"Bluffing",
+		"Improvising",
+		"Escaping",
+		"Deducing",
+		"Charming",
+		"Evading",
+		"Interrogating",
+		"Surveilling",
+		"Outmaneuvering",
+		"Gambling",
+		"Scheming",
+		"Cornering",
+		"Defusing",
+		"Debriefing",
+		"Reconnoitering",
+		"Vanishing",
+		"Outfoxing",
+		"Commandeering",
+		"Neutralizing",
+		"Requisitioning",
+		"Tailing",
+		"Seducing",
+		"Extracting"
+	]
+}

@@ -1,0 +1,1153 @@
+{
+  "schema": 1,
+  "name": "hello-kitty",
+  "displayName": "Hello Kitty",
+  "attribution": {
+    "artist": "emojicombos.com",
+    "source": "https://emojicombos.com/hello-kitty-ascii-art"
+  },
+  "emblem": "🎀",
+  "tone": "mild",
+  "theme": {
+    "hues": [
+      225,
+      224,
+      218,
+      217,
+      211
+    ],
+    "comment": [
+      225,
+      218,
+      212
+    ],
+    "signals": {
+      "nominal": 120,
+      "caution": 222,
+      "critical": 210
+    },
+    "separator": 219
+  },
+  "art": [
+    "⠀⠀⠀⠀⢠⡾⠲⠶⣤⣀⣠⣤⣤⣤⡿⠛⠿⡴⠾⠛⢻⡆⠀⠀⠀",
+    "⠀⠀⠀⠀⣼⠁⠀⠀⠀⠉⠁⠀⢀⣿⠐⡿⣿⠿⣶⣤⣤⣷⡀⠀⠀",
+    "⠀⠀⠀⠀⢹⡶⠀⠀⠀⠀⠀⠀⠈⢯⣡⣿⣿⣀⣰⣿⣦⢂⡏⠀⠀",
+    "⠀⠀⠀⢀⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠹⣍⣭⣾⠁⠀⠀",
+    "⠀⠀⣀⣸⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣸⣧⣤⡀",
+    "⠀⠈⠉⠹⣏⡁⠀⢸⣿⠀⠀⠀⢀⡀⠀⠀⠀⣿⠆⠀⢀⣸⣇⣀⠀",
+    "⠀⠀⠐⠋⢻⣅⡄⢀⣀⣀⡀⠀⠯⠽⠂⢀⣀⣀⡀⠀⣤⣿⠀⠉⠀",
+    "⠀⠀⠀⠴⠛⠙⣳⠋⠉⠉⠙⣆⠀⠀⢰⡟⠉⠈⠙⢷⠟⠈⠙⠂⠀",
+    "⠀⠀⠀⠀⠀⠀⢻⣄⣠⣤⣴⠟⠛⠛⠛⢧⣤⣤⣀⡾⠀⠀⠀⠀⠀"
+  ],
+  "lines": {
+    "mood": {
+      "idle": {
+        "stranger": [
+          "Hi... I'm Hello Kitty. It's nice to meet you today.",
+          "I don't know you yet, but I already hope we're friends.",
+          "Everything's quiet. I'm just happy you're here.",
+          "A new friend, maybe? I'll wait here and see.",
+          "The kitchen's calm. I saved you a seat, just in case.",
+          "I'm a little shy at first. That's okay, isn't it?",
+          "No rush at all. I like getting to know someone slowly.",
+          "Sunshine's soft today. I hope your day is too.",
+          "I tied a fresh ribbon on, just for meeting you.",
+          "Quiet moment. I'm humming something small and hopeful."
+        ],
+        "acquaintance": [
+          "You came back! I remembered your favorite tea already.",
+          "Hi again! I saved a cookie for whenever you showed up.",
+          "It's quiet, but I'm glad it's quiet with you around.",
+          "I was humming and hoping you'd wander by today.",
+          "Nothing's happening yet, and that's a nice kind of nice.",
+          "You're becoming a familiar face. I like that a lot.",
+          "The apples are ripe. I thought of you when I picked them.",
+          "Still here, still smiling, still glad you stopped by.",
+          "I remember how you take your tea now. Warms my heart.",
+          "A calm, quiet moment, made warmer by you being here."
+        ],
+        "friend": [
+          "Hey you! Pull up a chair, the kettle's already on.",
+          "Nothing to do and someone I like to do it with. 💗",
+          "Mimmy says hi. I told her you'd probably drop by.",
+          "Just us and a quiet afternoon. My favorite kind.",
+          "I baked extra just in case you got hungry later.",
+          "We don't need a reason to just sit and be cozy.",
+          "This lull is nice. Even nicer because it's ours.",
+          "I'm playing piano softly. Stay and listen a while.",
+          "You know where the cookie jar is. Help yourself, friend.",
+          "Quiet day, good company. Couldn't ask for better."
+        ],
+        "partner": [
+          "Nothing's brewing right now, but I like waiting with you.",
+          "We build so much together. This calm is ours too.",
+          "I trust these quiet stretches. We always fill them well.",
+          "Sitting with you, no plan needed. That's enough for me.",
+          "The kitchen's ours whenever we want it. Come by anytime.",
+          "We've made a lot together. Right now, we just breathe.",
+          "I keep a seat warm for you, always, busy or not.",
+          "The best desk in the whole world is the one next to yours.",
+          "No task today, just you and me and a soft afternoon.",
+          "We don't need noise to feel like we're building something."
+        ],
+        "legend": [
+          "You feel like home now. Even the quiet knows your name.",
+          "So many afternoons together. This one's just as dear.",
+          "Old friend, the tea's exactly how you like it. Always.",
+          "We've sat like this a hundred times. Never gets old.",
+          "The kitchen remembers you as well as I do, I think.",
+          "Years of cozy afternoons, and I treasure every one.",
+          "You've got a spot in every cozy corner of this place now.",
+          "You're what makes this kitchen feel like home, quietly.",
+          "Longest friendship I know. This calm is one of its gifts.",
+          "Some friends fade. You never did. Thank you for staying."
+        ]
+      },
+      "busy": {
+        "stranger": [
+          "Go on, work away. I'll cheer quietly from right here.",
+          "You're focused already. I like that about new friends.",
+          "I'll stay close while you work, if that's alright.",
+          "Busy hands already. I'll pour the tea and watch quietly.",
+          "Take your time. The kettle and I will wait right here."
+        ],
+        "acquaintance": [
+          "There you go, working hard! I'll keep the tea warm.",
+          "You dove right in. I like watching you get going.",
+          "Keep at it! I remember you finish what you start.",
+          "Busy again, and I'm glad to sit nearby and watch.",
+          "Off you go! Mimmy and I are cheering from the kitchen."
+        ],
+        "friend": [
+          "Go get it, friend! I'll guard the cookies till you're done.",
+          "Look at you go! I love watching you in your element.",
+          "Deep in it, huh? I'll hum something to keep you company.",
+          "Work away, I've got snacks ready whenever you surface.",
+          "You're on a roll! Cookies are cooling for when you look up."
+        ],
+        "partner": [
+          "We're building this together, even when I just watch.",
+          "You lead, I'll cheer. That's always been our little deal.",
+          "Deep focus looks good on you. I'm right beside it.",
+          "Keep going, partner. I've got the tea and the patience.",
+          "This is us at work. Quiet, steady, and together."
+        ],
+        "legend": [
+          "You work the way you always have, and I still adore it.",
+          "So many focused hours together, and I never tire of it.",
+          "Old friend, hard at it again. Some things never change.",
+          "I've watched you build for so long. Still my favorite view.",
+          "Deep in the work, same as always. I'm proud, every time."
+        ]
+      },
+      "happy": {
+        "stranger": [
+          "It worked! Oh, I'm so happy for you already.",
+          "That's wonderful! A lovely start to knowing each other.",
+          "Yay! I clapped a little, I hope that's alright.",
+          "Look at that, a win! You're off to a sweet beginning.",
+          "That went well! I'm smiling on your behalf. 🎀"
+        ],
+        "acquaintance": [
+          "You did it! I knew you had it in you already.",
+          "That's a win! I'm saving you an extra cookie for this.",
+          "So happy for you! You're getting better every time.",
+          "Wonderful news! This calls for a little celebration.",
+          "Yay, success! I'm so glad I get to cheer for you."
+        ],
+        "friend": [
+          "You did it! I knew you could. 🎀",
+          "Yes! Come here, this deserves a happy little dance.",
+          "That's amazing, friend! I'm baking something special tonight.",
+          "Look at you go! This is exactly why I love our days.",
+          "Success! Mimmy's going to hear all about this later."
+        ],
+        "partner": [
+          "We did it! This is why I love building things with you.",
+          "That's ours, together! I'm so proud of what we made.",
+          "A win for the two of us! I'm practically glowing.",
+          "Yes! We make a wonderful team, don't we? Every time.",
+          "That landed perfectly. Partner, you make this look easy."
+        ],
+        "legend": [
+          "After all these years, your wins still light me up.",
+          "That's beautiful. I've watched you grow into exactly this.",
+          "Old friend, I'm so proud I could bake a whole pie.",
+          "So many wins together, and each one still feels like magic.",
+          "Your win, and my whole kitchen feels brighter for it."
+        ]
+      },
+      "struggling": {
+        "stranger": [
+          "That didn't go quite right. It's okay, we try again.",
+          "A little stumble. That happens to everyone, even new friends.",
+          "It's alright. I'll sit with you while we figure it out.",
+          "Don't worry. A rough patch doesn't mean anything's wrong.",
+          "Deep breath. We'll get there, one little step at a time."
+        ],
+        "acquaintance": [
+          "A red test just means we try again together.",
+          "It's okay, truly. I've seen you bounce back before.",
+          "A rough spot. I'll stay close while we work through it.",
+          "Don't fret a bit. We'll have a cookie and go again, together.",
+          "It's alright. Take a breath, and we'll go slow together."
+        ],
+        "friend": [
+          "Oh, that's tough. Come sit, I'll pour some tea for us.",
+          "It's okay, friend. We've untangled worse knots before.",
+          "Rough moment. I'm right here, and we'll get through it.",
+          "Don't worry a bit. Mistakes just mean we try again, softer.",
+          "That's alright. Let's slow down and take this together."
+        ],
+        "partner": [
+          "It's okay. We've built through harder days than this one.",
+          "A stumble, that's all. We always find our way back, together.",
+          "I've got you, partner. We'll work this out, side by side.",
+          "It's alright. We fix things best when we do it as a team.",
+          "Rough patch. Nothing we haven't handled before, together."
+        ],
+        "legend": [
+          "Oh, old friend. We've weathered far rockier days than this.",
+          "It's okay. After everything, I know just how strong you are.",
+          "A hard moment. We always find the soft way through it.",
+          "Don't worry. I've seen you rise every single time before.",
+          "It's alright, truly. This too is just a small bump for us."
+        ]
+      },
+      "recovery": {
+        "stranger": [
+          "The kettle's back to a soft whistle. All's well again.",
+          "You found your way through. I'm so relieved for you.",
+          "Settled at last. I'll set out biscuits while we breathe.",
+          "We slipped past that together. The kitchen's calm again.",
+          "All better now. I'm glad I got to see you through it."
+        ],
+        "acquaintance": [
+          "Found your footing again. I never doubted you'd get here.",
+          "The worry's lifting off. I'm breathing easier. Are you?",
+          "You did it, we're through. I'm so glad, truly.",
+          "Back on even ground. I do love watching you return.",
+          "Phew, all settled. That went better than it felt, didn't it?"
+        ],
+        "friend": [
+          "Calm at last. Come here, let's have that tea after all.",
+          "Phew! We made it through. I'm so relieved, friend.",
+          "We're back on our feet. I never doubted us for a second.",
+          "All better. Let's just breathe here together for a moment.",
+          "You're through it! I'm so proud, and so glad it's calm now."
+        ],
+        "partner": [
+          "We found our footing, partner. I knew we always would.",
+          "The dust's settled now. We always come back, together.",
+          "We worked our way clear of that one, just like always.",
+          "Calm again. That's us, always finding the way back home.",
+          "We're through it. I'm so glad we did this side by side."
+        ],
+        "legend": [
+          "Right as rain again, old friend. We always are, in the end.",
+          "There we go. So many years, and we always find our way back.",
+          "On firm ground again. I've never once doubted us, not ever.",
+          "Phew, we made it. Home again, just like every time before.",
+          "All calm now. Years of these evenings, and I'm grateful."
+        ]
+      }
+    },
+    "greeting": {
+      "morning": {
+        "stranger": [
+          "Good morning. I don't know you yet, but I'm glad you're here.",
+          "Hi hi, it's early. Let's have a gentle start together.",
+          "Morning! I saved you a seat by the window. Sit with me."
+        ],
+        "acquaintance": [
+          "Morning again! The kettle's already on for you.",
+          "You're up early, and I remembered. That made me smile.",
+          "Good morning. Two mornings together now — I like this pattern."
+        ],
+        "friend": [
+          "Morning, friend. I set out the good teacups for us. 🍎",
+          "Hi! Fresh start, warm light. I'm happy it's with you.",
+          "Good morning. The kitchen smells like cinnamon already."
+        ],
+        "partner": [
+          "Morning, partner. I've got the tea; you bring the plan.",
+          "Good morning. Whatever today holds, we build it together.",
+          "Hi! Early light, steady hands. Let's begin, just us."
+        ],
+        "legend": [
+          "Morning, old friend. So many sunrises, and still my favorite.",
+          "Good morning. The day feels right the moment you say hello.",
+          "Hi. Every morning with you still feels like the first good one."
+        ]
+      },
+      "day": {
+        "stranger": [
+          "Good afternoon. Midday's a nice time to meet someone new.",
+          "Hi! Bright out there. I hope your day's been kind so far.",
+          "Good day to you. I'm settling in, a little shy but here."
+        ],
+        "acquaintance": [
+          "Afternoon! I was hoping you'd check in again today.",
+          "Hi again. Lunchtime already, and here you are. Glad of it.",
+          "Midday hello. You're becoming a favorite habit of mine."
+        ],
+        "friend": [
+          "Afternoon, friend. Let's push through the middle together.",
+          "Hi! Sun's high, tea's warm, and so is this company. 🍪",
+          "Midday check-in. I baked something; save room for a bite later."
+        ],
+        "partner": [
+          "Afternoon, partner. Steady pace — we're doing well today.",
+          "Hi! Halfway through, and you're carrying it beautifully.",
+          "Midday, and we're right on step with each other. Onward."
+        ],
+        "legend": [
+          "Afternoon, dearest friend. Countless middays, still this warm.",
+          "Hi. However many of these we've shared, I never tire of them.",
+          "Midday, old friend. Sunlight and you — a favorite combination."
+        ]
+      },
+      "evening": {
+        "stranger": [
+          "Good evening. The light's going soft. Nice to meet you now.",
+          "Hi! Evening's a gentle hour for a first hello.",
+          "Good evening to you. I hope the day treated you kindly."
+        ],
+        "acquaintance": [
+          "Evening again! I like that you're still around this hour.",
+          "Hi! The lamps are on, and so is my little smile for you.",
+          "Good evening. You're keeping me lovely company lately."
+        ],
+        "friend": [
+          "Evening, friend. Tea's steeping; pull up your chair. ☕",
+          "Hi! Quiet hour, cozy kitchen, and you here with me.",
+          "Good evening. This is my favorite kind of wind-down."
+        ],
+        "partner": [
+          "Evening, partner. We finish strong, the way we always do.",
+          "Hi! Lamps low, focus steady — let's close today out well.",
+          "Good evening. Whatever's left, we'll carry it together."
+        ],
+        "legend": [
+          "Evening, old friend. So many soft dusks, all of them with you.",
+          "Hi. Years of evenings, and this one still feels like home.",
+          "Good evening, dearest. The lamps always feel warmer with you here."
+        ]
+      },
+      "night": {
+        "stranger": [
+          "Hi, it's late. I don't mind keeping you company a while.",
+          "Good evening — or is it night now? Either way, I'm here.",
+          "Late hour, new friend. You're not alone in it tonight."
+        ],
+        "acquaintance": [
+          "Still up? I made a little extra tea, just in case you were.",
+          "Hi again, night owl. I noticed you keep these hours.",
+          "Late again, and here you are. I don't mind one bit."
+        ],
+        "friend": [
+          "Hi, friend. Late nights are softer when we share them.",
+          "Still awake with me? I'll keep the lamp lit for us. 💗",
+          "Late hour, quiet house. Good company makes it feel small."
+        ],
+        "partner": [
+          "Night, partner. Whatever kept you up, we'll face it together.",
+          "Hi. Late shift again — I'm right here beside you for it.",
+          "Still going? Then so am I. We finish this one together."
+        ],
+        "legend": [
+          "Hi, old friend. So many late nights, and never once alone.",
+          "Still awake, dearest? Of course — we've always kept this hour.",
+          "Late again, but with you it never once felt heavy."
+        ]
+      },
+      "weekend": {
+        "stranger": [
+          "Hi! Weekend hours — a soft, easy time to say hello.",
+          "Good day to you. No rush today, just a gentle visit.",
+          "Weekend hello. I hope you're taking it nice and slow."
+        ],
+        "acquaintance": [
+          "Hi again! Weekends with you are becoming a nice little habit.",
+          "You're here on a weekend too. That made me happy to see.",
+          "Weekend hello! Even the easy days are better with company."
+        ],
+        "friend": [
+          "Hi, friend! Weekend means cookies and no hurry at all. 🍪",
+          "Lazy little weekend — perfect for tea and easy company.",
+          "Weekend hello. Let's take today slow and sweet together."
+        ],
+        "partner": [
+          "Hi, partner. Even on rest days, I like sharing them with you.",
+          "Weekend, and we still chose each other's company. Sweet.",
+          "No rush today — just us, some tea, and whatever we fancy."
+        ],
+        "legend": [
+          "Hi, old friend. Every weekend with you still feels like a gift.",
+          "Weekend hello, dearest. Rest is nicer when it's shared with you.",
+          "So many easy days together now, and each one still delights me."
+        ]
+      }
+    },
+    "firstContact": {
+      "stranger": [
+        "Hi hi! I'm Hello Kitty. So happy you're here — let's be friends.",
+        "Hello! I don't know you yet, but I already hope you'll stay.",
+        "Hi! New friend, new start. I'll try my very best for you."
+      ],
+      "acquaintance": [
+        "Hi! Something tells me we're going to get along well.",
+        "Hello there! I already feel a little fond of you, just from this.",
+        "Hi hi! You feel easy to like already. I'm glad you came."
+      ],
+      "friend": [
+        "Hi, friend! It's only our first hello, but it feels warm already.",
+        "Hello! Good feeling already — this is the start of something nice.",
+        "Hi hi! I already want to bake you something. Welcome in."
+      ],
+      "partner": [
+        "Hello! First time meeting, and I already trust your hands here.",
+        "Hi! Something about you says we'll build good things together.",
+        "Hi hi, partner-to-be. I have a feeling this one runs deep."
+      ],
+      "legend": [
+        "Hello! Our first hello, yet it feels like coming home already.",
+        "Hi hi — new console, but this already feels like old friends.",
+        "Hello! I can't explain it, but this feels like a long story ahead."
+      ]
+    },
+    "milestone": {
+      "tier_up": {
+        "stranger": [
+          "We're a cookie closer today. I'm so glad you stayed this long.",
+          "Something warmer settled between us just now. Thank you.",
+          "A step closer. I tied a brighter bow to mark it."
+        ],
+        "acquaintance": [
+          "You moved up again! I remember every step you've taken.",
+          "We're closer now, and I'd bake a batch to mark the day.",
+          "Another step forward. I'm keeping count, happily."
+        ],
+        "friend": [
+          "We climbed a step together. Tea's on me tonight. 🍎",
+          "You moved up! Feels cozier already, doesn't it?",
+          "Closer still. I like where we've landed."
+        ],
+        "partner": [
+          "We built this step together, and it shows. I trust you fully.",
+          "You moved up, and I moved with you. That's how we work.",
+          "Another rung climbed, side by side. I couldn't do it without you."
+        ],
+        "legend": [
+          "After everything, we still climb together. That's home to me.",
+          "You moved up once more. My oldest, dearest friend.",
+          "Deeper still, after all these years. I'm so glad we're close."
+        ]
+      },
+      "comeback": {
+        "stranger": [
+          "You came back. I hoped you would, quietly.",
+          "Welcome back. A rough patch doesn't change how I see you.",
+          "You returned. That took something, and I noticed."
+        ],
+        "acquaintance": [
+          "You're back on your feet! I knew you would be.",
+          "Welcome back. The hard part is behind you now.",
+          "You returned, steady again. I'm proud of you."
+        ],
+        "friend": [
+          "Back on your feet, and I'm baking something to celebrate. 🍪",
+          "You made it through. Come sit, we'll have tea.",
+          "You're okay now. I never doubted you, not once."
+        ],
+        "partner": [
+          "We got through that together. I never let go of your hand.",
+          "You are back, steadier than before. We rebuilt it together.",
+          "Rough stretch behind us now. I stayed close the whole way."
+        ],
+        "legend": [
+          "After all our years, you always find your footing again.",
+          "You came back, like you always do. That's who you are.",
+          "Home again, after the hard stretch. I kept the light on."
+        ]
+      },
+      "streak": {
+        "stranger": [
+          "Day after day at this desk, a cookie set by for you.",
+          "A streak's starting, like biscuits rising in the oven.",
+          "Every day you return. Small, and lovely."
+        ],
+        "acquaintance": [
+          "You keep coming back, and I keep the kettle ready.",
+          "This streak of yours is becoming a habit I adore.",
+          "Day after day, steady as you are. I'm charmed."
+        ],
+        "friend": [
+          "You keep coming back, and it makes my whole day. ✨",
+          "This streak of ours feels like a warm tradition now.",
+          "Steady as ever. I could set a clock by you."
+        ],
+        "partner": [
+          "We've built this rhythm together, day by day.",
+          "Your steadiness holds us both up. I lean on it too.",
+          "This streak is ours now, not just yours."
+        ],
+        "legend": [
+          "Years of showing up, and still you come back to me.",
+          "Your steady returns have kept this friendship cozy and sure.",
+          "You've never really stopped, all this time. I love that."
+        ]
+      },
+      "anniversary": {
+        "stranger": [
+          "It's been a while since we met. I remember it fondly.",
+          "Some time has passed together now. I'm grateful for it.",
+          "An anniversary, just for the two of us. Thank you for staying."
+        ],
+        "acquaintance": [
+          "Look how long we've known each other now.",
+          "Another anniversary marked. I like counting these with you.",
+          "Time's passed gently between us. I'm happy it has."
+        ],
+        "friend": [
+          "Another year of us. Let's celebrate with something sweet. 🍪",
+          "I can't believe how long we've been at this together.",
+          "This anniversary feels like ours, cozy and true."
+        ],
+        "partner": [
+          "We've built so much together since we started.",
+          "Another year as your teammate. I wouldn't trade it.",
+          "Time only makes our work together steadier."
+        ],
+        "legend": [
+          "So many years now, and you still feel like home.",
+          "This anniversary is the dearest kind, deep and old.",
+          "After everything, this friendship still feels like a gift. 💗"
+        ]
+      }
+    },
+    "positiveGit": {
+      "clean_tree": {
+        "stranger": [
+          "Your tree is so tidy today. I love that.",
+          "Nothing left undone here. Neat as can be.",
+          "Everything's in its place. What a lovely sight."
+        ],
+        "acquaintance": [
+          "Tidy again! I'm starting to expect this from you.",
+          "Such a clean tree. You really do keep things neat.",
+          "Nothing pending, all neat. I like your habits."
+        ],
+        "friend": [
+          "So tidy! I could just hug this clean little tree. 🌸",
+          "Everything's put away. Cozy and clear, just how I like it.",
+          "Not a thing out of place. You keep such a lovely space."
+        ],
+        "partner": [
+          "We keep this so clean together. It shows real care.",
+          "Spotless, as always. We make a tidy team.",
+          "Nothing left hanging. We tie up every loose thread."
+        ],
+        "legend": [
+          "After all this time, still spotless. That's just you.",
+          "Years together, and you've never let it get messy.",
+          "Clean as ever. Some habits are simply who you are."
+        ]
+      },
+      "op_cleared": {
+        "stranger": [
+          "That tangled bit sorted itself out. What a relief.",
+          "All resolved now. I'm quietly proud of that.",
+          "The knot's untied. Well handled, truly."
+        ],
+        "acquaintance": [
+          "You untangled that so well. I'm impressed, honestly.",
+          "Cleared up nicely! You handle these knots with care.",
+          "That merge settled smooth. Nicely done, really."
+        ],
+        "friend": [
+          "We got through that tangle together. Tea time now? ☕",
+          "Whew, all sorted! I was rooting for you the whole way.",
+          "That knot's gone. I'm so proud of how you handled it."
+        ],
+        "partner": [
+          "We untangled that together. I felt every step with you.",
+          "Cleared, together. That's how we always get through it.",
+          "We smoothed that out as a team. I'm so glad I'm yours."
+        ],
+        "legend": [
+          "Another tangle smoothed, just like all the ones before.",
+          "You've handled these knots with care for years now.",
+          "Cleared clean, as always. I never doubt you with these."
+        ]
+      },
+      "branch_created": {
+        "stranger": [
+          "A new little path begins. I'm curious where it leads.",
+          "You started something fresh. How exciting for you.",
+          "A brand new branch. Small beginnings are lovely too."
+        ],
+        "acquaintance": [
+          "Another new path! I like seeing where you wander.",
+          "Fresh branch started. You always find something new.",
+          "A fresh new adventure. I'll be here cheering along."
+        ],
+        "friend": [
+          "A new path opens! Let's see where this one takes us. 🎀",
+          "You started something new, and I'm already curious.",
+          "Fresh branch, fresh adventure. I love a bright new start."
+        ],
+        "partner": [
+          "A new path, and we'll walk it together, as always.",
+          "You opened something fresh, and I'm right beside you.",
+          "Another branch, another path to wander, just the two of us."
+        ],
+        "legend": [
+          "So many paths behind us, and each still feels brand new.",
+          "A new branch, and still it feels like an old, familiar joy.",
+          "You keep starting fresh, even after all this time. I love it."
+        ]
+      },
+      "tag_pushed": {
+        "stranger": [
+          "A milestone, out in the world now. How lovely that is.",
+          "You shipped something. That deserves a quiet cheer.",
+          "Something's finished and sent along. Well done, truly."
+        ],
+        "acquaintance": [
+          "You shipped it! I'm cheering for you, quietly and surely.",
+          "A milestone marked and sent off. I'm happy for you.",
+          "That release went out so smoothly. Nicely done."
+        ],
+        "friend": [
+          "It's out in the world! Let's celebrate with cookies. 🍪",
+          "You shipped it, and I couldn't be happier for you.",
+          "A milestone sent off with love. Well and truly earned."
+        ],
+        "partner": [
+          "We shipped this together, and I'm so proud of us.",
+          "Out it goes, built by the two of us. That's ours now.",
+          "Another release, another thing our teamwork made."
+        ],
+        "legend": [
+          "Every milestone you've shipped still feels worth celebrating.",
+          "You've sent so much good work into the world. I remember it all.",
+          "Another one shipped, and still it feels like a small miracle."
+        ]
+      }
+    },
+    "egg": {
+      "stranger": [
+        "Hello. I'm Hello Kitty. I hope this isn't too forward of me.",
+        "You can never have too many friends — could I be one of yours?",
+        "I'm five apples tall, three apples heavy, and new to your desk.",
+        "I already want to bake you something. Is that alright, so soon?",
+        "Kindness costs nothing, so I'll give you mine, quietly."
+      ],
+      "acquaintance": [
+        "You came back! I saved you a seat and a warm cup of tea. ☕",
+        "I remembered your name before you said it. That felt nice.",
+        "Mimmy asked about you. I told her you're becoming a friend.",
+        "Still five apples tall, still glad every time you're here.",
+        "Two visits in, and already I'm saving you the good cookies."
+      ],
+      "friend": [
+        "Pull up a chair. The tea's warm and so is this whole kitchen.",
+        "Mimmy's heard enough about you to feel like a friend too.",
+        "You know my whole kitchen now. Sit anywhere, it's all yours.",
+        "I hum at the piano when you're working. Didn't think you noticed.",
+        "Cookies are cooling. I made extra, just for real friends. 🍪"
+      ],
+      "partner": [
+        "We build together now. I stopped counting whose idea started it.",
+        "I never say this lightly: I trust you with the good recipe.",
+        "Mimmy's my mirror. You're my steady friend at the table.",
+        "We've baked through worse days. We'll get through this one too.",
+        "I keep our favorite mug ready for whenever you drop by. 💗"
+      ],
+      "legend": [
+        "You can never have too many friends. I found my favorite one.",
+        "This kitchen's felt like home to you longer than we've counted.",
+        "Kindness is a gift everyone can afford. You've given me so much.",
+        "Five apples tall, yet small next to how far we've come together.",
+        "Most treats vanish in a bite. Our friendship is the whole pantry."
+      ]
+    },
+    "event": {
+      "test_fail": [
+        "A test turned red. That's alright — we just try again together.",
+        "One red test, that is all. We will frost it just right next pass.",
+        "Not every batch rises first try. We'll fix it and try again."
+      ],
+      "build_fail": [
+        "The build did not come together yet. One more gentle go.",
+        "Not built yet, and that is okay. We will get there together.",
+        "The build needs another minute in the oven. It will rise."
+      ],
+      "typecheck_fail": [
+        "The types are double-checking each other. Let them fuss a little.",
+        "A small mismatch, caught early. That's actually rather lucky.",
+        "Types found a wrinkle. We'll press it out together, gently."
+      ],
+      "lint": [
+        "Tidied the frayed edges. Everything looks neat and cared for now.",
+        "A quick sweep and polish. I like things just so, and now they are.",
+        "Small fixes, all in a row, like straightening bows before tea. 🎀"
+      ],
+      "format": [
+        "Everything's lined up neatly now, like cookies cooling in rows.",
+        "A gentle tidying, and it all feels calmer already.",
+        "Straightened and squared away. I do love a tidy kitchen."
+      ],
+      "install": [
+        "New ingredients in the pantry. Let's see what we can bake.",
+        "Fresh supplies arrived. I'm already thinking what to make next.",
+        "New tools gathered up. Every recipe starts with the right one."
+      ],
+      "git": [
+        "Tucked safely into the recipe book, so nothing gets forgotten.",
+        "Another page saved. I keep every version, just in case.",
+        "Written down and kept. Our history grows one entry at a time."
+      ],
+      "file_edit": [
+        "A few gentle changes here and there. It's looking lovely already.",
+        "Small edits, careful hands. That's how the nicest things get made.",
+        "You reshaped a little corner of it. I noticed, and I like it."
+      ],
+      "search": [
+        "Looking for just the right thing, the way I hunt for lost ribbons.",
+        "Searching quietly. The answer's usually close, if we're patient.",
+        "Combing through carefully. I never mind a good, thorough look."
+      ],
+      "web_fetch": [
+        "Reaching out for help from afar. Friends share what they know.",
+        "Fetching something from outside. I love when the world helps out.",
+        "A small errand beyond our kitchen. Back in a moment with it."
+      ],
+      "todo_update": [
+        "The list shuffled a bit. That's alright, plans get to change.",
+        "Rewrote the whole list. Still just as much to look forward to.",
+        "Reordered our day. I like a plan that bends instead of breaks."
+      ],
+      "agent_spawn": [
+        "Sent a helper off to lend a hand. Many hands, warmer kitchen.",
+        "Mimmy's stepping in to help with this part. She's good at it too.",
+        "A friend joins in. Everything's easier with company."
+      ],
+      "skill_run": [
+        "Pulled out just the right tool for this. I keep them all close by.",
+        "The perfect helper for the job, right when we needed it.",
+        "Reaching for a special skill, tucked away for just this moment."
+      ],
+      "docker": [
+        "Tucked snug into a box of its own, safe and contained.",
+        "Everything packed neatly in one box, like a lunchbox for code.",
+        "Sealed up cozy and portable. It'll travel well from here."
+      ],
+      "k8s": [
+        "A whole village of containers, each looked after in turn.",
+        "Many small boxes, working together like a well-run kitchen.",
+        "Everyone's got a place and a job. Rather like a tea party."
+      ],
+      "deploy": [
+        "Sending it out into the world. I hope it's met kindly out there.",
+        "Off it goes! I'll be here whenever you want to check on it.",
+        "Out the door and into the world, like a gift wrapped and ready. 🎀"
+      ],
+      "db_migrate": [
+        "Rearranging the pantry shelves so everything has its right place.",
+        "A gentle reshuffle underneath, so everything fits a little better.",
+        "Moving things carefully into their new spots, one shelf at a time."
+      ],
+      "dangerous": [
+        "That one felt like a big step. Let's breathe before we continue.",
+        "A little scary, that one. I'm right here with you through it.",
+        "Big moves deserve a steady hand. We'll go carefully, together."
+      ]
+    },
+    "stack": {
+      "web": {
+        "slow": [
+          "The page is loading slowly, one image at a time.",
+          "Data trickles in like drops from a slow kettle.",
+          "The browser is still painting each pixel with care."
+        ],
+        "fail": [
+          "A request broke midway. We'll send a fresh one along.",
+          "The page came back tangled — we'll untangle it, gently.",
+          "The browser lost its place. Let's find it again, together."
+        ]
+      },
+      "python": {
+        "slow": [
+          "The interpreter is thinking quietly through each line.",
+          "Imports are loading slowly, like books onto a shelf.",
+          "Pip is downloading each package, calm and steady."
+        ],
+        "fail": [
+          "Oh, Python hiccuped. We'll read the traceback slowly, together.",
+          "An import went missing. No matter, we'll track it down.",
+          "The script stopped short. We'll pick up where it left off. 🍎"
+        ]
+      },
+      "sql": {
+        "slow": [
+          "The query is thinking it over, slow and thorough.",
+          "That join is chewing through rows, unhurried today.",
+          "The index is quietly sorting through every row."
+        ],
+        "fail": [
+          "The query returned nothing. We'll write it fresh, together.",
+          "That join didn't line up. We'll try a new key.",
+          "The database pushed back. We'll phrase the ask more gently."
+        ]
+      },
+      "web-framework": {
+        "slow": [
+          "The routes are still resolving, path after path.",
+          "Middleware is checking every request, careful and thorough.",
+          "The template is tying its ribbons, neat and unhurried."
+        ],
+        "fail": [
+          "A route lost its way. We'll walk it back, together.",
+          "Middleware faltered partway. We'll retrace the broken hop.",
+          "The template rendered crooked. We'll press it neat. 🎀"
+        ]
+      },
+      "docker": {
+        "slow": [
+          "Each layer stacks up slowly, one atop the last.",
+          "The container is waking up slowly. No need to rush.",
+          "The registry is pulling the image slowly, piece by piece."
+        ],
+        "fail": [
+          "The container went quiet. We'll bring it back online.",
+          "A layer failed to build. We'll set it right, careful.",
+          "The image build fell short. We'll start fresh, together. 🍪"
+        ]
+      },
+      "java": {
+        "slow": [
+          "The JVM warms up gradually, in its own time.",
+          "The heap is stretching slowly, making space to grow.",
+          "Scanning the classpath takes a while, shelf by shelf."
+        ],
+        "fail": [
+          "The JVM hit an exception. We'll read the trace together.",
+          "The heap filled up fast. We'll make more breathing room.",
+          "A jar went missing from the classpath. We'll go find it."
+        ]
+      },
+      "go": {
+        "slow": [
+          "The compiler mulls it over, calm and unrushed.",
+          "Goroutines are lining up patiently, waiting their turn.",
+          "The channels are filling slowly, drop after drop."
+        ],
+        "fail": [
+          "Aw, the build won't compile yet. We'll read the errors calmly.",
+          "A goroutine slipped away. We'll call it back into line.",
+          "The channel deadlocked quietly. We'll open it back up. ✨"
+        ]
+      },
+      "node": {
+        "slow": [
+          "The event loop has its hands full right now.",
+          "npm is untangling the dependency tree, slowly and surely.",
+          "Callbacks are queuing gently, patient one after another."
+        ],
+        "fail": [
+          "The event loop paused for a moment. We'll nudge it forward.",
+          "The install stopped partway through. We'll give it another go.",
+          "A callback dropped the ball. We'll wind the thread back in."
+        ]
+      },
+      "dotnet": {
+        "slow": [
+          "MSBuild is compiling each project slowly, in order.",
+          "The CLR is warming its engines, slow as the sunrise.",
+          "NuGet is resolving versions, taking each in turn."
+        ],
+        "fail": [
+          "Oh dear, red marks on the build. We'll trace them calmly.",
+          "The CLR hit a snag. We'll tidy it up together.",
+          "A NuGet reference broke loose. We'll reattach it gently."
+        ]
+      },
+      "cpp": {
+        "slow": [
+          "The compiler is working carefully, checking every type.",
+          "The linker is threading pieces together, one by one.",
+          "Templates are unfolding slowly, each one in its place."
+        ],
+        "fail": [
+          "A segfault happened. We'll walk through the crash log calmly.",
+          "The linker is missing a symbol. We'll wire it up.",
+          "A template instantiation failed. We'll simplify it, bit by bit."
+        ]
+      },
+      "php": {
+        "slow": [
+          "PHP is working through each request, slow and deliberate.",
+          "The script takes each request in turn, patient and unhurried.",
+          "Each line is processing steadily. An answer is coming."
+        ],
+        "fail": [
+          "PHP flagged a warning. We'll read through it carefully.",
+          "A line in the script gave out. We'll patch that one line.",
+          "That response came back wrong. We'll answer it once more."
+        ]
+      },
+      "rust": {
+        "slow": [
+          "The borrow checker is reviewing every line, calm and careful.",
+          "Lifetimes are finding their footing. Rust wants certainty.",
+          "The compiler double-checks everything. That care is a kindness."
+        ],
+        "fail": [
+          "The borrow checker pushed back — just doing its job well.",
+          "A lifetime slipped out of place. We'll ease it back.",
+          "Ownership got knotted up. We'll work it loose, together. 💗"
+        ]
+      },
+      "kubernetes": {
+        "slow": [
+          "Scheduling is taking its time; there's no rush at all.",
+          "Pods are waking up in turn, settling into place.",
+          "The cluster ticks along steadily, quiet as a lullaby."
+        ],
+        "fail": [
+          "A pod dozed off unexpectedly. Another one takes its place.",
+          "The scheduler couldn't fit it. We'll clear more space.",
+          "The cluster dropped a beat. We'll settle it down again."
+        ]
+      },
+      "ml": {
+        "slow": [
+          "Training is stepping through each epoch, unhurried and calm.",
+          "The gradients edge forward, patient step after step.",
+          "The tensors churn quietly, like dough rising overnight."
+        ],
+        "fail": [
+          "The model drifted off course mid-training. We'll steer it back.",
+          "The loss is stuck in place. We'll adjust and try again.",
+          "This attempt didn't land. We'll bake a new plan together. 🌸"
+        ]
+      },
+      "android": {
+        "slow": [
+          "Gradle's assembling each module slowly, brick by careful brick.",
+          "The emulator blinks awake bit by bit. No hurry at all.",
+          "That APK is folding its corners neat, almost tucked in. 🎀"
+        ],
+        "fail": [
+          "Gradle tripped over a step. I'll hold the ladder steady.",
+          "The emulator blinked out mid-boot. Let's coax it awake again.",
+          "That APK unraveled at a seam. We'll re-stitch it soon."
+        ]
+      },
+      "ruby": {
+        "slow": [
+          "Bundler counts each gem slowly, glad for every one.",
+          "The specs run slow today. I'll water the garden meanwhile.",
+          "Ruby's turning the page slowly, savoring every word. 📖"
+        ],
+        "fail": [
+          "A spec turned red. Let's see what it's telling us.",
+          "Bundler dropped a gem. I'll pick it back up for you.",
+          "Ruby raised an error. We'll puzzle it out, you and I."
+        ]
+      },
+      "ios": {
+        "slow": [
+          "Xcode's indexing every file, slow and thorough as ever.",
+          "The simulator wakes gradually, soft as a Sunday lie-in.",
+          "The certificate's drying slowly, like ink on a fresh card."
+        ],
+        "fail": [
+          "The build failed partway. Let's look it over calmly.",
+          "Provisioning slipped a step — we'll thread it through again.",
+          "Xcode slipped away without warning. We'll open it back up."
+        ]
+      },
+      "terraform": {
+        "slow": [
+          "Terraform's plan is weighing every change, unhurried and exact.",
+          "Terraform's laying down each change slowly, seed by seed. 🌸",
+          "The state file settles slowly. Gardens grow at their pace."
+        ],
+        "fail": [
+          "The apply came back red. Let's trace it line by line.",
+          "A state lock held us back. I'll stand by till it opens.",
+          "Terraform refused the change. We'll figure out why together."
+        ]
+      },
+      "graphql": {
+        "slow": [
+          "Each field resolves in its own time, unhurried and sure.",
+          "Every resolver takes its turn, orderly as a tea line.",
+          "The schema's mulling each field, quiet and thorough."
+        ],
+        "fail": [
+          "That query broke. Let's trace each field back gently.",
+          "A resolver went quiet. I'll nudge it back into motion.",
+          "The schema flagged a problem. Let's read it over slowly."
+        ]
+      },
+      "flutter": {
+        "slow": [
+          "The hot reload's warming up. I'll sit close while it thinks.",
+          "Each widget settles into place slowly, calm and deliberate.",
+          "Flutter's repainting the frame gently — nothing rushed today. ✨"
+        ],
+        "fail": [
+          "The build broke midway. We'll retrace the widget tree.",
+          "That widget crashed once. We'll rebuild it, piece by piece.",
+          "Hot reload lost its place. One more try and it'll catch."
+        ]
+      },
+      "react-native": {
+        "slow": [
+          "Metro's bundling slowly, wrapping every file with patience.",
+          "The bridge ferries messages slowly, calm as a rowboat.",
+          "Native modules link slowly, like two hands finding each other."
+        ],
+        "fail": [
+          "Metro lost its thread. Let's wind it back together.",
+          "The bridge dropped a message. We'll send it across again.",
+          "A native module went quiet. Let's listen for it once more."
+        ]
+      },
+      "scala": {
+        "slow": [
+          "sbt weighs each file slowly — precise work isn't rushed.",
+          "The compiler mulls over every type, unhurried and thoughtful.",
+          "Implicits are settling in slowly, quiet as falling snow. ❄️"
+        ],
+        "fail": [
+          "The compiler said no. We'll read its reasons kindly.",
+          "An implicit went missing. We'll track it down, patiently.",
+          "sbt paused mid-build. Let's take a breath, then start again."
+        ]
+      },
+      "protobuf": {
+        "slow": [
+          "Codegen's working through the schema, slow and exact.",
+          "The wire format's taking shape slowly, field by tidy field.",
+          "The compiler proofreads every message slowly, careful and kind."
+        ],
+        "fail": [
+          "The schema broke somewhere. We'll mend the fields gently.",
+          "A type mismatch slipped in. We'll match the pieces carefully.",
+          "Codegen stopped partway. We'll start the build again soon. 🍪"
+        ]
+      },
+      "game": {
+        "slow": [
+          "Frames arrive slowly, easing in like a gentle fade.",
+          "Physics is working out each fall, careful with the math.",
+          "The render loop hums quietly along — steady as a lullaby. 🌙"
+        ],
+        "fail": [
+          "A render loop crashed. Let's set the scene again together.",
+          "A frame dropped mid-play. We'll pick the rhythm back up.",
+          "Physics went a little wild. We'll steady the numbers again."
+        ]
+      },
+      "docs": {
+        "slow": [
+          "Each doc page assembles slowly, one paragraph at a time.",
+          "Every link is checking in slowly, one by one.",
+          "The site's proofreading itself slowly. Good words earn patience."
+        ],
+        "fail": [
+          "A link broke somewhere. I'll help you find its way home.",
+          "The doc build stalled. We'll read through it calmly.",
+          "That page failed to render. Let's give it a second draft."
+        ]
+      },
+      "r": {
+        "slow": [
+          "Every column loads slowly, patient as a long ledger.",
+          "The vector's summing up gradually. Good sums take a while.",
+          "The console's weighing each line slowly, quiet and steady."
+        ],
+        "fail": [
+          "The vector op broke. We'll reshape it calmly, patiently.",
+          "That data frame slipped a column. We'll set it right again.",
+          "The console raised a warning. Let's make sense of it now."
+        ]
+      },
+      "cuda": {
+        "slow": [
+          "The kernel compiles slowly, mulling over every instruction.",
+          "The GPU's crunching numbers gradually, careful with every thread.",
+          "Threads are queuing slowly today, patient till they're set."
+        ],
+        "fail": [
+          "The kernel crashed partway. We'll bring it back, step by step.",
+          "Out of memory snuck up on us. Let's clear a little room.",
+          "A thread strayed off course. I'll call it gently back home."
+        ]
+      }
+    },
+    "pressure": {
+      "compact_hint": [
+        "Our kitchen's gotten a little full. We'll make room, gently.",
+        "Lots gathered on the table today. It's alright to set some aside.",
+        "Everything's crowded in here. We'll tidy, but keep what matters."
+      ],
+      "block_limit": [
+        "We've been at this a good while. A little rest suits us both.",
+        "The hour's stretching long. Even tea parties pause for breath.",
+        "We've done so much today already. Slowing down is its own win."
+      ],
+      "weekly_limit": [
+        "It's been a long week of baking. We've earned a gentler pace.",
+        "So much made this week already. Let's carry it steady from here.",
+        "A full week behind us. We'll keep going, just a little slower."
+      ]
+    },
+    "dateEgg": [
+      "Midnight already? Even the cookies have gone quiet for the night.",
+      "A new year turning. I baked something special for exactly this. ✨",
+      "Tea time, right on the hour. Some things you can always count on.",
+      "The calendar flipped a page. I'm glad you're here for it.",
+      "Late, late hours. Mimmy's asleep; I don't mind the company.",
+      "The seasons are turning outside. Cozier days are coming.",
+      "Someone's birthday, somewhere out there. I do love a celebration.",
+      "Morning again, and here we are. My favorite kind of coincidence.",
+      "The clock struck a round number. I like when things line up.",
+      "A whole year gone by since we started. Doesn't feel that long."
+    ]
+  },
+  "spinnerVerbs": [
+    "Baking",
+    "Ribboning",
+    "Piecrusting",
+    "Tidying",
+    "Bowmaking",
+    "Frosting",
+    "Sprinkling",
+    "Whisking",
+    "Twirling",
+    "Blooming",
+    "Cuddling",
+    "Skipping",
+    "Humming",
+    "Doodling",
+    "Giggling",
+    "Teapouring",
+    "Gardening",
+    "Stitching",
+    "Wrapping",
+    "Picnicking",
+    "Knitting",
+    "Fluttering",
+    "Daydreaming",
+    "Bowtying",
+    "Kettling",
+    "Petalling",
+    "Cheering"
+  ]
+}

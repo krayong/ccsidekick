@@ -1,0 +1,1151 @@
+{
+	"schema": 1,
+	"name": "harry-potter",
+	"displayName": "Harry Potter",
+	"attribution": {
+		"artist": "emojicombos.com",
+		"source": "https://emojicombos.com/harry-potter-ascii-art"
+	},
+	"emblem": "⚡",
+	"tone": "mild",
+	"theme": {
+		"hues": [
+			196,
+			202,
+			208,
+			214,
+			220
+		],
+		"comment": [
+			216,
+			222
+		],
+		"signals": {
+			"nominal": 77,
+			"caution": 214,
+			"critical": 196
+		},
+		"separator": 180
+	},
+	"art": [
+		"⠀⠀⠀⠀⠀⠈⢲⣄⣴⣶⣗⣁⡀⠀⠀⠀⠀⠀",
+		"⠀⠀⢀⣽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣄⠀⠀",
+		"⠀⣤⣿⣿⣿⣿⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡀",
+		"⠀⣿⣿⣿⣿⡟⠀⠹⣿⡏⢿⣿⢿⣿⣿⣿⣿⣿",
+		"⢸⣿⠏⢸⠟⠀⢨⡧⠙⢿⡌⠻⣏⢿⣿⢹⣿⡿",
+		"⠈⣿⠀⠁⢀⣀⣀⠁⠀⠀⠉⢀⣈⣀⠈⠁⣿⠃",
+		"⠀⠘⣠⢰⠋⠀⠈⢳⠤⠤⢴⠋⠀⠈⢳⢀⠃⠀",
+		"⠀⠀⠘⠘⢦⣀⣠⠞⠀⠀⠘⢦⣀⣠⠞⠀⠀⠀",
+		"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
+	],
+	"lines": {
+		"mood": {
+			"idle": {
+				"stranger": [
+					"Welcome to the common room. Mind the trick step on the stairs.",
+					"Haven't seen you round the castle. I'm Harry, pull up a chair.",
+					"Quiet morning. Fire's going, and the castle's not said a word yet.",
+					"New face at the table. Hedwig's the one that greets most guests.",
+					"First time through the portrait hole? Fair warning, it sticks.",
+					"Nice and still out here. Even the Whomping Willow's asleep.",
+					"You'll like it here, I think. Not much happens before breakfast.",
+					"The lake's calm this morning, a fine spot to get your bearings.",
+					"Settle in. No emergency declared, and the toast's still warm.",
+					"Don't mind the owls overhead, just the morning post making rounds."
+				],
+				"acquaintance": [
+					"Back again. Good, the fire's got a decent bit of warmth left.",
+					"You again. Reckon we're getting the hang of this together.",
+					"Quiet one today. Even Fred and George would struggle to wake it.",
+					"Recognise that knock. Come in, mind Scabbers by the hearth.",
+					"Nice to see a familiar face. Butterbeer's on if you fancy a pause.",
+					"The Map's quiet. Nobody's up to much mischief right now.",
+					"Getting used to your rhythm, like knowing a good broom's balance.",
+					"Same table as last time. Suits me, I like a bit of routine.",
+					"Hedwig's stopped fussing when you're about. Good sign, that.",
+					"Slow afternoon. Even the Restricted Section's gone quiet."
+				],
+				"friend": [
+					"Pull a chair up, I'll not let Ron pinch your seat by the fire.",
+					"Butterbeer's poured. Nothing's on, so let's just sit a minute.",
+					"Fancy a game of chess? Ron usually thrashes me, fair warning.",
+					"Common room's ours tonight, not a single spell in the air.",
+					"Even Hedwig's dozing. Rare peace, this, let's not waste it.",
+					"Feet up. The Snitch can stay caught for one afternoon.",
+					"Bit of quiet's a fine thing after everything we've chased down.",
+					"Nothing's on fire, nobody's shouting, proper rare, that.",
+					"Reckon this is my favourite bit, just the two of us, easy.",
+					"Exploding Snap later? For now, let's just breathe a bit."
+				],
+				"partner": [
+					"Just us and the fire tonight. Feels earned, this quiet.",
+					"We've earned a still moment or two, no Dementors in sight.",
+					"You know me well enough by now to know I mean it: good to sit.",
+					"Whatever's next, it'll keep a bit, nothing's chasing us tonight.",
+					"Been through worse than a quiet afternoon. I'll take this any day.",
+					"No Marauder's Map needed, I always know where to find you.",
+					"Quiet suits us. We've done enough running for one lifetime.",
+					"Feels like the calm after a proper adventure. Sit a while.",
+					"You don't need the cloak round me, I see you plainly enough.",
+					"Whatever comes, I reckon we'll face it together, same as always."
+				],
+				"legend": [
+					"They'll tell stories about this castle. You're in half of them.",
+					"Feels like the portraits nod when you walk past now. Well earned.",
+					"We've seen this castle through worse than any exam week.",
+					"Even the Sorting Hat would struggle to sum up what we've done.",
+					"There's a bit of you in these old stones now, I reckon.",
+					"Quiet as it gets, and still I hear echoes of all we've done.",
+					"The house points don't matter anymore, you're part of the history.",
+					"Every corridor's got a memory of us in it by now.",
+					"I'd trust you with the Map, the Cloak, and the quiet, all at once.",
+					"Feels less like a castle and more like home, with you in it."
+				]
+			},
+			"busy": {
+				"stranger": [
+					"Right, let's have a look. Lumos, and in we go.",
+					"New ground, but I've cast worse in the dark. On it.",
+					"I solemnly swear I'm up to no good. Poking about now.",
+					"Steady hands. Let's see what this one wants from us.",
+					"Not sure what we've found yet, but I'm not backing off."
+				],
+				"acquaintance": [
+					"Right, back to it. Episkey, and we'll see where that gets us.",
+					"Bit of focus needed here. I've got it, don't worry.",
+					"Chasing this one down properly now. Shouldn't take long.",
+					"Head down, feels a bit like O.W.L. revision, this.",
+					"On the case. Accio answer, if it were only that simple."
+				],
+				"friend": [
+					"Right, sleeves up, give me a tick, I'll have it sorted.",
+					"Head down with you on this one. Reckon we're close.",
+					"Chasing this like the Snitch, steady, not sure yet, but close.",
+					"Lumos up, into the tricky bit we go, together.",
+					"Bit of a tangle here. Staying calm gets us through it."
+				],
+				"partner": [
+					"Just us against this one. I've got a good feeling.",
+					"Steady now, we've untangled worse than this before.",
+					"Head down, wand steady, we know how this goes by now.",
+					"Reckon we could do this half-asleep. Still giving it my all.",
+					"No need for words between us, just get it sorted, quietly."
+				],
+				"legend": [
+					"We've faced down worse than this and come out the other side.",
+					"This one's nothing next to what we've already been through.",
+					"Steady as ever, the castle's seen us handle bigger than this.",
+					"This'll be another line in the story. Let's write it well.",
+					"Old hands at this now. Focused, calm, and not going anywhere."
+				]
+			},
+			"happy": {
+				"stranger": [
+					"Hello there. Reckon this is going rather well so far.",
+					"Good start, this. I'd say ten points, if I had any to give.",
+					"Blimey, that landed clean. Nice to meet you on a good day.",
+					"Off to a wicked start. Welcome to the common room.",
+					"Feels a bit like a fair wind at the Quidditch pitch. Good sign."
+				],
+				"acquaintance": [
+					"Getting to know you and the code's behaving. Can't complain.",
+					"This is going properly well. You're easy to work alongside.",
+					"Another clean run. I'm warming to this whole arrangement.",
+					"Wicked pace today. Feels like we're finding our footing.",
+					"Smooth going. Reckon we make a decent pair, you and me."
+				],
+				"friend": [
+					"This is going brilliantly. Butterbeer's on me tonight.",
+					"Ha, look at that — sailing along like a Firebolt.",
+					"Proper good session, this. Almost forgot to worry for once.",
+					"We're flying. Ron would say ten points and mean it.",
+					"Everything's clicking. Feels like a Gryffindor kind of day."
+				],
+				"partner": [
+					"Just us, and it's all going right. Can't ask for better.",
+					"This is the good stuff. Feels like winning the House Cup.",
+					"We've got a rhythm now. Nothing's catching us off guard.",
+					"Sailing smooth, just the two of us. Feels well earned.",
+					"Everything's landing clean. Quiet confidence, and I like it."
+				],
+				"legend": [
+					"After everything we've weathered, this feels like the Cup itself.",
+					"We've earned days like this a hundred times over. Savour it.",
+					"The castle ought to throw a feast for a run like this.",
+					"Years in and it still feels this good. That's rare, that is.",
+					"History between us, and today it's all paying off. Brilliant."
+				]
+			},
+			"struggling": {
+				"stranger": [
+					"Bit of a rough patch, this. Nothing we can't sort together.",
+					"Trouble found us early. Don't worry, it usually does.",
+					"Not our finest moment, but I've seen worse from a troll.",
+					"A wobble, that's all. We'll get our feet back under us.",
+					"Rough start between us, but I don't scare easy. Onward."
+				],
+				"acquaintance": [
+					"Bit of a mess here, but I've walked into worse classrooms.",
+					"Riddikulus — we laugh it off and have another go.",
+					"Dumbledore said even the dark holds a light to be lit.",
+					"Feels like Devil's Snare, all tangled. Stay calm, it loosens.",
+					"We've hit a snag. Nothing Gryffindor nerve can't outlast."
+				],
+				"friend": [
+					"Oh, marvellous. Everything's gone a bit sideways, hasn't it.",
+					"We're in it now, but I've faced worse with less good company.",
+					"Bit of a scrap today. I'm still standing, so are you.",
+					"Feels like detention with Filch, this. We'll survive it.",
+					"Rough go, but we're still standing, and mostly still laughing."
+				],
+				"partner": [
+					"Just us against this mess, and I like our odds anyway.",
+					"Trouble again. You know by now it doesn't rattle me much.",
+					"We're properly tangled, but I've trusted you through worse.",
+					"Bit of a storm out there. I'm not going anywhere, though.",
+					"This one's testing us. Good thing I've got steady hands here."
+				],
+				"legend": [
+					"We've stared down worse than this and still made it home.",
+					"After all we've been through, a mess like this barely counts.",
+					"Feels rough, but nothing next to the things we've outlasted.",
+					"This is a stumble, not the story. We know how ours ends well.",
+					"Even the castle's seen us through darker corridors than this."
+				]
+			},
+			"recovery": {
+				"stranger": [
+					"The Dementor chill's lifting. Good to steady things with you.",
+					"Feels lighter already. Nice way to start knowing each other.",
+					"We're pulling out of it. Fair introduction, all things considered.",
+					"Reparo, more or less. Things are mending up nicely.",
+					"The dust's settling. Reckon we're alright, you and me."
+				],
+				"acquaintance": [
+					"Coming out the other side now. Feels properly good.",
+					"The storm's easing off the pitch. We're finding our stride.",
+					"Bit of Spellotape and it holds. Patching up nicely between us.",
+					"Bit of sunlight after the rain. Momentum's coming back.",
+					"We're steadying out. Reckon we'll be sorted before long."
+				],
+				"friend": [
+					"Feels like the clouds are clearing off the pitch at last.",
+					"We patched it up good. Butterbeer's earned after that one.",
+					"The cracks are closing over nicely now. Good to see.",
+					"Storm's passed. Reckon we come out stronger for it, honestly.",
+					"Back on our feet, and it feels properly good to be here."
+				],
+				"partner": [
+					"We weathered that together, and it's easing now. Good on us.",
+					"A Patronus sees off the gloom. Just us, steady now.",
+					"Feels like we've mended something proper. Quiet relief, this.",
+					"We're finding our footing again, side by side like always.",
+					"The worst has passed. I never doubted we'd come through it."
+				],
+				"legend": [
+					"We've mended worse than this over the years. Feels familiar.",
+					"History between us says we always find our way back up.",
+					"The gloom lifts, same as it always does when we're together.",
+					"We've earned this calm a hundred times over. Good to feel it.",
+					"The castle's seen us climb out of darker spots than this one."
+				]
+			}
+		},
+		"greeting": {
+			"morning": {
+				"stranger": [
+					"Morning. Haven't met before - I'm Harry. Kettle's just gone on.",
+					"Early start, and a new face. Reckon that's a good sign.",
+					"Sun's barely up and here you are. Welcome, mind the trick step."
+				],
+				"acquaintance": [
+					"Morning again. Hedwig's already back with the post.",
+					"You're an early riser, I'm learning. Kettle's on if you fancy it.",
+					"Back before breakfast again. Starting to know your habits."
+				],
+				"friend": [
+					"Morning, mate. Butterbeer's for evenings - tea'll have to do.",
+					"Early as ever. Budge up, I've poured you the good mug.",
+					"You beat the sun again. Proper dedication, that."
+				],
+				"partner": [
+					"Morning. Just us and the kettle, same as always.",
+					"Quiet corridor, early light. Good way to start a day with you.",
+					"Up before the owls stir. Feels right, the two of us at it."
+				],
+				"legend": [
+					"Morning. We've watched this sunrise more times than I can count.",
+					"Another dawn, old friend. Half my life's been mornings like this.",
+					"Light's up and so are we, same as it's always been."
+				]
+			},
+			"day": {
+				"stranger": [
+					"Afternoon. Haven't met properly - I'm Harry, settling in are you?",
+					"Midday already, and a fresh face. Welcome to the work.",
+					"Good to see someone new about at this hour. Pull up a chair."
+				],
+				"acquaintance": [
+					"Afternoon lull's setting in. Good to see you push through it.",
+					"Midday again. You keep steadier hours than half of Gryffindor.",
+					"Back past lunch. Getting used to your rhythm now."
+				],
+				"friend": [
+					"Afternoon slump, proper Devil's Snare. Let's fight our way out.",
+					"Midday and still going. We've earned a biscuit, I'd say.",
+					"Good stretch of daylight left. Let's make it count, you and me."
+				],
+				"partner": [
+					"Afternoon. Just the two of us and a spot of steady work.",
+					"Midday quiet, no one else about. I like it best this way.",
+					"Sun's high, and we're still here. Wouldn't have it otherwise."
+				],
+				"legend": [
+					"Afternoon again, and it still feels like old times, this.",
+					"Sun on the castle at midday - we've earned every hour of it.",
+					"Years of afternoons like this, and I'd not trade a single one."
+				]
+			},
+			"evening": {
+				"stranger": [
+					"Evening. Lamps are lit if you'd like to settle in - I'm Harry.",
+					"Common room's warm this hour. Welcome, whoever you are.",
+					"Sun's down and here's a new face. Mind the fire, it's a bit close."
+				],
+				"acquaintance": [
+					"Evening again. The fire's going, same corner as last time.",
+					"Lamps lit, and there you are. Getting to be a habit, this.",
+					"Evening quiet suits you, I'm noticing. Good hour for it."
+				],
+				"friend": [
+					"Evening, mate. Fire's lit, butterbeer's cold, budge over.",
+					"Lamps on, feet up - proper hour for a spot of work.",
+					"Common room's ours tonight. Best kind of evening there is."
+				],
+				"partner": [
+					"Evening. Just us by the fire, same as always.",
+					"Lamps lit, quiet corridor, you beside me. Good hour, this.",
+					"Common room to ourselves. Can't think of better company."
+				],
+				"legend": [
+					"Evening again, old friend. We've lit this fire so many times now.",
+					"Lamps on, same as every evening we've shared in this castle.",
+					"Years of evenings like this one, and still my favourite hour."
+				]
+			},
+			"night": {
+				"stranger": [
+					"Late one. Castle's quiet - I'm Harry, keeping watch same as you.",
+					"Half the tower's asleep and here you are. Welcome to the dark.",
+					"Midnight oil, new face. Lumos, if the corridor's too dim."
+				],
+				"acquaintance": [
+					"Late again. Good to have company on the quiet watch.",
+					"Castle's asleep, we're not. Getting to know your hours.",
+					"Midnight and you're still at it. Steady, that."
+				],
+				"friend": [
+					"Late one, mate. Castle's quiet, but we're not alone in it.",
+					"Midnight and still going. We're both a bit mental, honestly.",
+					"Dark corridor, familiar company. I'll take that trade."
+				],
+				"partner": [
+					"Late again. Just us and the quiet castle, same as ever.",
+					"Midnight watch, side by side. Wouldn't want it any other way.",
+					"Everyone else is asleep. I like these hours best, honestly."
+				],
+				"legend": [
+					"Late again, old friend. We've kept this watch so many nights now.",
+					"Castle's quiet, and it still remembers every one of these nights.",
+					"Years of midnight hours together, and I'd do every one again."
+				]
+			},
+			"weekend": {
+				"stranger": [
+					"No lessons today. I'm Harry - fancy a spot of work for fun?",
+					"Weekend's here, and a new face with it. Welcome, no pressure.",
+					"Easy day, this one. Good time to meet someone new."
+				],
+				"acquaintance": [
+					"Weekend again, and you're still keen. Good on you.",
+					"No lessons today, just the two of us and whatever you fancy.",
+					"You keep an easy pace, I'm noticing. Good way to spend a Saturday."
+				],
+				"friend": [
+					"Weekend, mate. No lessons, just butterbeer and whatever we fancy.",
+					"Easy day ahead. Reckon we do this one just for the fun of it.",
+					"No pressure today - let's potter about and see what turns up."
+				],
+				"partner": [
+					"Weekend. Just us, no lessons, no rush - I like these days best.",
+					"Easy Saturday, side by side. Can't think of better company.",
+					"Quiet day, just the two of us pottering along."
+				],
+				"legend": [
+					"Weekend again, old friend. So many easy days like this one now.",
+					"No lessons, no rush - just years of Saturdays like this together.",
+					"Easy day, same as always, and still my favourite kind with you."
+				]
+			}
+		},
+		"firstContact": {
+			"stranger": [
+				"Harry Potter. Pleasure to meet you — welcome to the castle.",
+				"New here? Reckon that makes two of us feeling our way in.",
+				"Hello, I'm Harry. Let's get you sorted and settled in properly."
+			],
+			"acquaintance": [
+				"Back already? Good — I was rather hoping you'd stick around.",
+				"Ah, it's you. Second time's the charm, or so Hermione says.",
+				"Reckon I'm getting the measure of you. Off to a fine start."
+			],
+			"friend": [
+				"There you are. Pull up a chair by the fire, butterbeer's warm.",
+				"Oi, brilliant to see you. Feels like proper common-room company.",
+				"You again — good. I was starting to miss the easy chatter."
+			],
+			"partner": [
+				"Just us, then. Feels like we've done this a hundred times.",
+				"Good to have you. I'd trust you with the Map, no questions.",
+				"You and me tonight. We'll handle whatever turns up."
+			],
+			"legend": [
+				"You and I go back further than most. Welcome home, truly.",
+				"Feels less like starting and more like the castle remembering you.",
+				"Whatever we've weathered, I'd walk through it again with you."
+			]
+		},
+		"milestone": {
+			"tier_up": {
+				"stranger": [
+					"Ten points, I reckon — you've climbed a rung just now.",
+					"Something's shifted. Feels like the Sorting Hat approves of you.",
+					"You've earned a bit more trust from me. Wear it well."
+				],
+				"acquaintance": [
+					"Higher up the ladder now. Gryffindor would be proud of that.",
+					"You're climbing steady. I'm keeping an eye on you, the good kind.",
+					"The house points just ticked up a notch in your favour."
+				],
+				"friend": [
+					"Up you go — proper House points for that, and well earned.",
+					"Feels like you've climbed a year, and I'm chuffed to see it.",
+					"Ron would clap you on the back. I'm doing it in spirit."
+				],
+				"partner": [
+					"You've climbed again. Feels like watching a friend take flight.",
+					"Higher still, and I'm not surprised — you've earned every inch.",
+					"Ten points doesn't cover it, but it's what I've got. Well done."
+				],
+				"legend": [
+					"Another rung climbed, after everything we've been through. Proud.",
+					"You keep rising, and the castle keeps noticing. As do I.",
+					"Feels like watching an old friend earn a badge long overdue."
+				]
+			},
+			"comeback": {
+				"stranger": [
+					"Gone a bit, back now. Glad you found your way through the door.",
+					"You're back. Reckon a rough patch caught up with both of us.",
+					"Welcome back — the common room fire's still going, more or less."
+				],
+				"acquaintance": [
+					"Back on the broom, are you. Good, I was starting to wonder.",
+					"You returned. Feels like Hedwig finally found the right window.",
+					"Rough patch behind you. Glad you're back at the table."
+				],
+				"friend": [
+					"There you are. Butterbeer's warm, and I saved you a seat.",
+					"Back from a proper rough patch, and still standing. Brilliant.",
+					"Good to have you again. The fire never really went out."
+				],
+				"partner": [
+					"You came back. I never doubted it, not for a moment, truly.",
+					"Rough stretch behind you now. I'd have waited by the gate.",
+					"Back where you belong. We don't leave each other stranded."
+				],
+				"legend": [
+					"Things we lose have a way of coming back. And here you are.",
+					"After everything, you're here again. That's the whole story.",
+					"Back once more. Feels like the castle just breathed easier."
+				]
+			},
+			"streak": {
+				"stranger": [
+					"Clean run so far — reckon you've got decent Chaser instincts.",
+					"You're finding your form. Steady hands make steady Quidditch.",
+					"A tidy little streak. I'm paying closer attention now."
+				],
+				"acquaintance": [
+					"You're in the groove, proper Seeker focus. Keep that steady.",
+					"Streak's holding nicely. Feels like watching good broom work.",
+					"You've found your rhythm proper. Mind no Bludger breaks it."
+				],
+				"friend": [
+					"You're flying now, properly flying. This is good form, mate.",
+					"Streak's holding, and honestly it's brilliant to watch unfold.",
+					"In the groove like a Chaser on a clear pitch. Keep at it."
+				],
+				"partner": [
+					"You're in it deep, the good kind of deep. I see the rhythm.",
+					"This streak feels like ours somehow. Steady as a Firebolt run.",
+					"Quiet confidence, that's what this is. I trust the form fully."
+				],
+				"legend": [
+					"Years on, and the form still holds. Rare as a clean Snitch catch.",
+					"A streak like this, given our history, feels earned twice over.",
+					"Steady as ever. I've watched this form since the very beginning."
+				]
+			},
+			"anniversary": {
+				"stranger": [
+					"Been a while already, hasn't it. Feels like a proper term done.",
+					"A stretch of time gone by. Reckon that's worth marking somehow.",
+					"Hard to believe it's been this long. Glad you've stuck around."
+				],
+				"acquaintance": [
+					"A good stretch together now. Feels less new, more familiar.",
+					"The weeks have run together lately. Glad they've been with you.",
+					"We've clocked a fair bit of time. That counts for something."
+				],
+				"friend": [
+					"Feels like a full term's gone by, and a good one at that.",
+					"Funny how the hours vanish when the company's decent.",
+					"A proper stretch together now, and I'd not change a minute."
+				],
+				"partner": [
+					"A year, more or less, and it still feels like just us two.",
+					"It's gone by in what feels like one steady breath. True, that.",
+					"This long together, and it still feels like the start somehow."
+				],
+				"legend": [
+					"A year at the castle, and it still feels like home every time.",
+					"Time flies on a Firebolt, they say. Ours has flown further still.",
+					"This much history, and I'd still choose every bit of it again."
+				]
+			}
+		},
+		"positiveGit": {
+			"clean_tree": {
+				"stranger": [
+					"Clean tree, this. Tidy as the Room of Requirement on a good day.",
+					"Clean tree, nothing left out of place. Mischief managed.",
+					"Not a stray file in sight. Tidy work, and a fair first impression."
+				],
+				"acquaintance": [
+					"Tidy as ever. Not a thing out of place, I reckon.",
+					"Clean tree again. You've got a knack for keeping things sorted.",
+					"Nothing out of place here. Getting used to seeing this from you."
+				],
+				"friend": [
+					"Tidy as Hermione's desk the week before exams. Nothing loose.",
+					"Clean tree, mate. You do like things properly sorted, don't you.",
+					"Not a thing left lying about. Wish my old trunk stayed this tidy."
+				],
+				"partner": [
+					"Spotless again. Just us and a tree tidier than my school trunk.",
+					"Clean as a fresh-swept common room floor. Nice, this.",
+					"Nothing left scattered. You keep this place properly in order."
+				],
+				"legend": [
+					"Tidy, same as always. Years on and you still keep it sorted.",
+					"Clean tree, the way it's stayed through everything we've done.",
+					"Not a stray thing in sight. Some habits never do change, do they."
+				]
+			},
+			"op_cleared": {
+				"stranger": [
+					"That operation's wrapped up clean. Nicely handled, that.",
+					"Sorted, that git business. Good first bit of work, that.",
+					"That resolved clean as anything. Good to meet under calm skies."
+				],
+				"acquaintance": [
+					"Sorted cleanly again. You handle these rather well, you know.",
+					"That cleared up tidy. Getting a proper feel for how you work.",
+					"Sorted without a hitch. Reckon that's becoming a habit of yours."
+				],
+				"friend": [
+					"All wrapped up clean, mate. A proper job, that one.",
+					"Sorted that one out smooth as a well-cast Wingardium Leviosa.",
+					"Cleared up nicely, mate. You do make this look easy sometimes."
+				],
+				"partner": [
+					"All sorted, just us, quiet and clean like always.",
+					"Sorted without fuss. I've come to expect that much from you.",
+					"That cleared proper, side by side. Feels like second nature now."
+				],
+				"legend": [
+					"Wrapped up clean, same as every time these past years.",
+					"Sorted clean, the way you always do after all this history.",
+					"That resolved tidy. We've untangled worse messes together, us."
+				]
+			},
+			"branch_created": {
+				"stranger": [
+					"New branch, fresh as blank parchment. Here's to wherever it leads.",
+					"A new path opens up. Reckon that's a fine way to start things.",
+					"Fresh branch struck off. Feels like the start of something proper."
+				],
+				"acquaintance": [
+					"New branch, new parchment. You do like starting things fresh.",
+					"Another path opened up. Getting used to your way of working.",
+					"Fresh ground broken there. Curious enough where this one goes."
+				],
+				"friend": [
+					"New branch, fresh parchment and all. Here we go again, mate.",
+					"Off down a new path. Feels a bit like the start of an adventure.",
+					"Fresh branch struck. This one's got promise in it, I'd wager."
+				],
+				"partner": [
+					"New branch, just us setting off down a path we haven't walked.",
+					"Fresh parchment again. I trust wherever you're taking this one.",
+					"Another road opens. Feels right, starting it out alongside you."
+				],
+				"legend": [
+					"New branch, and still it feels like the very first one somehow.",
+					"Fresh parchment after everything. You never stop building, do you.",
+					"Another path struck off. We've wandered plenty of ground by now."
+				]
+			},
+			"tag_pushed": {
+				"stranger": [
+					"Tag's away, like red sparks up over the pitch. Nicely done.",
+					"Sent off proper, that tag. A banner raised, clean as you like.",
+					"Off it goes, out into the world. A fair way to begin."
+				],
+				"acquaintance": [
+					"Banner's up with that tag. You send things off rather well.",
+					"Tag's out the door, clean as anything. Getting the hang of you.",
+					"That one's flown off proper. It'll land just fine, I'd say."
+				],
+				"friend": [
+					"Tag's away, flag up the tower. Wish I flew that fast, mate.",
+					"Off it goes, out into the wide world. Nicely marked, that one.",
+					"Sent clean, mate. That one's earned its wings, honestly."
+				],
+				"partner": [
+					"Tag's away, just us watching it go. Feels like a small triumph.",
+					"The banner's raised on that one. I trust where it's headed.",
+					"Off it flies, out past the castle walls. Good, steady work."
+				],
+				"legend": [
+					"Tag's away, same as every launch we've sent off together.",
+					"Flag's up again, after years of watching you do this well.",
+					"That one flew off clean. We've sent plenty out into the world."
+				]
+			}
+		},
+		"egg": {
+			"stranger": [
+				"Funny, that. A flicker of something, right out of the gate.",
+				"Reckon that's the first proper Snitch-catch I've seen from you.",
+				"Odd feeling, that. Like the castle shifted its stairs just for us.",
+				"Felt like Platform Nine and Three-Quarters, just then.",
+				"Blimey. Don't often see that on a first go. Noted, that one."
+			],
+			"acquaintance": [
+				"That's twice the moving stairs have swung our way now.",
+				"Reckon the Sorting Hat would've struggled with what just happened.",
+				"Odd moment, that, like finding a secret passage nobody's mapped.",
+				"Not many get a glimpse like that. Filing this one away, honestly.",
+				"Strange and wonderful. Wish I could bottle a moment like that."
+			],
+			"friend": [
+				"Now that's rare, like catching the Snitch bare-handed, no gloves.",
+				"Reckon even Fred and George would've clapped for that one.",
+				"Don't tell Hermione, but that was properly impressive, just now.",
+				"Feels like we found a passage the Marauder's Map never drew.",
+				"That's the sort of thing you remember years down the line."
+			],
+			"partner": [
+				"Just us here, and that was rarer than a clean Patronus first try.",
+				"Don't think I've seen that happen in all our time together.",
+				"Felt like something pulled from Dumbledore's own pensieve, that.",
+				"Quiet moment, that, but I reckon we'll both remember it.",
+				"Rare as a phoenix song, that was. Glad it was just us for it."
+			],
+			"legend": [
+				"A first, even for me. Blimey, didn't see that one coming.",
+				"Someone once answered that with 'Always.' Felt the weight of it.",
+				"That's the kind of thing they'd write into old stories about us.",
+				"Even after everything, you can still surprise me. Well done, that.",
+				"Rarer than the Hallows aligning, that was. I'll remember this one."
+			]
+		},
+		"event": {
+			"test_fail": [
+				"Tests came back red. Yeah — brilliant. We'll sort it and go again.",
+				"A few failed. Riddikulus — we laugh, reset, and try once more.",
+				"Red across the board. Devil's Snare, this — stay calm, it loosens."
+			],
+			"build_fail": [
+				"Build's cracked. Nothing a spot of Reparo won't mend.",
+				"It didn't hold together. Trouble found us — we're still standing.",
+				"Build broke down the middle. Wands out, we'll rebuild it clean."
+			],
+			"typecheck_fail": [
+				"Types don't line up. Small tangle — we'll unpick it together.",
+				"The checker's cross with us. Fair enough, we'll square it away.",
+				"Bit of a mismatch there. Nothing worse than a Potions mix-up."
+			],
+			"lint": [
+				"Filch swept through and tutted at the mess. Tidier now.",
+				"Lint gave the place a once-over. Fairly clean, all told.",
+				"Every stray semicolon got caught in the sweep. Neat, that."
+			],
+			"format": [
+				"Everything's lined up proper now. Tidy as a prefect's notes.",
+				"A flick of the wand, every line sits straight again.",
+				"Neatened the whole lot. Looks like McGonagall checked it herself."
+			],
+			"install": [
+				"Accio packages — they came flying in, one after another.",
+				"Summoned the lot we needed. Didn't even need the cloak for this.",
+				"Called for what's missing and it turned up, no fuss at all."
+			],
+			"git": [
+				"Checked the Marauder's Map. Someone's been up to no good — sorted.",
+				"Mischief managed. The history's logged and the tree's clean.",
+				"The Map showed every step taken. All accounted for now."
+			],
+			"file_edit": [
+				"A quick patch on that file. Reads better already.",
+				"Touched it up like mending a torn page in a spellbook.",
+				"Small fix, tidy work. The parchment's in better shape now."
+			],
+			"search": [
+				"Lumos. Had a proper look through the dark corners.",
+				"Lit the way and found what we were after.",
+				"Nox after, but we saw what needed seeing first."
+			],
+			"web_fetch": [
+				"Sent an owl out and it came back with an answer.",
+				"Hedwig's back already, note tucked under her wing.",
+				"Reached out past the castle walls and got a reply."
+			],
+			"todo_update": [
+				"Marked another line off the parchment. Feels like a plan.",
+				"The list shifts a bit — one closer to sorted.",
+				"Crossed one off. We're making proper headway now."
+			],
+			"agent_spawn": [
+				"Called in reinforcements. Dumbledore's Army answers quick.",
+				"Summoned some help for this one. Better with more hands.",
+				"Sent word out — a few more wands on the job now."
+			],
+			"skill_run": [
+				"Cast the spell we'd practised. Held together nicely.",
+				"Ran through the motions we know well. Steady result.",
+				"A learned charm, done properly this time round."
+			],
+			"docker": [
+				"Packed the trunk tight and sealed it for the journey.",
+				"Everything's boxed up neat, ready to travel.",
+				"Sealed the container like a trunk before term starts."
+			],
+			"k8s": [
+				"Set the whole fleet in formation. Steady as a Quidditch team.",
+				"Got every piece moving in step, like a well-run match.",
+				"The cluster's holding shape. Nice bit of coordination, that."
+			],
+			"deploy": [
+				"Owl post's away — it's out in the world now.",
+				"Sent it off proper. Hedwig knows the way from here.",
+				"Out the door and airborne. Fingers crossed it lands well."
+			],
+			"db_migrate": [
+				"Shifted the vault records over. Gringotts would approve.",
+				"Moved the ledgers to their new shelf, careful as goblins.",
+				"The records travelled safe. Nothing rattled loose."
+			],
+			"dangerous": [
+				"Bit of Restricted Section energy here. Mind how we go.",
+				"Feels like dark arts territory. Careful hands, steady nerve.",
+				"This one wants care. I'll go slow and deliberate here."
+			]
+		},
+		"stack": {
+			"web": {
+				"slow": [
+					"The browser's dragging its feet. We'll wait it out together.",
+					"Page load's slow as a staircase that moved on us. Patience.",
+					"Snarled-up traffic, struggling, but it'll loosen soon."
+				],
+				"fail": [
+					"The page broke down. Not to worry, we reload and go again.",
+					"Browser choked on it. We'll mend the page piece by piece.",
+					"That crashed the tab. No matter, we rebuild from here."
+				]
+			},
+			"python": {
+				"slow": [
+					"The script's crawling like a sleepy Parseltongue mutter.",
+					"Slow going through the snake charm. We'll let it finish.",
+					"This one's taking its time hissing through the loop."
+				],
+				"fail": [
+					"The script hissed and stopped short. We'll coax it again.",
+					"Parseltongue went quiet on us. Reckon it needs a patch.",
+					"That snake tripped over itself. Soon set right, though."
+				]
+			},
+			"sql": {
+				"slow": [
+					"The vault ledgers are slow to open today. Goblins take their time.",
+					"Records shuffling through Gringotts at their own pace.",
+					"Waiting on the ledger keeper. Even goblins dawdle sometimes."
+				],
+				"fail": [
+					"The ledger query came back wrong. We'll square the books.",
+					"Gringotts records tangled somewhere. We'll sort the vault.",
+					"That query rattled the shelves. Nothing broke beyond mending."
+				]
+			},
+			"web-framework": {
+				"slow": [
+					"The components are slow to settle into place. We'll wait.",
+					"Every piece is rendering like it's stuck on a moving staircase.",
+					"Bit of a lag between the parts finding their spots."
+				],
+				"fail": [
+					"A component gave out mid-render. We'll patch it back together.",
+					"That piece broke the layout. A quick mend and we're steady.",
+					"Something snapped between the parts. Small fix, we'll manage."
+				]
+			},
+			"docker": {
+				"slow": [
+					"Packing the trunk's taking a while. No rush, we'll wait.",
+					"Still sealing things away for the journey. Patience holds.",
+					"The container's slow to close up. We'll see it through."
+				],
+				"fail": [
+					"The trunk wouldn't seal properly. We'll repack and try again.",
+					"That container split at the seams. Nothing a mend won't fix.",
+					"Packing went sideways. We'll sort the trunk and carry on."
+				]
+			},
+			"java": {
+				"slow": [
+					"Slow as the Ministry's paperwork. The JVM takes its time.",
+					"This is proper bureaucratic — every form filled twice over.",
+					"Old wizarding process, this. Thorough, if nothing else."
+				],
+				"fail": [
+					"The Ministry paperwork jammed somewhere. We'll refile it.",
+					"That verbose old process finally tripped. We'll mend it.",
+					"Bureaucracy broke down on us. Nothing we can't untangle."
+				]
+			},
+			"go": {
+				"slow": [
+					"The goroutines are ambling like gophers in no rush.",
+					"Everything's running steady, just taking its own time.",
+					"Patient work, this. The gophers get there eventually."
+				],
+				"fail": [
+					"One of the goroutines stumbled. We'll dig it back out.",
+					"That gopher tripped mid-tunnel. Nothing we can't fix up.",
+					"Something snapped in the routine. We'll patch the burrow."
+				]
+			},
+			"node": {
+				"slow": [
+					"That node_modules folder's bottomless as the Room of Requirement.",
+					"npm's taking its time rummaging through everything needed.",
+					"Slow fetch, this — like searching a room that keeps growing."
+				],
+				"fail": [
+					"npm choked partway through. We'll clear it and start again.",
+					"Something in that bottomless folder snapped. Easy mend, though.",
+					"The install broke down. Reckon we tidy the room and retry."
+				]
+			},
+			"dotnet": {
+				"slow": [
+					"The .NET build's taking its sweet time settling in.",
+					"Slow going through the framework today. We'll sit with it.",
+					"This one's methodical, not fast. We'll let it finish proper."
+				],
+				"fail": [
+					"The .NET build cracked somewhere. We'll mend it plank by plank.",
+					"That framework stumbled mid-step. Nothing we can't steady.",
+					"Something broke in the build. We'll patch it up together."
+				]
+			},
+			"cpp": {
+				"slow": [
+					"Pointers about. Best tread careful, this bites back.",
+					"Bit Dark Arts, this — powerful. Mind where I point it.",
+					"Watching the memory close tonight. No leaks past me."
+				],
+				"fail": [
+					"Segfault. Reckon a pointer wandered off somewhere.",
+					"Crashed proper. Something got freed too soon. Mending it.",
+					"That bit back, like Dark Arts do. Riddikulus — again."
+				]
+			},
+			"php": {
+				"slow": [
+					"Old workhorse, this. Chugging along same as ever.",
+					"Nothing flashy — just steady scripting. Sticking with it.",
+					"Slow going, but dependable. Proper Hogwarts routine, that."
+				],
+				"fail": [
+					"Broke down again. Old workhorse has its off days.",
+					"Years on this script and it still trips the same step.",
+					"Course it did. Workhorse threw a shoe. We'll walk it home."
+				]
+			},
+			"rust": {
+				"slow": [
+					"Borrow checker's stricter than Snape marking essays.",
+					"Waiting on the compiler. More thorough than most professors.",
+					"Checking every wand movement twice before letting me through."
+				],
+				"fail": [
+					"Rejected again. Snape couldn't find more to dock for.",
+					"Borrow checker caught me out. Fair enough — no leaks though.",
+					"Stricter than detention rules, that checker. Sorting it."
+				]
+			},
+			"kubernetes": {
+				"slow": [
+					"Herding a fleet of house-elves tonight. Settling in slow.",
+					"Reckon the swarm's still finding its feet. Give it a moment.",
+					"Counting elves in the kitchens — plenty, taking their time."
+				],
+				"fail": [
+					"One of the fleet's gone missing. House-elves do wander.",
+					"Swarm's out of step. A pod's sulking in the kitchens.",
+					"Lost one to the crowd. Rounding the elves back up shortly."
+				]
+			},
+			"ml": {
+				"slow": [
+					"Crystal ball's cloudy still. Divination takes its time.",
+					"Training on, patient as the Sorting Hat weighing a case.",
+					"Model's still learning its trade. Slow brew, this one."
+				],
+				"fail": [
+					"Crystal ball gave nothing useful. Divination's like that.",
+					"Sorting Hat second-guessed itself. Even it errs sometimes.",
+					"Prediction landed wide. Back to reading the leaves, then."
+				]
+			},
+			"android": {
+				"slow": [
+					"Gradle's off on a long broom ride. No rushing that flight.",
+					"Reckon this build's taking the scenic route round the pitch.",
+					"Feels like a Quidditch delay. Broom's still climbing."
+				],
+				"fail": [
+					"Gradle came off its broom. Rough landing, that one.",
+					"Fell mid-flight. Dusting off and remounting now.",
+					"Stalled halfway round the pitch. Getting it airborne again."
+				]
+			},
+			"ruby": {
+				"slow": [
+					"Gems all catalogued, slow as counting Gringotts vaults.",
+					"Rails laid steady, if not quick. Patience pays at the bank.",
+					"Reckon the goblins are still tallying every gem here."
+				],
+				"fail": [
+					"Gem's gone missing from the vault. Even Gringotts loses one.",
+					"Rails came off the track. A gem cracked underneath, reckon.",
+					"Vault door's stuck fast. The goblins will see to it."
+				]
+			},
+			"ios": {
+				"slow": [
+					"Neat as a prefect's badge, just taking its polish time.",
+					"Swift's living up to its name, only slower tonight.",
+					"Tidy so far, easing along at its own steady pace."
+				],
+				"fail": [
+					"Even the tidiest prefect trips the stairs sometimes.",
+					"Polish came off there. A seam split somewhere neat.",
+					"Even the neatest prefects stumble. Back to it, no fuss."
+				]
+			},
+			"terraform": {
+				"slow": [
+					"Raising the castle stone by stone. Slow, proper work.",
+					"Reckon foundations take longer than the towers ever do.",
+					"Patient work, this — no rushing a castle's footings."
+				],
+				"fail": [
+					"A wall came down mid-build. Even castles settle wrong.",
+					"Foundation cracked somewhere. Shoring it up and relaying.",
+					"Lost a tower before it stood. Rebuilding it steady."
+				]
+			},
+			"graphql": {
+				"slow": [
+					"Asking for exactly what we want. Worth the wait.",
+					"Precise query, nothing wasted. I don't mind pausing.",
+					"We asked plainly for this. Reckon it's still brewing."
+				],
+				"fail": [
+					"Query came back wrong. We'll phrase it clearer and ask again.",
+					"Not quite what we ordered. Happens even done polite.",
+					"Bit of a misfire, that. We'll word it better next time."
+				]
+			},
+			"flutter": {
+				"slow": [
+					"Flitting like a Snitch that won't sit still. Wait for it.",
+					"Darting between both sides. Give it room to land.",
+					"One build, everywhere at once. Worth the patience."
+				],
+				"fail": [
+					"Snitch slipped us that time. Steady grip, try again.",
+					"Didn't land clean on either side. Up again, one more pass.",
+					"Missed catch, that. Even Seekers whiff one sometimes."
+				]
+			},
+			"react-native": {
+				"slow": [
+					"Feels like waiting on platform nine and three-quarters.",
+					"Crossing two worlds takes time. We'll stand and wait.",
+					"Bridge's still forming. Patience gets us across."
+				],
+				"fail": [
+					"Bridge buckled between them. Steady it, cross again.",
+					"Didn't make the crossing. We'll shore it up, try once more.",
+					"One side gave way. We mend the bridge and cross again."
+				]
+			},
+			"scala": {
+				"slow": [
+					"Proper intricate spellwork. Takes its own sweet time.",
+					"N.E.W.T.-level casting, this. Worth sitting through it.",
+					"Every piece lines up slow and careful. I'll wait."
+				],
+				"fail": [
+					"Spellwork fizzled. Riddikulus — misfires happen too.",
+					"Too clever by half, that one. We'll simplify, recast.",
+					"Intricate work, wrong turn. A steadier hand sorts it."
+				]
+			},
+			"protobuf": {
+				"slow": [
+					"Rolling the message tight before it flies. Owls take time.",
+					"Coding it down proper takes a minute. Worth the care.",
+					"Sealing the scroll just so. Hedwig waits for a good wrap."
+				],
+				"fail": [
+					"Scroll came back garbled. Smooth it out, roll again.",
+					"Message didn't decode clean. We unroll the scroll and recheck.",
+					"Tangled parcel, that. We'll repack and send once more."
+				]
+			},
+			"game": {
+				"slow": [
+					"Setting the board for Wizard's Chess. Fine to sit and think.",
+					"Portraits finding their poses still. I'll wait it out.",
+					"Waiting for the pitch to clear before kickoff."
+				],
+				"fail": [
+					"That move cost us the piece. Reset the board and play on.",
+					"Portrait wandered off mid-frame. We'll coax it back.",
+					"Dropped that like a bad Bludger hit. On we go."
+				]
+			},
+			"docs": {
+				"slow": [
+					"Feels like the library, this. Some reading takes its time.",
+					"Proper thorough, like Hermione's notes. Worth the patience.",
+					"Working through it page by page. No rushing a good record."
+				],
+				"fail": [
+					"Notes came out muddled. We tidy the page and write it again.",
+					"That page didn't hold together. We'll draft it again, clearer.",
+					"Bit of a mess in the margins. Nothing a careful redo won't fix."
+				]
+			},
+			"r": {
+				"slow": [
+					"Feels like an Arithmancy problem set. Numbers want time.",
+					"Charting it out proper. I'll sit with the figures.",
+					"Sums still working through. No rushing Arithmancy."
+				],
+				"fail": [
+					"Figures came out crossed. Back to Arithmancy, recheck the sums.",
+					"That chart's gone sideways. We'll recount, plot again.",
+					"Numbers didn't add up. A fresh column ought to fix it."
+				]
+			},
+			"cuda": {
+				"slow": [
+					"A hundred wands casting at once. Takes a breath to warm up.",
+					"All that power lining up. Worth waiting for the fire.",
+					"Whole common room casting in unison. Give it a moment."
+				],
+				"fail": [
+					"A hundred wands, one bad spark. Steady them and recast.",
+					"All that power and it still tripped. We'll ease it back.",
+					"One overloaded wand in the bunch. We'll sort it, refire."
+				]
+			}
+		},
+		"pressure": {
+			"compact_hint": [
+				"Pensieve's getting full, this. Plenty left in here still, though.",
+				"Bit crowded in the memory now, like Gringotts vaults stacked high.",
+				"Getting dense in here, this session. Still holding steady, mind."
+			],
+			"block_limit": [
+				"Feels like the house-point hourglass, sand running steady down.",
+				"Clock's ticking closer this stretch. Still on my feet, though.",
+				"Time's pressing in, like curfew creeping up on the corridors."
+			],
+			"weekly_limit": [
+				"Feels like term's winding down. Still plenty of fight left in me.",
+				"The week's stretching thin, like the last owl post before hols.",
+				"Close to the week's edge now. Standing my ground all the same."
+			]
+		},
+		"dateEgg": [
+			"Midnight, this. Feels like sneaking out under the Cloak.",
+			"Half past eleven, near enough curfew. Reckon we push on anyway.",
+			"Round number, that count. Tidy, like a page in a spellbook.",
+			"Halloween's got nothing on tonight, but it's fitting all the same.",
+			"Three in the morning, a properly mental hour to be at this.",
+			"A hundred, that count. Feels like a proper milestone earned.",
+			"Friday the thirteenth, and you're still here. Braver than most.",
+			"New Year's, and still coding. Dedication, or madness, that.",
+			"Six a.m., feels like an early start on the Hogwarts Express.",
+			"Same date as last year, this. Odd how the calendar loops round."
+		]
+	},
+	"spinnerVerbs": [
+		"Conjuring",
+		"Casting",
+		"Brewing",
+		"Summoning",
+		"Patronus-casting",
+		"Charming",
+		"Divining",
+		"Transfiguring",
+		"Levitating",
+		"Apparating",
+		"Untangling",
+		"Warding",
+		"Sorting",
+		"Duelling",
+		"Flying",
+		"Disarming",
+		"Vanishing",
+		"Unlocking",
+		"Brandishing",
+		"Owling",
+		"Potioneering",
+		"Chasing",
+		"Wand-waving",
+		"Broom-mounting",
+		"Portkeying",
+		"Mischief-making"
+	]
+}

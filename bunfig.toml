@@ -1,0 +1,2 @@
+[test]
+preload = ["./packages/core/test/setup/forceColor.ts"]

@@ -1,0 +1,21 @@
+{
+	"name": "@ccsidekick/pack-barbie",
+	"version": "0.0.0",
+	"description": "Barbie character pack for ccsidekick",
+	"type": "module",
+	"files": [
+		"pack.json",
+		"README.md",
+		"assets"
+	],
+	"exports": {
+		"./pack.json": "./pack.json"
+	},
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/krayong/ccsidekick.git",
+		"directory": "packages/packs/barbie"
+	},
+	"author": "Karan Gourisaria <ccsidekick@krayong.com>"
+}

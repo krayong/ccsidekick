@@ -1,0 +1,67 @@
+name: Bug Report
+
+description: Report a problem with ccsidekick
+
+labels: ["bug"]
+
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for the report. Please do not paste secrets, tokens, or private paths.
+
+  - type: checkboxes
+    id: area
+    attributes:
+      label: Area
+      description: Which part of ccsidekick is affected?
+      options:
+        - Statusline Rendering (widgets, layout, color)
+        - Character (figure, voice, spinner verbs)
+        - Cost / Usage / Analytics
+        - Tool-call Classifier / Events
+        - TUI / Config
+        - Others
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What went wrong, and what did you expect instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: ccsidekick version or commit
+    validations:
+      required: false
+
+  - type: textarea
+    id: env
+    attributes:
+      label: Environment
+      description: OS, Terminal, Node/Bun version, Claude Code version, Active Character Pack.
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or Screenshots
+      description: Terminal output, a screenshot of the statusline, or the raw ANSI string. Never paste tokens or private paths.
+    validations:
+      required: false
