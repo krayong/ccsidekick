@@ -1,6 +1,6 @@
 {
 	"name": "@ccsidekick/pack-barbie",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Barbie character pack for ccsidekick",
 	"type": "module",
 	"files": [

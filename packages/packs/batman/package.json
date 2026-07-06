@@ -1,6 +1,6 @@
 {
 	"name": "@ccsidekick/pack-batman",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Batman character pack for ccsidekick",
 	"type": "module",
 	"files": [

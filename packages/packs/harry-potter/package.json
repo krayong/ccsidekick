@@ -1,6 +1,6 @@
 {
 	"name": "@ccsidekick/pack-harry-potter",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Harry Potter character pack for ccsidekick",
 	"type": "module",
 	"files": [
