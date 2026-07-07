@@ -12,15 +12,29 @@ const withCharacter = (over: Partial<Config["character"]>): Config => ({
 	character: { ...DEFAULT_CONFIG.character, ...over },
 });
 
-test("a persisted pick wins (sticky for the session)", () => {
+test("a persisted pick wins while it is still in the roster (sticky for the session)", () => {
 	const state: SessionState = { ...EMPTY_STATE, character: "joker" };
-	const cfg = withCharacter({ mode: "fixed", name: "batman" });
-	expect(derivePersona(cfg, state, asSession("s1"), ["batman", "joker"])).toBe("joker");
+	const cfg = withCharacter({ mode: "random", roster: ["batman", "joker"] });
+	expect(derivePersona(cfg, state, asSession("s1"), [])).toBe("joker");
+});
+
+test("a persisted pick that has fallen out of the roster is re-derived, not sticky", () => {
+	const state: SessionState = { ...EMPTY_STATE, character: "barbie" };
+	const cfg = withCharacter({ mode: "random", roster: ["batman", "harry-potter", "spiderman"] });
+	const pick = derivePersona(cfg, state, asSession("s1"), []);
+	expect(pick).not.toBe("barbie");
+	expect(cfg.character.roster).toContain(pick);
 });
 
 test("fixed mode returns the configured name", () => {
 	const cfg = withCharacter({ mode: "fixed", name: "batman" });
 	expect(derivePersona(cfg, EMPTY_STATE, asSession("s1"), ["batman", "robin"])).toBe("batman");
+});
+
+test("fixed mode drops a persisted pick that no longer matches the configured name", () => {
+	const state: SessionState = { ...EMPTY_STATE, character: "joker" };
+	const cfg = withCharacter({ mode: "fixed", name: "batman" });
+	expect(derivePersona(cfg, state, asSession("s1"), ["batman", "joker"])).toBe("batman");
 });
 
 test("random is deterministic and stays within the candidate set", () => {

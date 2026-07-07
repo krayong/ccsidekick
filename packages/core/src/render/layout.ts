@@ -127,7 +127,15 @@ const truncateField = (f: Field, budget: number): Field => {
 			.map((s) => sanitizePackText(s.text))
 			.filter((t) => t !== "")
 			.join(" ");
-		const headBudget = Math.max(1, budget - displayWidth(tailText) - 1);
+		const headBudget = budget - displayWidth(tailText) - 1;
+		// When the budget cannot hold even a one-column head plus the protected tail, keeping the tail would push
+		// the row past its width. Truncate the whole field (tail included) as a last resort so the line still fits.
+		if (headBudget < 1) {
+			return {
+				id: f.id,
+				segments: [{ role: "value", text: truncToWidth(fieldPlain(f), budget) }],
+			};
+		}
 		return {
 			id: f.id,
 			segments: [
@@ -139,26 +147,36 @@ const truncateField = (f: Field, budget: number): Field => {
 	return { id: f.id, segments: [{ role: "value", text: truncToWidth(fieldPlain(f), budget) }] };
 };
 
-/** Drop the lowest-priority cells (per the row's drop order) until the row fits, then truncate the last value. */
+/**
+ * Truncate a run of surviving cells into `avail` from the tail inward, never dropping a cell. The last value
+ * takes whatever the head leaves; when the head alone overflows (a wide chip can leave almost no room), the head
+ * is recursively shrunk to spare one column for a minimal last value, so a protected field truncates rather than
+ * pushing the row past its width.
+ */
+const fitCells = (cells: readonly Field[], avail: number, sepGlyph: string): Field[] => {
+	if (cells.length === 0 || rowPlainWidth(cells, sepGlyph) <= avail) return [...cells];
+	const last = cells[cells.length - 1];
+	if (last === undefined) return [...cells];
+	const head = cells.slice(0, -1);
+	const sepWidth = displayWidth(` ${sepGlyph} `);
+	const headWidth =
+		head.length > 0 ? displayWidth(head.map(fieldPlain).join(` ${sepGlyph} `)) : 0;
+	const budget = avail - headWidth - (head.length > 0 ? sepWidth : 0);
+	if (budget >= 1) return [...head, truncateField(last, budget)];
+	const headFitted = fitCells(head, Math.max(1, avail - sepWidth - 1), sepGlyph);
+	return [...headFitted, truncateField(last, 1)];
+};
+
+/** Drop the lowest-priority cells (per the row's drop order) until the row fits, then truncate what remains. */
 const fitRow = (row: RowId, cells: readonly Field[], avail: number, sepGlyph: string): Field[] => {
 	const present = [...cells];
 	for (const id of dropOrder(row)) {
 		if (rowPlainWidth(present, sepGlyph) <= avail) break;
-		if (isProtected(id)) continue; // never remove a protected field; only its last value truncates (below)
+		if (isProtected(id)) continue; // never remove a protected field; only its value truncates (below)
 		const idx = present.findIndex((c) => c.id === id);
 		if (idx >= 0) present.splice(idx, 1);
 	}
-	if (rowPlainWidth(present, sepGlyph) <= avail) return present;
-
-	const last = present[present.length - 1];
-	if (last === undefined) return present;
-	const head = present.slice(0, -1);
-	const headWidth =
-		head.length > 0 ?
-			displayWidth(head.map(fieldPlain).join(` ${sepGlyph} `)) + displayWidth(` ${sepGlyph} `)
-		:	0;
-	const budget = Math.max(1, avail - headWidth);
-	return [...head, truncateField(last, budget)];
+	return fitCells(present, avail, sepGlyph);
 };
 
 const colorCell = (

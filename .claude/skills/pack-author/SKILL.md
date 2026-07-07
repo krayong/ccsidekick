@@ -60,18 +60,26 @@ chip. This is a one-time step per pack.
 **3. Ask the user** whether they have a reference image, a specific ASCII or braille art source, or
 want generated candidates.
 
-**4. Generate five candidates.** Art is sourced through tooling, never hand-drawn:
+**4. Generate five candidates.** Art is sourced through tooling, never hand-drawn. **The figure is
+ALWAYS braille: every candidate, every pack, no exceptions.** Braille packs four times the vertical
+resolution of block or ASCII glyphs into the same 9×25 box, so the figure stays legible at
+status-line size; ASCII and block art do not. Do not ship an ASCII or block figure even if it looks
+fine in the preview.
 
-- Use the **`ascii-art` skill** to convert a reference image to ASCII, then hand-clean it: fix
-  ragged rows, thin the density, drop stray glyphs. Set `attribution.artist` and
-  `attribution.source` to the image credit.
+- Use the **`ascii-art` skill** with `--style braille` to convert a reference image, then hand-clean
+  it: fix ragged rows, thin the density, drop stray glyphs. Set `attribution.artist` and
+  `attribution.source` to the image credit. A clean, high-contrast **line drawing or bold silhouette**
+  converts far better than a flat-colored render or a photograph. A solid-fill vector collapses to a
+  featureless blob, and a photo turns to mush at nine rows.
 - For braille art, draw from a catalog (emojicombos.com, asciiart.eu). **Pad blank braille cells
   with `⠀` (U+2800), not an ASCII space.** Mixing braille glyphs with ASCII spaces skews alignment
   in most fonts; a uniform braille grid stays aligned. The legibility gate counts both `⠀` and a
   space as empty, so density is the inked glyphs alone.
+- Catalog braille sized larger than 9×25 rarely survives a down-rescale: shrinking a detailed
+  line drawing fragments its strokes, and a near-solid fill flattens to a block. Prefer a source
+  that is already at box size, or re-source from a clean line-drawing image.
 
-Fit each candidate to ≤9×25. Bold line art and silhouettes survive at status-line size; photographs
-turn to mush at nine rows.
+Fit each candidate to ≤9×25.
 
 **5. Run the figure-options preview.** Write the candidates to
 `packages/packs/<name>/figure-candidates.json` — an array of `{ name, rows }` objects — then pass
@@ -240,8 +248,30 @@ leads with a `[name]` chip and no figure appears, the Stage 1 `bun install` neve
 devDependency is missing); fix the link and regenerate, don't touch the art.
 
 **2. Review.** Dispatch a reviewer subagent (never an author). It records its findings in
-`REVIEW.md`: figure legibility and recognizability, lines on-voice, cross-cell variety, and
-acceptable attribution.
+`REVIEW.md`. The lint gates content the per-cell way; the reviewer catches what a per-cell check
+cannot. Hand it the character's canonical references so it can judge authenticity, and require it to
+quote offenders with their pool/tier location. It must check:
+
+- **Figure** legibility and recognizability, and **attribution** filled with a real credit.
+- **Voice authenticity:** every line reads as the actual character, not a generic buddy. Flag lines
+  that could belong to any pack once the emblem is swapped.
+- **Cross-cell templates.** The `stack.*` slow/fail pools are the top offenders: they invite a
+  fill-in-the-blank mold (`[subsystem] does X slowly. [detached aphorism].` or
+  `[error]. [one-word reaction].`) with a tech noun swapped per cell. Flag any phrase, joke, image,
+  metaphor, or closer that recurs across cells with only trivial variation — the per-cell Jaccard
+  gate is blind to it, but a user working across stacks sees the same clever line every time.
+- **Signature-reference saturation.** A catchphrase, name, or motif (the character's "elementary",
+  "Watson", cards, cheeks, ketchup) reused as a catch-all until it reads as wallpaper. Name a
+  sensible ceiling per motif.
+- **AI tells** against the house norm: em-dash density (the batman reference uses the em-dash in
+  ~1 line across all 620; flag a pack that leans on it in dozens), negative-parallelism closers
+  ("X, not Y"; "not defeat, merely data"), the rule of three, hollow motivational filler, and
+  doubled-adverb tics.
+- **Safety and uplift.** Failure/limit lines must stay uplifting and must never nudge the user toward
+  harm or toward prolonging a breakage — no cheering on a dangerous op, no "keep it broken". This
+  holds even for a menacing character; the figure emotes, it does not scold or egg the user on.
+- **No actionable instructions:** the character reacts to a moment, it never restates a do-this
+  directive (no "run /compact", "add to `.gitignore`", "try a shorter query", or any command).
 
 **3. Re-author.** Address every cell the reviewer flags. Re-run `lint-pack` and regenerate the
 `README.md` + shot.

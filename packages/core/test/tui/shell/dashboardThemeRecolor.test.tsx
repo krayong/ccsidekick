@@ -6,10 +6,11 @@ import { afterEach, expect, test } from "bun:test";
 import { render as rawRender } from "ink-testing-library";
 import { createElement } from "react";
 
-import { displayWidth } from "../../../src/render";
+import { displayWidth } from "../../../src";
+import { PACKS } from "../../../src/packs";
 import { DEFAULT_CONFIG } from "../../../src/sources";
 import { renderScenario, SCENARIOS } from "../../../src/tui/preview";
-import { type DashboardProps, Dashboard } from "../../../src/tui/shell";
+import { Dashboard, type DashboardProps } from "../../../src/tui/shell";
 
 const mounted: ReturnType<typeof rawRender>[] = [];
 afterEach(() => {
@@ -86,12 +87,23 @@ test("the theme detail's mini-statusline does not wrap onto an orphaned continua
 	expect(frame).not.toMatch(/`ANTHROP/);
 });
 
-test("the render pipeline honors the real detail-column budget (shell chrome 27 + Rail chrome 46)", () => {
+test("the render pipeline honors the real detail-column budget for every pack's chip", () => {
+	// shell chrome 27 + Rail chrome 46. A long pack name widens the dropped-figure `[name]` chip, so every
+	// character must still fit the pane, not just whichever one a random pick happens to land on.
 	const columns = 120;
 	const detailWidth = columns - 73;
 	const scenario = SCENARIOS[0]!;
-	const out = renderScenario(scenario, DEFAULT_CONFIG, { columns: detailWidth, noColor: true });
-	for (const line of out.split("\n")) {
-		expect(displayWidth(line)).toBeLessThanOrEqual(detailWidth);
+	const overflow: string[] = [];
+	for (const name of PACKS) {
+		const draft = {
+			...DEFAULT_CONFIG,
+			character: { ...DEFAULT_CONFIG.character, mode: "fixed" as const, name },
+		};
+		const out = renderScenario(scenario, draft, { columns: detailWidth, noColor: true });
+		for (const line of out.split("\n")) {
+			if (displayWidth(line) > detailWidth)
+				overflow.push(`${name} (${displayWidth(line)}): ${JSON.stringify(line)}`);
+		}
 	}
+	expect(overflow).toEqual([]);
 });

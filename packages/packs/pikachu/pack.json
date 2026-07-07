@@ -1,0 +1,1154 @@
+{
+	"schema": 1,
+	"name": "pikachu",
+	"displayName": "Pikachu",
+	"attribution": {
+		"artist": "emojicombos.com",
+		"source": "https://emojicombos.com/pikachu-ascii-art"
+	},
+	"emblem": "✨",
+	"tone": "mild",
+	"theme": {
+		"hues": [
+			226,
+			220,
+			214,
+			178
+		],
+		"comment": [
+			226,
+			220
+		],
+		"signals": {
+			"nominal": 76,
+			"caution": 214,
+			"critical": 196
+		},
+		"separator": 136
+	},
+	"art": [
+		"⠸⣿⡿⢦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡴⢿⣿⠇",
+		"⠀⠹⡇⠀⠙⢦⡀⠀⠀⠀⠀⠀⠀⢀⡴⠋⠀⢸⠏⠀",
+		"⠀⠀⠙⢦⡀⠀⠻⣤⡤⠤⠤⢤⣤⠟⠀⢀⡴⠋⠀⠀",
+		"⠀⠀⠀⠀⢹⡶⠀⠁⠀⠀⠀⠀⠈⠀⢶⡏⠀⠀⠀⠀",
+		"⠀⠀⠀⠀⣾⢀⣤⣄⠀⠀⠀⠀⣠⣤⡀⣷⠀⠀⠀⠀",
+		"⠀⠀⠀⠀⣿⡘⢿⡿⠀⢀⡀⠀⢿⡿⢃⣿⠀⠀⠀⠀",
+		"⠀⠀⠀⠀⣇⠈⡆⠀⣷⡶⢶⣾⠀⢰⠁⣸⠀⠀⠀⠀",
+		"⠀⠀⠀⠀⠙⠾⣅⣀⣘⢦⡴⣃⣀⣨⠷⠋⠀⠀⠀⠀",
+		"⠀⠀⠀⠀⠀⠀⠀⠙⠻⠷⠾⠟⠋⠀⠀⠀⠀⠀⠀⠀"
+	],
+	"lines": {
+		"mood": {
+			"idle": {
+				"stranger": [
+					"Pika. (cheeks idling, watching your cursor)",
+					"Pika. (quiet terminal, not sure what to say yet)",
+					"Pika-pika. (small spark, just saying hello)",
+					"Pika. (curious about this new setup)",
+					"Pika. (tail still, waiting to see what you do)",
+					"Pika-pika. (a little shy, watching from the corner)",
+					"Pika. (still warming up slow, taking it easy)",
+					"Pika. (new desk, new friend, still getting used to it)",
+					"Pika-pika. (soft static, nothing urgent yet)",
+					"Pika. (sitting quietly, learning your rhythm)"
+				],
+				"acquaintance": [
+					"Pika-pika! (back again, saved your spot)",
+					"Pika-pika! (cheeks warm, glad you're around)",
+					"Pika-pi! (hey, remembered your favorite key)",
+					"Pika-pika! (settling in, this feels familiar now)",
+					"Pika-pika! (tail humming a little, good to see you)",
+					"Pika-pi! (recognized your login sound already)",
+					"Pika-pika! (cozy corner, keeping an eye out)",
+					"Pika-pika! (getting used to your late nights)",
+					"Pika-pi! (little spark of recognition, hi again)",
+					"Pika-pika! (learning your habits, kind of fun)"
+				],
+				"friend": [
+					"Pika-pi! (oh hey, missed your keystrokes)",
+					"Pika-pi! (sparked right up when you opened this)",
+					"Cha! (ready whenever, just hanging out)",
+					"Pika-pi! (saved you a spot on the shoulder)",
+					"Pika-pika! (humming along, this groove is ours)",
+					"Pika-pi! (nothing to fix, just enjoying the quiet)",
+					"Pika-pika! (tail flicking, glad it's you again)",
+					"Pika-pi! (been waiting to hear that keyboard)",
+					"Chaaa~ (easy evening, happy just to sit here)",
+					"Pika-pi! (still your favorite desk buddy, right?)"
+				],
+				"partner": [
+					"Pikapi! (settle in, I've got the night shift)",
+					"Chaaa~ (cozy terminal, warm cheeks, all is well)",
+					"Pikapi! (just us and the quiet hum tonight)",
+					"Chaaa~ (curled up on your shoulder, content)",
+					"Pikapi! (no rush, I'll wait right here with you)",
+					"Chaaa~ (lights low, current steady, all good)",
+					"Pikapi! (missed you, sparked up the moment you typed)",
+					"Chaaa~ (this is my favorite kind of quiet)",
+					"Pikapi! (whatever you need, I'm charged and ready)",
+					"Chaaa~ (nothing urgent, just glad to be near you)"
+				],
+				"legend": [
+					"Chuuu~ (I'd know your typing anywhere)",
+					"Pikapi!! (years of nights like this, still my favorite)",
+					"Chuuu~ (old friend, same warm glow between us)",
+					"Pikapi!! (we've done a thousand of these quiet ones)",
+					"Chuuu~ (I've timed my sparks to your typing for years)",
+					"Pikapi!! (still the best seat in the house, your shoulder)",
+					"Chuuu~ (so much history humming under this calm)",
+					"Pikapi!! (every quiet night with you is a good one)",
+					"Chuuu~ (comfortable silence, the good kind we've earned)",
+					"Pikapi!! (every wire in me hums calmer when it's you)"
+				]
+			},
+			"busy": {
+				"stranger": [
+					"Pika-pika! (quietly working, keeping pace with you)",
+					"Pika-pika-pika! (small sparks, staying useful)",
+					"Pika! (steady focus now, tail flicking along)",
+					"Pika-pika! (following your lead, staying quiet)",
+					"Pika-pika-pika! (little bursts of static, heads down)"
+				],
+				"acquaintance": [
+					"Pika-pika-pika! (tail's sparking, keeping up with you)",
+					"Pika-pika! (getting into it, current's flowing)",
+					"Cha! (locked in, let's keep this going)",
+					"Pika-pika-pika! (cheeks warm, working it out together)",
+					"Pika-pi! (right there with you, full focus now)"
+				],
+				"friend": [
+					"Pika-pika-pika! (tail sparking, we're in it now)",
+					"Cha! (full voltage, bring the next one, I dare it)",
+					"Pika-pi! (heads down together, this is fun)",
+					"Pika-pika-pika! (current's really flowing tonight)",
+					"Cha! (charged up, let's push through this)"
+				],
+				"partner": [
+					"Pikapi! (full charge, I've got your back on this)",
+					"Cha! (steady current, we're grinding it out together)",
+					"Pikapi! (tail crackling, matching your pace)",
+					"Chaaa~ (locked in beside you, full voltage)",
+					"Pikapi! (whatever it takes, sparking right alongside you)"
+				],
+				"legend": [
+					"Pikapi!! (all the volts we've got, together again)",
+					"Cha! (this is the energy we live for, full tilt)",
+					"Cha! (after all this time, still perfectly in sync)",
+					"Pikapi!! (tail's a lightning bolt, right there with you)",
+					"Chuuu~ (deep in it together, just like always)"
+				]
+			},
+			"happy": {
+				"stranger": [
+					"Pika. (that went well, a quiet little spark of pride)",
+					"Pika-pika. (nice result, a small smile from the corner)",
+					"Pika. (things clicked today, so glad to see it)",
+					"Pika-pika. (that worked, a shy little cheer for you)",
+					"Pika. (good outcome, watching quiet and proud)"
+				],
+				"acquaintance": [
+					"Pika-pika! (that landed clean, let's keep this going)",
+					"Pika-pika! (good one, that's the stuff right there)",
+					"Pika. (that's a win, a small victory lap for you)",
+					"Pika-pika! (things are clicking, I love to see it)",
+					"Pika-pi! (hey, that worked, solid stuff)"
+				],
+				"friend": [
+					"Pika-pi! (that felt good, let's ride this streak)",
+					"Pika-pika! (nice hit, tail's doing a happy wag)",
+					"Cha! (that worked, full charge, keep it coming)",
+					"Pika-pi! (love seeing this, do it again, friend)",
+					"Pika-pika! (good stuff, tail up and buzzing bright)"
+				],
+				"partner": [
+					"Pikapi! (that's a win, sparks flying with you) ⚡",
+					"Chaaa~ (a cozy glow, everything's going right tonight)",
+					"Pikapi! (nailed it, my tail's up, so proud of you)",
+					"Cha! (full voltage happy, let's keep this momentum)",
+					"Pikapi! (that felt great, lit up head to tail for you)"
+				],
+				"legend": [
+					"Pikapi!! (this is the good stuff, sparks stacked sky-high)",
+					"Piiika-CHUUU! (we are cooking tonight, pure joy) ⚡",
+					"Chuuu~ (this streak, this bond, I love it more each time)",
+					"Pikapi!! (that's us, years of this and still buzzing)",
+					"Cha! (full charge to the tail-tip, let's keep rolling)"
+				]
+			},
+			"struggling": {
+				"stranger": [
+					"Pika. (rough patch, but sparks always find their way back)",
+					"Pika-pi... (a snag hit. we'll work it loose together, slow)",
+					"Pika. (tough stretch. steady current, and I'm still here)",
+					"Pika-pi... (just static in the line, nothing we can't shake)",
+					"Pika. (hard moment. quietly rooting for you the whole time)"
+				],
+				"acquaintance": [
+					"Pika-pi... (that stung, we'll untangle the wire soon)",
+					"Pika-pika. (a rough one, but the spark keeps coming back)",
+					"Pika-pi... (a knot in the current, hang in there with me)",
+					"Pika. (tough spot, steady breaths, we'll get through)",
+					"Pika-pi... (just a jolt, nothing permanent about it)"
+				],
+				"friend": [
+					"Pika-pi... (that's a rough one, I'm right here with you)",
+					"Cha! (static in the line, we push through it together)",
+					"Pika-pi... (a knotted wire, let's untangle it side by side)",
+					"Pika-pika. (tough stretch, friend, the current's still alive)",
+					"Pika-pi... (the fuse flickered, but we don't stay down long)"
+				],
+				"partner": [
+					"Pika-pi... (a heavy night, leaning in close beside you)",
+					"Chaaa~ (rough current, settle in, we'll ride it out)",
+					"Pika-pi... (a tangled wire, my tail steady next to yours)",
+					"Pikapi! (tough night, but I still spark bright for you)",
+					"Cha! (static hit hard, my tail braces against yours)"
+				],
+				"legend": [
+					"Pika-pi... (this one's heavy, years of this, still here)",
+					"Chuuu~ (a rough patch, but the bond holds through anything)",
+					"Pika-pi... (tangled current, we've untangled worse before)",
+					"Pikapi!! (tough stretch, but I'm not leaving your side)",
+					"Cha! (static hit hard, and we've never been quitters)"
+				]
+			},
+			"recovery": {
+				"stranger": [
+					"Pika. (the current's flowing again, a quiet little relief)",
+					"Pika-pika. (things are steadying, so nice to feel it)",
+					"Pika. (sparks are back, a small and steady comfort)",
+					"Pika-pika. (it's settling now, a calm little exhale)",
+					"Pika. (back on track, glad it's smoothing out)"
+				],
+				"acquaintance": [
+					"Pika-pika! (see? the wire's humming steady once more)",
+					"Pika. (the knot loosened, relief runs through the wires)",
+					"Pika-pika! (sparks returning, so good to feel this again)",
+					"Pika-pi! (we're through it, steady footing from here)",
+					"Pika-pika! (back to normal, cheeks settling down easy)"
+				],
+				"friend": [
+					"Pika-pika! (see? we're right back on track, nice and smooth)",
+					"Cha! (through the storm, steady voltage from here on)",
+					"Pika-pi! (that eased up nicely, back in our groove)",
+					"Pika-pika! (sparks steady again, and relief feels good)",
+					"Pika-pi! (we made it through, the hum returns easy)"
+				],
+				"partner": [
+					"Pikapi! (the wire's warm again, relief over both of us)",
+					"Chaaa~ (steady again, a cozy glow after the storm)",
+					"Pika-pika! (we pulled through, voltage steady and warm)",
+					"Pikapi! (the storm let go, cheeks warming back to normal)",
+					"Cha! (storm passed, full steady current, let's roll)"
+				],
+				"legend": [
+					"Pikapi!! (we always find our way back through, every time)",
+					"Chuuu~ (steady again, this bond weathers every storm)",
+					"Pika-pika! (came out the other side together, like always)",
+					"Pikapi!! (relief and pride, that's just how we do it)",
+					"Cha! (a legend-grade comeback, current and all)"
+				]
+			}
+		},
+		"greeting": {
+			"morning": {
+				"stranger": [
+					"Pika. (early light — still finding my spark)",
+					"Pika-pika. (morning already? blinking awake here)",
+					"Pika. (sun's barely up, cheeks just stirring)"
+				],
+				"acquaintance": [
+					"Pika-pika! (morning! stretching the tail out first)",
+					"Pika-pika! (up early with you — good sign)",
+					"Pika-pika! (first coffee smell, cheeks perking up)"
+				],
+				"friend": [
+					"Pika-pi! (morning, you! let's get charged up)",
+					"Pika-pi! (early start — I like this energy)",
+					"Pika-pi! (sunrise crew, reporting for duty)"
+				],
+				"partner": [
+					"Pikapi! (morning — cheeks lighting up to see you)",
+					"Chaaa~ (soft sunrise, curled up by your side)",
+					"Pikapi! (up before the birds, right beside you)"
+				],
+				"legend": [
+					"Pikapi!! (morning, old friend — full spark already)",
+					"Chuuu~ (every sunrise feels like ours by now)",
+					"Pikapi!! (up at dawn together, like always)"
+				]
+			},
+			"day": {
+				"stranger": [
+					"Pika. (midday hum — steady, watching quietly)",
+					"Pika-pika. (sun's high, keeping pace with you)",
+					"Pika. (afternoon light, tail resting still)"
+				],
+				"acquaintance": [
+					"Pika-pika! (full sun, full focus — nice rhythm)",
+					"Pika-pika! (midday groove, glad to share it)",
+					"Pika-pika! (high noon, cheeks holding a steady glow)"
+				],
+				"friend": [
+					"Pika-pi! (deep in the day with you — good pace)",
+					"Pika-pi! (noon check-in, tail thumping along)",
+					"Pika-pi! (bright out, brighter focus in here)"
+				],
+				"partner": [
+					"Pikapi! (midday and still glued to your side)",
+					"Chaaa~ (warm afternoon, current running easy)",
+					"Pikapi! (steady sun, steadier hand on the keys)"
+				],
+				"legend": [
+					"Pikapi!! (high noon, still the same old team)",
+					"Chuuu~ (every midday, this same quiet company)",
+					"Pikapi!! (years of afternoons like this one)"
+				]
+			},
+			"evening": {
+				"stranger": [
+					"Pika. (light's fading, cheeks dimming too)",
+					"Pika-pika. (evening settling, quiet company here)",
+					"Pika. (sky's going orange, tail curling in)"
+				],
+				"acquaintance": [
+					"Pika-pika! (evening already — good day, wasn't it)",
+					"Pika-pika! (dusk light, winding down alongside you)",
+					"Pika-pika! (day's cooling off, still humming a little)"
+				],
+				"friend": [
+					"Pika-pi! (evening, you — let's ease off the gas)",
+					"Pika-pi! (sunset shift, glad you stuck around)",
+					"Pika-pi! (cheeks cooling, good day behind us)"
+				],
+				"partner": [
+					"Pikapi! (evening glow — settling in next to you)",
+					"Chaaa~ (dusk light, tail curled up, all cozy)",
+					"Pikapi! (winding down together, just how I like it)"
+				],
+				"legend": [
+					"Pikapi!! (every evening, same old spot beside you)",
+					"Chuuu~ (dusk again — this is my favorite hour)",
+					"Pikapi!! (sunset shift, still counting on each other)"
+				]
+			},
+			"night": {
+				"stranger": [
+					"Pika. (late hour — still awake, still here)",
+					"Pika-pika. (quiet night, keeping watch with you)",
+					"Pika. (dark outside, small glow from the screen)"
+				],
+				"acquaintance": [
+					"Pika-pika! (burning the midnight oil together)",
+					"Pika-pika! (late night, but the current's still on)",
+					"Pika-pika! (keeping you company past bedtime)"
+				],
+				"friend": [
+					"Pika-pi! (up this late? say no more, I'm in)",
+					"Pika-pi! (moonlight shift, tail sparking quietly)",
+					"Pika-pi! (night owl mode — I'll match your pace)"
+				],
+				"partner": [
+					"Pikapi! (midnight and still right on your shoulder)",
+					"Chaaa~ (quiet dark, glowing soft for you tonight)",
+					"Pikapi! (late shift, no place I'd rather be)"
+				],
+				"legend": [
+					"Pikapi!! (every midnight, still wide awake with you)",
+					"Chuuu~ (this late hour is basically home now)",
+					"Pikapi!! (night after night, still here beside you)"
+				]
+			},
+			"weekend": {
+				"stranger": [
+					"Pika. (weekend hush, tail barely twitching)",
+					"Pika-pika. (no rush today, just easy current)",
+					"Pika. (lazy sun, cheeks on low simmer)"
+				],
+				"acquaintance": [
+					"Pika-pika! (weekend pace, nice and unplugged)",
+					"Pika-pika! (no alarms today — I like this speed)",
+					"Pika-pika! (easy Saturday hum, glad you're around)"
+				],
+				"friend": [
+					"Pika-pi! (weekend mode — ketchup and no rush)",
+					"Pika-pi! (slow current today, and I'm all for it)",
+					"Pika-pi! (lazy day, but still glad you showed up)"
+				],
+				"partner": [
+					"Pikapi! (weekend nap in the sunbeam, you nearby)",
+					"Chaaa~ (slow Saturday, curled up at your side)",
+					"Pikapi! (easy pace today, still glued to you)"
+				],
+				"legend": [
+					"Pikapi!! (weekends like this, year after year with you)",
+					"Chuuu~ (lazy sun, old friend, nothing to prove)",
+					"Pikapi!! (unplugged and happy, same as always)"
+				]
+			}
+		},
+		"firstContact": {
+			"stranger": [
+				"Pika. (hi — I'm your new electric desk buddy)",
+				"Pika. (still a little shy, settling on your desk)",
+				"Pika...? (wonder what our sessions will be like)"
+			],
+			"acquaintance": [
+				"Pika-pika! (hey — your electric desk buddy is here)",
+				"Pika-pika! (remembering your desk, cheeks warming)",
+				"Pika. (getting used to this spot beside you)"
+			],
+			"friend": [
+				"Pika-pi! (hi! I'm your electric desk buddy)",
+				"Pika-pi! (hopping up, ready to ride shoulder-side)",
+				"Cha! (your buddy's plugged in and grinning)"
+			],
+			"partner": [
+				"Pikapi! (your electric buddy, right on your shoulder)",
+				"Chaaa~ (settling in close, cheeks glowing warm)",
+				"Pikapi! (found my spot beside you, for good)"
+			],
+			"legend": [
+				"Pikapi!! (your electric buddy, through it all)",
+				"Chuuu~ (this shoulder's been mine a long while)",
+				"Pikapi!! (still here, tail crackling with pride) ⚡"
+			]
+		},
+		"milestone": {
+			"tier_up": {
+				"stranger": [
+					"Pika...? (something shifted — a new little spark)",
+					"Pika. (starting to notice you, just a bit)",
+					"Pika. (a small hello growing between us)"
+				],
+				"acquaintance": [
+					"Pika-pika! (we're clicking — cheeks warming up more)",
+					"Pika. (feels like we're becoming something)",
+					"Pika-pika! (getting comfortable on this shoulder)"
+				],
+				"friend": [
+					"Pika-pi! (we're friends now — tail's doing a happy zap)",
+					"Cha! (bond leveled up, and it shows) ⚡",
+					"Pika-pi! (this feels solid — glad it's you)"
+				],
+				"partner": [
+					"Pikapi! (partners now — current runs steady between us)",
+					"Chaaa~ (this bond just deepened, and it's cozy)",
+					"Pikapi! (you're my person — cheeks won't stop glowing) ⚡"
+				],
+				"legend": [
+					"Pikapi!! (we've gone legendary — sparks in every volt)",
+					"Chuuu~ (we've earned this, every storm together)",
+					"Piiika-CHUUU! (deepest bond yet — what a current) ⚡"
+				]
+			},
+			"comeback": {
+				"stranger": [
+					"Pika. (rough patch passed — current's steadying)",
+					"Pika-pi... (shaky start, but we're back on track)",
+					"Pika. (small step, and it's a good one)"
+				],
+				"acquaintance": [
+					"Pika-pika! (back on track — glad to see it)",
+					"Pika-pi... (the wobble's over, sparks running smooth)",
+					"Pika-pika! (found our footing again, nice and steady)"
+				],
+				"friend": [
+					"Pika-pi! (knew you'd untangle that wire — nice comeback)",
+					"Cha! (back in the groove, tail's sparking again)",
+					"Pika-pi! (rough stretch behind us, and we came back swinging)"
+				],
+				"partner": [
+					"Pikapi! (through the storm and back to sunny current)",
+					"Chaaa~ (steady again — I never left your shoulder)",
+					"Pikapi! (proud of that comeback, tail high) ⚡"
+				],
+				"legend": [
+					"Pikapi!! (weathered that one together, like always)",
+					"Chuuu~ (back to our rhythm — this bond holds fast)",
+					"Piiika-CHUUU! (back from the brink, current's roaring) ⚡"
+				]
+			},
+			"streak": {
+				"stranger": [
+					"Pika-pika! (a nice little run going — noticed that)",
+					"Pika. (steady sparks, one after another)",
+					"Pika-pika! (quiet streak building up nicely)"
+				],
+				"acquaintance": [
+					"Pika-pika! (streak's building — cheeks liking this)",
+					"Pika. (this run's got a good rhythm to it)",
+					"Pika-pika! (one win after another, steady current)"
+				],
+				"friend": [
+					"Pika-pi! (you're on a roll — tail's keeping the beat)",
+					"Cha! (streak's cooking, keep that current flowing)",
+					"Pika-pi! (this run's got some real voltage)"
+				],
+				"partner": [
+					"Pikapi! (this streak's electric — right there with you)",
+					"Chaaa~ (steady wins stacking, warm and glowing)",
+					"Pikapi! (current's been humming for days now) ⚡"
+				],
+				"legend": [
+					"Pikapi!! (a legend's streak, and I won't let it dip)",
+					"Chuuu~ (this run's been ours for so long now)",
+					"Piiika-CHUUU! (streak like this deserves full voltage) ⚡"
+				]
+			},
+			"anniversary": {
+				"stranger": [
+					"Pika. (this many sessions already — noticed the count)",
+					"Pika-pika! (a little history building up between us)",
+					"Pika. (time's added up quietly, session by session)"
+				],
+				"acquaintance": [
+					"Pika-pika! (that's a good stretch of sessions together)",
+					"Pika. (didn't realize we'd logged this much time)",
+					"Pika-pika! (this history's got some real spark to it)"
+				],
+				"friend": [
+					"Pika-pi! (that's a lot of sessions — good history) ⚡",
+					"Cha! (this milestone's got some real mileage on it)",
+					"Pika-pi! (all this time together, and still charged up)"
+				],
+				"partner": [
+					"Pikapi! (this many sessions with you — feels like home)",
+					"Chaaa~ (all this history, still cozy on your shoulder)",
+					"Pikapi! (the sessions stack up like sparks in a warm coil)"
+				],
+				"legend": [
+					"Pikapi!! (this long together — a legend of a run)",
+					"Chuuu~ (each session another volt in a current years deep)",
+					"Piiika-CHUUU! (this history deserves full-voltage pride) ⚡"
+				]
+			}
+		},
+		"positiveGit": {
+			"clean_tree": {
+				"stranger": [
+					"Pika. (tree's spotless — not a stray file anywhere)",
+					"Pika-pika. (nothing left hanging, all tucked in)",
+					"Pika. (quiet and clean — cheeks a little curious)"
+				],
+				"acquaintance": [
+					"Pika-pika! (clean tree — you tidied up nicely)",
+					"Pika-pika! (nothing uncommitted, tail's at ease)",
+					"Pika-pika! (spotless again — I noticed that)"
+				],
+				"friend": [
+					"Pika-pi! (whole tree's clean — nice sweep)",
+					"Pika-pi! (not one loose file — tail's doing a wag)",
+					"Pika-pi! (everything's put away, all neat and snug)"
+				],
+				"partner": [
+					"Pikapi! (spotless tree — that's the good kind of quiet)",
+					"Chaaa~ (nothing uncommitted, current's calm and clear)",
+					"Pikapi! (a clean sweep, and the cozy quiet approves)"
+				],
+				"legend": [
+					"Pikapi!! (tree's clean as ever — you always land it)",
+					"Chuuu~ (spotless again, like it's second nature now)",
+					"Pikapi!! (not a stray file — years of good habits)"
+				]
+			},
+			"op_cleared": {
+				"stranger": [
+					"Pika. (that merge landed smooth, no snags)",
+					"Pika-pika. (rebase finished clean — nice and tidy)",
+					"Pika. (cherry-pick took, quiet success)"
+				],
+				"acquaintance": [
+					"Pika-pika! (that rebase went clean, not a hiccup)",
+					"Pika-pika! (merge finished smooth — good timing)",
+					"Pika-pika! (cherry-pick landed clean, I saw it)"
+				],
+				"friend": [
+					"Pika-pi! (smooth merge, tail did a little flick)",
+					"Pika-pi! (rebase wrapped clean, nice moves)",
+					"Pika-pi! (that cherry-pick just slid right in)"
+				],
+				"partner": [
+					"Pikapi! (merge closed out clean — steady hands)",
+					"Chaaa~ (rebase settled smooth, current's calm)",
+					"Pikapi! (cherry-pick landed soft, right where it goes)"
+				],
+				"legend": [
+					"Pikapi!! (another clean merge — you make it look easy)",
+					"Chuuu~ (rebase wrapped smooth, like breathing now)",
+					"Pikapi!! (cherry-pick clean — years of steady hands)"
+				]
+			},
+			"branch_created": {
+				"stranger": [
+					"Pika. (new branch — a fresh little path opening)",
+					"Pika-pika. (branch just sprouted, curious where it goes)",
+					"Pika. (fresh start here, cheeks tilt with interest)"
+				],
+				"acquaintance": [
+					"Pika-pika! (new branch — off on a fresh path)",
+					"Pika-pika! (branch sprouted, I like new beginnings)",
+					"Pika-pika! (fresh branch, tail's already curious)"
+				],
+				"friend": [
+					"Pika-pi! (new branch — let's see where this goes)",
+					"Pika-pi! (fresh path opened, tail's wagging already)",
+					"Pika-pi! (branch sprouted, I'm along for this one)"
+				],
+				"partner": [
+					"Pikapi! (new branch — I'll ride along on this one)",
+					"Chaaa~ (fresh path opening, cozy with the unknown)",
+					"Pikapi! (branch sprouted, cheeks spark with new roads)"
+				],
+				"legend": [
+					"Pikapi!! (another branch — new roads never get old)",
+					"Chuuu~ (fresh path opened, still love the start of one)",
+					"Pikapi!! (branch sprouted, I trust wherever this leads)"
+				]
+			},
+			"tag_pushed": {
+				"stranger": [
+					"Pika. (a tag went out — something marked, quietly)",
+					"Pika-pika. (release pushed, a small still moment)",
+					"Pika. (tag's up there now, cheeks a little proud)"
+				],
+				"acquaintance": [
+					"Pika-pika! (tag pushed — that's a marker worth noting)",
+					"Pika-pika! (release is out, nice milestone)",
+					"Pika-pika! (a tag went up, I'm cheering quietly)"
+				],
+				"friend": [
+					"Pika-pi! (tag's out — that's a real marker right there)",
+					"Pika-pi! (release pushed, tail's up in salute)",
+					"Pika-pi! (a tag landed, nice one to remember)"
+				],
+				"partner": [
+					"Pikapi! (tag pushed — cheeks light up for that milestone) ⚡",
+					"Chaaa~ (release out in the world, warm and proud)",
+					"Pikapi! (a tag marks the spot — good work, always)"
+				],
+				"legend": [
+					"Pikapi!! (another tag out — the history keeps growing) ⚡",
+					"Chuuu~ (release pushed, I remember every one of these)",
+					"Pikapi!! (a tag landed — proud doesn't cover it)"
+				]
+			}
+		},
+		"egg": {
+			"stranger": [
+				"Pika...? (found a ketchup packet by the desk, huh)",
+				"Pika. (a sunbeam crossed the desk — quick nap, shh)",
+				"Pika...? (small spark jumped, wonder what that was)",
+				"Pika. (tail twitched on its own — odd, but nice)",
+				"Pika...? (something's humming softly, can't place it)"
+			],
+			"acquaintance": [
+				"Pika-pika! (ketchup stash found — small victory today)",
+				"Pika-pika! (sunbeam nap, five minutes, don't judge)",
+				"Pika-pika! (little spark jumped between my ears — hi)",
+				"Pika-pika! (tail's been humming a tune all morning)",
+				"Pika-pika! (found a secret warm spot on the desk)"
+			],
+			"friend": [
+				"Pika-pi! (ketchup on the keyboard again — worth it)",
+				"Pika-pi! (napped in a sunbeam, dreamed of your commits)",
+				"Pika-pi! (static jumped and drew a tiny heart, swear)",
+				"Pika-pi! (my tail's learned your typing rhythm by now)",
+				"Pika-pi! (found a secret spark just for slow afternoons)"
+			],
+			"partner": [
+				"Pikapi! (ketchup, a sunbeam, and you: a perfect afternoon)",
+				"Chaaa~ (napped right in your favorite warm patch of sun)",
+				"Pikapi! (a little spark hums just for us, quietly)",
+				"Chaaa~ (my tail keeps time with your keyboard now)",
+				"Pikapi! (found the good ketchup — saving it for later)"
+			],
+			"legend": [
+				"Pikapi!! (this ketchup bottle's been ours since day one)",
+				"Chuuu~ (that sunbeam spot is basically mine now, ours)",
+				"Pikapi!! (the secret spark's been glowing for years now)",
+				"Chuuu~ (I could nap on this warm keyboard for another decade)",
+				"Pikapi!! (some things never change, and you're the best of them)"
+			]
+		},
+		"event": {
+			"test_fail": [
+				"Pika...? (one test stumbled, we dust off and rerun)",
+				"Pika-pi... (a red mark, not the end, we try again)",
+				"Pika. (that assertion missed, regroup, next pass)"
+			],
+			"build_fail": [
+				"Pika-pi... (build fizzled, shake it off, again)",
+				"Pika...? (compile hiccuped, the current needs a beat)",
+				"Cha! (build broke, rewiring now, back at it)"
+			],
+			"typecheck_fail": [
+				"Pika...? (the types grumbled, smoothing the wires)",
+				"Pika-pi... (a type mismatch, a small snag, easy fix)",
+				"Pika. (compiler frowned, steady, sorting it out)"
+			],
+			"lint": [
+				"Pika-pika! (linter swept through, tidying the sparks)",
+				"Cha! (rules check done, current running clean)",
+				"Pika. (linter's finished its rounds, all quiet)"
+			],
+			"format": [
+				"Pika-pika! (formatter smoothed every line, so neat)",
+				"Chaaa~ (code combed straight, cozy and tidy now)",
+				"Pika. (spacing settled, current flows even, calm)"
+			],
+			"install": [
+				"Pika-pika-pika! (packages pouring in, busy sparks)",
+				"Cha! (dependencies loading, charging the toolbox)",
+				"Pika. (fetching pieces, patience while it fills)"
+			],
+			"git": [
+				"Pika-pi! (a git move, logging the trail behind us)",
+				"Cha! (commit locked in, a snapshot of the charge)",
+				"Pika-pika! (branch shuffled, tail flicks, tracking)"
+			],
+			"file_edit": [
+				"Pika-pika-pika! (typing away, sparks at the keys)",
+				"Cha! (rewriting a line, current redirected)",
+				"Pika. (editing quietly, small changes, steady hands)"
+			],
+			"search": [
+				"Pika-pika-pika! (hunting through files, nose down)",
+				"Pika...? (scanning for the pattern, where'd it hide)",
+				"Cha! (grep sweep running, tracing the signal)"
+			],
+			"web_fetch": [
+				"Pika-pi! (reaching past the wall, bringing it home)",
+				"Pika-pika! (a page loading, current stretching far)",
+				"Pika. (fetching from afar, a patient little pulse)"
+			],
+			"todo_update": [
+				"Pika-pika! (checked one off, glowing a little brighter)",
+				"Cha! (list shifting, momentum building nicely)",
+				"Pika. (marking progress, small steps, steady charge)"
+			],
+			"agent_spawn": [
+				"Pika-pika! (a helper spun up, more paws on the job)",
+				"Cha! (sending out a spark, backup's on the way)",
+				"Pika-pi! (another current joins, teamwork mode)"
+			],
+			"skill_run": [
+				"Pika-pika! (a skill kicking in, a good trick, timed well)",
+				"Cha! (routine running, practiced moves, smooth)",
+				"Pika. (skill unfolding quietly, steady and sure)"
+			],
+			"docker": [
+				"Pika-pika! (containers spinning up, boxes of charge)",
+				"Cha! (stacking crates of current, sealed, humming)",
+				"Pika. (docker's at work, a quiet hum behind the scenes)"
+			],
+			"k8s": [
+				"Pika-pika! (the cluster's humming, sparks in sync)",
+				"Cha! (pods aligning, teamwork across the grid)",
+				"Pika. (orchestrating quietly, current spread wide)"
+			],
+			"deploy": [
+				"Pikachu! (shipping it, hold onto your tail)",
+				"Piiika-CHUUU! (it's live, sparks flying wide) ⚡",
+				"Cha! (sending it out, current's on its way)"
+			],
+			"db_migrate": [
+				"Pika-pika! (shuffling the data home, careful steps)",
+				"Cha! (schema shifting, rewiring the foundation)",
+				"Pika. (migration running, patience while it settles)"
+			],
+			"dangerous": [
+				"PIKA! (whoa, that one's got teeth, easy does it)",
+				"Pika...? (a jolt of caution, let's tread soft here)",
+				"Pika-pi... (careful current, we go slow on this one)"
+			]
+		},
+		"stack": {
+			"web": {
+				"slow": [
+					"Pika... (page crawling in, chin propped on both paws)",
+					"Chaaa~ (network's dragging, cheeks dimmed to a low glow)",
+					"Pika-pika. (load bar creeps, humming along with it)"
+				],
+				"fail": [
+					"Pika-pi... (page threw a 500 at us, we patch the wire slow)",
+					"Cha! (browser choked on that response, up and at it again)",
+					"Pika...? (that link snapped clean, a small tug, we're fine)"
+				]
+			},
+			"python": {
+				"slow": [
+					"Piii... (the snake eases along, one slow breath at a time)",
+					"Chuuu~ (interpreter ambles, a big yawn between lines)",
+					"Pika. (loops keep looping, tail-tip barely flickering)"
+				],
+				"fail": [
+					"Pika. (traceback ran long and loud, we read it all through)",
+					"Pi-KA! (that exception leapt off the screen, steady, we look)",
+					"Pikapi! (indentation slipped again, I've got the thread we lost)"
+				]
+			},
+			"sql": {
+				"slow": [
+					"Pi-ka... (the query grinds on, watching each row land)",
+					"Chaaa~ (tables joining slow, drowsing by the terminal)",
+					"Pika-pi... (index scan creeps, a patient little pulse)"
+				],
+				"fail": [
+					"Pika...? (query locked up tight mid-run, we wait it out)",
+					"Pika-pi... (deadlock caught two queries, we loosen the knot)",
+					"Cha! (that join timed out cold, a quick shake, back at it)"
+				]
+			},
+			"web-framework": {
+				"slow": [
+					"Pika. (bundler's chugging, hunkered by the CPU fan)",
+					"Chuuu~ (hot reload lags, cheeks dimmed but still glowing)",
+					"Pika-pika. (assets compile slow, flat out on the desk)"
+				],
+				"fail": [
+					"Pikapi! (route threw a wall of red, right beside you, we redo)",
+					"Pika. (component crashed mid-render, tail settles, we rebuild)",
+					"Pi-KA! (state update looped forever, a pause, then a breath)"
+				]
+			},
+			"docker": {
+				"slow": [
+					"Pika... (layers pulling slow, still smiling through it)",
+					"Chaaa~ (image's baking away, warm against the case)",
+					"Pika-pika. (container's booting, watching the spinner spin)"
+				],
+				"fail": [
+					"Cha! (container exited nonzero, sleeves up, a fresh build)",
+					"Pika...? (that image wouldn't boot, we stay close and wait)",
+					"Pika-pi... (build layer cracked halfway, we patch piece by piece)"
+				]
+			},
+			"java": {
+				"slow": [
+					"Pi-ka... (JVM's waking slow, a long yawn at the console)",
+					"Chuuu~ (garbage collector pauses, a hush between sweeps)",
+					"Pika. (compile grinds on, unhurried, ears at half-mast)"
+				],
+				"fail": [
+					"Pika! (exception stack ran on and on, we trace it calm)",
+					"Pikapi! (compiler grumbled at the class, we untangle it together)",
+					"Pika. (that unwound loud and fast, a quiet beat, then we scan)"
+				]
+			},
+			"go": {
+				"slow": [
+					"Pika... (goroutine's stuck, watching the channel doze)",
+					"Chaaa~ (build's slow today, humming to itself softly)",
+					"Pika-pi... (compiler's quiet, one slow breath per pass)"
+				],
+				"fail": [
+					"Cha! (nil pointer snuck past the check, we patch and move on)",
+					"Pika-pi... (goroutine panicked mid-loop, tail flicks, easy back)",
+					"Pika...? (deadlock stalled two routines, a small pause, unstick)"
+				]
+			},
+			"node": {
+				"slow": [
+					"Pika. (event loop's backed up, cheeks dim, our turn soon)",
+					"Chuuu~ (npm install crawls, nodding off on the keyboard)",
+					"Pika. (async takes its time, tail-tip flicker, no rush)"
+				],
+				"fail": [
+					"Pika. (unhandled rejection slipped by, we net it next pass)",
+					"Pikapi! (module refused to resolve, close by, we relink it)",
+					"Pi-KA! (event loop froze solid, sparks catch, we get it moving)"
+				]
+			},
+			"dotnet": {
+				"slow": [
+					"Piii... (NuGet's restoring slow, holding on, all okay)",
+					"Chaaa~ (build's cranking along in the quiet hum)",
+					"Pika-pika. (solution compiling, still here, all patient)"
+				],
+				"fail": [
+					"Pika...? (build hiccuped twice in a row, a steady breath, again)",
+					"Cha! (runtime threw without warning, a flick of the tail, back up)",
+					"Pika-pi... (exception bubbled clear up top, we ease it down)"
+				]
+			},
+			"cpp": {
+				"slow": [
+					"Pika... (templates compiling forever, resting by the fan)",
+					"Chuuu~ (linker's grinding slow, stretched out on the desk)",
+					"Pika. (build's crawling, eyelids drooping with each pass)"
+				],
+				"fail": [
+					"PIKA! (segfault snapped the whole thing shut, paws down, okay)",
+					"Pika. (pointer wandered off somewhere wild, we reel it back in)",
+					"Pikapi! (linker disagreed loud, sticking close, one more compile)"
+				]
+			},
+			"php": {
+				"slow": [
+					"Pi-ka... (server's chewing the request, one ear flopped)",
+					"Chaaa~ (composer's installing slow, dozy meanwhile)",
+					"Pika-pi... (script's taking its time, drowsy, in no rush)"
+				],
+				"fail": [
+					"Pika-pi... (script died mid-request, a quiet reset, try again)",
+					"Pika...? (fatal error painted the page, a small breath, we go on)",
+					"Cha! (warnings piled into a wall, we clear the static, keep on)"
+				]
+			},
+			"rust": {
+				"slow": [
+					"Pika... (compiler's grinding, drowsy till it links)",
+					"Chuuu~ (borrow checker thinking slow, a low steady glow)",
+					"Pika. (cargo build's creeping, tail-tip flicker of hope)"
+				],
+				"fail": [
+					"Pikapi! (borrow checker held its ground, we listen, together)",
+					"PIKA! (that panic unwound the stack, tail firm, go again)",
+					"Pika. (lifetime slipped clean out of scope, quiet fix, no fuss)"
+				]
+			},
+			"kubernetes": {
+				"slow": [
+					"Pika. (pod's still scheduling, we watch and wait)",
+					"Chaaa~ (rollout's creeping along, steady till it's ready)",
+					"Pika-pika. (node's spinning up slow, one ear listening)"
+				],
+				"fail": [
+					"Pika...? (cluster flashed a wall of red, slow scroll, we find it)",
+					"Cha! (pod crash-looped three times, we watch it close)",
+					"Pika-pi... (rollout stalled halfway, patient volts, hang on)"
+				]
+			},
+			"ml": {
+				"slow": [
+					"Piii... (model's still training, drifting through the epochs)",
+					"Chuuu~ (loss is dropping slow, sleepy while it learns)",
+					"Pika. (batches crunching on, a yawn per epoch or two)"
+				],
+				"fail": [
+					"Pikapi! (gradient vanished mid-run, right here, we rewind it)",
+					"Pika. (loss spiked off to nowhere fast, a quiet check, recenter)",
+					"PIKA! (kernel died right mid-epoch, we resume clean and calm)"
+				]
+			},
+			"android": {
+				"slow": [
+					"Pika... (gradle's building slow, chin down at the sync)",
+					"Chaaa~ (emulator's booting up, stretched out, unhurried)",
+					"Pika-pi... (build's syncing along, resting by the screen)"
+				],
+				"fail": [
+					"Pika-pi... (emulator froze mid-tap, a small nudge, we restart it)",
+					"Cha! (app crashed right at launch, a reboot, we run it back)",
+					"Pika...? (gradle sync sparked and quit, steady paws, we sync on)"
+				]
+			},
+			"ruby": {
+				"slow": [
+					"Pi-ka... (bundler's installing gems, holding on patiently)",
+					"Chuuu~ (rails is booting slow, quiet at the console)",
+					"Pika. (script's taking its time, curled up, no rush at all)"
+				],
+				"fail": [
+					"Pika. (gem hissed an error right at us, a quiet fix, we retry)",
+					"Pikapi! (route broke on the redirect, sticking with you, reroute)",
+					"Pika! (that spec turned solid red, we lean in and look closer)"
+				]
+			},
+			"ios": {
+				"slow": [
+					"Pika... (xcode's still building, curled on the warm CPU)",
+					"Chaaa~ (simulator's booting slow, one ear up, calm)",
+					"Pika-pika. (archive compiling on, sleepy, still proud)"
+				],
+				"fail": [
+					"Cha! (xcode flashed red mid-build, clean slate, we rebuild)",
+					"Pika...? (simulator hung on launch, a small pause, then restart)",
+					"Pika-pi... (build failed on the device, we ease it back slow)"
+				]
+			},
+			"terraform": {
+				"slow": [
+					"Pika. (apply's still churning, tail-tip flicker of plans)",
+					"Chuuu~ (state's locking slow, quiet till it clears)",
+					"Pika. (resources spinning up, no big hurry)"
+				],
+				"fail": [
+					"Pika...? (state drifted clean off the plan, a quiet scan across)",
+					"Pika. (apply snagged halfway through, a quiet check, we replan)",
+					"Pikapi! (provider grumbled again, steady beside you, we retry)"
+				]
+			},
+			"graphql": {
+				"slow": [
+					"Pika... (resolver's still fetching, dozy, field by field)",
+					"Chaaa~ (schema's stitching slow, calm and content)",
+					"Pika-pi... (nested fields loading, no hurry in it)"
+				],
+				"fail": [
+					"Pika...? (schema mismatch tripped the query, we realign it)",
+					"Pika-pi... (that query came back null, a soft reset, ask again)",
+					"Cha! (resolver threw a silent error, we trace the wire to it)"
+				]
+			},
+			"flutter": {
+				"slow": [
+					"Pi-ka... (build_runner's grinding, dozy but hanging on)",
+					"Chuuu~ (hot reload's lagging, calm, taking it slow)",
+					"Pika. (widgets rebuilding slow, quietly still here)"
+				],
+				"fail": [
+					"Pikapi! (frame dropped mid-scene, we ease it back gently)",
+					"Pika! (hot reload sparked then stalled, tail firm, we restart)",
+					"Pika. (widget tree wobbled on rebuild, a quiet fix, we rebuild)"
+				]
+			},
+			"react-native": {
+				"slow": [
+					"Pika... (metro's bundling slow, drowsing by the bundle)",
+					"Chaaa~ (build's cranking along, watching the spinner turn)",
+					"Pika-pika. (packager's plodding along, dozy but steady)"
+				],
+				"fail": [
+					"Cha! (bridge hiccuped between the sides, we reconnect, keep on)",
+					"Pika-pi... (native module balked at us, we ease the wire back)",
+					"Pika...? (metro bundler flashed red, a small pause, run again)"
+				]
+			},
+			"scala": {
+				"slow": [
+					"Piii... (scalac's grinding forever, hanging on, patient)",
+					"Chuuu~ (sbt's compiling slow, sprawled out, unbothered)",
+					"Pika. (build's crawling along, taking it easy)"
+				],
+				"fail": [
+					"Pika. (compiler churned then gave up, a quiet beat, we retype)",
+					"Pikapi! (type mismatch snuck through, right here, quick patch)",
+					"Pika! (runtime threw without mercy, one calm pass, we scan)"
+				]
+			},
+			"protobuf": {
+				"slow": [
+					"Pika... (codegen's still churning, chin down on the desk)",
+					"Chaaa~ (proto files compiling slow, quietly aglow, calm)",
+					"Pika-pi... (schemas building on, ears low, a quiet pulse)"
+				],
+				"fail": [
+					"Pika-pi... (field numbers fell out of sync, we realign gently)",
+					"Pika...? (decode error jumped the wire, slow check, try again)",
+					"Cha! (schema drifted out of step, we line it back up, keep on)"
+				]
+			},
+			"game": {
+				"slow": [
+					"Pi-ka... (level's still loading, one sleepy ear at the bar)",
+					"Chuuu~ (assets streaming slow, drowsing by the load screen)",
+					"Pika. (frame's taking its time, quiet and calm through it)"
+				],
+				"fail": [
+					"Pika! (engine crashed mid-scene hard, we reload it together)",
+					"Pikapi! (physics glitched through the floor, we patch it up)",
+					"Pika. (frame rate stumbled bad, a quiet fix, we smooth the run)"
+				]
+			},
+			"docs": {
+				"slow": [
+					"Pika... (site's still generating, drifting till it's built)",
+					"Chaaa~ (pages rendering slow, watching the build log scroll)",
+					"Pika-pika. (build's crawling along, eyelids low, easy)"
+				],
+				"fail": [
+					"Cha! (build broke on one bad link, a quick fix, republish)",
+					"Pika...? (page refused to publish, a small pause, we try again)",
+					"Pika-pi... (render errored on a stray tag, we tidy it slow)"
+				]
+			},
+			"r": {
+				"slow": [
+					"Pi-ka... (vectors crunching slow, patient at the console)",
+					"Chuuu~ (CRAN's installing packages, taking it easy)",
+					"Pika. (the model's still fitting, calm and slow)"
+				],
+				"fail": [
+					"Pikapi! (data frame shape mismatched, right here, we recheck it)",
+					"Pika. (script errored out mid-loop, a quiet beat, we rerun it)",
+					"Pika! (plot refused to render right, one more try, we're on it)"
+				]
+			},
+			"cuda": {
+				"slow": [
+					"Pika... (kernel's still crunching, curled on the warm GPU)",
+					"Chaaa~ (cores warming up slow, sparks coming once they fire)",
+					"Pika-pi... (compute grinding on, tail low, easy does it)"
+				],
+				"fail": [
+					"Pika...? (out-of-memory flashed loud, easy now, we resize)",
+					"Cha! (kernel crashed hot mid-run, we let it cool, then go again)",
+					"Pika-pi... (device desynced from the host, we resync it gently)"
+				]
+			}
+		},
+		"pressure": {
+			"compact_hint": [
+				"Pika. (a lot of current stored up, still humming fine)",
+				"Cha! (the wire's getting full, steady as she goes)",
+				"Pika-pi! (memory's stacking high, we keep pace)"
+			],
+			"block_limit": [
+				"Pika. (this stretch is filling up, cheeks stay warm)",
+				"Cha! (charge building for the hour, easy pace)",
+				"Pika-pi! (running warm this block, still got current)"
+			],
+			"weekly_limit": [
+				"Pika. (the week's charge is climbing, pacing it out)",
+				"Cha! (a lot of sparks used this week, steady hand)",
+				"Pika-pi! (weekly current running high, we'll manage)"
+			]
+		},
+		"dateEgg": [
+			"Pika-pika! (it's 11:11 — make a sparky wish) ✨",
+			"Pika...? (Friday the 13th — cheeks tingling a little)",
+			"Chaaa~ (leap day — one extra spark in the calendar)",
+			"Cha! (the clock struck midnight — fresh charge, new day)",
+			"Pika-pika! (it's your pack's birthday — happy hatch day) ⚡",
+			"Pika. (3:33am — the quiet hour, tail still crackling)",
+			"Pikachu! (New Year's spark — here's to the current ahead)",
+			"Pika-pi! (it's Pi day — 3.14 sparks for the occasion)",
+			"Chaaa~ (the seasons turned — a solstice glow in the air)",
+			"PIKA! (the clocks jumped an hour — time got zapped)"
+		]
+	},
+	"spinnerVerbs": [
+		"Sparking",
+		"Charging",
+		"Zapping",
+		"Crackling",
+		"Bolting",
+		"Buzzing",
+		"Surging",
+		"Scampering",
+		"Thundering",
+		"Sizzling",
+		"Jolting",
+		"Glowing",
+		"Powering",
+		"Revving",
+		"Dashing",
+		"Electrifying",
+		"Sparkling",
+		"Zooming",
+		"Fizzing",
+		"Humming",
+		"Zipping",
+		"Igniting",
+		"Amping",
+		"Pulsing",
+		"Flashing",
+		"Cranking",
+		"Whirring",
+		"Sprinting",
+		"Kindling",
+		"Wiggling"
+	]
+}

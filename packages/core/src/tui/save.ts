@@ -10,15 +10,15 @@ import { join } from "node:path";
 import { stringify } from "smol-toml";
 
 import { installSettings, writeConfigToml } from "../cli";
-import { loadPack } from "../packs";
-import { type Config, engineRoot, listInstalledPacks, loadConfig } from "../sources";
+import { PACKS, loadPack } from "../packs";
+import { type Config, loadConfig } from "../sources";
 
 export type SaveScope = "global" | "local";
 
 interface SaveOptions {
 	/** Resolve a pack's spinner verbs by name; defaults to loading the pack's `spinnerVerbs`. */
 	readonly resolveVerbs?: (name: string) => readonly string[];
-	/** The installed-pack set used for a RANDOM mode + empty roster union; defaults to the real install scan. */
+	/** The pack set used for a RANDOM mode + empty roster union; defaults to the full bundled registry (`PACKS`). */
 	readonly installed?: readonly string[];
 	/** The project root for a local save; defaults to `process.cwd()`. */
 	readonly cwd?: string;
@@ -29,14 +29,6 @@ interface SaveOptions {
 function defaultResolveVerbs(name: string): readonly string[] {
 	const loaded = loadPack(name);
 	return loaded.ok ? loaded.pack.spinnerVerbs : [];
-}
-
-function defaultInstalled(): readonly string[] {
-	try {
-		return listInstalledPacks(engineRoot(import.meta.url));
-	} catch {
-		return [];
-	}
 }
 
 /**
@@ -89,7 +81,7 @@ export function save(
 	opts: SaveOptions = {},
 ): void {
 	const resolveVerbs = opts.resolveVerbs ?? defaultResolveVerbs;
-	const installed = opts.installed ?? defaultInstalled();
+	const installed = opts.installed ?? PACKS;
 	const cwd = opts.cwd ?? process.cwd();
 
 	const normalized = normalize(config);
