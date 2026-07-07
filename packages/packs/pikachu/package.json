@@ -1,6 +1,6 @@
 {
 	"name": "@ccsidekick/pack-pikachu",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Pikachu character pack for ccsidekick",
 	"type": "module",
 	"files": [
