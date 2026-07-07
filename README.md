@@ -19,7 +19,7 @@
   <img src="https://img.shields.io/badge/data-local--first-2ea44f" alt="Local-first">
   <img src="https://img.shields.io/badge/themes-70%2B-8a63d2" alt="70+ themes">
   <img src="https://img.shields.io/badge/widgets-33-8a63d2" alt="33 widgets">
-  <img src="https://img.shields.io/badge/characters-7%20packs-8a63d2" alt="7 character packs">
+  <img src="https://img.shields.io/badge/characters-10%20packs-8a63d2" alt="10 character packs">
 </p>
 
 <p align="center">
@@ -76,6 +76,9 @@ in-voice spinner verbs. `batman` is the default character.
 - **Harry Potter**: a wizarding pack in Gryffindor scarlet and gold.
 - **Hello Kitty**: a sweet, wholesome pack with a soft blush-pink theme.
 - **James Bond**: an edgy secret-agent pack in cool gunmetal blue, with a matching theme.
+- **Joker**: an edgy, chaos-loving pack in Joker purple and acid green.
+- **Pikachu**: a mild, upbeat pack that crackles in electric yellow.
+- **Sherlock Holmes**: a mild, deductive pack in muted Victorian sepia.
 - **Spider-Man**: a milder, wisecracking pack with a red-and-blue theme to match.
 
 **…and more on the way.** The roster keeps growing - new characters land regularly.

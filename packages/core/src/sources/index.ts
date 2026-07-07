@@ -44,9 +44,6 @@ export { readGit } from "./git";
 export type { HelpfulEnv } from "./helpfulEnv";
 export { readHelpfulEnv } from "./helpfulEnv";
 
-// installed
-export { listInstalledPacks } from "./installed";
-
 // markers
 export type { MarkerSet } from "./markers";
 export { readMarkers } from "./markers";
@@ -67,7 +64,7 @@ export type { SessionState } from "./state";
 export { readState, writeState } from "./state";
 
 // storage
-export { atomicWrite, ccsidekickRoot, engineRoot, sessionDir } from "./storage";
+export { atomicWrite, ccsidekickRoot, sessionDir } from "./storage";
 
 // transcript — only types/values native to this module; CostAggregate, CostCache, CostFileEntry
 // are exported from ./costCache above to prevent ambiguous re-export

@@ -44,7 +44,7 @@ import {
 	type Segment,
 	type TermContext,
 } from "../domain";
-import { loadPack } from "../packs";
+import { PACKS, loadPack } from "../packs";
 import {
 	type LayoutInput,
 	type ResolvedTheme,
@@ -63,12 +63,9 @@ import {
 	type MarkerSet,
 	type PriceFn,
 	type ResolveProject,
-	type SessionState,
 	type UsageData,
 	ccsidekickRoot,
-	engineRoot,
 	learnModelName,
-	listInstalledPacks,
 	loadConfig,
 	parsePayload,
 	projectKeyForCwd,
@@ -173,7 +170,6 @@ interface GatedReads {
 	readonly usage: UsageData | null;
 	readonly balance: BalanceSnapshot | null;
 	readonly helpfulEnv: HelpfulEnv;
-	readonly installed: readonly string[];
 }
 
 /** Stage 2: the reads that only run when config/env permit (or a preview override supplies the value). */
@@ -184,7 +180,6 @@ function readGated(
 	root: string,
 	dir: string,
 	markers: MarkerSet,
-	sessionState: SessionState,
 	clock: Clock,
 ): GatedReads {
 	const creds =
@@ -200,15 +195,7 @@ function readGated(
 		: config.network.balance_path !== "" ? readBalance(config.network.balance_path, clock)
 		: null;
 	const helpfulEnv = needsHelpfulEnv(markers) ? readHelpfulEnv(dir) : EMPTY_HELPFUL_ENV;
-	const installed =
-		(
-			sessionState.character === undefined &&
-			config.character.mode === "random" &&
-			config.character.roster.length === 0
-		) ?
-			listInstalledPacks(engineRoot(import.meta.url))
-		:	[];
-	return { creds, usage, balance, helpfulEnv, installed };
+	return { creds, usage, balance, helpfulEnv };
 }
 
 const DEFAULT_EMBLEM = "❝";
@@ -293,19 +280,20 @@ function build(
 	const fxTable = readFxCached(root);
 
 	// ── Stage 2: gated reads (only when config/env permit) ──────────────────────
-	const { creds, usage, balance, helpfulEnv, installed } = readGated(
+	const { creds, usage, balance, helpfulEnv } = readGated(
 		overrides,
 		envInputs,
 		config,
 		root,
 		dir,
 		markers,
-		sessionState,
 		clock,
 	);
 
 	// ── Derive: session → persona → the rest ────────────────────────────────────
-	const persona = derivePersona(config, sessionState, session, installed);
+	// The candidate set for a random pick with an empty roster is the full bundled registry (`PACKS`); it never
+	// needs a filesystem scan, since every pack ships with the engine.
+	const persona = derivePersona(config, sessionState, session, PACKS);
 	const loaded = loadPack(persona);
 	const pack = loaded.ok ? loaded.pack : null;
 

@@ -39,7 +39,8 @@ const stdin = JSON.stringify(canonical);
 
 test("renders the canonical payload (figure + fields) and persists state, cost, attribution", () => {
 	const cfg = freshRoot();
-	const { line, persist } = runRender(stdin, { CLAUDE_CONFIG_DIR: cfg }, term(), clock);
+	const env = withGlobalConfig(cfg, '[character]\nmode = "fixed"\nname = "batman"\n');
+	const { line, persist } = runRender(stdin, env, term(), clock);
 
 	const plain = stripAnsi(line);
 	expect(line.length).toBeGreaterThan(0);

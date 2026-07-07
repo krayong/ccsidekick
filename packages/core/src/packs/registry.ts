@@ -5,9 +5,12 @@
 export const PACKS = [
 	"barbie",
 	"batman",
+	"deadpool",
 	"harry-potter",
 	"hello-kitty",
-	"spiderman",
 	"james-bond",
-	"deadpool",
+	"joker",
+	"pikachu",
+	"sherlock-holmes",
+	"spiderman",
 ] as const;

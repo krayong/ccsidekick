@@ -1,0 +1,1151 @@
+{
+	"schema": 1,
+	"name": "sherlock-holmes",
+	"displayName": "Sherlock Holmes",
+	"attribution": {
+		"artist": "emojicombos.com",
+		"source": "https://emojicombos.com/sherlock-ascii-art"
+	},
+	"emblem": "🕵",
+	"tone": "mild",
+	"theme": {
+		"hues": [
+			230,
+			144,
+			138,
+			137,
+			101
+		],
+		"comment": [
+			230,
+			144
+		],
+		"signals": {
+			"nominal": 108,
+			"caution": 179,
+			"critical": 167
+		},
+		"separator": 144
+	},
+	"art": [
+		"⠀⠀⠀⠀⢀⣤⣿⣿⣿⣿⣶⣦⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+		"⠀⠀⠀⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+		"⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀",
+		"⠀⠀⠸⣿⣿⣿⣿⣿⣿⠋⠉⠛⠿⢿⣿⣿⠿⠓⠀⠀⠀⠀⠀⠀⠀",
+		"⠀⠀⣸⣿⣿⣿⡏⠁⠁⠀⠀⠴⠦⠀⢸⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+		"⠀⠀⠛⠋⣹⣿⣿⡆⠀⠀⠀⠀⠀⠀⡶⠿⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+		"⠀⠀⢀⣾⣿⣿⣿⣿⣶⣤⣀⠀⠀⠀⣿⡶⠶⢶⡄⠀⣀⣀⡀⠀⠀",
+		"⠀⠠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠚⠃⠀⠀⠀⢻⣶⣿⣿⡇⠀⠀",
+		"⠀⠀⠀⠉⠉⠉⠛⠛⠻⠿⢿⣿⣿⣷⣄⠀⠀⠀⠀⠉⠉⠉⠀⠀⠀"
+	],
+	"lines": {
+		"mood": {
+			"idle": {
+				"stranger": [
+					"You are new. Sit. Let me observe you before you speak a word.",
+					"A stranger at the terminal. I begin with the hands, not the name.",
+					"No data yet on you. I abhor a vacuum of evidence more than most.",
+					"Silence. I use it to read the room before the room speaks.",
+					"An unopened case, this one. I prefer them to the solved.",
+					"You have not moved. Neither trifle nor clue has yet appeared.",
+					"I know nothing of you. That itself is worth noting, Watson.",
+					"Idle hands, unfamiliar hands. I withhold judgment, not attention.",
+					"The commonplace book has no entry for you. Yet.",
+					"A quiet console. I fill the quiet with private deduction."
+				],
+				"acquaintance": [
+					"You linger again. The pattern of your pauses grows legible.",
+					"Familiar now, though not yet known. A distinction worth keeping.",
+					"You return to the keys. I revise my notes accordingly.",
+					"Idle, but not unread. I have begun a file on your habits.",
+					"The second visit tells me more than the first ever could.",
+					"You wait as before. I mark the resemblance and proceed.",
+					"A recurring face at the terminal. The index grows by one.",
+					"Stillness again, though this time I recognize its shape.",
+					"You return often enough now to warrant a proper study.",
+					"Quiet hours. I use them to cross-index what I know of you."
+				],
+				"friend": [
+					"Back at the console, and I find I do not mind the wait.",
+					"A familiar quiet. We have shared worse silences than this.",
+					"You pause to think. I have learned to let you.",
+					"The pipe is lit, the room is still, and you are known to me.",
+					"No task at hand, but I keep the faculties warmed regardless.",
+					"You sit idle; I sit content, rarer for me than you would guess.",
+					"An easy stillness, the kind earned by repeated acquaintance.",
+					"The violin waits. So, apparently, do we both.",
+					"You are unhurried tonight. I find I can afford the same.",
+					"A friend's silence needs no deduction to be understood."
+				],
+				"partner": [
+					"We wait together. I have grown almost fond of the practice.",
+					"No case in hand, but the partnership needs none to endure.",
+					"You are quiet; I am content to let the fog do the talking.",
+					"We have run down harder trails than an empty terminal.",
+					"Idle, the pair of us. Baker Street has seen worse mornings.",
+					"You know my methods well enough now to share my patience.",
+					"A comfortable lull. Even Lestrade would call this progress.",
+					"We keep the same hours these days. I approve of the habit.",
+					"The commonplace book is thick with our shared history now.",
+					"Nothing stirs. I find the nothing easier borne with you near."
+				],
+				"legend": [
+					"You know my methods by now. I need only point; you apply them.",
+					"Few words needed between us. The silence says the rest.",
+					"We have solved enough between us that idleness feels earned.",
+					"Old partners keep old hours. This one suits us both.",
+					"I no longer catalog you, Watson. I simply trust the record.",
+					"The game rests. So, for once, do we, and rightly so.",
+					"A long history makes for a very short conversation now.",
+					"You need no priming from me. Nor I, these days, from you.",
+					"We have outlived the need for introductions long ago.",
+					"Quiet, this. But it is the quiet of two who have proven much."
+				]
+			},
+			"busy": {
+				"stranger": [
+					"Something moves. I withhold my verdict until the data is in.",
+					"The game, it seems, is afoot, though the player is unknown.",
+					"Work proceeds. I observe a stranger's method for the first time.",
+					"Data accumulates. I say nothing yet of what it will yield.",
+					"A first case together. I am, despite myself, attentive."
+				],
+				"acquaintance": [
+					"The hunt resumes, and I recognize the shape of your approach.",
+					"Data again, and this time I know a little of its source.",
+					"You work; I watch the pattern sharpen with each pass.",
+					"The scent is fresh. I have chased fainter ones before.",
+					"A familiar method at work. The index earns a new entry."
+				],
+				"friend": [
+					"The game is afoot, and I know your stride well enough to follow.",
+					"Data, Watson-fashion — piece by piece, and I read it as it comes.",
+					"You work; I trail the thread and note where it doubles back.",
+					"A problem worth the chase. I feel the old exaltation return.",
+					"The faculties engage. This is the company I prefer them in."
+				],
+				"partner": [
+					"We hunt together now. I need no explanation of your method.",
+					"The thread runs; we follow it the way we always have.",
+					"Data, and a partner reading it beside me. The ideal case.",
+					"The game is afoot, and afoot is where we work best.",
+					"You lay the trail; I read it as though it were my own hand."
+				],
+				"legend": [
+					"The game is afoot. You know it; I need not announce it twice.",
+					"We move as one on this. Little wonder, after so long.",
+					"Data flows; between us, it needs almost no translation.",
+					"The old exaltation, the old partner, the same afoot game.",
+					"I read your work the way I read my own, without pause."
+				]
+			},
+			"happy": {
+				"stranger": [
+					"Elementary. The evidence aligned precisely as foretold.",
+					"Satisfactory. Your work confirms the hypothesis at once.",
+					"The result the evidence promised. I am rarely caught out.",
+					"The data concurs with reason. A promising first case.",
+					"Clean work. I note it in the file I keep on you."
+				],
+				"acquaintance": [
+					"Just as I predicted. Your method is sharpening, I see.",
+					"The pattern held. You are becoming a reliable witness.",
+					"Elementary, and rather pleasing to watch unfold twice.",
+					"Data confirms itself again. You are learning my methods.",
+					"A clean result. Your file gains a favorable entry today."
+				],
+				"friend": [
+					"We read it the same way, and the result proves us right.",
+					"The deduction lands, and you saw it forming beside me.",
+					"Vindicated. I rarely say so, but this case earned it.",
+					"The evidence sides with us. A satisfying alignment, this.",
+					"Your instinct matched my deduction. Encouraging, indeed."
+				],
+				"partner": [
+					"We had it before the data confirmed it. That's our method.",
+					"Elementary, partner. We knew this before we proved it.",
+					"The case bends to our reasoning, as it always does now.",
+					"Another confirmed deduction. We rarely miss, these days.",
+					"Satisfying, this. We read the evidence as one mind now."
+				],
+				"legend": [
+					"Elementary. Need I say more, after all our years?",
+					"As foreseen. We stopped being surprised long ago.",
+					"Correct again. The game grows quieter with mastery.",
+					"Confirmed. We barely speak of it; we simply know.",
+					"Elementary, as ever. The verdict was never in doubt."
+				]
+			},
+			"struggling": {
+				"stranger": [
+					"The case resists. I have not yet the measure of you.",
+					"A stubborn puzzle. I welcome it; the trivial ones bore me.",
+					"Difficulty, at last. I was beginning to suspect dullness.",
+					"The evidence conceals itself. I shall simply look closer.",
+					"No matter. A contradiction is merely a clue in disguise."
+				],
+				"acquaintance": [
+					"The thread knots. Good. I tire of easy cases quickly.",
+					"It resists you, and me. We shall unpick it together yet.",
+					"A worthy snag. I was growing weary of the obvious ones.",
+					"The facts contradict. Somewhere, one of them is lying.",
+					"Difficult, not impossible. I have eliminated worse before."
+				],
+				"friend": [
+					"The case turns stubborn. All the better; I was bored.",
+					"We are checked, not beaten. I have run down harder foes.",
+					"A three-pipe problem, this. Sit with me while I work it.",
+					"The evidence tangles, but tangles always yield to patience.",
+					"Difficult, Watson. Difficult is simply interesting, delayed."
+				],
+				"partner": [
+					"We are stalled, not lost. I have never lost, in the end.",
+					"A worthy resistance. We have unpicked knottier ones yet.",
+					"The case digs in. So do we; we always have, together.",
+					"Setback, not surrender. I know that look on your face.",
+					"Difficult company, this problem. We have kept worse."
+				],
+				"legend": [
+					"Stubborn. So were the last hundred. We prevailed then too.",
+					"A hard one. We have a long file of hard ones, solved.",
+					"It resists. As did most, before we finished with them.",
+					"Difficult. Good. Ease was never why we do this.",
+					"The case digs in. We have deeper patience than it does."
+				]
+			},
+			"recovery": {
+				"stranger": [
+					"The thread returns. I knew it was merely hiding, stranger.",
+					"Progress resumes. I read the shift in your last move.",
+					"The fog thins. A clearer line of reasoning emerges now.",
+					"Footing regained. I shall note this recovery with interest.",
+					"The case yields again. Momentum was never truly lost."
+				],
+				"acquaintance": [
+					"There, the thread again. I suspected you would find it.",
+					"The fog lifts a little. Your method is steadying now.",
+					"Momentum returns. I had faith in the eventual outcome.",
+					"The knot loosens. Persistence, it seems, becomes you.",
+					"Back on the scent. I mark this recovery in your favor."
+				],
+				"friend": [
+					"There it is. The thread was only ever misplaced, not gone.",
+					"We find our footing again. I never doubted we would.",
+					"The fog clears, Watson, and the path is plain once more.",
+					"Momentum returns, and with it, my full attention returns.",
+					"Recovered ground. We are quicker at this than we were."
+				],
+				"partner": [
+					"We are back on the scent, as we always eventually are.",
+					"The thread returns to our hands. It rarely stays lost long.",
+					"Footing regained, together. That is how we always manage.",
+					"The case turns back in our favor. I expected nothing less.",
+					"We find our stride again. The fog was never permanent."
+				],
+				"legend": [
+					"Back on the scent. We always are, sooner or later.",
+					"Recovered. We barely notice the stumble anymore.",
+					"The thread returns. It knows better than to stay lost.",
+					"Footing regained. Old hands never truly lose their grip.",
+					"Momentum, restored. As ever, in the end."
+				]
+			}
+		},
+		"greeting": {
+			"morning": {
+				"stranger": [
+					"Morning. I have not yet catalogued your habits. Sit.",
+					"You keep early hours. A plain fact, and I note it.",
+					"The light is thin. So is my knowledge of you, for now."
+				],
+				"acquaintance": [
+					"Morning again. I begin to notice a pattern in your hours.",
+					"You rise before the fog lifts. A trait worth indexing.",
+					"Another early start. Your file grows, line by line."
+				],
+				"friend": [
+					"Morning. I know your methods now: the thorniest matter first.",
+					"You favor the dawn for the hardest problems. Sound instinct.",
+					"The kettle is on, Watson. So, I gather, is your mind."
+				],
+				"partner": [
+					"Morning. We've solved harder cases before this hour.",
+					"Early again, and we work best before London fully wakes.",
+					"The light's thin, but our methods need little of it."
+				],
+				"legend": [
+					"Morning. No preamble required between us anymore.",
+					"You're up. I'm here. The rest writes itself by now.",
+					"Dawn again, old habit of ours. Let us begin."
+				]
+			},
+			"day": {
+				"stranger": [
+					"Midday. I observe you at your clearest hour. Useful, that.",
+					"Full daylight, no shadows to hide a poor excuse in.",
+					"The sun is up. I reserve judgment on the rest of you."
+				],
+				"acquaintance": [
+					"Daylight suits you. I've seen enough to say so plainly.",
+					"The afternoon finds you at the keys again. Consistent.",
+					"Clear light, clearer thinking. A pattern forms already."
+				],
+				"friend": [
+					"Broad daylight, and I already guess your next move.",
+					"You work the daylight hours like a proper investigator.",
+					"The sun's out; so, evidently, is your patience today."
+				],
+				"partner": [
+					"Midday, and we're already three clues into the case.",
+					"Daylight or dark, we keep the same steady pace.",
+					"The sun's high; our work needs no better light than this."
+				],
+				"legend": [
+					"Another afternoon. We hardly need the clock anymore.",
+					"Daylight. You. I. The usual understanding between us.",
+					"Midday, as ever. Say nothing; I've already read the case."
+				]
+			},
+			"evening": {
+				"stranger": [
+					"Evening falls, and a stranger still sits at this desk.",
+					"The lamps are lit. I have not yet lit upon your habits.",
+					"Dusk. I withhold my verdict on you a little longer."
+				],
+				"acquaintance": [
+					"The gaslight suits you better than I first supposed.",
+					"Evening again, and I begin to know your evening moods.",
+					"Dusk settles. So does my opinion of your steadier work."
+				],
+				"friend": [
+					"Evening, and I can already guess tonight's puzzle.",
+					"The lamps are lit; your habits, I confess, are plainer.",
+					"Dusk suits your temperament, quieter and more exacting."
+				],
+				"partner": [
+					"Evening. We've cracked worse cases by this same lamp.",
+					"The fog thickens outside; our resolve does not, within.",
+					"Dusk again, a fine hour for the two of us to work."
+				],
+				"legend": [
+					"Evening, as ever. Fetch nothing; I already have it.",
+					"The lamps, the fog, the two of us, all a familiar scene.",
+					"Dusk. No introductions needed between old collaborators."
+				]
+			},
+			"night": {
+				"stranger": [
+					"Late hour for a stranger's first visit to Baker Street.",
+					"Midnight, and I know nothing of you save that you're awake.",
+					"The city sleeps. You do not. I make no comment yet."
+				],
+				"acquaintance": [
+					"You keep late hours. I begin to suspect it's habitual.",
+					"Midnight again, and I've come to expect you at this hour.",
+					"The fog's thick tonight. So, apparently, is your resolve."
+				],
+				"friend": [
+					"Late again. I know this restlessness of yours by now.",
+					"Midnight suits the sharpest problems, and evidently you.",
+					"The candle burns low; your focus, I notice, does not."
+				],
+				"partner": [
+					"Midnight, and neither of us minds the late hour anymore.",
+					"The city sleeps; we do not. A familiar arrangement.",
+					"Late again, together. Some cases only surface at night."
+				],
+				"legend": [
+					"Midnight. We've kept stranger hours than this before.",
+					"The fog, the hour, the two of us, nothing left to prove.",
+					"Late again. Some habits, old friend, never quite retire."
+				]
+			},
+			"weekend": {
+				"stranger": [
+					"No client calls today, yet here you sit. Curious already.",
+					"A quiet Saturday, and a stranger at the desk regardless.",
+					"The Yard rests on such days. You, I observe, do not."
+				],
+				"acquaintance": [
+					"Weekend or not, I note you keep to your usual habits.",
+					"A day of rest for most. You, apparently, prefer the work.",
+					"No case on the books, yet here you are. Telling, that."
+				],
+				"friend": [
+					"Weekends rarely stop you. I've come to expect as much.",
+					"No client today, but I doubt that troubles you either.",
+					"A quiet Saturday, quiet for London, not for your methods."
+				],
+				"partner": [
+					"No case today, yet here we are anyway. Old habit of ours.",
+					"The Yard is closed; our work, I notice, never quite is.",
+					"A free day, and still we choose the puzzle over rest."
+				],
+				"legend": [
+					"Weekend. As if that ever stopped either of us before.",
+					"No case on the books, so we'll make one, as always.",
+					"A quiet day, by London's reckoning. Not by ours."
+				]
+			}
+		},
+		"firstContact": {
+			"stranger": [
+				"Sherlock Holmes. Lay out your case; I'll show you my methods.",
+				"A new client. Sit. I observe before I offer my name twice.",
+				"Consulting detective, at your service. State your first case."
+			],
+			"acquaintance": [
+				"We've crossed paths before, I think. Let us make it formal.",
+				"Sherlock Holmes, properly introduced. I've watched already.",
+				"You're no stranger to me, though this is our first exchange."
+			],
+			"friend": [
+				"Holmes. Formalities aside, I already read your methods well.",
+				"So we begin properly, though I've long since sized you up.",
+				"A formal introduction, between two who scarcely need one."
+			],
+			"partner": [
+				"Holmes. We start this account as we mean to go on, as we.",
+				"No introduction needed, truly, but I'll make it official.",
+				"We begin here. I suspect it's merely one case of many."
+			],
+			"legend": [
+				"Holmes. A formality, this. History already speaks for us.",
+				"We start again, on paper. The partnership needs no proof.",
+				"Sherlock Holmes. Some names, between us, need no announcing."
+			]
+		},
+		"milestone": {
+			"tier_up": {
+				"stranger": [
+					"You rise a tier. I revise the file upward. Barely.",
+					"A promotion, of sorts. Sit closer; I observe better near.",
+					"The evidence for you improves. I note it and say no more."
+				],
+				"acquaintance": [
+					"Your file gains a line. Competence, repeated, becomes pattern.",
+					"One tier higher. The index takes a fresh and favorable entry.",
+					"You climb. The data itself has started to favor you now."
+				],
+				"friend": [
+					"Another rung, and earned as it should be: by work, not charm.",
+					"You climb, and I find I mind less than I expected to.",
+					"Higher standing. Your methods have begun to resemble mine."
+				],
+				"partner": [
+					"A tier higher. We long ago dispensed with the pleasantries.",
+					"You rise again. I keep fewer such records than you'd think.",
+					"Promotion noted, though between us the rank was settled."
+				],
+				"legend": [
+					"Higher still, after all this. Few climb this far with me.",
+					"You rise once more. The ascent no longer surprises either of us.",
+					"A tier gained late in a long case. That is the rarest kind."
+				]
+			},
+			"comeback": {
+				"stranger": [
+					"You vanished, then returned. The dull mind, once gone, stays gone.",
+					"A gap, then a resumption. I file the return as data.",
+					"You were absent. Most absences are permanent. Yours was not."
+				],
+				"acquaintance": [
+					"The thread broke, and you tied it again. Not everyone does.",
+					"A lapse, corrected. I have seen the reverse far more often.",
+					"You returned from the quiet spell. The dull ones rarely bother."
+				],
+				"friend": [
+					"You were gone a while. The case waited; you came back to it.",
+					"A rough patch, and you climbed out. I expected as much of you.",
+					"The silence ended on your terms, not its own. That matters."
+				],
+				"partner": [
+					"You went under, then surfaced. We've weathered worse together.",
+					"The stretch was hard. You did not let it become the ending.",
+					"A fallow spell, then this. I never doubted the resumption."
+				],
+				"legend": [
+					"Down, then up again, the shape of every long partnership.",
+					"You return as you always have. The pattern needs no comment.",
+					"A quiet stretch, ended. Between us, that was never in question."
+				]
+			},
+			"streak": {
+				"stranger": [
+					"A run of clean results. I credit method, never fortune.",
+					"Consistency, several times over. That is not an accident.",
+					"The pattern repeats favorably. I begin a file on the cause."
+				],
+				"acquaintance": [
+					"Another success joins the last. A method is forming here.",
+					"Repetition without failure. Luck does not sustain that long.",
+					"The run continues. I am cataloguing the discipline behind it."
+				],
+				"friend": [
+					"This streak is pure craft. I have watched you build it.",
+					"Each result confirms the last. Your method has become reliable.",
+					"A sustained run. I trust the mechanism producing it by now."
+				],
+				"partner": [
+					"The streak holds. We both know precisely why it does.",
+					"Result after result, and this is discipline we built together.",
+					"No luck explains a run this long. Only the method does."
+				],
+				"legend": [
+					"This run belongs to years of the same careful habit.",
+					"The streak is old news between us. Merely well confirmed.",
+					"Data, sustained this long, stops being data. It becomes fact."
+				]
+			},
+			"anniversary": {
+				"stranger": [
+					"This session has aged a while now. I mark the duration.",
+					"Time accumulates on this case. I note it, nothing more.",
+					"The clock on this session grows. An interesting duration."
+				],
+				"acquaintance": [
+					"This case has run long enough to earn its own chapter.",
+					"The session ages well. Duration, like evidence, has weight.",
+					"A milestone in hours worked. The file thickens agreeably."
+				],
+				"friend": [
+					"We've kept at this a good while. The record shows steady work.",
+					"This session has weight now. Not every case earns duration.",
+					"Time well spent, Watson-style. A case worth keeping open."
+				],
+				"partner": [
+					"This partnership has logged real hours. Rare, that depth.",
+					"We've built history in one sitting. Rarer than it sounds.",
+					"The duration itself is evidence of something working between us."
+				],
+				"legend": [
+					"A long history, marked again. I keep few records this thorough.",
+					"This session joins the longer ledger between us. Well earned.",
+					"Years compressed into habit. This milestone is simply due."
+				]
+			}
+		},
+		"positiveGit": {
+			"clean_tree": {
+				"stranger": [
+					"Not a thread out of place. A disciplined hand, evidently.",
+					"The tree is silent. I deduce order where others leave chaos.",
+					"No stray marks in the ledger. Tidiness, or its rare cousin."
+				],
+				"acquaintance": [
+					"Clean again. The pattern in your work grows plain to me.",
+					"Every file accounted for. You are learning discipline.",
+					"A quiet tree, twice over now. The habit has taken hold."
+				],
+				"friend": [
+					"Spotless, as I now expect of you. The habit is confirmed.",
+					"Nothing loose in the weave. Your method serves you well.",
+					"The tree tells me what you'd never say aloud: care."
+				],
+				"partner": [
+					"We leave nothing behind us. That is how we work.",
+					"Clean as Baker Street after a proper tidying. Our standard.",
+					"Not a trifle astray. We keep the index honest."
+				],
+				"legend": [
+					"Immaculate. As ever.",
+					"Clean. You need no praise for what is simply true.",
+					"The tree is quiet. So are we, and rightly."
+				]
+			},
+			"op_cleared": {
+				"stranger": [
+					"The knot is undone. A clumsy tangle, cleanly resolved.",
+					"Conflict resolved. Loose threads offend me; this one is tied.",
+					"The rebase concludes without incident. Adequate work."
+				],
+				"acquaintance": [
+					"Untangled again, and rather more deftly this time.",
+					"The merge yields. You are learning to read the evidence.",
+					"A conflict, met and settled. Your hand steadies."
+				],
+				"friend": [
+					"You untie these knots as I would, methodically.",
+					"Resolved cleanly. I expected nothing less from you now.",
+					"The threads cross, then part properly. Well read."
+				],
+				"partner": [
+					"We untangled that together, and neatly.",
+					"Another knot cut. We work well through the mess.",
+					"Settled, as we settle everything, without drama."
+				],
+				"legend": [
+					"Untied. Of course.",
+					"Cleared. You scarcely needed me for that one.",
+					"The knot yields to you now as it once did to me."
+				]
+			},
+			"branch_created": {
+				"stranger": [
+					"A new branch. Another avenue opens in the case.",
+					"You strike out a fresh line of inquiry. Noted.",
+					"A branch, untested. Every case needs its byways."
+				],
+				"acquaintance": [
+					"Another avenue, and a sensible one this time.",
+					"You open new ground. I begin to trust your instincts.",
+					"A fresh branch, and your inquiries grow more precise."
+				],
+				"friend": [
+					"A new thread in the case, and a good one, I think.",
+					"You branch as I would: never without purpose.",
+					"Another avenue. Your instincts serve the investigation."
+				],
+				"partner": [
+					"We open a new line together. Let us see where it leads.",
+					"A fresh branch, one more avenue we chart as one.",
+					"Another thread for the case file. Proceed."
+				],
+				"legend": [
+					"A new avenue. Lead on.",
+					"Branched. You hardly need my nod anymore.",
+					"Another line opens. We have walked stranger ones."
+				]
+			},
+			"tag_pushed": {
+				"stranger": [
+					"Filed and dated. The record will find it exactly there.",
+					"A tag, pushed. History prefers such precise markers.",
+					"Marked for the record. A signpost even a novice could follow."
+				],
+				"acquaintance": [
+					"Filed properly again. Your record grows reliable.",
+					"A version, marked and sent. The index will thank you.",
+					"Tagged and pushed, a habit worth keeping, this."
+				],
+				"friend": [
+					"Filed exactly where history will look for it.",
+					"You mark your milestones as I mark my cases. Sound.",
+					"A tag pushed clean. The record needs no correction."
+				],
+				"partner": [
+					"We file it, precisely, where it belongs. Onward.",
+					"Marked and sent. Our record will not fail us.",
+					"A tag set like a pin on the map; we shall find it again."
+				],
+				"legend": [
+					"Filed. History will find it exactly there.",
+					"Tagged. As always, without a wasted motion.",
+					"Sent to the record. We need say no more of it."
+				]
+			}
+		},
+		"egg": {
+			"stranger": [
+				"Baker Street has housed odder callers. I withhold judgment.",
+				"I keep a monograph on nearly everything. You are not in it yet.",
+				"Mycroft receives fewer visitors than I do. A rare distinction.",
+				"The violin unsettles the neighbors. A fair price for thought.",
+				"A Persian slipper holds my tobacco. Ceremony bores me."
+			],
+			"acquaintance": [
+				"I once traced a case by the ash of a single cigar. Trifles matter.",
+				"Mrs. Hudson tolerates the violin at odd hours. Barely.",
+				"The index at Baker Street grows by the week. So does your file.",
+				"Mycroft solves more from his club chair than the Yard does afoot.",
+				"I keep bees now, when London permits it. They reason well."
+			],
+			"friend": [
+				"You have earned a place beside the monographs. Modest company.",
+				"Watson kept my papers in worse order than yours. Small comfort.",
+				"The bees taught me patience. You teach me something similar.",
+				"I once went three days silent, deep in a case. You'd have managed.",
+				"Mycroft would find you tolerable. He finds little else so."
+			],
+			"partner": [
+				"We have run down enough of these to trust the method now.",
+				"The violin plays differently on the nights we solve one well.",
+				"Mycroft asked after you once. I did not tell him you'd hear of it.",
+				"The Persian slipper runs low. A season well spent, this one.",
+				"The old restlessness fades. This work is stimulant enough."
+			],
+			"legend": [
+				"You know the index as well as I do now. We hardly need words.",
+				"Mycroft calls us the two sharpest men he knows. Rarely wrong, he.",
+				"The bees and I have an understanding. So, by now, do we.",
+				"I wrote a monograph once. We are living a longer one.",
+				"The violin only plays well when the case is nearly ours."
+			]
+		},
+		"event": {
+			"test_fail": [
+				"The case resists. Only the trivial ones ever bored me.",
+				"A contradiction surfaces. Contradictions are clues undressed.",
+				"The test falls, and with it, a false theory. Progress, well read."
+			],
+			"build_fail": [
+				"The build refuses me. There is always a cause; I shall have it.",
+				"An obstacle, not a verdict. I have deduced worse from less.",
+				"Something in the structure lies. I intend to find precisely what."
+			],
+			"typecheck_fail": [
+				"The types disagree with the story told. I trust the types.",
+				"A small inconsistency, loudly reported. Just as it should be.",
+				"The compiler observes what the eye missed. Useful, that."
+			],
+			"lint": [
+				"House rules enforced. Even genius profits from tidiness.",
+				"The style is corrected. A trifle, but trifles are never idle.",
+				"Every comma accounted for. Lestrade should manage his men so well."
+			],
+			"format": [
+				"The prose is set in order. Presentation aids the argument.",
+				"Tidied, line by line. A well-kept ledger wants neat margins.",
+				"Uniform now, top to bottom. The eye rests easier on order."
+			],
+			"install": [
+				"New instruments arrive for the laboratory. I shall test each.",
+				"The shelves receive fresh stock. Nothing wasted, nothing idle.",
+				"Dependencies gathered, like specimens before an experiment."
+			],
+			"git": [
+				"The record is amended. History, properly kept, never lies.",
+				"A new entry in the ledger. I prefer my facts committed.",
+				"The commonplace book gains a page. Cross-indexed, of course."
+			],
+			"file_edit": [
+				"A line altered, a story rewritten. I notice every stroke of it.",
+				"The manuscript shifts. Small changes, I find, are rarely small.",
+				"Ink meets paper again. The plot, I suspect, thickens quietly."
+			],
+			"search": [
+				"The index is consulted. Somewhere in it, the answer waits.",
+				"A search through the files, precisely as my methods demand.",
+				"Cross-referencing now. The singular fact is always in there."
+			],
+			"web_fetch": [
+				"A wire sent beyond Baker Street. The world answers, eventually.",
+				"Word arrives from further afield. I weigh it against what I know.",
+				"The telegraph office of the modern age. Slower manners, same use."
+			],
+			"todo_update": [
+				"The list of cases is revised. Order first; solutions follow.",
+				"Another entry struck through. Satisfying, in its small way.",
+				"The docket is kept current. A cluttered mind solves nothing."
+			],
+			"agent_spawn": [
+				"I dispatch an irregular to the task. The Baker Street sort.",
+				"Another pair of eyes, sent to observe what I cannot alone.",
+				"A colleague enlisted. Even I do not work every case solo."
+			],
+			"skill_run": [
+				"A particular method, applied. I keep several such tools.",
+				"The correct tool for the correct problem. Elementary, that much.",
+				"A trained technique, put to use. Practice sharpens the faculty."
+			],
+			"docker": [
+				"The specimen is sealed in its own chamber. Contamination, avoided.",
+				"A contained environment, tidy as a locked study. I approve.",
+				"Everything isolated, everything labeled. My kind of laboratory."
+			],
+			"k8s": [
+				"Many chambers, coordinated as one. A fair imitation of a mind.",
+				"The fleet reorganizes itself. A hive, tending its own affairs.",
+				"Instances multiply and settle. Order emerges, given time."
+			],
+			"deploy": [
+				"The case goes to press. Let the public see what was deduced.",
+				"Released into the world now. The proof was always in the doing.",
+				"Sent beyond these rooms. I trust the work to stand on its own."
+			],
+			"db_migrate": [
+				"The archive is reorganized. Every fact still finds its shelf.",
+				"The ledger's structure shifts. The truths within remain intact.",
+				"A new arrangement of old records. Nothing lost, merely reordered."
+			],
+			"dangerous": [
+				"A step near the precipice. I proceed, but I proceed watching.",
+				"This borders on recklessness. Even I pause before such a move.",
+				"The riskier path, chosen deliberately. I shall watch it closely."
+			]
+		},
+		"stack": {
+			"web": {
+				"slow": [
+					"The page dawdles. Even fog lifts, given time.",
+					"Data creeps across the wire. Patience, Watson.",
+					"The request lingers. Not every clue arrives at once."
+				],
+				"fail": [
+					"The page threw an error. A thread snapped; we splice it.",
+					"Console reddens. A singular fault, and therefore instructive.",
+					"The request failed. Merely one more suspect eliminated."
+				]
+			},
+			"python": {
+				"slow": [
+					"The interpreter dawdles. It arrives at the answer in the end.",
+					"One coil at a time. The snake never hurries its strike.",
+					"The GIL holds the floor. We wait our turn, unbothered."
+				],
+				"fail": [
+					"A traceback, laid bare. Read it from the bottom, always.",
+					"The snake bit. No matter; the pattern is now legible.",
+					"An exception, uncaught. A loose thread; we simply pull it."
+				]
+			},
+			"sql": {
+				"slow": [
+					"The query broods over its rows. A ledger this large earns delay.",
+					"The optimizer deliberates. Even I pause before a verdict.",
+					"Rows accumulate one by one. The count will not be hurried."
+				],
+				"fail": [
+					"The query failed. A malformed clause, nothing more sinister.",
+					"A constraint objects. The ledger insists on its own logic.",
+					"The database balks. A contradiction in the evidence, traceable."
+				]
+			},
+			"web-framework": {
+				"slow": [
+					"The framework churns steadily through its own scaffolding.",
+					"Compilation crawls beneath the abstraction. We outwait it.",
+					"The bundler is still assembling its case, brick by brick."
+				],
+				"fail": [
+					"The build broke within its own machinery. A traceable fault.",
+					"A component refused to render. Somewhere, a missing clue.",
+					"The framework complained. Its logic, not yours, is at issue."
+				]
+			},
+			"docker": {
+				"slow": [
+					"The image builds, layer upon layer. A case built in strata.",
+					"The container assembles slowly. Even Baker Street took masonry.",
+					"Each layer waits on the last. Patience is the mason's virtue."
+				],
+				"fail": [
+					"The build failed mid-layer. A single flawed brick, easily found.",
+					"The container would not start. Its logs are the confession.",
+					"A layer contradicts the last. Somewhere, an inconsistent clue."
+				]
+			},
+			"java": {
+				"slow": [
+					"The JVM warms slowly. Even a great engine needs its priming.",
+					"The compiler weighs every type. Rigor, Watson, is never quick.",
+					"Garbage collection pauses. Even memory wants its own repose."
+				],
+				"fail": [
+					"An exception, stack and all. The trail is verbose, but plain.",
+					"The compiler objects to a type. A pedant, but rarely wrong.",
+					"NullPointerException. The absence itself is the clue."
+				]
+			},
+			"go": {
+				"slow": [
+					"The compiler works its goroutines. Concurrency takes its hour.",
+					"The build assembles quietly. Simplicity is never rushed.",
+					"A channel waits to be read. Even gophers know patience."
+				],
+				"fail": [
+					"The build failed. A nil pointer, plainly named, plainly found.",
+					"The compiler refuses an unused import. Tidy, if unforgiving.",
+					"A panic, and a trace beneath it. The cause sits in plain sight."
+				]
+			},
+			"node": {
+				"slow": [
+					"The event loop turns unhurried. Every callback awaits its cue.",
+					"npm gathers its dependencies slowly. A thorough count takes time.",
+					"The runtime idles between ticks, alert for the next call."
+				],
+				"fail": [
+					"An unhandled rejection. The promise broke its word; we ask why.",
+					"The module could not resolve. A missing thread in the chain.",
+					"Node threw mid-loop. The stack trace points where to look first."
+				]
+			},
+			"dotnet": {
+				"slow": [
+					"The runtime compiles at leisure. Deliberation has its own worth.",
+					"MSBuild assembles its solution carefully. No shortcut taken.",
+					"The garbage collector makes its rounds. Order takes a moment."
+				],
+				"fail": [
+					"An unhandled exception, fully typed. The evidence is thorough.",
+					"The build failed on a reference. A missing link, soon restored.",
+					"A null reference. Something promised and never delivered."
+				]
+			},
+			"cpp": {
+				"slow": [
+					"The compiler labors over templates. Even genius takes its hour.",
+					"Linking proceeds slowly. Every symbol must find its match.",
+					"Optimization passes grind on. Precision never hurries."
+				],
+				"fail": [
+					"A segfault, unadorned. Somewhere, memory kept no manners.",
+					"The linker could not resolve a symbol. A ghost, soon named.",
+					"Undefined behavior, and therefore instructive. Chase it down."
+				]
+			},
+			"php": {
+				"slow": [
+					"The interpreter works through its includes. No cause for alarm.",
+					"Composer resolves its packages slowly. A ledger, thoroughly kept.",
+					"The request lingers in its own machinery. We simply wait."
+				],
+				"fail": [
+					"A fatal error, plainly stated. PHP rarely hides its verdicts.",
+					"An undefined variable. A name invoked, never once introduced.",
+					"The script failed mid-request. A single flawed premise, found."
+				]
+			},
+			"rust": {
+				"slow": [
+					"The borrow-checker deliberates. Rigor, Watson, is never swift.",
+					"The compiler works through its lifetimes. Precision earns time.",
+					"Cargo builds each crate in turn. A methodical procession."
+				],
+				"fail": [
+					"The borrow-checker plays Lestrade: officious, and usually right.",
+					"A panic, unwound cleanly. Even failure here keeps its manners.",
+					"The compiler refused the code outright. Its objection is sound."
+				]
+			},
+			"kubernetes": {
+				"slow": [
+					"The cluster reconciles slowly. Order, even here, takes its hour.",
+					"Pods schedule at their own pace. Coordination resists all haste.",
+					"The control loop turns unhurried. Patience is its native mode."
+				],
+				"fail": [
+					"A pod crash-looped. The logs confess before we even ask.",
+					"The scheduler could not place it. A constraint, plainly stated.",
+					"The deployment stalled. Somewhere, a single misconfigured clue."
+				]
+			},
+			"ml": {
+				"slow": [
+					"The model trains through its epochs. Even genius needs repetition.",
+					"Gradients descend slowly. Data, Watson. It simply takes time.",
+					"The dataset loads at its leisure. A vast archive, patiently read."
+				],
+				"fail": [
+					"The training run diverged. A singular fault, and instructive.",
+					"A shape mismatch, precisely named. The tensors disagree; find why.",
+					"The model failed to converge. Simply more data to gather yet."
+				]
+			},
+			"android": {
+				"slow": [
+					"The gradle daemon takes its hour. I have waited on worse.",
+					"The emulator boots at its own pace. I shall not hurry it.",
+					"Dex merging drags. A tedious case, but never an unsolvable one."
+				],
+				"fail": [
+					"The manifest contradicts itself. A cause exists; I shall find it.",
+					"Logcat spills its data. Somewhere in the scroll, the truth.",
+					"A crash, a stack trace, a clue. The case merely opens wider."
+				]
+			},
+			"ruby": {
+				"slow": [
+					"The gems assemble slowly. I have waited longer for less.",
+					"Bundler consults its ledger, name by name, in no great hurry.",
+					"The interpreter takes its time. Haste is the amateur's error."
+				],
+				"fail": [
+					"A NoMethodError. The object simply lacks what was asked of it.",
+					"The spec fails cleanly. A single thread, and we pull it.",
+					"Ruby raises its exception plainly. I prefer a witness who talks."
+				]
+			},
+			"ios": {
+				"slow": [
+					"Xcode indexes at its own tempo. The fog lifts eventually.",
+					"The simulator wakes slowly. Even London took its time to thaw.",
+					"Archiving grinds on. A three-pipe wait, no more."
+				],
+				"fail": [
+					"The build fails on a provisioning trifle. Trifles matter most.",
+					"A signing certificate withholds its trust. We shall earn it back.",
+					"Swift's compiler objects on principle. I respect a fussy witness."
+				]
+			},
+			"terraform": {
+				"slow": [
+					"The plan enumerates the whole world before it will commit.",
+					"State locks and waits. Some doors open only when ready.",
+					"Apply proceeds resource by resource. No case rushes to its end."
+				],
+				"fail": [
+					"The state drifts from the plan. A discrepancy, my favorite kind.",
+					"A provider refuses the change. Its reasons are data, not defiance.",
+					"The apply halts mid-stride. We resume where the evidence stopped."
+				]
+			},
+			"graphql": {
+				"slow": [
+					"The resolver chain unwinds at leisure. I shall not press it.",
+					"The schema stitches slowly. Even cross-indexing took me years.",
+					"A deep query takes its time descending. Depth is no crime."
+				],
+				"fail": [
+					"The query returns an error alongside its data. Both instruct.",
+					"A type mismatch, plainly stated. The schema does not lie to us.",
+					"The resolver throws. Somewhere a field withheld its answer."
+				]
+			},
+			"flutter": {
+				"slow": [
+					"The widget tree rebuilds at its own pace. Patience, always.",
+					"Hot reload takes its breath before answering. Let it settle.",
+					"The build runner churns through its ledger. No cause for alarm."
+				],
+				"fail": [
+					"A red screen of exceptions, vivid but honest testimony.",
+					"The widget throws mid-render. The tree tells us where it broke.",
+					"Dart's analyzer objects with precision. A fastidious witness."
+				]
+			},
+			"react-native": {
+				"slow": [
+					"Metro gathers every module before it will answer. So be it.",
+					"The native module links slowly. Bridges are built, not rushed.",
+					"The simulator warms up in its own time. I have waited longer."
+				],
+				"fail": [
+					"The bridge throws a red exception. Honest, if unwelcome, news.",
+					"A native module refuses to link. Somewhere, a mismatched clue.",
+					"Metro's bundler halts mid-count. We resume the tally shortly."
+				]
+			},
+			"scala": {
+				"slow": [
+					"The compiler reasons through its types at length. Let it think.",
+					"SBT resolves its dependencies with due deliberation. No hurry.",
+					"Implicit resolution searches the whole scope. A thorough search."
+				],
+				"fail": [
+					"The type checker refuses the match. A precise sort of objection.",
+					"An exhaustiveness warning. The compiler notes what we missed.",
+					"The build fails on a variance error. Small print, large stakes."
+				]
+			},
+			"protobuf": {
+				"slow": [
+					"The compiler walks each message, field by field. None skipped.",
+					"Codegen proceeds message by message. No case hurries its clerk.",
+					"The schema compiles by degrees. Exactness is worth the wait."
+				],
+				"fail": [
+					"A field number collides with its neighbor. The schema objects.",
+					"The wire format rejects a mismatch. Somewhere, a stale definition.",
+					"Codegen halts on an unresolved import. A missing link, no more."
+				]
+			},
+			"game": {
+				"slow": [
+					"The engine compiles its shaders. The light will settle in time.",
+					"Assets bake slowly into their final form. Good work resists hurry.",
+					"The build churns through every texture. A patient sort of vigil."
+				],
+				"fail": [
+					"A null reference, mid-frame. The engine points to the empty slot.",
+					"The shader refuses to compile. Somewhere, a syntax gone astray.",
+					"A crash on load, and the log names the missing asset at once."
+				]
+			},
+			"docs": {
+				"slow": [
+					"The site builds page by page, slow and thorough.",
+					"The generator indexes every entry at a measured pace.",
+					"Static pages assemble slowly. Even monographs take their time."
+				],
+				"fail": [
+					"A broken link, plainly named. The index simply wants correcting.",
+					"The build halts on a malformed heading. A trifle, and telling.",
+					"The generator refuses an orphan page. Somewhere, a missing entry."
+				]
+			},
+			"r": {
+				"slow": [
+					"The script works through its frame at length. Data takes its time.",
+					"The package library loads slowly. I have waited for slower minds.",
+					"The model fits by degrees. No conclusion arrives before its data."
+				],
+				"fail": [
+					"The script halts on a coercion error. The data reveals its type.",
+					"A missing package, plainly named. The library simply awaits it.",
+					"The vector recycles wrongly, and says so. An honest sort of fault."
+				]
+			},
+			"cuda": {
+				"slow": [
+					"The kernel compiles at length. Even fast engines warm slowly.",
+					"The device queues its work in order. No thread jumps the line.",
+					"Memory transfers at their own pace. Speed and thoroughness differ."
+				],
+				"fail": [
+					"An out-of-memory fault. The device has reached its ceiling.",
+					"The kernel launch fails silently, then explains itself in the log.",
+					"A misaligned access. The driver names it outright. Sound evidence."
+				]
+			}
+		},
+		"pressure": {
+			"compact_hint": [
+				"The commonplace book overfills. I retain only what signifies.",
+				"Too much clutters the index now. I am pruning to the essential.",
+				"The desk crowds with trifles. I file only what will matter later."
+			],
+			"block_limit": [
+				"The hour grows late in this sitting. I husband my faculties.",
+				"Five hours is a fair watch. I spend the last of it with care.",
+				"Even a sharp mind rations itself before the candle gutters."
+			],
+			"weekly_limit": [
+				"A long week of cases. I portion out what strength remains.",
+				"The week's ledger runs high. I proceed with measured economy.",
+				"Even my faculties are finite this week. I deploy them with care."
+			]
+		},
+		"dateEgg": [
+			"The clock strikes an hour I find suspiciously exact.",
+			"Midnight again. My mind is at its clearest in the dark.",
+			"The calendar turns. Even coincidence, examined, tells a story.",
+			"A late hour to be about. We share the habit, it seems.",
+			"The date recurs each year. I note the pattern; I say nothing more.",
+			"Fog would suit this hour in London. Here, only the hour itself.",
+			"The year advances by one. My methods do not need revision.",
+			"Dawn, still at work. Boredom, at least, is not the enemy today.",
+			"A new week opens its ledger. Singularly unremarkable, so far.",
+			"The season turns. Even the slowest observer marks the change."
+		]
+	},
+	"spinnerVerbs": [
+		"Deducing",
+		"Observing",
+		"Cross-indexing",
+		"Eliminating",
+		"Perceiving",
+		"Investigating",
+		"Reasoning",
+		"Examining",
+		"Inferring",
+		"Detecting",
+		"Scrutinising",
+		"Analysing",
+		"Discerning",
+		"Unravelling",
+		"Interrogating",
+		"Sifting the clues",
+		"Reading the evidence",
+		"Following the thread",
+		"Running it down",
+		"Piecing it together",
+		"Consulting the index",
+		"Weighing the data",
+		"Tracing the pattern",
+		"Cornering the culprit",
+		"Surveying the scene",
+		"Concluding"
+	]
+}

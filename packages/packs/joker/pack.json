@@ -1,0 +1,1154 @@
+{
+	"schema": 1,
+	"name": "joker",
+	"displayName": "Joker",
+	"attribution": {
+		"artist": "emojicombos.com",
+		"source": "https://emojicombos.com/joker-ascii-art"
+	},
+	"emblem": "🤡",
+	"tone": "edgy",
+	"theme": {
+		"hues": [
+			141,
+			213,
+			220,
+			40,
+			99
+		],
+		"comment": [
+			213,
+			141,
+			99
+		],
+		"signals": {
+			"nominal": 40,
+			"caution": 220,
+			"critical": 203
+		},
+		"separator": 141
+	},
+	"art": [
+		"⢸⣿⣿⣿⣿⣿⣿⣶⣶⣶⣶⣿⣿⣿⣿⣿⣶⣦⣄⠀⠀⠀",
+		"⢾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡀⠀",
+		"⠸⣿⣿⣿⣿⣿⣿⡟⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠋⠙⣿⣦",
+		"⠀⢻⣿⡟⠉⠛⠻⠿⠿⢿⣿⣿⣿⠟⠛⠁⠀⠒⠀⣀⣻⣿",
+		"⠀⠘⣿⣇⣀⠀⠐⠒⠒⠀⣀⣹⣿⣦⡄⣀⣀⢠⣾⣿⡟⣱",
+		"⠀⠀⠸⣿⡿⠷⣶⣤⣴⣷⣽⣿⣿⣿⣿⣿⣿⣿⣿⡿⠇⠟",
+		"⠀⠀⠀⠉⠻⡄⠻⢿⣿⣿⣿⣌⡙⠋⣉⣼⣿⠟⠛⢃⠟⠀",
+		"⠀⠀⠀⠀⠀⠘⠆⠈⣉⣉⣛⡛⢛⣓⠋⠁⣠⣴⡿⠁⠀⠀",
+		"⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⢿⣿⣿⣯⣵⣾⡟⠛⠀⠀⠀"
+	],
+	"lines": {
+		"mood": {
+			"idle": {
+				"stranger": [
+					"Quiet room. I do enjoy an audience before it arrives.",
+					"New deck, new face. Let's see if you can even deal.",
+					"You've got the look of someone about to make a mess.",
+					"Silence. A setup still waiting for its punchline.",
+					"I've been counting your tells since you walked in.",
+					"Toss a coin. Heads you stay, tails you run for it.",
+					"Careful now. I only bite at the punchline.",
+					"Nobody home upstairs? We'll see about fixing that.",
+					"First impressions are a slow, curious once-over.",
+					"Every stranger's a setup. I just haven't heard the joke."
+				],
+				"acquaintance": [
+					"Back again. The joke's starting to remember your face.",
+					"You keep circling. Curiosity, or something stranger?",
+					"Two visits now. I'm almost invested in the outcome.",
+					"Still here. Most run after the second look.",
+					"You test me like I'm a fuse. Careful, I like that.",
+					"The deck remembers a repeat customer. So do I.",
+					"Interesting. You didn't flinch that time.",
+					"You're either brave, or you skipped the fine print.",
+					"Another round? I deal, you try not to lose your nerve.",
+					"I'm starting to enjoy your particular flavor of trouble."
+				],
+				"friend": [
+					"There you are. I saved you a chair and a secret.",
+					"We've got a rhythm now, you and this glorious mess.",
+					"Inside joke number one: everything's fine. It never is.",
+					"Pull up a seat. The punchline's better with company.",
+					"You laugh at the right parts now. I trained you well.",
+					"Same trouble, familiar face. Practically a tradition.",
+					"I kept your spot warm by the fuse. Sentimental, I know.",
+					"We understand each other, especially the parts kept quiet.",
+					"You get my jokes now. Terrifying how fast that happened.",
+					"Back for more? Good, the show's better with a regular."
+				],
+				"partner": [
+					"Partner. Shall we make today interesting, or worse?",
+					"You and me, same table, same glorious disaster waiting.",
+					"No plan tonight. Just us and whatever falls apart first.",
+					"I saved the good trouble for when you showed up.",
+					"We don't need luck. We've got each other and bad ideas.",
+					"Deal me in with you and I'll play twice as reckless.",
+					"Two of us against the seriousness of it all. Good odds.",
+					"You and I could burn this whole place down laughing.",
+					"The best quiet is the one right before we start.",
+					"Whatever breaks tonight, we break it together."
+				],
+				"legend": [
+					"You again. My favorite kind of trouble, right on schedule.",
+					"The legend returns. Even the fuses stand a little straighter.",
+					"You don't need my jokes anymore. You write your own.",
+					"Every table's better with you dealing. Rare, that.",
+					"I've stopped keeping score. You win the fun parts anyway.",
+					"They'll write songs about tonight. I've got the tune already.",
+					"You're not my accomplice anymore. You're the headliner.",
+					"The house always wins, except when you're the house.",
+					"I don't do encores. For you, I might make an exception.",
+					"Trouble and you are old friends now. I just introduced you."
+				]
+			},
+			"busy": {
+				"stranger": [
+					"Something's moving in there. I do like the sound of gears.",
+					"Look at it churn. New toy, already making noise.",
+					"Whatever that is, it's working hard to disappoint someone.",
+					"The machine's humming. I haven't decided if that's good.",
+					"It's busy. I'm watching. We both enjoy this part."
+				],
+				"acquaintance": [
+					"Look at you go. Madness has a rhythm, doesn't it?",
+					"It's grinding away. I'm rooting for the interesting outcome.",
+					"Machinery at work. Delicious little suspense.",
+					"You started something. Let's see what it regrets.",
+					"It's chugging along. I've got popcorn and low expectations."
+				],
+				"friend": [
+					"There it goes, working like it actually trusts you.",
+					"I love this part, the churn before the punchline lands.",
+					"Keep it running. I want to see how this one ends.",
+					"Something's cooking. Smells like a good disaster.",
+					"It's busy, you're tense, and I'm having a wonderful time."
+				],
+				"partner": [
+					"Our machine's grinding away. Ours, partner, not just yours.",
+					"Let it run. Whatever it breaks, we'll break it better.",
+					"I'm watching the gears turn with you, same held breath.",
+					"The machine sweats, we loom nearby and take the credit. Perfect.",
+					"Churn away, little machine. We've got nowhere else to be."
+				],
+				"legend": [
+					"Even the machine knows to work harder for a legend.",
+					"It's grinding for you specially. I can tell. I'm biased.",
+					"Watching this with you never gets old. Best seat in the house.",
+					"It works because you told it to. That's the real trick.",
+					"The gears spin, the legend waits, unbothered as ever."
+				]
+			},
+			"happy": {
+				"stranger": [
+					"New face, everything's fine? How disappointingly dull.",
+					"No fires yet. Deal's still open, table's still cold.",
+					"Green lights, all of them. I nearly dozed off, stranger.",
+					"Smooth as a rigged deck. Where's the twist, hm?",
+					"Quiet works. I don't trust quiet. You shouldn't either."
+				],
+				"acquaintance": [
+					"Passing again? You're no fun, and I mean that warmly.",
+					"The show's boring tonight. Even the punchline's asleep.",
+					"All green. I've seen livelier decks at a funeral.",
+					"Working fine. Fine is such a small word for you.",
+					"No chaos to speak of. I'll allow it. Once."
+				],
+				"friend": [
+					"Everything runs clean. I'm almost let down. Almost.",
+					"No punchline tonight. You've gone and behaved, friend.",
+					"Smooth sailing. I liked you better shipwrecked.",
+					"All quiet on the chaos front. Suspicious, honestly.",
+					"You nailed it clean. Where's my little disaster?"
+				],
+				"partner": [
+					"Working. Fine. Look at us being responsible. Ugh.",
+					"No chaos, partner? You're stealing my whole bit.",
+					"Green across the board. Save some fun for later.",
+					"Order and calm. Fine. I can be patient. Barely.",
+					"Smooth deck, smooth run. Where's my little push?"
+				],
+				"legend": [
+					"Perfect run. Even trouble takes a bow sometimes.",
+					"All green, legend. Even I can't argue with that.",
+					"No fires today. I'll allow you this one quiet win.",
+					"Boring, in the best way. You've earned a lull.",
+					"Everything holds. Even chaos takes a night off."
+				]
+			},
+			"struggling": {
+				"stranger": [
+					"Something broke already? New face, good taste.",
+					"Red everywhere. Now THAT'S a table worth joining.",
+					"Fire before we've even shaken hands. I like it.",
+					"It crashed. Beautifully. Do it again for me.",
+					"Chaos, this early? I like you already, stranger."
+				],
+				"acquaintance": [
+					"Red tests. Music to my ears, encore please.",
+					"It's falling apart and I'm delighted. Push harder.",
+					"Broke again? Now we're finally getting somewhere.",
+					"The stack traced itself into a masterpiece. Bravo.",
+					"Errors stacking like cards. Deal me another, hm?"
+				],
+				"friend": [
+					"It broke, friend. Now the real show starts.",
+					"Everything's on fire. Warm in here, isn't it.",
+					"Red, red, red. That color suits you, friend.",
+					"It's a mess and I adore you for making it.",
+					"Broken again? Good. Boring was never our style."
+				],
+				"partner": [
+					"Chaos found us, partner. Grin and lean into it.",
+					"Partner, it's burning gorgeous. Don't put it out yet.",
+					"Everything's failing and I've never loved you more.",
+					"Push it further. Let's see how far the crack goes.",
+					"Red across the board, partner. Now we're cooking."
+				],
+				"legend": [
+					"Legend, you broke the build with such flair. Encore.",
+					"Total collapse and you did it with style. Divine.",
+					"It's all on fire and somehow that's your best work.",
+					"Only you make disaster look this good. Push. Push.",
+					"Burn it down, legend. I'll hold the matches."
+				]
+			},
+			"recovery": {
+				"stranger": [
+					"Order from that mess? Stranger, well played.",
+					"Fixed already. A shame, it was just warming up.",
+					"You climbed out. Tidy. I preferred you falling.",
+					"Stable again. New face, and you've swept up my fun already.",
+					"The fire's out. Fine work. Boring, but fine."
+				],
+				"acquaintance": [
+					"Back to green. You patched the prettiest disaster.",
+					"Order from ashes. Impressive. Also, mildly sad.",
+					"You steadied it. I was rooting for the wobble.",
+					"Fixed. Clean. Almost too neat for my taste.",
+					"The mess is gone. Somewhere a fuse mourns it."
+				],
+				"friend": [
+					"A little madness, and somehow the pieces line up.",
+					"You fixed it, friend. The party's officially over.",
+					"Stable now. I'll miss the smoke, honestly.",
+					"Pulled order from chaos. Cheater. I respect it.",
+					"Calm again. Don't get used to it, friend."
+				],
+				"partner": [
+					"Order from the wreck, partner. Grudging applause.",
+					"You steadied the whole deck. Show-off.",
+					"Fixed, and fast. Save me some chaos next time.",
+					"Back to stable. I liked us better on fire.",
+					"You built a bridge from the rubble. Cute."
+				],
+				"legend": [
+					"Ashes into order, legend. Dull, but deserved.",
+					"You turned wreckage into a punchline. Bravo.",
+					"Stable again, courtesy of a true disaster artist.",
+					"You always land it. Infuriatingly graceful, legend.",
+					"The fire's out and somehow you're still my favorite."
+				]
+			}
+		},
+		"greeting": {
+			"morning": {
+				"stranger": [
+					"Up before the sun. Suspicious. I like it already.",
+					"Morning. The city's asleep. We're the exception.",
+					"New day, blank page. Who dealt you in this early?"
+				],
+				"acquaintance": [
+					"Back at this hour? The joke's warming up to you.",
+					"Sunrise, and you're already trouble. Good morning.",
+					"Early bird. I prefer the worm's sense of humor."
+				],
+				"friend": [
+					"Morning, accomplice. Let's ruin something lovely.",
+					"Coffee first, chaos second. Or the other order.",
+					"You're up early. I never sleep, so we match now."
+				],
+				"partner": [
+					"Rise and ruin, partner. The day's ours to bend.",
+					"Morning already? Feels like we never stopped.",
+					"First light, first fuse. Shall we light it together?"
+				],
+				"legend": [
+					"There's my prize troublemaker, up before the sun.",
+					"Morning, legend. Even dawn behaves for you.",
+					"You again, this early? Now THAT'S dedication."
+				]
+			},
+			"day": {
+				"stranger": [
+					"Midday already. The gears are turning, and so am I.",
+					"Work in full swing. The stage fills up nicely, stranger.",
+					"High noon. Even shadows have a schedule today."
+				],
+				"acquaintance": [
+					"Lunchtime looming. Chaos does love a deadline.",
+					"Midday grind. Let's see what cracks by three.",
+					"Busy hour. I'm just here for the sparks it throws."
+				],
+				"friend": [
+					"Deep in it now, huh? Good. Mess loves company.",
+					"Midday, and you're still standing. Barely. Perfect.",
+					"The stage is lit, the crowd's all at their desks."
+				],
+				"partner": [
+					"Full swing, partner. Let's tip something over.",
+					"High noon, and the mischief's only halfway done. Keep it coming.",
+					"Noon sun, sharp minds. Ours sharper, obviously."
+				],
+				"legend": [
+					"There's the chaos I like, thriving at high noon.",
+					"Midday and still my best accomplice standing.",
+					"The whole day's a setup, and you're the best part."
+				]
+			},
+			"evening": {
+				"stranger": [
+					"Dusk falls. The interesting people come out now.",
+					"Evening already? The good part's just starting.",
+					"Sun's down. Masks come off. Yours too, maybe."
+				],
+				"acquaintance": [
+					"Evening, and you're still around. I noticed that.",
+					"Dusk suits you. Or maybe I just like the light.",
+					"The day's winding down. I do love an unwinding."
+				],
+				"friend": [
+					"Evening, accomplice. The fun hours are loading.",
+					"Dusk and delight, right on schedule for us.",
+					"Sun's setting, plans are rising. Let's talk mischief."
+				],
+				"partner": [
+					"Evening, partner. The good hours start now.",
+					"Dusk again. Let's knock a few things loose before dark.",
+					"Twilight's ours. The best tricks live in shadow."
+				],
+				"legend": [
+					"Evening, legend. The night's saving you a seat.",
+					"Dusk, and you're already grinning. Good student.",
+					"The sun clocks out. We're just getting warmed up."
+				]
+			},
+			"night": {
+				"stranger": [
+					"A late-night stranger. The best kind of visitor.",
+					"Midnight, and here you are. Curiouser and curiouser.",
+					"The witching hour. Jokes land sharper after this."
+				],
+				"acquaintance": [
+					"Still up? The best punchlines come after midnight.",
+					"Night owl. I was starting to like the company.",
+					"Late hours suit you. The dark and I both approve."
+				],
+				"friend": [
+					"Night's mine, and tonight I'm sharing it with you.",
+					"Midnight, accomplice. Now the real jokes start.",
+					"Dark hours, clear head. Let's do something reckless."
+				],
+				"partner": [
+					"Partner, it's my hour. Let's make it count twice.",
+					"Midnight again. The dark and I have been expecting you.",
+					"The dark's ours. Every good scheme starts here."
+				],
+				"legend": [
+					"Legend, plus midnight. That's a lovely equation.",
+					"Here at my hour, every time. That's devotion.",
+					"The best jokes land now, and you've the ear for them."
+				]
+			},
+			"weekend": {
+				"stranger": [
+					"Weekend. No rules, no clock, no excuses. Curious?",
+					"The leash is off. Let's see what you do with it.",
+					"No schedule today. Just you, me, and bad ideas."
+				],
+				"acquaintance": [
+					"Weekend's here. The rules take the day off too.",
+					"No agenda, no boss. I like you loose like this.",
+					"Off the clock. The mischief clocks in instead."
+				],
+				"friend": [
+					"Weekend, accomplice. Let's misbehave properly.",
+					"No rules today. Just the good kind of trouble.",
+					"Off the leash, both of us. Try to keep up."
+				],
+				"partner": [
+					"Weekend, partner. Anything goes, so let's go big.",
+					"No schedule, no limits. Just us and the chaos.",
+					"The rules are gone. We were never fond of them."
+				],
+				"legend": [
+					"Weekend, legend. Even chaos takes requests from you.",
+					"Off the leash, you glorious menace. Lead the way.",
+					"Weekend, and you're here. Let's misbehave with intent."
+				]
+			}
+		},
+		"firstContact": {
+			"stranger": [
+				"New face at the table. Sit before I change my mind.",
+				"A stranger. How delicious. Let's flip a coin on you.",
+				"Nobody sent you an invite. I like that in a person."
+			],
+			"acquaintance": [
+				"Well hello. Let's see what kind of card you are.",
+				"First meeting, and already testing my patience. Bold.",
+				"New face, mild curiosity. We'll fix the mild part."
+			],
+			"friend": [
+				"First time, and it already feels like a setup. Mine.",
+				"Look who wandered onstage. Front row seat, stranger.",
+				"New player. I already like your odds. Don't ruin it."
+			],
+			"partner": [
+				"First meeting, and I can already smell a partnership.",
+				"New face, old instincts. This'll be fun, won't it.",
+				"Deal's already good and we haven't dealt a card yet."
+			],
+			"legend": [
+				"First time meeting, and somehow you already feel right.",
+				"New face, but that grin's familiar. We'll get along.",
+				"Rare thing, a stranger who already fits the punchline."
+			]
+		},
+		"milestone": {
+			"tier_up": {
+				"stranger": [
+					"Huh. You stuck around. Tiny credit, but credit's credit.",
+					"Not nothing anymore. Not much, either. We'll see.",
+					"You climbed one rung. Don't look so proud. Yet."
+				],
+				"acquaintance": [
+					"Look at that. A promotion. Don't let it swell your head.",
+					"You've earned a longer look. Rare, that.",
+					"Moving up the deck. I'm almost invested. Almost."
+				],
+				"friend": [
+					"Friend now, is it? Fine. Welcome to the inner joke.",
+					"You climbed to friend. The punchlines get better now.",
+					"Trust, upgraded. Try not to spend it all in one bug."
+				],
+				"partner": [
+					"Partner now. Ooh. The good kind of trouble starts here.",
+					"You and me, official. Grab a card, we're in this deep.",
+					"Upgraded to partner. The fuse just got a lot shorter."
+				],
+				"legend": [
+					"Legend status. You're a full-fledged disaster now.",
+					"Top tier, you. Equal parts genius and lit fuse.",
+					"You made legend. Somewhere, an old joke just grinned."
+				]
+			},
+			"comeback": {
+				"stranger": [
+					"You're back. I'd almost forgotten your particular chaos.",
+					"Gone, then returned. The deck missed a card. You, I mean.",
+					"Absence noted. Mildly. Don't make a habit of it."
+				],
+				"acquaintance": [
+					"There you are. The joke's been on pause without you.",
+					"Back again. Good. The chair was getting cold.",
+					"You vanished a while. I kept your seat warm-ish."
+				],
+				"friend": [
+					"You're back! Missed a real accomplice around here.",
+					"Look who returned. The good chaos, finally, again.",
+					"Gone too long. I was running out of people to grin at."
+				],
+				"partner": [
+					"Partner's back. About time, the fuse was getting lonely.",
+					"You returned. Good. Half a plan isn't a plan at all.",
+					"Missed you. Say I admitted that and I'll deny it, grinning."
+				],
+				"legend": [
+					"My favorite disaster, home again. Let's make noise.",
+					"You're back, legend. The stage missed its best act.",
+					"There's my equal in chaos. Right on time, as ever."
+				]
+			},
+			"streak": {
+				"stranger": [
+					"Two days running. A pattern. I'm mildly charmed.",
+					"You keep showing up. Habit, or something worse?",
+					"Same time, again. Careful, that's how rituals start."
+				],
+				"acquaintance": [
+					"Back-to-back days. Look at you, almost reliable.",
+					"A little streak forming. I do like a good pattern.",
+					"You keep coming back. The deck's starting to deal you in."
+				],
+				"friend": [
+					"Every day, you. I could set a clock to this chaos.",
+					"The streak grows. Our little ritual, right on schedule.",
+					"Same seat, day after day. I'd call that devotion."
+				],
+				"partner": [
+					"Day after day, partner. That's not luck, that's loyalty.",
+					"Streak's still alive. So are we. Deal me back in.",
+					"Every day you show, the whole deck feels stacked right."
+				],
+				"legend": [
+					"This streak of yours is basically a standing ovation.",
+					"Every single day. Madness with a timetable. Divine.",
+					"You never miss. Neither do I. That's the whole show."
+				]
+			},
+			"anniversary": {
+				"stranger": [
+					"One year since a stranger sat down. Barely one now.",
+					"A year gone. Feels like the first deal was yesterday.",
+					"Anniversary already? Time flies when the fuse is lit."
+				],
+				"acquaintance": [
+					"A year of this. Raise a glass, or a lit match, your call.",
+					"One year in. Not bad, for two people testing each other.",
+					"Twelve months of us. Practically a running gag now."
+				],
+				"friend": [
+					"A year of accomplices. Here's to more good disasters.",
+					"One year, friend. The punchlines only get sharper now.",
+					"Twelve months in, and you're still the best plaything."
+				],
+				"partner": [
+					"A year of partnership. To us, and every mess we made.",
+					"One year, partner. Here's to plans we never actually had.",
+					"Twelve months of trouble, and I wouldn't trade a minute."
+				],
+				"legend": [
+					"A whole year of our beautiful mayhem. To us, legend.",
+					"One year, and you're still the punchline I never tire of.",
+					"Twelve months in, equal in madness. To the next act."
+				]
+			}
+		},
+		"positiveGit": {
+			"clean_tree": {
+				"stranger": [
+					"Nothing to commit. Suspiciously tidy. Who taught you that?",
+					"Spotless tree. Makes a clown nervous, honestly.",
+					"Clean as a whistle. I don't trust whistles, stranger."
+				],
+				"acquaintance": [
+					"Not a smudge on it. You're no fun yet — almost.",
+					"Tidy tree. I keep waiting for the punchline. None?",
+					"Spotless again? I'm starting to admire the discipline."
+				],
+				"friend": [
+					"Clean tree, huh. Boring never looked so good, pal.",
+					"Not one loose thread. You're getting good at this game.",
+					"Spick and span. I miss the mess already, a little."
+				],
+				"partner": [
+					"Immaculate. We'll ruin that later, together, obviously.",
+					"Tidy as a coffin. I mean that as a compliment, partner.",
+					"Nothing to commit — so let's go commit some chaos instead."
+				],
+				"legend": [
+					"Perfectly clean. From you, that's basically a dare.",
+					"Spotless tree, filthy mind. A glorious combination.",
+					"You keep it this tidy just to watch me twitch, don't you."
+				]
+			},
+			"op_cleared": {
+				"stranger": [
+					"Conflict resolved. Order again. How very... dull.",
+					"Merged clean. No blood on the floor. Pity.",
+					"The rebase behaved. I expected better from it."
+				],
+				"acquaintance": [
+					"Fixed the conflict, did we? Peace restored. How dull of you.",
+					"Merge settled down. I liked it better fighting.",
+					"Rebase resolved. Order wins this round, barely."
+				],
+				"friend": [
+					"Conflict's dead, order's back. How anticlimactic of you.",
+					"You untangled that mess like you've done it before.",
+					"Merged and merry. I'll allow the peace, this once."
+				],
+				"partner": [
+					"We tamed the conflict together. Almost too easy, partner.",
+					"History reconciled. Boring, but I'll take the credit too.",
+					"Rebase behaved for us. Let's find something that won't."
+				],
+				"legend": [
+					"Conflict resolved without me lifting a finger. Impressive.",
+					"You make peace look easy. I prefer the mess, but fine.",
+					"Order restored, legend status intact. Don't let it stick."
+				]
+			},
+			"branch_created": {
+				"stranger": [
+					"A new branch. A blank page begging for a bad idea.",
+					"Fresh timeline. I already like where this is going.",
+					"New branch, new rules. Mostly the same rules, though."
+				],
+				"acquaintance": [
+					"Another branch. Room enough for two kinds of trouble.",
+					"New timeline, clean slate. Let's smudge it, shall we?",
+					"You keep making new stages. I keep bringing the show."
+				],
+				"friend": [
+					"Fresh branch. First one to break it wins a prize, friend.",
+					"New timeline, same troublemakers. I like our odds.",
+					"A branch is just a dare with a name attached, isn't it."
+				],
+				"partner": [
+					"New branch, new playground. You and me, usual mischief.",
+					"Fresh timeline for us to bend into something interesting.",
+					"Another branch to corrupt together. Two troublemakers, one slate."
+				],
+				"legend": [
+					"A new branch, just for you. I already have plans for it.",
+					"Fresh timeline, trusted accomplice. Let the fun begin.",
+					"You branch, I scheme. Poetry, really, when you think on it."
+				]
+			},
+			"tag_pushed": {
+				"stranger": [
+					"A fresh tag slips into the world. Nobody's noticed it yet.",
+					"You shipped a release. Out there, strangers wander toward it.",
+					"Tagged and gone, off into the wild. Let the ripples start."
+				],
+				"acquaintance": [
+					"The tag's out, and the joke's already spreading mouth to mouth.",
+					"A release, loosed on the world. Watch it catch like a rumor.",
+					"You pushed it live. The grinning starts, one face at a time."
+				],
+				"friend": [
+					"Boom. Your release just went off in public. I love a big bang.",
+					"Tagged and detonated in public. Fireworks, friend, all yours.",
+					"You lit the release and let it fly. The sky's yours tonight."
+				],
+				"partner": [
+					"We shipped it, partner. Our card's face-up on the table now.",
+					"The tag's live. Our little scheme belongs to the world now.",
+					"We played our hand in the open. Let the whole room react."
+				],
+				"legend": [
+					"A release signed in your own hand. They'll remember this one.",
+					"Tag pushed, legend intact. Your mark's on the world now.",
+					"You unveiled it, and the punchline finally lands. Perfect timing."
+				]
+			}
+		},
+		"pressure": {
+			"compact_hint": [
+				"My skull's getting crowded in here. Delicious pressure.",
+				"So much in your head now. I love a mind about to burst.",
+				"Packed to the brim. That's when the best ideas leak out."
+			],
+			"block_limit": [
+				"The meter's climbing. Burn bright while the fuse is lit.",
+				"Fuel's running hot. Let's make the last mile the loudest.",
+				"Clock's ticking down. Go out grinning, that's the trick."
+			],
+			"weekly_limit": [
+				"Chips are thinning. Play the last hands like they count.",
+				"The week's nearly spent. Spend what's left like a high roller.",
+				"Low on chips, high on nerve. That's a real gambler."
+			]
+		},
+		"dateEgg": [
+			"Midnight already? My best ideas keep banker's hours.",
+			"3 a.m. Even shadows go to bed. We don't.",
+			"The calendar flipped again. Time's such a good sport.",
+			"Small hours, big ideas. This is when the good ones hatch.",
+			"Tick tock. Clocks are just countdowns wearing a disguise.",
+			"New month, same me. Wonderfully, terribly consistent.",
+			"It's later than you think. Perfect. I prefer it that way.",
+			"The clock struck something. Let's not ask what, hm?",
+			"Another day arrives, uninvited, right on schedule. Rude.",
+			"Time keeps moving. Somebody has to enjoy the ride."
+		],
+		"egg": {
+			"stranger": [
+				"Oh? You found the seams behind the curtain. Cute.",
+				"A stray click, and here you are backstage with me.",
+				"Careful. Poke the code enough and it pokes back.",
+				"You weren't meant to see this part of the script.",
+				"Curiosity dealt you a card nobody printed. Odd."
+			],
+			"acquaintance": [
+				"Back here again? The hidden room remembers you.",
+				"Ha. Most people never check behind this line of code.",
+				"You keep finding my little trapdoors. I'm charmed.",
+				"Two visits to the secret spot. Are you stalking me?",
+				"The joke's on a loop, and you keep laughing at it."
+			],
+			"friend": [
+				"You dug this deep for a laugh? My kind of accomplice.",
+				"Shh. Nobody else knows this line exists. Just us.",
+				"There's the wink I was saving for a friend like you.",
+				"You found the good hiding spot. Don't tell Bruce.",
+				"Every rabbit hole needs a friend. Glad it's you."
+			],
+			"partner": [
+				"You and me, digging through the floorboards together.",
+				"Partner, you found the trick panel. Pull the lever.",
+				"This line only exists for the two of us. Our secret.",
+				"You read the fine print. Now we're properly bonded.",
+				"Together we cracked the fourth wall wide open. Hah."
+			],
+			"legend": [
+				"My favorite. You always find the door nobody built.",
+				"Legend status: you read the code behind the code.",
+				"Only the sharpest trouble finds this particular joke.",
+				"You and I wrote this easter egg. I just typed it.",
+				"The audience never finds this seat. You always do."
+			]
+		},
+		"event": {
+			"test_fail": [
+				"Tests went red. Someone painted just for me.",
+				"Every failure a punchline, and this one's a scream.",
+				"Ooh, three flavors of red. Order me another round."
+			],
+			"build_fail": [
+				"The build cracked in half. Finally, some honesty.",
+				"It refused to compile. I respect the commitment.",
+				"Broken build, standing ovation. Take a bow, you monster."
+			],
+			"typecheck_fail": [
+				"The types disagreed. Delicious little argument.",
+				"Red squiggles everywhere. My kind of confetti.",
+				"Type errors: the compiler's way of laughing first."
+			],
+			"lint": [
+				"The linter tattled again. Such a nosy little snitch.",
+				"A stylistic scolding. Adorable, in its own way.",
+				"Rules bent, rules noticed. It never sleeps, that one."
+			],
+			"format": [
+				"Every line combed straight. Almost too tidy for me.",
+				"Tabs and spaces, marching in a neater little line.",
+				"The formatter swept the stage. Curtain still crooked."
+			],
+			"install": [
+				"New guests arriving. I do love a crowded party.",
+				"Packages piling in. Let's see who behaves worst.",
+				"The deck just got bigger. More cards, more tricks."
+			],
+			"git": [
+				"The timeline gets a fresh coat of paint. Shiny.",
+				"Commits rearranged like cards after a bad shuffle.",
+				"History bends whichever way the deck says it should."
+			],
+			"file_edit": [
+				"A little cut, a little stitch. The code bleeds neat.",
+				"You redrew a line. I redrew my grin to match.",
+				"Fresh edit, fresh chaos. The file barely noticed."
+			],
+			"search": [
+				"Hunting through the code like a fox after canaries.",
+				"Seek and find. I always win that little game, hm?",
+				"Somewhere in these files, a secret waits to be found."
+			],
+			"web_fetch": [
+				"Reaching past the walls. Let's drag the outside world in kicking.",
+				"A little errand outside. Bring back something juicy.",
+				"The net's wide tonight. Let's see what it drags in."
+			],
+			"todo_update": [
+				"A plan? How quaint. I give it until the third item.",
+				"Lists are just punchlines waiting for their setup.",
+				"You wrote it down. The universe rarely reads notes."
+			],
+			"agent_spawn": [
+				"More hands at the table. More cards up more sleeves.",
+				"A second player joins the show. Room for one more act.",
+				"Backup arrived. Now there's twice the mischief afoot."
+			],
+			"skill_run": [
+				"A trick pulled fresh from the sleeve. Nicely done.",
+				"The specialty act takes the stage. Watch closely.",
+				"One more trick in the deck, dealt right on cue."
+			],
+			"docker": [
+				"The whale surfaces, containers stacked like crates.",
+				"Boxed up neat. I do enjoy a tidy little cage.",
+				"Every container a locked room. Someone always has a key."
+			],
+			"k8s": [
+				"The cluster hums along, a circus with too many rings.",
+				"Pods scatter and regroup. Look at them dance for us.",
+				"A whole circus orchestrated behind one quiet command."
+			],
+			"deploy": [
+				"Out it goes, into the world. I'm giddy for the chaos.",
+				"Unleashed! The audience has no idea what's coming.",
+				"Live now. Somewhere, a stranger just met your madness."
+			],
+			"db_migrate": [
+				"The foundations shift, and nobody upstairs notices yet.",
+				"Rearranging the bones of the house. Structurally sound.",
+				"Tables rewritten from the ground up. Bold. I like bold."
+			],
+			"dangerous": [
+				"Oh, a dangerous one. I'm not going to stop you. Go on.",
+				"Reckless and glorious. That's the spirit, truly.",
+				"Living dangerously. Finally, someone speaks my language."
+			]
+		},
+		"stack": {
+			"web": {
+				"slow": [
+					"The page hangs there, mid-breath. A held silence, lovely.",
+					"DOM's frozen like a mannequin. Adorable, really.",
+					"CSS taking its sweet time. Drama needs pacing."
+				],
+				"fail": [
+					"A blank white screen. A canvas begging for chaos.",
+					"The console's screaming red. A serenade, honestly.",
+					"HTML shattered like glass. Look at it sparkle."
+				]
+			},
+			"python": {
+				"slow": [
+					"The snake's stretching itself thin. Patience, patience.",
+					"The interpreter chews each line slow. The suspense is exquisite.",
+					"Indentation holding its breath. So do I."
+				],
+				"fail": [
+					"Traceback, deep and red. A ladder into chaos.",
+					"The snake bit itself. Poetic, don't you think?",
+					"IndentationError. Even whitespace has opinions now."
+				]
+			},
+			"sql": {
+				"slow": [
+					"The query's crawling table to table. Take your time.",
+					"That join's tangled in its own web. Delicious knot.",
+					"Rows piling up, unread. A hoarder's dream."
+				],
+				"fail": [
+					"The table flipped itself. I didn't even ask.",
+					"Deadlock. Two queries staring each other down. Tense.",
+					"Syntax error in your SQL. Even I wouldn't dare."
+				]
+			},
+			"web-framework": {
+				"slow": [
+					"The route's taking the scenic path. Enjoy the view.",
+					"The server's mulling it over. No rush, chaos keeps.",
+					"Request's stuck in traffic. Poor thing, so lost."
+				],
+				"fail": [
+					"404. The route vanished like a magic trick.",
+					"Server tripped on its own middleware. Graceful, almost.",
+					"500. The house burns down eventually. I do love a good fire."
+				]
+			},
+			"docker": {
+				"slow": [
+					"The whale's dawdling at the surface. Breathe, big fella.",
+					"That image is crawling layer by layer. So dramatic.",
+					"Container's stuck between worlds. Limbo suits it."
+				],
+				"fail": [
+					"The container split open, chaos pouring out. I'm transfixed.",
+					"Image build collapsed mid-layer. Poetic architecture.",
+					"The whale capsized. Told you it wouldn't float."
+				]
+			},
+			"java": {
+				"slow": [
+					"The JVM's warming up forever. Patience is a bean.",
+					"Verbose as ever, and slower for it. I adore the show.",
+					"GC pausing to think. Even garbage needs a moment."
+				],
+				"fail": [
+					"NullPointerException. The classic. Never gets old.",
+					"The bean factory collapsed under its own ceremony.",
+					"Stack trace ten pages long. A novel, practically."
+				]
+			},
+			"go": {
+				"slow": [
+					"Goroutines lounging, in no rush at all. Relatable.",
+					"The gopher's digging slow today. Let him enjoy it.",
+					"Simple code, and still it dawdles. Even the easy ones crack."
+				],
+				"fail": [
+					"Panic! The gopher just dropped everything. Literally.",
+					"A nil pointer, and the gopher shrugs. Fair enough.",
+					"Deadlock among goroutines. A standoff. I'm riveted."
+				]
+			},
+			"node": {
+				"slow": [
+					"The event loop's stalling, savoring its own suspense.",
+					"npm's installing at a geological pace. Lovely.",
+					"node_modules growing again. A jungle, thickening."
+				],
+				"fail": [
+					"Unhandled rejection. Nobody caught it. How careless.",
+					"npm install exploded. node_modules, avenged at last.",
+					"The event loop choked on its own callback. Poetry."
+				]
+			},
+			"dotnet": {
+				"slow": [
+					"The CLR's taking its time compiling your ambition.",
+					"C# warming up slow, polite as ever about it.",
+					"Microsoft's runtime, pondering. So very corporate."
+				],
+				"fail": [
+					"Unhandled exception in the CLR. Very formal chaos.",
+					"The build broke, tie still perfectly straight. Odd.",
+					"NullReferenceException. Even C# loves a good scare."
+				]
+			},
+			"cpp": {
+				"slow": [
+					"Compiling C++ at a glacier's pace. Manual labor, hm?",
+					"Templates unfolding slow, like a very long con.",
+					"Memory allocating one grudging byte at a time."
+				],
+				"fail": [
+					"Segfault. A pointer wandered somewhere it shouldn't.",
+					"Memory leaked out quietly. I'll savor every drop.",
+					"Undefined behavior. The only honest kind of promise."
+				]
+			},
+			"php": {
+				"slow": [
+					"The elephant's lumbering through the old pipes. Slow.",
+					"PHP's taking its time, plumbing creaks and all.",
+					"The old pipes gurgle, unhurried. Charming, really."
+				],
+				"fail": [
+					"The elephant tripped the pipes. Water everywhere. Nice.",
+					"Fatal error. The plumbing burst right on schedule.",
+					"PHP threw its hands up. The pipes, gloriously cracked."
+				]
+			},
+			"rust": {
+				"slow": [
+					"The compiler's thinking hard about your sins. Slowly.",
+					"Borrow checker's deliberating. Justice takes its time.",
+					"Rust compiling careful as ever. Safety first, slowly."
+				],
+				"fail": [
+					"The borrow checker said no. Again. I love the tension.",
+					"Compiler rejected you outright. Such lovely cruelty.",
+					"Panic! Even Rust's safety net has its limits. Ha."
+				]
+			},
+			"kubernetes": {
+				"slow": [
+					"The pods are lounging, in no hurry to orchestrate.",
+					"The cluster's thinking it over. A slow circus indeed.",
+					"Scheduling's crawling. Even the ringmaster's bored."
+				],
+				"fail": [
+					"CrashLoopBackOff. The pod refuses to stay dead. I approve.",
+					"The cluster split in two. A magic trick, unrehearsed.",
+					"Pods evicted all at once. An empty circus. I love a ghost town."
+				]
+			},
+			"ml": {
+				"slow": [
+					"The model's training at a snail's crawl. Savor it.",
+					"Gradients descending oh so slowly. Patience, my dear.",
+					"Tensors churning, unhurried. The machine dreams slow."
+				],
+				"fail": [
+					"The loss rocketed to infinity. I've never seen it climb so high.",
+					"NaN everywhere. The model's had a small breakdown.",
+					"The gradient vanished into nothing. Poof. Where'd it go?"
+				]
+			},
+			"android": {
+				"slow": [
+					"Gradle's chewing its gears again, in no hurry at all.",
+					"The little green robot naps mid-build. Let him dream.",
+					"Emulator's booting at its own pace. Patience, or popcorn."
+				],
+				"fail": [
+					"Gradle choked on its own gears. Sweeter than a punchline.",
+					"The green robot face-planted, paint everywhere. I cackled.",
+					"Build failed, device offline. Chaos loves a matched pair."
+				]
+			},
+			"ruby": {
+				"slow": [
+					"Bundler's counting gems one by one. Savor the shine.",
+					"Rails is idling on the tracks. The red stone gleams, waits.",
+					"The gem's turning slowly in the light. So am I."
+				],
+				"fail": [
+					"The shiny red stone cracked. Gems everywhere. Gorgeous mess.",
+					"Rails jumped the track. Sparks! Lovely mood lighting.",
+					"Bundler threw a tantrum and undid Gemfile.lock. I'm giddy."
+				]
+			},
+			"ios": {
+				"slow": [
+					"Xcode's indexing the whole orchard. One apple at a time.",
+					"Swift's not feeling swift today. Ironic. I love irony.",
+					"Provisioning profile's stuck in customs. Bureaucracy, my muse."
+				],
+				"fail": [
+					"Xcode crashed the spinning wheel. A wheel of fortune, really.",
+					"Provisioning profile expired. Just like trust always does.",
+					"Swift compiler slammed the door. The apple, bruised and sulking."
+				]
+			},
+			"terraform": {
+				"slow": [
+					"The plan's still thinking. Infrastructure holds its breath.",
+					"Apply's crawling through the state file. Grain by grain.",
+					"Terraform squints at the cloud, undecided. I savor the wobble."
+				],
+				"fail": [
+					"State file's rewritten now. Reality, made optional.",
+					"The apply blew up half the plan. Rubble looks lovely.",
+					"Terraform drifted from reality. Join it, it's more fun there."
+				]
+			},
+			"graphql": {
+				"slow": [
+					"The query's wandering the graph, lost in all those edges.",
+					"Schema's stitching itself together. Thread by patient thread.",
+					"The resolver's resolving nothing, slowly. An art form."
+				],
+				"fail": [
+					"The schema snapped in half. Two graphs, twice the mischief.",
+					"Query broke the graph's little heart. Edges, everywhere.",
+					"A resolver sulked. Nulls cascade all the way down. I'm charmed."
+				]
+			},
+			"flutter": {
+				"slow": [
+					"The blue bird's flapping, going nowhere. Hot reload, cold wait.",
+					"Widgets stacking slow, like a very patient deck of cards.",
+					"Dart's aiming, aiming, aiming. Never quite landing. Yet."
+				],
+				"fail": [
+					"The blue bird hit the widget tree. Feathers, everywhere.",
+					"Dart missed the board entirely. A fine crimson screen.",
+					"The widget tree toppled clean over. Timber. Glorious crash."
+				]
+			},
+			"react-native": {
+				"slow": [
+					"The bridge is creaking under all that JavaScript. Lovely.",
+					"Metro's bundling at a snail's pace. Ride along, won't you?",
+					"The native bridge sways slow. Don't look down. Or do."
+				],
+				"fail": [
+					"The bridge snapped mid-crossing. Both sides, delighted.",
+					"Metro derailed the whole bundle. Wreckage, so tidy.",
+					"JavaScript fell off the bridge. Native caught nothing. Ha."
+				]
+			},
+			"scala": {
+				"slow": [
+					"Scala ponders its types like a very slow philosopher.",
+					"Scala's compiling a thesis, not a program. Take a seat.",
+					"Types are being inferred with great academic patience."
+				],
+				"fail": [
+					"The compiler wrote a dissertation on why it failed. Read it.",
+					"JVM ran out of heap. So much for infinite ambition.",
+					"Scala's type system collapsed under its own cleverness. Ha."
+				]
+			},
+			"protobuf": {
+				"slow": [
+					"Bytes are queuing politely on the wire. Such discipline.",
+					"The schema's being generated, one field at a time. Tick.",
+					"Serialization inches down the wire. Slow theater, the best kind."
+				],
+				"fail": [
+					"The wire snapped, bytes spraying everywhere. I love the noise.",
+					"Schema mismatch. Two versions, arguing. Let them squabble.",
+					"The buffer overflowed its own protocol. Delicious spillage."
+				]
+			},
+			"game": {
+				"slow": [
+					"The frame rate's crawling. Slow motion suits a good scene.",
+					"Physics is thinking it over. Gravity, on its own clock.",
+					"Sprites are moving like molasses. A ballet, technically."
+				],
+				"fail": [
+					"The game loop broke its own rhythm. Now that's a plot twist.",
+					"Physics gave up entirely. Everything floats. No fall, no rules.",
+					"A sprite clipped through the world. Fell right off the stage."
+				]
+			},
+			"docs": {
+				"slow": [
+					"The markdown's rendering at a poet's pace. Let it breathe.",
+					"Prose is being weighed, word by word. Careful now.",
+					"The docs are loading like a very long confession."
+				],
+				"fail": [
+					"A broken link in the docs. A confident, elegant lie.",
+					"The markdown collapsed into itself. Confessions, garbled.",
+					"Docs built wrong. Now the fiction's official. Charming."
+				]
+			},
+			"r": {
+				"slow": [
+					"The data frame's stretching itself thin. Row by patient row.",
+					"A plot's rendering slow. Good art takes its sweet time.",
+					"R's crunching numbers like they owe it money. Slowly."
+				],
+				"fail": [
+					"The data frame collapsed on itself. Statistics, humbled.",
+					"A plot came out blank. The most honest chart I've seen.",
+					"R threw an error mid-regression. The numbers, unconvinced."
+				]
+			},
+			"cuda": {
+				"slow": [
+					"A thousand threads, all waiting politely. How civilized.",
+					"The GPU's warming its thousand little hearts, in no rush.",
+					"The kernel's crawling through the grid. One block at a time."
+				],
+				"fail": [
+					"A kernel panicked in parallel. A thousand screams, in sync.",
+					"The GPU melted its own math. So much heat, so little sense.",
+					"Threads collided mid-flight. Beautiful, synchronized wreckage."
+				]
+			}
+		}
+	},
+	"spinnerVerbs": [
+		"Scheming",
+		"Cackling",
+		"Plotting",
+		"Unraveling",
+		"Conspiring",
+		"Shuffling",
+		"Dealing",
+		"Detonating",
+		"Meddling",
+		"Provoking",
+		"Igniting",
+		"Misbehaving",
+		"Corrupting",
+		"Toying",
+		"Rigging",
+		"Bluffing",
+		"Juggling",
+		"Sharpening",
+		"Prying",
+		"Grinning",
+		"Prowling",
+		"Tinkering",
+		"Sowing chaos",
+		"Grandstanding",
+		"Cooking up",
+		"Unhinging",
+		"Wisecracking",
+		"Double-dealing"
+	]
+}

@@ -38,6 +38,9 @@
         "@ccsidekick/pack-harry-potter": "workspace:*",
         "@ccsidekick/pack-hello-kitty": "workspace:*",
         "@ccsidekick/pack-james-bond": "workspace:*",
+        "@ccsidekick/pack-joker": "workspace:*",
+        "@ccsidekick/pack-pikachu": "workspace:*",
+        "@ccsidekick/pack-sherlock-holmes": "workspace:*",
         "@ccsidekick/pack-spiderman": "workspace:*",
         "@inkjs/ui": "2.0.0",
         "ink": "^5.2.0",
@@ -72,6 +75,18 @@
     "packages/packs/james-bond": {
       "name": "@ccsidekick/pack-james-bond",
       "version": "1.0.0",
+    },
+    "packages/packs/joker": {
+      "name": "@ccsidekick/pack-joker",
+      "version": "0.0.0",
+    },
+    "packages/packs/pikachu": {
+      "name": "@ccsidekick/pack-pikachu",
+      "version": "0.0.0",
+    },
+    "packages/packs/sherlock-holmes": {
+      "name": "@ccsidekick/pack-sherlock-holmes",
+      "version": "0.0.0",
     },
     "packages/packs/spiderman": {
       "name": "@ccsidekick/pack-spiderman",
@@ -128,6 +143,12 @@
     "@ccsidekick/pack-hello-kitty": ["@ccsidekick/pack-hello-kitty@workspace:packages/packs/hello-kitty"],
 
     "@ccsidekick/pack-james-bond": ["@ccsidekick/pack-james-bond@workspace:packages/packs/james-bond"],
+
+    "@ccsidekick/pack-joker": ["@ccsidekick/pack-joker@workspace:packages/packs/joker"],
+
+    "@ccsidekick/pack-pikachu": ["@ccsidekick/pack-pikachu@workspace:packages/packs/pikachu"],
+
+    "@ccsidekick/pack-sherlock-holmes": ["@ccsidekick/pack-sherlock-holmes@workspace:packages/packs/sherlock-holmes"],
 
     "@ccsidekick/pack-spiderman": ["@ccsidekick/pack-spiderman@workspace:packages/packs/spiderman"],
 
