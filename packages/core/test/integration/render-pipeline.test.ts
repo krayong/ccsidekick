@@ -120,7 +120,7 @@ const composeInputs: ComposeInputs = {
 	git,
 	payload,
 	scan,
-	widgets: DEFAULT_CONFIG.line.widgets,
+	widgets: DEFAULT_CONFIG.statusline.widgets,
 	currency: { code: "USD", rate: 1 },
 	homeDir: "",
 };
@@ -136,7 +136,7 @@ const charInputs: CharacterInputs = {
 	state: { pressureFired: [], milestones: [] },
 	clock,
 	session: asSession("s1"),
-	config: { enabled: DEFAULT_CONFIG.comments.enabled },
+	config: { enabled: DEFAULT_CONFIG.comments.character },
 };
 
 const helpfulInputs = (over: Partial<HelpfulInputs> = {}): HelpfulInputs => ({

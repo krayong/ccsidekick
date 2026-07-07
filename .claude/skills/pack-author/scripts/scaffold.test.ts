@@ -26,11 +26,8 @@ describe("scaffold", () => {
 	beforeEach(() => {
 		root = mkdtempSync(join(tmpdir(), "scaffold-"));
 		mkdirSync(join(root, "packages", "core", "src", "packs"), { recursive: true });
-		writeFileSync(
-			join(root, REGISTRY_REL),
-			'export const FIRST_PARTY_PACKS = ["batman"] as const;\n',
-		);
-		// The engine's package.json — scaffold links each new pack as a `workspace:*` devDependency here.
+		writeFileSync(join(root, REGISTRY_REL), 'export const PACKS = ["batman"] as const;\n');
+		// The engine's package.json — scaffold links each new pack as a `workspace:*` runtime dependency here.
 		writeFileSync(
 			join(root, "packages", "core", "package.json"),
 			`${JSON.stringify({ name: "ccsidekick", dependencies: { "@ccsidekick/pack-batman": "workspace:*" } }, null, "\t")}\n`,
@@ -87,11 +84,11 @@ describe("scaffold", () => {
 		expect(reg).toContain('"batman"');
 		expect(reg).toContain('"testpack"');
 
-		// the new pack is linked as a workspace devDependency of packages/core
+		// the new pack is linked as a workspace runtime dependency of packages/core
 		const corePkg = JSON.parse(
 			readFileSync(join(root, "packages", "core", "package.json"), "utf8"),
-		) as { devDependencies?: Record<string, string> };
-		expect(corePkg.devDependencies?.["@ccsidekick/pack-testpack"]).toBe("workspace:*");
+		) as { dependencies?: Record<string, string> };
+		expect(corePkg.dependencies?.["@ccsidekick/pack-testpack"]).toBe("workspace:*");
 	});
 
 	test("re-running is a registry no-op and overwrites the skeleton", () => {

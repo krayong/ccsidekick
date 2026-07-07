@@ -132,7 +132,7 @@ test("the preview never persists the compactions/todo force-enable into the save
 	await tick();
 	stdin.write("\x10");
 	await tick();
-	stdin.write("6"); // Statusline section
+	stdin.write("5"); // Statusline section
 	await tick();
 	stdin.write("\r"); // open content: rail starts on the Format category
 	await tick();
@@ -170,7 +170,7 @@ test("a long project path visibly truncates with an ellipsis at narrow preview w
 test("typing into a text field does not fire the preview keys", async () => {
 	const { lastFrame, stdin } = render(createElement(Dashboard, base()));
 	await tick();
-	stdin.write("6"); // Statusline section
+	stdin.write("5"); // Statusline section
 	await tick();
 	stdin.write("\r"); // open content: the rail starts on the Format category
 	await tick();

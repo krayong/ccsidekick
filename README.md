@@ -48,21 +48,24 @@
 npx ccsidekick
 ```
 
-Running `ccsidekick` in a terminal opens the setup TUI. On first run it lets you pick a character,
-set your theme and widgets, and wires everything into Claude Code's `settings.json` (backing the
-file up first). Later runs reopen the dashboard to change config or view stats. Run
-`ccsidekick --help` for every command, including a clean uninstall.
+Running `ccsidekick` in a terminal opens the setup UI. On a first run it walks you through a short
+guided **wizard** (character → theme → comments); later runs open the full **dashboard** to change
+config or view stats, and either view can switch to the other with Ctrl+W / Ctrl+D. It wires
+everything into Claude Code's `settings.json` (backing the file up first). Run `ccsidekick --help`
+for every command, including a clean uninstall.
+
+Prefer no TTY? `ccsidekick setup --character batman --theme houston --mode fixed` configures and wires
+everything from flags. See [Non-interactive setup](#non-interactive-setup).
 
 ## Characters
 
-Characters ship as separate packs. Browse the catalog, install, and switch between them inside the
-TUI's **Character** section. Fixed mode pins one; random mode rotates a roster.
+Every character ships bundled with the engine, so a fresh install has them all — no download or
+install step. Pick and switch between them in the **Character** section (or the wizard): fixed mode
+pins one, random mode rotates a roster.
 
 Each pack is data, never code: a single sourced ASCII figure (credited to its original artist; mood
 adds color-only effects, never a new frame), a curated message library, and at least twenty-five
-in-voice spinner verbs. `batman` is the default
-and ships with the engine as a runtime dependency, so a fresh install always has a character even
-before you open the catalog.
+in-voice spinner verbs. `batman` is the default character.
 
 **Available packs:**
 
@@ -77,13 +80,38 @@ before you open the catalog.
 
 **…and more on the way.** The roster keeps growing - new characters land regularly.
 
-Each pack registers its theme as a selectable option, so installing a character also adds a palette.
+Each pack registers its theme as a selectable option, so every bundled character also adds a palette.
 Authoring your own is a documented path; see below.
+
+## Non-interactive setup
+
+No terminal required — configure and wire ccsidekick from flags, ideal for scripts and AI agents:
+
+```bash
+ccsidekick setup --character batman --theme houston --mode fixed
+```
+
+Only the flags you pass are applied (a partial patch onto the existing config, or the defaults on a
+fresh install); it then writes `config.toml` and wires `settings.json` exactly like the TUI. Flags
+map to config fields: `--character`, `--mode`, `--roster`, `--theme` (`character` = match the
+character, the default), `--currency`, `--budget`, `--comments <on|off>`, `--helpful <on|off>`,
+`--min-severity`, `--widgets`, plus `--global` / `--local` and `--config-dir`.
+
+Discover valid values and every flag:
+
+```bash
+ccsidekick list characters   # also: themes, widgets
+ccsidekick setup --help
+```
+
+An unknown value (a misspelled theme, say) exits non-zero and prints the valid set; it never
+silently falls back to a default.
 
 ## Configuration
 
 A hand-editable TOML file at `${CLAUDE_CONFIG_DIR:-~/.claude}/ccsidekick/config.toml` (a per-project
-`.ccsidekick/config.toml` overrides it), with the TUI on top. A representative subset:
+`.ccsidekick/config.toml` overrides it), with the TUI on top. The tables mirror the dashboard
+sections, in order. A representative subset:
 
 ```toml
 schema_version = 1
@@ -91,30 +119,28 @@ schema_version = 1
 [character]
 mode = "random"       # fixed | random  (random picks once per session)
 name = "batman"       # active pack in fixed mode; the default
-roster = []           # pool for random mode (empty = all installed)
-
-[comments]
-enabled = true        # the character's voice (always shows when enabled; tone stays pack-owned)
-
-[helpful]
-enabled = true        # actionable tips above the field rows
-min_severity = "low"  # low | medium | high | critical
-
-[line]
-currency = "USD"      # local-currency parenthetical on cost; default follows your system locale
+roster = []           # pool for random mode (empty = all characters)
 
 [theme]
-name = "houston"      # any built-in theme or an installed pack's theme (default: houston)
+name = "character"    # "character" matches the active character; or any built-in / pack theme (default: character)
 mood_shift = false    # re-tint accent + gradient with the current mood
+
+[comments]
+character = true      # the character's voice line (tone stays pack-owned)
+helpful = true        # actionable tips above the field rows
+min_severity = "low"  # low | medium | high | critical
 
 [network]
 fx_refresh = true     # weekly currency-rate refresh
 usage_fetch = true    # OAuth account-usage widget (on by default; sends your OAuth token to Anthropic)
+
+[statusline]
+currency = "USD"      # local-currency parenthetical on cost; default follows your system locale
 ```
 
 ### Widgets
 
-Every field is toggled in `[line.widgets]` (the engine owns order and placement). The ids: `dir`,
+Every field is toggled in `[statusline.widgets]` (the engine owns order and placement). The ids: `dir`,
 `added_dirs`, `session_name`, `git_branch`, `git_hash`, `git_tag`, `git_worktree`, `git_changes`,
 `git_ahead_behind`, `git_status`, `git_conflict`, `git_operation`, `git_stash`, `pr`, `model`,
 `fast_mode`, `thinking`, `output_style`, `agent`, `context_usage`, `compactions`, `cost_chat`,
@@ -172,8 +198,8 @@ The package ships two executables:
 - **`ccsidekick-render`** is the lean hot path. Claude Code calls `ccsidekick-render render` on
   every statusline tick and `ccsidekick-render classify` on every tool call. It loads no UI and runs
   under plain Node.
-- **`ccsidekick`** is the setup TUI and `uninstall`. It is the only place that loads the Ink
-  interface, and the uninstall path never touches it.
+- **`ccsidekick`** is the user-facing entry: the setup TUI plus `setup`, `list`, and `uninstall`.
+  Only the TUI loads the Ink interface; `setup`/`list`/`uninstall` run under plain Node.
 
 </details>
 

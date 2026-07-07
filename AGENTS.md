@@ -24,7 +24,7 @@ compose → render → persist:
 - `compose` (compose): the statusline field set, the character line, and `compose/helpful` tips.
 - `render` (render): layout, ANSI color, control-char stripping, width measurement.
 - `packs`: the pack loader, validator, allowlist, registry, lint, and preview.
-- `cli`: the render/classify/settings/uninstall command logic (no UI).
+- `cli`: the render/classify/settings/uninstall/setup command logic (no UI).
 - `tui`: the Ink setup UI and `tui/sections`.
 - `bin`: the two executables.
 
@@ -39,9 +39,12 @@ three PostToolUse-family hooks ──ccsidekick-render classify──▶  events
 - **`ccsidekick-render`** is the lean hot path. It carries the `render` and `classify` subcommands,
   pulls in no Ink or React, and runs under plain Node. Claude Code spawns it on every statusline
   tick and every tool call.
-- **`ccsidekick`** is the user-facing entry. A bare invocation in a TTY launches the Ink setup TUI;
-  `uninstall` reverses the wiring. It is the one place outside `tui/**` that may load Ink/React, and
-  it imports them lazily so the uninstall path never pulls in the UI runtime.
+- **`ccsidekick`** is the user-facing entry. A bare invocation in a TTY launches the Ink setup UI (a
+  first run — no `config.toml` yet — shows the guided wizard; a returning user gets the dashboard).
+  `setup [flags]` configures and wires non-interactively (no Ink), `list <characters|themes|widgets>`
+  prints valid values, and `uninstall` reverses the wiring. The TUI is the one place outside `tui/**`
+  that may load Ink/React, and the bin imports it lazily so `setup`/`list`/`uninstall` never pull in
+  the UI runtime.
 
 State lives under `~/.claude/ccsidekick/` (honoring `CLAUDE_CONFIG_DIR`), partitioned per session
 under `sessions/<id>/`. The cross-session analytics store (`analytics/`) and the per-file cost cache
@@ -55,18 +58,23 @@ are lock-guarded.
 - **Figure box is fixed and lint-enforced:** the figure is at most 9 rows × 25 columns; an
   over-budget figure fails `lint-pack`. That authoring gate is separate from the render-time drop:
   below `MIN_RIGHT_WIDTH` the figure is dropped entirely and the statusline leads with a pack chip.
-- **Packs are data, never executed code.** The loader reads `pack.json` as JSON and never
-  `require()`s pack code. Other packs install only through the setup TUI's character catalog, from
-  the first-party allowlist, with `--ignore-scripts`. There is no auto-install path. The one
-  carve-out is `batman`: it ships as a runtime dependency of the engine so a fresh install always
-  has a character. It is first-party, data-only, and declares no lifecycle scripts.
+- **Packs are data, never executed code, and every pack is bundled.** The loader reads `pack.json` as
+  JSON and never `require()`s pack code. Every pack ships with the engine as a runtime dependency
+  (declared in `packages/core/package.json` and listed in `PACKS`), so a fresh install has every
+  character; there is no install, browse, or download path. `batman` is the default character. The
+  loader still validates a pack name's segment (`allowlist.ts`) before resolving it, guarding
+  `import.meta.resolve` against path traversal. A new pack is added by dropping it in
+  `packages/packs/<name>` (passing `lint-pack`) and registering it in `PACKS`.
 - **Art is sourced, never hand-drawn,** through the `ascii-art` image-to-ASCII skill, and every
   figure credits its artist in `attribution`.
-- **Config is exactly**: `schema_version`, then `[character]` (enabled, mode,
-  name default `batman`, roster), `[comments]` (enabled), `[helpful]` (enabled, min_severity),
-  `[line]` (currency, optional `budget`, per-widget `widgets` toggles), `[theme]` (`name` default
-  `houston`, optional per-surface `statusline`/`logo`/`comment`, `banding` default `solid`,
-  `mood_shift`, `icons`), `[network]` (fx_refresh, usage_fetch, balance_path). The cost cache TTL (
+- **Config is exactly** (tables in dashboard-section order): `schema_version`, then `[character]`
+  (enabled, mode, name default `batman`, roster), `[theme]` (`name` default `character` — the Match
+  Character sentinel that resolves each surface to the active pack's own theme, falling back to
+  `houston` — optional per-surface `statusline`/`logo`/`comment`, `banding` default `solid`,
+  `mood_shift`, `icons`), `[comments]` (`character`, `helpful`, `min_severity` — the Comments
+  section's two on/off streams plus the tip severity floor), `[network]` (fx_refresh, usage_fetch,
+  balance_path), `[statusline]` (currency, optional `budget`, per-widget `widgets` toggles). The
+  cost cache TTL (
   1500ms) and the statusline refresh interval (1s) are hardcoded constants, not config; git runs
   fresh every tick.
 - **Theme is catalog data + per-pack data; engine logic**: the built-in catalog (`data/themes.ts`)

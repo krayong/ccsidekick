@@ -40,7 +40,6 @@ function base(over: Partial<DashboardProps> = {}): DashboardProps {
 		rows: 40,
 		initialConfig: rosterConfig,
 		packs: ["batman", "robin"],
-		installed: ["batman", "robin"],
 		...over,
 	};
 }

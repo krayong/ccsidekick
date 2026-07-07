@@ -36,7 +36,7 @@ export interface Field {
 }
 
 /**
- * Widget ids = the [line.widgets] config keys, bracket-accessed.
+ * Widget ids = the [statusline.widgets] config keys, bracket-accessed.
  * Effort is NOT a widget (renders inline in model); cost_pending is NOT a widget (the ⋯ placeholder).
  */
 export type WidgetId =

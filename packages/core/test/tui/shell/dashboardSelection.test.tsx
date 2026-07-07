@@ -21,8 +21,6 @@ const render = (...args: Parameters<typeof rawRender>): ReturnType<typeof rawRen
 
 const tick = async (): Promise<void> => new Promise((r) => setTimeout(r, 25));
 
-const noop = (): void => {};
-
 function base(over: Partial<DashboardProps> = {}): DashboardProps {
 	const dir = mkdtempSync(join(tmpdir(), "ccsk-sel-"));
 	return {
@@ -32,103 +30,24 @@ function base(over: Partial<DashboardProps> = {}): DashboardProps {
 		rows: 40,
 		initialConfig: DEFAULT_CONFIG,
 		packs: ["batman"],
-		installed: ["batman"],
 		...over,
 	};
 }
 
-test("the Character section opens on the Roster category with the pack union", async () => {
+test("the Character section opens on the Mode category; the Roster category lists the packs", async () => {
 	const { lastFrame, stdin } = render(createElement(Dashboard, base()));
 	await tick();
 	stdin.write("1"); // Character
 	await tick();
-	stdin.write("\r"); // open content
+	stdin.write("\r"); // open content (Mode category selected)
 	await tick();
-	const frame = lastFrame() ?? "";
-	expect(frame).toContain("Roster");
-	expect(frame).toContain("Browse");
-	expect(frame).toContain("batman");
-});
-
-test("s switches the category cursor to Browse; an empty Browse shows the fallback line", async () => {
-	const { lastFrame, stdin } = render(createElement(Dashboard, base()));
+	const opened = lastFrame() ?? "";
+	expect(opened).toContain("Mode");
+	expect(opened).toContain("Roster");
+	expect(opened).not.toContain("Browse");
+	stdin.write("s"); // category cursor Mode -> Roster
 	await tick();
-	stdin.write("1");
-	await tick();
-	stdin.write("\r");
-	await tick();
-	stdin.write("s"); // category cursor Roster -> Browse
-	await tick();
-	expect(lastFrame() ?? "").toContain("no other packs available");
-});
-
-test("installing an uninstalled Browse pack runs the injected installer and updates the list", async () => {
-	let resolveInstall: () => void = noop;
-	const install = (): Promise<void> =>
-		new Promise<void>((res) => {
-			resolveInstall = res;
-		});
-	const { lastFrame, stdin } = render(
-		createElement(
-			Dashboard,
-			base({ packs: ["batman", "robin"], installed: ["batman"], install }),
-		),
-	);
-	await tick();
-	stdin.write("1");
-	await tick();
-	stdin.write("\r");
-	await tick();
-	stdin.write("s"); // category cursor -> Browse
-	await tick();
-	stdin.write("d"); // focus the list
-	await tick();
-	stdin.write("s"); // itemCursor -> robin
-	await tick();
-	stdin.write("\r"); // install
-	await tick();
-	expect(lastFrame() ?? "").toContain("Installing");
-	resolveInstall();
-	await tick();
-	await tick();
-	const done = lastFrame() ?? "";
-	expect(done).not.toContain("Installing");
-	expect(done).toContain(`● robin`); // now marked installed
-});
-
-test("the bundled pack is always treated as installed and never triggers a Browse install", async () => {
-	// The bundled pack (batman) resolves at runtime via import.meta.resolve, so the node_modules
-	// directory scan that seeds `installed` can miss it (hoisted/bundled). It must still be treated as
-	// installed: pressing Enter on it selects it and never shells out `npm install @ccsidekick/pack-batman`.
-	let installCalled = false;
-	const install = (): Promise<void> => {
-		installCalled = true;
-		return Promise.reject(
-			new Error("ccsidekick: npm install @ccsidekick/pack-batman exited 1"),
-		);
-	};
-	const { lastFrame, stdin } = render(
-		createElement(
-			Dashboard,
-			base({ packs: ["batman", "robin"], installed: ["robin"], install }),
-		),
-	);
-	await tick();
-	stdin.write("1");
-	await tick();
-	stdin.write("\r");
-	await tick();
-	stdin.write("s"); // category cursor -> Browse
-	await tick();
-	stdin.write("d"); // focus the list
-	await tick();
-	stdin.write("\r"); // Enter on batman (itemCursor reset to 0 by the category switch)
-	await tick();
-	await tick();
-	const frame = lastFrame() ?? "";
-	expect(installCalled).toBe(false);
-	expect(frame).not.toContain("npm install");
-	expect(frame).toContain(`● batman`); // shown as installed, not an install target
+	expect(lastFrame() ?? "").toContain("batman");
 });
 
 test("selecting a theme sets the draft theme and marks it dirty", async () => {
@@ -228,39 +147,31 @@ test("at cols=120 the theme detail mini-statusline fits and is shown in the deta
 	expect(lastFrame() ?? "").toContain("bills per token");
 });
 
-test("selecting on Browse acts on the pack under the moved item cursor, not index 0", async () => {
-	// activateCharacter must read the fresh rail state passed in by handleCharacterKey (mirroring how
-	// activateThemeRow reads r.state), not a stale characterRail closure. Move the item cursor past
-	// index 0 before selecting: an implementation that acted on index 0 (or ignored the moved cursor)
-	// would put batman in the roster instead of joker, which the Roster markers below expose.
+test("selecting on the Roster toggles the pack under the moved item cursor, not another", async () => {
+	// activateCharacter must read the fresh rail state passed in by handleCharacterKey. A fresh random roster is
+	// empty (= all selected), so every pack starts marked; toggling the highlighted one deselects exactly it.
+	// An implementation that acted on the wrong index would deselect the wrong pack, which the markers expose.
 	const { lastFrame, stdin } = render(
-		createElement(
-			Dashboard,
-			base({ packs: ["batman", "robin", "joker"], installed: ["batman", "robin", "joker"] }),
-		),
+		createElement(Dashboard, base({ packs: ["batman", "robin", "joker"] })),
 	);
 	await tick();
 	stdin.write("1"); // Character
 	await tick();
-	stdin.write("\r"); // open content
+	stdin.write("\r"); // open content (Mode category)
 	await tick();
-	stdin.write("s"); // category cursor -> Browse
+	stdin.write("s"); // category cursor Mode -> Roster
 	await tick();
-	stdin.write("d"); // focus the list
+	stdin.write("d"); // focus the Roster list (cursor at 0 = batman)
 	await tick();
 	stdin.write("s"); // itemCursor -> robin
 	await tick();
 	stdin.write("s"); // itemCursor -> joker
 	await tick();
-	stdin.write("\r"); // select: must act on joker (the moved cursor), not batman (index 0)
-	await tick();
-	stdin.write("a"); // list -> category column
-	await tick();
-	stdin.write("w"); // category cursor Browse -> Roster
+	stdin.write("\r"); // toggle joker (was all-selected); deselects exactly joker
 	await tick();
 	const frame = lastFrame() ?? "";
-	expect(frame).toContain("● joker"); // joker was added to the roster
-	expect(frame).toContain("○ batman"); // batman was left alone
+	expect(frame).toContain("○ joker"); // joker was deselected
+	expect(frame).toContain("● batman"); // batman was left selected
 });
 
 test("re-entering Character after leaving mid-column resets rail focus to the category column", async () => {
@@ -277,45 +188,5 @@ test("re-entering Character after leaving mid-column resets rail focus to the ca
 	stdin.write("\r"); // re-open Character
 	await tick();
 	const frame = lastFrame() ?? "";
-	expect(frame).toContain("❯ Roster"); // the category column is focused again, not the list column
-});
-
-test("a second Enter while installing is ignored and does not spawn a concurrent install", async () => {
-	// Before the guard: installStatus==="installing" is not checked before spawning, so a
-	// second Enter calls install() again — test fails with installCallCount=2.
-	// After the guard: the handler returns immediately, count stays 1.
-	let installCallCount = 0;
-	let resolveInstall: () => void = noop;
-	const install = (): Promise<void> => {
-		installCallCount++;
-		return new Promise<void>((res) => {
-			resolveInstall = res;
-		});
-	};
-	const { lastFrame, stdin } = render(
-		createElement(
-			Dashboard,
-			base({ packs: ["batman", "robin"], installed: ["batman"], install }),
-		),
-	);
-	await tick();
-	stdin.write("1"); // Character section
-	await tick();
-	stdin.write("\r"); // open content
-	await tick();
-	stdin.write("s"); // category cursor -> Browse
-	await tick();
-	stdin.write("d"); // focus the list
-	await tick();
-	stdin.write("s"); // itemCursor -> robin
-	await tick();
-	stdin.write("\r"); // first Enter: starts install
-	await tick();
-	expect(lastFrame() ?? "").toContain("Installing"); // spinner visible
-	stdin.write("\r"); // second Enter: must be guarded
-	await tick();
-	expect(installCallCount).toBe(1); // install called exactly once
-	resolveInstall();
-	await tick();
-	await tick();
+	expect(frame).toContain("❯ Mode"); // the category column is focused again, on the first category
 });

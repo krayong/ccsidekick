@@ -63,3 +63,18 @@ test("q on a dirty config guards; n backs out; y quits", async () => {
 	await tick();
 	expect(quit).toBe(1);
 });
+
+test("initialDirty seeds the dirty flag so a post-switch quit still guards", async () => {
+	// A view switch (Ctrl+W/Ctrl+D) remounts the dashboard; initialDirty carries the unsaved state across so
+	// pressing q immediately still prompts rather than quitting and dropping the edits.
+	let quit = 0;
+	const { lastFrame, stdin } = render(
+		createElement(Dashboard, base({ initialDirty: true, onQuit: () => quit++ })),
+	);
+	await tick();
+	expect(lastFrame() ?? "").toContain("● unsaved"); // dirty from the start
+	stdin.write("q");
+	await tick();
+	expect(lastFrame() ?? "").toContain("Discard changes?");
+	expect(quit).toBe(0);
+});

@@ -60,6 +60,7 @@ tmp/
 
 # SDD scratch
 .superpowers/
+docs/superpowers/
 
 # Pack author working directories
 packages/packs/*/.author/

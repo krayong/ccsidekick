@@ -7,12 +7,12 @@ name = "joker"
 roster = ["batman", "joker"]
 
 [comments]
-enabled = false
+character = false
 
-[line]
+[statusline]
 currency = "USD"
 
-[line.widgets]
+[statusline.widgets]
 todo = true
 agent = true
 git_hash = false

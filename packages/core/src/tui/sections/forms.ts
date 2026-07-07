@@ -7,7 +7,7 @@ import type { FieldSpec } from "../widgets";
 
 const onOff = (b: boolean): string => (b ? "on" : "off");
 
-export const WIDGET_IDS = Object.keys(DEFAULT_CONFIG.line.widgets) as readonly WidgetId[];
+export const WIDGET_IDS = Object.keys(DEFAULT_CONFIG.statusline.widgets) as readonly WidgetId[];
 
 const SEVERITIES = ["low", "medium", "high", "critical"] as const;
 const BANDINGS = ["solid", "cycle"] as const;
@@ -23,36 +23,44 @@ export function statuslineFields(d: Config): readonly FieldSpec[] {
 		id: "currency",
 		label: "Currency",
 		kind: "text",
-		value: d.line.currency,
-		raw: d.line.currency,
+		value: d.statusline.currency,
+		raw: d.statusline.currency,
 		commit: (c, raw) => {
 			const v = raw.trim().toUpperCase();
-			return v === "" ? c : { ...c, line: { ...c.line, currency: v } };
+			return v === "" ? c : { ...c, statusline: { ...c.statusline, currency: v } };
 		},
 	};
 	const budget: FieldSpec = {
 		id: "budget",
 		label: "Budget (USD/mo)",
 		kind: "number",
-		value: d.line.budget === undefined ? "off" : String(d.line.budget),
-		raw: d.line.budget === undefined ? "" : String(d.line.budget),
+		value: d.statusline.budget === undefined ? "off" : String(d.statusline.budget),
+		raw: d.statusline.budget === undefined ? "" : String(d.statusline.budget),
 		commit: (c, raw) => {
 			const t = raw.trim();
-			// Clearing budget rebuilds line without the key (exactOptionalPropertyTypes forbids budget: undefined).
+			// Clearing budget rebuilds statusline without the key (exactOptionalPropertyTypes forbids undefined).
 			if (t === "")
-				return { ...c, line: { currency: c.line.currency, widgets: c.line.widgets } };
+				return {
+					...c,
+					statusline: { currency: c.statusline.currency, widgets: c.statusline.widgets },
+				};
 			const n = Number(t);
-			return Number.isFinite(n) && n >= 0 ? { ...c, line: { ...c.line, budget: n } } : c;
+			return Number.isFinite(n) && n >= 0 ?
+					{ ...c, statusline: { ...c.statusline, budget: n } }
+				:	c;
 		},
 	};
 	const widgets: readonly FieldSpec[] = WIDGET_IDS.map((id) => ({
 		id: `widget:${id}`,
 		label: id,
 		kind: "toggle",
-		value: onOff(d.line.widgets[id]),
+		value: onOff(d.statusline.widgets[id]),
 		toggle: (c) => ({
 			...c,
-			line: { ...c.line, widgets: { ...c.line.widgets, [id]: !c.line.widgets[id] } },
+			statusline: {
+				...c.statusline,
+				widgets: { ...c.statusline.widgets, [id]: !c.statusline.widgets[id] },
+			},
 		}),
 	}));
 	return [currency, budget, ...widgets];
@@ -80,41 +88,37 @@ export function themeSettingsFields(d: Config): readonly FieldSpec[] {
 	];
 }
 
-export function voiceFields(d: Config): readonly FieldSpec[] {
-	return [
-		{
-			id: "comments_enabled",
-			label: "Comments",
-			kind: "toggle",
-			value: onOff(d.comments.enabled),
-			toggle: (c) => ({ ...c, comments: { enabled: !c.comments.enabled } }),
-		},
-	];
-}
-
-export function tipsFields(d: Config): readonly FieldSpec[] {
-	return [
-		{
-			id: "helpful_enabled",
-			label: "Enabled",
-			kind: "toggle",
-			value: onOff(d.helpful.enabled),
-			toggle: (c) => ({ ...c, helpful: { ...c.helpful, enabled: !c.helpful.enabled } }),
-		},
-		{
-			id: "min_severity",
-			label: "Min severity",
-			kind: "cycle",
-			value: d.helpful.min_severity,
-			next: (c) => ({
-				...c,
-				helpful: {
-					...c.helpful,
-					min_severity: step(SEVERITIES, c.helpful.min_severity, 1),
-				},
-			}),
-		},
-	];
+// The Comments section: the character's own voice line (Character Comments) and the helpful-tip line (Helpful
+// Comments), each an independent on/off. Min severity rides along under Helpful Comments and is only offered when
+// that stream is on — with it off, the severity has no effect.
+export function commentsFields(d: Config): readonly FieldSpec[] {
+	const characterComments: FieldSpec = {
+		id: "comments_character",
+		label: "Character Comments",
+		kind: "toggle",
+		value: onOff(d.comments.character),
+		toggle: (c) => ({ ...c, comments: { ...c.comments, character: !c.comments.character } }),
+	};
+	const helpfulComments: FieldSpec = {
+		id: "comments_helpful",
+		label: "Helpful Comments",
+		kind: "toggle",
+		value: onOff(d.comments.helpful),
+		toggle: (c) => ({ ...c, comments: { ...c.comments, helpful: !c.comments.helpful } }),
+	};
+	const minSeverity: FieldSpec = {
+		id: "min_severity",
+		label: "Min severity",
+		kind: "cycle",
+		value: d.comments.min_severity,
+		next: (c) => ({
+			...c,
+			comments: { ...c.comments, min_severity: step(SEVERITIES, c.comments.min_severity, 1) },
+		}),
+	};
+	return d.comments.helpful ?
+			[characterComments, helpfulComments, minSeverity]
+		:	[characterComments, helpfulComments];
 }
 
 export function networkFields(d: Config): readonly FieldSpec[] {
@@ -152,12 +156,10 @@ export function sectionFields(section: number, d: Config): readonly FieldSpec[] 
 		case 1:
 			return themeSettingsFields(d); // Theme
 		case 2:
-			return voiceFields(d); // Voice
+			return commentsFields(d); // Comments
 		case 3:
-			return tipsFields(d); // Tips
-		case 4:
 			return networkFields(d); // Network
-		case 5:
+		case 4:
 			return statuslineFields(d); // Statusline
 		default:
 			return [];

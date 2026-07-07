@@ -134,11 +134,11 @@ test("writeConfigToml writes a config.toml that loadConfig round-trips", () => {
 	writeConfigToml(dir, {
 		...DEFAULT_CONFIG,
 		character: { ...DEFAULT_CONFIG.character, mode: "fixed", name: "joker" },
-		line: { ...DEFAULT_CONFIG.line, currency: "EUR" },
+		statusline: { ...DEFAULT_CONFIG.statusline, currency: "EUR" },
 	});
 	const cfg = loadConfig(readFileSync(join(dir, "config.toml"), "utf8"));
 	expect(cfg.character.mode).toBe("fixed");
 	expect(cfg.character.name).toBe("joker");
-	expect(cfg.line.currency).toBe("EUR");
-	expect(cfg.line.widgets.pay_as_you_go).toBe(true); // widget key survives the TOML round-trip
+	expect(cfg.statusline.currency).toBe("EUR");
+	expect(cfg.statusline.widgets.pay_as_you_go).toBe(true); // widget key survives the TOML round-trip
 });

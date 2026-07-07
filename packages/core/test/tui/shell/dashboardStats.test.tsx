@@ -90,7 +90,6 @@ function base(over: Partial<DashboardProps> = {}): DashboardProps {
 		rows: 60,
 		initialConfig: DEFAULT_CONFIG,
 		packs: ["batman"],
-		installed: ["batman"],
 		...over,
 	};
 }
@@ -100,7 +99,7 @@ test("the Stats section renders the heatmap, the grid, the cost number, and per-
 		createElement(Dashboard, base({ metrics: fixtureMetrics(10) })),
 	);
 	await tick();
-	stdin.write("7"); // jump to Stats (section index 6)
+	stdin.write("6"); // jump to Stats (section index 5)
 	await tick();
 	const frame = lastFrame() ?? "";
 	expect(frame).toContain("█"); // heatmap / sparkline
@@ -114,7 +113,7 @@ test("the Character dimension hides the cost", async () => {
 		createElement(Dashboard, base({ metrics: fixtureMetrics(10) })),
 	);
 	await tick();
-	stdin.write("7");
+	stdin.write("6");
 	await tick();
 	stdin.write("\r"); // enter the content zone
 	await tick();
@@ -133,7 +132,7 @@ test("the empty catalog shows the no-sessions line", async () => {
 		createElement(Dashboard, base({ metrics: fixtureMetrics(0) })),
 	);
 	await tick();
-	stdin.write("7");
+	stdin.write("6");
 	await tick();
 	expect((lastFrame() ?? "").toLowerCase()).toContain("no sessions yet");
 });
@@ -156,7 +155,7 @@ test("focusing the Window axis and pressing left/right toggles the window", asyn
 	};
 	const { lastFrame, stdin } = render(createElement(Dashboard, base({ metrics })));
 	await tick();
-	stdin.write("7"); // Stats section
+	stdin.write("6"); // Stats section
 	await tick();
 	stdin.write("\r"); // enter content zone (focus starts on the View axis)
 	await tick();
@@ -176,7 +175,7 @@ test("toggling the window leaves the 60-day heatmap unchanged", async () => {
 		createElement(Dashboard, base({ metrics: fixtureMetrics(10) })),
 	);
 	await tick();
-	stdin.write("7"); // Stats section
+	stdin.write("6"); // Stats section
 	await tick();
 	stdin.write("\r"); // enter content zone
 	await tick();
@@ -200,7 +199,7 @@ test("focusing the Character entry axis and pressing left/right switches charact
 	};
 	const { lastFrame, stdin } = render(createElement(Dashboard, base({ metrics })));
 	await tick();
-	stdin.write("7"); // Stats section
+	stdin.write("6"); // Stats section
 	await tick();
 	stdin.write("\r"); // enter content zone (focus on View)
 	await tick();
@@ -223,7 +222,7 @@ test("Stats section is not shown at floor terminal size", async () => {
 		createElement(Dashboard, base({ metrics: fixtureMetrics(10), cols: 50 })),
 	);
 	await tick();
-	stdin.write("7"); // attempt to navigate to Stats
+	stdin.write("6"); // attempt to navigate to Stats
 	await tick();
 	const frame = lastFrame() ?? "";
 	expect(frame.toLowerCase()).toContain("terminal too small");

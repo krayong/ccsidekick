@@ -36,9 +36,9 @@ export function usePreviewBody(
 			// (and whatever gets saved) is untouched.
 			const previewConfig: Config = {
 				...draft,
-				line: {
-					...draft.line,
-					widgets: { ...draft.line.widgets, compactions: true, todo: true },
+				statusline: {
+					...draft.statusline,
+					widgets: { ...draft.statusline.widgets, compactions: true, todo: true },
 				},
 			};
 			setBody(renderScenario(scenario, previewConfig, { columns, noColor }));
@@ -77,9 +77,9 @@ export function useSaveCharacterBody(
 			const previewConfig: Config = {
 				...draft,
 				character: { ...draft.character, mode: "fixed", name: character },
-				line: {
-					...draft.line,
-					widgets: { ...draft.line.widgets, compactions: true, todo: true },
+				statusline: {
+					...draft.statusline,
+					widgets: { ...draft.statusline.widgets, compactions: true, todo: true },
 				},
 			};
 			setBody(renderScenario(scenario, previewConfig, { columns, noColor: false }));

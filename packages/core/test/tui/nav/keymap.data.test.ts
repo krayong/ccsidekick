@@ -10,7 +10,19 @@ test("KEYMAP groups every binding under a known group", () => {
 
 test("KEYMAP advertises the keys the UI exposes", () => {
 	const keys = KEYMAP.map((b) => b.keys).join(" ");
-	for (const token of ["tab", "1-8", "↵", "esc", "/", "?", "ctrl+p", "ctrl+s", "q", "w a s d"]) {
+	for (const token of [
+		"tab",
+		"1-7",
+		"↵",
+		"esc",
+		"/",
+		"?",
+		"ctrl+p",
+		"ctrl+s",
+		"ctrl+w",
+		"q",
+		"w a s d",
+	]) {
 		expect(keys).toContain(token);
 	}
 });

@@ -363,8 +363,11 @@ function build(
 		git,
 		payload,
 		scan,
-		widgets: config.line.widgets,
-		currency: { code: config.line.currency, rate: fxTable[config.line.currency] ?? 0 },
+		widgets: config.statusline.widgets,
+		currency: {
+			code: config.statusline.currency,
+			rate: fxTable[config.statusline.currency] ?? 0,
+		},
 		homeDir: env["HOME"] ?? "",
 	};
 	const composed = composeStatusline(composeInputs);
@@ -384,8 +387,8 @@ function build(
 		balance,
 	};
 	const helpfulResult =
-		config.helpful.enabled ?
-			resolveHelpful(helpfulInputs, sessionState, clock, config.helpful.min_severity)
+		config.comments.helpful ?
+			resolveHelpful(helpfulInputs, sessionState, clock, config.comments.min_severity)
 		:	{ comment: null, nextHelpful: sessionState.helpful };
 	const helpful = helpfulResult.comment;
 
@@ -409,7 +412,7 @@ function build(
 				state: sessionState,
 				clock,
 				session,
-				config: { enabled: config.comments.enabled },
+				config: { enabled: config.comments.character },
 			} satisfies CharacterInputs);
 		} catch {
 			charResult = { comment: null, nextState: charBase };

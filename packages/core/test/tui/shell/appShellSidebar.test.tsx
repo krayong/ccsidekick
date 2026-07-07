@@ -20,7 +20,7 @@ const render = (...args: Parameters<typeof rawRender>): ReturnType<typeof rawRen
 const tokens = resolveTokens(THEMES.houston, detectCapability({ TERM: "xterm-256color" }));
 const glyphs = glyphSet(false);
 
-test("the wide sidebar numbers each section 1..8", () => {
+test("the wide sidebar numbers each section 1..7", () => {
 	const frame =
 		render(
 			createElement(AppShell, {
@@ -35,5 +35,5 @@ test("the wide sidebar numbers each section 1..8", () => {
 			}),
 		).lastFrame() ?? "";
 	expect(frame).toMatch(/1 .*Character/);
-	expect(frame).toMatch(/8 .*Save/);
+	expect(frame).toMatch(/7 .*Save/);
 });

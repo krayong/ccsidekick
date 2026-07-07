@@ -51,7 +51,7 @@ test("the category column lists the seven groups", () => {
 test("the Format group shows Currency and Budget rows with their current values", () => {
 	const frame = render(createElement(StatuslineSection, base())).lastFrame() ?? "";
 	expect(frame).toContain("Currency");
-	expect(frame).toContain(DEFAULT_CONFIG.line.currency); // INR
+	expect(frame).toContain(DEFAULT_CONFIG.statusline.currency); // INR
 	expect(frame).toContain("Budget");
 });
 

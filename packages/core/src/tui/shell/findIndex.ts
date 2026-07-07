@@ -1,7 +1,7 @@
 // The pure global Find index: one entry per section (jump), one per FormSection field for the sections where the
-// cursor is authoritative (Voice, Tips, Network, Statusline), and the install/widget-toggle actions the retired
-// Ctrl+P palette used to offer. Ranked with the shared fuzzy matcher. No React, no I/O — the run() thunks are
-// closures the Dashboard owns.
+// cursor is authoritative (Comments, Network), and the install/widget-toggle actions the retired Ctrl+P palette
+// used to offer. Ranked with the shared fuzzy matcher. No React, no I/O — the run() thunks are closures the
+// Dashboard owns.
 
 import type { Config } from "../../sources";
 import { SECTIONS } from "../nav";
@@ -26,9 +26,9 @@ interface FindDeps {
 }
 
 // The FormSection-backed sections, where the cursor a Find field-jump would set is authoritative. Character
-// (0), Theme (1), Statusline (5, now the widget rail), Statistics (6), and Save (7) drive their own cursors
-// (or none), so a field jump into them would misfire.
-const FORM_SECTIONS = [2, 3, 4] as const;
+// (0), Theme (1), Statusline (4, the widget rail), Statistics (5), and Save (6) drive their own cursors (or
+// none), so a field jump into them would misfire.
+const FORM_SECTIONS = [2, 3] as const;
 
 export function buildFindIndex(deps: FindDeps): readonly FindEntry[] {
 	const sections: readonly FindEntry[] = SECTIONS.map((name, i) => ({

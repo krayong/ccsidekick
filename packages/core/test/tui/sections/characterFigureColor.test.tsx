@@ -36,11 +36,9 @@ function base(over: Partial<CharacterSectionProps> = {}): CharacterSectionProps 
 	return {
 		state: rosterState,
 		packs: ["batman"],
-		installed: ["batman"],
 		activeIds: ["batman"],
 		mode: "random",
 		detail,
-		installStatus: "idle",
 		rows: 40,
 		tokens,
 		glyphs,

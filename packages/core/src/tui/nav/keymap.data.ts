@@ -13,12 +13,13 @@ interface Binding {
 export const KEYMAP: readonly Binding[] = [
 	{ keys: "w a s d", label: "move (also ↑↓←→, h j k l)", group: "Navigate" },
 	{ keys: "tab", label: "sidebar / content", group: "Navigate" },
-	{ keys: "1-8", label: "jump to a section", group: "Navigate" },
+	{ keys: "1-7", label: "jump to a section", group: "Navigate" },
 	{ keys: "↵", label: "open, select, toggle", group: "Navigate" },
 	{ keys: "esc", label: "back, close, quit", group: "Navigate" },
 	{ keys: "/", label: "find", group: "Find & preview" },
 	{ keys: "?", label: "help", group: "Find & preview" },
 	{ keys: "ctrl+p", label: "preview", group: "Find & preview" },
 	{ keys: "ctrl+s", label: "save & install", group: "Actions" },
+	{ keys: "ctrl+w", label: "switch to wizard", group: "Actions" },
 	{ keys: "q", label: "quit", group: "Actions" },
 ];

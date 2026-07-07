@@ -4,9 +4,9 @@ import { join } from "node:path";
 const PREFIX = "pack-";
 
 /**
- * Enumerate installed pack ids by scanning `node_modules/@ccsidekick/` for `pack-*` package directories,
- * returning the id (the prefix stripped), sorted. Feeds the render-path random-with-empty-roster pick and the
- * setup TUI character catalog. Never throws.
+ * Enumerate bundled pack ids by scanning `node_modules/@ccsidekick/` for `pack-*` package directories,
+ * returning the id (the prefix stripped), sorted. Feeds the render-path random-with-empty-roster pick. Never
+ * throws.
  *
  * A workspace install symlinks each pack dir (Bun links `@ccsidekick/pack-*` to `packages/packs/*`), and
  * `withFileTypes` reports a symlink as `isSymbolicLink()`, not `isDirectory()` — so a symlinked entry is followed

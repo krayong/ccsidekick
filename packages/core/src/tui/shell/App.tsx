@@ -1,24 +1,24 @@
 // The shell entry. When no configDir is supplied it shows the Welcome (logo + description + the reused dir
 // picker) and advances to the Dashboard on selection; when one is supplied it opens the Dashboard directly. It
-// owns the capability/reduced-motion reads and the logo shimmer clock (a light interval, off under reducedMotion).
+// owns the capability read. The wordmark is a static gradient, so there is no animation clock.
 
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { homedir } from "node:os";
 import { join } from "node:path";
 
 import { useInput } from "ink";
-import { type ReactElement, useEffect, useMemo, useState } from "react";
+import { type ReactElement, useMemo, useState } from "react";
 
 import { discoverConfigDirs } from "..";
 import { THEMES, type ThemeData } from "../../data";
 import { loadConfig, type Config } from "../../sources";
 import { breakpointFor, useTermSize } from "../nav";
-import { detectCapability, detectReducedMotion, resolveTokens } from "../theme";
+import { detectCapability, resolveTokens } from "../theme";
 
-import { Dashboard } from "./Dashboard";
+import { Dashboard, type DashboardProps } from "./Dashboard";
 import { projectTarget, type SaveTarget } from "./saveTarget";
 import { Welcome } from "./Welcome";
-import { LOGO_MIN_COLUMNS } from "./wordmark";
+import { Wizard } from "./Wizard";
 
 export interface AppProps {
 	readonly configDir?: string;
@@ -27,34 +27,13 @@ export interface AppProps {
 	readonly suggestedDir?: string;
 	readonly env?: NodeJS.ProcessEnv;
 	readonly renderBin?: string;
-	readonly installed?: readonly string[];
 	readonly initialConfig?: Config;
 	readonly onQuit?: () => void;
 	readonly onSave?: (config: Config, target: SaveTarget) => void;
 	readonly cols?: number;
 	readonly rows?: number;
 	readonly packs?: readonly string[];
-	readonly install?: (name: string) => Promise<void>;
 	readonly themeName?: string;
-}
-
-// The logo shimmer clock: a coarse wall-clock tick that drifts the gradient. The interval runs only while it is
-// both wanted (`active`) and allowed (`!reducedMotion`); it is cleared otherwise. So once the dashboard is active
-// (or under reducedMotion) no timer ticks and the frozen path renders once without re-rendering — critical because
-// this interval otherwise lives for the App's lifetime and would force a full dashboard repaint every ~120ms,
-// showing up as keystroke lag. Dep array [reducedMotion, active]. Exported so the stop-on-inactive path is unit-testable.
-export function useShimmerNow(reducedMotion: boolean, active: boolean): number {
-	const [now, setNow] = useState<number>(() => Date.now());
-	useEffect(() => {
-		if (reducedMotion || !active) return;
-		const id = setInterval(() => {
-			setNow(Date.now());
-		}, 120);
-		return () => {
-			clearInterval(id);
-		};
-	}, [reducedMotion, active]);
-	return now;
 }
 
 /** Map a theme name to its ThemeData, defaulting to houston for undefined or unknown names. */
@@ -80,20 +59,79 @@ function initialChosenDirs(configDir: string | undefined): readonly SaveTarget[]
 	return configDir === undefined ? null : [{ dir: configDir, scope: "global" }];
 }
 
+// The config.toml a save at this target reads back from (global under the config dir, local under the project).
+function configPathFor(t: SaveTarget): string {
+	return t.scope === "global" ?
+			join(t.dir, "ccsidekick", "config.toml")
+		:	join(t.cwd ?? "", ".ccsidekick", "config.toml");
+}
+
+// A first run: none of the chosen targets already carry a config.toml. Such a launch gets the guided wizard; an
+// existing config opens the dashboard straight away.
+function isFirstRun(targets: readonly SaveTarget[]): boolean {
+	return !targets.some((t) => existsSync(configPathFor(t)));
+}
+
 // `{ onQuit }` when supplied, else `{}` — a conditional-spread shared by the Dashboard and Welcome props, so
 // exactOptionalPropertyTypes is satisfied at both without doubling this ternary in App's own body.
 function onQuitProp(onQuit: (() => void) | undefined): { onQuit?: () => void } {
 	return onQuit !== undefined ? { onQuit } : {};
 }
 
+// The optional entry props both the Wizard and the Dashboard accept, spread only when present so
+// exactOptionalPropertyTypes holds. `initialConfig` is passed per-site (it carries the draft across a
+// wizard⇄dashboard switch), so it is not folded in here.
+function entryExtras(props: AppProps): {
+	renderBin?: string;
+	onSave?: (config: Config, target: SaveTarget) => void;
+} {
+	return {
+		...(props.renderBin !== undefined ? { renderBin: props.renderBin } : {}),
+		...(props.onSave !== undefined ? { onSave: props.onSave } : {}),
+	};
+}
+
+// The initialConfig prop when a seed is present, else `{}` — the shared conditional spread for the carried draft.
+function seedProp(seed: Config | undefined): { initialConfig?: Config } {
+	return seed !== undefined ? { initialConfig: seed } : {};
+}
+
+// The Dashboard's non-routing props. App owns terminal size (its single useTermSize tracks resize) and threads
+// the resolved columns/rows down, so the Dashboard registers no second resize listener of its own.
+function dashboardBaseProps(
+	props: AppProps,
+	env: NodeJS.ProcessEnv,
+	columns: number,
+	rows: number,
+): Partial<DashboardProps> {
+	return {
+		env,
+		cols: columns,
+		rows,
+		...(props.themeName !== undefined ? { themeName: props.themeName } : {}),
+		...(props.packs !== undefined ? { packs: props.packs } : {}),
+		...onQuitProp(props.onQuit),
+		...entryExtras(props),
+	};
+}
+
 export function App(props: AppProps): ReactElement {
 	const env = props.env ?? process.env;
 	const capability = detectCapability(env);
-	const reducedMotion = detectReducedMotion(env);
 	const tokens = resolveTokens(THEMES.houston, capability);
 	const [chosen, setChosen] = useState<readonly SaveTarget[] | null>(() =>
 		initialChosenDirs(props.configDir),
 	);
+	// The wizard is the first-run journey; a returning user (a target already carrying a config.toml) opens the
+	// dashboard. Either view can switch to the other (the wizard's Ctrl+D → dashboard, the dashboard's Ctrl+W →
+	// wizard); `override` pins the chosen view and carries the current draft across so no setting is lost.
+	// `dirty` rides along so the target view knows the carried draft has unsaved edits: the dashboard's
+	// quit guard and the wizard's Esc both key off it, so a switch never silently drops edits on quit.
+	const [override, setOverride] = useState<{
+		readonly view: "wizard" | "dashboard";
+		readonly draft: Config;
+		readonly dirty: boolean;
+	} | null>(null);
 	const live = useTermSize();
 	const columns = props.cols ?? live.columns;
 	const rows = props.rows ?? live.rows;
@@ -103,14 +141,7 @@ export function App(props: AppProps): ReactElement {
 	// and the program would exit on its own the moment the terminal shrinks. This always-on no-op keeps the
 	// error box up until the user resizes back to a usable size.
 	useInput(() => {});
-	// The shimmer clock ticks only while the Welcome's wordmark is actually on screen and animated: the Welcome is
-	// active (chosen === null), motion is allowed, the terminal paints the full-color shimmer, and it is wide enough
-	// to show the wordmark at all. Anywhere else (Dashboard, reduced motion, 16-color, too-narrow, or floor) no timer
-	// runs, so nothing re-renders ~8x/sec for an invisible animation.
-	const animating =
-		chosen === null && capability === "full" && columns >= LOGO_MIN_COLUMNS && !atFloor;
-	const nowMs = useShimmerNow(reducedMotion, animating);
-	// Enumerate config dirs once (a readdir + per-candidate existsSync), not on every shimmer frame.
+	// Enumerate config dirs once (a readdir + per-candidate existsSync).
 	const home = props.homeDir ?? homedir();
 	const cwd = props.cwd ?? process.cwd();
 	const suggested = props.suggestedDir ?? env["CLAUDE_CONFIG_DIR"];
@@ -130,23 +161,7 @@ export function App(props: AppProps): ReactElement {
 		return isDuplicate ? homeTargets : [...homeTargets, project];
 	}, [dirs, cwd, home]);
 
-	// Everything the Dashboard needs, minus the entry-only routing props. App owns terminal size (its single
-	// useTermSize tracks resize) and threads the resolved columns/rows down, so the Dashboard registers no
-	// second resize listener of its own.
-	const dashboardProps = {
-		env,
-		reducedMotion,
-		cols: columns,
-		rows,
-		...(props.themeName !== undefined ? { themeName: props.themeName } : {}),
-		...onQuitProp(props.onQuit),
-		...(props.onSave !== undefined ? { onSave: props.onSave } : {}),
-		...(props.renderBin !== undefined ? { renderBin: props.renderBin } : {}),
-		...(props.initialConfig !== undefined ? { initialConfig: props.initialConfig } : {}),
-		...(props.packs !== undefined ? { packs: props.packs } : {}),
-		...(props.installed !== undefined ? { installed: props.installed } : {}),
-		...(props.install !== undefined ? { install: props.install } : {}),
-	};
+	const dashboardProps = dashboardBaseProps(props, env, columns, rows);
 
 	if (chosen === null) {
 		return (
@@ -159,8 +174,6 @@ export function App(props: AppProps): ReactElement {
 				atFloor={atFloor}
 				hues={wordmarkHues}
 				capability={capability}
-				reducedMotion={reducedMotion}
-				nowMs={nowMs}
 				tokens={tokens}
 				{...(suggested !== undefined ? { suggested } : {})}
 				{...onQuitProp(props.onQuit)}
@@ -168,5 +181,39 @@ export function App(props: AppProps): ReactElement {
 		);
 	}
 
-	return <Dashboard {...dashboardProps} targets={chosen} />;
+	// A pinned override wins; otherwise a first run (no config.toml yet) opens the wizard and everyone else the
+	// dashboard. The carried draft seeds whichever view shows, so a Ctrl+D / Ctrl+W switch preserves edits.
+	const view = override?.view ?? (isFirstRun(chosen) ? "wizard" : "dashboard");
+	const seed = override?.draft ?? props.initialConfig;
+
+	if (view === "wizard") {
+		return (
+			<Wizard
+				targets={chosen}
+				cols={columns}
+				rows={rows}
+				env={env}
+				initialDirty={override?.dirty ?? false}
+				onAdvanced={(draft) => {
+					// Leaving the wizard always carries an unsaved draft into the dashboard.
+					setOverride({ view: "dashboard", draft, dirty: true });
+				}}
+				{...onQuitProp(props.onQuit)}
+				{...entryExtras(props)}
+				{...seedProp(seed)}
+			/>
+		);
+	}
+
+	return (
+		<Dashboard
+			{...dashboardProps}
+			targets={chosen}
+			initialDirty={override?.dirty ?? false}
+			onWizard={(draft, dirty) => {
+				setOverride({ view: "wizard", draft, dirty });
+			}}
+			{...seedProp(seed)}
+		/>
+	);
 }

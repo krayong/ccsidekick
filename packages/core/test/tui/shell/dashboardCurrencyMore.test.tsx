@@ -38,7 +38,7 @@ function base(over: Partial<DashboardProps> = {}): DashboardProps {
 test("the currency picker shows a ▾ N more hint inside the popup", async () => {
 	const { lastFrame, stdin } = render(createElement(Dashboard, base({ rows: 24 })));
 	await tick();
-	stdin.write("6"); // jump to Statusline (section index 5, 1-based key "6")
+	stdin.write("5"); // jump to Statusline (section index 4, 1-based key "5")
 	await tick();
 	stdin.write("\r"); // open the section (sidebar -> content); rail starts on Format, Currency row
 	await tick();

@@ -47,7 +47,7 @@ export function StatuslineSection(props: StatuslineSectionProps): ReactElement {
 	const widgets = group?.widgets ?? [];
 	const widgetItems: readonly MillerItem[] = widgets.map((id) => ({
 		id,
-		label: `${config.line.widgets[id] ? glyphs.tabActive : glyphs.tabInactive} ${id}`,
+		label: `${config.statusline.widgets[id] ? glyphs.tabActive : glyphs.tabInactive} ${id}`,
 	}));
 
 	const items: readonly MillerItem[] = isFormat ? formatItems : widgetItems;

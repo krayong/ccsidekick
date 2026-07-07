@@ -13,10 +13,10 @@ test("previewConfigToml round-trips the draft through the loader's defaults", ()
 });
 
 test("previewConfigToml reflects an edited field", () => {
-	const edited = { ...cfg, comments: { ...cfg.comments, enabled: false } };
+	const edited = { ...cfg, comments: { ...cfg.comments, character: false } };
 	const toml = previewConfigToml(edited);
 	expect(toml).toContain("[comments]");
-	expect(toml.toLowerCase()).toContain("enabled = false");
+	expect(toml.toLowerCase()).toContain("character = false");
 });
 
 test("buildSaveConfirm reports a single global target's scope and dir", () => {

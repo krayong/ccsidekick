@@ -46,9 +46,9 @@ bun .claude/skills/pack-author/scripts/scaffold.ts <name> --display "<DisplayNam
 
 Creates `packages/packs/<name>/` with a skeleton `pack.json` (every pool keyed, one unique
 placeholder per leaf cell), a `package.json`, a `README.md`, and a `REVIEW.md`. Registers `<name>`
-in `FIRST_PARTY_PACKS` and links it as a `workspace:*` devDependency of `packages/core`, both
-idempotently; re-running the scaffold overwrites the skeleton files and leaves an existing registry
-entry and dependency untouched.
+in `PACKS` and links it as a `workspace:*` runtime dependency of `packages/core` (every pack ships
+bundled), both idempotently; re-running the scaffold overwrites the skeleton files and leaves an
+existing registry entry and dependency untouched.
 
 **2. Install the workspace link.** Run `bun install` from the workspace root. The render loader
 resolves each pack through `packages/core/node_modules/@ccsidekick/pack-<name>`, which the workspace
@@ -249,16 +249,17 @@ acceptable attribution.
 **4. Final approval.** Show the user the final `pack.json` and generated `README.md`. Their sign-off
 satisfies terminal-state gate 4.
 
-**5. Add a changeset so the pack gets released.** Releases run on [Changesets](https://github.com/changesets/changesets):
-a package is published only when a changeset raises its version. The Release workflow discovers packs
-through a `packages/packs/*` glob, so no workflow edit is ever needed. Just declare the bump:
+**5. Add a changeset so the pack gets released.** Releases run
+on [Changesets](https://github.com/changesets/changesets):
+a package is published only when a changeset raises its version. The Release workflow discovers
+packs through a `packages/packs/*` glob, so no workflow edit is ever needed. Just declare the bump:
 
 ```
 bun run changeset
 ```
 
-Select `@ccsidekick/pack-<name>`, choose `minor` (a brand-new pack's first real version), and write a
-one-line summary. That writes a `.changeset/*.md` file; commit it with the pack. Nothing publishes
+Select `@ccsidekick/pack-<name>`, choose `minor` (a brand-new pack's first real version), and write
+a one-line summary. That writes a `.changeset/*.md` file; commit it with the pack. Nothing publishes
 until a maintainer runs the Release workflow, which opens a "Version Packages" PR and, once merged,
 publishes.
 
@@ -285,14 +286,14 @@ you intend). A secret-scanning hook runs on every push.
 
 ## Quick reference
 
-| Command                                                                                    | Purpose                                                                                          |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `bun .claude/skills/pack-author/scripts/scaffold.ts <name> --display "<N>" --emblem "<g>"` | Create skeleton pack, register in `registry.ts`, link as core devDependency (then `bun install`) |
-| `bun .claude/skills/pack-author/scripts/figure-options.ts <packDir> --candidates <json>`   | Render figure candidates → `.author/figures.html`                                                |
-| `bun .claude/skills/pack-author/scripts/figure-ingest.ts <packDir>`                        | Write `.author/figure.txt` into `pack.json` art; runs `--schema-only` lint                       |
-| `bun .claude/skills/pack-author/scripts/theme-options.ts <packDir> --candidates <json>`    | Render theme candidates → `.author/themes.html`                                                  |
-| `bun run lint-pack --schema-only packages/packs/<name>`                                    | Schema guard + legibility gate (skips content counts)                                            |
-| `bun run lint-pack --status packages/packs/<name>`                                         | Per-cell fill status: current count vs. target per leaf                                          |
-| `bun run lint-pack packages/packs/<name>`                                                  | Full lint: all schema, content, and quality gates                                                |
-| `bun run pack-readme packages/packs/<name>`                                                | Write `README.md` + themed `assets/statusline.svg` (needs `bun run build`)                       |
-| `bun test packages/core/src/packs/registry.test.ts`                                        | Registry parity test                                                                             |
+| Command                                                                                    | Purpose                                                                                         |
+| ------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
+| `bun .claude/skills/pack-author/scripts/scaffold.ts <name> --display "<N>" --emblem "<g>"` | Create skeleton pack, register in `PACKS`, link as core runtime dependency (then `bun install`) |
+| `bun .claude/skills/pack-author/scripts/figure-options.ts <packDir> --candidates <json>`   | Render figure candidates → `.author/figures.html`                                               |
+| `bun .claude/skills/pack-author/scripts/figure-ingest.ts <packDir>`                        | Write `.author/figure.txt` into `pack.json` art; runs `--schema-only` lint                      |
+| `bun .claude/skills/pack-author/scripts/theme-options.ts <packDir> --candidates <json>`    | Render theme candidates → `.author/themes.html`                                                 |
+| `bun run lint-pack --schema-only packages/packs/<name>`                                    | Schema guard + legibility gate (skips content counts)                                           |
+| `bun run lint-pack --status packages/packs/<name>`                                         | Per-cell fill status: current count vs. target per leaf                                         |
+| `bun run lint-pack packages/packs/<name>`                                                  | Full lint: all schema, content, and quality gates                                               |
+| `bun run pack-readme packages/packs/<name>`                                                | Write `README.md` + themed `assets/statusline.svg` (needs `bun run build`)                      |
+| `bun test packages/core/src/packs/registry.test.ts`                                        | Registry parity test                                                                            |

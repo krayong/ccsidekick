@@ -43,7 +43,7 @@ test("entering the Network section and toggling a field marks the draft dirty", 
 	const { lastFrame, stdin } = render(createElement(Dashboard, base()));
 	await tick();
 	expect(lastFrame() ?? "").toContain("✓ saved"); // clean at start
-	stdin.write("5"); // jump to Network (section index 4, 1-based key "5")
+	stdin.write("4"); // jump to Network (section index 3, 1-based key "4")
 	await tick();
 	stdin.write("\r"); // open the section (sidebar → content)
 	await tick();
@@ -58,7 +58,7 @@ test("entering the Network section and toggling a field marks the draft dirty", 
 test("Ctrl+S inside a form's content zone opens the save popup instead of moving the cursor", async () => {
 	const { lastFrame, stdin } = render(createElement(Dashboard, base()));
 	await tick();
-	stdin.write("5"); // jump to Network
+	stdin.write("4"); // jump to Network
 	await tick();
 	stdin.write("\r"); // sidebar → content
 	await tick();
@@ -73,7 +73,7 @@ test("Ctrl+S runs save with the draft and clears dirty on success", async () => 
 		createElement(Dashboard, base({ onSave: (c) => (saved = c) })),
 	);
 	await tick();
-	stdin.write("5"); // Network
+	stdin.write("4"); // Network
 	await tick();
 	stdin.write("\r");
 	await tick();
@@ -85,7 +85,8 @@ test("Ctrl+S runs save with the draft and clears dirty on success", async () => 
 	stdin.write("y"); // confirm install
 	await tick();
 	expect(saved).not.toBeNull();
-	expect(lastFrame() ?? "").toContain("✓ saved");
+	// A successful save flips to the done screen (as the wizard does); the next key quits.
+	expect(lastFrame() ?? "").toContain("Press any key to finish");
 });
 
 test("a save failure surfaces an error and keeps the draft dirty", async () => {
@@ -100,7 +101,7 @@ test("a save failure surfaces an error and keeps the draft dirty", async () => {
 		),
 	);
 	await tick();
-	stdin.write("5");
+	stdin.write("4");
 	await tick();
 	stdin.write("\r");
 	await tick();
@@ -126,7 +127,7 @@ test("Character and Stats sections render an empty form region without crashing"
 test("a save failure renders an Alert and keeps the draft dirty", async () => {
 	const { lastFrame, stdin } = render(createElement(Dashboard, base({ onSave })));
 	await tick();
-	stdin.write("5"); // Network
+	stdin.write("4"); // Network
 	await tick();
 	stdin.write("\r"); // open
 	await tick();
@@ -142,14 +143,14 @@ test("a save failure renders an Alert and keeps the draft dirty", async () => {
 	expect(frame).toContain("● unsaved"); // still dirty
 });
 
-test("the Character Roster lists batman with an empty roster", async () => {
-	const { lastFrame, stdin } = render(
-		createElement(Dashboard, base({ packs: ["batman"], installed: ["batman"] })),
-	);
+test("the Character Roster category lists batman", async () => {
+	const { lastFrame, stdin } = render(createElement(Dashboard, base({ packs: ["batman"] })));
 	await tick();
 	stdin.write("1");
 	await tick();
-	stdin.write("\r");
+	stdin.write("\r"); // open content (Mode category)
+	await tick();
+	stdin.write("s"); // category cursor Mode -> Roster
 	await tick();
 	expect(lastFrame() ?? "").toContain("batman");
 });
@@ -157,7 +158,7 @@ test("the Character Roster lists batman with an empty roster", async () => {
 test("Statusline rail: entering a widget group and toggling a widget marks the draft dirty", async () => {
 	const { lastFrame, stdin } = render(createElement(Dashboard, base()));
 	await tick();
-	stdin.write("6"); // jump to Statusline (section index 5, 1-based key "6")
+	stdin.write("5"); // jump to Statusline (section index 4, 1-based key "5")
 	await tick();
 	stdin.write("\r"); // open the section (sidebar → content); rail starts on the Format category
 	await tick();
@@ -176,7 +177,7 @@ test("Statusline rail: entering a widget group and toggling a widget marks the d
 test("the Currency picker captures every key while open: / s q type into the query, only esc/↵ close it", async () => {
 	const { lastFrame, stdin } = render(createElement(Dashboard, base()));
 	await tick();
-	stdin.write("6"); // jump to Statusline (section index 5, 1-based key "6")
+	stdin.write("5"); // jump to Statusline (section index 4, 1-based key "5")
 	await tick();
 	stdin.write("\r"); // open the section (sidebar → content); rail starts on Format, Currency row
 	await tick();
@@ -220,7 +221,7 @@ test("the Currency picker captures every key while open: / s q type into the que
 test("esc closes the Currency picker without committing", async () => {
 	const { lastFrame, stdin } = render(createElement(Dashboard, base()));
 	await tick();
-	stdin.write("6");
+	stdin.write("5");
 	await tick();
 	stdin.write("\r");
 	await tick();
@@ -239,7 +240,7 @@ test("esc closes the Currency picker without committing", async () => {
 test("the Currency picker filters on 'j' instead of navigating; arrows still move the cursor", async () => {
 	const { lastFrame, stdin } = render(createElement(Dashboard, base()));
 	await tick();
-	stdin.write("6"); // jump to Statusline
+	stdin.write("5"); // jump to Statusline
 	await tick();
 	stdin.write("\r"); // open the section; rail starts on Format, Currency row
 	await tick();
@@ -292,7 +293,7 @@ test("Save section: space flips the project target's scope, and the header chip 
 		),
 	);
 	await tick();
-	stdin.write("8"); // jump to Save (section index 7, 1-based key "8")
+	stdin.write("7"); // jump to Save (section index 6, 1-based key "7")
 	await tick();
 	expect(lastFrame() ?? "").toContain("[mixed]"); // one global home + one local project
 	stdin.write(" "); // toggle the project target's scope
@@ -308,7 +309,7 @@ test("Save section: space flips the project target's scope, and the header chip 
 test("seeds the draft from <configDir>/ccsidekick/config.toml when no initialConfig is given", async () => {
 	const dir = mkdtempSync(join(tmpdir(), "ccsk-dash-seed-"));
 	mkdirSync(join(dir, "ccsidekick"));
-	writeFileSync(join(dir, "ccsidekick", "config.toml"), '[line]\ncurrency = "JPY"\n');
+	writeFileSync(join(dir, "ccsidekick", "config.toml"), '[statusline]\ncurrency = "JPY"\n');
 	const props: DashboardProps = {
 		targets: [{ dir, scope: "global" }],
 		env: { TERM: "xterm-256color" },
@@ -318,7 +319,7 @@ test("seeds the draft from <configDir>/ccsidekick/config.toml when no initialCon
 	};
 	const { lastFrame, stdin } = render(createElement(Dashboard, props));
 	await tick();
-	stdin.write("6"); // jump to Statusline section (section index 5, 1-based key "6")
+	stdin.write("5"); // jump to Statusline section (section index 4, 1-based key "5")
 	await tick();
 	stdin.write("\r"); // open the section (sidebar → content)
 	await tick();

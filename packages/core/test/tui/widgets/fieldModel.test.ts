@@ -2,7 +2,7 @@ import { expect, test } from "bun:test";
 
 import { DEFAULT_CONFIG, loadConfig } from "../../../src/sources";
 import type { KeyEvent } from "../../../src/tui/nav";
-import { tipsFields } from "../../../src/tui/sections";
+import { commentsFields } from "../../../src/tui/sections";
 import { type FieldSpec, applyContentKey, isFieldNavKey } from "../../../src/tui/widgets";
 
 const ev = (input: string, key: KeyEvent["key"] = {}): KeyEvent => ({ input, key });
@@ -13,14 +13,14 @@ const fields: readonly FieldSpec[] = [
 		label: "Enabled",
 		kind: "toggle",
 		value: "on",
-		toggle: (d) => ({ ...d, comments: { enabled: !d.comments.enabled } }),
+		toggle: (d) => ({ ...d, comments: { ...d.comments, character: !d.comments.character } }),
 	},
 	{
 		id: "sev",
 		label: "Min severity",
 		kind: "cycle",
 		value: "low",
-		next: (d) => ({ ...d, helpful: { ...d.helpful, min_severity: "medium" } }),
+		next: (d) => ({ ...d, comments: { ...d.comments, min_severity: "medium" } }),
 	},
 	{
 		id: "cur",
@@ -28,7 +28,10 @@ const fields: readonly FieldSpec[] = [
 		kind: "text",
 		value: "INR",
 		raw: "INR",
-		commit: (d, raw) => ({ ...d, line: { ...d.line, currency: raw.toUpperCase() } }),
+		commit: (d, raw) => ({
+			...d,
+			statusline: { ...d.statusline, currency: raw.toUpperCase() },
+		}),
 	},
 ];
 
@@ -41,7 +44,7 @@ test("up/down move the cursor within bounds; j/k mirror them", () => {
 test("space toggles a toggle field and marks the draft changed", () => {
 	const r = applyContentKey(DEFAULT_CONFIG, fields, 0, ev(" "));
 	expect(r.changed).toBe(true);
-	expect(r.draft.comments.enabled).toBe(!DEFAULT_CONFIG.comments.enabled);
+	expect(r.draft.comments.character).toBe(!DEFAULT_CONFIG.comments.character);
 	expect(r.editing).toBe(false);
 });
 
@@ -64,7 +67,7 @@ test("isFieldNavKey covers motion and activation, not escape or tab", () => {
 });
 
 test("enter cycles a cycle field forward; left/right never change a value", () => {
-	const fields = tipsFields(loadConfig("")); // min_severity is a cycle field
+	const fields = commentsFields(loadConfig("")); // min_severity is a cycle field
 	const i = fields.findIndex((f) => f.kind === "cycle");
 	const entered = applyContentKey(loadConfig(""), fields, i, ev("", { return: true }));
 	expect(entered.changed).toBe(true); // enter advanced the value
@@ -77,7 +80,7 @@ test("enter cycles a cycle field forward; left/right never change a value", () =
 });
 
 test("a/left from a form returns to the sidebar; w/s move the cursor; ctrl+s is not consumed", () => {
-	const fields = tipsFields(loadConfig(""));
+	const fields = commentsFields(loadConfig(""));
 	expect(applyContentKey(loadConfig(""), fields, 0, ev("a")).exit).toBe(true);
 	expect(applyContentKey(loadConfig(""), fields, 0, ev("", { leftArrow: true })).exit).toBe(true);
 	expect(applyContentKey(loadConfig(""), fields, 0, ev("s")).cursor).toBe(1);

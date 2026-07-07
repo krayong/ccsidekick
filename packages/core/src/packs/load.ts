@@ -22,8 +22,8 @@ export function loadPack(
 	name: string,
 	resolver: (spec: string) => string = defaultResolver,
 ): LoadResult {
-	// Gate the `<name>` segment through the install allowlist before it reaches the resolver: an unvalidated
-	// name (e.g. `../evil`) would otherwise feed a path traversal straight through `import.meta.resolve`.
+	// Validate the `<name>` segment before it reaches the resolver: an unvalidated name (e.g. `../evil`) would
+	// otherwise feed a path traversal straight through `import.meta.resolve`.
 	if (!isAllowedPackPackage(packPackageName(name))) {
 		return { ok: false, reason: `invalid pack name: ${name}` };
 	}

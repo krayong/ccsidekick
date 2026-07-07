@@ -1,9 +1,9 @@
 // `scaffold`: the pack-author setup step. It writes a skeleton pack under `packages/packs/<name>` (a full-shaped
 // `pack.json` with every voice pool keyed and nested, one unique placeholder per leaf cell, plus a placeholder
 // figure for `idle`), a `package.json`, a `README.md`, and a `REVIEW.md`, then registers the pack in
-// `packs/registry.ts` and as a `workspace:*` devDependency of `packages/core` (both idempotent). The core
-// devDependency is what the render loader resolves the pack through, so without it the statusline shot drops
-// the figure; the author must run `bun install` after scaffolding to materialize the workspace symlink. The
+// `packs/registry.ts` (`PACKS`) and as a `workspace:*` runtime dependency of `packages/core` (both idempotent).
+// That core dependency is what the render loader resolves the pack through, so without it the statusline shot
+// drops the figure; the author must run `bun install` after scaffolding to materialize the workspace symlink. The
 // skeleton passes `lint-pack --schema-only` and deliberately fails full
 // lint (the pools sit at one placeholder per cell, not their authored counts), so an author fills the voice in
 // from a structure that already loads. Runnable as a CLI (`bun scaffold.ts <name> --display <n> --emblem <g>`)
@@ -143,39 +143,35 @@ Reviewer (not the author): ____________________    Date: __________
 function registerPack(root: string, name: string): void {
 	const registryPath = join(root, "packages", "core", "src", "packs", "registry.ts");
 	const src = readFileSync(registryPath, "utf8");
-	const match = /export const FIRST_PARTY_PACKS = \[([^\]]*)\] as const;/.exec(src);
-	if (match === null)
-		throw new Error("scaffold: could not find FIRST_PARTY_PACKS in registry.ts");
+	const match = /export const PACKS = \[([^\]]*)\] as const;/.exec(src);
+	if (match === null) throw new Error("scaffold: could not find PACKS in registry.ts");
 	const existing = [...(match[1] ?? "").matchAll(/"([^"]+)"/g)].map((m) => m[1]);
 	if (existing.includes(name)) return; // already registered, no-op
 	const next = [...existing, name].map((n) => `"${n}"`).join(", ");
-	const replacement = `export const FIRST_PARTY_PACKS = [${next}] as const;`;
+	const replacement = `export const PACKS = [${next}] as const;`;
 	writeFileSync(registryPath, src.replace(match[0], replacement));
 }
 
-// Link the pack as a `workspace:*` devDependency of `packages/core`. The render loader (and thus the README
-// statusline shot) resolves each pack through `node_modules/@ccsidekick/pack-<name>`, which the workspace only
-// creates for declared dependencies. batman is a runtime dependency instead (it always ships); every other
-// first-party pack is dev-only. Idempotent, and a no-op if the pack is already a runtime dependency.
+// Link the pack as a `workspace:*` runtime dependency of `packages/core`. Every pack ships bundled, so the
+// render loader (and thus the README statusline shot) resolves it through `node_modules/@ccsidekick/pack-<name>`,
+// which the workspace only creates for declared dependencies. Idempotent; a no-op if already declared.
 function linkCoreDependency(root: string, name: string): void {
 	const pkgPath = join(root, "packages", "core", "package.json");
 	const pkg = JSON.parse(readFileSync(pkgPath, "utf8")) as {
 		dependencies?: Record<string, string>;
-		devDependencies?: Record<string, string>;
 		[k: string]: unknown;
 	};
 	const dep = `@ccsidekick/pack-${name}`;
-	if (pkg.dependencies?.[dep] !== undefined) return; // already a runtime dependency (batman)
-	const dev = pkg.devDependencies ?? {};
-	if (dev[dep] !== undefined) return; // already linked
-	dev[dep] = "workspace:*";
-	// Keep the pack entries alphabetical; leave any non-pack devDependencies after them in their existing order.
-	const entries = Object.entries(dev);
+	const deps = pkg.dependencies ?? {};
+	if (deps[dep] !== undefined) return; // already declared
+	deps[dep] = "workspace:*";
+	// Keep the pack entries alphabetical up front; leave any non-pack dependencies after them in place.
+	const entries = Object.entries(deps);
 	const packEntries = entries
 		.filter(([k]) => k.startsWith("@ccsidekick/pack-"))
 		.sort(([a], [b]) => a.localeCompare(b));
 	const otherEntries = entries.filter(([k]) => !k.startsWith("@ccsidekick/pack-"));
-	pkg.devDependencies = Object.fromEntries([...packEntries, ...otherEntries]);
+	pkg.dependencies = Object.fromEntries([...packEntries, ...otherEntries]);
 	writeFileSync(pkgPath, `${JSON.stringify(pkg, null, "\t")}\n`);
 }
 

@@ -1,5 +1,5 @@
 // Pick a sensible default display currency from the runtime locale, falling back to USD. Only chooses the
-// `[line].currency` default when the user hasn't set one; the fx table handles the actual conversion. Pure and
+// `[statusline].currency` default when the user hasn't set one; the fx table handles the actual conversion. Pure and
 // Node-portable (reads the locale via Intl, or accepts an explicit string for tests).
 
 // Region (ISO 3166-1 alpha-2) → currency (ISO 4217). A curated common set; anything unlisted falls back to USD.
@@ -80,5 +80,5 @@ function detectLocale(): string {
 	}
 }
 
-/** The default `[line].currency` when the user hasn't configured one: derived from the runtime locale. */
+/** The default `[statusline].currency` when the user hasn't configured one: derived from the runtime locale. */
 export const defaultCurrency = (): string => currencyForLocale(detectLocale());

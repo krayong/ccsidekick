@@ -17,7 +17,7 @@ export { expectedCount, LEAF_PATHS } from "./poolShape";
 export { renderReadme } from "./readme";
 
 // registry.ts
-export { BUNDLED_PACK, FIRST_PARTY_PACKS } from "./registry";
+export { PACKS } from "./registry";
 
 // validate.ts
 export { validatePack, validatePackDetailed } from "./validate";
