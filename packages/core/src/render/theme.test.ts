@@ -19,7 +19,8 @@ const withTheme = (theme: Partial<Config["theme"]>): Config => ({
 	theme: { ...DEFAULT_CONFIG.theme, ...theme },
 });
 
-test("default config resolves every surface to houston", () => {
+test("default config (character theme) with no active persona falls back to houston on every surface", () => {
+	// DEFAULT_CONFIG.theme.name is the "character" sentinel; with no persona supplied it resolves to houston.
 	const t = resolveTheme(DEFAULT_CONFIG, noPack);
 	expect(t.statusline.hues).toEqual(THEMES.houston.hues);
 	expect(t.logo.hues).toEqual(THEMES.houston.hues);

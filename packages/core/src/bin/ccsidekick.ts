@@ -8,9 +8,9 @@ import { homedir } from "node:os";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { runUninstall } from "../cli";
+import { defaultReadConfig, runList, runSetup, runUninstall, setupHelp } from "../cli";
 import { REFRESH_INTERVAL_SEC } from "../domain";
-import { engineRoot, listInstalledPacks } from "../sources";
+import { save } from "../tui";
 
 const sub = process.argv[2];
 
@@ -26,6 +26,8 @@ function printHelp(): void {
 			"",
 			"Usage:",
 			"  ccsidekick                      launch the setup TUI (needs a terminal)",
+			"  ccsidekick setup [flags]        configure + wire without the TUI (see: setup --help)",
+			"  ccsidekick list <what>          list valid characters | themes | widgets",
 			"  ccsidekick uninstall            remove the status line + hooks from settings.json",
 			"  ccsidekick uninstall --restore-backup   restore the pre-install settings backup",
 			"  ccsidekick help | --help | -h   show this help",
@@ -62,16 +64,13 @@ async function launchTui(): Promise<void> {
 	const { createElement } = await import("react");
 	const { App } = await import("../tui/shell");
 
-	const engineDir = engineRoot(import.meta.url);
 	const renderBin = fileURLToPath(new URL("ccsidekick-render.js", import.meta.url));
-	const installed = listInstalledPacks(engineDir);
 	const suggested = process.env["CLAUDE_CONFIG_DIR"];
 
 	const instance = render(
 		createElement(App, {
 			homeDir: homedir(),
 			renderBin,
-			installed,
 			...(suggested !== undefined ? { suggestedDir: suggested } : {}),
 		}),
 	);
@@ -90,6 +89,34 @@ async function main(): Promise<void> {
 			restoreBackup: process.argv.includes("--restore-backup"),
 		});
 		process.exit(0);
+	}
+
+	if (sub === "list") {
+		const code = runList(
+			process.argv[3],
+			(s) => process.stdout.write(s),
+			(s) => process.stderr.write(s),
+		);
+		process.exit(code);
+	}
+
+	if (sub === "setup") {
+		if (process.argv.includes("--help") || process.argv.includes("-h")) {
+			process.stdout.write(setupHelp());
+			process.exit(0);
+		}
+		const renderBin = fileURLToPath(new URL("ccsidekick-render.js", import.meta.url));
+		const code = runSetup(process.argv.slice(3), {
+			save,
+			renderBin,
+			readConfig: defaultReadConfig,
+			cwd: process.cwd(),
+			homeDir: homedir(),
+			env: process.env,
+			out: (s) => process.stdout.write(s),
+			err: (s) => process.stderr.write(s),
+		});
+		process.exit(code);
 	}
 
 	if (!process.stdout.isTTY || !process.stdin.isTTY) {

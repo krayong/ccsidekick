@@ -32,9 +32,9 @@ test("the save-confirm overlay swallows everything", () => {
 });
 
 test("Enter in the Save section opens the confirm, before generic content nav", () => {
-	expect(route({ section: 7, zone: "content" }, key("", { return: true }))).toBe("saveSection");
+	expect(route({ section: 6, zone: "content" }, key("", { return: true }))).toBe("saveSection");
 	// but the save overlay, if already open, still wins over saveSection
-	expect(route({ section: 7, overlay: "save" }, key("", { return: true }))).toBe("save");
+	expect(route({ section: 6, overlay: "save" }, key("", { return: true }))).toBe("save");
 });
 
 test("the find and currency overlays capture all their keys", () => {
@@ -61,19 +61,19 @@ test("help and quit overlays have no dedicated handler, so their keys route to g
 test("the content-zone section handlers claim their own field-nav keys", () => {
 	expect(route({ section: 0, zone: "content" }, key("j"))).toBe("character");
 	expect(route({ section: 1, zone: "content" }, key("j"))).toBe("theme");
-	expect(route({ section: 5, zone: "content" }, key("j"))).toBe("statusline");
-	expect(route({ section: 6, zone: "content" }, key("i"))).toBe("stats");
+	expect(route({ section: 4, zone: "content" }, key("j"))).toBe("statusline");
+	expect(route({ section: 5, zone: "content" }, key("i"))).toBe("stats");
 });
 
 test("Statistics claims the arrows and the ijkl scroll cluster; other keys fall through to content", () => {
-	expect(route({ section: 6, zone: "content" }, key("", { leftArrow: true }))).toBe("stats"); // axis
-	expect(route({ section: 6, zone: "content" }, key("l"))).toBe("stats"); // scroll right
-	expect(route({ section: 6, zone: "content" }, key("i"))).toBe("stats"); // scroll up
+	expect(route({ section: 5, zone: "content" }, key("", { leftArrow: true }))).toBe("stats"); // axis
+	expect(route({ section: 5, zone: "content" }, key("l"))).toBe("stats"); // scroll right
+	expect(route({ section: 5, zone: "content" }, key("i"))).toBe("stats"); // scroll up
 	// h and w are no longer Statistics keys; a/return are plain field-nav -> generic content handler
-	expect(route({ section: 6, zone: "content" }, key("h"))).toBe("content");
-	expect(route({ section: 6, zone: "content" }, key("w"))).toBe("content");
-	expect(route({ section: 6, zone: "content" }, key("a"))).toBe("content");
-	expect(route({ section: 6, zone: "content" }, key("", { return: true }))).toBe("content");
+	expect(route({ section: 5, zone: "content" }, key("h"))).toBe("content");
+	expect(route({ section: 5, zone: "content" }, key("w"))).toBe("content");
+	expect(route({ section: 5, zone: "content" }, key("a"))).toBe("content");
+	expect(route({ section: 5, zone: "content" }, key("", { return: true }))).toBe("content");
 });
 
 test("a section handler only claims keys in its own content zone, never the sidebar", () => {
@@ -82,14 +82,14 @@ test("a section handler only claims keys in its own content zone, never the side
 });
 
 test("space in the Save section toggles the target, in any zone", () => {
-	expect(route({ section: 7, zone: "content" }, key(" "))).toBe("saveToggle");
-	expect(route({ section: 7, zone: "sidebar" }, key(" "))).toBe("saveToggle");
+	expect(route({ section: 6, zone: "content" }, key(" "))).toBe("saveToggle");
+	expect(route({ section: 6, zone: "sidebar" }, key(" "))).toBe("saveToggle");
 	// but a non-space key in Save content is generic content nav, not a toggle
-	expect(route({ section: 7, zone: "content" }, key("j"))).toBe("content");
+	expect(route({ section: 6, zone: "content" }, key("j"))).toBe("content");
 });
 
 test("form sections route field-nav keys to the generic content handler", () => {
-	for (const section of [2, 3, 4]) {
+	for (const section of [2, 3]) {
 		expect(route({ section, zone: "content" }, key("j"))).toBe("content");
 		expect(route({ section, zone: "content" }, key("", { return: true }))).toBe("content");
 	}

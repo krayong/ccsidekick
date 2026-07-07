@@ -5,11 +5,12 @@ import { applyRailKey, type RailState } from "../../../src/tui/widgets";
 const key = (input: string, over: Record<string, boolean> = {}) => ({ input, key: over as never });
 const S0: RailState = { focus: 0, catCursor: 0, itemCursor: 0 };
 
-test("d/right walks focus category -> list -> detail; a/left walks back and exits at the first column", () => {
+test("d/right walks focus category -> list (the deepest focusable column); a/left exits at the first column", () => {
 	const toList = applyRailKey(S0, key("d"), 2, 5);
 	expect(toList.state.focus).toBe(1);
-	const toDetail = applyRailKey(toList.state, key("", { rightArrow: true }), 2, 5);
-	expect(toDetail.state.focus).toBe(2);
+	// Right at the list does not move focus into the passive detail column — it stays put.
+	const stay = applyRailKey(toList.state, key("", { rightArrow: true }), 2, 5);
+	expect(stay.state.focus).toBe(1);
 	const back = applyRailKey({ focus: 0, catCursor: 0, itemCursor: 0 }, key("a"), 2, 5);
 	expect(back.exit).toBe(true); // a/left at the category column returns to the sidebar
 });
@@ -34,10 +35,10 @@ test("changing the category resets the item cursor so a shorter list can't be in
 	expect(r.state.itemCursor).toBe(0);
 });
 
-test("d/right at the detail column (focus 2) is a true no-op", () => {
-	const detail: RailState = { focus: 2, catCursor: 0, itemCursor: 0 };
-	const r = applyRailKey(detail, key("d"), 2, 5);
-	expect(r.state).toBe(detail); // same object, not just equal, so no redundant re-render
+test("d/right at the list column is a true no-op (never focuses the passive detail column)", () => {
+	const list: RailState = { focus: 1, catCursor: 0, itemCursor: 0 };
+	const r = applyRailKey(list, key("d"), 2, 5);
+	expect(r.state).toBe(list); // same object, not just equal, so no redundant re-render
 	expect(r.exit).toBe(false);
 	expect(r.act).toBe(false);
 });

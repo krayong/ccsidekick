@@ -32,7 +32,6 @@ function base(over: Partial<DashboardProps> = {}): DashboardProps {
 		rows: 40,
 		initialConfig: DEFAULT_CONFIG,
 		packs: ["batman"],
-		installed: ["batman"],
 		...over,
 	};
 }

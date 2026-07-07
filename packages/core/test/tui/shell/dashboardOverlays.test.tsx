@@ -31,7 +31,6 @@ function base(over: Partial<DashboardProps> = {}): DashboardProps {
 		rows: 40,
 		initialConfig: DEFAULT_CONFIG,
 		packs: ["batman"],
-		installed: ["batman"],
 		...over,
 	};
 }
@@ -91,18 +90,19 @@ test("typing filters to a form-section field and Enter jumps the form cursor to 
 	await tick();
 	stdin.write("/");
 	await tick();
-	// "comm" uniquely matches the Voice section's "Comments" field (no other label contains it).
-	for (const ch of ["c", "o", "m", "m"]) {
+	// "charcomm" fuzzy-matches only the "Comments › Character Comments" field: the section label "Comments"
+	// has no 'h', and the "Character" section has no 'comm', so neither competes.
+	for (const ch of ["c", "h", "a", "r", "c", "o", "m", "m"]) {
 		stdin.write(ch);
 		await tick();
 	}
 	let frame = lastFrame() ?? "";
-	expect(frame).toContain("Voice › Comments");
+	expect(frame).toContain("Comments › Character Comments");
 	stdin.write("\r"); // jump to the field
 	await tick();
 	frame = lastFrame() ?? "";
 	expect(frame).not.toContain("Find"); // popup closed
-	const line = frame.split("\n").find((l) => l.includes("Comments")) ?? "";
+	const line = frame.split("\n").find((l) => l.includes("Character Comments")) ?? "";
 	expect(line).toContain("❯"); // the form cursor landed on the picked field
 });
 

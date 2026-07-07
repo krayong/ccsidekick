@@ -31,8 +31,6 @@ function base(over: Partial<WelcomeProps> = {}): WelcomeProps {
 		atFloor: false,
 		hues: THEMES.houston.hues,
 		capability: cap,
-		reducedMotion: true,
-		nowMs: 0,
 		tokens,
 		...over,
 	};

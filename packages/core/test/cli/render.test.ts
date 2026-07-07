@@ -95,7 +95,7 @@ test("gap 2 — cost fields carry the local-currency parenthetical", () => {
 	const cfg = freshRoot();
 	// Pin INR explicitly: the default currency now follows the host locale, so a bare default would be USD on
 	// most machines (and USD suppresses the parenthetical). INR keeps this a deterministic parenthetical check.
-	const env = withGlobalConfig(cfg, 'schema_version = 1\n\n[line]\ncurrency = "INR"\n');
+	const env = withGlobalConfig(cfg, 'schema_version = 1\n\n[statusline]\ncurrency = "INR"\n');
 	const out = runRender(stdin, env, term(), clock).line;
 	// payload cost 0.4231 USD → "$0.42 (₹36)" at the bundled INR rate (ceil).
 	expect(stripAnsi(out)).toContain("(₹36)");
@@ -115,21 +115,21 @@ test("gap 4 — a [theme.icons] override reaches stdout via the resolved theme",
 	expect(stripAnsi(out)).toContain("ΔIR"); // the configured dir glyph, not the engine default "◈"
 });
 
-test("gap 5 — the helpful layer is skipped when [helpful].enabled is false", () => {
+test("gap 5 — the helpful layer is skipped when [comments].helpful is false", () => {
 	const cfg = freshRoot();
 	const balancePath = join(cfg, "balance.json");
 	writeFileSync(balancePath, JSON.stringify({ amount: 5, currency: "USD", ts: NOW }));
 
 	const enabledEnv = withGlobalConfig(
 		cfg,
-		`[helpful]\nenabled = true\n[network]\nbalance_path = "${balancePath}"\n`,
+		`[comments]\nhelpful = true\n[network]\nbalance_path = "${balancePath}"\n`,
 	);
 	const enabled = stripAnsi(runRender(stdin, enabledEnv, term(), clock).line);
 	expect(enabled).toContain("Top up"); // the low-balance helpful tip
 
 	const disabledEnv = withGlobalConfig(
 		cfg,
-		`[helpful]\nenabled = false\n[network]\nbalance_path = "${balancePath}"\n`,
+		`[comments]\nhelpful = false\n[network]\nbalance_path = "${balancePath}"\n`,
 	);
 	const disabled = stripAnsi(runRender(stdin, disabledEnv, term(), clock).line);
 	expect(disabled).not.toContain("Top up"); // section skipped, not merely hidden

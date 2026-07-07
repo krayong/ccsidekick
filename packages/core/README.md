@@ -9,20 +9,58 @@ path and disableable.
 npx ccsidekick
 ```
 
-Running `ccsidekick` in a terminal opens the setup TUI: it picks a Claude config dir, lets you choose
-a character, and wires the status line and the tool-call hooks into your `settings.json`. Remove it
-with `npx ccsidekick uninstall`.
+Running `ccsidekick` in a terminal opens the setup UI: a first run walks you through a short guided
+wizard (character, theme, comments), a later run opens the full dashboard. Either way it picks a
+Claude config dir and wires the status line and the tool-call hooks into your `settings.json`.
+Remove it with `npx ccsidekick uninstall`.
+
+## Non-interactive setup (for scripts and AI agents)
+
+No TTY required. `ccsidekick setup` configures and wires everything from flags, so an agent can
+install it in one command:
+
+```bash
+ccsidekick setup --character batman --theme houston --mode fixed
+```
+
+Only the flags you pass are applied (a partial patch onto the existing config, or the defaults on a
+fresh install), then it writes `config.toml` and wires `settings.json` exactly like the TUI.
+
+| Flag                     | Sets                                                            |
+| ------------------------ | --------------------------------------------------------------- |
+| `--character <name>`     | the fixed character                                             |
+| `--mode <fixed\|random>` | fixed one character, or rotate the roster                       |
+| `--roster <a,b,c>`       | the random-mode roster                                          |
+| `--theme <name>`         | a theme, or `character` (the default) to match the character    |
+| `--currency <code>`      | statusline currency, e.g. `USD`                                 |
+| `--budget <usd>`         | monthly budget                                                  |
+| `--comments <on\|off>`   | the character's comment line                                    |
+| `--helpful <on\|off>`    | the helpful-tip line                                            |
+| `--min-severity <sev>`   | `low\|medium\|high\|critical`                                   |
+| `--widgets <a,b,c>`      | statusline widgets to enable (others turn off)                  |
+| `--global` / `--local`   | save target (default global)                                    |
+| `--config-dir <path>`    | Claude config dir (default `$CLAUDE_CONFIG_DIR` or `~/.claude`) |
+
+Discover valid values for scripting, and see every flag:
+
+```bash
+ccsidekick list characters   # also: themes, widgets
+ccsidekick setup --help
+```
+
+An unknown value (e.g. a misspelled theme) exits non-zero and prints the valid set — it never
+silently falls back.
 
 ## The two binaries
 
 - **`ccsidekick-render`** is the hot path. Claude Code calls `ccsidekick-render render` on every
-  status-line tick and `ccsidekick-render classify` on every tool call. It loads no UI and runs under
-  plain Node.
-- **`ccsidekick`** is the setup TUI and `uninstall`. It is the only entry point that loads the Ink
-  interface.
+  status-line tick and `ccsidekick-render classify` on every tool call. It loads no UI and runs
+  under plain Node.
+- **`ccsidekick`** is the user-facing entry: the setup UI, plus `setup`, `list`, and `uninstall`.
+  Only the TUI loads the Ink interface; `setup`/`list`/`uninstall` run under plain Node.
 
-Characters ship as separate `@ccsidekick/pack-<name>` packages; `batman` is bundled as a runtime
-dependency so a fresh install always has a character.
+Every character ships bundled as a runtime dependency, so a fresh install has them all — there is no
+download or install step, and no network to pick a character.
 
 For the full feature tour, configuration reference, and contributor docs, see the
 [repository README](https://github.com/krayong/ccsidekick#readme).

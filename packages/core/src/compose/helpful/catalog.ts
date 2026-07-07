@@ -425,16 +425,8 @@ export const HELPFUL_CATALOG: readonly HelpfulTrigger[] = [
 			`Large diff: +${i.git?.insertions ?? 0}/-${i.git?.deletions ?? 0}. Review in chunks.`,
 	},
 	{
-		id: "behind_upstream",
-		severity: "medium",
-		category: "git",
-		momentary: false,
-		template: "{behind} behind upstream. Pull before your next commit knots the merge.",
-		test: (i) => behind(i.git) > 0,
-		render: (i) =>
-			`${behind(i.git)} behind upstream. Pull before your next commit knots the merge.`,
-	},
-	{
+		// Listed before behind_upstream so a diverged repo (ahead AND behind, where both tests pass) shows the
+		// more specific "diverged" tip rather than the plain "behind upstream" one — catalog order breaks the tie.
 		id: "diverged",
 		severity: "medium",
 		category: "git",
@@ -443,6 +435,16 @@ export const HELPFUL_CATALOG: readonly HelpfulTrigger[] = [
 		test: (i) => ahead(i.git) > 0 && behind(i.git) > 0,
 		render: (i) =>
 			`Diverged ${ahead(i.git)}↑ ${behind(i.git)}↓. \`git pull --rebase\` keeps history linear.`,
+	},
+	{
+		id: "behind_upstream",
+		severity: "medium",
+		category: "git",
+		momentary: false,
+		template: "{behind} behind upstream. Pull before your next commit knots the merge.",
+		test: (i) => behind(i.git) > 0,
+		render: (i) =>
+			`${behind(i.git)} behind upstream. Pull before your next commit knots the merge.`,
 	},
 	{
 		id: "dirty_default_branch",

@@ -11,5 +11,20 @@ export type { RenderOverrides } from "./render";
 // settings.ts
 export { installSettings, safeWriteJson, writeConfigToml } from "./settings";
 
+// setup.ts
+export {
+	applySetup,
+	defaultHomeDir,
+	defaultReadConfig,
+	listValues,
+	parseSetup,
+	runList,
+	runSetup,
+	setupHelp,
+	themeNames,
+	type Parsed,
+	type SetupDeps,
+} from "./setup";
+
 // uninstall.ts
 export { isOurStatusLine, runUninstall } from "./uninstall";

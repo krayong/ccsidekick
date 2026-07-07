@@ -38,8 +38,7 @@ test("the shell shows the brand, every section, the config dir, scope, and hints
 	for (const name of [
 		"Character",
 		"Theme",
-		"Voice",
-		"Tips",
+		"Comments",
 		"Network",
 		"Statusline",
 		"Statistics",
@@ -94,18 +93,16 @@ test("a sidebarView narrows the sidebar to the given sections and marks its curs
 	expect(frame).not.toContain("Statusline");
 });
 
-test("under reducedMotion the focused content eyebrow paints at full accent on the first frame", () => {
-	// The fade hook returns 1 immediately under reducedMotion, so the focused eyebrow is the settled accent color
-	// with no fade-in. Build the accent opening SGR from a reference cell and assert the first frame carries it.
+test("the focused content eyebrow paints at full accent (no fade)", () => {
+	// The section heading is painted accent directly (the per-change fade was removed to stop a flicker), so the
+	// focused eyebrow carries the accent color on the first frame. Build the accent opening SGR from a reference
+	// cell and assert the first frame carries it.
 	const tokens = resolveTokens(THEMES.houston, detectCapability({ TERM: "xterm-256color" }));
 	const ref = render(createElement(Text, { ...tokens.accent }, "X")).lastFrame() ?? "";
 	const sgr = ref.slice(0, ref.indexOf("X"));
 	const frame =
 		render(
-			createElement(
-				AppShell,
-				base({ nav: { ...INITIAL_NAV, zone: "content" }, reducedMotion: true }),
-			),
+			createElement(AppShell, base({ nav: { ...INITIAL_NAV, zone: "content" } })),
 		).lastFrame() ?? "";
 	expect(frame).toContain(sgr);
 });

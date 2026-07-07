@@ -1,10 +1,10 @@
 [character]
 mode = "random"
 
-[line]
+[statusline]
 currency = "EUR"
 
-[line.widgets]
+[statusline.widgets]
 git_hash = true
 session_duration = true
 

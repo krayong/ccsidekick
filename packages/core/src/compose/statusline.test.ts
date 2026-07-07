@@ -95,7 +95,7 @@ const base: ComposeInputs = {
 	git,
 	payload,
 	scan,
-	widgets: DEFAULT_CONFIG.line.widgets,
+	widgets: DEFAULT_CONFIG.statusline.widgets,
 	currency: { code: "USD", rate: 1 },
 	homeDir: "/home/me",
 };
@@ -232,7 +232,7 @@ test("dir uses the home-relativized repo root for an in-repo sub-path", () => {
 
 test("cache_hit carries the 'Cache Hit:' label; value is unsigned at/above 80% and critical below", () => {
 	// cache_hit defaults off, so enable it explicitly for this test.
-	const widgets = { ...DEFAULT_CONFIG.line.widgets, cache_hit: true };
+	const widgets = { ...DEFAULT_CONFIG.statusline.widgets, cache_hit: true };
 	const high: ComposeInputs = {
 		...base,
 		widgets,
@@ -454,7 +454,7 @@ test("pay_as_you_go groups the USD pair then the local pair; whole amounts drop 
 });
 
 test("USD line currency suppresses the redundant local parenthetical (M5): cost_burn, balance, pay_as_you_go", () => {
-	// [line].currency = USD ⇒ the local conversion equals the USD figure, so the `($…)` duplicate must be dropped.
+	// [statusline].currency = USD ⇒ the local conversion equals the USD figure, so the `($…)` duplicate must be dropped.
 	const usd: ComposeInputs = {
 		...base,
 		currency: { code: "USD", rate: 1 },

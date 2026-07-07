@@ -25,8 +25,6 @@ export interface WelcomeProps {
 	readonly atFloor: boolean;
 	readonly hues: readonly number[];
 	readonly capability: Capability;
-	readonly reducedMotion: boolean;
-	readonly nowMs: number;
 	readonly tokens: Tokens;
 }
 
@@ -43,8 +41,6 @@ export function Welcome({
 	atFloor,
 	hues,
 	capability,
-	reducedMotion,
-	nowMs,
 	tokens,
 }: WelcomeProps): ReactElement {
 	const showLogo = columns >= LOGO_MIN_COLUMNS;
@@ -53,13 +49,7 @@ export function Welcome({
 	const content = (
 		<Box flexDirection="column" alignItems="center">
 			{showLogo ?
-				<Logo
-					hues={hues}
-					capability={capability}
-					reducedMotion={reducedMotion}
-					nowMs={nowMs}
-					tokens={tokens}
-				/>
+				<Logo hues={hues} capability={capability} tokens={tokens} />
 			:	<Text {...tokens.accent}>ccsidekick</Text>}
 			<Box marginTop={1}>
 				<Text {...tokens.textMuted}>{DESCRIPTION}</Text>

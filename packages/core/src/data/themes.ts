@@ -1,5 +1,6 @@
 // The built-in theme catalog: 70 named entries of pure color data; the coloring algorithms live in render/.
-// houston is the default. Every entry passes render/themeValidate (data/themes.test.ts is the data-driven gate).
+// houston is the guaranteed-present fallback (the config default is the "character" sentinel, which follows the
+// active pack's theme and falls back here). Every entry passes render/themeValidate (data/themes.test.ts gates it).
 
 import type { PackTheme } from "../domain";
 

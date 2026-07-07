@@ -4,6 +4,7 @@ import type { WidgetId } from "../domain";
 
 import { defaultCurrency } from "./locale";
 
+// The config tables mirror the dashboard sections, in order: Character, Theme, Comments, Network, Statusline.
 export interface Config {
 	readonly schema_version: number;
 	readonly character: {
@@ -11,18 +12,6 @@ export interface Config {
 		readonly mode: "fixed" | "random";
 		readonly name: string;
 		readonly roster: readonly string[];
-	};
-	readonly comments: {
-		readonly enabled: boolean;
-	};
-	readonly helpful: {
-		readonly enabled: boolean;
-		readonly min_severity: "low" | "medium" | "high" | "critical";
-	};
-	readonly line: {
-		readonly currency: string;
-		readonly budget?: number;
-		readonly widgets: Readonly<Record<WidgetId, boolean>>;
 	};
 	// theme: a default `name` plus optional per-surface overrides; unknown keys (legacy `mode`/`separator`) are ignored.
 	readonly theme: {
@@ -34,10 +23,22 @@ export interface Config {
 		readonly mood_shift: boolean;
 		readonly icons: Readonly<Record<string, string>>;
 	};
+	// comments: the Comments section — the character's own comment line and the helpful-tip line, each an
+	// independent on/off, plus the tip severity floor.
+	readonly comments: {
+		readonly character: boolean;
+		readonly helpful: boolean;
+		readonly min_severity: "low" | "medium" | "high" | "critical";
+	};
 	readonly network: {
 		readonly fx_refresh: boolean;
 		readonly usage_fetch: boolean;
 		readonly balance_path: string;
+	};
+	readonly statusline: {
+		readonly currency: string;
+		readonly budget?: number;
+		readonly widgets: Readonly<Record<WidgetId, boolean>>;
 	};
 }
 
@@ -80,11 +81,12 @@ const DEFAULT_WIDGETS: Readonly<Record<WidgetId, boolean>> = {
 export const DEFAULT_CONFIG: Config = {
 	schema_version: 1,
 	character: { enabled: true, mode: "random", name: "batman", roster: [] },
-	comments: { enabled: true },
-	helpful: { enabled: true, min_severity: "low" },
-	line: { currency: defaultCurrency(), widgets: DEFAULT_WIDGETS },
-	theme: { name: "houston", banding: "solid", mood_shift: false, icons: {} },
+	// "character" (the CHARACTER_THEME sentinel) makes every surface follow the active character's own pack
+	// theme, falling back to houston when a persona ships none or none is active yet.
+	theme: { name: "character", banding: "solid", mood_shift: false, icons: {} },
+	comments: { character: true, helpful: true, min_severity: "low" },
 	network: { fx_refresh: true, usage_fetch: true, balance_path: "" },
+	statusline: { currency: defaultCurrency(), widgets: DEFAULT_WIDGETS },
 };
 
 const obj = (v: unknown): Record<string, unknown> =>
@@ -144,10 +146,9 @@ export function loadConfig(globalToml = "", projectToml = ""): Config {
 
 	const character = section(g, p, "character");
 	const comments = section(g, p, "comments");
-	const helpful = section(g, p, "helpful");
-	const line = section(g, p, "line");
 	const theme = section(g, p, "theme");
 	const network = section(g, p, "network");
+	const statusline = section(g, p, "statusline");
 
 	const d = DEFAULT_CONFIG;
 
@@ -158,25 +159,6 @@ export function loadConfig(globalToml = "", projectToml = ""): Config {
 			mode: oneOf(character["mode"], ["fixed", "random"] as const, d.character.mode),
 			name: str(character["name"], d.character.name),
 			roster: stringArray(character["roster"], d.character.roster),
-		},
-		comments: {
-			enabled: bool(comments["enabled"], d.comments.enabled),
-		},
-		helpful: {
-			enabled: bool(helpful["enabled"], d.helpful.enabled),
-			min_severity: oneOf(
-				helpful["min_severity"],
-				["low", "medium", "high", "critical"] as const,
-				d.helpful.min_severity,
-			),
-		},
-		line: {
-			currency: str(line["currency"], d.line.currency),
-			...(typeof line["budget"] === "number" ? { budget: line["budget"] } : {}),
-			widgets: mergeWidgets({
-				...obj(obj(g["line"])["widgets"]),
-				...obj(obj(p["line"])["widgets"]),
-			}),
 		},
 		theme: {
 			name: str(theme["name"], d.theme.name),
@@ -190,10 +172,27 @@ export function loadConfig(globalToml = "", projectToml = ""): Config {
 				...obj(obj(p["theme"])["icons"]),
 			}),
 		},
+		comments: {
+			character: bool(comments["character"], d.comments.character),
+			helpful: bool(comments["helpful"], d.comments.helpful),
+			min_severity: oneOf(
+				comments["min_severity"],
+				["low", "medium", "high", "critical"] as const,
+				d.comments.min_severity,
+			),
+		},
 		network: {
 			fx_refresh: bool(network["fx_refresh"], d.network.fx_refresh),
 			usage_fetch: bool(network["usage_fetch"], d.network.usage_fetch),
 			balance_path: str(network["balance_path"], d.network.balance_path),
+		},
+		statusline: {
+			currency: str(statusline["currency"], d.statusline.currency),
+			...(typeof statusline["budget"] === "number" ? { budget: statusline["budget"] } : {}),
+			widgets: mergeWidgets({
+				...obj(obj(g["statusline"])["widgets"]),
+				...obj(obj(p["statusline"])["widgets"]),
+			}),
 		},
 	};
 }

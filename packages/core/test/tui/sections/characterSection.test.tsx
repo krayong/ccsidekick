@@ -31,18 +31,16 @@ const detail = {
 	emblem: "B",
 } as const;
 
-const rosterState: RailState = { focus: 1, catCursor: 0, itemCursor: 0 };
-const browseState = (itemCursor = 0): RailState => ({ focus: 1, catCursor: 1, itemCursor });
+const modeState: RailState = { focus: 1, catCursor: 0, itemCursor: 0 };
+const rosterCat: RailState = { focus: 1, catCursor: 1, itemCursor: 0 };
 
 function base(over: Partial<CharacterSectionProps> = {}): CharacterSectionProps {
 	return {
-		state: rosterState,
+		state: modeState,
 		packs: ["batman"],
-		installed: ["batman"],
 		activeIds: ["batman"],
 		mode: "random",
 		detail,
-		installStatus: "idle",
 		rows: 40,
 		tokens,
 		glyphs,
@@ -53,125 +51,44 @@ function base(over: Partial<CharacterSectionProps> = {}): CharacterSectionProps 
 	};
 }
 
-test("the category column shows the category columns and the figure", () => {
+test("the Mode and Roster categories and the figure render", () => {
 	const frame = render(createElement(CharacterSection, base())).lastFrame() ?? "";
+	expect(frame).toContain("Mode");
 	expect(frame).toContain("Roster");
-	expect(frame).toContain("Browse");
 	// The figure is now painted per-cell (each glyph wrapped in its own color escape), so match it with the
 	// ANSI stripped rather than as a contiguous colored substring.
 	expect(stripAnsi(frame)).toContain("(batman)");
 });
 
-test("the Roster detail is name, a blank line, then the figure. no metadata lines", () => {
+test("there is no Browse category", () => {
 	const frame = render(createElement(CharacterSection, base())).lastFrame() ?? "";
+	expect(frame).not.toContain("Browse");
+});
+
+test("the detail is the figure with no metadata lines", () => {
+	const frame =
+		render(createElement(CharacterSection, base({ state: rosterCat }))).lastFrame() ?? "";
 	// Per-cell coloring wraps each glyph in its own escape, so match the figure with ANSI stripped.
 	expect(stripAnsi(frame)).toContain("(batman)"); // figure still present
-	expect(frame).not.toContain("roster 2"); // metadata removed
 	expect(frame).not.toContain("tone edgy");
 	expect(frame).not.toContain("Bob Kane");
 });
 
-test("the Roster list leads with a Mode row showing the current mode", () => {
+test("the Mode category lists fixed and random", () => {
 	const frame =
 		render(createElement(CharacterSection, base({ mode: "random" }))).lastFrame() ?? "";
-	expect(frame).toContain("Mode");
 	expect(frame).toContain("random");
-	const fixed =
-		render(createElement(CharacterSection, base({ mode: "fixed" }))).lastFrame() ?? "";
-	expect(fixed).toContain("fixed");
+	expect(frame).toContain("fixed");
 });
 
-test("an empty Browse category shows the no-other-packs line", () => {
-	const frame =
-		render(createElement(CharacterSection, base({ state: browseState() }))).lastFrame() ?? "";
-	expect(frame).toContain("no other packs available");
-});
-
-test("Browse offers an uninstalled first-party pack (not the empty fallback)", () => {
+test("the Roster category lists all bundled packs", () => {
 	const frame =
 		render(
 			createElement(
 				CharacterSection,
-				base({
-					state: browseState(1),
-					packs: ["batman", "spiderman"],
-					installed: ["batman"],
-					detail: { ...detail, displayName: "Spider-Man", ok: false, figure: [] },
-				}),
+				base({ state: rosterCat, packs: ["batman", "spiderman"] }),
 			),
 		).lastFrame() ?? "";
-	expect(frame).not.toContain("no other packs available");
+	expect(frame).toContain("batman");
 	expect(frame).toContain("spiderman");
-	expect(frame.toLowerCase()).toContain("install");
-});
-
-test("Browse lists an installable pack with an install affordance", () => {
-	const frame =
-		render(
-			createElement(
-				CharacterSection,
-				base({
-					state: browseState(1),
-					packs: ["batman", "robin"],
-					installed: ["batman"],
-					detail: { ...detail, displayName: "Robin", ok: false, figure: [] },
-				}),
-			),
-		).lastFrame() ?? "";
-	expect(frame).toContain("robin");
-	expect(frame.toLowerCase()).toContain("install");
-});
-
-test("an installing Browse pack renders the spinner label", () => {
-	const frame =
-		render(
-			createElement(
-				CharacterSection,
-				base({
-					state: browseState(1),
-					packs: ["batman", "robin"],
-					installed: ["batman"],
-					installStatus: "installing",
-					detail: { ...detail, displayName: "Robin", ok: false, figure: [] },
-				}),
-			),
-		).lastFrame() ?? "";
-	expect(frame).toContain("Installing");
-});
-
-test("reducedMotion collapses the install Spinner to a static line", () => {
-	// The static ellipsis label (Installing…) is distinct from the Spinner's ASCII label (Installing...).
-	const frame =
-		render(
-			createElement(
-				CharacterSection,
-				base({
-					state: browseState(1),
-					packs: ["batman", "robin"],
-					installed: ["batman"],
-					installStatus: "installing",
-					reducedMotion: true,
-					detail: { ...detail, displayName: "Robin", ok: false, figure: [] },
-				}),
-			),
-		).lastFrame() ?? "";
-	expect(frame).toContain("Installing…");
-});
-
-test("a Browse install error surfaces the message", () => {
-	const frame =
-		render(
-			createElement(
-				CharacterSection,
-				base({
-					state: browseState(1),
-					packs: ["batman", "robin"],
-					installed: ["batman"],
-					installStatus: "error",
-					errorMsg: "npm exploded",
-					detail: { ...detail, displayName: "Robin", ok: false, figure: [] },
-				}),
-			),
-		).lastFrame() ?? "";
-	expect(frame).toContain("npm exploded");
 });

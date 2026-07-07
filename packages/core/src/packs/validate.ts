@@ -4,8 +4,8 @@
 // mismatch, a missing/empty pool, or any malformed identity/voice/art/theme field is rejected here so the loader
 // can drop the figure rather than crash on bad data.
 //
-// Hardening (defense in depth — packs are first-party allowlisted today, but this guard becomes load-bearing the
-// moment any third-party path exists): every known field is read by name (never a generic deep-merge or
+// Hardening (defense in depth — packs are bundled first-party data today, but this guard becomes load-bearing
+// the moment any third-party path exists): every known field is read by name (never a generic deep-merge or
 // whole-object spread that could smuggle attacker keys into engine objects); the dangerous keys `__proto__`,
 // `constructor`, and `prototype` are rejected anywhere in the parsed data; and array/string lengths are bounded.
 //

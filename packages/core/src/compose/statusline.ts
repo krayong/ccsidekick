@@ -33,7 +33,7 @@ export interface ComposeInputs {
 	readonly payload: Payload;
 	readonly scan: TranscriptScan;
 	readonly widgets: Readonly<Record<WidgetId, boolean>>;
-	/** The local-currency parenthetical inputs: the `[line].currency` code and its USD→code fx rate. */
+	/** The local-currency parenthetical inputs: the `[statusline].currency` code and its USD→code fx rate. */
 	readonly currency: { readonly code: string; readonly rate: number };
 	/** Absolute home dir for `$HOME → ~` relativization in the dir field; "" when unknown. */
 	readonly homeDir: string;

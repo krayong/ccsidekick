@@ -1,5 +1,5 @@
 export type { AppProps } from "./App";
-export { App, useShimmerNow } from "./App";
+export { App } from "./App";
 
 export type { AppShellProps } from "./AppShell";
 export { AppShell, CONTENT_CHROME_COLS, POPUP_CHROME_ROWS } from "./AppShell";
@@ -22,11 +22,12 @@ export { chipFor, projectTarget } from "./saveTarget";
 
 export { Logo, WORDMARK, WORDMARK_WIDTH } from "./Logo";
 
-export { useTransitionFade } from "./useTransitionFade";
-
 export { parseMouseWheel, useMouseWheel } from "./useMouseWheel";
 
 export type { WelcomeProps } from "./Welcome";
 export { Welcome } from "./Welcome";
+
+export type { WizardProps } from "./Wizard";
+export { Wizard } from "./Wizard";
 
 export { LOGO_MIN_COLUMNS, SOLID } from "./wordmark";

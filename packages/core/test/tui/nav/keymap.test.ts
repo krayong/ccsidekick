@@ -15,8 +15,7 @@ test("sections are in the new order", () => {
 	expect([...SECTIONS]).toEqual([
 		"Character",
 		"Theme",
-		"Voice",
-		"Tips",
+		"Comments",
 		"Network",
 		"Statusline",
 		"Statistics",
@@ -31,7 +30,7 @@ test("Tab toggles focus between sidebar and content", () => {
 	expect(b.state.zone).toBe("sidebar");
 });
 
-test("digits 1..8 jump to a section and focus the sidebar", () => {
+test("digits 1..7 jump to a section and focus the sidebar", () => {
 	const from: NavState = { ...INITIAL_NAV, zone: "content" };
 	const r = dispatchKey(from, key("3"));
 	expect(r.state.section).toBe(2);

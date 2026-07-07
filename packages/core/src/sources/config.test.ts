@@ -2,9 +2,9 @@ import { expect, test } from "bun:test";
 
 import { loadConfig } from "./config";
 
-test("default config resolves theme.name = houston and no per-surface overrides", () => {
+test("default config resolves theme.name = character (Match Character) and no per-surface overrides", () => {
 	const c = loadConfig("", "");
-	expect(c.theme.name).toBe("houston");
+	expect(c.theme.name).toBe("character");
 	expect(c.theme.statusline).toBeUndefined();
 	expect(c.theme.mood_shift).toBe(false);
 	expect(c.theme.banding).toBe("solid");
@@ -28,7 +28,7 @@ test("[theme] parses name + per-surface overrides", () => {
 
 test("legacy [theme].mode / [theme].separator keys are ignored without error", () => {
 	const c = loadConfig('[theme]\nmode = "character"\nseparator = "slash"\n', "");
-	expect(c.theme.name).toBe("houston");
+	expect(c.theme.name).toBe("character");
 	expect("mode" in c.theme).toBe(false);
 	expect("separator" in c.theme).toBe(false);
 });
@@ -38,9 +38,20 @@ test("[theme.icons] still overrides glyphs", () => {
 	expect(c.theme.icons["git_branch"]).toBe("↳");
 });
 
-test("line.budget parses when present and is absent otherwise", () => {
-	expect(loadConfig("[line]\nbudget = 60\n").line.budget).toBe(60);
-	expect(loadConfig("").line.budget).toBeUndefined();
+test("statusline.budget parses when present and is absent otherwise", () => {
+	expect(loadConfig("[statusline]\nbudget = 60\n").statusline.budget).toBe(60);
+	expect(loadConfig("").statusline.budget).toBeUndefined();
 	// a non-number is ignored (stays absent)
-	expect(loadConfig('[line]\nbudget = "nope"\n').line.budget).toBeUndefined();
+	expect(loadConfig('[statusline]\nbudget = "nope"\n').statusline.budget).toBeUndefined();
+});
+
+test("[comments] parses character/helpful/min_severity; defaults are on/on/low", () => {
+	const d = loadConfig("");
+	expect(d.comments.character).toBe(true);
+	expect(d.comments.helpful).toBe(true);
+	expect(d.comments.min_severity).toBe("low");
+	const c = loadConfig('[comments]\ncharacter = false\nhelpful = false\nmin_severity = "high"\n');
+	expect(c.comments.character).toBe(false);
+	expect(c.comments.helpful).toBe(false);
+	expect(c.comments.min_severity).toBe("high");
 });

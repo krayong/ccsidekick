@@ -6,8 +6,7 @@
 export const SECTIONS = [
 	"Character",
 	"Theme",
-	"Voice",
-	"Tips",
+	"Comments",
 	"Network",
 	"Statusline",
 	"Statistics",
@@ -107,7 +106,7 @@ function dispatchCommand(state: NavState, ev: KeyEvent, dirty: boolean): Dispatc
 	if (key.tab === true) {
 		return stay({ ...state, zone: state.zone === "sidebar" ? "content" : "sidebar" });
 	}
-	if (/^[1-8]$/.test(input)) {
+	if (/^[1-7]$/.test(input)) {
 		return stay({ ...state, section: Number(input) - 1, zone: "sidebar" });
 	}
 	return null;
@@ -181,6 +180,7 @@ export function hintsFor(state: NavState): readonly Hint[] {
 			{ key: "/", label: "find" },
 			{ key: "^p", label: "preview" },
 			{ key: "^s", label: "save" },
+			{ key: "^w", label: "wizard" },
 			{ key: "?", label: "help" },
 			{ key: "q", label: "quit" },
 		];
@@ -191,6 +191,7 @@ export function hintsFor(state: NavState): readonly Hint[] {
 		{ key: "/", label: "find" },
 		{ key: "^p", label: "preview" },
 		{ key: "^s", label: "save" },
+		{ key: "^w", label: "wizard" },
 		{ key: "?", label: "help" },
 		{ key: "q", label: "quit" },
 	];

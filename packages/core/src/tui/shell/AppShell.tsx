@@ -6,10 +6,8 @@ import { Box, Text } from "ink";
 import type { ReactElement, ReactNode } from "react";
 
 import { SECTIONS, hintsFor, type NavState } from "../nav";
-import type { GlyphSet, TextStyle, Tokens } from "../theme";
+import type { GlyphSet, Tokens } from "../theme";
 import { VRule } from "../widgets";
-
-import { useTransitionFade } from "./useTransitionFade";
 
 interface SidebarView {
 	readonly sections: readonly number[]; // original SECTIONS indices, in filtered order
@@ -41,7 +39,6 @@ export interface AppShellProps {
 	readonly children?: ReactNode;
 	readonly overlay?: ReactElement;
 	readonly sidebarView?: SidebarView;
-	readonly reducedMotion?: boolean;
 	readonly columns: number;
 	readonly rows: number;
 	readonly collapsed?: boolean;
@@ -168,23 +165,17 @@ function HintBar({ nav, tokens }: AppShellProps): ReactElement {
 	);
 }
 
-function Content({ nav, tokens, glyphs, children, reducedMotion }: AppShellProps): ReactElement {
+function Content({ nav, tokens, glyphs, children }: AppShellProps): ReactElement {
 	// When content is focused, the eyebrow carries the marker glyph and accent so focus survives NO_COLOR (T1)
 	// without adding a panel box, which the one-border density rule reserves for the active overlay (a popup
 	// such as Preview, Find, or Help).
 	const focused = nav.zone === "content";
 	const eyebrow = `${focused ? `${glyphs.marker} ` : ""}${SECTIONS[nav.section]?.toUpperCase() ?? ""}`;
-	// On a section change, brighten the title from a dim token to its resting color over the discrete steps.
-	// Color-only and redundant with the already-changed content; reducedMotion returns full immediately.
-	const fade = useTransitionFade(nav.section, reducedMotion ?? false);
-	const settled = focused ? tokens.accent : tokens.textMuted;
-	const eyebrowStyle: TextStyle =
-		fade >= 1 ? settled
-		: fade > 0 ? { ...tokens.accent, dimColor: true }
-		: tokens.textMuted;
+	// The section heading is always accent-highlighted (not dimmed with the sidebar), painted directly with no
+	// per-change fade: a fade re-rendered the heading dim→accent on every section switch, which read as a flicker.
 	return (
 		<Box flexDirection="column" flexGrow={1} paddingLeft={2}>
-			<Text {...eyebrowStyle}>{eyebrow}</Text>
+			<Text {...tokens.accent}>{eyebrow}</Text>
 			<Box marginTop={1}>{children}</Box>
 		</Box>
 	);

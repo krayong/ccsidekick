@@ -6,7 +6,7 @@ import { afterEach, expect, test } from "bun:test";
 import { render as rawRender } from "ink-testing-library";
 import { createElement } from "react";
 
-import { DEFAULT_CONFIG } from "../../../src/sources";
+import { type Config, DEFAULT_CONFIG } from "../../../src/sources";
 import { type DashboardProps, Dashboard } from "../../../src/tui/shell";
 
 const mounted: ReturnType<typeof rawRender>[] = [];
@@ -30,57 +30,29 @@ function base(over: Partial<DashboardProps> = {}): DashboardProps {
 		rows: 40,
 		initialConfig: DEFAULT_CONFIG,
 		packs: ["batman"],
-		installed: ["batman"],
 		...over,
 	};
 }
 
-test("Enter on the Mode row cycles random -> fixed and marks dirty", async () => {
+test("selecting fixed on the Mode category sets the mode and marks dirty", async () => {
 	const { lastFrame, stdin } = render(createElement(Dashboard, base()));
 	await tick();
 	stdin.write("1"); // Character
 	await tick();
-	stdin.write("\r"); // open content (category column focused)
+	stdin.write("\r"); // open content (Mode category, category column focused)
 	await tick();
-	stdin.write("d"); // focus the list column (cursor on the Mode row, index 0)
+	stdin.write("d"); // focus the Mode list (cursor at index 0 = "fixed")
 	await tick();
-	expect(lastFrame() ?? "").toContain("random");
-	stdin.write("\r"); // cycle mode
+	expect(lastFrame() ?? "").toContain("● random"); // random is the default, marked active
+	stdin.write("\r"); // select "fixed" (the row under the cursor)
 	await tick();
 	const frame = lastFrame() ?? "";
-	expect(frame).toContain("fixed");
+	expect(frame).toContain("● fixed");
 	expect(frame).toContain("● unsaved");
 });
 
-test("switching category Roster -> Browse -> Roster remaps the item cursor onto the corresponding pack, not the Mode row", async () => {
-	// Roster's Mode row shifts every pack down by one relative to Browse. Round-tripping the category
-	// cursor must land back on the first pack (index 1 on Roster), not on the Mode row (index 0) — an
-	// unmapped implementation would leave the cursor at 0 after the Browse -> Roster switch.
-	const { lastFrame, stdin } = render(
-		createElement(
-			Dashboard,
-			base({ packs: ["batman", "robin"], installed: ["batman", "robin"] }),
-		),
-	);
-	await tick();
-	stdin.write("1"); // Character
-	await tick();
-	stdin.write("\r"); // open content
-	await tick();
-	stdin.write("s"); // category Roster -> Browse
-	await tick();
-	stdin.write("w"); // category Browse -> Roster
-	await tick();
-	stdin.write("d"); // focus the list column (cursor should now be on batman, not the Mode row)
-	await tick();
-	stdin.write("\r"); // activate: must select batman, not cycle Mode
-	await tick();
-	const frame = lastFrame() ?? "";
-	expect(frame).toContain("● batman"); // batman toggled into the roster
-	expect(frame).not.toContain("fixed"); // Mode was left alone (still random)
-});
-
-test("cycling Mode fixed<->random never clobbers the other field (name vs roster)", async () => {
+test("switching Mode to fixed never clobbers the seeded name or roster", async () => {
+	let saved: Config | null = null;
 	const initialConfig = {
 		...DEFAULT_CONFIG,
 		character: {
@@ -90,27 +62,27 @@ test("cycling Mode fixed<->random never clobbers the other field (name vs roster
 			roster: ["robin"],
 		},
 	};
-	const { lastFrame, stdin } = render(
+	const { stdin } = render(
 		createElement(
 			Dashboard,
-			base({ packs: ["batman", "robin"], installed: ["batman", "robin"], initialConfig }),
+			base({ packs: ["batman", "robin"], initialConfig, onSave: (c) => (saved = c) }),
 		),
 	);
 	await tick();
 	stdin.write("1"); // Character
 	await tick();
-	stdin.write("\r"); // open content
+	stdin.write("\r"); // open content (Mode category)
 	await tick();
-	stdin.write("d"); // focus the list column (cursor on the Mode row)
+	stdin.write("d"); // focus the Mode list (cursor 0 = fixed)
 	await tick();
-	// random: the seeded roster ["robin"] is active.
-	expect(lastFrame() ?? "").toContain("● robin");
-	stdin.write("\r"); // cycle random -> fixed
+	stdin.write("\r"); // select fixed
 	await tick();
-	// fixed: the seeded name "batman" becomes active; roster is untouched underneath.
-	expect(lastFrame() ?? "").toContain("● batman");
-	stdin.write("\r"); // cycle fixed -> random
+	stdin.write("\x13"); // Ctrl+S: open the save-confirm
 	await tick();
-	// random again: the original roster ["robin"] must still be intact, not cleared by the fixed cycle.
-	expect(lastFrame() ?? "").toContain("● robin");
+	stdin.write("y"); // confirm
+	await tick();
+	// mode changed, but the seeded name and roster are untouched.
+	expect(saved!.character.mode).toBe("fixed");
+	expect(saved!.character.name).toBe("batman");
+	expect(saved!.character.roster).toEqual(["robin"]);
 });

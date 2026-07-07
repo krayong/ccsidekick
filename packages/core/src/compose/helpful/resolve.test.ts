@@ -113,6 +113,17 @@ test("a severity tie breaks by category order (quota before git)", () => {
 	expect(r.comment?.id).toBe("block_almost_spent"); // both high; quota (2) precedes git (4)
 });
 
+test("a diverged repo shows the diverged tip, not the plainer behind_upstream", () => {
+	// ahead AND behind fires both triggers (same severity + category); diverged is listed first, so it wins.
+	const r = resolveHelpful(
+		mk({ nowMs: T0, git: { ...git, ahead: 2, behind: 3 } }),
+		EMPTY,
+		clockAt(T0),
+		"low",
+	);
+	expect(r.comment?.id).toBe("diverged");
+});
+
 test("min_severity floor drops a low comment before selection", () => {
 	const lowOnly = mk({ nowMs: T0, ...effortLow });
 	expect(resolveHelpful(lowOnly, EMPTY, clockAt(T0), "low").comment?.id).toBe("effort_low");

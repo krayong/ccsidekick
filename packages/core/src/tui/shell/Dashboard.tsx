@@ -7,34 +7,18 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
 import { Box, Text, useApp, useInput, type Key } from "ink";
-import {
-	type ReactElement,
-	type ReactNode,
-	useCallback,
-	useEffect,
-	useMemo,
-	useRef,
-	useState,
-} from "react";
+import { type ReactElement, type ReactNode, useCallback, useMemo, useState } from "react";
 
 import { clampScroll, loadMetrics, save } from "..";
 import { THEMES, type ThemeData } from "../../data";
 import type { AllMetrics } from "../../derived";
-import { BUNDLED_PACK, FIRST_PARTY_PACKS, loadPack } from "../../packs";
+import { PACKS, loadPack } from "../../packs";
 import { CHARACTER_THEME, displayWidth } from "../../render";
-import {
-	type Clock,
-	type Config,
-	listInstalledPacks,
-	loadConfig,
-	readFxCached,
-	systemClock,
-} from "../../sources";
+import { type Clock, type Config, loadConfig, readFxCached, systemClock } from "../../sources";
 import { INITIAL_NAV, breakpointFor, dispatchKey, type NavState } from "../nav";
 import { PreviewPanel, SCENARIOS } from "../preview";
 import {
 	CharacterSection,
-	ENGINE_ROOT,
 	FormSection,
 	InstallPanel,
 	StatsSection,
@@ -43,7 +27,6 @@ import {
 	WIDGET_GROUPS,
 	currencyCodes,
 	filterCodes,
-	installPackAsync,
 	sectionFields,
 	statsAxisRowCount,
 	statsBoardHeight,
@@ -52,7 +35,7 @@ import {
 	themeSettingsFields,
 	type CharacterDetail,
 } from "../sections";
-import { detectCapability, detectReducedMotion, glyphSet, resolveTokens } from "../theme";
+import { detectCapability, glyphSet, resolveTokens } from "../theme";
 import {
 	Alert,
 	CurrencyPicker,
@@ -75,8 +58,6 @@ import { chipFor, type SaveTarget } from "./saveTarget";
 import { usePreviewBody, useSaveCharacterBody, useThemeDetailBody } from "./scenarioBodies";
 import { useMouseWheel } from "./useMouseWheel";
 
-const dedupe = (xs: readonly string[]): readonly string[] => [...new Set(xs)];
-
 export interface DashboardProps {
 	readonly targets: readonly SaveTarget[];
 	readonly themeName?: string;
@@ -88,11 +69,12 @@ export interface DashboardProps {
 	readonly cols?: number;
 	readonly rows?: number;
 	readonly packs?: readonly string[];
-	readonly installed?: readonly string[];
-	readonly reducedMotion?: boolean;
-	readonly install?: (name: string) => Promise<void>;
 	readonly clock?: Clock;
 	readonly metrics?: AllMetrics;
+	/** Seed the dirty flag (true when opened with unsaved edits carried across a view switch). */
+	readonly initialDirty?: boolean;
+	/** Switch to the guided wizard, carrying the current draft and dirty state. */
+	readonly onWizard?: (draft: Config, dirty: boolean) => void;
 }
 
 const seed = (configDir: string, initial: Config | undefined): Config => {
@@ -115,22 +97,12 @@ export function Dashboard(props: DashboardProps): ReactElement {
 		rows,
 	} = props;
 	const app = useApp();
-	// Guards the async install callbacks below: an install can resolve after the TUI has unmounted (Ctrl+C
-	// mid-download), and a setState on an unmounted component is a no-op warning. Set true on mount (so a
-	// remount cannot leave it stuck false) and false on unmount.
-	const mounted = useRef(true);
-	useEffect(() => {
-		mounted.current = true;
-		return () => {
-			mounted.current = false;
-		};
-	}, []);
 	const [nav, setNav] = useState<NavState>(INITIAL_NAV);
 	const [targets, setTargets] = useState<readonly SaveTarget[]>(props.targets);
 	const configDir = targets[0]?.dir ?? "";
 	const root = join(configDir, "ccsidekick");
 	const [draft, setDraft] = useState<Config>(() => seed(configDir, initialConfig));
-	const [dirty, setDirty] = useState(false);
+	const [dirty, setDirty] = useState(props.initialDirty ?? false);
 	const [cursor, setCursor] = useState(0);
 	const [editing, setEditing] = useState(false);
 	const [buffer, setBuffer] = useState("");
@@ -138,19 +110,6 @@ export function Dashboard(props: DashboardProps): ReactElement {
 	const [scenarioIndex, setScenarioIndex] = useState(0);
 	const [previewNoColor, setPreviewNoColor] = useState(false);
 	const [previewNarrow, setPreviewNarrow] = useState(false);
-	const [installedScan, setInstalled] = useState<readonly string[]>(
-		() => props.installed ?? listInstalledPacks(ENGINE_ROOT),
-	);
-	// The bundled pack is a runtime dependency of the engine, so it is always installed; the node_modules
-	// directory scan that seeds this can miss it when it is hoisted or bundled. Force it in so the catalog
-	// never offers it for install and Enter selects it instead of shelling out an npm install that would fail.
-	// Memoized (rather than recomputed each render) so its reference stays stable when unchanged -- the
-	// `themeTable` useMemo below depends on it, and an unstable reference would defeat that memoization.
-	const installed = useMemo(
-		() =>
-			installedScan.includes(BUNDLED_PACK) ? installedScan : [BUNDLED_PACK, ...installedScan],
-		[installedScan],
-	);
 	const [characterRail, setCharacterRail] = useState<RailState>({
 		focus: 0,
 		catCursor: 0,
@@ -166,8 +125,6 @@ export function Dashboard(props: DashboardProps): ReactElement {
 		catCursor: 0,
 		itemCursor: 0,
 	});
-	const [installStatus, setInstallStatus] = useState<"idle" | "installing" | "error">("idle");
-	const [installError, setInstallError] = useState<string | null>(null);
 	const [query, setQuery] = useState("");
 	const [overlayCursor, setOverlayCursor] = useState(0);
 	const [currencyQuery, setCurrencyQuery] = useState("");
@@ -180,16 +137,20 @@ export function Dashboard(props: DashboardProps): ReactElement {
 	const [saveCharIdx, setSaveCharIdx] = useState(0);
 	const [saveScrollX, setSaveScrollX] = useState(0);
 	const [saveScrollY, setSaveScrollY] = useState(0);
+	// Set on a successful save so the whole view flips to a done screen (as the wizard does); the next key quits.
+	const [done, setDone] = useState(false);
 
-	const packs = props.packs ?? dedupe([...FIRST_PARTY_PACKS, ...installed]);
-	// Both rail categories browse the same pack union today (Roster marks selection, Browse marks install
-	// status); named separately to match the rail's category-keyed handler contract.
+	// Every pack ships with the engine, so the roster is the full registry and every pack is present.
+	const packs = props.packs ?? [...PACKS];
+	const installed = packs;
 	const rosterList = packs;
-	const browseList = packs;
-	const install = props.install ?? installPackAsync;
 	const themeSettingRows = themeSettingsFields(draft);
+	// The characters shown as selected. In random mode an empty roster means "all", so show every pack selected
+	// by default rather than none; in fixed mode only the named character is active.
 	const activeIds =
-		draft.character.mode === "fixed" ? [draft.character.name] : draft.character.roster;
+		draft.character.mode === "fixed" ? [draft.character.name]
+		: draft.character.roster.length > 0 ? draft.character.roster
+		: packs;
 
 	// The Save & install carousel previews exactly these characters. Declared before handleSaveKey so its
 	// left/right paging can read the length; the render hook (below) paints the current one off the keystroke path.
@@ -200,8 +161,12 @@ export function Dashboard(props: DashboardProps): ReactElement {
 	const selectCharacter = (id: string): Config => {
 		const ch = draft.character;
 		if (ch.mode === "fixed") return { ...draft, character: { ...ch, name: id } };
-		const roster =
-			ch.roster.includes(id) ? ch.roster.filter((r) => r !== id) : [...ch.roster, id];
+		// An empty roster is the canonical "all"; the effective selection starts from every pack so toggling one
+		// off a fresh (all-selected) roster materializes "all but this one". A full or empty result canonicalizes
+		// back to [] (= all), so only proper subsets persist.
+		const current = ch.roster.length > 0 ? ch.roster : packs;
+		const next = current.includes(id) ? current.filter((r) => r !== id) : [...current, id];
+		const roster = next.length === packs.length || next.length === 0 ? [] : next;
 		return { ...draft, character: { ...ch, roster } };
 	};
 
@@ -266,7 +231,6 @@ export function Dashboard(props: DashboardProps): ReactElement {
 	const theme: ThemeData = themeTable[draft.theme.name] ?? THEMES.houston;
 	const tokens = resolveTokens(theme, capability);
 	const glyphs = glyphSet(false);
-	const reducedMotion = props.reducedMotion ?? detectReducedMotion(env);
 
 	const fields = sectionFields(nav.section, draft);
 
@@ -326,13 +290,13 @@ export function Dashboard(props: DashboardProps): ReactElement {
 		// straight to the row's own action: landing on Currency opens its picker overlay directly, and
 		// Budget starts its edit outright.
 		openCurrencyPicker: () => {
-			setNav({ ...nav, section: 5, zone: "content", overlay: "currency" });
+			setNav({ ...nav, section: 4, zone: "content", overlay: "currency" });
 			setStatuslineRail((s) => ({ ...s, focus: 1, catCursor: 0, itemCursor: 0 }));
 			setCurrencyQuery("");
 			setOverlayCursor(0);
 		},
 		beginBudgetEdit: () => {
-			setNav({ ...nav, section: 5, zone: "content", overlay: "none" });
+			setNav({ ...nav, section: 4, zone: "content", overlay: "none" });
 			setStatuslineRail((s) => ({ ...s, focus: 1, catCursor: 0, itemCursor: 1 }));
 			setCursor(1);
 			setBuffer(statuslineFields(draft)[1]?.raw ?? "");
@@ -430,7 +394,8 @@ export function Dashboard(props: DashboardProps): ReactElement {
 			setNav({ ...nav, overlay: "none" });
 			setCurrencyQuery("");
 			setOverlayCursor(0);
-			if (code !== undefined) change({ ...draft, line: { ...draft.line, currency: code } });
+			if (code !== undefined)
+				change({ ...draft, statusline: { ...draft.statusline, currency: code } });
 			return;
 		}
 		if (key.backspace || key.delete) {
@@ -455,66 +420,27 @@ export function Dashboard(props: DashboardProps): ReactElement {
 		else setPreviewNarrow((v) => !v);
 	};
 
-	// Space/Enter on the list column: on Roster, index 0 is the Mode row (cycles fixed/random); every other
-	// Roster row and every Browse row map to rosterList/browseList[itemCursor - 1 | itemCursor]. Browse also
-	// kicks off an async install for an uninstalled pack instead of selecting it outright.
+	// Space/Enter on a Character row: Mode category (catCursor 0) sets fixed/random from the picked row; Roster
+	// category (catCursor 1) toggles the highlighted pack's selection.
 	const activateCharacter = (state: RailState): void => {
 		if (state.catCursor === 0) {
-			// Roster: index 0 is the Mode row; the rest map to rosterList[itemCursor - 1].
-			if (state.itemCursor === 0) {
-				const ch = draft.character;
-				change({
-					...draft,
-					character: { ...ch, mode: ch.mode === "fixed" ? "random" : "fixed" },
-				});
-				return;
-			}
-			const id = rosterList[state.itemCursor - 1];
-			if (id !== undefined) change(selectCharacter(id));
+			const mode = state.itemCursor === 0 ? "fixed" : "random";
+			change({ ...draft, character: { ...draft.character, mode } });
 			return;
 		}
-		const id = browseList[Math.min(state.itemCursor, browseList.length - 1)];
-		if (id === undefined) return;
-		if (installStatus === "installing") return;
-		if (!installed.includes(id)) {
-			setInstallStatus("installing");
-			setInstallError(null);
-			install(id)
-				.then(() => {
-					if (!mounted.current) return;
-					setInstalled((prev) => (prev.includes(id) ? prev : [...prev, id]));
-					setInstallStatus("idle");
-				})
-				.catch((e: unknown) => {
-					if (!mounted.current) return;
-					setInstallStatus("error");
-					setInstallError(e instanceof Error ? e.message : String(e));
-				});
-			return;
-		}
-		change(selectCharacter(id));
+		const id = rosterList[Math.min(state.itemCursor, rosterList.length - 1)];
+		if (id !== undefined) change(selectCharacter(id));
 	};
 
-	// Character section: drive the category/list/detail rail. routeKey routes here only for field-nav keys in
-	// this content-zone section (digit-jump, Tab, /, ?, and Ctrl+S fall through to the global dispatcher).
-	// Roster's list is offset by one (the Mode row at index 0), so a category switch remaps itemCursor by that
-	// same one-row shift: Roster index i corresponds to Browse index i-1.
+	// Character section: drive the two-category (Mode | Roster) rail. routeKey routes here only for field-nav keys
+	// in this content-zone section (digit-jump, Tab, /, ?, and Ctrl+S fall through to the global dispatcher). A
+	// category switch resets the item cursor to 0 (applyRailKey), so no cross-category remap is needed.
 	const handleCharacterKey = (input: string, key: Key): void => {
-		const listLength =
-			characterRail.catCursor === 0 ? rosterList.length + 1 : browseList.length;
-		const r = applyRailKey(characterRail, { input, key }, 2, listLength);
-		let next = r.state;
-		if (r.state.catCursor !== characterRail.catCursor) {
-			const delta = r.state.catCursor === 0 ? 1 : -1;
-			const nextLen = r.state.catCursor === 0 ? rosterList.length + 1 : browseList.length;
-			next = {
-				...r.state,
-				itemCursor: Math.max(0, Math.min(nextLen - 1, r.state.itemCursor + delta)),
-			};
-		}
-		setCharacterRail(next);
+		const listLen = characterRail.catCursor === 0 ? 2 : rosterList.length;
+		const r = applyRailKey(characterRail, { input, key }, 2, listLen);
+		setCharacterRail(r.state);
 		if (r.exit) setNav({ ...nav, zone: "sidebar" });
-		if (r.act) activateCharacter(next);
+		if (r.act) activateCharacter(r.state);
 	};
 
 	// Space/Enter on a Theme row: select a theme (Themes category) or toggle/cycle a setting (Options category).
@@ -598,7 +524,7 @@ export function Dashboard(props: DashboardProps): ReactElement {
 
 	// Space/Enter on a Statusline row: in a widget group, flip the highlighted widget; in Format, Currency
 	// opens the currency picker overlay and Budget hands off to the existing text/number editing
-	// machinery. The form cursor MUST land on Budget's index (1) in sectionFields(5), never left at 0, or
+	// machinery. The form cursor MUST land on Budget's index (1) in sectionFields(4), never left at 0, or
 	// handleEditingKey's commit would overwrite Currency instead.
 	const activateStatuslineRow = (state: RailState): void => {
 		const group = WIDGET_GROUPS[state.catCursor] ?? WIDGET_GROUPS[0];
@@ -644,7 +570,7 @@ export function Dashboard(props: DashboardProps): ReactElement {
 	};
 	const handleSaveKey = (input: string, key: Key): void => {
 		if (input === "y" || key.return) {
-			if (runInstall()) setNav({ ...nav, overlay: "none" });
+			if (runInstall()) setDone(true);
 		} else if (key.escape) {
 			setNav({ ...nav, overlay: "none" });
 		} else if (key.leftArrow) {
@@ -663,7 +589,7 @@ export function Dashboard(props: DashboardProps): ReactElement {
 	};
 
 	// The Save section's Enter opens the save-confirm popup. routeKey routes Enter here ahead of the generic
-	// content handler, which would otherwise swallow it even though sectionFields(7) is empty.
+	// content handler, which would otherwise swallow it even though sectionFields(6) is empty.
 	const handleSaveSectionKey = (): void => {
 		setError(null);
 		setSaveCharIdx(0);
@@ -740,6 +666,16 @@ export function Dashboard(props: DashboardProps): ReactElement {
 	// the focus context, and that handler runs its effect. The Record is exhaustive over InputRoute — a route
 	// with no handler is a compile error.
 	useInput((input, key) => {
+		// After a successful save the view is the done screen; the next key quits.
+		if (done) {
+			quitNow();
+			return;
+		}
+		// Ctrl+W switches to the guided wizard, carrying the current draft and dirty state (mirrors Ctrl+D).
+		if (key.ctrl && input === "w" && props.onWizard) {
+			props.onWizard(draft, dirty);
+			return;
+		}
 		const route = routeKey(
 			{ editing, zone: nav.zone, overlay: nav.overlay, section: nav.section },
 			{ input, key },
@@ -811,14 +747,20 @@ export function Dashboard(props: DashboardProps): ReactElement {
 		previewNoColor,
 	);
 
-	const detailIdx =
-		characterRail.catCursor === 0 ?
-			Math.max(0, Math.min(characterRail.itemCursor - 1, rosterList.length - 1))
-		:	Math.min(characterRail.itemCursor, browseList.length - 1);
+	// The figure shows the highlighted pack on the Roster category; on the Mode category it shows the configured
+	// character (the nominal default, batman) so the preview is stable and recognizable rather than whichever pack
+	// happens to sort first among an all-selected roster.
+	const rosterIdx = Math.max(0, Math.min(characterRail.itemCursor, rosterList.length - 1));
 	const selectedCharId =
-		(characterRail.catCursor === 0 ? rosterList : browseList)[detailIdx] ??
-		packs[0] ??
-		"batman";
+		characterRail.catCursor === 1 ? (rosterList[rosterIdx] ?? packs[0] ?? "batman")
+		: packs.includes(draft.character.name) ? draft.character.name
+		: (packs[0] ?? "batman");
+	// The figure's palette. Under the "Match character" sentinel the theme table has no entry (it resolves per
+	// character at render time), so paint the figure from the selected character's OWN pack theme, not houston.
+	const figureHues =
+		draft.theme.name === CHARACTER_THEME ?
+			(themeTable[selectedCharId]?.hues ?? THEMES.houston.hues)
+		:	theme.hues;
 	const characterDetail = useMemo<CharacterDetail>(() => {
 		const res = loadPack(selectedCharId);
 		if (!res.ok)
@@ -867,7 +809,7 @@ export function Dashboard(props: DashboardProps): ReactElement {
 		statsDimension,
 		statsWindow,
 		statsEntry,
-		draft.line.budget,
+		draft.statusline.budget,
 	);
 	// The present axis rows: View + Window always, plus the Project/Character entry row when it has entries.
 	const statsAxisCount = statsBoard.entry !== null ? 3 : 2;
@@ -892,7 +834,7 @@ export function Dashboard(props: DashboardProps): ReactElement {
 	// Mouse-wheel / trackpad scrolling for whichever box is live: the save-confirm popup, or the Stats board when
 	// it holds the content-zone focus. Enabling terminal mouse tracking only while one of these is active keeps
 	// normal text selection working the rest of the time.
-	const statsFocused = nav.section === 6 && nav.zone === "content" && nav.overlay === "none";
+	const statsFocused = nav.section === 5 && nav.zone === "content" && nav.overlay === "none";
 	const wheelActive = nav.overlay === "save" || statsFocused;
 	const onWheel = useCallback(
 		(dx: number, dy: number): void => {
@@ -902,6 +844,26 @@ export function Dashboard(props: DashboardProps): ReactElement {
 		[nav.overlay, scrollSave, scrollStats],
 	);
 	useMouseWheel(wheelActive, onWheel);
+
+	// A successful save flips the whole view to a done screen (mirroring the wizard); the next key quits. Placed
+	// after every hook so the hook order stays identical whether or not it is showing (React's rules-of-hooks).
+	if (done) {
+		return (
+			<Box
+				width={columns}
+				height={height}
+				flexDirection="column"
+				paddingX={1}
+				borderStyle="round"
+				borderColor={tokens.frame.color ?? "gray"}>
+				<Text {...tokens.accent}>ccsidekick</Text>
+				<Box marginTop={1} flexDirection="column">
+					<Text {...tokens.nominal}>✓ Saved. Press any key to finish.</Text>
+					<Text {...tokens.textMuted}>Restart Claude Code to see your status line.</Text>
+				</Box>
+			</Box>
+		);
+	}
 
 	// Below the layout floor everything is replaced by a resize notice. Placed after every hook so the hook order
 	// stays identical whether or not the terminal is too small (React's rules-of-hooks).
@@ -921,7 +883,7 @@ export function Dashboard(props: DashboardProps): ReactElement {
 	}
 
 	const buildSectionBody = (): ReactNode => {
-		if (nav.section === 7)
+		if (nav.section === 6)
 			return (
 				<InstallPanel
 					scope={chipFor(targets)}
@@ -935,17 +897,13 @@ export function Dashboard(props: DashboardProps): ReactElement {
 				<CharacterSection
 					state={characterRail}
 					packs={packs}
-					installed={installed}
 					activeIds={activeIds}
 					mode={draft.character.mode}
 					detail={characterDetail}
-					installStatus={installStatus}
-					{...(installError !== null ? { errorMsg: installError } : {})}
 					rows={contentRows}
-					reducedMotion={reducedMotion}
 					tokens={tokens}
 					glyphs={glyphs}
-					hues={theme.hues}
+					hues={figureHues}
 					nowMs={0}
 					moodShift={draft.theme.mood_shift}
 				/>
@@ -964,7 +922,7 @@ export function Dashboard(props: DashboardProps): ReactElement {
 					glyphs={glyphs}
 				/>
 			);
-		if (nav.section === 5)
+		if (nav.section === 4)
 			return (
 				<StatuslineSection
 					state={statuslineRail}
@@ -976,7 +934,7 @@ export function Dashboard(props: DashboardProps): ReactElement {
 					glyphs={glyphs}
 				/>
 			);
-		if (nav.section === 6)
+		if (nav.section === 5)
 			return (
 				<StatsSection
 					dimension={statsDimension}
@@ -1100,7 +1058,6 @@ export function Dashboard(props: DashboardProps): ReactElement {
 			configDir={configDir}
 			scope={chipFor(targets)}
 			dirty={dirty}
-			reducedMotion={reducedMotion}
 			columns={columns}
 			rows={height}
 			collapsed={breakpoint === "narrow" && nav.zone === "content"}

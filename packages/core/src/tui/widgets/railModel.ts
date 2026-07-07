@@ -57,8 +57,10 @@ export function applyRailKey(
 		return { state: { ...state, focus: clampFocus(state.focus - 1) }, exit: false, act: false };
 	}
 	if (right) {
-		if (state.focus === 2) return { state, exit: false, act: false };
-		return { state: { ...state, focus: clampFocus(state.focus + 1) }, exit: false, act: false };
+		// The list is the deepest focusable column. The detail column is a passive preview with no cursor or
+		// action, so right at the list is a no-op rather than moving focus into a dead column.
+		if (state.focus >= 1) return still;
+		return { state: { ...state, focus: 1 }, exit: false, act: false };
 	}
 	if (up || down)
 		return {

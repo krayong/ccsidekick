@@ -73,7 +73,7 @@ function isStatsKey(ev: RouteEvent): boolean {
 function overlayRoute(overlay: Overlay, section: number, ev: RouteEvent): InputRoute | null {
 	const { input, key } = ev;
 	if (overlay === "save") return "save";
-	if (section === 7 && overlay === "none" && key.return === true) return "saveSection";
+	if (section === 6 && overlay === "none" && key.return === true) return "saveSection";
 	if (overlay === "find") return "find";
 	if (overlay === "currency") return "currency";
 	if (overlay === "preview")
@@ -89,8 +89,8 @@ function overlayRoute(overlay: Overlay, section: number, ev: RouteEvent): InputR
 function sectionRoute(section: number, ev: RouteEvent): InputRoute | null {
 	if (section === 0 && isFieldNavKey(ev)) return "character";
 	if (section === 1 && isFieldNavKey(ev)) return "theme";
-	if (section === 6 && isStatsKey(ev)) return "stats";
-	if (section === 5 && isFieldNavKey(ev)) return "statusline";
+	if (section === 5 && isStatsKey(ev)) return "stats";
+	if (section === 4 && isFieldNavKey(ev)) return "statusline";
 	return null;
 }
 
@@ -110,7 +110,7 @@ export function routeKey(ctx: RouteContext, ev: RouteEvent): InputRoute {
 	}
 
 	// Space in the Save section toggles the project target (no zone gate: it is the section's only action).
-	if (section === 7 && overlay === "none" && ev.input === " ") return "saveToggle";
+	if (section === 6 && overlay === "none" && ev.input === " ") return "saveToggle";
 
 	// Generic content-zone field navigation for the form sections (and inert keys in the empty ones).
 	if (overlay === "none" && zone === "content" && isFieldNavKey(ev)) return "content";
