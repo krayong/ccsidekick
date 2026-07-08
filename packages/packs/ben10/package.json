@@ -1,6 +1,6 @@
 {
 	"name": "@ccsidekick/pack-ben10",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Ben 10 character pack for ccsidekick",
 	"type": "module",
 	"files": [

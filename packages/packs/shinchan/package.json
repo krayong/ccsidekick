@@ -1,6 +1,6 @@
 {
 	"name": "@ccsidekick/pack-shinchan",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Shin-chan character pack for ccsidekick",
 	"type": "module",
 	"files": [

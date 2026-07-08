@@ -1,6 +1,6 @@
 {
 	"name": "@ccsidekick/pack-gandalf",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Gandalf character pack for ccsidekick",
 	"type": "module",
 	"files": [
