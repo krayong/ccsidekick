@@ -1,6 +1,6 @@
 {
 	"name": "@ccsidekick/pack-darth-vader",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Darth Vader character pack for ccsidekick",
 	"type": "module",
 	"files": [

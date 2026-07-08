@@ -1,5 +1,11 @@
 # @ccsidekick/pack-pikachu
 
+## 1.0.1
+
+### Patch Changes
+
+- a8557c3: Redraw the Pikachu braille figure so the face reads more clearly, and refresh the generated README.
+
 ## 1.0.0
 
 ### Major Changes

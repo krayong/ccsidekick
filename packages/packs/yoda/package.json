@@ -1,6 +1,6 @@
 {
 	"name": "@ccsidekick/pack-yoda",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Yoda character pack for ccsidekick",
 	"type": "module",
 	"files": [

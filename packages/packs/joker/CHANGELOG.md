@@ -1,5 +1,11 @@
 # @ccsidekick/pack-joker
 
+## 1.0.1
+
+### Patch Changes
+
+- a8557c3: Redraw the Joker braille figure for a cleaner grin, and refresh the generated README.
+
 ## 1.0.0
 
 ### Major Changes
