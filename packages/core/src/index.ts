@@ -5,6 +5,6 @@
 
 export { FIGURE_COLS, MOODS, PRESSURE_MOODS, REACTION_CATEGORIES, STACKS, TIERS } from "./domain";
 export type { PackJson } from "./domain";
-export { PLACEHOLDER_TOKEN } from "./packs";
+export { packageJsonErrors, PLACEHOLDER_TOKEN } from "./packs";
 export { displayWidth, rgbToXterm, themeColorErrors, xtermToRgb } from "./render";
 export { hexForXterm } from "./tui/theme";

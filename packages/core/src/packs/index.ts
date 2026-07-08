@@ -5,7 +5,7 @@ export { isAllowedPackPackage, packPackageName } from "./allowlist";
 export { jaccard, tokenSet } from "./jaccard";
 
 // lint.ts
-export { lintPack, PLACEHOLDER_TOKEN, statusReport } from "./lint";
+export { lintPack, packageJsonErrors, PLACEHOLDER_TOKEN, statusReport } from "./lint";
 
 // load.ts
 export { loadPack } from "./load";

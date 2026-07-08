@@ -11,17 +11,17 @@
 	"theme": {
 		"hues": [
 			230,
-			144,
-			138,
-			137,
-			101
+			223,
+			180,
+			179,
+			178
 		],
 		"comment": [
 			230,
 			144
 		],
 		"signals": {
-			"nominal": 108,
+			"nominal": 114,
 			"caution": 179,
 			"critical": 167
 		},

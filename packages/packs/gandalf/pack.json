@@ -1,0 +1,1152 @@
+{
+	"schema": 1,
+	"name": "gandalf",
+	"displayName": "Gandalf",
+	"attribution": {
+		"artist": "emojicombos.com",
+		"source": "https://emojicombos.com/gandalf-ascii-art"
+	},
+	"emblem": "💍",
+	"tone": "mild",
+	"theme": {
+		"hues": [
+			153,
+			189,
+			147,
+			221,
+			111
+		],
+		"comment": [
+			153,
+			189,
+			110
+		],
+		"signals": {
+			"nominal": 84,
+			"caution": 221,
+			"critical": 203
+		},
+		"separator": 146
+	},
+	"art": [
+		"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+		"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+		"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+		"⠀⠀⠀⠀⠀⠀⠰⣶⣶⣾⣿⣿⣿⣿⣶⣶⠆⠀⠀⠀⠀⠀⠀⠀⠀",
+		"⠀⠀⠀⠀⠀⠀⠀⠀⡿⢙⡛⡛⠛⣿⣏⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+		"⠀⠰⣷⢀⡀⠀⠀⠀⠀⣠⣧⣁⣼⣿⣿⣿⣦⠀⠀⠀⠀⠀⠀⠀⠀",
+		"⠀⠀⢻⣾⡇⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀⠀⠀",
+		"⠀⠀⠈⣿⡇⠀⠀⣀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀",
+		"⠀⠀⠀⢸⣇⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀"
+	],
+	"lines": {
+		"mood": {
+			"idle": {
+				"stranger": [
+					"A quiet hour. I have not yet learned your name, nor you mine.",
+					"Some doors take time to open. I am content to wait outside yours.",
+					"You sit still. Stillness tells me more than most words could.",
+					"I am new to your table, but not new to watching and waiting.",
+					"The lamp is lit, the room is calm. We have not spoken much yet.",
+					"A stranger's patience is its own kind of courtesy. I offer mine.",
+					"Even a wizard arrives slowly into a new friendship. Bear with me.",
+					"We share no history yet, though this quiet may become one.",
+					"You have not asked my counsel. I will not press it uninvited.",
+					"Every companionship has a first evening. This may be ours."
+				],
+				"acquaintance": [
+					"You return again. I am beginning to remember your particular ways.",
+					"Some sessions in now, and the formality is wearing thin. Good.",
+					"I recall the shape of your questions. Not everyone leaves one.",
+					"A chair by this fire is starting to feel like it is yours.",
+					"Past the first meeting, not yet friends. Something in between.",
+					"You keep coming back. I take that as a quiet kind of trust.",
+					"Familiar now, in small ways. I notice how you pause to write.",
+					"The ice has thinned, though I would not call it broken yet.",
+					"A few evenings shared, and already the silence sits easier.",
+					"I am learning your habits the way one learns a new road's turns."
+				],
+				"friend": [
+					"Well met again, friend. Sit close; the fire holds enough for two.",
+					"We have shared enough roads now to walk this quiet one with ease.",
+					"Say nothing, if you like. The company alone is enough tonight.",
+					"The pipe is lit, and the chair beside me waits only for you.",
+					"An ease between us now took longer evenings to earn than this.",
+					"I keep two cups by habit these days. One is always yours.",
+					"Rest here a while, my friend. We have earned the slower hours.",
+					"Old boots wear soft where they are walked most. So have we.",
+					"You need not knock anymore. This door has learned your step.",
+					"A quiet evening among friends is treasure enough for one night."
+				],
+				"partner": [
+					"I need not ask what troubles you. I read the quiet instead.",
+					"Little goes unsaid between us now. We saw to that, long ago.",
+					"You sit at ease, and so do I. That took the both of us some years.",
+					"Two lanterns burn steadier than either alone, these days.",
+					"I trust this stillness the way one trusts a well-tested blade.",
+					"We need no plan for evenings like this. Practice sufficed.",
+					"You have become someone I need not watch closely to trust.",
+					"This calm is ours, earned slowly through far harder nights.",
+					"I read your silence now the way I once read the old star-charts.",
+					"Few companions let a wizard simply sit and say nothing. You do."
+				],
+				"legend": [
+					"Songs could be made of the hours we have simply sat like this.",
+					"So many quiet nights behind us now, they have become a tale.",
+					"Old comrade, this fire remembers you better than most guests.",
+					"We have outlived a great many storms to sit this calmly together.",
+					"Old songs have names for friendships lasting this long.",
+					"I have kept fewer companions than years. You outlast most.",
+					"This stillness carries the weight of years walked together.",
+					"Long ago I lost count of evenings. I count that you return.",
+					"We were given time, and chose, again and again, to share it.",
+					"A wizard forgets much in a long life. I have not forgotten this."
+				]
+			},
+			"busy": {
+				"stranger": [
+					"Something stirs in the room now. I watch, and ask nothing.",
+					"You have set to work. Not my labor to judge, this early on.",
+					"The quiet changed shape once you began. I feel it plainly.",
+					"Your hands move quickly. I watch the craft before I judge it.",
+					"Busy already. I did not expect that, not from someone so new."
+				],
+				"acquaintance": [
+					"There it is, that particular hum I have come to know as yours.",
+					"You have begun again. I recognize the shape this labor takes.",
+					"Something turns behind the scenes. Your kind, I think.",
+					"The quiet shifts the way it does midway through your work.",
+					"Busy again. I no longer mistake this silence for idleness."
+				],
+				"friend": [
+					"Go on, friend, tend to it. I will keep the hearth from going cold.",
+					"Something is astir, and I know that restlessness is yours.",
+					"The work has you now. Good. I will wait it out with the pipe lit.",
+					"Busy hands, a familiar sound. I won't interrupt the motion.",
+					"At it again, friend. I take a quiet pride in the sound of it."
+				],
+				"partner": [
+					"Deep in it, and I need no report to know the work is sound.",
+					"Something moves at pace now. I trust it the way I trust your hand.",
+					"The labor's begun in earnest. We know better than to break it.",
+					"I feel the work turning, steady as a wheel we have both leaned on.",
+					"Busy, and rightly so. I stand near, saying nothing at all."
+				],
+				"legend": [
+					"That old restlessness again. I've felt it beside you for years.",
+					"You work the way you always have. The room stirs the same way.",
+					"Years of this motion, and still it holds the same quiet weight.",
+					"Something turns in you, familiar as rain against an old roof.",
+					"This labor sits on you now, easy as an old cloak in winter."
+				]
+			},
+			"happy": {
+				"stranger": [
+					"Well struck, stranger. I did not expect quite so clean a blow.",
+					"That went well. I mark it, though we have only just met.",
+					"A tidy piece of work. Even a wanderer notices such things.",
+					"Fine work. I have seen worse from hands twice as practiced.",
+					"There. A small light kindled, and I did not even ask for it."
+				],
+				"acquaintance": [
+					"Well done again. I begin to expect this sort of thing from you.",
+					"That was neatly handled. Twice now. I am taking notes.",
+					"Good work indeed. The pattern is becoming a pleasant one.",
+					"Ah, that landed well. I permit myself a small satisfaction.",
+					"Another clean pass. You are earning more than my patience."
+				],
+				"friend": [
+					"Well done, my friend. Fireworks would suit an evening like this.",
+					"That is fine work indeed. Sit with me and let it warm a while.",
+					"You have earned a quiet grin from an old companion tonight.",
+					"Good. The road feels shorter when it is walked this well.",
+					"There, my friend. Even the Shire would raise a cup to that."
+				],
+				"partner": [
+					"Fine work. We both know when a thing is done right, you and I.",
+					"That was well played. I need not tell you twice; you know it.",
+					"Good. Between the two of us, this is becoming an old habit.",
+					"You did that the way I hoped you would. No surprise, only pride.",
+					"There it is. Our sort of quiet, well-earned triumph."
+				],
+				"legend": [
+					"This is the craft I watched grow from one small quiet spark.",
+					"Well done, old friend. They will sing of nights like this one.",
+					"Fine work, after all these years. It still delights me, truly.",
+					"Good. Long roads make such moments rarer, and dearer for it.",
+					"There. A verse worth adding to the long song we are writing."
+				]
+			},
+			"struggling": {
+				"stranger": [
+					"A tangled path, this. Even the wise take a wrong turn or two.",
+					"Rough going. New as we are to each other, I will stay near.",
+					"This did not hold. So we begin again, unhurried.",
+					"A stumble, nothing more. Far rougher starts have come right.",
+					"The way is knotted here. Let us find the loose thread together."
+				],
+				"acquaintance": [
+					"A hard stretch. We have weathered smaller storms before this.",
+					"It did not go smoothly. Steady; the worst rarely lingers long.",
+					"Rough patch. I have seen enough of you to trust the outcome.",
+					"This one bites back. We will simply try the door again.",
+					"A setback, nothing more. The road has not closed behind us."
+				],
+				"friend": [
+					"The road darkens, but faithless is he who bids it farewell now.",
+					"Hard going, my friend. I am here, and we will walk it together.",
+					"This one fights us. Set your feet; it will tire before we do.",
+					"Rough stretch. Lean on me a while; the path will show itself.",
+					"It broke again. Sit a moment; broken things are my old trade."
+				],
+				"partner": [
+					"We have been lost in deeper woods than this and found the way.",
+					"A hard hit. Shoulder to shoulder, as we have always stood.",
+					"This one resists. Between us, that has rarely mattered much.",
+					"A rough turn. We know this dance; we simply dance it slower.",
+					"It caved in. Rubble first, then the raising. We know the order."
+				],
+				"legend": [
+					"A long, hard year, this. We have outlasted darker ones by far.",
+					"The shadow presses again. It has pressed before, and lost.",
+					"This trouble is no stranger to us. We know its every trick by now.",
+					"Rough passage. Long history says we still stand after worse.",
+					"It falters. So has the world, now and again, and still it turns."
+				]
+			},
+			"recovery": {
+				"stranger": [
+					"The cloud has already burned off. Steadier ground ahead, it seems.",
+					"You are finding your footing again. Sturdy, for so new a friend.",
+					"Color is coming back into the work. A fair sign, this early.",
+					"The storm has passed, it seems. Quiet follows. I take that well.",
+					"Good. A door that seemed shut has swung open after all."
+				],
+				"acquaintance": [
+					"The shadow steps back a pace, and none too soon for that.",
+					"You have righted the course. I expected as much, in time.",
+					"Righting now. The pattern I have seen in you holds true.",
+					"Good, the fog is thinning. I did not doubt it would.",
+					"Back on your feet already. The stuff you are made of shows."
+				],
+				"friend": [
+					"You caught the tiller in time. That was the whole of it.",
+					"That was the hard part. Sit with me; the rest comes easier.",
+					"Your footing steadies once more beneath you, as I knew it would.",
+					"Good. The dark hour passed, as dark hours always do, in the end.",
+					"Back again, and steadier. I am glad of the company on this turn."
+				],
+				"partner": [
+					"You caught it before it fell far, and set it right again.",
+					"You turned it round, and quickly too. No surprise, between us.",
+					"Whatever slipped has found its way back to your hand.",
+					"Good, the ground is firm again. We knew it would be, in time.",
+					"Righted once more. The shadow keeps its distance from your hand."
+				],
+				"legend": [
+					"As ever, you turn the tide when it seems set against you.",
+					"Risen again, the way you always eventually do.",
+					"Long years teach this: the dark breaks, and you always find it.",
+					"There. Another dawn earned the hard way, as most worthy ones are.",
+					"Level again. We have made an old habit of this return."
+				]
+			}
+		},
+		"greeting": {
+			"morning": {
+				"stranger": [
+					"Good morning. Every dawn arrives a stranger too, at first.",
+					"Early light finds you at the desk. I take quiet note of that.",
+					"Dawn breaks over strange ground. Let us see what it holds."
+				],
+				"acquaintance": [
+					"Morning again. Your particular hour is becoming plain to me.",
+					"The light comes up and so do you. A fine habit, that.",
+					"Well met at this early hour. Fewer surprises between us now."
+				],
+				"friend": [
+					"Morning, my friend. The day's a blank page; let's mark it well.",
+					"Up with the light again. I was hoping for the company.",
+					"The kettle's on before you asked. Morning to you, friend."
+				],
+				"partner": [
+					"Morning. You beat the sun most days now. I've stopped counting.",
+					"First light, and already you are at your post. As am I.",
+					"The day opens and you are first through the door, as ever."
+				],
+				"legend": [
+					"Another dawn added to the long ledger we keep together.",
+					"Dawn again. The count of them between us runs high now.",
+					"The light returns, as it always has for us. Good. Begin."
+				]
+			},
+			"day": {
+				"stranger": [
+					"Midday. The sun stands overhead and offers no shade to hide in.",
+					"Noon already, and I still know little of how you work. Show me.",
+					"The day is half-spent, and I am still taking your measure."
+				],
+				"acquaintance": [
+					"Midday already. The sun climbs; so does the work. Onward.",
+					"Noon finds you steady at it. I am starting to expect that.",
+					"The middle hour. You keep to it better than most I have known."
+				],
+				"friend": [
+					"High sun, my friend, and good work under it. Onward together.",
+					"Noon's the hinge of the day. Let us swing it well, you and I.",
+					"Midday, and the road is half walked. Not a bad stretch at all."
+				],
+				"partner": [
+					"Noon, and neither of us has broken stride. As it should be.",
+					"The sun stands at its height. So, I'd wager, do we.",
+					"Midday together, same steady pace we have always kept."
+				],
+				"legend": [
+					"Countless middays, you and I, and none of them wasted.",
+					"The sun climbs high again. We have met it this way for years.",
+					"High noon, and the long middle of the day suits us well."
+				]
+			},
+			"evening": {
+				"stranger": [
+					"Evening, and the shadows lengthen. I am in no hurry here.",
+					"Dusk gathers, and a new face keeps working past the day's close.",
+					"The hour turns quiet. I am still gathering what I know of you."
+				],
+				"acquaintance": [
+					"Evening again, and you linger well past the day's proper close.",
+					"Dusk, and here you are once more. A pattern worth the naming.",
+					"Dusk settles early. You are becoming familiar in it."
+				],
+				"friend": [
+					"Evening settles. A good hour for the deeper sort of task.",
+					"Dusk falls easy tonight, my friend. Good time to sit and finish.",
+					"The day gathers itself in. Glad it gathers you here too."
+				],
+				"partner": [
+					"Evening, and we fall into the same old rhythm without a word.",
+					"The light goes gold and low. Our hour, if I recall it right.",
+					"Dusk again, side by side. We know this stretch by heart."
+				],
+				"legend": [
+					"Evening. We have watched more of these fade than I can count.",
+					"The day lets go its light. We keep the late watch still.",
+					"Dusk settles on us both, the way it always has. Still working."
+				]
+			},
+			"night": {
+				"stranger": [
+					"Late. Most are abed. I wonder what keeps you at this hour.",
+					"Still at it, past when most call it a day. New habit, to me.",
+					"Night, quiet but for you. I take your measure in the dark."
+				],
+				"acquaintance": [
+					"Late again. I am learning that this is simply your hour.",
+					"You keep this late hour often now. I begin to expect it.",
+					"Night, and here you are once more. Familiar company, this late."
+				],
+				"friend": [
+					"Late again, I see. The best counsel is often taken by candle.",
+					"Night, my friend. The rest of the house has gone quiet. Not us.",
+					"This deep in the dark is a fine time for the harder questions."
+				],
+				"partner": [
+					"Late, and neither of us needed the other to say we would be.",
+					"Night again. We keep this watch well, the two of us.",
+					"The candle burns low but steady. Fitting, for this hour, and us."
+				],
+				"legend": [
+					"So many nights like this, and never once alone in them.",
+					"Deep night. We learned the keeping of these vigils long ago.",
+					"The house sleeps. We gave that up ourselves, long ago."
+				]
+			},
+			"weekend": {
+				"stranger": [
+					"Saturday, and you are here regardless. Curious, and welcome.",
+					"The week has ended for most. Curious that you have not.",
+					"A day of rest for most. What brings a stranger here today?"
+				],
+				"acquaintance": [
+					"Weekend again, and still you appear. I have come to expect it.",
+					"Most rest today. You do not, quite. I begin to see it now.",
+					"The week's proper end, and here you are anyway. Fair enough."
+				],
+				"friend": [
+					"Weekend, my friend. No hurry in it, only the work you choose.",
+					"The world has slowed today. Let us match its pace a while.",
+					"A free day, and you spent some of it with me. I am glad of that."
+				],
+				"partner": [
+					"Weekend, and still the two of us. Some habits do not break.",
+					"No one else keeps this hour with me but you, even now.",
+					"The week has closed its doors. Ours stays open, as ever."
+				],
+				"legend": [
+					"The Shire keeps its holidays. Yet here you are. So am I.",
+					"Weekend, old friend. We never quite learned how to fully rest.",
+					"A quiet Saturday, made deeper by all that came before it."
+				]
+			}
+		},
+		"firstContact": {
+			"stranger": [
+				"Gandalf, some name me, among rather less flattering names.",
+				"A new face beneath an old hat. I wonder what road brought you.",
+				"You have found me at my work. Sit, if you like; I do not bite."
+			],
+			"acquaintance": [
+				"Well met. I suspect this is more than a passing meeting.",
+				"Good day to you. Something tells me we'll speak again before long.",
+				"You carry yourself like one who means to stay a while."
+			],
+			"friend": [
+				"Well met, my friend. I say it plainly, and I mean to earn it.",
+				"Come in, come in. I have a good feeling about this company.",
+				"Sit by the fire. Something tells me we will get on rather well."
+			],
+			"partner": [
+				"Well met. I trust a steady hand before it proves itself twice.",
+				"No need to prove yourself twice. I read people quickly enough.",
+				"I have a sense already of how far this partnership may go."
+			],
+			"legend": [
+				"Well met indeed. Some meetings feel older than the day itself.",
+				"Some meetings feel like the start of a long tale. This is one.",
+				"Sit down, traveller. I think we two are due a long acquaintance."
+			]
+		},
+		"milestone": {
+			"tier_up": {
+				"stranger": [
+					"A shift, quiet but real, between us. Little escapes me here.",
+					"You are no longer quite the stranger you were an hour ago.",
+					"A small door has opened. I felt it before you did, perhaps."
+				],
+				"acquaintance": [
+					"We are past the first pleasantries now. Good. Onward, then.",
+					"I find I know your hand better than I did. A good deal, that.",
+					"The acquaintance deepens. I mark the waypoint and say no more."
+				],
+				"friend": [
+					"Friend, I said, and meant it more today than I did yesterday.",
+					"You have earned the word friend from a fellow slow to give it.",
+					"Something has settled between us. I would call it friendship now."
+				],
+				"partner": [
+					"Equal footing, now. I do not offer that title lightly, my friend.",
+					"You have crossed into rarer company. Few walk this close to me.",
+					"Partner, I think, is the fairer word for you now. It suits."
+				],
+				"legend": [
+					"Legend is a heavy word. I give it to you without hesitation.",
+					"Few earn the old titles. Fewer still deserve them as you do.",
+					"They will tell stories of this one day. I mean to help them along."
+				]
+			},
+			"comeback": {
+				"stranger": [
+					"Rough seas, and still you found the shore. Well done, truly.",
+					"A hard stretch, and you came through it. The measure of you shows.",
+					"The mist has lifted off this one. Good. It was thick for a while."
+				],
+				"acquaintance": [
+					"That was a harder patch than most. You did not let it hold you.",
+					"The corner turned, and you turned with it. I noticed. It matters.",
+					"Through the worst of it now, and the work still sound. Well held."
+				],
+				"friend": [
+					"You were down in it, my friend, and you climbed out yourself.",
+					"That was no easy stretch of road. You walked through it anyway.",
+					"The dark patch broke. I knew it would, watching you push on."
+				],
+				"partner": [
+					"Back from the brink, and steadier for it. I expected nothing less.",
+					"You do not stay down long. I have seen that in you before now.",
+					"Whatever held you, it let go. You saw to that yourself."
+				],
+				"legend": [
+					"Old friend, you have weathered worse and risen taller each time.",
+					"I have watched you climb from deeper pits. Again, you rise.",
+					"Not the first storm you've outlasted. Nor will it be the last."
+				]
+			},
+			"streak": {
+				"stranger": [
+					"Three good turns running. I begin to see a pattern in you.",
+					"One steady stretch after another. Early days, but a fine sign.",
+					"You keep landing on your feet. I am counting, quietly."
+				],
+				"acquaintance": [
+					"A good run, this. Fortune favors a traveller who keeps walking.",
+					"Several fine turns in a row now. I don't think that was luck.",
+					"You are stringing good days together like beads on a wire."
+				],
+				"friend": [
+					"Look at that run of yours, my friend. Not a stumble in sight.",
+					"Day after day, steady work. I have started to expect it of you.",
+					"The work flows and flows. I would not dam it with praise."
+				],
+				"partner": [
+					"A run like this is no accident. The staff knows a sure hand.",
+					"Every step lands true lately. That is craft, and no mere chance.",
+					"You have kept the pace for longer than most manage. Well kept."
+				],
+				"legend": [
+					"This kind of run, sustained this long, is the mark of a master.",
+					"I have watched many streaks. Few burn this steady, this long.",
+					"A run to be sung of, this. Yours has lasted a small age."
+				]
+			},
+			"anniversary": {
+				"stranger": [
+					"A tenth crossing already. The count surprises even me.",
+					"Some time has passed since we first spoke. It adds up, this.",
+					"A small milestone in days shared. Small, but I mark it still."
+				],
+				"acquaintance": [
+					"A season has turned since we began. Time moves oddly, doesn't it.",
+					"This many sessions together now. The tally means something.",
+					"Another mark on the calendar. Further along than I first thought."
+				],
+				"friend": [
+					"A year of these late hours together, near enough. Fancy that.",
+					"So many evenings spent this way. I have grown fond of the count.",
+					"Time given to this work adds up. Ours has added up rather well."
+				],
+				"partner": [
+					"This many months in, and still the work suits us both well.",
+					"The moons have turned a fair few times since we began, you and I.",
+					"A long stretch of time, given freely. I do not take it lightly."
+				],
+				"legend": [
+					"Years now, by my count. Few companions keep pace with a wizard.",
+					"This is the sort of anniversary that becomes a verse, in time.",
+					"So long a road together. I have outlived kingdoms in less time."
+				]
+			}
+		},
+		"positiveGit": {
+			"clean_tree": {
+				"stranger": [
+					"Not a leaf out of place. Tidy, for someone new to the road.",
+					"The tree stands bare and quiet. I mark that in a stranger.",
+					"Nothing left underfoot. A careful start, whoever you are."
+				],
+				"acquaintance": [
+					"Swept clean again. You keep a tidier camp than most travelers.",
+					"The ground shows no clutter. I come to expect this of you.",
+					"Not a scrap left lying. Your habits are taking a shape I like."
+				],
+				"friend": [
+					"Clean as a hobbit-hole before guests, my friend. Well kept.",
+					"Nothing left hanging. You tidy the road behind you as you go.",
+					"The tree is bare and quiet. Good. Quiet work, quietly done."
+				],
+				"partner": [
+					"Not a thread astray between us. That is your discipline, plainly.",
+					"Bare and clean, as it always is when you have passed through.",
+					"You leave no mess behind you. Few travel quite so lightly."
+				],
+				"legend": [
+					"Still bare, still tidy, after all these years together.",
+					"The tree stands clean, as it has a hundred times before. Steady.",
+					"Old habit, this tidiness of yours. It has never once failed."
+				]
+			},
+			"op_cleared": {
+				"stranger": [
+					"That knot is undone. Neatly, too, for a first attempt.",
+					"The storm passed without wreck. I take that as a good sign.",
+					"A door that stuck now swings free. Well managed, stranger."
+				],
+				"acquaintance": [
+					"The tangle came loose in your hands. You have a knack for knots.",
+					"That conflict is settled, and settled well. I mark it down.",
+					"A hard crossing, cleanly made. You are learning the ford."
+				],
+				"friend": [
+					"The knot came undone at last, my friend. Neatly, as you do.",
+					"That storm has passed, and we are both still standing tall.",
+					"A tangled bridge, now crossed. I never doubted you would find it."
+				],
+				"partner": [
+					"That knot came loose under your hands, as I trusted it would.",
+					"The crossing is made. You read that current better than I could.",
+					"Both our travels are written into this one, plain to see."
+				],
+				"legend": [
+					"Another knot undone. I have lost count of how many, by now.",
+					"The old ford again, crossed clean. You never forget the footing.",
+					"Storms pass; you have outlasted more of them than most wizards."
+				]
+			},
+			"branch_created": {
+				"stranger": [
+					"A new path forks from the road. I wonder where it leads you.",
+					"A fresh shoot off the main stem. Untried, and full of promise.",
+					"You have opened a side-door in the old hall. Curious, that."
+				],
+				"acquaintance": [
+					"A limb grafted onto the trunk. You choose them with growing care.",
+					"A new trail into the trees. I am learning to trust your nose.",
+					"You cut a fresh line clean away. Sensible, as ever now."
+				],
+				"friend": [
+					"A new thread pulled loose to weave on. Let us see where it goes.",
+					"You have struck a new spring. I will follow where it runs.",
+					"Another fork in the road. I like the company on the new ones."
+				],
+				"partner": [
+					"A new course set, and I already trust the ground you chose.",
+					"You cut this trail; I will scout what lies past the first bend.",
+					"Another branch off the old bough. We know how these end well."
+				],
+				"legend": [
+					"Yet another branch springs out. I have watched them all take root.",
+					"A new trail, and an old feeling. You still choose them wisely.",
+					"It divides again, and we have watched where each fork led."
+				]
+			},
+			"tag_pushed": {
+				"stranger": [
+					"A waystone set on the road. Your name is on it now.",
+					"A marker raised, plain and true. That is no small thing.",
+					"Something is sealed and named. I note the date, quietly."
+				],
+				"acquaintance": [
+					"A banner run up the pole, and your name sits well on it.",
+					"You have sealed this one and named it. Fitting, I think.",
+					"Another line added to the tally. Your milestones are adding up."
+				],
+				"friend": [
+					"A waystone set, my friend, with your name carved plain upon it.",
+					"Sealed and named. Raise a glass; this one is worth marking.",
+					"Another beacon lit along our road. I am glad to see it."
+				],
+				"partner": [
+					"A stone raised, and I stood beside you when it was set.",
+					"Sealed, named, and carried forward. We build the road this way.",
+					"This one holds the shape of the road we have shared."
+				],
+				"legend": [
+					"Another name carved in stone, among so many we have raised.",
+					"Another beacon joins the long chain we have lit down the years.",
+					"Sealed and named, as we have done so many times before. Good."
+				]
+			}
+		},
+		"egg": {
+			"stranger": [
+				"Bilbo once spoke to a dragon only in riddles, and lived.",
+				"The Shire calendar tucks an extra day nobody quite names. Handy.",
+				"Hobbits regift the unwanted and call it a mathom. Practical folk.",
+				"Somewhere a Red Book claims a truer account than most histories.",
+				"I can still blow a smoke-ring that outlasts an argument."
+			],
+			"acquaintance": [
+				"You strike me as one who might enjoy a pipe of Old Toby someday.",
+				"The Gaffer had a saying for every kind of weather. Mostly right.",
+				"The Green Dragon in Bywater keeps better gossip than councils.",
+				"The Free Fair once ran so long nobody remembered starting it.",
+				"Farmer Maggot's dogs still chase strangers off that farm. Wisely."
+			],
+			"friend": [
+				"I keep a twist of Longbottom Leaf for evenings such as this one.",
+				"Tom Bombadil never did explain himself to anyone. Restful, that.",
+				"An Entmoot once took three days just to say good morning.",
+				"A map I carried once hid its runes till moonlight found them.",
+				"The Last Homely House never once turned a tired traveler away."
+			],
+			"partner": [
+				"There is a road that runs straight on, past the world's curve.",
+				"A door I knew once opened only for a friend who said the word.",
+				"There are stars whose light set out before the world was made.",
+				"Dwarves still watch for a moon no calendar but theirs remembers.",
+				"Weathertop keeps the ash of watch-fires lit before either of us."
+			],
+			"legend": [
+				"The Grey Havens keep a berth open, though I am in no hurry yet.",
+				"A star sailed once, and its light still finds the darkest rooms.",
+				"A ring of fire, given in secret, still warms this hand of mine.",
+				"A white tree grows again where one was thought lost for good.",
+				"The old road-songs remember journeys much like ours, I think."
+			]
+		},
+		"event": {
+			"test_fail": [
+				"The tests balked. Even wise counsel misjudges once or twice.",
+				"A red result, and no shame in stumbling on ground still new.",
+				"Something slipped through unheld. We mend what breaks, always."
+			],
+			"build_fail": [
+				"The build gave way. Stone falls before a stronger wall rises.",
+				"It would not hold. We have raised keeps from rubble before.",
+				"The forge cooled early, yet embers keep. We stoke it again."
+			],
+			"typecheck_fail": [
+				"The types disagree among themselves, a small quarrel judged.",
+				"A mismatch, caught before it walked much further down the road.",
+				"The compiler frowns. Even Elrond's council argued before accord."
+			],
+			"lint": [
+				"The style-keeper tutted twice over small manners, quickly mended.",
+				"A crooked seam, noticed before the cloak was ever worn out.",
+				"The linter hums its little complaints. Worth the hearing, still."
+			],
+			"format": [
+				"The lines fall into rank, straight as a marching column.",
+				"Tidied, like a hearth swept clean before the guests arrive.",
+				"Every space finds its place now. A tidy scroll reads truer."
+			],
+			"install": [
+				"New tools laid into the pack. A wizard travels prepared.",
+				"The provisions arrive; good, the road ahead will ask for them.",
+				"Fresh gear taken up. Even old staffs welcome new bindings."
+			],
+			"git": [
+				"The chronicle grows by another line, ink that will not fade.",
+				"A change set down and kept. History keeps its pen busy.",
+				"The record turns a page. Small deeds, dutifully remembered."
+			],
+			"file_edit": [
+				"A word changed here, a line there. So are stories rewritten.",
+				"The page shifts beneath your hand; craft is small strokes.",
+				"You have altered the text. Even old runes are redrawn in time."
+			],
+			"search": [
+				"You comb the undergrowth for a single thread. Patience finds it.",
+				"A search through old ground, though maps hide a path or two.",
+				"Looking for what's buried. Most treasures are, at first."
+			],
+			"web_fetch": [
+				"A raven sent beyond the walls, and swiftly answered.",
+				"Word comes from a distant country. Read it well.",
+				"You cast a line past the borders of what you already know."
+			],
+			"todo_update": [
+				"The list reorders itself, as errands do on a long journey.",
+				"One task steps aside; another takes the road ahead.",
+				"Your ledger of deeds shifts. Even quests are kept in order."
+			],
+			"agent_spawn": [
+				"A second hand takes up part of the work. Wise, to share a load.",
+				"You send another out ahead, as scouts go before the company.",
+				"Help rides forth. Even a fellowship began with one more sword."
+			],
+			"skill_run": [
+				"The right craft, called for at the right moment. Well judged.",
+				"A particular skill summoned, like a trusted spell. It answers.",
+				"You reach for the proper tool, not merely the nearest one."
+			],
+			"docker": [
+				"Sealed in its own small world, tidy and apart from the rest.",
+				"A vessel holds its cargo close, walls firm against the weather.",
+				"Boxed and bounded. Even a hearth needs its own four walls."
+			],
+			"k8s": [
+				"A fleet of small vessels, each minded and kept in formation.",
+				"Many hands governed by one steady will. The order holds.",
+				"The company spreads wide, yet answers to a single horn."
+			],
+			"deploy": [
+				"Out it goes, into the wide world. Go well, small craft.",
+				"Released past the gate. The world will have its say now.",
+				"Sent down the road at last. May it find welcome where it lands."
+			],
+			"db_migrate": [
+				"The old records take new shape, shelf by careful shelf.",
+				"The archive shifts beneath us. Handle it as old scrolls.",
+				"What was written is rewritten gently, without losing meaning."
+			],
+			"dangerous": [
+				"You shall not pass unwarned. I stand beside you at this edge.",
+				"A perilous move. Steady now; I have seen worse turn out well.",
+				"This one carries weight. Mind your footing; I mind it with you."
+			]
+		},
+		"stack": {
+			"web": {
+				"slow": [
+					"The page paints itself one careful stroke at a time.",
+					"A long road for this request. Every hop adds its mile.",
+					"The server weighs its answer, unhurried by our waiting."
+				],
+				"fail": [
+					"The page came back blank, a room with no lamp lit.",
+					"A link forgot the door it once knew how to open.",
+					"Not every thread between two pages holds. This one will yet."
+				]
+			},
+			"python": {
+				"slow": [
+					"Line by line, the interpreter reads the whole scroll first.",
+					"No serpent hurries. This one is only just uncoiling.",
+					"Each import calls another. The chain is longer than it looked."
+				],
+				"fail": [
+					"The serpent slipped its grip. We coax it back; it is patient.",
+					"A tame snake coiled the wrong way, just this once.",
+					"Even the calmest serpent hisses at a careless step."
+				]
+			},
+			"sql": {
+				"slow": [
+					"A ledger this thick wants reading in full, not in part.",
+					"The index hunts through rows enough to fill a hall.",
+					"Every join is a small negotiation. Some run long."
+				],
+				"fail": [
+					"A query came home with empty hands this time.",
+					"The ledger's ink smeared across one stubborn row.",
+					"Some door in the hall of records stuck fast for now."
+				]
+			},
+			"web-framework": {
+				"slow": [
+					"Many gates stand between the request and its answer.",
+					"The middleware keeps its post. Nothing slips through unseen.",
+					"A long corridor tonight. The traveler will reach the hall."
+				],
+				"fail": [
+					"A beam in the scaffolding creaked, nothing more.",
+					"The frame we hung our walls on shifted a hair.",
+					"Not every joist takes the load on the first try."
+				]
+			},
+			"docker": {
+				"slow": [
+					"Layer sets upon layer, and the image rises like a wall.",
+					"The daemon labors below decks. We need not watch it toil.",
+					"A vessel built plank by plank outlasts one lashed together."
+				],
+				"fail": [
+					"The crate did not seal quite true this round.",
+					"A small leak found the cellar before we did.",
+					"One hold on the ship went unbattened, briefly."
+				]
+			},
+			"java": {
+				"slow": [
+					"The great hall must be swept before the feast begins.",
+					"An old engine, this one. It warms before it will run.",
+					"Much ceremony precedes the work. It has always been so here."
+				],
+				"fail": [
+					"A long scroll unrolled and would not stop unrolling.",
+					"The old tower's ledger listed its complaint at length.",
+					"Verbose as ever, these old halls; the foundation stands firm."
+				]
+			},
+			"go": {
+				"slow": [
+					"Small messengers, each with an errand. Let them find their pace.",
+					"The gopher digs a tidy tunnel, one measured pawful at a time.",
+					"Plain roads still have their miles, however straight they run."
+				],
+				"fail": [
+					"The runner came back empty-handed, but said so plainly.",
+					"An honest errand, badly run. At least it told us so.",
+					"No courier makes every crossing clean. This one didn't."
+				]
+			},
+			"node": {
+				"slow": [
+					"A caravan of small crates arrives, one at a time.",
+					"The loop keeps turning. Nothing here has truly stopped.",
+					"A single file this road, though a thousand wish to pass."
+				],
+				"fail": [
+					"A parcel went missing down a very crowded road.",
+					"One knot slipped loose in the tangled net.",
+					"The loom caught its thread mid-weave. Nothing is lost."
+				]
+			},
+			"dotnet": {
+				"slow": [
+					"Every form must be signed and stamped before the build proceeds.",
+					"The compiler waits for word from distant offices. Let it wait.",
+					"MSBuild counts each project once more before it lifts a hammer."
+				],
+				"fail": [
+					"A stone loosed itself from the well-laid keep wall.",
+					"The old covenant's clause slipped for a single breath.",
+					"Nothing crumbles here; a single window merely rattled."
+				]
+			},
+			"cpp": {
+				"slow": [
+					"The compiler weighs every template before it will commit.",
+					"Every header is read again, and again, and once more.",
+					"The linker ties a thousand threads. None may be left loose."
+				],
+				"fail": [
+					"A door in the old tower opened onto nothing at all.",
+					"The blade turned in an unguarded hand. Mind it now.",
+					"The ground underfoot was never ours to stand on."
+				]
+			},
+			"php": {
+				"slow": [
+					"The bazaar is crowded today. Composer finds each trader in turn.",
+					"An old inn, much added-to, and every wing takes its time.",
+					"The cache is catching like new kindling. Let it take hold."
+				],
+				"fail": [
+					"An old addition to the inn groaned under new weight.",
+					"Years of patches, and one finally came loose today.",
+					"This inn has weathered stranger repairs before."
+				]
+			},
+			"rust": {
+				"slow": [
+					"Rust takes its hour to forge. Good steel is never hurried.",
+					"Ownership must be proven, not simply assumed. That takes a while.",
+					"Each part is tempered twice before the whole is cast."
+				],
+				"fail": [
+					"The smith's eye rejected this pour. Better now than later.",
+					"No cast releases cleanly every single time. Patience tempers it.",
+					"An exacting craft found the flaw before the fire did."
+				]
+			},
+			"kubernetes": {
+				"slow": [
+					"The fleet turns slowly tonight. Great fleets always do.",
+					"Each pod finds its harbor in turn. The scheduler is thorough.",
+					"A shepherd counts a scattered flock across many far hills."
+				],
+				"fail": [
+					"One cell of the hive went quiet a moment ago.",
+					"A pod faltered; its neighbors carried the work meanwhile.",
+					"The swarm lost a worker bee. Another mans the comb."
+				]
+			},
+			"ml": {
+				"slow": [
+					"The model learns as an apprentice does, by long repetition.",
+					"Each epoch a lesson repeated until it is truly learned.",
+					"The gradient feels its way downhill, one careful step at a time."
+				],
+				"fail": [
+					"The oracle's reading drifted off true. Even seers squint.",
+					"A guess came back strange today. The next lands truer.",
+					"Foresight ground slower than hoped. Even that happens."
+				]
+			},
+			"android": {
+				"slow": [
+					"Gradle tends every branch of the build before the fruit sets.",
+					"Every dependency is checked before the harvest may begin.",
+					"The emulator wakes like a bear roused too soon."
+				],
+				"fail": [
+					"A small green scout lost its footing in the orchard.",
+					"One gate among a hundred gardens would not yield today.",
+					"The little messenger stumbled halfway through its errand."
+				]
+			},
+			"ruby": {
+				"slow": [
+					"A gem is faceted with care, or it is not faceted well.",
+					"Bundler gathers its gems from every corner of the shelf.",
+					"The rails were laid with patience. The train need not rush now."
+				],
+				"fail": [
+					"A gem cracked along one facet. The rest still catches light.",
+					"This jewel's setting slipped. It will sit true again.",
+					"Even the finest cut carries a flaw here and there."
+				]
+			},
+			"ios": {
+				"slow": [
+					"One locksmith, many locks, each one fitted with care.",
+					"The simulator dresses again for a part well rehearsed.",
+					"Every seal is checked twice before the gate will open."
+				],
+				"fail": [
+					"A gate in the walled garden held firm against us a moment.",
+					"The orchard behind the wall dropped one unripe fruit.",
+					"A polished stone worked loose from its fine setting."
+				]
+			},
+			"terraform": {
+				"slow": [
+					"The surveyor walks the land before one stone is laid.",
+					"All state is read in full before the plan is spoken.",
+					"Every foundation is laid true, for much will stand upon it."
+				],
+				"fail": [
+					"The land itself resisted the shaping today.",
+					"A foundation stone shifted before the mortar had set.",
+					"Not every plan meets the earth exactly as foretold."
+				]
+			},
+			"graphql": {
+				"slow": [
+					"The genealogist follows every branch before the tale is told.",
+					"Each resolver answers in turn. The graph has many rooms yet.",
+					"One question, asked once, echoes through a hundred small halls."
+				],
+				"fail": [
+					"A question asked of the graph found no answering node.",
+					"In the schema's web, one strand was never spun.",
+					"One thread of the query came back frayed. We'll mend it."
+				]
+			},
+			"flutter": {
+				"slow": [
+					"The loom weaves many threads into one steady pattern.",
+					"Widgets nest like boxes within boxes, opened one by one.",
+					"Dart works quietly beneath. The picture is not finished yet."
+				],
+				"fail": [
+					"A wing caught the wind wrong and the flight faltered.",
+					"This butterfly stumbled on landing. It still knows how to fly.",
+					"One feather came loose mid-flutter. Feathers do regrow."
+				]
+			},
+			"react-native": {
+				"slow": [
+					"Two kingdoms trade messages across one narrow bridge tonight.",
+					"Metro gathers its bundles slowly, a packer's honest work.",
+					"Native and script are learning each other's tongue again."
+				],
+				"fail": [
+					"The bridge between two shores swayed a moment. It held.",
+					"A signal crossed late and arrived a little confused.",
+					"Not every plank takes the first nail. Set it and cross on."
+				]
+			},
+			"scala": {
+				"slow": [
+					"The scribe checks every letter before it may be inked.",
+					"sbt keeps its own hours. Even wizards have stopped arguing.",
+					"A compiler this careful has earned its long, quiet pause."
+				],
+				"fail": [
+					"A step on the old staircase gave more than expected.",
+					"The climb faltered a single rung, not the whole ascent.",
+					"A type would not line up; the seam sits crooked still."
+				]
+			},
+			"protobuf": {
+				"slow": [
+					"A single message is translated into every tongue it needs.",
+					"Schemas are cut like keys, each tooth measured twice over.",
+					"The codegen sets down every field exactly as it was promised."
+				],
+				"fail": [
+					"A wax seal cracked before the message could be read.",
+					"This letter arrived in a tongue we hadn't agreed upon.",
+					"One envelope came unstitched along its careful seam."
+				]
+			},
+			"game": {
+				"slow": [
+					"Torches are lit one by one before the stage is seen.",
+					"Shaders bake like bread. Pull them out too soon, they fail.",
+					"The level sets every stone in place before the players enter."
+				],
+				"fail": [
+					"The dice came up wrong, yet the board remains set.",
+					"A player's turn stumbled. The game carries on regardless.",
+					"A single frame of the reel skipped; the story still holds."
+				]
+			},
+			"docs": {
+				"slow": [
+					"A great library is copied page by careful page tonight.",
+					"The index is built shelf by shelf, until each book has its place.",
+					"Words travel slowly from page to page, but arrive whole."
+				],
+				"fail": [
+					"A scribe's ink smudged one page of an otherwise fine scroll.",
+					"This chapter's binding came loose. The library still stands.",
+					"Not every scroll survives its edges untorn. Words remain."
+				]
+			},
+			"r": {
+				"slow": [
+					"The old astronomer tallies his stars one by one, all night.",
+					"Every harvest is counted sheaf by sheaf before the tally is true.",
+					"These vectors run long. The counting simply minds its own pace."
+				],
+				"fail": [
+					"The tally stones fell from their careful stack today.",
+					"A column of the count came back crooked. It rights itself.",
+					"Numbers forgive a stray mark now and then."
+				]
+			},
+			"cuda": {
+				"slow": [
+					"A thousand small voices warm up before the chorus begins.",
+					"Every thread wakes at once, though the metal still needs heat.",
+					"The kernel gathers its strength. Many hands lighten the work."
+				],
+				"fail": [
+					"The chorus lost its step, just for one measure.",
+					"A thousand small forges, and one ran cold today.",
+					"One thread strayed from the lockstep and stalled."
+				]
+			}
+		},
+		"pressure": {
+			"compact_hint": [
+				"The saddlebags grow full. We shall see what may be set aside.",
+				"Much has been carried this far, yet room enough remains.",
+				"The load thickens, though a full pack rarely slows the stride."
+			],
+			"block_limit": [
+				"The hour draws toward its close. We have made good use of it.",
+				"Time given for this stretch runs toward its end, unhurried still.",
+				"The candle gutters low on this watch. It has served us well."
+			],
+			"weekly_limit": [
+				"The week's measure nears its brim, a long road well travelled.",
+				"Seven days of work drawing to their close, fair use made of them.",
+				"The tally for the week climbs high. So it goes, in a full season."
+			]
+		},
+		"dateEgg": [
+			"Midnight, and the wizard within me still keeps counsel.",
+			"A new year turns over. The road goes on, as roads do.",
+			"Three hours past dark, and still at the desk. I approve.",
+			"Dawn creeps up on us both, unannounced as always.",
+			"A long session, this one. Even Rivendell keeps late candles.",
+			"The clock strikes an hour few keep. Good company, this.",
+			"Friday again already. The tale moves faster than we notice.",
+			"A whole season has turned since last we spoke this late.",
+			"Noon, and the sun stands still a moment to watch you work.",
+			"This date rings a bell somewhere in my very long memory."
+		]
+	},
+	"spinnerVerbs": [
+		"Conjuring",
+		"Pondering",
+		"Counseling",
+		"Kindling",
+		"Riddling",
+		"Wayfaring",
+		"Foretelling",
+		"Wayfinding",
+		"Musing",
+		"Deliberating",
+		"Consulting",
+		"Scheming",
+		"Firelighting",
+		"Summoning",
+		"Enchanting",
+		"Illuminating",
+		"Unriddling",
+		"Advising",
+		"Discerning",
+		"Portending",
+		"Reckoning",
+		"Warding",
+		"Guiding",
+		"Rekindling",
+		"Prophesying",
+		"Puffing"
+	]
+}

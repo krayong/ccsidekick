@@ -1,6 +1,6 @@
 #!/bin/bash
 # Regenerate a pack's README statusline shot (packages/packs/<pack>/assets/statusline.svg) from a real render,
-# rendered in the pack's OWN theme. Parameterized sibling of demo-shot.sh: given a pack directory it stages a
+# rendered in the pack's OWN theme. Given a pack directory it stages a
 # throwaway git repo + cost tree + a config that pins the character to the pack (fixed mode) AND selects the
 # pack's registered theme, renders the lean binary at a fixed width, and pipes the ANSI through
 # scripts/assets/statusline-svg.mjs. The pack's theme resolves because it registers under the pack name and the

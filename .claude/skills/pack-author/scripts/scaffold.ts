@@ -9,6 +9,7 @@
 // from a structure that already loads. Runnable as a CLI (`bun scaffold.ts <name> --display <n> --emblem <g>`)
 // or importable as `scaffold(name, opts)`; the optional `opts.root` retargets the workspace for tests.
 
+import { execFileSync } from "node:child_process";
 import { mkdirSync, readFileSync, realpathSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -98,6 +99,27 @@ function buildSkeleton(name: string, opts: ScaffoldOpts): PackJson {
 	return pack as unknown as PackJson;
 }
 
+// A git config value (e.g. `user.name`), trimmed; "" when git or the key is unavailable.
+function gitConfig(key: string): string {
+	try {
+		return execFileSync("git", ["config", key], { encoding: "utf8" }).trim();
+	} catch {
+		return "";
+	}
+}
+
+// The pack's author, read from the ambient git identity so the credit is whoever scaffolds the pack rather than a
+// hardcoded name. `user.name`/`user.email` combine into the standard "Name <email>" form; a missing identity falls
+// back to a generic credit so the generated package.json still clears the author gate.
+function gitAuthor(): string {
+	const name = gitConfig("user.name");
+	const email = gitConfig("user.email");
+	if (name !== "" && email !== "") return `${name} <${email}>`;
+	if (name !== "") return name;
+	if (email !== "") return email;
+	return "ccsidekick contributors";
+}
+
 function packageJson(name: string, displayName: string): string {
 	return `${JSON.stringify(
 		{
@@ -105,9 +127,15 @@ function packageJson(name: string, displayName: string): string {
 			version: "0.0.0",
 			description: `${displayName} character pack for ccsidekick`,
 			type: "module",
-			files: ["pack.json"],
+			files: ["pack.json", "README.md", "assets"],
 			exports: { "./pack.json": "./pack.json" },
 			license: "MIT",
+			repository: {
+				type: "git",
+				url: "git+https://github.com/krayong/ccsidekick.git",
+				directory: `packages/packs/${name}`,
+			},
+			author: gitAuthor(),
 		},
 		null,
 		"\t",
@@ -134,8 +162,10 @@ A reviewer who did not author the pack signs this before it ships. Check each it
 - [ ] Figure is recognizable and legible at 9×25.
 - [ ] Lines are on-voice and match the declared tone.
 - [ ] \`voice-pack.md\` reflects the shipped voice.
-- [ ] Variety holds across cells (no line reused between cells).
+- [ ] Variety holds across cells (no line reused between cells, no other pack's signature line).
 - [ ] License and attribution are acceptable.
+
+\`lint-pack\` enforces \`package.json\` completeness (name, \`files\`, \`repository.directory\`, author), so it is not a manual check.
 
 Reviewer (not the author): ____________________    Date: __________
 `;

@@ -1,6 +1,7 @@
 # Pikachu pack
 
-> Fan-made tribute. Character names and likenesses are trademarks of their respective owners; this pack is an unofficial, non-commercial homage, not affiliated with or endorsed by them.
+> Fan-made tribute. Character names and likenesses are trademarks of their respective owners; this
+> pack is an unofficial, non-commercial homage, not affiliated with or endorsed by them.
 
 ✨ **Pikachu** — a reactive ccsidekick character, _mild_ in tone.
 
@@ -11,15 +12,15 @@
 ## Figure
 
 ```
-⠸⣿⡿⢦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡴⢿⣿⠇
-⠀⠹⡇⠀⠙⢦⡀⠀⠀⠀⠀⠀⠀⢀⡴⠋⠀⢸⠏⠀
-⠀⠀⠙⢦⡀⠀⠻⣤⡤⠤⠤⢤⣤⠟⠀⢀⡴⠋⠀⠀
-⠀⠀⠀⠀⢹⡶⠀⠁⠀⠀⠀⠀⠈⠀⢶⡏⠀⠀⠀⠀
-⠀⠀⠀⠀⣾⢀⣤⣄⠀⠀⠀⠀⣠⣤⡀⣷⠀⠀⠀⠀
-⠀⠀⠀⠀⣿⡘⢿⡿⠀⢀⡀⠀⢿⡿⢃⣿⠀⠀⠀⠀
-⠀⠀⠀⠀⣇⠈⡆⠀⣷⡶⢶⣾⠀⢰⠁⣸⠀⠀⠀⠀
-⠀⠀⠀⠀⠙⠾⣅⣀⣘⢦⡴⣃⣀⣨⠷⠋⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠙⠻⠷⠾⠟⠋⠀⠀⠀⠀⠀⠀⠀
+⠰⣶⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀
+⠀⢻⣿⣿⣷⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣴⣾⣿⡟
+⠀⠀⠹⣿⣿⣿⣿⣶⣶⣶⣷⣶⣶⣶⣶⣿⣿⣿⣿⣿⠿⠁
+⠀⠀⠀⠈⣵⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠛⠁⠀⠀
+⠀⠀⠀⢨⣿⣿⠡⠈⣿⣿⣿⣿⣿⡗⠀⢹⣿⣿⣇⠀⠀⠀
+⠀⠀⠀⠾⠿⢿⣶⣾⣿⣭⣽⣿⣿⣿⣶⡿⠿⠿⣿⡄⠀⠀
+⠀⠀⠀⣄⣀⣼⣿⣿⣿⢟⣛⡻⣿⣿⣿⣄⣀⣀⣼⣧⠀⠀
+⠀⠀⠀⢹⣿⣿⣿⣿⣿⡻⣿⡿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀
+⠀⠀⠀⢀⣽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀
 ```
 
 ## Voice
@@ -36,7 +37,10 @@ One representative line per pool:
 - **stack**: Pika... (page crawling in, chin propped on both paws)
 - **pressure**: Pika. (a lot of current stored up, still humming fine)
 - **dateEgg**: Pika-pika! (it's 11:11 — make a sparky wish) ✨
-- **spinnerVerbs**: Sparking, Charging, Zapping, Crackling, Bolting, Buzzing, Surging, Scampering, Thundering, Sizzling, Jolting, Glowing, Powering, Revving, Dashing, Electrifying, Sparkling, Zooming, Fizzing, Humming, Zipping, Igniting, Amping, Pulsing, Flashing, Cranking, Whirring, Sprinting, Kindling, Wiggling
+- **spinnerVerbs**: Sparking, Charging, Zapping, Crackling, Bolting, Buzzing, Surging, Scampering,
+  Thundering, Sizzling, Jolting, Glowing, Powering, Revving, Dashing, Electrifying, Sparkling,
+  Zooming, Fizzing, Humming, Zipping, Igniting, Amping, Pulsing, Flashing, Cranking, Whirring,
+  Sprinting, Kindling, Wiggling
 
 ## Attribution
 

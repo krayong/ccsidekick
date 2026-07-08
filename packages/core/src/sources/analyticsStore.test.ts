@@ -24,6 +24,20 @@ test("upsert two sessions for the same character; the store has both", () => {
 	}
 });
 
+test("updatedMs is preserved on write and read; a record without it round-trips unchanged", () => {
+	const root = tmp();
+	try {
+		upsertAttribution(root, "sess-1", { project: "a/b", character: "batman", updatedMs: 42 });
+		upsertAttribution(root, "sess-2", { project: "a/b", character: "robin" });
+		expect(readAttribution(root)).toEqual({
+			"sess-1": { project: "a/b", character: "batman", updatedMs: 42 },
+			"sess-2": { project: "a/b", character: "robin" },
+		});
+	} finally {
+		rmSync(root, { recursive: true, force: true });
+	}
+});
+
 test('upserting "default" is a no-op', () => {
 	const root = tmp();
 	try {

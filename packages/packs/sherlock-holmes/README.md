@@ -1,6 +1,7 @@
 # Sherlock Holmes pack
 
-> Fan-made tribute. Character names and likenesses are trademarks of their respective owners; this pack is an unofficial, non-commercial homage, not affiliated with or endorsed by them.
+> Fan-made tribute. Character names and likenesses are trademarks of their respective owners; this
+> pack is an unofficial, non-commercial homage, not affiliated with or endorsed by them.
 
 🕵 **Sherlock Holmes** — a reactive ccsidekick character, _mild_ in tone.
 
@@ -36,7 +37,11 @@ One representative line per pool:
 - **stack**: The page dawdles. Even fog lifts, given time.
 - **pressure**: The commonplace book overfills. I retain only what signifies.
 - **dateEgg**: The clock strikes an hour I find suspiciously exact.
-- **spinnerVerbs**: Deducing, Observing, Cross-indexing, Eliminating, Perceiving, Investigating, Reasoning, Examining, Inferring, Detecting, Scrutinising, Analysing, Discerning, Unravelling, Interrogating, Sifting the clues, Reading the evidence, Following the thread, Running it down, Piecing it together, Consulting the index, Weighing the data, Tracing the pattern, Cornering the culprit, Surveying the scene, Concluding
+- **spinnerVerbs**: Deducing, Observing, Cross-indexing, Eliminating, Perceiving, Investigating,
+  Reasoning, Examining, Inferring, Detecting, Scrutinising, Analysing, Discerning, Unravelling,
+  Interrogating, Sifting the clues, Reading the evidence, Following the thread, Running it down,
+  Piecing it together, Consulting the index, Weighing the data, Tracing the pattern, Cornering the
+  culprit, Surveying the scene, Concluding
 
 ## Attribution
 

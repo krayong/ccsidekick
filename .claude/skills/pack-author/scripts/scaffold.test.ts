@@ -4,7 +4,7 @@ import { join } from "node:path";
 
 import { afterEach, beforeEach, describe, expect, test } from "bun:test";
 
-import { PLACEHOLDER_TOKEN } from "../../../../packages/core/src";
+import { PLACEHOLDER_TOKEN, packageJsonErrors } from "../../../../packages/core/src";
 
 import { scaffold } from "./scaffold";
 
@@ -79,6 +79,9 @@ describe("scaffold", () => {
 		};
 		expect(pkg.name).toBe("@ccsidekick/pack-testpack");
 		expect(pkg.exports["./pack.json"]).toBe("./pack.json");
+		// The generated package.json clears the publish-metadata gate: complete files, repository, and a
+		// non-empty author (read from the ambient git identity, not hardcoded).
+		expect(packageJsonErrors(pkg, "testpack")).toEqual([]);
 
 		const reg = readFileSync(join(root, REGISTRY_REL), "utf8");
 		expect(reg).toContain('"batman"');

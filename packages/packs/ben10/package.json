@@ -1,0 +1,21 @@
+{
+	"name": "@ccsidekick/pack-ben10",
+	"version": "0.0.0",
+	"description": "Ben 10 character pack for ccsidekick",
+	"type": "module",
+	"files": [
+		"pack.json",
+		"README.md",
+		"assets"
+	],
+	"exports": {
+		"./pack.json": "./pack.json"
+	},
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/krayong/ccsidekick.git",
+		"directory": "packages/packs/ben10"
+	},
+	"author": "Karan Gourisaria <ccsidekick@krayong.com>"
+}

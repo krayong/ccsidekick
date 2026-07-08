@@ -63,8 +63,8 @@ function figureSection(p: PackJson): string {
 
 // Generic and rights-holder-agnostic so it scales to any character.
 const DISCLAIMER =
-	"> Fan-made tribute. Character names and likenesses are trademarks of their respective owners; this " +
-	"pack is an unofficial, non-commercial homage, not affiliated with or endorsed by them.";
+	"> Fan-made tribute. Character names and likenesses are trademarks of their respective owners; this \n" +
+	"> pack is an unofficial, non-commercial homage, not affiliated with or endorsed by them.";
 
 export function renderReadme(pack: PackJson): string {
 	const out: string[] = [

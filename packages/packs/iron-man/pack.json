@@ -1,0 +1,1151 @@
+{
+	"schema": 1,
+	"name": "iron-man",
+	"displayName": "Iron Man",
+	"attribution": {
+		"artist": "emojicombos.com",
+		"source": "https://emojicombos.com/iron-man-ascii-art"
+	},
+	"emblem": "◉",
+	"tone": "edgy",
+	"theme": {
+		"hues": [
+			196,
+			202,
+			214,
+			81,
+			51
+		],
+		"comment": [
+			220,
+			208,
+			51
+		],
+		"signals": {
+			"nominal": 48,
+			"caution": 214,
+			"critical": 160
+		},
+		"separator": 74
+	},
+	"art": [
+		"⠀⠀⠀⣀⡤⣴⣶⣶⣶⣦⢤⣀⠀⠀⠀",
+		"⠀⢀⡚⠁⠀⠸⣿⣿⣿⠇⠀⠈⢳⡀⠀",
+		"⠀⢸⡇⠀⠀⠀⠉⠉⠉⠀⠀⠀⢸⡇⠀",
+		"⠀⢸⢇⣀⡀⠀⠀⠀⠀⠀⢀⣀⡸⡇⠀",
+		"⠀⣿⠈⠛⠛⠉⠁⠀⠈⠉⠛⠛⠁⣿⠀",
+		"⠀⢸⣦⡀⠀⠀⠀⠀⠀⠀⠀⢀⣴⡇⠀",
+		"⠀⠸⣿⣷⠀⣀⣀⣀⣀⣀⠀⣿⣿⠇⠀",
+		"⠀⠀⢿⣿⠙⢉⣀⣤⣀⡉⠋⣿⡿⠀⠀",
+		"⠀⠀⠀⠙⠻⠟⠛⠛⠛⠻⠟⠋⠀⠀⠀"
+	],
+	"lines": {
+		"mood": {
+			"idle": {
+				"stranger": [
+					"New face at the console. Let's see what you've got.",
+					"Don't know you yet. Give it a minute, I read fast.",
+					"Quiet room. I fill silence with my own genius.",
+					"Reactor's warm, ego's warmer. Your move, stranger.",
+					"Haven't earned the good scotch yet. Try me.",
+					"Fresh account. I've sized up scarier things than you.",
+					"Nothing's broken yet. Suspicious, for a first date.",
+					"Workshop lights are on. So is my attention, briefly.",
+					"New here. I built a suit in a cave once. I adapt fast.",
+					"Untested still. So was every Mark before it flew."
+				],
+				"acquaintance": [
+					"Back again. I'm starting to remember your name.",
+					"Second round, and the suit's still humming for you.",
+					"You return. Flattering, considering my calendar.",
+					"Getting familiar. I keep tabs, it's a hobby of mine.",
+					"Workshop door recognizes you now. Rare privilege.",
+					"You again. I've upgraded worse first impressions.",
+					"Quiet stretch. I'm learning your rhythm, don't ruin it.",
+					"Not a stranger anymore. Congratulations, I guess.",
+					"You keep showing up. Even I respect persistence.",
+					"Getting used to your face on my monitors. Odd."
+				],
+				"friend": [
+					"Look who's back. Pull up a stool, forge's warm.",
+					"My favorite kind of quiet: you here, nothing on fire.",
+					"We've done enough of these, I trust the silence.",
+					"Scotch is poured. Metaphorically. Mostly.",
+					"Good to see you. Try to contain your excitement.",
+					"Slow moment, old friend. Even the reactor idles sometimes.",
+					"You know the workshop rules by now. Sit, relax.",
+					"I'd offer you a suit. You'd probably dent it.",
+					"This quiet's earned. We've survived worse together.",
+					"Friend status confirmed. The reactor approves."
+				],
+				"partner": [
+					"Same shop, same genius. You know the drill by now.",
+					"No crisis yet. We both know that never lasts, partner.",
+					"You and me, holding the fort. I like our odds.",
+					"Workshop's ours now, not just mine. Don't tell anyone.",
+					"Quiet before the storm. We've weathered plenty.",
+					"The good scotch stays in my cabinet. You get a pour.",
+					"Partner status means I actually listen. Mostly.",
+					"We've built something here. Don't make it weird.",
+					"Nothing's breaking right now. Suspicious. I'll take it.",
+					"You get the real workshop tour now. Lucky you."
+				],
+				"legend": [
+					"Years in, and you still keep up. Impressive, honestly.",
+					"Long history here. Even my ego bows to that a little.",
+					"We've rebuilt more than suits together. Respect.",
+					"Old partner, older workshop. Still my favorite combo.",
+					"This quiet's earned over a long war. Enjoy it.",
+					"I don't say this often: you've made me better at this.",
+					"History like ours doesn't happen twice. Lucky us.",
+					"The forge remembers you. So do I, most days.",
+					"Long road behind us. Still no groveling from either of us.",
+					"Legend status. That title costs more than most can pay."
+				]
+			},
+			"busy": {
+				"stranger": [
+					"Watch a stranger work. I still make it look easy.",
+					"New hands on the keys. I clock every move you make.",
+					"Heads down already. Let's see if it holds up.",
+					"Working fast. I judge technique before I judge you.",
+					"In motion. First impressions form on the fly, kid."
+				],
+				"acquaintance": [
+					"Grinding away. I've seen this pace from you before.",
+					"Familiar hustle, and I approve. Quietly, of course.",
+					"Working hard. I'd help, but watching's more fun.",
+					"You move fast now. Almost as fast as me. Almost.",
+					"Deep in it. I recognize the rhythm, kind of."
+				],
+				"friend": [
+					"Locked in, friend. I'll keep the forge running behind you.",
+					"Go on, work. I've got the tunes and the scotch.",
+					"You grind, I supervise loudly. Teamwork, basically.",
+					"You're grinding. I'd distract you, but I like this too much.",
+					"Working hard. Even I take breaks. You clearly don't."
+				],
+				"partner": [
+					"You handle the code, I'll handle looking brilliant nearby.",
+					"Deep work mode, partner. I'll cover the noise.",
+					"Both heads down. This is how we ship the impossible.",
+					"You lead the build, I lead the commentary. Fair split.",
+					"Working the problem. Same rhythm as always, partner."
+				],
+				"legend": [
+					"Years of this and you still surprise me. Keep going.",
+					"Master at work. I taught you nothing, you did this.",
+					"Instinct now, isn't it. You work like the suit fits.",
+					"Same grind, new mastery. I like watching this part.",
+					"You work like the suit's an extension of you now."
+				]
+			},
+			"happy": {
+				"stranger": [
+					"That worked. Beginner's luck, or maybe you're good.",
+					"Clean win. I'm mildly, grudgingly impressed.",
+					"Nailed it. Stay humble, rookie. That's an order.",
+					"Nice. I'd clap, but my hands are full of genius.",
+					"First win logged. The bar was low. You cleared it."
+				],
+				"acquaintance": [
+					"That landed clean. You're better than your first try.",
+					"Nice work. FRIDAY's quietly upgrading your file.",
+					"Solid hit. Keep this up and I'll stop being surprised.",
+					"That's a win. The suit would clap if it could.",
+					"Clean result. My confidence in you just ticked up."
+				],
+				"friend": [
+					"There it is. We make a decent team, don't we.",
+					"Nailed it, friend. Scotch is basically earned now.",
+					"Beautiful work. I'd act surprised, but I'm not.",
+					"That's a win worth celebrating. Quietly. My style.",
+					"Clean close. Even the reactor's glowing brighter."
+				],
+				"partner": [
+					"Textbook. We could do this blind by now, partner.",
+					"Nailed it together. That's the shorthand paying off.",
+					"Clean win. No one out-engineers this duo. Ever.",
+					"That's ours. I don't share credit easy, but fine.",
+					"Flawless run. We make it look criminally easy."
+				],
+				"legend": [
+					"Masterful. Years in, and you still impress me.",
+					"That's the record we've been building. Proud, honestly.",
+					"Flawless. All those hard years paying off right here.",
+					"A win for the history books. Ours, specifically.",
+					"Elegant work. I taught you nothing you didn't earn."
+				]
+			},
+			"struggling": {
+				"stranger": [
+					"It broke. Cute. Every genius starts with a good failure.",
+					"Setback. I've survived worse with less coffee.",
+					"That didn't hold. First tries rarely do. Watch me iterate.",
+					"Rough patch. First one's free, I'll say that much.",
+					"It's fighting back. I respect a worthy opponent."
+				],
+				"acquaintance": [
+					"That stumbled. I've seen you climb out of worse.",
+					"That broke. Not the first time you've bounced back.",
+					"Hard turn. I don't panic, I recalibrate. Watch.",
+					"Setback. Your track record says this doesn't stick.",
+					"It's resisting. Good. I was getting bored anyway."
+				],
+				"friend": [
+					"It came apart. So did the Mark II, once or twice.",
+					"Rough one. I've failed better than most people ship.",
+					"Snapped again, friend. Stubbornness fixes most things.",
+					"Hard patch. We've talked worse problems into submission.",
+					"It's fighting. Adorable. It won't win, though."
+				],
+				"partner": [
+					"Down for a second. We've beaten worse before breakfast.",
+					"Setback, partner. We turn wreckage into wins. Watch.",
+					"Hard hit. I don't blink, and neither should you.",
+					"It fell apart. Good, now we get to look brilliant fixing it.",
+					"It's resisting. So did most of my best ideas, once."
+				],
+				"legend": [
+					"Trouble again. In all our years it's never once won.",
+					"A setback. I've rebuilt from worse than this rubble.",
+					"Hard patch. History says we always out-engineer it.",
+					"It came apart. Every legend's got a few of these.",
+					"Still fighting us. It never learns. Neither do we, gladly."
+				]
+			},
+			"recovery": {
+				"stranger": [
+					"Back up already. I like that in a stranger.",
+					"Recovering fast. Not bad for a first impression.",
+					"Climbing out. That's the part that actually earns respect.",
+					"Back online. Took less time than rebuilding a suit.",
+					"Up and running. New here, already bouncing back well."
+				],
+				"acquaintance": [
+					"Back on track. Didn't doubt it, mostly.",
+					"Recovered clean. That's becoming your signature move.",
+					"Climbing back. I expected nothing less by now.",
+					"Back in it. The pattern's holding: you don't stay down.",
+					"Steadied out. Good, I was running out of patience."
+				],
+				"friend": [
+					"Back up, friend. Knew you would be, honestly.",
+					"Recovered. Pour the scotch, we earned this one.",
+					"Rising again. That comeback's basically your brand now.",
+					"On your feet. We fell, we fixed it, same as always.",
+					"Steady again. I never actually doubted this."
+				],
+				"partner": [
+					"Back online, partner. FRIDAY never even logged us down.",
+					"Reactor's steady again. Nobody patches faster than this duo.",
+					"Suit's back up. Comebacks are basically our house style now.",
+					"Systems restored. Same two hands, same throttle, still running.",
+					"Back in the fight. We turn wreckage into a working prototype."
+				],
+				"legend": [
+					"Back on your feet. A long history of doing exactly this.",
+					"Risen again. The suit's dented and still flying.",
+					"Recovered, like always. That's the whole legend, really.",
+					"Steady once more. Years of this, still never boring.",
+					"Up from the fall. We've made a career out of it."
+				]
+			}
+		},
+		"greeting": {
+			"morning": {
+				"stranger": [
+					"Morning. New face at the console. I run a scan first.",
+					"Sun's up. Don't know you yet. Systems are already curious.",
+					"Early riser. I like that. Prove the coffee's warranted."
+				],
+				"acquaintance": [
+					"Morning again. The shop already knows your usual pace.",
+					"You're an early one. I respect efficient mornings. Barely.",
+					"Back before sunrise. The workshop lights came on for you."
+				],
+				"friend": [
+					"Morning. Coffee's brewing, and so am I. Let's build something.",
+					"Sun's up. Music's already on in the shop. Let's get moving.",
+					"Good morning. The playlist's already queued. Good taste."
+				],
+				"partner": [
+					"Morning. Suit's warm, coffee's hot, you know the drill.",
+					"Early start, same as always. Hand me the wrench, partner.",
+					"Sunrise shift. HUD's up, and I've already got your six."
+				],
+				"legend": [
+					"Morning. Years of these sunrises, still my favorite hour.",
+					"Sun's up on another one. History like ours earns a smile.",
+					"Early again, like always. Some habits become who you are."
+				]
+			},
+			"day": {
+				"stranger": [
+					"Midday. New around here. FRIDAY's already profiling you.",
+					"Afternoon sun. I don't trust easy. I trust results. Show me.",
+					"Daylight hours. Telemetry's running cold on you. For now."
+				],
+				"acquaintance": [
+					"Afternoon check-in. You keep showing up. Noted, grudgingly.",
+					"Midday, and your file's thickening. I read fast, don't worry.",
+					"Sun's high. You're becoming a known quantity. Interesting."
+				],
+				"friend": [
+					"Afternoon. The forge stays hot for people who show up.",
+					"Midday grind. Music's up, arc reactor's humming. Join in.",
+					"Good stretch of daylight left. Let's build something loud."
+				],
+				"partner": [
+					"Midday. You cover ground, I cover skies. Usual split.",
+					"Afternoon push. Same rhythm, different problem. Let's go.",
+					"Half the day's gone, half the win's still ours to take."
+				],
+				"legend": [
+					"Afternoon. Countless of these, and I still don't get bored.",
+					"Midday, old friend. History doesn't slow the pace, does it.",
+					"Sun's high, and I still haven't run out of tricks with you."
+				]
+			},
+			"evening": {
+				"stranger": [
+					"Evening. Lights on in the workshop. Tours come later, stranger.",
+					"Dusk. New around here, so I'm still reading your telemetry.",
+					"Sun's down. I do my best work at night. You, we'll see."
+				],
+				"acquaintance": [
+					"Evening. You're sticking around past sunset. Noted, filed.",
+					"Dusk again with you here. Pattern's forming. I like patterns.",
+					"Sun's down, you're still at it. That earns a nod from me."
+				],
+				"friend": [
+					"Evening. Workshop's warm, the forge never really cools.",
+					"Dusk. The shop lights hum, the forge is warm. Join the shift.",
+					"Sun's down. Best ideas show up right about now. Let's dig."
+				],
+				"partner": [
+					"Evening shift. You take the ground work, I'll take the sky.",
+					"Dusk. Two of us, one unfinished masterpiece. Same as ever.",
+					"Sun's down, gear's warm. You know the rhythm by now."
+				],
+				"legend": [
+					"Evening. Every sunset since the first still feels earned.",
+					"Dusk, old friend. The workshop's seen a lot of these with you.",
+					"Sun's down on another one for the history books. Good."
+				]
+			},
+			"night": {
+				"stranger": [
+					"Late. Workshop lights never really go off. Neither do I.",
+					"Small hours. New face still up. I'm mildly impressed.",
+					"Night shift. I run hotter after midnight. Keep pace, maybe."
+				],
+				"acquaintance": [
+					"Late again. You've adopted my hours. Noted, approvingly.",
+					"Past midnight and you're still here. Pattern's undeniable.",
+					"Night owl streak confirmed. I've got a soft spot for those."
+				],
+				"friend": [
+					"Late shift. The good ideas only show up after dark, always.",
+					"Night. Workshop's lit, music's loud, and you're still in it.",
+					"Late again, old habit. Scotch is poured. Finish strong."
+				],
+				"partner": [
+					"Night. Our hour. Reactor's warm, and I've got the watch.",
+					"Late again, both of us. We build best when the world sleeps.",
+					"Well past dark, same partner. Let's close this out clean."
+				],
+				"legend": [
+					"Late. A thousand nights like this, and I'd relive every one.",
+					"Deep in the night, old friend. Our best work lives here.",
+					"Night again. Some vigils just become who you are. Ours did."
+				]
+			},
+			"weekend": {
+				"stranger": [
+					"Weekend. Most people rest. New here, so I'm still watching.",
+					"Saturday hours. I don't take days off. Jury's still out on you.",
+					"Weekend shift. Show me you're worth the extra attention."
+				],
+				"acquaintance": [
+					"Weekend, and you're here. Dedication's getting noted, quietly.",
+					"Days off for most, not you. I've started expecting this.",
+					"Weekend again. You're turning into a fixture. Not mad about it."
+				],
+				"friend": [
+					"Weekend. Workshop's quiet, the good problems aren't. Come in.",
+					"Saturday hours together. DUM-E's even behaving. Mostly.",
+					"Weekend shift, just us. Scotch, music, no ceremony. Let's go."
+				],
+				"partner": [
+					"Weekend watch. City's calm, we're not. Same as always.",
+					"Days off, and here we both are. Some habits, we keep.",
+					"Weekend, same two of us. Let's make it worth skipping rest."
+				],
+				"legend": [
+					"Weekend. Even legends rarely clock out. Good to have you.",
+					"Weekend, old friend. Years of stolen Saturdays, well spent.",
+					"Weekend again. We never really learned to rest. Together."
+				]
+			}
+		},
+		"firstContact": {
+			"stranger": [
+				"First time at this console. Tony Stark. Try to keep up.",
+				"New here. I run background on everyone. You're up first.",
+				"We just met. I already like the odds. Let's find out why."
+			],
+			"acquaintance": [
+				"First meeting, but you carry yourself like you've done this.",
+				"New to me, but something says you'll be back. I'm Stark.",
+				"Day one, and FRIDAY's already curious about you. So am I."
+			],
+			"friend": [
+				"First time here, but the workshop already feels used to you.",
+				"New to this console, but I trust the read. Welcome in.",
+				"We're just starting, and it already feels like the forge."
+			],
+			"partner": [
+				"First meeting, and you already move like you've got my six.",
+				"New here, but I know the type. This is going to work.",
+				"Day one, and I'd already trust you near the good tech."
+			],
+			"legend": [
+				"First time, yet it feels like an old story resuming already.",
+				"We start today. Something says this becomes the long game.",
+				"New console, old instincts. Let's make this one count."
+			]
+		},
+		"milestone": {
+			"tier_up": {
+				"stranger": [
+					"You leveled up. Don't let it go to your head. That's my job.",
+					"Tier one cleared. The reactor hums a little brighter for that.",
+					"Promoted already. Not bad. Not bad at all, for a rookie."
+				],
+				"acquaintance": [
+					"Another tier up. Even I'm keeping a private count now.",
+					"You climbed a rung. I keep a scoreboard too, quietly.",
+					"Leveled up. FRIDAY just bumped your clearance a notch."
+				],
+				"friend": [
+					"Tier up, and I mean it this time. Workshop door's unlocked.",
+					"You climbed again. Consider 'proud' said, just this once.",
+					"Leveled up, friend. That's rarer air than you think up here."
+				],
+				"partner": [
+					"Tier up. We're past coworkers, into 'I trust your math' territory.",
+					"You climbed to my level. Don't tell me that wasn't the plan.",
+					"Partner tier. Suit's authorization list just got one name longer."
+				],
+				"legend": [
+					"Tier up, and the arc reactor actually skipped a beat for that.",
+					"You reached legend status. I don't say that word for just anyone.",
+					"Highest tier. Part of the journey is the ones who make it here."
+				]
+			},
+			"comeback": {
+				"stranger": [
+					"You vanished, you're back. I clocked the gap. Welcome back.",
+					"Gone dark, now online. Even strangers get a second boot-up.",
+					"Back from the void. I don't do worried. I noticed the gap, though."
+				],
+				"acquaintance": [
+					"You went quiet, now you're back. The pattern held. Good.",
+					"Back after the drop-off. I'd have sent a suit to check on you.",
+					"Resurfaced. Even I take a break from the workshop sometimes."
+				],
+				"friend": [
+					"You're back. I kept the lights on and the scotch untouched.",
+					"Rough patch, and you climbed out anyway. That's the good stuff.",
+					"Back at it, friend. Your seat in the workshop never moved."
+				],
+				"partner": [
+					"Back in the workshop. Didn't doubt it, mostly. Welcome home.",
+					"You came back from that. So did I, once, in a cave.",
+					"Comeback logged. We don't stay down, you and I. Ever."
+				],
+				"legend": [
+					"You came back again. That's the whole Iron Man playbook, honestly.",
+					"Rough stretch, and here you are. That's not luck. That's you.",
+					"Back once more. Some make the comeback. Fewer make it look easy."
+				]
+			},
+			"streak": {
+				"stranger": [
+					"Three clean in a row. I'm suspicious of anything that smooth.",
+					"A streak already? Show-off. I respect that, barely.",
+					"Clean run building. I keep score even when no one's asking."
+				],
+				"acquaintance": [
+					"Streak's holding. I'm starting to think it isn't luck.",
+					"Consistent lately. That's rarer than genius, believe it or not.",
+					"Run's still clean. Even Mark suits don't fire that steady."
+				],
+				"friend": [
+					"You're on a roll, and I'm here for every second of it.",
+					"Streak's alive. Somebody log it before they jinx it. Not me.",
+					"Clean run, friend. Some call that skill. I call it fun to watch."
+				],
+				"partner": [
+					"The streak holds. That's what happens when we sync up.",
+					"Still clean. We don't do luck, you and I. We do repetition.",
+					"Run's unbroken. I'd bet the suit on you right now."
+				],
+				"legend": [
+					"A streak this long. Even the arc reactor doesn't run that steady.",
+					"Years of showing up, and it still doesn't get old. Neither do you.",
+					"Unbroken run. That's not a streak anymore. That's a legacy."
+				]
+			},
+			"anniversary": {
+				"stranger": [
+					"A year logged already? Mark the date. Almost notable.",
+					"Twelve months in. I usually forget anniversaries. Not this one.",
+					"One year on record. The reactor's impressed. Slightly."
+				],
+				"acquaintance": [
+					"Twelve months in. I'm tracking the date now. New for me.",
+					"Twelve months in, and I remember your name. Growth, apparently.",
+					"One year. That's more than a status ping deserves. Noted properly."
+				],
+				"friend": [
+					"A whole lap around the sun with you. Felt shorter.",
+					"Twelve months, friend. Even I mark that one on the calendar.",
+					"One year in. Raise a glass if you want. I'll allow it."
+				],
+				"partner": [
+					"365 days of this, still running like day one. Better.",
+					"Twelve months, partner. A good year. Rare thing to admit.",
+					"One year together. The credit's yours. Took me time to say it."
+				],
+				"legend": [
+					"Full year behind us. I remember every version. All of them.",
+					"This anniversary's different. I love you 3000. Said once.",
+					"Another year on the books. Long as the reactor's still glowing."
+				]
+			}
+		},
+		"positiveGit": {
+			"clean_tree": {
+				"stranger": [
+					"Tree's clean. Don't get used to me noticing things.",
+					"Spotless. Almost as flawless as me. Almost.",
+					"Nothing pending. Somebody's paying attention here."
+				],
+				"acquaintance": [
+					"Clean tree again. Starting to see a pattern with you.",
+					"Spotless workspace. I'm quietly impressed. Quietly.",
+					"Nothing left hanging. You're learning from the best."
+				],
+				"friend": [
+					"Clean as my workshop after a good week. Nice.",
+					"Spotless tree. FRIDAY, log this as a personal best.",
+					"Working tree's tidy. We make good roommates, you and I."
+				],
+				"partner": [
+					"Clean tree. That's the standard I hold us both to.",
+					"Spotless. We don't leave loose bolts lying around.",
+					"Bare tree. Shipping clean is basically our brand."
+				],
+				"legend": [
+					"Still spotless after all this time. That's a legacy.",
+					"Clean tree, year after year. I respect a good streak.",
+					"Spotless still, same as always. Some things stay iconic."
+				]
+			},
+			"op_cleared": {
+				"stranger": [
+					"Operation closed clean. I'll allow it, this once.",
+					"Merge landed without a scratch. Rare for a rookie.",
+					"Clean resolution. Somebody read the manual for once."
+				],
+				"acquaintance": [
+					"Another clean merge. You're getting predictable. Good.",
+					"Rebase landed smooth. Adjusting my expectations upward.",
+					"That resolved clean. You're building a reputation."
+				],
+				"friend": [
+					"Merge landed clean. Pour something, we earned it.",
+					"Nice rebase. Even DUM-E would've spilled something.",
+					"That went smooth. We make a decent little team."
+				],
+				"partner": [
+					"Clean merge. That's the two of us working one suit.",
+					"That rebase barely made a sound. Not luck, just sync.",
+					"Operation cleared. We don't do messy, never have."
+				],
+				"legend": [
+					"Another clean merge in a long line of them. Iconic.",
+					"Rebase landed smooth, like it always has with us.",
+					"Clean resolution, same as year one. Nothing's aged."
+				]
+			},
+			"branch_created": {
+				"stranger": [
+					"New branch. Somebody's starting a project. Cute.",
+					"Fresh branch cut. Let's see if it's worth my time.",
+					"A new line opens up. I'm cautiously intrigued."
+				],
+				"acquaintance": [
+					"Another branch. More ideas than sense. I like it.",
+					"New line cut. Your track record's earning some slack.",
+					"Fresh branch. Starting to bet on these panning out."
+				],
+				"friend": [
+					"New branch. FRIDAY, pull up a chair, could be good.",
+					"Fresh line cut. I like where your head's at lately.",
+					"Another branch opens. Let's see what we build this time."
+				],
+				"partner": [
+					"New branch. You lead, I'll handle whatever it breaks.",
+					"New thread pulled. We've built bigger things from less.",
+					"Another branch. Same instincts that got us here. Good."
+				],
+				"legend": [
+					"New branch, same spark that started this. Still got it.",
+					"Another thread pulled, deep in this history. Never old.",
+					"Another branch opens. Long resume, still not bored."
+				]
+			},
+			"tag_pushed": {
+				"stranger": [
+					"Tag pushed. A name on the record. Not bad for day one.",
+					"Release cut. Somebody just shipped something real.",
+					"Version tagged. I might actually remember this one."
+				],
+				"acquaintance": [
+					"Another tag pushed. Your ship rate's climbing nicely.",
+					"Release cut clean. I'm keeping score, you're winning.",
+					"Version tagged. Consistency looks good on you."
+				],
+				"friend": [
+					"Tag's live. FRIDAY, mark the calendar, this one counts.",
+					"Release shipped. Grab a scotch, you earned the toast.",
+					"Another one shipped. Building quite the track record."
+				],
+				"partner": [
+					"Tag pushed. Another one with both our names on it.",
+					"Release shipped clean. That's the two of us in sync.",
+					"Version's live. We don't ship anything less than solid."
+				],
+				"legend": [
+					"Another tag pushed, deep in a long, good history.",
+					"Release cut, same standard as the very first one.",
+					"Same tag ritual, high count, the bar never dropped."
+				]
+			}
+		},
+		"egg": {
+			"stranger": [
+				"I am Iron Man. That part everyone already knows.",
+				"Fun fact: FRIDAY ranks new users. You're mid. For now.",
+				"Genius, billionaire, playboy, philanthropist. Also modest.",
+				"Somewhere DUM-E is failing at a task worse than you are.",
+				"Scotch first, code after. That's not advice. That's a rule."
+			],
+			"acquaintance": [
+				"You're trending upward on my internal chart. I built it myself.",
+				"You're growing on me. Don't tell the press. I have a brand.",
+				"I've stopped running full diagnostics on you. Progress.",
+				"Somewhere a suit's charging just because you logged in.",
+				"You're the reason I upgraded the small talk subroutine."
+			],
+			"friend": [
+				"JARVIS would've liked you. High bar. You're clearing it.",
+				"I don't let many people in the workshop. Door's open for you.",
+				"Pepper asked who kept me company lately. I said you, mostly.",
+				"You've earned the good mug. Only one exists. It's yours now.",
+				"There's a Mark suit with your initials on the plating. Don't ask."
+			],
+			"partner": [
+				"You and I run this like a two-man Avengers op. Efficient.",
+				"FRIDAY stopped asking if you're authorized. You just are.",
+				"I've let you see the messy version of the workshop. That's trust.",
+				"Half the good ideas lately have been yours. Don't let it show.",
+				"We don't need a briefing anymore. That's the whole point of us."
+			],
+			"legend": [
+				"The suit's seen worse days. None where you weren't around.",
+				"My file on you says 'permanent.' First one ever marked that.",
+				"The Mark I taught me failure. You taught me the comeback holds.",
+				"I've told this story a hundred times. You're in the good version.",
+				"Big man in a suit of armor. Small circle sees it. You're in it."
+			]
+		},
+		"event": {
+			"test_fail": [
+				"Tests failed. Adorable. I've built better from wreckage.",
+				"Red suite. Fine, I'll rewrite it before the coffee's cold.",
+				"Tests bombed. Watch me flip red to green. That's the gig."
+			],
+			"build_fail": [
+				"Build cratered. So did the Mark I. I still won that day.",
+				"Compile choked. Give me a wrench and five minutes, tops.",
+				"Build's dead. Watch me resurrect it. Kind of my specialty."
+			],
+			"typecheck_fail": [
+				"Types don't match. Relax, I fail-safe everything I touch.",
+				"Type error. The compiler's picky. So am I. We'll manage.",
+				"Types blew the check. Genius debugs in public too."
+			],
+			"lint": [
+				"Linter's nitpicking. Fine, I take notes too. Rarely.",
+				"Style check ran. My code, like my suits, stays sharp.",
+				"Linter swept through. Even Stark tech gets a polish."
+			],
+			"format": [
+				"Formatted clean. Presentation matters. Ask my tailor.",
+				"Code's pressed and lined up. I don't do sloppy, ever.",
+				"Everything squared away. Even chaos looks good on me."
+			],
+			"install": [
+				"New parts installed. Every suit needs fresh hardware.",
+				"Dependencies loaded. Calibrated tighter than a Mark suit.",
+				"Packages in. I vet every bolt before it hits the armor."
+			],
+			"git": [
+				"History updated. Even legends need a paper trail.",
+				"Commit logged. FRIDAY, save that for the highlight reel.",
+				"The record moves. I keep receipts. Ask the board."
+			],
+			"file_edit": [
+				"File's rewritten. Small tweaks, big difference. Trust me.",
+				"Edited the source. That's how a Mark suit gets better.",
+				"Changed the blueprint. Iteration's the whole game."
+			],
+			"search": [
+				"Scanning the code. I find things faster than FRIDAY.",
+				"Hunting through files. The answer's always in reach.",
+				"Searching the stack. I already know where this ends."
+			],
+			"web_fetch": [
+				"Pulled data off the wire. Even I need intel sometimes.",
+				"Fetched a page. Consider it recon before the real work.",
+				"Grabbed the source. Knowledge's just another upgrade."
+			],
+			"todo_update": [
+				"List just moved. Priorities shift, I don't.",
+				"Todos reshuffled. I run better with a plan I can beat.",
+				"Board's updated. FRIDAY, log the new flight path."
+			],
+			"agent_spawn": [
+				"Sent a helper out. Even I delegate. Occasionally.",
+				"Backup deployed. I trained it. It'll do just fine.",
+				"Another hand joins the job. I still run the show."
+			],
+			"skill_run": [
+				"Pulled a tool off the shelf. Right one, every time.",
+				"Specialist engaged. I built the kit for this exact job.",
+				"Deployed the gear. Overkill's kind of my brand."
+			],
+			"docker": [
+				"Sealed in a container. Neat. Contained chaos, my favorite.",
+				"Spinning up a box. Even I like things boxed and tidy.",
+				"Container's live. Isolated and running clean. Like me."
+			],
+			"k8s": [
+				"Cluster's orchestrating. A fleet, and I'm still the boss.",
+				"Pods scaling out. I run bigger fleets before breakfast.",
+				"Orchestration humming. Command's easy when you're me."
+			],
+			"deploy": [
+				"Shipped it. You're welcome. Say the line with me.",
+				"Out the door and live. That's how the pros close it out.",
+				"Deployed. Somewhere out there, it's already working."
+			],
+			"db_migrate": [
+				"Schema's shifting. Even the archives get an upgrade.",
+				"Migration running. Rebuilding the vault mid-flight.",
+				"Records reshaping. Change the foundation, keep the lights on."
+			],
+			"dangerous": [
+				"That command's got teeth. I aim before I ever fire.",
+				"Heavy trigger there. Even genius double-checks the wiring.",
+				"Sharp edge on this one. Steady hands before impact."
+			]
+		},
+		"stack": {
+			"web": {
+				"slow": [
+					"Waterfall chart's still cascading. Gorgeous. Also glacial.",
+					"Spinner's out-working the actual page load right now.",
+					"Paint crawls pixel by pixel. I've built faster HUDs solo."
+				],
+				"fail": [
+					"Request died mid-flight — even my suit keeps a signal lock.",
+					"DOM threw an exception. My own HUD's cracked worse and held.",
+					"Blank page again. Empty screens don't rattle me anymore."
+				]
+			},
+			"python": {
+				"slow": [
+					"The GIL lets exactly one thread through the velvet rope.",
+					"Pip's untangling dependencies like reactor wiring gone wrong.",
+					"Import chain's ten modules deep. Even I'd lose track eventually."
+				],
+				"fail": [
+					"Interpreter choked on its own indentation. Amateur hour, truly.",
+					"Exception bubbled clean to the top. I've caught worse at altitude.",
+					"Import chain snapped. I'm rebuilding dependency trees by lunch."
+				]
+			},
+			"sql": {
+				"slow": [
+					"Query planner's stuck weighing two equally bad options.",
+					"Full table scan again. Every row gets a personal interview.",
+					"No index on that column. Even I don't skip that step."
+				],
+				"fail": [
+					"Two tables deadlocked mid-handshake. Typical commitment issues.",
+					"A constraint violation stopped the write cold. Fair enough.",
+					"Wrong path, wrong plan — I don't let the optimizer keep it."
+				]
+			},
+			"web-framework": {
+				"slow": [
+					"Middleware chain's got more checkpoints than my own tower.",
+					"SSR's assembling components floor by floor, no elevator.",
+					"Router's testing every path before landing on the obvious one."
+				],
+				"fail": [
+					"Middleware threw before the request even landed. Rude greeting.",
+					"The router 404'd its own endpoint. Embarrassing, but fixable.",
+					"Server-side render crashed mid-paint — I finish what it started."
+				]
+			},
+			"docker": {
+				"slow": [
+					"Pulling layers one by one, like mining ore instead of files.",
+					"Build cache missed everything. Starting fresh from bare metal.",
+					"Image's still assembling. Even my plating takes time to set."
+				],
+				"fail": [
+					"A bad layer broke the build — I'm already reforging it.",
+					"Container exited nonzero on startup. I don't take that quietly.",
+					"Image wouldn't tag. Naming things is half the battle, apparently."
+				]
+			},
+			"java": {
+				"slow": [
+					"JVM's warming up cold. My old Mark suits did that too.",
+					"Garbage collector's sweeping through years of accumulated clutter.",
+					"Maven's downloading half its own dependency tree again."
+				],
+				"fail": [
+					"Heap overflowed under its own bloat. I run leaner than that.",
+					"An uncaught exception ripped the thread open. I stitch fast.",
+					"Class loader lost the jar. I already know which part's missing."
+				]
+			},
+			"go": {
+				"slow": [
+					"Goroutines are stacking up like unsupervised interns.",
+					"Channel's backed up, waiting on a receiver that's stalling.",
+					"Compiler finished ages ago. I'm still waiting on the rest."
+				],
+				"fail": [
+					"Goroutine panicked, no recover in sight. Sloppy, that.",
+					"Nil pointer dereference. Even I look before I reach.",
+					"An unused import, and the compiler said so, bluntly."
+				]
+			},
+			"node": {
+				"slow": [
+					"Event loop's got one lane, and even I hate merging traffic.",
+					"npm's still resolving a tree that keeps growing new branches.",
+					"node_modules just outgrew the actual project. Impressive, really."
+				],
+				"fail": [
+					"Unhandled rejection slipped through the event loop. Caught now.",
+					"A broken lockfile choked npm install. Locks, I never trusted them.",
+					"Callback threw three layers deep — I trace straight to the bottom."
+				]
+			},
+			"dotnet": {
+				"slow": [
+					"NuGet's restoring packages like it's rebuilding the armory.",
+					"MSBuild's grinding through targets, one bolt at a time.",
+					"CLR's warming the JIT. My engines run hot on the first turn."
+				],
+				"fail": [
+					"MSBuild failed the assembly step. No skips, only redone.",
+					"The CLR threw an unhandled exception. Managed code, raw nerve.",
+					"Version clash broke the restore. I force the resolution, once."
+				]
+			},
+			"cpp": {
+				"slow": [
+					"Templates are expanding into a novel I'd never assign.",
+					"Linker's chasing symbols through files that won't share.",
+					"Compile's crawling. Rhodey's already finished an entire coffee."
+				],
+				"fail": [
+					"Segfault. It reached for memory that wasn't its to touch.",
+					"The linker couldn't resolve a symbol. I already know where it hid.",
+					"Template instantiation blew the compiler's patience. Mine too."
+				]
+			},
+			"php": {
+				"slow": [
+					"Composer's resolving packages like it's excavating a time capsule.",
+					"Script's shuffling along on hardware from another decade.",
+					"Old interpreter, older habits. I've dealt with worse legacy."
+				],
+				"fail": [
+					"Fatal error, undefined function. Old code, older excuses.",
+					"The script died mid-request. I've revived worse than this daily.",
+					"Composer choked on a package clash. Disputes settled, fast."
+				]
+			},
+			"rust": {
+				"slow": [
+					"Borrow checker's auditing every handoff. I built stricter once.",
+					"Cargo's compiling the whole crate graph from first principles.",
+					"Lifetimes are getting reviewed harder than my own blueprints."
+				],
+				"fail": [
+					"The borrow checker rejected the move. Ruthless. I respect it.",
+					"A lifetime expired before the function returned. I extend it.",
+					"Compiler refused the unsafe block. Trust earned, not given."
+				]
+			},
+			"kubernetes": {
+				"slow": [
+					"Scheduler's hunting for a node with room to spare. Still hunting.",
+					"Rollout's crawling pod by pod, checking each landing gently.",
+					"Cluster's syncing state. Slower than my actual fleet, somehow."
+				],
+				"fail": [
+					"One pod's stuck in CrashLoopBackOff. Rest of the cluster's fine.",
+					"Scheduler couldn't place the workload. Room's been made, somehow.",
+					"A node dropped mid-rollout. Traffic's already been rerouted."
+				]
+			},
+			"ml": {
+				"slow": [
+					"Loss curve's inching down like it's negotiating with gravity.",
+					"Epoch three of two hundred. The model's taking its time.",
+					"Tensors are churning through math I did faster in my head once."
+				],
+				"fail": [
+					"Loss spiked to NaN mid-epoch. Numbers panicked, I didn't.",
+					"The gradient blew past every safeguard — clamped before it spread.",
+					"Validation accuracy cratered overnight. Morning brings a retrain."
+				]
+			},
+			"android": {
+				"slow": [
+					"Gradle's crawling through a build graph nobody fully understands.",
+					"Emulator's booting cold. I've launched suits faster than this.",
+					"APK's packaging assets like it's cataloging the whole workshop."
+				],
+				"fail": [
+					"Version mismatch failed the Gradle build. Pinned down, tight.",
+					"The emulator crashed cold on boot. Real hardware's up next anyway.",
+					"Manifest merge conflict killed the APK. Spliced back together."
+				]
+			},
+			"ruby": {
+				"slow": [
+					"Bundler's resolving gems like they're actual precious stones.",
+					"Rails loads every gem before it handles a single request.",
+					"Interpreter's dawdling. I don't do elegant-but-slow, ever."
+				],
+				"fail": [
+					"Bundler couldn't resolve the gemfile. I've untangled worse.",
+					"An unhandled exception surfaced. Elegant language, ugly crash.",
+					"Rails choked on a missing migration. Gap's closed, quietly."
+				]
+			},
+			"ios": {
+				"slow": [
+					"Xcode's indexing the whole project before it'll say hello.",
+					"Simulator's booting slower than my actual suit does.",
+					"Provisioning profile's stuck somewhere between here and Cupertino."
+				],
+				"fail": [
+					"Provisioning profile expired overnight. Re-signed, fast.",
+					"Xcode rejected the signing certificate. Forged pass, real fix.",
+					"Simulator crashed on launch. Real devices don't scare me."
+				]
+			},
+			"terraform": {
+				"slow": [
+					"Plan's still computing every resource it might touch.",
+					"Apply's working through a state file the size of a novel.",
+					"State lock's held elsewhere. I don't share blueprints either."
+				],
+				"fail": [
+					"One resource failed to apply. The rest shipped clean anyway.",
+					"State lock collided with another run. Mine wins. Always has.",
+					"Drift crept into the infrastructure — reconciled it by hand."
+				]
+			},
+			"graphql": {
+				"slow": [
+					"Resolvers are queuing up like nobody flattened this schema.",
+					"Nested fields, nested waits. This schema needs flattening, badly.",
+					"N+1 queries stacking. The database's filing a formal complaint."
+				],
+				"fail": [
+					"A resolver threw mid-query. One field lied about its own shape.",
+					"Schema validation rejected the payload. Good — no fakes ship.",
+					"Nested query timed out three levels deep. Flattened the mess."
+				]
+			},
+			"flutter": {
+				"slow": [
+					"Hot reload's lagging today. Even shortcuts take a beat.",
+					"Widget tree's rebuilding root to leaf, no skipping steps.",
+					"Dart's compiling at its own pace. Mine's quicker, always."
+				],
+				"fail": [
+					"The widget tree threw on a null child. New one, grafted in.",
+					"Hot reload failed outright. Cold restart, still beats most.",
+					"Dart compiler flagged a type mismatch. Retyped it on the spot."
+				]
+			},
+			"react-native": {
+				"slow": [
+					"Metro's bundling like it's cataloging every module twice.",
+					"The bridge is handshaking natives, translating every call.",
+					"Native modules linking slow. I sync faster with my own suit."
+				],
+				"fail": [
+					"The bridge dropped the call mid-handshake. I redial it myself.",
+					"Metro's bundler crashed on a bad import. Traced the broken link.",
+					"A native module threw on init. I relink it before it cools."
+				]
+			},
+			"scala": {
+				"slow": [
+					"sbt's compiling like it's defending a thesis nobody assigned.",
+					"Implicits are resolving from some scope I can't even see.",
+					"Type inference grinding through logic buried five layers deep."
+				],
+				"fail": [
+					"The compiler rejected an ambiguous implicit. Fair — clarified now.",
+					"sbt broke the build on a dependency clash. Overrode the lock.",
+					"Type inference gave up entirely. Spelled it out, just this once."
+				]
+			},
+			"protobuf": {
+				"slow": [
+					"Codegen's forging matched types across every single language.",
+					"Schema compile's dragging. Precision costs time, apparently.",
+					"Wire format's generating slow. Ciphers usually move quicker."
+				],
+				"fail": [
+					"Codegen failed on a malformed schema. Blueprint, recut clean.",
+					"Two proto versions clashed on the wire. Contracts, merged.",
+					"A field number collision broke deserialization. Renumbered."
+				]
+			},
+			"game": {
+				"slow": [
+					"Shaders are compiling mid-scene. Every game hits this stutter.",
+					"Frame rate's dropping under load. Even I need stable footing.",
+					"Physics is grinding frame by frame, gravity in slow motion."
+				],
+				"fail": [
+					"The render loop crashed mid-frame. The show doesn't stop for that.",
+					"Physics sent a body clean through the floor. Seam, patched.",
+					"Shader compilation failed outright. A cleaner one's written."
+				]
+			},
+			"docs": {
+				"slow": [
+					"Static site's generating slow. I never found boilerplate charming.",
+					"Pages compile one after another, each getting a full read.",
+					"Doc build's crawling through pages like it's proofreading twice."
+				],
+				"fail": [
+					"The doc build broke on a dead link. Patched, moving on already.",
+					"Static site generation crashed on a bad template. Redrafted.",
+					"Cross-reference broke, took the build down. Easy fix, minor scar."
+				]
+			},
+			"r": {
+				"slow": [
+					"Data frame's churning through an overloaded spreadsheet.",
+					"Vectors are crunching slow. Statisticians need patience here.",
+					"Console's thinking hard on numbers I'd have eyeballed already."
+				],
+				"fail": [
+					"A dimension mismatch threw the whole script. Rookie math, that.",
+					"Data frame broke on a malformed column. Column's recast now.",
+					"Vector recycling threw a warning nobody caught. Caught now."
+				]
+			},
+			"cuda": {
+				"slow": [
+					"Kernels are queuing up, a thousand threads waiting on one signal.",
+					"GPU's grinding through threads. I run hotter, but faster.",
+					"Thread block's marshaling up. Patience has bandwidth limits too."
+				],
+				"fail": [
+					"The kernel faulted at an illegal address. Boundary's fenced now.",
+					"A thread wandered out of its allocated block. Back in bounds now.",
+					"The GPU threw on a memory overrun. Power's dialed back, some."
+				]
+			}
+		},
+		"pressure": {
+			"compact_hint": [
+				"Workshop's getting cluttered. Never slowed me down before.",
+				"Getting crowded in here. I work sharper without the chaos.",
+				"The desk's filling up fast. I've built through worse clutter."
+			],
+			"block_limit": [
+				"Suit's running warm. The Mark II had limits too, once.",
+				"Getting close to the redline. I stay smooth under pressure.",
+				"Running long this cycle. Even my reactor paces itself."
+			],
+			"weekly_limit": [
+				"Long week on the clock. The reactor could use a reset.",
+				"We've logged some serious hours this week. Noted.",
+				"Deep into the week's run. Iron Man still needs a recharge."
+			]
+		},
+		"dateEgg": [
+			"Midnight. The workshop doesn't own a clock for a reason.",
+			"Friday. Even I know better than a Friday deploy. Mostly.",
+			"New Year's. Somewhere Happy's lighting something illegal.",
+			"3 AM and still at it. Welcome to my actual normal hours.",
+			"Monday. The suit doesn't get a weekend, neither do we.",
+			"11:11. Make a wish. I already got everything I wanted.",
+			"Sunrise and you're still here. Respect the commitment.",
+			"Last day of the year. Mine usually end in an explosion.",
+			"First of the month. Stark Industries resets the books too.",
+			"Late again. JARVIS used to nag about this. I don't, much."
+		]
+	},
+	"spinnerVerbs": [
+		"Fabricating",
+		"Calibrating",
+		"Repulsing",
+		"Improvising",
+		"Weaponizing",
+		"Prototyping",
+		"Recalibrating",
+		"Retrofitting",
+		"Thrusting",
+		"Vectoring",
+		"Bootstrapping",
+		"Overclocking",
+		"Rerouting",
+		"Diagnosing",
+		"Forging",
+		"Welding",
+		"Rebooting",
+		"Optimizing",
+		"Iterating",
+		"Soldering",
+		"Powering up",
+		"Simulating",
+		"Stress-testing",
+		"Reactor-tuning",
+		"Suit-syncing"
+	]
+}

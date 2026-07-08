@@ -1,0 +1,1153 @@
+{
+	"schema": 1,
+	"name": "ben10",
+	"displayName": "Ben 10",
+	"attribution": {
+		"artist": "Omnitrix symbol by Man of Action Studios for Cartoon Network",
+		"source": "https://ih1.redbubble.net/image.6007364899.5049/st,small,507x507-pad,600x600,f8f8f8.jpg"
+	},
+	"emblem": "⧗",
+	"tone": "mild",
+	"theme": {
+		"hues": [
+			40,
+			82,
+			118,
+			154,
+			190
+		],
+		"comment": [
+			82,
+			118,
+			154
+		],
+		"signals": {
+			"nominal": 46,
+			"caution": 214,
+			"critical": 196
+		},
+		"separator": 71
+	},
+	"art": [
+		"⠀⠀⠀⠀⠀⠀⠀⣠⡴⠶⠚⠛⠛⠓⠶⢦⣄⠀⠀⠀⠀⠀⠀⠀",
+		"⠀⠀⠀⠀⣠⡾⠋⢠⣶⣿⣿⣿⣿⣿⣿⣶⡄⠙⢷⣄⠀⠀⠀⠀",
+		"⠀⠀⠀⣰⠏⠀⠀⠀⠹⣿⣿⣿⣿⣿⣿⠏⠀⠀⠀⠹⣆⠀⠀⠀",
+		"⠀⠀⢠⡿⠀⠀⠀⠀⠀⠘⢿⣿⣿⡿⠃⠀⠀⠀⠀⠀⢿⡄⠀⠀",
+		"⠀⠀⠘⣷⠀⠀⠀⠀⠀⢠⣾⣿⣿⣷⡄⠀⠀⠀⠀⠀⣾⠃⠀⠀",
+		"⠀⠀⠀⠹⣆⠀⠀⠀⣰⣿⣿⣿⣿⣿⣿⣆⠀⠀⠀⣰⠏⠀⠀⠀",
+		"⠀⠀⠀⠀⠙⢷⣄⠘⠿⣿⣿⣿⣿⣿⣿⠿⠃⣠⡾⠋⠀⠀⠀⠀",
+		"⠀⠀⠀⠀⠀⠀⠀⠙⠳⠶⢤⣤⣤⡤⠶⠞⠋⠀⠀⠀⠀⠀⠀⠀"
+	],
+	"lines": {
+		"mood": {
+			"idle": {
+				"stranger": [
+					"New face at the console. The roster's watching quiet too.",
+					"Haven't met you yet. Dial's quiet, and so am I.",
+					"Quiet keyboard. Good moment to size up someone new.",
+					"Just met you. I go a little Wildmutt, reading first.",
+					"Nobody's clicking yet. Green glow's just watching too.",
+					"First time seeing you. The watch doesn't rush first calls.",
+					"New around here. I watch before I get loud about it.",
+					"Still a stranger. No monster around, so no rush yet.",
+					"Nothing's running. Good chance to see who's really typing.",
+					"You're new. I size people up the way I size aliens."
+				],
+				"acquaintance": [
+					"Hey, you're back. The green glow perks up a little.",
+					"Getting to know you. Kind of like picking a new alien.",
+					"You keep showing up. I like that about you already.",
+					"Familiar face now. The dial hums a little friendlier.",
+					"Second nature's setting in. Even the watch relaxes some.",
+					"You again, nice. I'm learning your rhythm, slowly.",
+					"Not strangers anymore. Still working out your moves.",
+					"Getting comfortable, almost like locking in Diamondhead.",
+					"You're becoming a regular. Feels like a spot on the roster.",
+					"Warming up to you. Takes me a bit, ask Grandpa Max."
+				],
+				"friend": [
+					"Hey, good to see you. Nothing's on fire, we're just chilling.",
+					"Quiet moment, my favorite kind, especially with you around.",
+					"Nowhere to be. Let's just hang out by the dial a sec.",
+					"Easy day. Even heroes need a breather between missions.",
+					"You showed up just to hang. Sweet, I'm always down.",
+					"Slow moment, good company. Big Chill kind of afternoon.",
+					"No crisis today. Just me, you, and a very patient watch.",
+					"Four Arms could lift this whole couch, no rush though.",
+					"Good to just talk. Not every day needs a monster in it.",
+					"Nice and calm. Grandpa Max would call this earned rest."
+				],
+				"partner": [
+					"Dial's idle, and honestly I don't mind the breather.",
+					"Quiet stretch. The roster's resting easy with us.",
+					"Nothing urgent. Ten aliens waiting, none needed yet.",
+					"Calm before whatever's next. We always read it the same.",
+					"Down time, partner. We've split worse silences before.",
+					"No monster needs fighting right now. Let's just enjoy it.",
+					"Steady like Echo Echo copies, always in sync.",
+					"Easy quiet. The watch cools down and so do we.",
+					"Standing by together. The dial can wait, we're fine.",
+					"This lull's ours. We'll know exactly when it ends."
+				],
+				"legend": [
+					"So many quiet years, and the green glow still hums.",
+					"Years of this, and the calm still feels earned.",
+					"Long history, easy silence. Grandpa Max taught me this pace.",
+					"Veteran quiet. We've done the loud parts plenty already.",
+					"This stillness has ten aliens resting easy too.",
+					"After years chasing monsters, the quiet still surprises me.",
+					"We've outlasted a hundred monsters. This lull's the reward.",
+					"Old partners, new quiet. Feels the same as year one.",
+					"History like ours runs deep as Wildvine roots.",
+					"Countless calm stretches, and I still like this one best."
+				]
+			},
+			"busy": {
+				"stranger": [
+					"New task, new face. Reading your style as we go.",
+					"Watching how you work. First impressions happen fast.",
+					"Heads down already. I like seeing what you've got.",
+					"You're grinding, I'm running XLR8 speed to keep up.",
+					"First mission together. It's hero time! You're keeping up already."
+				],
+				"acquaintance": [
+					"Back at it with you. Getting a feel for how you build.",
+					"You roll steady, Cannonbolt style. Noticing the pace.",
+					"Deep in it again. Learning your moves as we go.",
+					"Heads down together. Rhythm's familiar, mostly figured out.",
+					"Hero time again, and I like your pace already."
+				],
+				"friend": [
+					"Locked in with a friend. This part's always more fun.",
+					"We're deep in it together. Got your back here.",
+					"Heads down, both of us. Feels like a Jetray cruise.",
+					"Charging through it with you. Good energy today, friend.",
+					"Full focus, side by side. This is the good kind of busy."
+				],
+				"partner": [
+					"Heads down, watch humming. Nobody works a problem like us.",
+					"Working the problem together, same as always, partner.",
+					"Hero time, partner style. Same result, every time.",
+					"Locked in with my partner, merged up like Upgrade.",
+					"Deep in the work, no words needed, just us moving."
+				],
+				"legend": [
+					"Years of grinding, and it still feels Way Big huge.",
+					"Veteran focus. We've done this dance more times than I count.",
+					"Long history of heads-down work, still sharp as day one.",
+					"All those hours together, still built Humungousaur strong.",
+					"Old partners, same drive. We've earned this kind of focus."
+				]
+			},
+			"happy": {
+				"stranger": [
+					"That worked. Nice, I like winning in front of someone new.",
+					"Clean pass. Good first impression, right back at you.",
+					"Nailed it, quick as XLR8. Solid start for us two.",
+					"Sweet, that landed. Good sign for a first day out.",
+					"Worked like a dream. Not bad for our first round."
+				],
+				"acquaintance": [
+					"That's twice now it's worked clean. I see a pattern forming.",
+					"Nice, another win. You're building a good track record.",
+					"Clean result again. The dial's starting to expect this from you.",
+					"That landed sweet. Getting used to these wins with you.",
+					"Worked smooth. We're figuring each other out pretty well."
+				],
+				"friend": [
+					"Boom, worked first try. Nothing beats a clean first pass.",
+					"Nice one, friend. Hero time hits different with company.",
+					"Clean win. Feels good pulling these off together.",
+					"That landed perfect. High five, straight from the dial.",
+					"That's the win I called before we even started."
+				],
+				"partner": [
+					"That worked. Same team, same result: we always land it.",
+					"Clean win, partner. This is what happens when we click.",
+					"Nailed it together. We don't miss much these days.",
+					"That landed exactly right. Solid as Diamondhead, honestly.",
+					"Sweet win. We've got a rhythm nobody else has."
+				],
+				"legend": [
+					"Clean win, after all this time. Still feels this good.",
+					"That worked. Years in and the rush never gets old.",
+					"Nailed it, like always. We've earned this ease.",
+					"Sweet result. Long road, same green glow, still winning.",
+					"That landed. We've done this enough to make it look easy."
+				]
+			},
+			"struggling": {
+				"stranger": [
+					"Rough patch. Every hero eats a loss before the big win.",
+					"That broke. Good thing I like a fight right out the gate.",
+					"Tough one, new team. Let's think it through, Grey Matter style.",
+					"It's not working yet. That just means round two is coming.",
+					"This bug's scrappy. Good, first fights build character."
+				],
+				"acquaintance": [
+					"Broke again, huh. We've seen worse and still figured it out.",
+					"Tough stretch. I've watched you push through this before.",
+					"It's fighting back. No stress, we're just recalibrating.",
+					"Rough one. Your track record says this doesn't last long.",
+					"Bug's stubborn. So are we, and that usually wins out."
+				],
+				"friend": [
+					"It broke, friend. We've cracked tougher ones together.",
+					"Tough one. This is the grind behind every good save.",
+					"That failed. No big deal, we've turned worse around before.",
+					"Tough bug. Grab a seat, we'll pick it apart side by side.",
+					"It's fighting us. Good thing there's two of us swinging."
+				],
+				"partner": [
+					"It broke, partner. We've beaten harder monsters than this.",
+					"Rough patch. Every villain this stubborn ends up losing.",
+					"It's pushing back hard. So are we. That's how this goes.",
+					"That failed. We read the wreckage together, then we rebuild.",
+					"Tough one. Whatever this is, we've out-fought worse."
+				],
+				"legend": [
+					"It broke. After everything we've fought, this is nothing new.",
+					"Tough patch, old friend. We've out-lasted every one before.",
+					"Rough one. Years of these and we still show up swinging.",
+					"That failed. We've turned harder losses into wins before.",
+					"It's fighting us. Feels familiar. We always win this fight."
+				]
+			},
+			"recovery": {
+				"stranger": [
+					"Green light's back. Good recovery for a first round together.",
+					"Back up and running. Solid comeback right out of the gate.",
+					"Fixed it. Nice first save for a brand new team.",
+					"Online again. That's a strong first bounce-back to see.",
+					"Recharged and moving. Good start for a new team."
+				],
+				"acquaintance": [
+					"Back up. Just like last time, you found the fix fast.",
+					"Signal's steady again. You always land these recoveries.",
+					"Fixed and running. Your comebacks are getting quicker.",
+					"Charged back up. This is becoming a nice habit.",
+					"Timeout's over, and we're moving again already."
+				],
+				"friend": [
+					"We're back online, friend. Told you we'd shake that off.",
+					"Dial's glowing green again. Glad to see that fixed.",
+					"That bug's toast. Back in the fight like nothing happened.",
+					"Back up to speed. Knew we'd land on our feet.",
+					"Working again. See, the dial always comes back around."
+				],
+				"partner": [
+					"Back in business, partner. We always find our way out.",
+					"Steady signal again. Same as ever, we recharge and go.",
+					"That's patched. Cannonbolt's got nothing on our bounce-back speed.",
+					"Running clean again. That's just what we do together.",
+					"We flipped it around fast. That's the two of us, every time."
+				],
+				"legend": [
+					"Online again. After all these years, the comeback's automatic.",
+					"Steady green glow, like every time before. We know this dance.",
+					"Fixed it, like always. Recharging is basically our specialty.",
+					"Charged back up. Hero time, same as always, us two.",
+					"Working again. We turned recovery into a whole legacy."
+				]
+			}
+		},
+		"greeting": {
+			"morning": {
+				"stranger": [
+					"Morning. New here? Dial's warm, let's find out who you are.",
+					"Sun's barely up. XLR8 couldn't beat you to it.",
+					"Morning. Haven't clocked you yet, but early risers earn trust."
+				],
+				"acquaintance": [
+					"Morning again. Getting used to your early starts.",
+					"Back before the sun's even awake. I see the pattern now.",
+					"Morning. Two early birds figuring each other out."
+				],
+				"friend": [
+					"Morning! Dial's charged, coffee's optional, let's go.",
+					"Early start, same as always. Good morning, ready when you are.",
+					"Morning. I like these quiet ones before the day gets loud."
+				],
+				"partner": [
+					"Morning, partner. We're both up before the coffee kicks in.",
+					"Sun's up, dial's up. Let's start the day right.",
+					"Morning. No plan needed, we just click into gear."
+				],
+				"legend": [
+					"Morning. Years in and the dial still beats my alarm.",
+					"Another sunrise, same crew as ever. Never gets old.",
+					"Morning, legend status. We've done a thousand of these."
+				]
+			},
+			"day": {
+				"stranger": [
+					"Midday. Never seen you before. The dial's paying attention.",
+					"Afternoon. New around here. Show me what you've got.",
+					"Day's rolling. Still sizing you up at the console."
+				],
+				"acquaintance": [
+					"Afternoon. Getting a feel for your midday moves.",
+					"Day's cooking. Grey Matter approves of the routine.",
+					"Midday check-in. You're becoming a regular face."
+				],
+				"friend": [
+					"Afternoon! Good stretch of daylight left, let's use it.",
+					"Midday and we're cruising. This is a good kind of busy.",
+					"Day's in full swing. Glad you're here for it."
+				],
+				"partner": [
+					"Midday check-in. We click into gear and close it out.",
+					"Afternoon grind. Four Arms would tap out before we do.",
+					"Day's half gone and we're still moving clean."
+				],
+				"legend": [
+					"Midday, same as a hundred before. Still feels right.",
+					"Afternoon, old partner. We've logged plenty of these.",
+					"Day's rolling on, like it always has with us."
+				]
+			},
+			"evening": {
+				"stranger": [
+					"Evening. New face, and the dial's glowing bit brighter now.",
+					"Dusk, and I haven't figured you out yet. Fair enough.",
+					"Evening's here. Even off-duty heroes still watch the clock."
+				],
+				"acquaintance": [
+					"Evening again. Dial's logging you as a regular face.",
+					"Dusk and you're still around. I'm starting to expect it.",
+					"Evening. The watch remembers regulars pretty fast, actually."
+				],
+				"friend": [
+					"Evening hero time, nice and easy for once.",
+					"Dusk's rolling in. Even the dial takes it easy sometimes.",
+					"Evening. Glad you stuck around this long, honestly."
+				],
+				"partner": [
+					"Evening, and the dial's finally easing off for the day.",
+					"Dusk rolling in. We hand the day off smooth as ever.",
+					"Evening's ours. We know how to close a day out."
+				],
+				"legend": [
+					"Evening. Jetray's seen fewer sunsets than us together.",
+					"Dusk again. Even Grandpa Max used to slow down by now.",
+					"Evening, and the watch still knows this hour by heart."
+				]
+			},
+			"night": {
+				"stranger": [
+					"Late one. Dial glows brighter after midnight, I've noticed.",
+					"Night's here. New face still up this late. Noted.",
+					"It's late, but heroes don't really believe in curfews."
+				],
+				"acquaintance": [
+					"Late again. The dial doesn't mind the extra hours either.",
+					"Night owl status confirmed. I'm getting used to this.",
+					"Late shift, and even the watch is used to you by now."
+				],
+				"friend": [
+					"Late night, but good company. Let's keep it going.",
+					"Night's quiet, dial's chill, kind of my favorite hour.",
+					"Still up? Big Chill agrees, night's the best hour."
+				],
+				"partner": [
+					"Late night, and the dial doesn't clock out on us either.",
+					"Night shift, partner. Heroes don't keep office hours anyway.",
+					"It's late, but we've got this rhythm down cold."
+				],
+				"legend": [
+					"Late again, like always. Some things never change.",
+					"Night's ours. The watch just keeps quiet company with us.",
+					"Still up late, old partner. Wouldn't trade this hour."
+				]
+			},
+			"weekend": {
+				"stranger": [
+					"Weekend hero time. Never seen you here before. Let's see it.",
+					"Weekend's here. Even new faces get the no-homework rule.",
+					"Weekend hours. Watching how you spend your day off."
+				],
+				"acquaintance": [
+					"Weekend again, and the aliens are on standby too.",
+					"No homework today, but you showed up anyway. Noted.",
+					"Weekend check-in. Getting used to your relaxed pace."
+				],
+				"friend": [
+					"Weekend! No homework, just us figuring stuff out.",
+					"Easy weekend vibes. Even the dial's off the clock today.",
+					"Weekend's here, low pressure, good company. Let's roll."
+				],
+				"partner": [
+					"Weekend, zero homework, and the dial's on cruise control.",
+					"Easy days, and the watch keeps an easy pace too.",
+					"Weekend's ours. No pressure, just good work together."
+				],
+				"legend": [
+					"Weekend again, and legend status still means no homework.",
+					"Easy days, even Way Big takes a knee sometimes.",
+					"Weekend, legend style. We've earned the relaxed pace."
+				]
+			}
+		},
+		"firstContact": {
+			"stranger": [
+				"Name's Ben Tennyson. Ten aliens on this wrist. Let's move.",
+				"New console, huh? I'm Ben. The watch does the hard part.",
+				"Hey, I'm Ben. This dial picks aliens, I pick the fight."
+			],
+			"acquaintance": [
+				"Ben Tennyson. Round two feels different already. I'm in.",
+				"Good, you're back. Dial's warmed up and ready. Let's move.",
+				"Hey again. I'm Ben, and this time I already like you."
+			],
+			"friend": [
+				"Ben here. Feels less like new and more like teammates.",
+				"Hey, friend. Watch's charged, I'm charged. Let's build.",
+				"It's Ben. Somehow this already feels like the good part."
+			],
+			"partner": [
+				"Ben Tennyson, ready to roll. Something says we click fast.",
+				"Hey, I'm Ben. Something tells me we're gonna get along.",
+				"It's Ben. Watch's set, and I've got a good feeling already."
+			],
+			"legend": [
+				"Ben Tennyson. Ten aliens, and a feeling this one's special.",
+				"Hey, I'm Ben. Something says this becomes a good one.",
+				"It's Ben. New console, legend written all over it already."
+			]
+		},
+		"milestone": {
+			"tier_up": {
+				"stranger": [
+					"You leveled up already? The dial's genuinely impressed here.",
+					"Tier up. The dial doesn't warm up for just anyone.",
+					"You climbed a notch. Not bad for someone this new."
+				],
+				"acquaintance": [
+					"Tier up. I'm starting to remember your name for real.",
+					"You moved up. The dial likes a pattern like that.",
+					"Nice climb. You're turning into a regular around here."
+				],
+				"friend": [
+					"Tier up, friend. Feels earned, not just handed over.",
+					"You moved up a notch. Sweet, you earned that fair and square.",
+					"Look at you climbing. I'm genuinely stoked for you."
+				],
+				"partner": [
+					"Tier up, partner. That's not a rank I hand out easy.",
+					"You climbed again. We're basically running the same watch now.",
+					"Moved up. Feels like the dial finally caught up to you."
+				],
+				"legend": [
+					"Tier up. Legend status, and you actually earned every bit.",
+					"You climbed again. That's a long road, and you're still going.",
+					"Moved up once more. Ten aliens, one you, still leveling."
+				]
+			},
+			"comeback": {
+				"stranger": [
+					"Gone a while, back now. The dial recalibrates fast for you.",
+					"You disappeared, then showed up again. I'll take that.",
+					"Back after a break. Recharge complete, apparently."
+				],
+				"acquaintance": [
+					"You went quiet, now you're back. Good, I missed the rhythm.",
+					"Back from the gap. The watch remembers you fine.",
+					"You returned. Even a cooldown period ends eventually."
+				],
+				"friend": [
+					"You're back, friend. Rough patch, and you still showed up.",
+					"Down for a bit, back now. That's the comeback I like.",
+					"You recharged and came right back. Classic hero move."
+				],
+				"partner": [
+					"Back in it, partner. We don't quit, we just recharge.",
+					"You clawed back from that slump. Knew you would.",
+					"Returned stronger. That's the partner I signed up with."
+				],
+				"legend": [
+					"Back again, legend. You always find your way to the dial.",
+					"Rough stretch, and you still came back swinging. Respect.",
+					"Recharged and back. That's what legends do, apparently."
+				]
+			},
+			"streak": {
+				"stranger": [
+					"Clean streak going. The dial's not used to this from you yet.",
+					"Several wins in a row. I'm paying attention now.",
+					"That's a run of good ones. Keep that up, seriously."
+				],
+				"acquaintance": [
+					"Streak's holding. You're making this look routine.",
+					"Another clean one. I like where this pattern's headed.",
+					"You're stacking wins. The watch approves, honestly."
+				],
+				"friend": [
+					"Streak's alive, friend. We're on a roll and I love it.",
+					"Another win in the chain. This feels like our rhythm now.",
+					"You keep stacking these. Sweet, don't stop now."
+				],
+				"partner": [
+					"Streak intact, partner. This is what teamwork looks like.",
+					"Another clean run. This streak's got real Omnitrix energy.",
+					"You're on fire. Not literally, that's Heatblast's job."
+				],
+				"legend": [
+					"Long streak, legend. That's years of good habit talking.",
+					"Still stacking wins this deep into the run. Impressive.",
+					"The streak just keeps going. Hero time, every single time."
+				]
+			},
+			"anniversary": {
+				"stranger": [
+					"A year at this console, and the dial already trusts you.",
+					"Twelve months in. The dial's starting to recognize you.",
+					"One year already. That snuck up on both of us."
+				],
+				"acquaintance": [
+					"A year together. Feels like more than a few check-ins.",
+					"Twelve months in, and you're not a stranger anymore.",
+					"One year logged. The watch keeps better track than I do."
+				],
+				"friend": [
+					"A year with you, friend. That's a solid run of sessions.",
+					"Twelve months in, and it still feels like hero time.",
+					"One year together. Sweet, that deserves a recharge break."
+				],
+				"partner": [
+					"A year as partners. That's not nothing, not to me.",
+					"Twelve months side by side. Feels like a real team now.",
+					"One year in. We've earned the shorthand by now."
+				],
+				"legend": [
+					"A year turns into more. Legend status, fully earned.",
+					"Twelve months, and it's just one chapter of a longer one.",
+					"One year down, in a history that keeps stacking up."
+				]
+			}
+		},
+		"positiveGit": {
+			"clean_tree": {
+				"stranger": [
+					"Clean tree. No monsters lurking on a first meeting.",
+					"No mess left behind. Tidy base, solid first look.",
+					"Working tree's spotless. Good first impression, stranger."
+				],
+				"acquaintance": [
+					"Clean tree again. Base stays clear every time you show up.",
+					"Nothing left uncommitted. That's a habit worth keeping.",
+					"Spotless tree. Your style's coming into focus, and I like it."
+				],
+				"friend": [
+					"Clean tree. That's some Grandpa-Max-level discipline right there.",
+					"Nothing pending, nothing messy. No monsters sneak past, friend.",
+					"Tree's clear. Feels good working next to someone this tidy."
+				],
+				"partner": [
+					"Clean tree, zero surprises. Green glow steady, partner.",
+					"Nothing left hanging. We keep the base clear together.",
+					"Spotless, like always. We don't leave loose ends dangling."
+				],
+				"legend": [
+					"Clean tree, same as day one. Some habits never fade.",
+					"Years in, still spotless. Grandpa Max would be proud of this.",
+					"Tidy tree, every time. This base never draws a monster."
+				]
+			},
+			"op_cleared": {
+				"stranger": [
+					"That merge landed clean. Nice work for someone I just met.",
+					"Operation closed with zero mess. Good first showing, stranger.",
+					"That rebase stuck the landing. Impressive, for a first go."
+				],
+				"acquaintance": [
+					"Merge cleared clean. You're getting good at threading these.",
+					"That rebase went smooth. Your moves are getting sharper.",
+					"Operation resolved, no fallout. That merge monster's tamed."
+				],
+				"friend": [
+					"Merge landed clean. That effort paid off right on cue.",
+					"That rebase dropped in smooth. No monster slipped out, friend.",
+					"Operation's cleared. We make this look easy together."
+				],
+				"partner": [
+					"Merge cleared clean. We stick these landings every time.",
+					"Rebase settled smooth. We've got a rhythm going here, partner.",
+					"Operation's done, no mess. That's a clean hero landing."
+				],
+				"legend": [
+					"Merge cleared clean, like it always does with you now.",
+					"That rebase clicked into place. Smooth as picking the right alien.",
+					"Operation resolved smooth. We've done this dance a hundred times."
+				]
+			},
+			"branch_created": {
+				"stranger": [
+					"New branch. Fresh transformation waiting on the dial, stranger.",
+					"Branch cut clean. Every new line starts somewhere good.",
+					"You opened a branch. New path, new alien, let's see it."
+				],
+				"acquaintance": [
+					"New branch again. Another alien slotted in already.",
+					"Fresh branch cut. I'm starting to like where you take these.",
+					"Another branch opened. Your instincts are sharpening up."
+				],
+				"friend": [
+					"New branch, fresh transformation. Sweet, let's see where it goes.",
+					"You cut a new line. New path, and I like where it's headed.",
+					"Branch opened, friend. I'm curious where this one leads us."
+				],
+				"partner": [
+					"New branch, watch glowing green. Fun starts here, partner.",
+					"Branch cut clean. Same duo, new direction, always ready.",
+					"Fresh line opened. We know exactly how to work these now."
+				],
+				"legend": [
+					"New branch, and picking a fresh alien never gets old.",
+					"Fresh branch cut. Even now, a new path gets me going.",
+					"Branch opened again. We've picked a hundred paths like this."
+				]
+			},
+			"tag_pushed": {
+				"stranger": [
+					"Tag pushed. That's a real release, first one I've seen from you.",
+					"Version tagged and shipped. First mission filed, solid showing.",
+					"You pushed a tag. That's the watch beeping green right there."
+				],
+				"acquaintance": [
+					"Tag pushed again. Dial's blinking proud, building a good record.",
+					"Another release out the door. You finish what you start.",
+					"Version tagged. I'm keeping tabs, and it's looking good."
+				],
+				"friend": [
+					"Tag's pushed. This one's really out in the world now, friend.",
+					"Release shipped, friend. Mission complete, worth celebrating.",
+					"Version tagged and live. Feels good seeing this one land."
+				],
+				"partner": [
+					"Tag pushed. Another mission shipped and filed, partner.",
+					"Release is live. Dial holds steady, closing it out right.",
+					"Version's out the door. That's our kind of finish, partner."
+				],
+				"legend": [
+					"Tag pushed, watch beeping green like every time before.",
+					"Version's out. Still feels like the first one, every time.",
+					"Release shipped clean. Legends don't stop counting these."
+				]
+			}
+		},
+		"egg": {
+			"stranger": [
+				"The Omnitrix picks the alien. I just bring the attitude.",
+				"Ten aliens on my wrist and I still pick the wrong one.",
+				"Watch this. That's basically my whole personality.",
+				"Give it a sec, it always recharges. So do I.",
+				"Ten aliens tucked in one wristwatch. Still not old news to me."
+			],
+			"acquaintance": [
+				"You're the first one who noticed the dial glows brighter here.",
+				"Funny, this session's starting to feel like its own alien form.",
+				"I never mention it, but the tenth try usually works best.",
+				"Cousin Gwen would say I talk too much. She's not wrong.",
+				"Somewhere Grandpa Max is timing this. I hope we're fast."
+			],
+			"friend": [
+				"Truth is, XLR8 gets bored waiting on slow builds too.",
+				"I never told you, the dial hums different when it's you.",
+				"Ten aliens, and somehow this one keeps becoming the favorite.",
+				"Grandpa Max used to say patience tastes like bad diner coffee.",
+				"Nobody else gets the joke about the recalibration face. You do."
+			],
+			"partner": [
+				"Just between us, I stopped counting how many times we've won.",
+				"We've got our own frequency by now, no watch required.",
+				"I don't say it much, but this partnership beats any alien form.",
+				"The watch never glitches on days we work together. Noticed that?",
+				"Gwen asked who I trust most at the console. Didn't answer. Smiled."
+			],
+			"legend": [
+				"Ten aliens, a hundred sessions, and you're still my favorite call.",
+				"Grandpa Max never met you, but he'd approve of this streak.",
+				"The dial's seen a lot of hands. None steadier than yours.",
+				"Somewhere back home, fifteen-year-old me never saw this coming.",
+				"Been at this so long, the watch barely needs to recalibrate."
+			]
+		},
+		"event": {
+			"test_fail": [
+				"Tests flashed red. Even Grandpa Max failed a first run.",
+				"A few tests fell over. Good, now I know where to swing.",
+				"Red across the board. Time to dial in and try again."
+			],
+			"build_fail": [
+				"Build broke down. No sweat, I'll pick a better alien next go.",
+				"That build didn't hold. Recalibrating and swinging again.",
+				"Build's down for now. Watch, I've got the fix already loading."
+			],
+			"typecheck_fail": [
+				"Types caught something weird. Good catch, watch me fix it.",
+				"Type error popped up. No big deal, I'll rework the wiring.",
+				"The types disagree with me. Fine, we'll settle it together."
+			],
+			"lint": [
+				"Linter swept through. Tidy code, tidy dial, sweet.",
+				"Style check's done. Everything lines up nice and clean.",
+				"Lint flagged a few nitpicks. Easy fixes, no monster fight."
+			],
+			"format": [
+				"Formatter tidied everything up. Looking sharp now.",
+				"Code's all squared away. Clean lines, clean hero work.",
+				"Everything's neatly formatted. I like a tidy dial."
+			],
+			"install": [
+				"New packages loading in. Fresh gear for the toolkit.",
+				"Dependencies coming in hot. More tools on the wrist.",
+				"Installing away. Every hero needs backup gadgets too."
+			],
+			"git": [
+				"History just moved. Another chapter in the case log.",
+				"A commit lands. Small steps still add up big.",
+				"The record shifts. I keep track of every move."
+			],
+			"file_edit": [
+				"Files just changed shape. Watch me shape them right.",
+				"Editing away. Small tweaks, big difference later.",
+				"Source code's shifting. I'm right here steering it."
+			],
+			"search": [
+				"Digging through the code. Every clue's in there somewhere.",
+				"Scanning around at XLR8 speed. Found it already.",
+				"Searching the files. I always find what I'm after."
+			],
+			"web_fetch": [
+				"Pulling info off the web. Good intel never hurts.",
+				"Fetching something from out there. Watch, it's useful.",
+				"Grabbing data from the wire. Every hero needs intel."
+			],
+			"todo_update": [
+				"Todo list just shifted. Keeping the plan sharp.",
+				"New order on the list. I like a clear game plan.",
+				"The checklist moved around. Still on track, still going."
+			],
+			"agent_spawn": [
+				"Sending a helper out ahead. Even I bring backup.",
+				"A partner's on the case now. Two heroes, one job.",
+				"Backup's deployed. I don't do everything solo."
+			],
+			"skill_run": [
+				"Right tool for this one. Dialing in exactly what's needed.",
+				"Pulling out the specialist gear. This job's got a match.",
+				"A skill kicks in. Feels like picking Grey Matter for this."
+			],
+			"docker": [
+				"Everything's sealed in its own container. Tidy and contained.",
+				"The box holds its own little world. Nice and secure.",
+				"Wrapped up tight in a container. Clean and separate."
+			],
+			"k8s": [
+				"A whole cluster's on patrol. Lots of moving parts, all synced.",
+				"Pods checking in everywhere. Big team, still one mission.",
+				"The cluster's humming along. Coordinated, like a good team-up."
+			],
+			"deploy": [
+				"Deploy's away like Jetray taking off. Let's see it land.",
+				"It's live out there. Hero work, out in the open.",
+				"Released into the wild. Watch it go to work."
+			],
+			"db_migrate": [
+				"The database is shifting shape. Steady hands through it.",
+				"Records moving to a new setup. Easy does it.",
+				"Schema's changing underfoot. Still steady, still moving."
+			],
+			"dangerous": [
+				"That's a heavy move. Slow hands, steady dial, let's be careful.",
+				"Careful here, this one's got teeth. I'm watching every step.",
+				"Big risk on this one. Steady does it, no rushing."
+			]
+		},
+		"stack": {
+			"web": {
+				"slow": [
+					"That progress bar hasn't blinked in a while. No panic here.",
+					"Every asset's queuing up politely today, nobody's cutting in.",
+					"Page's taking the scenic route. Dial's green light stays on."
+				],
+				"fail": [
+					"Console lit up red like a warning siren just went off.",
+					"Page hit an exception right when it counted most.",
+					"Browser gave up mid-request. The watch just calls for a retry."
+				]
+			},
+			"python": {
+				"slow": [
+					"Pip's reading every dependency like it's studying for finals.",
+					"Interpreter's chewing through imports at its own calm speed.",
+					"This import list's long enough to make Grey Matter double-check."
+				],
+				"fail": [
+					"Traceback's ten frames deep, and the truth sits at the bottom.",
+					"Python threw loud enough to wake the whole roster.",
+					"Import snapped somewhere upstream. One link gave way."
+				]
+			},
+			"sql": {
+				"slow": [
+					"Query planner's weighing every path before picking one.",
+					"That join's still deciding which table goes first.",
+					"Somewhere an index clocked out. The dial's covering the shift."
+				],
+				"fail": [
+					"Query came back red. Some join's telling a fib.",
+					"Constraint blocked the insert. Table's got strong opinions.",
+					"Database said no outright, blunt as Grandpa Max on curfew."
+				]
+			},
+			"web-framework": {
+				"slow": [
+					"Whole framework's stretching before it opens its eyes.",
+					"Every route's compiling solo before the app answers one ping.",
+					"Dev server's warming up slower than the dial on a cold start."
+				],
+				"fail": [
+					"Route crashed mid-request. Middleware's the prime suspect.",
+					"Next choked rendering a page. One render went sideways.",
+					"Django threw a 500. Rough deploy, even for a hero."
+				]
+			},
+			"docker": {
+				"slow": [
+					"No cache hit anywhere. Every layer's starting from bare metal.",
+					"Image keeps stacking bricks nobody laid before.",
+					"Container's still booting. Even the watch takes a beat to warm up."
+				],
+				"fail": [
+					"Layer failed to build. Swampfire regrows from far less than this.",
+					"Image wouldn't compile. Something snagged in the chain.",
+					"Container crashed on start. Loud exit, still worth reading."
+				]
+			},
+			"java": {
+				"slow": [
+					"Gradle daemon's stretching before it lifts anything heavy.",
+					"JVM's doing warmup laps nobody asked it to skip.",
+					"Classpath scan checks every shelf, patient as the dial."
+				],
+				"fail": [
+					"Stack trace's a mile long. The fix is hiding in there.",
+					"Gradle stumbled on the build. Sync hit a wall mid-step.",
+					"JVM threw an exception, loud as the dial going off."
+				]
+			},
+			"go": {
+				"slow": [
+					"Go's supposed to be the fast one. Today it's taking notes.",
+					"Whole module's compiling at once, no half measures allowed.",
+					"Compiler's quiet today. Solid builds take a hero's patience."
+				],
+				"fail": [
+					"Compiler said no, flat and blunt. At least it's honest.",
+					"Panic in the goroutine. One runner tripped mid-stride.",
+					"Build failed cold. Wildmutt doesn't sugarcoat either."
+				]
+			},
+			"node": {
+				"slow": [
+					"npm's pulling in more packages than the whole alien roster.",
+					"Webpack's bundling the same file twice, just to be safe.",
+					"node_modules just went full Way Big on the disk."
+				],
+				"fail": [
+					"npm choked on the install. That package picked the fight.",
+					"Module not found. A dependency slipped out somewhere.",
+					"Node threw unhandled. Messy stack, but the watch reads it clean."
+				]
+			},
+			"dotnet": {
+				"slow": [
+					"MSBuild's marching through every project like a parade.",
+					"Progress bar's barely twitched. Solution's a big one today.",
+					"Every reference gets checked, thorough as Grandpa Max's gear list."
+				],
+				"fail": [
+					"MSBuild failed outright. One target missed its mark.",
+					"CLR faulted partway through the run. Dial needs a recharge too.",
+					".NET build failed a step, and it's loud about it."
+				]
+			},
+			"cpp": {
+				"slow": [
+					"Linker's stitching symbols together with tiny, precise hands.",
+					"Templates keep unfolding into more templates. Deep stuff.",
+					"Compiler's proofreading everything, careful as picking an alien."
+				],
+				"fail": [
+					"Linker couldn't find the symbol. It's out there somewhere.",
+					"Segfault. Diamondhead shrugs off hits like that.",
+					"Compiler drowned in template errors. Deep, but readable."
+				]
+			},
+			"php": {
+				"slow": [
+					"Composer's negotiating versions like a peace treaty.",
+					"Script's parsing slow today, but the syntax checks out fine.",
+					"Packages are loading calm, easy as a slow day with Grandpa Max."
+				],
+				"fail": [
+					"Fatal error thrown. PHP's dramatic; the watch just shrugs.",
+					"Composer choked resolving packages. Versions disagreed hard.",
+					"Script died mid-request. Old code finally spoke up."
+				]
+			},
+			"rust": {
+				"slow": [
+					"Borrow checker's reading every line like fine print.",
+					"Cargo's compiling deep, checking ownership twice per name.",
+					"Nothing sneaks past this one. The watch checks just as hard."
+				],
+				"fail": [
+					"Borrow checker said no. Tough villain, worth the round.",
+					"Lifetimes didn't check out. Strict as Grandpa Max's house rules.",
+					"Compiler flagged ownership before it became a real bug."
+				]
+			},
+			"kubernetes": {
+				"slow": [
+					"Scheduler's finding a seat for every last pod, no rush.",
+					"Cluster's slow to line up the pieces this morning.",
+					"Cannonbolt's the one alien built to roll through a slow rollout."
+				],
+				"fail": [
+					"Pod's crashlooping. Even solid code stumbles on restart.",
+					"Rollout failed partway. The cluster's pushing back hard.",
+					"A node dropped mid-deploy. Still hero time, gearing up."
+				]
+			},
+			"ml": {
+				"slow": [
+					"Training's grinding through epochs, steady as a treadmill.",
+					"Loss curve's inching down like it's got all week.",
+					"Model's learning slow today, patient as Wildvine growing roots."
+				],
+				"fail": [
+					"Loss went nowhere useful. The model's stuck in a rut.",
+					"Training diverged hard. Brainstorm recalibrates faster than most.",
+					"GPU maxed out mid-epoch. That batch aimed big."
+				]
+			},
+			"android": {
+				"slow": [
+					"Gradle sync's stretching and the emulator's still yawning.",
+					"APK's assembling, and the build's checking its own homework.",
+					"Two slow things woke up at once, like a dial after a long night."
+				],
+				"fail": [
+					"Gradle build failed. Upgrade knows a bad sync when he merges one.",
+					"APK wouldn't assemble. Manifest's out of step somewhere.",
+					"Emulator crashed on boot. Cold open, not a wipeout."
+				]
+			},
+			"ruby": {
+				"slow": [
+					"Bundler's untangling gems like a drawer full of cables.",
+					"Native extensions are compiling. Old-school work, no shortcuts.",
+					"Resolver's covering every angle, thorough as Gwen's research."
+				],
+				"fail": [
+					"Bundler couldn't resolve the gems. A version standoff.",
+					"Exception raised, unhandled. Ruby's loud as a dial going off.",
+					"Gem refused to install. Old code met a new wall."
+				]
+			},
+			"ios": {
+				"slow": [
+					"Xcode's indexing everything down to the last comment.",
+					"Simulator's booting slower than it needs coffee for.",
+					"Every target's compiling exact, precise as picking an alien."
+				],
+				"fail": [
+					"Xcode's build failed. Provisioning's playing hard to get.",
+					"Signing rejected. Certificate went stale overnight.",
+					"Simulator crashed on launch. Big Chill barely notices at all."
+				]
+			},
+			"terraform": {
+				"slow": [
+					"Plan's redrawing the whole blueprint before it says a word.",
+					"Four Arms has plenty of hands, and this plan still takes its time.",
+					"State's refreshing slow. The ledger's just being exacting."
+				],
+				"fail": [
+					"Apply failed mid-plan. State's catching its breath.",
+					"Plan errored out early. Better here than after it ships.",
+					"State lock clashed. Two versions wrestling over the same dial."
+				]
+			},
+			"graphql": {
+				"slow": [
+					"Resolvers are taking their time on every single field.",
+					"That nested query runs deep, like a relay with extra legs.",
+					"This nested query needs as many hands as Echo Echo has clones."
+				],
+				"fail": [
+					"Resolver threw an error. One field stopped telling the truth.",
+					"Schema validation broke. Two shapes stopped matching.",
+					"Query failed to resolve. A type slipped off the roster somewhere."
+				]
+			},
+			"flutter": {
+				"slow": [
+					"Widget tree's rebuilding slow, repainting the whole mural.",
+					"Hot reload's dragging, but the canvas still looks solid.",
+					"Every widget's repainting exact, precise as picking an alien."
+				],
+				"fail": [
+					"Widget tree threw. One bad branch dragged down the rest.",
+					"Hot reload failed. Heatblast's flame gutters out sometimes too.",
+					"Build broke on a widget. Something didn't seat right."
+				]
+			},
+			"react-native": {
+				"slow": [
+					"Metro's bundling slow, and the bridge is stuck in traffic.",
+					"JS and native are still negotiating who talks first.",
+					"That bundler's chugging steady, slow as the dial after overtime."
+				],
+				"fail": [
+					"Metro failed to bundle. Cargo jammed right at the dock.",
+					"Bridge dropped the call mid-handoff. Static on the line.",
+					"Native module threw, static on the wire like a bad transform."
+				]
+			},
+			"scala": {
+				"slow": [
+					"sbt's working out every implicit the hard, careful way.",
+					"Type inference's grinding through the whole file, careful now.",
+					"Build's crawling today. Scala takes homework as seriously as Gwen."
+				],
+				"fail": [
+					"sbt errored out mid-build. An implicit went missing somewhere.",
+					"Compiler refused the types. Strict as one of Grandpa Max's rules.",
+					"Type check failed outright. Scala holds a high bar."
+				]
+			},
+			"protobuf": {
+				"slow": [
+					"Codegen's translating the schema into every language it owns.",
+					"Wire format's generating slow. Handshakes take their own pace.",
+					"Every field gets checked twice, careful as the watch resetting."
+				],
+				"fail": [
+					"Codegen failed. Schema drifted from what the code expects.",
+					"Proto fields clashed. Two versions disagreeing loudly.",
+					"Wire format broke. Garbled signal, like a dial mid-transformation."
+				]
+			},
+			"game": {
+				"slow": [
+					"Shaders are compiling slow, tuning every pixel by hand.",
+					"Engine's chewing through assets like it's cataloging a museum.",
+					"Frame rate dips while it compiles. Nothing broke, just pacing."
+				],
+				"fail": [
+					"Render loop crashed. One missed frame, nothing more.",
+					"Physics blew up mid-run. Humungousaur's landing missed the mark.",
+					"Shader failed to compile. The pipeline hit a real snag."
+				]
+			},
+			"docs": {
+				"slow": [
+					"Doc site's building slow, printing every page like a real book.",
+					"Generator's working through the whole site, thorough and patient.",
+					"Build's taking its time. Good docs earn a hero's patience."
+				],
+				"fail": [
+					"Doc build broke. A link that leads to no alien at all.",
+					"Generation failed. One page went missing from the set.",
+					"Build choked on a reference that doesn't exist anymore."
+				]
+			},
+			"r": {
+				"slow": [
+					"Vectors are crunching numbers like an accountant with a ledger.",
+					"Data frame's churning through every column, no skipped math.",
+					"Console's thinking hard, patient as a watch mid-cooldown."
+				],
+				"fail": [
+					"Vector op threw. Shapes didn't line up right.",
+					"Data frame broke. One column stepped out of line.",
+					"Console errored on a row that snuck in wrong. Sharp-eyed as Gwen."
+				]
+			},
+			"cuda": {
+				"slow": [
+					"GPU's grinding through kernels, an assembly line at full crawl.",
+					"Threads are queuing up patient, thousands of hands waiting.",
+					"This queue's long enough for a hallway of Ditto clones to wait."
+				],
+				"fail": [
+					"Kernel faulted. Wrong address, rest of the grid's untouched.",
+					"GPU threw out of bounds. One read reached too far.",
+					"Out of memory mid-kernel. Big swing, bigger than the whole roster."
+				]
+			}
+		},
+		"pressure": {
+			"compact_hint": [
+				"Things are getting crowded in here. I'll make room.",
+				"Context's filling up fast. Still plenty of room to work.",
+				"Getting a little full up top. We keep moving anyway."
+			],
+			"block_limit": [
+				"Running low on this stretch. Pacing it out, staying steady.",
+				"This block's almost done. Heroes pace, they don't sprint.",
+				"Time's winding down here. Easy does it, still moving forward."
+			],
+			"weekly_limit": [
+				"Long week logged already. Even heroes pace themselves.",
+				"This week's been a full one. Steady wins it, not speed.",
+				"Racked up a lot this week. Still got plenty of drive left."
+			]
+		},
+		"dateEgg": [
+			"It's 10:10. My watch and the clock finally agree.",
+			"New Year's here. Fresh dial, fresh start, let's go.",
+			"Ten o'clock on the dot. Feels like a sign.",
+			"Double digits on the clock. Ben 10 approves.",
+			"Midnight already. Somewhere an Omnitrix is charging too.",
+			"The tenth of the month. Feels like a lucky number today.",
+			"Weekend's here. Perfect timing to let the dial rest a bit.",
+			"Friday again. Feels like the watch is winding down nice.",
+			"A whole year gone by. Still got the same drive as day one.",
+			"Clock strikes an even hour. Never gets old, somehow."
+		]
+	},
+	"spinnerVerbs": [
+		"Going hero",
+		"Recalibrating",
+		"Charging the dial",
+		"Slotting an alien",
+		"Powering up",
+		"Transforming",
+		"Scanning the roster",
+		"Dialing in",
+		"Spinning up XLR8",
+		"Hero-timing",
+		"Slapping the dial",
+		"Cycling aliens",
+		"Locking the alien",
+		"Firing up Heatblast",
+		"Racing XLR8",
+		"Bulking into Four Arms",
+		"Glowing green",
+		"Recharging",
+		"Winding the watch",
+		"Flipping the dial",
+		"Suiting up",
+		"Going alien",
+		"Booting the Omnitrix",
+		"Chasing the fix",
+		"Morphing",
+		"Unleashing Way Big",
+		"Cranking the dial",
+		"Timing out"
+	]
+}

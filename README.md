@@ -17,13 +17,13 @@
   <img src="https://img.shields.io/badge/Claude%20API-none-2ea44f" alt="No Claude API">
   <img src="https://img.shields.io/badge/token%20spend-zero-2ea44f" alt="Zero token spend">
   <img src="https://img.shields.io/badge/data-local--first-2ea44f" alt="Local-first">
-  <img src="https://img.shields.io/badge/themes-70%2B-8a63d2" alt="70+ themes">
+  <img src="https://img.shields.io/badge/themes-55%2B-8a63d2" alt="55+ themes">
   <img src="https://img.shields.io/badge/widgets-33-8a63d2" alt="33 widgets">
-  <img src="https://img.shields.io/badge/characters-10%20packs-8a63d2" alt="10 character packs">
+  <img src="https://img.shields.io/badge/characters-18%20packs-8a63d2" alt="18 character packs">
 </p>
 
 <p align="center">
-  <img src="assets/statusline.svg" alt="ccsidekick statusline: a braille Batman figure beside directory, model, git branch and file changes, PR, chat/project/total cost, context, block and weekly usage, a helpful quota tip, and an in-character comment" width="900">
+  <img src="assets/statusline.svg" alt="ccsidekick statusline: a braille Spider-Man figure beside directory, model, git branch and file changes, PR, chat/project/total cost, context, block and weekly usage, a helpful quota tip, and an in-character comment" width="900">
 </p>
 
 ## What you get?
@@ -34,7 +34,7 @@
 - **A real statusline.** 33 toggleable widgets: directory, model, git (branch, ahead/behind,
   staged/unstaged/untracked, uncommitted changes, stash, worktree, conflicts), token context, cost,
   usage limits, PR state, burn rate, and more. Threshold-colored.
-- **70+ built-in themes.** Dark, light, high-contrast, and retro palettes (Dracula, Nord,
+- **55+ built-in themes.** Dark, high-contrast, and retro palettes (Dracula, Nord,
   Catppuccin, Tokyo Night, Gruvbox, Rosé Pine, Synthwave '84, and dozens more), plus each character
   pack ships its own matching theme.
 - **Cost at a glance.** Chat, per-project, and all-time spend, read straight from your Claude Code
@@ -54,8 +54,8 @@ config or view stats, and either view can switch to the other with Ctrl+W / Ctrl
 everything into Claude Code's `settings.json` (backing the file up first). Run `ccsidekick --help`
 for every command, including a clean uninstall.
 
-Prefer no TTY? `ccsidekick setup --character batman --theme houston --mode fixed` configures and wires
-everything from flags. See [Non-interactive setup](#non-interactive-setup).
+Prefer no TTY? `ccsidekick setup --character batman --theme houston --mode fixed` configures and
+wires everything from flags. See [Non-interactive setup](#non-interactive-setup).
 
 ## Characters
 
@@ -70,21 +70,28 @@ in-voice spinner verbs. `batman` is the default character.
 **Available packs:**
 
 - **Barbie**: a bright, upbeat pack in signature pink, with a matching theme.
-- **Batman**: the default, an edgy cowled sidekick that ships with the engine, plus its own dark
-  theme.
+- **Batman**: an edgy cowled sidekick that ships with the engine, plus its own dark theme.
+- **Ben 10**: a mild, cocky kid-hero pack in Omnitrix lime.
+- **Darth Vader**: an edgy, imperious Sith pack in ember red and cold steel.
 - **Deadpool**: an offensive-tone merc pack in Deadpool red, with a matching theme.
+- **Gandalf**: a mild, wise wizard pack in White Rider silver and gold.
 - **Harry Potter**: a wizarding pack in Gryffindor scarlet and gold.
 - **Hello Kitty**: a sweet, wholesome pack with a soft blush-pink theme.
+- **Iron Man**: an edgy, quippy genius pack in hot-rod red, gold, and arc-reactor cyan.
 - **James Bond**: an edgy secret-agent pack in cool gunmetal blue, with a matching theme.
 - **Joker**: an edgy, chaos-loving pack in Joker purple and acid green.
+- **Naruto**: a mild, hot-blooded ninja pack in ramen orange and Rasengan blue.
 - **Pikachu**: a mild, upbeat pack that crackles in electric yellow.
 - **Sherlock Holmes**: a mild, deductive pack in muted Victorian sepia.
+- **Shin-chan**: an edgy, snack-obsessed kid pack in sunny yellow.
 - **Spider-Man**: a milder, wisecracking pack with a red-and-blue theme to match.
+- **Superman**: a mild, hopeful pack in Metropolis blue and cape red.
+- **Yoda**: a mild, patient Jedi pack in Dagobah green.
 
 **…and more on the way.** The roster keeps growing - new characters land regularly.
 
-Each pack registers its theme as a selectable option, so every bundled character also adds a palette.
-Authoring your own is a documented path; see below.
+Each pack registers its theme as a selectable option, so every bundled character also adds a
+palette. Authoring your own is a documented path; see below.
 
 ## Non-interactive setup
 
@@ -143,11 +150,11 @@ currency = "USD"      # local-currency parenthetical on cost; default follows yo
 
 ### Widgets
 
-Every field is toggled in `[statusline.widgets]` (the engine owns order and placement). The ids: `dir`,
-`added_dirs`, `session_name`, `git_branch`, `git_hash`, `git_tag`, `git_worktree`, `git_changes`,
-`git_ahead_behind`, `git_status`, `git_conflict`, `git_operation`, `git_stash`, `pr`, `model`,
-`fast_mode`, `thinking`, `output_style`, `agent`, `context_usage`, `compactions`, `cost_chat`,
-`cost_project`, `cost_total`, `cost_burn`, `block_usage`, `weekly_usage`, `balance`,
+Every field is toggled in `[statusline.widgets]` (the engine owns order and placement). The ids:
+`dir`, `added_dirs`, `session_name`, `git_branch`, `git_hash`, `git_tag`, `git_worktree`,
+`git_changes`, `git_ahead_behind`, `git_status`, `git_conflict`, `git_operation`, `git_stash`, `pr`,
+`model`, `fast_mode`, `thinking`, `output_style`, `agent`, `context_usage`, `compactions`,
+`cost_chat`, `cost_project`, `cost_total`, `cost_burn`, `block_usage`, `weekly_usage`, `balance`,
 `pay_as_you_go`, `cache_hit`, `token_burn`, `session_duration`, `todo`.
 
 ## How it works?

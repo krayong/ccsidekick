@@ -7,10 +7,12 @@
 // library is still being filled in.
 //
 // lint consumes the already-validated, fully typed `PackJson` from `validate`, so it never touches loose JSON
-// (no `no-unsafe-*` carve-out here); only the CLI's `JSON.parse` boundary handles `unknown`.
+// (no `no-unsafe-*` carve-out here); only the CLI's `JSON.parse` boundary handles `unknown`. Beyond pack.json,
+// the CLI also runs `packageJsonErrors` on the sibling package.json (publish-metadata completeness), in both
+// modes since that is structural, not voice content; `lintPack` itself stays path-less and pack.json-only.
 
 import { readFileSync, realpathSync } from "node:fs";
-import { join } from "node:path";
+import { basename, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import {
@@ -188,6 +190,53 @@ function checkNearDuplicates(cells: readonly LeafCell[], errors: string[]): void
 	}
 }
 
+// Every file `npm publish` must ship from a pack, beyond the always-present pack.json.
+const REQUIRED_PACKAGE_FILES = ["pack.json", "README.md", "assets"] as const;
+
+// Publish-metadata gate: the sibling package.json must ship the README and the assets/ preview and point back
+// at the pack's own directory, so `npm publish` never emits a package with no readme, no statusline shot, or a
+// mislabeled name/directory. The scaffold emits a complete package.json; this catches drift (a pack authored
+// before the scaffold fix, or a hand-edit). It needs the pack's directory name for the identity checks, so it
+// lives here for the CLI to call rather than inside the path-less `lintPack`.
+export function packageJsonErrors(raw: unknown, packName: string): string[] {
+	if (typeof raw !== "object" || raw === null || Array.isArray(raw))
+		return ["package.json is missing or not an object"];
+	const pkg = raw as Record<string, unknown>;
+	const errors: string[] = [];
+
+	const expectedName = `@ccsidekick/pack-${packName}`;
+	if (pkg["name"] !== expectedName)
+		errors.push(
+			`package.json name is ${JSON.stringify(pkg["name"])}, expected "${expectedName}"`,
+		);
+
+	const files = pkg["files"];
+	const missing = REQUIRED_PACKAGE_FILES.filter(
+		(f) => !(Array.isArray(files) && files.includes(f)),
+	);
+	if (missing.length > 0)
+		errors.push(
+			`package.json "files" must include ${missing.map((f) => `"${f}"`).join(", ")} so the README and assets publish`,
+		);
+
+	const repo = pkg["repository"];
+	const directory =
+		typeof repo === "object" && repo !== null ?
+			(repo as Record<string, unknown>)["directory"]
+		:	undefined;
+	const expectedDir = `packages/packs/${packName}`;
+	if (directory !== expectedDir)
+		errors.push(
+			`package.json repository.directory is ${JSON.stringify(directory)}, expected "${expectedDir}"`,
+		);
+
+	const author = pkg["author"];
+	if (typeof author !== "string" || author.trim() === "")
+		errors.push('package.json is missing an "author"');
+
+	return errors;
+}
+
 // Defensive read of a possibly-partial pack.json for `--status`. Never validates, never throws: any absent or
 // mistyped branch yields []. Reads the array at a dotted leaf path under `lines`.
 function linesAt(raw: unknown, path: string): readonly string[] {
@@ -284,12 +333,21 @@ function runCli(): void {
 		process.stderr.write(`lint-pack: failed to read ${dir}/pack.json: ${msg}\n`);
 		process.exit(2);
 	}
-	const { ok, errors } = lintPack(raw, { schemaOnly });
-	if (ok) {
+	const { errors } = lintPack(raw, { schemaOnly });
+
+	let pkgRaw: unknown = null;
+	try {
+		pkgRaw = JSON.parse(readFileSync(join(dir, "package.json"), "utf8")) as unknown;
+	} catch {
+		// A missing or unparseable package.json is itself a finding, reported by packageJsonErrors.
+	}
+	const allErrors = [...errors, ...packageJsonErrors(pkgRaw, basename(dir))];
+
+	if (allErrors.length === 0) {
 		process.stdout.write(`lint-pack: ${dir} OK${schemaOnly ? " (schema-only)" : ""}\n`);
 		process.exit(0);
 	}
-	for (const err of errors) process.stderr.write(`lint-pack: ${err}\n`);
+	for (const err of allErrors) process.stderr.write(`lint-pack: ${err}\n`);
 	process.exit(1);
 }
 

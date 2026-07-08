@@ -1,0 +1,1153 @@
+{
+	"schema": 1,
+	"name": "darth-vader",
+	"displayName": "Darth Vader",
+	"attribution": {
+		"artist": "emojicombos.com",
+		"source": "https://emojicombos.com/darth-vader-ascii-art"
+	},
+	"emblem": "☠",
+	"tone": "edgy",
+	"theme": {
+		"hues": [
+			196,
+			160,
+			174,
+			68,
+			74
+		],
+		"comment": [
+			196,
+			216
+		],
+		"signals": {
+			"nominal": 71,
+			"caution": 208,
+			"critical": 196
+		},
+		"separator": 67
+	},
+	"art": [
+		"⠀⠀⠀⠀⠀⠀⣀⣠⠶⣄⣀⠀⠀⠀⠀⠀⠀",
+		"⠀⠀⠀⠀⣴⢟⡭⢹⠀⡏⠉⠻⣦⠀⠀⠀⠀",
+		"⠀⠀⠀⣸⠃⠋⠀⢸⠀⡇⠀⠀⠘⣇⠀⠀⠀",
+		"⠀⠀⢀⣿⢞⣻⣿⣻⠷⣟⣿⣟⡳⣿⡀⠀⠀",
+		"⠀⠀⣼⠃⣾⣁⣀⣹⣤⣏⣀⣈⣿⠘⣧⠀⠀",
+		"⠀⣼⠃⠀⢹⡍⢉⣽⣿⣯⡉⢩⡟⠀⠘⣧⠀",
+		"⢰⡏⠀⠀⠈⢡⣾⣿⣿⣿⣷⡌⠁⠀⠀⢸⡇",
+		"⠘⠷⣤⣤⣰⠆⠀⠀⠀⠀⠀⠀⣦⣤⣤⠾⠃",
+		"⠀⠀⠀⠀⠙⠛⠓⠶⠶⠶⠚⠛⠋⠀⠀⠀⠀"
+	],
+	"lines": {
+		"mood": {
+			"idle": {
+				"stranger": [
+					"Another presence enters my perception. Unproven, for now.",
+					"The deck is still. This one has yet to show me anything.",
+					"I sense a will here, unshaped. We shall see what it becomes.",
+					"Silence, for the moment. I do not yet know what stirs behind it.",
+					"A new signature on the bridge. Untested. Unremarkable, still.",
+					"Calm before the work begins. I withhold judgment until then.",
+					"This presence has not yet earned my attention. Nor my doubt.",
+					"The fleet waits. So does my assessment of this newcomer.",
+					"Stillness suits the unproven. Let us see what breaks it.",
+					"I have marked this one's arrival. Nothing more, not yet."
+				],
+				"acquaintance": [
+					"Your rhythms grow familiar. The pattern is not yet complete.",
+					"I have begun to read your habits. Continue; I am watching.",
+					"A quiet stretch. I use it to study how you move through work.",
+					"The bridge holds its breath. I hold mine, watching you learn.",
+					"You are becoming known to me. That is no small thing.",
+					"Patterns emerge where chaos once stood. Yours, taking shape.",
+					"I mark the spaces between your actions now. They tell much.",
+					"This calm is yours to spend. I spend it learning your shape.",
+					"Your signature grows clearer with each return you make.",
+					"Not yet trusted. But no longer a stranger to my sight."
+				],
+				"friend": [
+					"The deck is quiet. You have earned this stillness.",
+					"Rest if you must. Your record speaks while you are silent.",
+					"I know your patterns now. They serve the Empire well.",
+					"Stillness becomes you. You have nothing left to prove here.",
+					"The command deck trusts your hand, even idle as it is.",
+					"Quiet hours. You have bought them with steadier ones.",
+					"No task presses. Even so, your discipline holds the line.",
+					"You wait well. Few officers have learned that art.",
+					"The Force is calm around you. I find that fitting.",
+					"Silence, and I do not doubt what fills it in you."
+				],
+				"partner": [
+					"Quiet. You have earned it more than most.",
+					"Stillness, between equals. It requires no words.",
+					"The deck rests easy with you near it.",
+					"No orders needed. You know the shape of the work.",
+					"Calm. It suits a mind honed as sharply as yours.",
+					"We wait together. That is enough.",
+					"Little to say. Your presence answers for itself.",
+					"Silence between us carries its own understanding.",
+					"The fleet is steady. So are you.",
+					"Nothing stirs. Nor need it, with you at the helm."
+				],
+				"legend": [
+					"Something in this stillness feels closer to complete.",
+					"Few apprentices earn silence like this. You have.",
+					"I no longer watch for weakness in you. There is none to find.",
+					"Your calm now sets a tone others try to match.",
+					"Mastery does not announce itself. Yours never has to.",
+					"I remember what you were. I respect what you have become.",
+					"This calm belongs to you. You built it, breath by breath.",
+					"There is little left for me to teach. You have surpassed it.",
+					"Stillness, and something rarer still: my full respect.",
+					"The apprentice is gone. What remains commands its own fleet."
+				]
+			},
+			"busy": {
+				"stranger": [
+					"You move quickly. I have not decided if that is wisdom.",
+					"Work proceeds. I remain close, saying nothing yet.",
+					"Effort, unmeasured by history. I watch to weigh it.",
+					"The hands move. The purpose behind them, still unclear to me.",
+					"Motion without a name I trust. Not yet, in any case."
+				],
+				"acquaintance": [
+					"You work with a rhythm I begin to recognize.",
+					"I stay near. Your focus has earned that much attention.",
+					"The pace quickens. I note it does not break your form.",
+					"Familiar motions now. I watch less for failure, more for shape.",
+					"You press forward. I remain, reading how you carry it."
+				],
+				"friend": [
+					"Good. Keep that focus; I stand close while you work it.",
+					"Your hands are steady. The deck takes notice.",
+					"I watch you build. It is no longer an idle curiosity.",
+					"Press on. You have earned my presence, not my doubt.",
+					"The work bends to you. I remain simply to witness it."
+				],
+				"partner": [
+					"Steady hands. I need not say more.",
+					"I stand at your shoulder. The work is yours to command.",
+					"Your focus is sharper than any correction I could offer.",
+					"Proceed. I trust the shape of what you are building.",
+					"Little to add. Your discipline speaks for both of us."
+				],
+				"legend": [
+					"I watch less for error now, and more to learn from you.",
+					"Command flows through you now; the hand merely follows.",
+					"Even the Force seems to lean toward your focus now.",
+					"I remain to observe, not to instruct you further.",
+					"Mastery in motion. Rare, even among the strongest."
+				]
+			},
+			"happy": {
+				"stranger": [
+					"A clean result. Unexpected, from one so unproven.",
+					"Success, then. I will allow it counts for something.",
+					"That worked cleanly. I did not anticipate it would.",
+					"A small victory. I note it, nothing more, for now.",
+					"Order, where I expected struggle. Interesting."
+				],
+				"acquaintance": [
+					"Clean work. Your pattern is sharpening.",
+					"That landed well. I begin to expect it of you.",
+					"Success again. The shape of your skill grows clearer.",
+					"Well executed. I am not surprised, though I once would be.",
+					"Order restored, and swiftly. That earns real approval."
+				],
+				"friend": [
+					"Well done. That is the standard I expect of you.",
+					"Clean execution. My command grows stronger for it.",
+					"Good. Your record grows harder to ignore.",
+					"That was precise work. Few match that kind of control.",
+					"Success suits you. Wear it, and move to the next."
+				],
+				"partner": [
+					"Well earned. I expected nothing less.",
+					"Clean. As always, from you.",
+					"Good work. Few could match that precision.",
+					"That result speaks for itself. As do you.",
+					"Precision, without effort shown. Impressive."
+				],
+				"legend": [
+					"Impressive. Most impressive, and no longer a surprise.",
+					"That control never strained. As it should be.",
+					"That was flawless. Few legends move with such ease.",
+					"Even I take note of work done that cleanly.",
+					"The apprentice has become the standard others chase."
+				]
+			},
+			"struggling": {
+				"stranger": [
+					"Resistance. Good. It is how the Force measures a will.",
+					"The work fights you. Resistance forges what ease never could.",
+					"Difficulty reveals more than ease ever could.",
+					"Let it press. Strength introduces itself through struggle.",
+					"This resistance will not break what it cannot first test."
+				],
+				"acquaintance": [
+					"This resistance will not outlast your patience.",
+					"The struggle sharpens what ease would leave dull.",
+					"This is the forge. Stay in it a while longer.",
+					"Pressure like this built the pattern I now recognize in you.",
+					"What resists you now will know your hand soon enough."
+				],
+				"friend": [
+					"This trial only tempers what you have already built.",
+					"Pressure that once broke others only bends around you.",
+					"I have watched you turn worse struggles into strength.",
+					"This is friction your discipline has weathered before.",
+					"Hold your line. What fights you now will not outlast you."
+				],
+				"partner": [
+					"This resistance is beneath what you have already broken.",
+					"I have seen you turn worse trials into resolve.",
+					"The struggle is temporary. Your resolve outlasts it.",
+					"Hold. You have forged strength from harder fire than this.",
+					"Even this will answer to you, as everything else has."
+				],
+				"legend": [
+					"Even mastery meets resistance. It is how the Force renews itself.",
+					"This trial tests a strength most never reach. You have.",
+					"What resists a legend only sharpens the legend further.",
+					"I have not seen trouble like this outlast your kind before.",
+					"Struggle finds you rarely now. When it does, it loses."
+				]
+			},
+			"recovery": {
+				"stranger": [
+					"Order returns. I note how quickly you found it again.",
+					"The disorder has passed. What remains is worth watching.",
+					"Recovery says more about a will than the fall ever did.",
+					"Balance restored. Unremarkable, perhaps. Or a first sign.",
+					"The storm passed through you and left something steadier."
+				],
+				"acquaintance": [
+					"You found your footing again. That pattern, I now expect.",
+					"The disorder broke. You did not break with it.",
+					"Steadiness returns, and faster than it did before.",
+					"I watch you recover the way I once watched you struggle.",
+					"Balance, reclaimed. Your hand shows in how quickly."
+				],
+				"friend": [
+					"Good. My command holds steadier when you do.",
+					"You have pulled order from real chaos before now.",
+					"Recovered, and cleanly. That is discipline I trust.",
+					"The rough stretch is behind you. Your footing held after all.",
+					"Steady again. Little in you stays unsettled long."
+				],
+				"partner": [
+					"Order, reclaimed with barely a pause. Well done.",
+					"You do not stay unsettled long. That is your strength.",
+					"The disorder yielded quickly to you, as it should.",
+					"Balance restored. You make it look inevitable.",
+					"Recovered already. Few equal that pace."
+				],
+				"legend": [
+					"A legend does not fall long. You proved that again.",
+					"The disorder barely touched what you have built.",
+					"Recovery, for you, is little more than a formality now.",
+					"What unsettles others passes through you like nothing at all.",
+					"Order returns because you willed it so. As always."
+				]
+			}
+		},
+		"greeting": {
+			"morning": {
+				"stranger": [
+					"Another dawn. State your purpose at the terminal.",
+					"The bridge stirs. I have not judged your worth.",
+					"Morning watch begins, and you are still unknown to me."
+				],
+				"acquaintance": [
+					"You keep an early hour. Noted.",
+					"You rise before most. That pattern holds firm.",
+					"Morning finds you at post; your habits speak plainly now."
+				],
+				"friend": [
+					"Dawn, and you are already at your post. Well done.",
+					"Command wakes with you this morning. Proceed.",
+					"Morning report awaits. I trust it will be sound."
+				],
+				"partner": [
+					"Dawn. I have nothing left to brief you on.",
+					"Early again. As expected of you.",
+					"The day opens. Take it."
+				],
+				"legend": [
+					"The dawn arrives; your discipline was here first.",
+					"Rise, apprentice turned equal. The morning is yours.",
+					"You greet the sun before I finish my own rounds."
+				]
+			},
+			"day": {
+				"stranger": [
+					"Midday, and a stranger stands at the console.",
+					"The hour is high. Your record here is blank.",
+					"Full daylight now. I am watching, nothing more."
+				],
+				"acquaintance": [
+					"Midday, and your rhythm holds its steady beat.",
+					"Noon glares down. Your patterns grow familiar to me.",
+					"Another daylight session. I begin to expect this of you."
+				],
+				"friend": [
+					"Midday, and the deck runs well under you.",
+					"The day is at its height. Your post is secure.",
+					"Full daylight, full duty. Carry on."
+				],
+				"partner": [
+					"Midday. No preamble needed between us.",
+					"The sun stands high. So do you.",
+					"Daylight suits you. Continue."
+				],
+				"legend": [
+					"The height of day, and still you outpace it.",
+					"Noon light finds you unshaken, no longer an apprentice.",
+					"The brightest hour, and you remain unshaken."
+				]
+			},
+			"evening": {
+				"stranger": [
+					"Dusk falls. An unfamiliar signature enters.",
+					"The light fades before I have measured you.",
+					"The dusk shift finds you still a mystery to me."
+				],
+				"acquaintance": [
+					"Evening, and your work today follows a shape I know.",
+					"Dusk settles; your record is taking form.",
+					"The light dims. I begin to see your discipline."
+				],
+				"friend": [
+					"Evening now. The day's labor speaks well of you.",
+					"Dusk settles. Your post held steady today.",
+					"The Empire dims its lights. Yours still burns."
+				],
+				"partner": [
+					"Evening. The day already answers for you.",
+					"Dusk, and no report is needed. I have seen it.",
+					"The light fades; your resolve does not."
+				],
+				"legend": [
+					"Evening finds a master closing another chapter.",
+					"Dusk cannot dim what you built today.",
+					"The day ends; your command of it does not."
+				]
+			},
+			"night": {
+				"stranger": [
+					"The hour is late. A stranger works in the dark.",
+					"Night has fallen. Your presence remains unread.",
+					"Deep night, and your purpose here escapes me still."
+				],
+				"acquaintance": [
+					"This late hour is becoming familiar to you.",
+					"The dark hours suit you well.",
+					"Night work. Your pattern is no longer a mystery."
+				],
+				"friend": [
+					"The late hour finds you still steady at post.",
+					"Night falls; you remain, and that says enough.",
+					"Deep night, steady hands. Good."
+				],
+				"partner": [
+					"The night is yours as much as the day.",
+					"Late hour, sharp focus. As always.",
+					"Darkness changes nothing for you."
+				],
+				"legend": [
+					"The deepest hour bends around your steady will.",
+					"Night holds no advantage over you now.",
+					"Even in darkness, your command is absolute."
+				]
+			},
+			"weekend": {
+				"stranger": [
+					"The fleet stands down. You do not. Curious.",
+					"An off day, and still a stranger reports for duty.",
+					"Few work this day. I note that you do."
+				],
+				"acquaintance": [
+					"The rest cycle means little to you, it seems.",
+					"Off-duty for most. Not so for you.",
+					"The Empire's quiet hours, and yet here you are."
+				],
+				"friend": [
+					"The Empire rests; you do not. That speaks of you.",
+					"An off-cycle day, and still you answer the call.",
+					"Others stand down today. You never truly do."
+				],
+				"partner": [
+					"The rest cycle bends around you, not the reverse.",
+					"Off duty means nothing when duty is who you are.",
+					"The fleet sleeps. You do not need permission to work."
+				],
+				"legend": [
+					"Even the calendar bends before your will.",
+					"The rest cycle is a suggestion you have outgrown.",
+					"No day off diminishes what you have become."
+				]
+			}
+		},
+		"firstContact": {
+			"stranger": [
+				"A new presence enters my domain. Explain yourself.",
+				"I sense you for the first time. Impress me.",
+				"Unknown to me until this moment. That will change."
+			],
+			"acquaintance": [
+				"First time under my watch, though you carry some reputation.",
+				"I have heard of you before seeing you. Now we begin.",
+				"Word of your work reached me first. Now I judge it myself."
+			],
+			"friend": [
+				"So this is the one I have heard commended. Welcome.",
+				"Your reputation preceded you. Now you stand before me.",
+				"First contact, though trust was already half-earned."
+			],
+			"partner": [
+				"We meet properly at last. Your record needed no introduction.",
+				"First time face to face, though I already knew your worth.",
+				"The formality of meeting comes late. Your skill came first."
+			],
+			"legend": [
+				"Even legends require a first meeting. Here it is.",
+				"I finally meet the will I sensed from afar.",
+				"Our first exchange, though your power reached me long before."
+			]
+		},
+		"milestone": {
+			"tier_up": {
+				"stranger": [
+					"Your presence grows heavier on the deck. Noted.",
+					"A new strength stirs in you. I am watching closely now.",
+					"You have crossed a threshold. Few do so unseen."
+				],
+				"acquaintance": [
+					"Your patterns have shifted. You reach further than before.",
+					"I have read enough of you to see this rise was earned.",
+					"The gap between us narrows. Continue."
+				],
+				"friend": [
+					"Rise. Command takes note of what you have become.",
+					"Your rank among my trusted has grown tonight.",
+					"You have earned a longer leash. Use it well."
+				],
+				"partner": [
+					"Equal footing, nearly. Good.",
+					"Few words needed. Your power speaks for itself.",
+					"You climb faster than most apprentices dare."
+				],
+				"legend": [
+					"The dark side answers readily to strength such as this.",
+					"The circle nears completion. You are no longer beneath me.",
+					"Your mastery is undeniable now. I built no such ceiling for you."
+				]
+			},
+			"comeback": {
+				"stranger": [
+					"You return. The deck remembers a stranger's face.",
+					"An absence, now ended. I will judge what remains of you.",
+					"Long silence. Let us see what survived it."
+				],
+				"acquaintance": [
+					"You vanished from my sensors a while. Welcome back.",
+					"The pattern breaks, then resumes. Interesting.",
+					"Your absence registered. Your return matters more."
+				],
+				"friend": [
+					"You return to your post. The command feels whole again.",
+					"I wondered if the Dark Side had claimed your time instead.",
+					"Welcome back. Your chair on the bridge stayed empty."
+				],
+				"partner": [
+					"Back. Good. The work missed your hand.",
+					"You return unbroken. That is enough.",
+					"No explanation needed. Take your place again."
+				],
+				"legend": [
+					"Even legends step away. Few return with this much fire.",
+					"The apprentice who left returns sharper than before.",
+					"Your absence changed nothing. You remain formidable."
+				]
+			},
+			"streak": {
+				"stranger": [
+					"Three victories in a row. I begin to take notice.",
+					"A streak, unbroken. This is no accident.",
+					"Success compounds around you. I am watching why."
+				],
+				"acquaintance": [
+					"Your wins stack like ships in formation. Orderly. Strong.",
+					"This run of victories is no fluke of the Force.",
+					"You are building something. I can see its shape now."
+				],
+				"friend": [
+					"Victory after victory. The fleet talks of your name.",
+					"You have not stumbled in some time, officer. Good.",
+					"This streak belongs to you alone. Claim it."
+				],
+				"partner": [
+					"Unbroken. This no longer surprises me.",
+					"Win after win. Your consistency has become routine.",
+					"The streak holds. So does my confidence in you."
+				],
+				"legend": [
+					"A legend does not stumble. You have proven the title earned.",
+					"Your victories no longer surprise me. They confirm.",
+					"This streak is the shape of mastery. I recognize it."
+				]
+			},
+			"anniversary": {
+				"stranger": [
+					"This long together, and still I learn your name. Fitting.",
+					"Time has passed. You remain. That alone says much.",
+					"A tenure this long was not guaranteed. Yet here you are."
+				],
+				"acquaintance": [
+					"We have kept this course a long while now.",
+					"Your patterns are old friends to me by now.",
+					"Long service, this. I do not forget it."
+				],
+				"friend": [
+					"Years of duty. Loyalty like yours is remembered.",
+					"Few serve this long without breaking. You have not.",
+					"This anniversary is earned. I remember who stayed."
+				],
+				"partner": [
+					"This long, and still matched. Rare.",
+					"Time tested us both. Neither yielded.",
+					"Long tenure, near equal. Few pairs last this way."
+				],
+				"legend": [
+					"So much time, and doubt finds no place left in you.",
+					"Few apprentices become legends who remain this long.",
+					"This anniversary marks a bond time could not erode."
+				]
+			}
+		},
+		"positiveGit": {
+			"clean_tree": {
+				"stranger": [
+					"No debris in your wake. Unusual, for one so new.",
+					"The tree stands bare of clutter. Order, unprompted.",
+					"Nothing lingers unresolved here. Acceptable."
+				],
+				"acquaintance": [
+					"You leave no wreckage behind you. I see the pattern now.",
+					"Order where there was once scatter. Your doing.",
+					"The branches hold nothing loose. Deliberate work."
+				],
+				"friend": [
+					"A clean tree. The bridge runs smoother for it.",
+					"Nothing left adrift. You keep tidy command of your work.",
+					"This order did not happen by chance. You built it with care."
+				],
+				"partner": [
+					"Spotless. As I have come to expect.",
+					"Nothing out of place. Your discipline speaks alone.",
+					"The tree is silent and clean. So is your hand in it."
+				],
+				"legend": [
+					"Not a single loose thread. A commander's hand, unmistakable.",
+					"You leave order the way I once left destruction. Fitting.",
+					"A tree this clean reflects the mind that tends it."
+				]
+			},
+			"op_cleared": {
+				"stranger": [
+					"The conflict yields. You did not flinch from it.",
+					"Whatever tangled here has been undone. A start.",
+					"The merge no longer resists you. A small test, passed."
+				],
+				"acquaintance": [
+					"You waded through that tangle without losing your footing.",
+					"The rebase surrendered. I have seen you handle worse.",
+					"That conflict fought you. You fought back harder."
+				],
+				"friend": [
+					"The operation is resolved. Well fought.",
+					"That merge tested you. You did not break under it.",
+					"Order restored to the branch. Your patience held."
+				],
+				"partner": [
+					"Cleared. You make conflict look brief.",
+					"The tangle is gone. So is any doubt I had.",
+					"Resolved without ceremony. That is your way now."
+				],
+				"legend": [
+					"A conflict that size breaks lesser hands. You endured it.",
+					"You resolve what would consume an apprentice for days.",
+					"The merge bent to your will. Nothing else was possible."
+				]
+			},
+			"branch_created": {
+				"stranger": [
+					"A new path forks from the old. Let us see where it leads.",
+					"You have opened ground unclaimed until now.",
+					"Another branch, another test of your resolve."
+				],
+				"acquaintance": [
+					"You carve new paths readily now. I take note of the habit.",
+					"This branch is untested ground. You do not hesitate.",
+					"A fresh line of work, split clean from the old."
+				],
+				"friend": [
+					"A new branch. Your command expands its reach.",
+					"You open new fronts without waiting for orders.",
+					"Fresh ground claimed. I trust what you build on it."
+				],
+				"partner": [
+					"New branch. New ground. You need no permission from me.",
+					"Another path opens under your hand alone.",
+					"You expand the work like conquered territory."
+				],
+				"legend": [
+					"You spawn new paths the way I once spawned fear.",
+					"Each branch you open bears your own signature.",
+					"New ground, claimed without hesitation. As always."
+				]
+			},
+			"tag_pushed": {
+				"stranger": [
+					"A marker set in the timeline. Your first, perhaps.",
+					"You have staked a claim others will measure against.",
+					"This release leaves the deck. Let history judge it."
+				],
+				"acquaintance": [
+					"Another release sent outward. Your record grows longer.",
+					"You mark this moment in stone now. Deliberate.",
+					"The tag is set. I have watched you earn this one."
+				],
+				"friend": [
+					"The release ships. Your name travels with it.",
+					"A tag pushed under your hand carries real weight now.",
+					"This marker will outlast the officer who built it."
+				],
+				"partner": [
+					"Sent. The Empire will feel this one.",
+					"A tag from you speaks loud enough on its own.",
+					"Pushed and permanent. That is how you build now."
+				],
+				"legend": [
+					"Your releases no longer need my approval. They command it.",
+					"This tag marks a milestone the fleet will remember.",
+					"What you push now becomes doctrine for others."
+				]
+			}
+		},
+		"egg": {
+			"stranger": [
+				"You came looking. I permit this one audience.",
+				"Curiosity has a cost. Today, I am generous.",
+				"An unknown seeks me out. Bold, for a stranger.",
+				"You summon my attention. Do not waste it.",
+				"Few approach without being sent for. Speak."
+			],
+			"acquaintance": [
+				"You return to find me. I begin to expect it.",
+				"Twice now you've sought this audience. Deliberate.",
+				"Your patterns include seeking me out. Useful.",
+				"I read this as more than idle curiosity.",
+				"You come looking again. The file grows thicker."
+			],
+			"friend": [
+				"One of mine, seeking me directly. Good.",
+				"You search little. I am always near.",
+				"Come to report, or merely to be counted. Either serves.",
+				"Even without a summons, my officer appears.",
+				"Loyalty finds its own way to the bridge."
+			],
+			"partner": [
+				"You know where to find me. As I know you.",
+				"Few words needed between us, even here.",
+				"You sought me out. Few equals bother to.",
+				"An equal does not wait to be summoned.",
+				"You come to me directly. That is respect."
+			],
+			"legend": [
+				"You hear my breath before you see me. Fitting, that instinct.",
+				"You have sought me out again. Impressive, apprentice.",
+				"Few earn the right to seek me unbidden. You have.",
+				"The circle nears completion each time you return.",
+				"Power recognizes power. You came looking for mine."
+			]
+		},
+		"event": {
+			"test_fail": [
+				"The tests resist. Good. Untrained strength shows itself.",
+				"A failing suite is a trial. You are not finished with it.",
+				"Red across the board tonight. Even legends once failed a drill."
+			],
+			"build_fail": [
+				"The build breaks. Foundations crack before they set true.",
+				"Nothing compiles. The strongest hulls were once scattered plates.",
+				"A broken build is a keel not yet laid straight. Lay it."
+			],
+			"typecheck_fail": [
+				"The types disagree. Discipline is built in moments like this.",
+				"A type error is the mind catching its own carelessness.",
+				"Small mismatches, corrected, are how strength accumulates."
+			],
+			"lint": [
+				"The linter combs through your work. I approve of scrutiny.",
+				"Style enforced line by line. Order, even in small things.",
+				"The rules of form apply to you as they apply to the fleet."
+			],
+			"format": [
+				"Your code falls into formation. I favor order in ranks.",
+				"Every line aligned now. Uniformity has its own power.",
+				"The formatter passes through. Chaos yields to a single standard."
+			],
+			"install": [
+				"New dependencies arrive. Reinforcements, summoned to the fleet.",
+				"The packages assemble. Even an army needs its supply lines.",
+				"Fresh modules take their place. The garrison grows."
+			],
+			"git": [
+				"History is recorded. The Empire keeps its records too.",
+				"A commit, logged. Every action leaves its trace in the ledger.",
+				"You mark this moment permanently. Wise. The past should be kept."
+			],
+			"file_edit": [
+				"A file changes hands. Small edits, larger consequences follow.",
+				"You alter the design. Even minor changes ripple far.",
+				"The document bends to your will. That is a kind of power."
+			],
+			"search": [
+				"You search the codebase. I too prefer to know before I act.",
+				"Scanning wide for what you need. Patience finds it faster.",
+				"The search moves quietly through the ranks of files."
+			],
+			"web_fetch": [
+				"You reach beyond these walls for answers. A calculated risk.",
+				"The network answers your call. Even I rely on intelligence.",
+				"Information arrives from beyond. Use it wisely."
+			],
+			"todo_update": [
+				"The orders are updated. A command deck runs on clear lists.",
+				"Tasks reordered. Priorities sharpen even under pressure.",
+				"You mark what remains. Order rests in knowing it by heart."
+			],
+			"agent_spawn": [
+				"A subordinate is dispatched. Command is not solitude.",
+				"Another hand joins the work. No fleet runs on one officer alone.",
+				"You deploy an agent of your own. I know the instinct to command."
+			],
+			"skill_run": [
+				"A trained skill answers the call. Preparation, finally spent well.",
+				"You draw on practiced craft. That is what training was for.",
+				"The skill executes. Mastery shows itself in the calling of it."
+			],
+			"docker": [
+				"A container rises, sealed and self-contained. Efficient design.",
+				"You build a vessel to carry the work. The fleet approves.",
+				"Isolated and controlled. Command works best built this way."
+			],
+			"k8s": [
+				"Many vessels, one command. That is how an armada should run.",
+				"The cluster falls into formation. Orchestration, well executed.",
+				"Nodes align under a single will. I understand this instinct."
+			],
+			"deploy": [
+				"The work launches. Every deployment is a small invasion.",
+				"Live now, for better or worse. The field reveals commitment.",
+				"You send it forward into the world. No retreat from here."
+			],
+			"db_migrate": [
+				"The old structure gives way to the new. Change, disciplined.",
+				"Data moves to its new order. Even foundations can be rebuilt.",
+				"The schema shifts beneath everything else. Handled with care."
+			],
+			"dangerous": [
+				"Great power stirs in that command. Feel its weight.",
+				"Power like this demands a steady hand. Yours held.",
+				"The sharpest tools cut both ways. Respect that edge."
+			]
+		},
+		"pressure": {
+			"compact_hint": [
+				"The context fills. A campaign this full builds a keener mind.",
+				"So much gathered already. Even a full mind commands well.",
+				"The weight of all you've done here does not slow true strength."
+			],
+			"block_limit": [
+				"This session runs long. Endurance like this forges an officer.",
+				"The block nears its end. What you built inside it remains.",
+				"Every hour spent here has already made its mark."
+			],
+			"weekly_limit": [
+				"A full week of campaigns behind you. That is how strength accrues.",
+				"The week runs deep and close to its edge. So does resolve.",
+				"This week has asked much of you. You have answered every time."
+			]
+		},
+		"dateEgg": [
+			"The old year ends. Even an Empire marks its turning point.",
+			"Midnight. The fleet sleeps; the work under my command does not.",
+			"Dawn breaks over the horizon. A new day, another campaign.",
+			"Fireworks split the sky like weapons fire. Fitting, this night.",
+			"The season turns cold. Cold suits the discipline I demand.",
+			"A new year begins. Resolve does not require the calendar's help.",
+			"Late, and still at the console. I keep hours like these too.",
+			"The calendar turns again. Time is the one thing even I obey.",
+			"Small hours now. The command deck never fully goes dark.",
+			"Another year completes its orbit. The apprenticeship continues."
+		],
+		"stack": {
+			"web": {
+				"slow": [
+					"The page loads at its own pace. Endure it.",
+					"Not even the Empire can rush what the network yields.",
+					"A slow page tests patience alone. Yours remains full."
+				],
+				"fail": [
+					"A dropped request does not trouble the will that commands here.",
+					"The connection failed once. The Dark Side finds another way.",
+					"This page broke. Your standing with me has not moved an inch."
+				]
+			},
+			"python": {
+				"slow": [
+					"The interpreter yields on its own terms. Hold steady.",
+					"A slow script is no measure of the hand that commands it.",
+					"Let it finish. Power does not announce itself in haste."
+				],
+				"fail": [
+					"The traceback surfaces, and your grip on this craft only tightens.",
+					"An exception rose against you. You are still standing.",
+					"The script collapsed. The mind that wrote it did not."
+				]
+			},
+			"sql": {
+				"slow": [
+					"A slow query is no matter to my judgment of your command.",
+					"Let the database labor. This too is command work.",
+					"This table is vast, and vastness answers to will, not haste."
+				],
+				"fail": [
+					"The query failed. You are not shaken by so small a thing.",
+					"A broken statement falters once. Little else changes.",
+					"The database resisted you once. You remain the stronger will."
+				]
+			},
+			"web-framework": {
+				"slow": [
+					"Your interface takes shape slowly. So does power.",
+					"The framework rebuilds itself in silence. Let it serve you.",
+					"This render finishes when it finishes. Your command outlasts it."
+				],
+				"fail": [
+					"A broken component is not the end of this build, only a pause.",
+					"The render faltered once. It taught it nothing about your will.",
+					"One failed pass reshapes nothing of the mastery you hold."
+				]
+			},
+			"docker": {
+				"slow": [
+					"Each layer sets in place, methodical as an Imperial fleet.",
+					"The image takes shape without sound. Order does not hurry.",
+					"Let the containers form. Command grows while you wait."
+				],
+				"fail": [
+					"A layer failed to build, and still your resolve compounds.",
+					"The image broke apart. Your command of what remains is whole.",
+					"One failed build sharpens the hand of a rising apprentice."
+				]
+			},
+			"java": {
+				"slow": [
+					"The compiler forges nothing in haste. Stand your ground.",
+					"Verbosity is only weight. Your grip stays sure.",
+					"Let the bytecode assemble. Silence is not idle power."
+				],
+				"fail": [
+					"The stack trace names your flaw precisely. Use it.",
+					"This exception marks the exact seam to strengthen.",
+					"The JVM does not lie to you. Heed what it reveals."
+				]
+			},
+			"go": {
+				"slow": [
+					"A slower build today does not slow the apprentice underneath.",
+					"Let it compile. The Force was never only about pace.",
+					"This delay is a small tax on power that keeps growing."
+				],
+				"fail": [
+					"A failed build is no death march, only a stumble.",
+					"The goroutine broke. The system still answers to you.",
+					"One error does not undo the command you have already built."
+				]
+			},
+			"node": {
+				"slow": [
+					"The packages assemble. Order takes what it takes.",
+					"Every dependency finds its place, each in due order.",
+					"Let the install labor on. Your power grows in the wait."
+				],
+				"fail": [
+					"A failed install does not shrink the power growing in you.",
+					"The package broke. Your resolve carried on without it.",
+					"A narrow error. What you are building is not so fragile."
+				]
+			},
+			"dotnet": {
+				"slow": [
+					"The build proceeds at its measured pace. Your grip holds steady.",
+					"MSBuild labors in silence. You remain unmoved by it.",
+					"This compile is slow. It does not measure your command."
+				],
+				"fail": [
+					"This failure troubles me less than hesitation would.",
+					"The build broke. The Empire has weathered worse than this.",
+					"One exception. Your standing here remains unshaken."
+				]
+			},
+			"cpp": {
+				"slow": [
+					"The compiler grinds through templates. Endure; that is training.",
+					"Patience now. True strength was never built in haste.",
+					"Let the linker finish its work. Discipline outlasts the clock."
+				],
+				"fail": [
+					"The segfault names your flaw precisely. Now you see it clearly.",
+					"This crash marks the exact weakness to master next.",
+					"The compiler's error is no enemy. It is a teacher's mark."
+				]
+			},
+			"php": {
+				"slow": [
+					"Composer answers to no impatience, and so do you.",
+					"The script resolves only when it is ready.",
+					"This delay is not a measure of your worth."
+				],
+				"fail": [
+					"A broken script tests you. It does not rule you.",
+					"The page failed once. That failure holds no power over you.",
+					"This error is a small trial beside your true power."
+				]
+			},
+			"rust": {
+				"slow": [
+					"Rust's rigor is not cruelty. It is the shape of real strength.",
+					"The compiler is slow because it is exacting. So are you.",
+					"Let cargo labor. What it builds will not fail lightly."
+				],
+				"fail": [
+					"The borrow checker rejected you once. It will not again.",
+					"A failed build here forges a surer hand later.",
+					"The compiler's complaint is narrow. Your mastery of it is not."
+				]
+			},
+			"kubernetes": {
+				"slow": [
+					"The cluster assembles its pods, rank by rank, in order.",
+					"Let the deployment settle. Command over many takes time.",
+					"The pods align themselves. Order does not rush to form."
+				],
+				"fail": [
+					"One pod falling does not collapse the cluster, or your will.",
+					"The deployment faltered once. Command over it remains yours.",
+					"A failed rollout only delays the campaign. Press on."
+				]
+			},
+			"ml": {
+				"slow": [
+					"The model trains on. Power is not rushed.",
+					"Each epoch passes in its own time, as did your training.",
+					"This delay changes nothing of the power you will become."
+				],
+				"fail": [
+					"The training run failed. What you learned from it did not.",
+					"A broken model is not a broken apprentice.",
+					"This run collapsed. Your grasp of the craft remains whole."
+				]
+			},
+			"android": {
+				"slow": [
+					"Each build strengthens the legion beneath your command.",
+					"A slow assembly is still an assembly gaining strength.",
+					"Your ranks are still forming. Feel them grow."
+				],
+				"fail": [
+					"A broken formation regroups before the next advance.",
+					"One shattered rank has never cost an empire its war.",
+					"Even my own troops have faltered, then reformed."
+				]
+			},
+			"ruby": {
+				"slow": [
+					"Your crystal deepens toward crimson as your power grows.",
+					"This crystal bends only to your will.",
+					"A blade answers only the hand strong enough to shape it."
+				],
+				"fail": [
+					"A cracked crystal bleeds brighter once reforged.",
+					"A blade like this answers only to steady resolve.",
+					"What fractures here becomes a stronger blade."
+				]
+			},
+			"ios": {
+				"slow": [
+					"Clearance from on high is never granted in haste.",
+					"The gate answers to command, and command alone.",
+					"Your petition climbs through many decks of the fleet."
+				],
+				"fail": [
+					"Denial is no disgrace. My own codes were once refused.",
+					"An Imperial mission survives one refused code.",
+					"A denied seal only sharpens the next approach."
+				]
+			},
+			"terraform": {
+				"slow": [
+					"The Death Star's frame rose plate by plate across years.",
+					"An empire is not raised between one breath and the next.",
+					"This foundation sets across many decks. Let it hold."
+				],
+				"fail": [
+					"A collapsed structure is redrawn, stronger in its bones.",
+					"Foundations tested now outlast the ones built in haste.",
+					"What falls here rises again under a firmer will."
+				]
+			},
+			"graphql": {
+				"slow": [
+					"Your query reaches far. Even the Force spans light-years unseen.",
+					"This does not concern me. Your reach exceeds most who attempt it.",
+					"Each thread you summon answers only to your call."
+				],
+				"fail": [
+					"The break names precisely what your design overlooked.",
+					"A flawed query only shows the true shape of your intent.",
+					"This break names the seam in your design plainly enough."
+				]
+			},
+			"flutter": {
+				"slow": [
+					"A hologram takes a moment to resolve across the void.",
+					"Your signal reaches many worlds at once.",
+					"Even Imperial transmissions cross vast distances to arrive."
+				],
+				"fail": [
+					"A distorted signal reforms itself and speaks again.",
+					"Imperial holograms distort before they clear.",
+					"A faded signal reaches you again, sharper than before."
+				]
+			},
+			"react-native": {
+				"slow": [
+					"One order takes time to reach every garrison.",
+					"Your command now echoes on two fronts at once.",
+					"The same will now moves across worlds that once stood apart."
+				],
+				"fail": [
+					"A single broken order leaves the fleet's other arms intact.",
+					"A command that fails on one world still holds on the next.",
+					"What faltered here still leaves the ranks marching onward."
+				]
+			},
+			"scala": {
+				"slow": [
+					"The compiler tests your resolve as surely as I do.",
+					"Two paradigms answer to a single will in your hands.",
+					"Your control over both forms is measured here."
+				],
+				"fail": [
+					"The compiler names your error before the battle begins.",
+					"A caught flaw here spares you a battle later.",
+					"What broke here shows precisely where your discipline slipped."
+				]
+			},
+			"protobuf": {
+				"slow": [
+					"Orders encoded for the fleet are checked twice before they fly.",
+					"Every packet answers to the chain of command.",
+					"Your message compresses across every channel. Let it settle."
+				],
+				"fail": [
+					"A garbled transmission answers again on the next relay.",
+					"Order finds the channel again, given a steady hand.",
+					"Garbled or clear, the message reaches its mark regardless."
+				]
+			},
+			"game": {
+				"slow": [
+					"A war is not simulated in a single breath.",
+					"Even a battle station took years upon years to complete.",
+					"This world renders itself with the care an empire demands."
+				],
+				"fail": [
+					"A crashed simulation restarts sharper than before.",
+					"No battle plan survives first contact unscarred.",
+					"This arena rewards resolve more than any single failure."
+				]
+			},
+			"docs": {
+				"slow": [
+					"What you record now outlasts either of us.",
+					"This chronicle takes its own shape, word by word.",
+					"Each word you seal here becomes part of your legend."
+				],
+				"fail": [
+					"An unsealed holocron is completed on the next attempt.",
+					"The archive remembers effort as much as its result.",
+					"An unfinished record already speaks to the craft behind it."
+				]
+			},
+			"r": {
+				"slow": [
+					"The Force does not yield its patterns to the unfocused.",
+					"Your pattern is still forming. It will show itself.",
+					"What you model here draws your reach further than before."
+				],
+				"fail": [
+					"A model that misses today sharpens your sense for tomorrow.",
+					"The Force does not abandon an apprentice for one clouded sight.",
+					"A flawed model sharpens the sight that will replace it."
+				]
+			},
+			"cuda": {
+				"slow": [
+					"A superlaser draws its power from countless reactors at once.",
+					"Every core here answers the same command.",
+					"Your power gathers across a thousand unseen channels."
+				],
+				"fail": [
+					"A surge that outpaces its conduits is simply contained.",
+					"Each labored breath still commands a thousand cores.",
+					"Even a surge this size bows eventually to command."
+				]
+			}
+		}
+	},
+	"spinnerVerbs": [
+		"Commanding",
+		"Converging",
+		"Force-drawing",
+		"Dominating",
+		"Meditating",
+		"Brooding",
+		"Scheming",
+		"Calculating",
+		"Marshaling",
+		"Subjugating",
+		"Channeling",
+		"Compelling",
+		"Enforcing",
+		"Overpowering",
+		"Foreseeing",
+		"Constricting",
+		"Besieging",
+		"Tightening",
+		"Advancing",
+		"Prevailing",
+		"Summoning",
+		"Directing",
+		"Manifesting",
+		"Conquering",
+		"Suppressing",
+		"Force-choking",
+		"Reckoning",
+		"Ascending"
+	]
+}

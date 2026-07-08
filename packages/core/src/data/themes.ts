@@ -1,4 +1,4 @@
-// The built-in theme catalog: 70 named entries of pure color data; the coloring algorithms live in render/.
+// The built-in theme catalog: 57 named entries of pure color data; the coloring algorithms live in render/.
 // houston is the guaranteed-present fallback (the config default is the "character" sentinel, which follows the
 // active pack's theme and falls back here). Every entry passes render/themeValidate (data/themes.test.ts gates it).
 
@@ -67,7 +67,7 @@ export const THEMES = {
 	},
 	solarizedDark: {
 		displayName: "Solarized Dark",
-		hues: [32, 36, 100, 136, 168],
+		hues: [32, 36, 178, 136, 168],
 		comment: [32, 36],
 		signals: { nominal: 46, caution: 136, critical: 167 },
 		separator: 100,
@@ -95,7 +95,7 @@ export const THEMES = {
 	},
 	materialPalenight: {
 		displayName: "Material Palenight",
-		hues: [111, 176, 117, 150, 217],
+		hues: [111, 141, 45, 220, 203],
 		comment: [60, 111, 176],
 		signals: { nominal: 150, caution: 214, critical: 217 },
 		separator: 150,
@@ -103,7 +103,7 @@ export const THEMES = {
 	nightOwl: {
 		// sep #5f7e97 → xterm 66 = RGB(95,135,135), chroma=40, max=135: passes without replacement
 		displayName: "Night Owl",
-		hues: [111, 176, 116, 149, 209],
+		hues: [111, 122, 222, 149, 203],
 		comment: [111, 116],
 		signals: { nominal: 149, caution: 214, critical: 209 },
 		separator: 66,
@@ -124,9 +124,9 @@ export const THEMES = {
 	},
 	darcula: {
 		displayName: "Darcula",
-		hues: [173, 67, 103, 65, 221],
+		hues: [173, 67, 103, 77, 221],
 		comment: [173, 103],
-		signals: { nominal: 65, caution: 221, critical: 203 },
+		signals: { nominal: 77, caution: 221, critical: 203 },
 		separator: 173,
 	},
 	xcodeDark: {
@@ -173,21 +173,21 @@ export const THEMES = {
 	},
 	everforest: {
 		displayName: "Everforest",
-		hues: [144, 180, 109, 108, 175],
+		hues: [149, 222, 115, 173, 174],
 		comment: [144, 174],
 		signals: { nominal: 108, caution: 180, critical: 167 },
 		separator: 144,
 	},
 	rosePine: {
 		displayName: "Rosé Pine",
-		hues: [181, 66, 152, 182, 216],
+		hues: [181, 74, 152, 182, 216],
 		comment: [60, 181, 182],
 		signals: { nominal: 46, caution: 214, critical: 181 },
 		separator: 66,
 	},
 	rosePineMoon: {
 		displayName: "Rosé Pine Moon",
-		hues: [174, 67, 152, 182, 216],
+		hues: [217, 75, 122, 183, 223],
 		comment: [60, 174, 182],
 		signals: { nominal: 46, caution: 214, critical: 174 },
 		separator: 174,
@@ -195,15 +195,14 @@ export const THEMES = {
 	kanagawa: {
 		// sep #54546d → xterm 59 = RGB(95,95,95), chroma=0, FAILS → replaced to 107 (teal-green)
 		displayName: "Kanagawa",
-		hues: [110, 103, 66, 107, 180],
+		hues: [110, 103, 79, 107, 180],
 		comment: [110, 103],
 		signals: { nominal: 107, caution: 180, critical: 203 },
 		separator: 107,
 	},
 	tomorrowNight: {
-		// #81a2be and #8abeb7 both quantize to 109; deduplicated to 4 hues
 		displayName: "Tomorrow Night",
-		hues: [109, 139, 143, 222],
+		hues: [110, 182, 149, 222, 167],
 		comment: [109, 139],
 		signals: { nominal: 46, caution: 214, critical: 203 },
 		separator: 143,
@@ -217,7 +216,7 @@ export const THEMES = {
 	},
 	iceberg: {
 		displayName: "Iceberg",
-		hues: [110, 140, 109, 144, 180],
+		hues: [110, 140, 149, 180, 174],
 		comment: [60, 110, 140],
 		signals: { nominal: 46, caution: 214, critical: 203 },
 		separator: 144,
@@ -261,7 +260,7 @@ export const THEMES = {
 	},
 	moonlight: {
 		displayName: "Moonlight",
-		hues: [111, 141, 117, 150, 222],
+		hues: [111, 177, 123, 211, 155],
 		comment: [104, 111, 141],
 		signals: { nominal: 150, caution: 222, critical: 203 },
 		separator: 150,
@@ -283,14 +282,14 @@ export const THEMES = {
 	},
 	spacegray: {
 		displayName: "Spacegray",
-		hues: [103, 139, 109, 144, 186],
+		hues: [111, 182, 114, 180, 174],
 		comment: [109, 139],
 		signals: { nominal: 46, caution: 214, critical: 203 },
 		separator: 144,
 	},
 	palenight: {
 		displayName: "Palenight",
-		hues: [176, 111, 117, 150, 209],
+		hues: [177, 117, 215, 150, 204],
 		comment: [60, 176, 111],
 		signals: { nominal: 150, caution: 214, critical: 209 },
 		separator: 209,
@@ -311,7 +310,7 @@ export const THEMES = {
 	},
 	githubDarkDimmed: {
 		displayName: "GitHub Dark Dimmed",
-		hues: [75, 183, 114, 215, 203],
+		hues: [75, 176, 78, 179, 174],
 		comment: [75, 183],
 		signals: { nominal: 114, caution: 215, critical: 203 },
 		separator: 215,
@@ -352,111 +351,17 @@ export const THEMES = {
 		signals: { nominal: 107, caution: 179, critical: 167 },
 		separator: 179,
 	},
-	githubLight: {
-		// hues are the saturated foreground keyword/string colors; all pass the visibility rule
-		displayName: "GitHub Light",
-		hues: [26, 98, 29, 130, 160],
-		comment: [26, 98],
-		signals: { nominal: 29, caution: 130, critical: 160 },
-		separator: 130,
-	},
-	solarizedLight: {
-		displayName: "Solarized Light",
-		hues: [32, 36, 100, 136, 168],
-		comment: [32, 168],
-		signals: { nominal: 46, caution: 136, critical: 167 },
-		separator: 100,
-	},
-	catppuccinLatte: {
-		displayName: "Catppuccin Latte",
-		hues: [99, 176, 27, 70, 202],
-		comment: [99, 176],
-		signals: { nominal: 70, caution: 214, critical: 203 },
-		separator: 70,
-	},
-	gruvboxLight: {
-		// sep #d5c4a1 → xterm 187 = RGB(215,215,175), chroma=40, max=215: passes without replacement
-		displayName: "Gruvbox Light",
-		hues: [136, 130, 100, 24, 95],
-		comment: [136, 130],
-		signals: { nominal: 46, caution: 136, critical: 95 },
-		separator: 187,
-	},
-	ayuLight: {
-		displayName: "Ayu Light",
-		hues: [209, 74, 106, 140, 204],
-		comment: [209, 74],
-		signals: { nominal: 46, caution: 214, critical: 209 },
-		separator: 106,
-	},
-	oneLight: {
-		displayName: "One Light",
-		hues: [69, 71, 127, 31, 136],
-		comment: [69, 127],
-		signals: { nominal: 71, caution: 136, critical: 203 },
-		separator: 136,
-	},
-	vscodeLightPlus: {
-		displayName: "VS Code Light+",
-		hues: [21, 128, 30, 29, 124],
-		comment: [28, 21, 30],
-		signals: { nominal: 29, caution: 214, critical: 124 },
-		separator: 124,
-	},
-	xcodeLight: {
-		// #272ad8 and #1c00cf both quantize to xterm 20; deduplicated to 4 hues
-		displayName: "Xcode Light",
-		hues: [133, 24, 20, 160],
-		comment: [66, 133, 20],
-		signals: { nominal: 46, caution: 214, critical: 160 },
-		separator: 160,
-	},
-	quietLight: {
-		displayName: "Quiet Light",
-		hues: [62, 131, 64, 97, 136],
-		comment: [62, 64],
-		signals: { nominal: 64, caution: 136, critical: 131 },
-		separator: 64,
-	},
-	tomorrowLight: {
-		displayName: "Tomorrow Light",
-		hues: [61, 97, 67, 64, 208],
-		comment: [61, 97],
-		signals: { nominal: 64, caution: 208, critical: 203 },
-		separator: 64,
-	},
-	blulocoLight: {
-		displayName: "Bluloco Light",
-		hues: [26, 99, 32, 29, 166],
-		comment: [26, 32],
-		signals: { nominal: 29, caution: 166, critical: 203 },
-		separator: 166,
-	},
-	rosePineDawn: {
-		displayName: "Rosé Pine Dawn",
-		hues: [174, 24, 67, 103, 179],
-		comment: [174, 103],
-		signals: { nominal: 46, caution: 179, critical: 174 },
-		separator: 179,
-	},
 	githubHCDark: {
 		displayName: "GitHub HC Dark",
-		hues: [75, 183, 77, 215, 210],
+		hues: [45, 135, 47, 220, 196],
 		comment: [75, 183],
 		signals: { nominal: 77, caution: 215, critical: 210 },
 		separator: 77,
 	},
-	githubHCLight: {
-		displayName: "GitHub HC Light",
-		hues: [25, 55, 22, 52, 124],
-		comment: [25, 55],
-		signals: { nominal: 22, caution: 214, critical: 52 },
-		separator: 22,
-	},
 	vscodeHighContrast: {
 		// comment [107, 74, 74] deduplicated to [107, 74]
 		displayName: "VS Code HC",
-		hues: [74, 175, 79, 187, 174],
+		hues: [45, 129, 118, 226, 203],
 		comment: [107, 74],
 		signals: { nominal: 79, caution: 214, critical: 203 },
 		separator: 74,
