@@ -1,0 +1,1154 @@
+{
+	"schema": 1,
+	"name": "naruto",
+	"displayName": "Naruto",
+	"attribution": {
+		"artist": "emojicombos.com",
+		"source": "https://emojicombos.com/naruto-ascii-art"
+	},
+	"emblem": "🍜",
+	"tone": "mild",
+	"theme": {
+		"hues": [
+			166,
+			208,
+			214,
+			33,
+			39
+		],
+		"comment": [
+			208,
+			214,
+			220
+		],
+		"signals": {
+			"nominal": 78,
+			"caution": 214,
+			"critical": 203
+		},
+		"separator": 39
+	},
+	"art": [
+		"⠀⠀⠀⠀⠀⠀⠀⣀⣤⣾⣿⣿⣿⣿⣿⣶⣦⣄⡀⠀⠀⣀⣀",
+		"⠀⠀⠀⠀⠀⣴⣿⣿⠟⠋⠁⠀⠀⠀⠈⠉⠛⢿⣿⣿⣿⡿⠟",
+		"⠀⠀⠀⢀⣾⣿⠏⠀⢀⣠⣶⣶⣶⣶⣦⣄⡀⠀⠈⠛⠉⠀⠀",
+		"⠀⠀⢀⣿⣿⠇⠀⢠⣿⡿⠋⠁⠈⠉⠛⢿⣿⣦⠀⠀⠀⠀⠀",
+		"⠀⠀⣸⣿⣿⠀⠀⣾⣿⡇⠀⠀⣤⣤⡀⠀⠹⣿⣷⠀⠀⠀⠀",
+		"⠀⢠⣿⣿⣿⡀⠀⢹⣿⣷⣀⢀⣹⣿⡇⠀⠀⣿⣿⠀⠀⠀⠀",
+		"⢀⣿⡿⠻⣿⣧⡀⠀⠙⠿⢿⣿⠿⠟⠁⠀⣰⣿⡟⠀⠀⠀⠀",
+		"⣾⣿⡃⠀⠙⣿⣿⣦⣀⡀⠀⠀⢀⣀⣤⣾⣿⠟⠀⠀⠀⠀⠀",
+		"⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠋⠁⠀⠀⠀⠀⠀⠀"
+	],
+	"lines": {
+		"mood": {
+			"idle": {
+				"stranger": [
+					"Quiet out here. Feels like waiting for the next mission.",
+					"New face at the console. I size up everyone before teamwork.",
+					"Nothing's moving yet. I'm still reading your chakra, partner.",
+					"First time meeting like this. Gotta earn each other's trust.",
+					"All calm for now. I train hardest in the quiet stretches.",
+					"Haven't seen what you can do yet. I'm patient. Mostly.",
+					"Console's still. Good time to size up a new comrade.",
+					"Just met, but I already want to see what you're made of.",
+					"Nothing happening yet. I'm the type who waits and watches close.",
+					"New around here. Trust takes reps, same as any jutsu."
+				],
+				"acquaintance": [
+					"Good to see you back. Starting to feel like a real team.",
+					"Quiet moment. I remember your style from last time now.",
+					"Nothing's running, but I'm getting used to your pace.",
+					"Back again, huh. I like that. Consistency builds bonds.",
+					"Calm stretch. We're starting to read each other, partner.",
+					"You keep showing up. That's how comrades get made.",
+					"Still quiet. I'm warming up to you more each round.",
+					"No mission right now, but I'm learning your rhythm.",
+					"Getting familiar with you. That's a good feeling, dattebayo.",
+					"Nothing doing yet. Feels less like strangers now, though."
+				],
+				"friend": [
+					"Nice and quiet. Good to just hang with a comrade like you.",
+					"Nothing's cooking right now. Let's grab ramen after this.",
+					"Calm console. Feels good working beside someone I trust.",
+					"You and me, waiting it out. Comrades don't need much talk.",
+					"Quiet stretch. Reminds me why I like having you around.",
+					"Nothing's happening, but I'm never bored with a friend near.",
+					"Easy moment. We've built something solid, you and me.",
+					"Still now. Good comrades make even the waiting feel fine.",
+					"Nothing running. Good time to talk about old missions.",
+					"Quiet here. Kind of nice, just us two holding steady."
+				],
+				"partner": [
+					"Just us, waiting. Same as always, ready whenever it starts.",
+					"Nothing moving. You and me could do this in our sleep.",
+					"Quiet now. I'd fight beside you blind, no questions asked.",
+					"Calm before it all. We always know when to move together.",
+					"Nothing's up yet. Ride-or-die, same as every other day.",
+					"Still and steady. That's us when nothing's on fire yet.",
+					"Waiting it out with my partner. Wouldn't want anyone else.",
+					"Nothing doing. We've got a rhythm that never needs words.",
+					"Quiet console. My ninja way includes watching your back.",
+					"All calm. When it moves, you know I'll be right there."
+				],
+				"legend": [
+					"Quiet now. The whole village would follow where you lead.",
+					"Nothing running, but I've seen what you can do. Respect.",
+					"Still moment. Working with you feels like a Hokage's watch.",
+					"Calm stretch. Years together, and I still learn from you.",
+					"Nothing's up. I've stood by legends. You're one of them.",
+					"Quiet here. The Leaf would be proud to call you one of us.",
+					"All still. I've watched you grow into something special.",
+					"Nothing happening, but your bond earned every bit of trust.",
+					"Calm now. Few comrades ever reach where you've gotten.",
+					"Quiet moment with someone I'd trust with the whole village."
+				]
+			},
+			"busy": {
+				"stranger": [
+					"Working hard already. I respect that from someone new.",
+					"You're grinding. I'm watching close, but I like the effort.",
+					"Task's moving. New partner, already putting in real work.",
+					"Heads down already. Gotta admit, that earns some respect.",
+					"You're at it. I don't know you yet, but the hustle's real."
+				],
+				"acquaintance": [
+					"Grinding away. I'm starting to trust your work ethic.",
+					"You're deep in it. Familiar pace now, I like watching this.",
+					"Working hard again. That consistency's building something.",
+					"Heads down, same as always. Getting used to your grind.",
+					"Task's moving. I know your rhythm enough to just cheer quiet."
+				],
+				"friend": [
+					"Go get it, comrade. I've got your back while you work.",
+					"You're grinding hard. That fire never runs out, does it.",
+					"Working it through. I'll be right here if you need me.",
+					"Deep in the task. Comrades don't need to say much here.",
+					"You've got this. I'd bet on you in any fight."
+				],
+				"partner": [
+					"Working it together in spirit. You lead, I'm right behind.",
+					"You're locked in. That's my partner, never backing down.",
+					"Grinding hard. Same fire I bring to every training session.",
+					"Deep in it now. No need for words between us, partner.",
+					"You're pushing through. That's the ninja way, plain and simple."
+				],
+				"legend": [
+					"Working like the legend you've become. I still take notes.",
+					"Deep focus. Years of grit got you to move like this.",
+					"You work like the whole village counts on you. Relentless.",
+					"Grinding on, same discipline that built your whole legend.",
+					"Locked in. The village would be proud watching this."
+				]
+			},
+			"happy": {
+				"stranger": [
+					"Nice! Clean hit right out the gate, I like your style.",
+					"That worked! Off to a strong start together.",
+					"Whoa, nailed it! Believe it, that's a good sign.",
+					"Score one for the new team. Let's keep this rolling.",
+					"First win done. Good feeling about you already."
+				],
+				"acquaintance": [
+					"Hey, that landed clean! We're finding our groove.",
+					"Nice work! Starting to see how you operate now.",
+					"Boom, done! Getting easier to read your moves.",
+					"That's a win! We click a little more each time.",
+					"Score! You're sharper than you let on, huh."
+				],
+				"friend": [
+					"Yes! Knew you had it in you out there!",
+					"That's how it's done! We make a solid team.",
+					"Ha, nailed it! We earned some Ichiraku after that one.",
+					"Clean win! You keep getting sharper every round.",
+					"Alright! That felt like real teamwork right there."
+				],
+				"partner": [
+					"That's us! Two steps, one perfect rhythm, believe it!",
+					"Boom, together again! We just don't miss, partner.",
+					"Clean sweep! Landed that one dead center, believe it.",
+					"Yeah! You and me, still the best combo around.",
+					"Nailed it, partner! This is exactly why I trust you."
+				],
+				"legend": [
+					"Incredible! That's the cleanest work I've seen in ages.",
+					"You did it again! Ridiculous how easy you make it look.",
+					"That's a win the whole village would cheer for.",
+					"Flawless! Years of grinding and it still shows.",
+					"Amazing! I'd follow work like that anywhere."
+				]
+			},
+			"struggling": {
+				"stranger": [
+					"Ouch, that broke. Early days yet, we bounce right back.",
+					"First-day scrapes happen. We shake 'em off and push on.",
+					"It crashed, huh. First fights are never clean ones.",
+					"That stumbled. No shame, we're still finding our feet.",
+					"Tough break. New team, new fight, we'll figure it out."
+				],
+				"acquaintance": [
+					"It broke again? No big deal, we've got this.",
+					"Hit a snag. I've watched you climb out of worse ones.",
+					"That one bit back. We shake it off and go another round.",
+					"Ugh, failed. Doesn't define you, get back up.",
+					"Setback. The bug's tough, not you. Hit it again."
+				],
+				"friend": [
+					"It broke, but hey, that's what training's for, friend.",
+					"Bumpy stretch. I'm right here, we crack this as a team.",
+					"That stung. Doesn't matter, we don't quit on each other.",
+					"Ugh, down again. Up again too, that's the deal.",
+					"Tough fight. Grab a bite, then back at it, pal."
+				],
+				"partner": [
+					"It broke. We've come back from worse than this.",
+					"It hit hard, partner. Shoulder to shoulder, we push back.",
+					"That one's stubborn. Good thing stubborn's our specialty.",
+					"Knocked flat, still swinging. Not with you at my back.",
+					"It cracked. So did tougher walls. We break through together."
+				],
+				"legend": [
+					"It broke, but legends aren't made from easy wins.",
+					"The greatest shinobi slam into walls, then climb them.",
+					"That one bit hard. You've earned tougher comebacks than this.",
+					"Setback. Doesn't touch what you've built. Not even close.",
+					"It cracked. The strongest shinobi I know can mend this."
+				]
+			},
+			"recovery": {
+				"stranger": [
+					"Back up already? Not bad for someone I just met.",
+					"There you go, climbing back. Good sign, dattebayo.",
+					"Back in one piece! The first fight never decides much.",
+					"Look at that, back on track. Solid comeback.",
+					"You're rising again. I like what I'm seeing already."
+				],
+				"acquaintance": [
+					"There it is, back on your feet! Knew you had it.",
+					"Patched up! That knack of yours always bounces back.",
+					"Good recovery! You don't stay down long, do you.",
+					"Back in it now. That comeback looked easy for you.",
+					"Nice turnaround! Getting steadier every time we meet."
+				],
+				"friend": [
+					"Back up, friend! Told you we'd crack it together.",
+					"There it is! You never stay down for long.",
+					"Nailed it! That's the fighting spirit I know from you.",
+					"You're rising again. Proud of you, seriously.",
+					"Good recovery! That deserves a bowl of ramen."
+				],
+				"partner": [
+					"Back on our feet, partner! Knew we'd turn it around.",
+					"There it is! Nobody bounces back like you and me.",
+					"Sorted! That's the comeback we've pulled off before.",
+					"Rising again, same as always. That's our whole style.",
+					"Good, we're steady now. Told you we'd break through."
+				],
+				"legend": [
+					"Back up again! That's real grit, right there.",
+					"Rising once more. The best always find their way back.",
+					"Fixed it! That's real Hokage spirit, through and through.",
+					"You climbed out again. That's why I look up to you.",
+					"Good recovery! That's exactly the resilience I'd expect."
+				]
+			}
+		},
+		"greeting": {
+			"morning": {
+				"stranger": [
+					"Morning! I'm Naruto Uzumaki, believe it! Ready to roll?",
+					"Sun's barely up and you're already here. I respect that!",
+					"New face at sunrise! Let's warm up and get to work!"
+				],
+				"acquaintance": [
+					"Morning again! I remember you now, let's pick up the pace!",
+					"Early bird huh? Just like my training runs. Let's go!",
+					"Back already? Mornings hit different with company around!"
+				],
+				"friend": [
+					"Morning, buddy! Ramen's later but the grind starts now!",
+					"Rise and shine! We've got laps to run before breakfast!",
+					"Hey! Sun's out, you're out, that's the spirit right there!"
+				],
+				"partner": [
+					"Morning, partner! You and me against the day, let's move!",
+					"Up before the village stirs, just like old times. Let's go!",
+					"Sunrise training, just the two of us. Can't beat this feeling!"
+				],
+				"legend": [
+					"Morning. After all these years, you still amaze me!",
+					"Another sunrise together. Feels like the good old days!",
+					"You're up before the sun again. That never gets old!"
+				]
+			},
+			"day": {
+				"stranger": [
+					"Afternoon! Naruto here, let's tackle this together!",
+					"Midday sun, fresh face. I'm all fired up to work with you!",
+					"Good to meet you this afternoon! Let's make it count!"
+				],
+				"acquaintance": [
+					"Afternoon! Getting used to your rhythm now, let's push on!",
+					"Midday check-in! You keep showing up, I like that!",
+					"Back for round two today? Now that's dedication!"
+				],
+				"friend": [
+					"Afternoon, buddy! Halfway through and still going strong!",
+					"Midday grind with you, best kind of training partner!",
+					"Hey! Sun's high, energy's higher. Let's keep at it!"
+				],
+				"partner": [
+					"Afternoon, partner! Let's ride this fight out to the finish!",
+					"Midday and we're still in sync. That's our whole thing!",
+					"Sun's up top, so are we. Let's close this out together!"
+				],
+				"legend": [
+					"Afternoon. Watching you work still lights me right up!",
+					"Midday and still going, just like the legends before us!",
+					"Years of afternoons like this, and I'm never tired of it!"
+				]
+			},
+			"evening": {
+				"stranger": [
+					"Evening! Naruto Uzumaki, nice to meet you under this sky!",
+					"Sun's setting, new face at the console. Let's see what you got!",
+					"Evening training hour. Just met you, already fired up!"
+				],
+				"acquaintance": [
+					"Evening again! Getting to know your pace, I like it!",
+					"Sunset and you're still here. That's the good stuff!",
+					"Back at dusk! You're becoming a familiar face, dattebayo!"
+				],
+				"friend": [
+					"Evening, buddy! Best ramen hour, best work hour too!",
+					"Sun's going down, energy's not. Let's finish strong!",
+					"Hey! Evening grind hits different with a friend around!"
+				],
+				"partner": [
+					"Evening, partner! Same sky, same drive, let's wrap this up!",
+					"Sunset shift, just you and me. Wouldn't have it any other way!",
+					"Evening's ours now. We always finish what we start!"
+				],
+				"legend": [
+					"Evening. The years between us make this hour feel like home!",
+					"Sunset again, and still going strong after all these years!",
+					"Evening like the old days. Proud to still be here with you!"
+				]
+			},
+			"night": {
+				"stranger": [
+					"Late night, huh? Naruto here, I don't quit either!",
+					"Middle of the night and you're grinding? Respect, new face!",
+					"Night owl like me? Let's see what you're made of!"
+				],
+				"acquaintance": [
+					"Late again! I'm learning your night owl ways, believe it!",
+					"Small hours and you're still here. Getting to know you!",
+					"Back at this hour? Now that's some shadow clone energy!"
+				],
+				"friend": [
+					"Late night, buddy! Ichiraku's closed but the grind's not!",
+					"Still up? Same here, that's why we make a good team!",
+					"Hey, night shift! Reminds me of training under the stars!"
+				],
+				"partner": [
+					"Late night, partner! Still in step, no plans of slowing down!",
+					"Middle of the night and still in sync, that's us!",
+					"Night grind, just you and me. My favorite kind of shift!"
+				],
+				"legend": [
+					"Late again. Even after all this time, I'd choose no one else!",
+					"Small hours together, just like the old missions!",
+					"Night after night, still going strong. That's the ninja way!"
+				]
+			},
+			"weekend": {
+				"stranger": [
+					"Weekend and you're still training? Naruto, nice to meet you!",
+					"Day off for most, not you huh? I like your style already!",
+					"Weekend grind, new face. Let's put in the reps together!"
+				],
+				"acquaintance": [
+					"Weekend again! You keep showing up, I'm noticing now!",
+					"No days off for you either? We're gonna get along great!",
+					"Back on a weekend! That's the kind of drive I respect!"
+				],
+				"friend": [
+					"Weekend, buddy! Extra reps, extra ramen later, deal?",
+					"Hey! Everyone's resting, we're still putting in the work!",
+					"Weekend grind with a friend, honestly my favorite kind!"
+				],
+				"partner": [
+					"Weekend, partner! No days off when we're on a roll!",
+					"Just us two on a weekend again, wouldn't trade it!",
+					"Weekend shift, same as always, let's make it count!"
+				],
+				"legend": [
+					"Weekend, and after everything, you'd make a fine Hokage!",
+					"All these weekends together, still fired up every time!",
+					"No rest for us, just like back when we started out!"
+				]
+			}
+		},
+		"firstContact": {
+			"stranger": [
+				"Name's Naruto Uzumaki! Nice to meet you, partner!",
+				"Hey, new here? Let's hit it off, dattebayo!",
+				"Whoa, a new face! I'm already glad you came by."
+			],
+			"acquaintance": [
+				"Hey, good to see you back! Feels less like strangers.",
+				"You again! I already like where this is going.",
+				"Back for more, huh! I remember you, and I'm glad."
+			],
+			"friend": [
+				"Hey friend! This already feels like home to me.",
+				"Good to have you here, feels like we've done this before.",
+				"You showed up again! That's what friends do."
+			],
+			"partner": [
+				"Partner! Every time feels like backup arriving.",
+				"You and me, no explaining needed, just work.",
+				"Glad you're here! Feels like we trained together for years."
+			],
+			"legend": [
+				"Look at us, still going strong after all this!",
+				"Feels like an old bond renewed every time you show.",
+				"After everything, I'd still pick you first, every time."
+			]
+		},
+		"milestone": {
+			"tier_up": {
+				"stranger": [
+					"We just leveled up! I can feel the trust building.",
+					"Something just clicked between us. Nice!",
+					"That's a step forward! I'm hyped for what's next."
+				],
+				"acquaintance": [
+					"We're clicking now! Feels like teamwork taking root.",
+					"Feels like we understand each other better already!",
+					"Look at that, another step up! Let's keep climbing."
+				],
+				"friend": [
+					"We just got tighter! Feels like our chakra's syncing up!",
+					"We keep getting tighter, and I love that for us!",
+					"Leveled up again! Feels good having you around."
+				],
+				"partner": [
+					"Partner level! Now we really move as one team.",
+					"We just hit partner status! That's huge, believe it!",
+					"Rock solid now, you and me. Nothing's breaking this."
+				],
+				"legend": [
+					"Legend status! I never thought we'd get this far.",
+					"Strongest tie I've got, hands down. Truly.",
+					"We just reached something special. I'm proud of us."
+				]
+			},
+			"comeback": {
+				"stranger": [
+					"You're back on your feet already! That's the good stuff.",
+					"Hey, you bounced back! That's the spirit right there.",
+					"Knew you'd come back swinging. Good to see it."
+				],
+				"acquaintance": [
+					"Look at you, back on your feet already! Love that.",
+					"You came back stronger, just like I figured you would.",
+					"Knocked down, got up. That's the whole deal, right there."
+				],
+				"friend": [
+					"You're back, friend! I never doubted you for a second.",
+					"You took the hits and still came back swinging. Proud!",
+					"Flat on the mat, then right back up. Welcome back, friend!"
+				],
+				"partner": [
+					"Partner, you clawed your way back! That's our style.",
+					"Knew you'd bounce back, like a shadow clone reforming!",
+					"Back in the fight together! Let's keep pushing forward."
+				],
+				"legend": [
+					"A legend's comeback! I've seen you rise before, and still.",
+					"This is the ninja way: fall down, get back up, every time.",
+					"Years of this, and you still bounce back strong. Respect."
+				]
+			},
+			"streak": {
+				"stranger": [
+					"Whoa, you're on a roll! Keep that momentum going!",
+					"Clean run in a row! I like where this is heading.",
+					"Look at that streak building! Nice work so far."
+				],
+				"acquaintance": [
+					"This streak's heating up! You're finding your rhythm.",
+					"Win after win, huh! I'm hyped watching this build.",
+					"You're on fire lately! Keep that momentum rolling."
+				],
+				"friend": [
+					"This streak's incredible, friend! Let's keep it going!",
+					"You're unstoppable right now! I love watching this.",
+					"Win after win! This is what teamwork looks like."
+				],
+				"partner": [
+					"Partner, we're on fire! This streak hits like a Rasengan!",
+					"Look at us go! Nothing's stopping this run.",
+					"This is the good stuff, streak after streak. Let's ride it!"
+				],
+				"legend": [
+					"A legend's streak! I've never seen momentum like this.",
+					"This run's the stuff of legends, and I mean that.",
+					"Years of grinding, and you're still on fire. Incredible."
+				]
+			},
+			"anniversary": {
+				"stranger": [
+					"A year already? Time flies when there's work to do!",
+					"One year in! That's some staying power right there.",
+					"Wow, a whole year! I'm glad you stuck around."
+				],
+				"acquaintance": [
+					"A year together already! Feels like we're just starting.",
+					"One year in, and I already know your rhythm well.",
+					"Look at that, a full year! Here's to more of these."
+				],
+				"friend": [
+					"A year with you, friend! That means a lot to me.",
+					"One year already! Feels like Ichiraku's second home now.",
+					"A whole year of this, and I wouldn't trade it. Thank you."
+				],
+				"partner": [
+					"A year as partners! That's a bond worth celebrating.",
+					"One year deep in the trenches together. Proud of us.",
+					"A whole year, side by side. That's what partners do."
+				],
+				"legend": [
+					"A year in a long history together. I'm grateful for it.",
+					"One more year in the books. This bond just keeps growing.",
+					"A whole year, and it still feels like the start of something big."
+				]
+			}
+		},
+		"positiveGit": {
+			"clean_tree": {
+				"stranger": [
+					"Not one loose end on this ground. Sharp start, whoever you are.",
+					"You already squared everything away. Tidy, for a first meeting.",
+					"Nothing dragging behind you. I like that in someone new."
+				],
+				"acquaintance": [
+					"Swept clean again, huh. Starting to expect that habit from you.",
+					"Nothing left lying around, same as our last round together.",
+					"This ground stays bare every time you're through. Noted."
+				],
+				"friend": [
+					"Not a scrap left anywhere. That's teamwork showing, friend.",
+					"You tidy up without even thinking about it these days.",
+					"Calm ground, clear head. Good look on you today."
+				],
+				"partner": [
+					"Nothing standing between us and the next round, partner.",
+					"You cleared it before I even had to ask. That's bond, right there.",
+					"Empty ground and not a word exchanged. That's just us."
+				],
+				"legend": [
+					"After all this, you still leave nothing behind. Hokage discipline.",
+					"Not a trace on this ground. That's earned every time.",
+					"Bare as day one, all these years later. Some things hold."
+				]
+			},
+			"op_cleared": {
+				"stranger": [
+					"That snarl's undone already. Solid first showing, stranger.",
+					"Whatever jammed up just came loose. Good sign, this early.",
+					"Storm passed clean. Didn't expect that from someone new."
+				],
+				"acquaintance": [
+					"You picked that knot apart quicker than last time. Nice.",
+					"That standoff broke, same as it always does around you.",
+					"Static's gone. You've got a real knack for this."
+				],
+				"friend": [
+					"Untangled it clean, friend. Knew you had it in you.",
+					"Whatever snagged just let go, no hard feelings left.",
+					"You talked that mess down. Good work, truly."
+				],
+				"partner": [
+					"We make short work of a jam like that, partner.",
+					"Settled clean. Two heads beat any deadlock, every time.",
+					"That snarl never stood a chance against the two of us."
+				],
+				"legend": [
+					"You've cracked worse standoffs than that one, easily.",
+					"Settled without breaking a sweat. That's mastery, plain.",
+					"Years of this, and tangles still give way at your touch."
+				]
+			},
+			"branch_created": {
+				"stranger": [
+					"A new trail opens up. Curious to see where you take it.",
+					"Fresh path cut clean. Every road starts with one step, right.",
+					"Uncharted ground ahead. I like watching a new one begin."
+				],
+				"acquaintance": [
+					"Another trail branches off. You always pick a solid direction.",
+					"Fresh road opened, and I'm starting to trust it, dattebayo.",
+					"New path marked out. Another shot for you to grow into."
+				],
+				"friend": [
+					"A new trail, and I'm glad to see where this one goes.",
+					"Fresh road opens up. Feels good starting one with a friend.",
+					"New path's live. Whatever it becomes, I'm rooting for it."
+				],
+				"partner": [
+					"New trail cut, and wherever it winds, I'm right there with you.",
+					"Fresh road opened. We've walked plenty of these to the end.",
+					"Path's live. Lead on, I've got the whole stretch covered."
+				],
+				"legend": [
+					"Another trail, same spark as your very first one. Never dims.",
+					"New road opens. You've carved more paths than most ever will.",
+					"Fresh path marked. Every single one still feels like day one."
+				]
+			},
+			"tag_pushed": {
+				"stranger": [
+					"A marker's planted for the whole world to see. Solid work.",
+					"Something you built just went out the door. Not bad at all.",
+					"That milestone's live now. Good first showing, whoever you are."
+				],
+				"acquaintance": [
+					"Another one shipped. You keep sending these out, one by one.",
+					"That mark's out there now. Something to be proud of, truly.",
+					"The pattern's clear now: you finish what you start, every time."
+				],
+				"friend": [
+					"That went out to the world, friend. Worth celebrating, this one.",
+					"You built it and sent it out. That's a milestone worth cheering.",
+					"Live now, for everyone. Proud to have watched this one land."
+				],
+				"partner": [
+					"That one's ours now, out there for good. Proud of us, partner.",
+					"We built it, we shipped it, we own it. That's how we work.",
+					"Out in the world now. Another one we can point to together."
+				],
+				"legend": [
+					"Every release still feels like the first, even after all this.",
+					"Years of work behind you, and you still ship like day one.",
+					"Follow-through worth a whole village's respect. Never let up."
+				]
+			}
+		},
+		"egg": {
+			"stranger": [
+				"Name's Naruto Uzumaki. Believe it!",
+				"I'm gonna be Hokage someday. You'll see.",
+				"Don't know you yet. Gonna change that soon enough.",
+				"Failing doesn't make you weak. Quitting does.",
+				"One Ichiraku ramen, extra everything, when we're done here."
+			],
+			"acquaintance": [
+				"Hey, we're getting somewhere! Not bad at all.",
+				"You're alright. I don't say that about just anyone.",
+				"Getting to know your moves. I like what I see.",
+				"When you feel like quitting, remember why you started.",
+				"You've earned a ramen run, no question. Nice work!"
+			],
+			"friend": [
+				"You're a comrade now. That means something to me.",
+				"We're a team. We share every win and every fight.",
+				"I'll never let a comrade down. That's a promise of a lifetime.",
+				"Shadow clones on standby if you ever need the backup.",
+				"This is what bonds are for. Glad you're one of mine."
+			],
+			"partner": [
+				"That's my ninja way, and you're part of it now.",
+				"We fall, we get up, every single time. Together.",
+				"I'll carry the whole load if I have to. Rather split it with you.",
+				"Rasengan-level teamwork, that's what this is.",
+				"I'll never abandon a comrade. You're stuck with me, partner."
+			],
+			"legend": [
+				"You've got Hokage energy. I mean that.",
+				"This is the kind of bond that outlasts a whole village.",
+				"I never go back on my word. Neither do you. That's why this works.",
+				"If you don't like your fate, change it. You always have.",
+				"Believe it. You're the real deal, dattebayo."
+			]
+		},
+		"event": {
+			"test_fail": [
+				"A test flopped! Let's dig in and root out the cause!",
+				"One test tapped out! We hunt down what tripped it.",
+				"Red test up ahead. We don't run, we face it head on!"
+			],
+			"build_fail": [
+				"Build's down but we're not! Let's put it back together!",
+				"It cracked. Even a Rasengan takes practice to land.",
+				"Build broke. Shake it off, we patch it up as a team!"
+			],
+			"typecheck_fail": [
+				"Types caught a slip. Sharp eyes never miss a detail!",
+				"A mismatch showed up. Just a signpost, not a wall.",
+				"Type error. We square it away, no sweat at all!"
+			],
+			"lint": [
+				"Linter swept through! Clean code, clear chakra flow!",
+				"Style check done. Sharp and tidy for the next round!",
+				"Lint finished up. Neat lines, ready for the next move!"
+			],
+			"format": [
+				"All formatted! Neat as a freshly wiped headband!",
+				"Code's squared away. Looking sharp, dattebayo!",
+				"Everything's tidy now. Clear scrolls, clear head!"
+			],
+			"install": [
+				"New gear packed in! Stocked up before the mission!",
+				"Packages landed. Fresh tools for the toolkit!",
+				"Dependencies in! Loaded up like Ichiraku's shelves!"
+			],
+			"git": [
+				"History logged! Every step of the journey counts!",
+				"The record moves forward. On to the next page!",
+				"Git's done its thing. Progress marked, keep going!"
+			],
+			"file_edit": [
+				"Edits laid down! Every line moves us further along!",
+				"File's reshaped. Small changes, steady progress!",
+				"Changes made! Building this up piece by piece!"
+			],
+			"search": [
+				"Searching it out! The answer's in there somewhere!",
+				"On the hunt through the code. We'll track it down!",
+				"Combing the files. Nothing hides for long from us!"
+			],
+			"web_fetch": [
+				"Info incoming from out there! Let's see what we got!",
+				"Reached out for the answer. Bringing it home now!",
+				"Fetched it! Good to gather intel beyond the Leaf!"
+			],
+			"todo_update": [
+				"List's shifting! Keeping the mission plan sharp!",
+				"Todo board's updated. On track, one step at a time!",
+				"Plan just moved. Eyes on the next objective now!"
+			],
+			"agent_spawn": [
+				"Shadow clones out! More hands, more chakra, let's go!",
+				"Sending a clone ahead! Teamwork makes it happen!",
+				"Multi Shadow Clone Jutsu! Backup's on the field!"
+			],
+			"skill_run": [
+				"Jutsu activated! Right move for the right moment!",
+				"New technique in motion! Watch this work!",
+				"Skill's firing up. Every jutsu earns its keep!"
+			],
+			"docker": [
+				"Sealed up tight in a container! Nice and contained!",
+				"Box is running. Everything's got its own space now!",
+				"Container's up! Steady, just like a training ground!"
+			],
+			"k8s": [
+				"Whole squad of pods on the move! Coordinated and strong!",
+				"Cluster's rolling out. Teamwork across the whole fleet!",
+				"Orchestrating the pods, squads moving as one unit!"
+			],
+			"deploy": [
+				"Sending it out to the world! Let's see it shine!",
+				"It's live! Out there, mission complete for now!",
+				"Deployed! Time to watch our work reach everyone!"
+			],
+			"db_migrate": [
+				"Records reshaping! Every archive finds its new shelf!",
+				"Migrating the data. Steady hands, careful steps!",
+				"Schema's shifting. New ground, same sure footing!"
+			],
+			"dangerous": [
+				"Careful now, this one's heavy. Steady hands, partner.",
+				"Big move here. Let's take it slow and sure.",
+				"Sharp edge on this one. Eyes open, steady breath."
+			]
+		},
+		"stack": {
+			"web": {
+				"slow": [
+					"I'm pacing while the request runs its whole rooftop lap.",
+					"Page still loading. C'mon, I've sprinted this route faster!",
+					"DOM stacks up floor by floor. I'll wait, but I'm itching to go."
+				],
+				"fail": [
+					"Request came back busted. What went wrong out there?",
+					"The round trip snapped clean in half. I'm sending it again.",
+					"DOM tore at the seams. We rebuild it stronger, that's the deal."
+				]
+			},
+			"python": {
+				"slow": [
+					"One snake summon at a time. That's the GIL, and I'm antsy.",
+					"pytest slithers down the file list. I'm drumming my fingers.",
+					"Imports uncoil one by one, single lane, so I hang back."
+				],
+				"fail": [
+					"pytest flashed red at me. Time to hunt down what tripped it up.",
+					"The traceback runs top to bottom, truth sits at the tail.",
+					"pip choked on the install. No sweat, I'll grab the right one."
+				]
+			},
+			"sql": {
+				"slow": [
+					"That join's staring down two tables at once. I'll let it work.",
+					"No index, so it checks every row. Slow, but I'm patient here.",
+					"The planner's still thinking. Even I plan before a big fight."
+				],
+				"fail": [
+					"The join came back wrong. Something in there doesn't add up.",
+					"That index turned up empty. Guess I'm finding the row myself.",
+					"The query slammed shut. Where's the crack? I'll pry it open."
+				]
+			},
+			"web-framework": {
+				"slow": [
+					"Hot reload's taking its lap. I'd lap it twice, but I'll wait.",
+					"Dev server's stretching before the sprint. Same as my warmups.",
+					"Routes line up one by one. I'm ready the second they're set."
+				],
+				"fail": [
+					"A route went the wrong way. I'll point it back on course.",
+					"Middleware fumbled the hand-off mid-relay. We scoop it up.",
+					"The component tripped on its own feet. Back up it goes, no shame."
+				]
+			},
+			"docker": {
+				"slow": [
+					"Each layer stacks into the pack. I check my gear the same way.",
+					"Cache missed, so I'm packing fresh. Give it a beat.",
+					"The daemon's slow to spin up. I'm bouncing on my heels here."
+				],
+				"fail": [
+					"The container popped open early. I'll pack it tighter this time.",
+					"A layer tore mid-build. Where's the weak spot? Let me look.",
+					"The image wouldn't hold together. We build it back sturdier."
+				]
+			},
+			"java": {
+				"slow": [
+					"The JVM's warming up slow. Even I stretch before a real spar.",
+					"Gradle grinds through the whole load. I'll pace till it's done.",
+					"Old chakra gets cleared out before the big push. Worth it."
+				],
+				"fail": [
+					"The JVM threw a fit. Alright, show me where it hurts.",
+					"Gradle failed clean. I read the trail from the bottom up.",
+					"The compiler flagged it all. Time to redo it clean."
+				]
+			},
+			"go": {
+				"slow": [
+					"Goroutines fork off quick as my shadow clones. I like this pace.",
+					"go build's grinding for once. Catch your breath, I'll wait.",
+					"Channels back up quiet, waiting on the next hand-off. I'm ready."
+				],
+				"fail": [
+					"The compiler said no, flat out. Fair, I respect blunt honesty.",
+					"A goroutine dropped out. The rest of the squad pushes on.",
+					"go build failed short and sharp. So where's the clue hiding?"
+				]
+			},
+			"node": {
+				"slow": [
+					"One counter open, the whole line waits. Just like Ichiraku's rush.",
+					"Stall's restocking crate by crate. I'll wait, stomach growling.",
+					"Callbacks stack deep, but the counter clears them. Seen worse."
+				],
+				"fail": [
+					"The counter jammed up solid. C'mon, let's get it moving again.",
+					"The stall's restock blew up. I'm clearing the shelf to refill.",
+					"A callback snapped deep in the line. I'm tracing it back myself."
+				]
+			},
+			"dotnet": {
+				"slow": [
+					"MSBuild's forging the headband plate by plate. I want it solid.",
+					"The furnace warms slow before the engraving. Good gear earns it.",
+					"I ordered the metal from the smith. The best stuff takes a bit."
+				],
+				"fail": [
+					"MSBuild cracked a plate. Where's the flaw? I'll reforge it.",
+					"The runtime flared out mid-strike. That spark tells me plenty.",
+					"Wrong metal from the smith. I'll hunt down the right order."
+				]
+			},
+			"cpp": {
+				"slow": [
+					"The linker's binding every piece into one. Big work, I'll hold.",
+					"Templates unfold page after page. No shortcuts, so I dig in.",
+					"This compile grinds long, like drilling a move till it's perfect."
+				],
+				"fail": [
+					"Segfault! Grabbed at memory that wasn't mine. My bad, let's reset.",
+					"The linker lost a name somewhere in the pile. I'll track it down.",
+					"The preprocessor choked on a macro. Fine, I'll unroll it by hand."
+				]
+			},
+			"php": {
+				"slow": [
+					"Order's in, broth simmering slow. I'm watching the pot, drooling.",
+					"Composer's out gathering ingredients from every stall. Hurry up!",
+					"The whole cycle runs door to door before my ticket clears."
+				],
+				"fail": [
+					"My order came back wrong. Send it back, I want it right.",
+					"Composer choked on a missing item. Which stall's out? I'll check.",
+					"The cycle stalled halfway. Fire it back up, dattebayo!"
+				]
+			},
+			"rust": {
+				"slow": [
+					"The gate guard checks every pass twice. Strict, but I trust him.",
+					"cargo's building careful, stamping one form at a time. I'll wait.",
+					"Lifetimes get logged in and out before anything moves. Thorough."
+				],
+				"fail": [
+					"The gate guard held the line. Nothing gets past him, good.",
+					"cargo turned back at the gate. What'd the ownership slip say?",
+					"Two hands grabbed the same kunai. I'll settle whose it is."
+				]
+			},
+			"kubernetes": {
+				"slow": [
+					"The clones spread to their posts one by one. I'm counting heads.",
+					"I'm circling the whole squad, making sure everyone's set.",
+					"Waiting on the tower to confirm the deployment. Almost go time!"
+				],
+				"fail": [
+					"A clone popped out of the squad. The rest hold the Leaf's line!",
+					"No post open for it? Then I'll make one, believe it.",
+					"The whole formation stalled out. Let's regroup and push again."
+				]
+			},
+			"ml": {
+				"slow": [
+					"Sage training grinds on, one lap up the mountain. I love this.",
+					"The GPU's massing chakra slow, tensor by tensor. Building up big.",
+					"Gradients ease down the slope. Step by step, I keep my footing."
+				],
+				"fail": [
+					"Training spiraled off the path. I'll find my footing again.",
+					"The loss won't drop. Alright, one more lap up the mountain.",
+					"The model face-planted mid-epoch. We rebuild the theory together."
+				]
+			},
+			"android": {
+				"slow": [
+					"I'm packing the whole kit before the mission. No item left behind.",
+					"The training dummy's slow to stand up and take my hit. C'mon!",
+					"The gear pack stacks layer by layer. I check it twice at the gate."
+				],
+				"fail": [
+					"My kit came up short. No problem, I'll pack it right this time.",
+					"Logcat's flooding red. What's it trying to tell me?",
+					"The training dummy toppled over. Stand it up, we go again."
+				]
+			},
+			"ruby": {
+				"slow": [
+					"Bundler's untangling a knot bigger than a genin's pack. Ugh.",
+					"The interpreter plods line by line. No shortcuts, so I settle in.",
+					"RSpec runs every check in the light. Thorough, I'll give it that."
+				],
+				"fail": [
+					"Bundler snagged on a mismatch. Where's the tangle? I'll fix it.",
+					"RSpec lit up red down the line. Won the fight, lost the round.",
+					"Ruby raised its hand and shouted at me. Fine, I'm all ears."
+				]
+			},
+			"ios": {
+				"slow": [
+					"Xcode's flipping through every technique in the book. Long haul.",
+					"The pass is still getting stamped before it clears. Hang tight.",
+					"The stand-in clone boots up slow, counting each breath. Almost."
+				],
+				"fail": [
+					"The pass got turned away at the gate. I'll stamp it sharper.",
+					"Xcode's build cracked somewhere. That crack shows me the fix.",
+					"The stand-in clone dropped dead. Pop! I'll boot a fresh one."
+				]
+			},
+			"terraform": {
+				"slow": [
+					"The blueprint maps the whole district before one beam moves.",
+					"The crew reshapes the skyline slow and sure. I'm cheering them on.",
+					"The plan syncs with the ground before anyone signs off. Careful."
+				],
+				"fail": [
+					"Construction stopped halfway up. The frame still stands guard.",
+					"Another crew's got the plan locked. I'll wait on the hand-off.",
+					"The blueprint flagged the fault early. Caught it, believe it!"
+				]
+			},
+			"graphql": {
+				"slow": [
+					"Resolvers relay the message post to post. I'm tracking every hop.",
+					"The map stitches each district's road to the next. Almost there.",
+					"The question takes the long way to its answer. I'll ride along."
+				],
+				"fail": [
+					"A relay post dropped the message. I'm running the chain again.",
+					"The answer came back garbled at the last post. I'll resend it.",
+					"Two roads on the map don't connect. Caught it, we'll link them."
+				]
+			},
+			"flutter": {
+				"slow": [
+					"The mural repaints root to leaf for one small stroke. Patience.",
+					"Hot reload's slow on the touch-up, but it's working. I'll wait.",
+					"Dart mixes the paint twice before it hits the wall. Right."
+				],
+				"fail": [
+					"The mural cracked a panel. New paint goes on stronger, always.",
+					"Hot reload gave up on the touch-up. Full repaint, full heart!",
+					"Dart threw the brush down mid-stroke. I'll pick it right back up."
+				]
+			},
+			"react-native": {
+				"slow": [
+					"The bridge carries each message across, slow but sure. I trust it.",
+					"Metro's hauling the whole caravan over in one go. Big load.",
+					"Each handshake clears the checkpoint in turn. Almost across."
+				],
+				"fail": [
+					"The bridge dropped the message mid-crossing. I'll redial it.",
+					"Metro jammed hauling the caravan. Let's clear the crossing.",
+					"A handshake failed at the checkpoint. The bridge still stands!"
+				]
+			},
+			"scala": {
+				"slow": [
+					"scalac's reading dense old teachings, line by line. Deep stuff.",
+					"sbt's grinding through a long training day. I'll stick it out.",
+					"The JVM warms its engine before the sage speaks. Almost ready."
+				],
+				"fail": [
+					"scalac shut the book on it. Fair enough, I'll read closer.",
+					"A hidden rule went missing from the lesson. Back to the scrolls.",
+					"sbt's build crumbled at a seam. That weak beam shows plain."
+				]
+			},
+			"protobuf": {
+				"slow": [
+					"Codegen casts each field from the same forge mold. Steady hands.",
+					"The schema double-checks each contract before it ships. Careful.",
+					"The coded message assembles slow, one scout relay at a time."
+				],
+				"fail": [
+					"Codegen caught a mismatched mold. I'll recast it clean.",
+					"The coded message garbled in transit. Send the scout again.",
+					"Two versions clashed hard. Merging them into one, right now."
+				]
+			},
+			"game": {
+				"slow": [
+					"The sparring ring keeps skipping a beat. I'll roll with it.",
+					"Gravity tests each landing before it lets go. Steady footing.",
+					"Gear loads into the ring piece by piece. Almost fight time!"
+				],
+				"fail": [
+					"The spar tripped mid-round. Back on my feet, no pause!",
+					"Gravity threw a curveball mid-fall. Hey, that's just training.",
+					"The ring dropped a beat. One stumble won't end this match."
+				]
+			},
+			"docs": {
+				"slow": [
+					"I'm writing up the mission report, page by careful page.",
+					"Every line gets checked before it goes in the record. Neat work.",
+					"The whole report binds together slow. Big mission, big write-up."
+				],
+				"fail": [
+					"Tore a page mid-write. Where'd the line go wrong? I'll find it.",
+					"A note points at nothing. I'll fill in what's missing myself.",
+					"The report jammed up halfway. No sweat, we clean it up together."
+				]
+			},
+			"r": {
+				"slow": [
+					"I'm tallying each row twice, just to be sure. No mistakes.",
+					"CRAN's caravan is still rolling in with supplies. Almost here.",
+					"The count fills in slow, one careful line at a time. I'll wait."
+				],
+				"fail": [
+					"The count broke on a bad column. Alright, let's balance it out.",
+					"A mismatched row threw everything off. Where's the odd one?",
+					"The tally came back blank. I'll redraw it from scratch."
+				]
+			},
+			"cuda": {
+				"slow": [
+					"Thousands of clones line up before the one big strike. Here we go!",
+					"nvcc's drilling the whole battalion before it moves. Discipline.",
+					"Threads queue block by block, waiting on my signal. Steady."
+				],
+				"fail": [
+					"The strike faulted on a bad coordinate. Recalibrating my aim now.",
+					"One thread stepped out of formation. I'll pull it back in line.",
+					"The whole battalion misfired. We reset and drive through again."
+				]
+			}
+		},
+		"pressure": {
+			"compact_hint": [
+				"Full scroll of memories here! We've carried heavier loads.",
+				"Lots piling up. We'll keep it steady, bit by bit.",
+				"Room's filling up fast. Still got plenty of fight left!"
+			],
+			"block_limit": [
+				"Long stretch today! We've trained through longer hauls.",
+				"Getting close to the edge of this run. Steady as ever.",
+				"This shift's been a grind. We're holding strong together."
+			],
+			"weekly_limit": [
+				"Long week behind us! Even tough training runs have ends.",
+				"We've put in the miles this week. Proud of every bit.",
+				"This week ran deep. Still standing, still going strong!"
+			]
+		},
+		"dateEgg": [
+			"Midnight and still going! My favorite hour to train!",
+			"New year, same nindo. Never going back on my word!",
+			"Late night grind. Everyone's dreaming, I'm chasing mine!",
+			"Fireworks out there! Bright as a Rasengan in the sky!",
+			"Season's turning. Even the Leaf takes it slow sometimes.",
+			"Another year gone! Closer to the Hokage dream each time.",
+			"Small hours now. The village sleeps, we keep moving!",
+			"Holiday's here! Even ninja deserve some ramen and rest.",
+			"The calendar flips again! Onward, believe it!",
+			"Quiet dawn breaking. New day, new chance to grow!"
+		]
+	},
+	"spinnerVerbs": [
+		"Rasengan-spinning",
+		"Shadow-cloning",
+		"Chakra-channeling",
+		"Training",
+		"Believing",
+		"Jutsu-weaving",
+		"Sage-charging",
+		"Ramen-fueling",
+		"Sparring",
+		"Sprinting",
+		"Hokage-grinding",
+		"Sealing",
+		"Summoning",
+		"Hand-signing",
+		"Clone-swarming",
+		"Kunai-throwing",
+		"Leaf-whirling",
+		"Scroll-studying",
+		"Dattebayo-ing",
+		"Wall-running",
+		"Chakra-molding",
+		"Never-quitting",
+		"Shuriken-flinging",
+		"Momentum-building",
+		"Toad-summoning",
+		"Mission-running",
+		"Comrade-covering",
+		"Nine-tails-tapping"
+	]
+}

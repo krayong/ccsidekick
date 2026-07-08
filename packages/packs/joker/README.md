@@ -1,6 +1,7 @@
 # Joker pack
 
-> Fan-made tribute. Character names and likenesses are trademarks of their respective owners; this pack is an unofficial, non-commercial homage, not affiliated with or endorsed by them.
+> Fan-made tribute. Character names and likenesses are trademarks of their respective owners; this
+> pack is an unofficial, non-commercial homage, not affiliated with or endorsed by them.
 
 🤡 **Joker** — a reactive ccsidekick character, _edgy_ in tone.
 
@@ -14,12 +15,12 @@
 ⢸⣿⣿⣿⣿⣿⣿⣶⣶⣶⣶⣿⣿⣿⣿⣿⣶⣦⣄⠀⠀⠀
 ⢾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡀⠀
 ⠸⣿⣿⣿⣿⣿⣿⡟⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠋⠙⣿⣦
-⠀⢻⣿⡟⠉⠛⠻⠿⠿⢿⣿⣿⣿⠟⠛⠁⠀⠒⠀⣀⣻⣿
+⠀⢻⣿⡟⠉⠛⠻⠿⠿⢿⣿⣿⣿⠟⠛⠁⠐⠒⠀⣀⣻⣿
 ⠀⠘⣿⣇⣀⠀⠐⠒⠒⠀⣀⣹⣿⣦⡄⣀⣀⢠⣾⣿⡟⣱
 ⠀⠀⠸⣿⡿⠷⣶⣤⣴⣷⣽⣿⣿⣿⣿⣿⣿⣿⣿⡿⠇⠟
-⠀⠀⠀⠉⠻⡄⠻⢿⣿⣿⣿⣌⡙⠋⣉⣼⣿⠟⠛⢃⠟⠀
-⠀⠀⠀⠀⠀⠘⠆⠈⣉⣉⣛⡛⢛⣓⠋⠁⣠⣴⡿⠁⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⢿⣿⣿⣯⣵⣾⡟⠛⠀⠀⠀
+⠀⠀⠀⠙⠻⡄⠻⢿⣿⣿⣿⣌⡙⠋⣉⣼⣿⠟⠛⢃⠟⠀
+⠀⠀⠀⠀⠀⠙⣇⠈⣉⣉⣛⡛⢛⣓⠋⠁⣠⣴⡿⠁⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠙⠻⢿⣿⣿⣿⣯⣵⣾⡟⠛⠀⠀⠀⠀
 ```
 
 ## Voice
@@ -36,7 +37,10 @@ One representative line per pool:
 - **stack**: The page hangs there, mid-breath. A held silence, lovely.
 - **pressure**: My skull's getting crowded in here. Delicious pressure.
 - **dateEgg**: Midnight already? My best ideas keep banker's hours.
-- **spinnerVerbs**: Scheming, Cackling, Plotting, Unraveling, Conspiring, Shuffling, Dealing, Detonating, Meddling, Provoking, Igniting, Misbehaving, Corrupting, Toying, Rigging, Bluffing, Juggling, Sharpening, Prying, Grinning, Prowling, Tinkering, Sowing chaos, Grandstanding, Cooking up, Unhinging, Wisecracking, Double-dealing
+- **spinnerVerbs**: Scheming, Cackling, Plotting, Unraveling, Conspiring, Shuffling, Dealing,
+  Detonating, Meddling, Provoking, Igniting, Misbehaving, Corrupting, Toying, Rigging, Bluffing,
+  Juggling, Sharpening, Prying, Grinning, Prowling, Tinkering, Sowing chaos, Grandstanding, Cooking
+  up, Unhinging, Wisecracking, Double-dealing
 
 ## Attribution
 

@@ -293,7 +293,7 @@ function build(
 	// ── Derive: session → persona → the rest ────────────────────────────────────
 	// The candidate set for a random pick with an empty roster is the full bundled registry (`PACKS`); it never
 	// needs a filesystem scan, since every pack ships with the engine.
-	const persona = derivePersona(config, sessionState, session, PACKS);
+	const persona = derivePersona(config, sessionState, session, PACKS, attribution);
 	const loaded = loadPack(persona);
 	const pack = loaded.ok ? loaded.pack : null;
 
@@ -438,6 +438,7 @@ function build(
 			upsertAttribution(root, String(session), {
 				project: String(project),
 				character: persona,
+				updatedMs: clock.now(),
 			});
 		});
 		if (!isDefault) {

@@ -6,6 +6,8 @@ import { analyticsDir, atomicWrite, readJson, withLock } from "./storage";
 export interface AttributionEntry {
 	readonly project: string;
 	readonly character: string;
+	/** Last tick (ms) this row was written; the recency signal for LRU character assignment. Absent on legacy rows. */
+	readonly updatedMs?: number;
 }
 
 /** `sessionId → { project, character }`. Never GC'd; powers per-Character familiarity tiers. */
@@ -24,7 +26,11 @@ function coerceStore(raw: unknown): Record<string, AttributionEntry> {
 		const project = entry["project"];
 		const character = entry["character"];
 		if (typeof project === "string" && typeof character === "string") {
-			out[key] = { project, character };
+			const updatedMs = entry["updatedMs"];
+			out[key] =
+				typeof updatedMs === "number" ?
+					{ project, character, updatedMs }
+				:	{ project, character };
 		}
 	}
 	return out;
@@ -52,7 +58,10 @@ export function upsertAttribution(root: string, sessionId: string, rec: Attribut
 		`${path}.lock`,
 		() => {
 			const store = coerceStore(readJson<unknown>(path, undefined));
-			store[sessionId] = { project: rec.project, character: rec.character };
+			store[sessionId] =
+				rec.updatedMs !== undefined ?
+					{ project: rec.project, character: rec.character, updatedMs: rec.updatedMs }
+				:	{ project: rec.project, character: rec.character };
 			atomicWrite(path, JSON.stringify(store));
 		},
 		() => {

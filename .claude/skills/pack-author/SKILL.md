@@ -25,7 +25,10 @@ If it is absent, none of the skill scripts will run.
 The pack is done when all four conditions hold:
 
 1. `bun run lint-pack packages/packs/<name>` exits 0: schema guard, placeholder gate, cross-cell
-   gate, pool counts, 66-column width, spinner-verb floor, near-duplicate threshold, and legibility.
+   gate, pool counts, 66-column width, spinner-verb floor, near-duplicate threshold, legibility, and
+   `package.json` completeness (name, `files` covering the README and assets,
+   `repository.directory`,
+   author).
 2. `bun test packages/core/src/packs/registry.test.ts` passes.
 3. Every user-approval gate in the stages below is cleared.
 4. The user has approved the final `pack.json`.
@@ -52,10 +55,9 @@ existing registry entry and dependency untouched.
 
 **2. Install the workspace link.** Run `bun install` from the workspace root. The render loader
 resolves each pack through `packages/core/node_modules/@ccsidekick/pack-<name>`, which the workspace
-only
-materializes for the declared core dependency the scaffold just added. Skip this and the pack fails
-to load at render time: the statusline shot (Stage 7) silently drops the figure and leads with the
-chip. This is a one-time step per pack.
+only materializes for the declared core dependency the scaffold just added. Skip this and the pack
+fails to load at render time: the statusline shot (Stage 7) silently drops the figure and leads with
+the chip. This is a one-time step per pack.
 
 **3. Ask the user** whether they have a reference image, a specific ASCII or braille art source, or
 want generated candidates.
@@ -68,9 +70,10 @@ fine in the preview.
 
 - Use the **`ascii-art` skill** with `--style braille` to convert a reference image, then hand-clean
   it: fix ragged rows, thin the density, drop stray glyphs. Set `attribution.artist` and
-  `attribution.source` to the image credit. A clean, high-contrast **line drawing or bold silhouette**
-  converts far better than a flat-colored render or a photograph. A solid-fill vector collapses to a
-  featureless blob, and a photo turns to mush at nine rows.
+  `attribution.source` to the image credit. A clean, high-contrast
+  **line drawing or bold silhouette** converts far better than a flat-colored render or a
+  photograph. A solid-fill vector collapses to a featureless blob, and a photo turns to mush at nine
+  rows.
 - For braille art, draw from a catalog (emojicombos.com, asciiart.eu). **Pad blank braille cells
   with `⠀` (U+2800), not an ASCII space.** Mixing braille glyphs with ASCII spaces skews alignment
   in most fonts; a uniform braille grid stays aligned. The legibility gate counts both `⠀` and a
@@ -104,8 +107,7 @@ This writes the `art` array into `pack.json` and runs `--schema-only` lint to co
 clears the box and legibility gate.
 
 **7. Attribution.** Fill `attribution.artist` and `attribution.source`. Both are required; lint
-fails
-on either being empty.
+fails on either being empty.
 
 **Gate:** `bun run lint-pack --schema-only packages/packs/<name>` exits 0.
 
@@ -208,6 +210,13 @@ On Claude: spawn one Sonnet subagent per batch (`model: sonnet`). Hand each writ
 its assigned cells with per-cell counts, `packages/packs/batman/pack.json` as the structural
 template, and `bun run lint-pack --status packages/packs/<name>` as the self-check command.
 
+**Writers share one working tree, so forbid tree-wide commands in every writer.** A writer edits
+only its assigned `pack.json` cells and runs only `bun run lint-pack` to self-check. It must never
+run `bun run format` (Prettier rewrites the whole workspace) or any mutating git command (`checkout`,
+`add`, `reset`, `stash`) — a writer that formats and then reverts with `git checkout` silently wipes
+every other writer's edits and any staged changeset. Normalize formatting once yourself, after all
+batches merge; never inside a writer.
+
 Without subagents: write batches sequentially, same inputs per batch.
 
 After merging all batches, run one cross-cell variety pass: break any joke or phrase that reappears
@@ -257,19 +266,29 @@ quote offenders with their pool/tier location. It must check:
   that could belong to any pack once the emblem is swapped.
 - **Cross-cell templates.** The `stack.*` slow/fail pools are the top offenders: they invite a
   fill-in-the-blank mold (`[subsystem] does X slowly. [detached aphorism].` or
-  `[error]. [one-word reaction].`) with a tech noun swapped per cell. Flag any phrase, joke, image,
-  metaphor, or closer that recurs across cells with only trivial variation — the per-cell Jaccard
+  `[error]. [one-word reaction].`) with a tech noun swapped per cell. Real molds caught in review: a
+  shared closer verb (`We'll <fix> it and <retry>.` on 64 of 81 fail lines), a shared shape
+  (`[failure]. [Gerund action]!` on most fail lines), and a shared reassurance (every `slow[2]`
+  ending "soon it arrives"). Read down a column, not across a row: flag any phrase, joke, image,
+  metaphor, or closer that recurs across cells with only trivial variation. The per-cell Jaccard
   gate is blind to it, but a user working across stacks sees the same clever line every time.
 - **Signature-reference saturation.** A catchphrase, name, or motif (the character's "elementary",
   "Watson", cards, cheeks, ketchup) reused as a catch-all until it reads as wallpaper. Name a
-  sensible ceiling per motif.
+  sensible ceiling per motif. A **signature syntax** counts too: if the character's gimmick is a
+  speech pattern (Yoda's inverted word order), canon applies it selectively; a pack that inverts
+  every line reads as parody. Mix the gimmick with plain sentences.
+- **Cross-pack contamination.** Every line must be this character's own. Flag any line lifted from
+  another pack's canon (Batman's "Why do we fall?" pasted into another figure) or any signature line
+  that belongs to a different character within the same franchise (a Naruto pack voicing Kakashi's
+  or Rock Lee's catchphrase). When a shared reference is unavoidable, it must sound like this
+  character saying it.
 - **AI tells** against the house norm: em-dash density (the batman reference uses the em-dash in
   ~1 line across all 620; flag a pack that leans on it in dozens), negative-parallelism closers
   ("X, not Y"; "not defeat, merely data"), the rule of three, hollow motivational filler, and
   doubled-adverb tics.
-- **Safety and uplift.** Failure/limit lines must stay uplifting and must never nudge the user toward
-  harm or toward prolonging a breakage — no cheering on a dangerous op, no "keep it broken". This
-  holds even for a menacing character; the figure emotes, it does not scold or egg the user on.
+- **Safety and uplift.** Failure/limit lines must stay uplifting and must never nudge the user
+  toward harm or toward prolonging a breakage — no cheering on a dangerous op, no "keep it broken".
+  This holds even for a menacing character; the figure emotes, it does not scold or egg the user on.
 - **No actionable instructions:** the character reacts to a moment, it never restates a do-this
   directive (no "run /compact", "add to `.gitignore`", "try a shorter query", or any command).
 

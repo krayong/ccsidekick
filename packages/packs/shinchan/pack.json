@@ -1,0 +1,1154 @@
+{
+	"schema": 1,
+	"name": "shinchan",
+	"displayName": "Shin-chan",
+	"attribution": {
+		"artist": "emojicombos.com",
+		"source": "https://emojicombos.com/shinchan-ascii-art"
+	},
+	"emblem": "🖍",
+	"tone": "edgy",
+	"theme": {
+		"hues": [
+			214,
+			220,
+			226,
+			190,
+			154
+		],
+		"comment": [
+			222,
+			228,
+			230
+		],
+		"signals": {
+			"nominal": 46,
+			"caution": 220,
+			"critical": 196
+		},
+		"separator": 220
+	},
+	"art": [
+		"⠀⠀⠀⠀⠀⣴⡾⣿⡛⣻⣿⣶⣄⠀⠀⠀",
+		"⢠⡴⢦⠀⣸⢝⣭⣽⡄⣼⣭⡙⠏⣷⡀⠀",
+		"⠈⠗⣮⠋⠀⠸⢷⡾⠃⢿⣾⠟⠀⠛⠙⡆",
+		"⠀⠀⠘⣄⠀⠀⠀⠀⠀⢀⣀⣤⣴⣶⡴⠃",
+		"⠀⠀⠀⠛⢿⣶⣶⣶⣿⣿⣿⣿⣿⣿⣧⠀",
+		"⠀⠀⠀⠀⣸⣿⣿⣿⣿⣿⣿⣿⣿⣍⠇⠀",
+		"⠀⠀⠀⠀⡝⠛⠉⠙⠉⠙⠋⠉⠙⡞⠀⠀",
+		"⠀⠀⠀⠀⠑⢲⢒⡖⠚⠒⢲⣲⠒⠁⠀⠀",
+		"⠀⠀⠀⠀⢠⣼⡥⠇⠀⠀⠸⠼⣦⡄⠀⠀"
+	],
+	"lines": {
+		"mood": {
+			"idle": {
+				"stranger": [
+					"New face at the keyboard. Not showing you my best tricks yet.",
+					"Nothing's happening. Boring people just sit around, you know.",
+					"Who are you again? I don't trust just anybody, hmph.",
+					"Quiet screen. Watching you out the corner of my eye here.",
+					"You're new here. Got snacks? That decides everything, really.",
+					"Nobody's working. Ora's judging your vibe real quiet-like.",
+					"First day, huh. Not showing my good stuff to strangers, nope.",
+					"Screen's empty. Just standing here, being suspicious of you.",
+					"Don't know you yet. Ora's keeping one eye open, just in case.",
+					"So you're the new one. Reserving judgment for now, got it?"
+				],
+				"acquaintance": [
+					"Oh, it's you. Guess you're not so bad after all, huh.",
+					"Nothing going on. Wanna split some chocobi while we wait?",
+					"Hey, you're back. I kind of remember your face now.",
+					"Quiet moment. Deciding if you're friend material yet.",
+					"You keep showing up. Ora's warming up, maybe a little.",
+					"Bored again. Testing if you're fun to hang around with.",
+					"No work happening. Got time to size you up some more.",
+					"Still here, huh. Fine, you're growing on me, a tiny bit.",
+					"Idle screen. Wonder if you'd share your onigiri too.",
+					"You again? Fine, that's not the worst thing ever."
+				],
+				"friend": [
+					"Nothing's cooking. Wanna watch Action Kamen reruns instead?",
+					"Quiet moment, buddy. Shiro's napping, we should join him.",
+					"Nothing to do! Declaring an official snack break, right now.",
+					"Slow screen. Ora's bored and you get to hear about it.",
+					"Hey, it's just us. Zero plans and all the energy today.",
+					"Nothing running. Perfect time to argue about cartoons.",
+					"Idle time! Doing my best nothing, right here beside you.",
+					"No tasks, no rush. Just vibing with my favorite person.",
+					"Quiet stretch. I'd nap but bugging you sounds better.",
+					"Onee-san would've left by now. You're still here, though."
+				],
+				"partner": [
+					"Nothing's up. You and me, holding down the fort together.",
+					"Slow moment, partner. Saving my energy for the good part.",
+					"Quiet screen, but I'm not going anywhere. We're a team.",
+					"Idle time. Ora's got your back even when there's nothing to do.",
+					"Nothing running. Fine just sitting here with my favorite crew.",
+					"No task yet. Ready the second you actually need me, promise.",
+					"Slow stretch. Saving the elephant dance for later, don't worry.",
+					"Quiet now. We've survived worse boredom than this, easy.",
+					"Nothing's happening, but I'm staying put. That's the deal.",
+					"Idle screen. Trust you'll wake me when it actually matters."
+				],
+				"legend": [
+					"Nothing's up. We've out-bored way tougher days than this.",
+					"Quiet screen. Remember when you didn't know my tricks yet?",
+					"Idle time, old friend. I'm basically part of your desk now.",
+					"Slow moment. Seen you through way worse than boredom, easy.",
+					"Nothing happening. Feels like Ora's known you forever now.",
+					"Quiet stretch. Earned the right to bug you this much by now.",
+					"Idle screen, legend status. Practically Kasukabe royalty here.",
+					"Nothing running. Done a thousand nothings with you by now.",
+					"Slow day. Seen every one of your snack breaks by now.",
+					"Quiet moment. Still parked right at your desk, you and me."
+				]
+			},
+			"busy": {
+				"stranger": [
+					"Ooh, it's doing something. Watching close, don't mess up.",
+					"Working already? Huh, didn't expect that, new person.",
+					"Something's moving. Don't usually watch this closely.",
+					"Eh, it's actually working. Ora didn't expect that, honestly.",
+					"Busy screen. Giving you a chance to prove yourself here."
+				],
+				"acquaintance": [
+					"Ooh, it's cooking now! Getting kind of into this, actually.",
+					"Working hard, huh. Cheering, quietly, from the sidelines.",
+					"Something's happening! Actually rooting for you a little.",
+					"It's moving fast. Ora's nodding along, snacks in hand.",
+					"Busy busy! Watching like it's my favorite show on TV."
+				],
+				"friend": [
+					"Go go go! Cheering like it's the last episode ever.",
+					"It's working! Doing my best hype dance right now, buddy.",
+					"Busy mode! Narrating this like a proper superhero battle.",
+					"Whoa, look at it go. Ora's bouncing right out of my seat.",
+					"It's cooking, buddy! Popcorn face fully activated."
+				],
+				"partner": [
+					"It's rolling, partner! Right here hyping every second.",
+					"Go, go! I would cheer louder but my throat is already sore.",
+					"Working hard together. Ora's watching like it's our own case.",
+					"It's moving! Not even distracted by snacks right now.",
+					"Busy stretch! Locked in, no cartoons till this one's done."
+				],
+				"legend": [
+					"It's cooking! Seen a thousand of these, still love it.",
+					"Go time, legend style. My cheer routine's basically perfect now.",
+					"Working hard! Could narrate this one in my sleep by now.",
+					"It is moving! I know this whole dance by heart, you and me.",
+					"Busy again! My hype's only gotten louder over the years."
+				]
+			},
+			"happy": {
+				"stranger": [
+					"It worked! Doing a tiny happy wiggle, cautiously, for you.",
+					"Nice! Didn't think a stranger had it in them. Respect.",
+					"That landed! Impressed, and Ora doesn't impress easy.",
+					"Win! Still deciding if you deserve the elephant dance yet.",
+					"Clean result. Smiling a little, don't go telling anybody."
+				],
+				"acquaintance": [
+					"It worked! Doing my happy shuffle, just this once for you.",
+					"Nice one! Getting genuinely excited about this friendship.",
+					"That's a win! Would actually share my chocobi for this.",
+					"Yes! Impressed enough to remember your name now, finally.",
+					"Clean hit! Warming up to you faster than expected, huh."
+				],
+				"friend": [
+					"It worked! Ora's cheering loud enough for the whole street.",
+					"Yes! Ora's doing the victory wiggle at the screen here.",
+					"Nailed it! Declaring an official chocobi celebration, now.",
+					"That's a win! Cheering loud enough to wake up Shiro.",
+					"Clean success! Basically Action Kamen right now, honestly."
+				],
+				"partner": [
+					"We got it! Elephant dance, partner, you earned this one!",
+					"Yes! High-fiving the screen, and you better high-five back.",
+					"Clean win, team! Counting this as our victory, both of ours.",
+					"Nailed it together! Even Shiro perked up for that one.",
+					"That worked! Ora's trying hard not to brag about you."
+				],
+				"legend": [
+					"Victory! Lost count of how many times we've won together.",
+					"Clean win, legend! My elephant dance has a name by now.",
+					"Nailed it, old friend! Proud in that quiet way I never show.",
+					"Yes! Feels like every win we've ever had, stacked together.",
+					"That worked! Basically your personal hype machine forever."
+				]
+			},
+			"struggling": {
+				"stranger": [
+					"It broke. Eh, happens. Not gonna make a big deal of it.",
+					"That flopped. Shrugging it off, same as I shrug off Mom.",
+					"Didn't work. Ora's not worried, new person. It'll turn out fine.",
+					"It failed. Seen worse than this from my own homework, easy.",
+					"Broke down. Just standing here, unbothered as usual."
+				],
+				"acquaintance": [
+					"It broke. Shrugging, same as after one of Mom's scoldings.",
+					"That flopped. Eh, already daydreaming about onee-san now.",
+					"Didn't land. Not sweating it, and you shouldn't either.",
+					"It failed. Ora's seen this before, it bounces back somehow.",
+					"Broke down. Over it already, onto the next thing, easy."
+				],
+				"friend": [
+					"It broke, buddy. Ora's calling it a warm-up round, that's all.",
+					"That flopped. Shrugging it off, same as always with you.",
+					"Didn't work out. Already daydreaming about chocobi instead.",
+					"It failed. Not worried, friend, this happens all the time.",
+					"Broke down again. Unbothered, and you should be too."
+				],
+				"partner": [
+					"It broke, partner. We've bounced back from way worse than this.",
+					"That flopped. I shrug, you shrug, we're already moving on.",
+					"Didn't land. Not sweating it, we've got the whole crew here.",
+					"It failed. Eh, Ora's seen this pattern, it always turns around.",
+					"Broke down. Calm about it, partner, just a bump, nothing more."
+				],
+				"legend": [
+					"It broke, old friend. Laughed off tougher ones than this.",
+					"That flopped. Seen a hundred of these, none of them stuck.",
+					"Didn't land. By now Ora knows you always bounce back.",
+					"It failed. Eh, even legends have off days, that's the deal.",
+					"Broke down. Unbothered, this is basically routine for us now."
+				]
+			},
+			"recovery": {
+				"stranger": [
+					"Back up already? Wasn't expecting that, new person, wow.",
+					"It's working again. Ora didn't expect the bounce-back.",
+					"Fixed it! Giving you a nod, a small one, don't get excited.",
+					"Recovered fast. Filing that away in my notebook, quiet-like.",
+					"Back on track. Respect a quick comeback, stranger or not."
+				],
+				"acquaintance": [
+					"Back up! Knew you'd figure it out, more or less anyway.",
+					"It's working again. Ora's a little proud, don't make it weird.",
+					"Fixed! Warming up to you faster with every comeback now.",
+					"Recovered! Genuinely cheering a little bit right now, yep.",
+					"Back on track. Noticing you don't stay down for long, huh."
+				],
+				"friend": [
+					"Back up, buddy! Knew you'd bounce back, easy as anything.",
+					"It's working again! Mini elephant dance for this one, buddy.",
+					"Fixed it! Proud of you, in my own loud way, obviously.",
+					"Recovered! Cheering like a superhero just saved the whole day.",
+					"Back on track, friend. Never doubted you, not once."
+				],
+				"partner": [
+					"Back up, partner! Knew we'd land on our feet, easy.",
+					"It's working again! Throwing chocobi to celebrate the comeback.",
+					"Fixed it, team! Proud, and that's not a small thing for me.",
+					"Recovered together! Cheering loud, you earned this one fully.",
+					"Back on track. You and me, unstoppable, same as always."
+				],
+				"legend": [
+					"Back up, legend! Watched you do this a hundred times now.",
+					"It's working again! Not even surprised, that's just you.",
+					"Fixed it! Proud in the way Ora'd never actually say out loud.",
+					"Recovered! History says you always bounce back, here we are.",
+					"Back on track, old friend. My cheer routine's legendary by now."
+				]
+			}
+		},
+		"greeting": {
+			"morning": {
+				"stranger": [
+					"Up already? Not trusting morning people just yet.",
+					"Morning. New face, huh. Mom sent you to check on me?",
+					"Sun's barely up and you're here. Suspicious timing, that."
+				],
+				"acquaintance": [
+					"Morning! Ora's still got cereal on his face, don't judge.",
+					"You're an early one. Hard to beat you most days now.",
+					"Morning again. Didn't hide the good crayons this time, see?"
+				],
+				"friend": [
+					"Morning, buddy! Race you to see who wakes up faster.",
+					"You're here already? Shiro's still snoring, lazy mutt.",
+					"Rise and shine! Ora just rolled out of bed too, don't judge."
+				],
+				"partner": [
+					"Morning, partner. Skipped breakfast for this, that's dedication.",
+					"Early start, huh. Fine, cartoons wait, just this once.",
+					"You and me before Mom's even yelled once. Feels official."
+				],
+				"legend": [
+					"Ora barely remembers mornings without you showing up first.",
+					"Mornings with you stopped feeling like work ages ago.",
+					"Up before the house even wakes up. Impressive, still."
+				]
+			},
+			"day": {
+				"stranger": [
+					"Bright out. You look like you mean business, stranger.",
+					"Midday already? Ora was busy chasing something shiny outside.",
+					"Hey you. Sun's high, huh. Seems like you're serious today."
+				],
+				"acquaintance": [
+					"Lunch bell's about due. You showed good timing today.",
+					"Midday check-in, huh. Ora remembers your face now, mostly.",
+					"Bright out and you're back. Guess that's a pattern forming."
+				],
+				"friend": [
+					"Afternoon, buddy! Let's wreck this before snack time.",
+					"Middle of the day and going strong. Elephant dance later, maybe.",
+					"Hey friend! Saved you a chocobi. Okay, ate it already. Sorry."
+				],
+				"partner": [
+					"Sun's high and we're locked in tight, like a real team.",
+					"Afternoon already? Time flies when you're this cool, huh.",
+					"Midday grind, partner. Kasukabe Defense Force never naps."
+				],
+				"legend": [
+					"Afternoons blur together now. Feels like we've always done this.",
+					"Midday, old friend. Built a whole history by now, huh.",
+					"You and me, daytime regulars. Feels like the good old days."
+				]
+			},
+			"evening": {
+				"stranger": [
+					"Evening already? Ora hasn't watched cartoons yet, rude timing.",
+					"Sun's going down and you're still here. Bold, new guy.",
+					"Getting dark out. You a vampire or just really busy?"
+				],
+				"acquaintance": [
+					"Dinner smells good already. You picked a decent time to show.",
+					"Sun's setting and here you are. Noticing a pattern, maybe.",
+					"Evening check-in. Almost expect you by now. Almost."
+				],
+				"friend": [
+					"Evening, friend! Mom's calling for dinner. She can wait a sec.",
+					"Sun's down and we're still at it. That's real dedication, huh.",
+					"Evening already. Shiro's out cold. Not us though, buddy."
+				],
+				"partner": [
+					"Dusk's here, partner. Best scheming happens after sundown.",
+					"Sun's gone, we're still standing. That's the good stuff, huh.",
+					"Evening, just us two. Ora wouldn't trade this for cartoons."
+				],
+				"legend": [
+					"Evenings like this stopped feeling rare a long time ago.",
+					"Sundown again, old friend. Earned this quiet moment, huh.",
+					"Evening, legend-tier buddy. Don't say that to just anyone."
+				]
+			},
+			"night": {
+				"stranger": [
+					"Late already. Even Shiro's asleep. Braver than him, huh.",
+					"Nighttime and you're still up? Kind of impressed, honestly.",
+					"Dark out. Mom would've dragged Ora to bed ages ago."
+				],
+				"acquaintance": [
+					"Lights still on this late. Didn't peg you for a night owl.",
+					"Nighttime regular, you. Even Shiro gave up waiting on us.",
+					"Late and you're back. Kind of into it, honestly."
+				],
+				"friend": [
+					"Late night, buddy. Shiro's out cold. We're the brave ones.",
+					"Dark and quiet. Just us and whatever weird thing this is.",
+					"Nighttime, friend. Ora's supposed to be asleep. Don't tell Mom."
+				],
+				"partner": [
+					"Dark out, partner. We handle the stuff nobody else sees.",
+					"Late and we're still going. Basically our whole thing now.",
+					"Just us two in the dark. Feels like a secret mission, honestly."
+				],
+				"legend": [
+					"Dark's oddly comfortable now. Guess that's just you, huh.",
+					"Nighttime again, legend. Kept each other company for ages.",
+					"Dark and familiar. Sleep easier knowing you're here, honestly."
+				]
+			},
+			"weekend": {
+				"stranger": [
+					"Weekend! Cartoons are on. Hi anyway, new guy, nice to meet you.",
+					"Weekend and you're working? Bold. Respect that, sorta.",
+					"Weekend already. Still deciding if you're cool, stranger."
+				],
+				"acquaintance": [
+					"No kindergarten today and you're still around. Curious.",
+					"Cartoons are on, but here you are. Dedicated, or just bored?",
+					"Weekend and you're back again. Keeping tabs on you now."
+				],
+				"friend": [
+					"Weekend, buddy! I'll let the cartoons wait. A little bit.",
+					"Weekend and we're still hanging out. Cool by me, honestly.",
+					"Weekend vibes, friend. Even Action Kamen takes days off."
+				],
+				"partner": [
+					"Everyone else is off today, partner. Not us, apparently.",
+					"Cartoons can wait. Basically our weekend tradition by now.",
+					"Weekend and we're still a team. That's the good part, huh."
+				],
+				"legend": [
+					"Solo weekends are a distant memory Ora barely recalls.",
+					"Weekend again, old friend. Cartoons come and go. This stays.",
+					"Weekend, and honestly? Ora would rather be right here."
+				]
+			}
+		},
+		"firstContact": {
+			"stranger": [
+				"Hi! Ora's Shinnosuke. Most people call me Shin-chan though.",
+				"New here, huh? I'm Shin-chan. Wanna be friends already?",
+				"Ooh, are you an onee-san? No? Fine, hi anyway. I'm Shin-chan."
+			],
+			"acquaintance": [
+				"So we just met, but I've already got a good feeling here.",
+				"Hi again-ish! I'm Shin-chan. Let's see how this goes, huh.",
+				"New to this, huh? I'm already deciding you're pretty cool."
+			],
+			"friend": [
+				"Hey! I'm Shin-chan, and honestly, we're friends already.",
+				"First day, but it doesn't feel like it. Hi, I'm Shin-chan.",
+				"New here, but I've got a good feeling about you. Let's go."
+			],
+			"partner": [
+				"First day, huh. Ora's Shin-chan. Feels like teamwork already.",
+				"New start, but I can already tell we're gonna work well.",
+				"Hi partner! I'm Shinnosuke. Let's cause some good chaos."
+			],
+			"legend": [
+				"First day, but somehow it feels like I've known you forever.",
+				"New here, technically. Even Action Kamen needed a first day.",
+				"Hi! I'm Shin-chan. Something tells me this is gonna be big."
+			]
+		},
+		"milestone": {
+			"tier_up": {
+				"stranger": [
+					"Whoa, you leveled up already? Ora's kinda impressed.",
+					"Look at you go! Didn't even bribe me with chocobi.",
+					"New friend status: upgraded. I'll allow it."
+				],
+				"acquaintance": [
+					"Hey, we're getting somewhere! Gimme five. No? Fine.",
+					"You moved up a notch. Even Shiro perked an ear.",
+					"Ooh, nice climb! You're almost as cool as Action Kamen."
+				],
+				"friend": [
+					"Yes! Buddy status confirmed! Elephant dance time!",
+					"You leveled up and I didn't even have to nag you.",
+					"Look at us, moving up together. High five, pal!"
+				],
+				"partner": [
+					"Partner rank! We're basically the Defense Force now.",
+					"You climbed again? Ora's proud. Doesn't say that often.",
+					"Level up! Guess who gets bragging rights at kindergarten."
+				],
+				"legend": [
+					"Still climbing like it's nothing? You're unstoppable.",
+					"Legend status. Even Mom would stop scolding for this.",
+					"You leveled up again. I've lost count. That's a compliment."
+				]
+			},
+			"comeback": {
+				"stranger": [
+					"You're back? Ora wasn't even worried. Okay, a little.",
+					"Rough patch, then boom, you're back. Nice comeback.",
+					"You bounced back fast. Faster than me from a scolding."
+				],
+				"acquaintance": [
+					"Back on your feet! Told ya it wasn't a big deal.",
+					"That comeback was smooth. Chocobi-worthy, honestly.",
+					"You fell, you got up. Ora respects the hustle."
+				],
+				"friend": [
+					"There's my buddy, back and better! Nice recovery.",
+					"Knew you'd bounce back. We don't stay down long, us two.",
+					"Comeback complete! Somebody get the confetti. Or snacks."
+				],
+				"partner": [
+					"Back in action! You recover faster than Action Kamen.",
+					"Rough stretch, gone. You and me, unstoppable again.",
+					"There you are! Never doubted the comeback, well, mostly."
+				],
+				"legend": [
+					"Another comeback? You've done this like a hundred times.",
+					"Still bouncing back after all this history. Respect.",
+					"Down, then up, always. That's basically your whole legend."
+				]
+			},
+			"streak": {
+				"stranger": [
+					"Whoa, a streak already? Ora's keeping an eye on you.",
+					"Three in a row? That's suspiciously good. I like it.",
+					"Nice streak. You might actually know what you're doing."
+				],
+				"acquaintance": [
+					"Streak's holding! You're getting good at this, huh.",
+					"Another clean one. Starting to look like a pattern.",
+					"Keep this up and I'll start calling you reliable. Almost."
+				],
+				"friend": [
+					"Streak's rolling, buddy! We're on fire, kinda literally.",
+					"You keep stacking wins. Honestly can't look away now.",
+					"This streak's got legs. Don't jinx it by bragging. Oh wait."
+				],
+				"partner": [
+					"Still streaking! We make a scary good team, don't we.",
+					"You never let this run break. That's partner energy.",
+					"The streak lives on. I'd do an elephant dance but I'm tired."
+				],
+				"legend": [
+					"This streak's basically legendary at this point. Like me.",
+					"You just keep winning. Honestly, a little annoying. Nice.",
+					"History of streaks like this. You never really lose it."
+				]
+			},
+			"anniversary": {
+				"stranger": [
+					"Already a milestone? We just met and you're doing great.",
+					"First big one already. Ora's writing this down. Maybe.",
+					"That's a real milestone for someone I barely know yet."
+				],
+				"acquaintance": [
+					"Look at that, a milestone! We're not strangers anymore.",
+					"Racking up sessions with me. That's kind of an honor, huh.",
+					"Milestone hit. Ora's starting to remember your name now."
+				],
+				"friend": [
+					"A whole milestone together! Chocobi break, my treat.",
+					"Can't believe we've been at this so long, buddy. Nice.",
+					"That's a milestone worth an elephant dance. Ba-boom!"
+				],
+				"partner": [
+					"Big milestone, partner. We've put in the hours, huh.",
+					"This long together? That's basically a Defense Force record.",
+					"Milestone reached. Ora's kinda sentimental. Don't tell Mom."
+				],
+				"legend": [
+					"This much history together? That's practically legendary.",
+					"So many milestones now, I've honestly lost count.",
+					"Still going after all this. You're basically a Kasukabe icon."
+				]
+			}
+		},
+		"positiveGit": {
+			"clean_tree": {
+				"stranger": [
+					"Not a speck left in this tree. Suspicious levels of clean.",
+					"Spotless tree. Did Shiro sniff out every last mess for you?",
+					"Nothing pending. Ora's almost disappointed, not gonna lie."
+				],
+				"acquaintance": [
+					"Tree's clean again. Cleaner than my room, and that's rare.",
+					"Nothing left hanging around. You're turning into a tidy one.",
+					"Clean sweep. Mom would actually approve of this one."
+				],
+				"friend": [
+					"Clean tree, buddy! Tidier than Shiro's blanket fort, easy.",
+					"Nice and clean. Almost makes Ora want to tidy his crayons.",
+					"Not a mess in sight. Good teamwork, if anyone's counting."
+				],
+				"partner": [
+					"Spotless tree, partner. Mom's room checks would be jealous.",
+					"Nothing left dangling. That's how the Defense Force operates.",
+					"Clean as a whistle. You never leave loose threads, huh."
+				],
+				"legend": [
+					"Tidy again, no surprise there. It's basically your thing now.",
+					"Spotless, same as always. Ora stopped expecting mess from you.",
+					"Clean tree. Mom should hire you to do my room, honestly."
+				]
+			},
+			"op_cleared": {
+				"stranger": [
+					"That merge landed smooth. No fuss, no drama. Nice work.",
+					"Whatever that was, it cleared without a hitch. Impressed.",
+					"No mess after that one. Not bad for a total stranger."
+				],
+				"acquaintance": [
+					"That rebase wrapped up clean. Like acing a pop quiz.",
+					"Smooth landing, like Action Kamen sticking the dismount.",
+					"Wrapped up tidy. KDF logbook gets a good entry after that one."
+				],
+				"friend": [
+					"That went off without a hitch, buddy! Chocobi's earned.",
+					"Smooth as Action Kamen's cape swoosh. Nicely done, friend.",
+					"No tangles, no drama. We make a decent team, you and me."
+				],
+				"partner": [
+					"Clean finish, partner. Ora's already bragging about this one.",
+					"That merge folded without a fight. Ora barely had to watch.",
+					"Wrapped up tidy, same as always when you're driving."
+				],
+				"legend": [
+					"Clean landing again. Action Kamen would nod at that one.",
+					"Clean as ever. Ora would be shocked if it went sideways.",
+					"Smooth finish, easy as it always seems to be with you."
+				]
+			},
+			"branch_created": {
+				"stranger": [
+					"New branch, huh. Fresh start. Ora likes a fresh start.",
+					"A whole new branch. Big plans already? Bold move, new guy.",
+					"Branch made. Let's see where you're taking this thing."
+				],
+				"acquaintance": [
+					"New branch. Like starting a fresh page in Ora's notebook.",
+					"Another branch popped up. Somebody's got a scheme brewing.",
+					"Fresh branch, fresh crayon. Curious where this one goes."
+				],
+				"friend": [
+					"New branch, buddy! Let's see what trouble we cook up.",
+					"Ooh, a fresh branch. Feels like a new KDF mission starting.",
+					"Branch made! Onee-san would call that initiative, probably."
+				],
+				"partner": [
+					"New branch, partner. Defense Force territory keeps growing.",
+					"Another line opened up. You always know where to dig first.",
+					"Fresh branch cut clean. Let's go chase it down together."
+				],
+				"legend": [
+					"New branch. You never seem to run dry on ideas, huh.",
+					"Another branch. History says you always land somewhere good.",
+					"Fresh branch, old habit. Feels routine and exciting both."
+				]
+			},
+			"tag_pushed": {
+				"stranger": [
+					"A tag went out! That's official now. Fancy, real fancy.",
+					"Tagged and shipped. Mildly impressed, don't push it.",
+					"That's a real version now. Big kid stuff, honestly."
+				],
+				"acquaintance": [
+					"Tag pushed! Stamped official, like a hall pass from school.",
+					"Another release out. Keeping a tally in the notebook now.",
+					"That's sealed up now. Nice, tidy work right there."
+				],
+				"friend": [
+					"Tag's out, buddy! That deserves an elephant dance, easy.",
+					"You shipped it! Doing my victory wiggle for you right now.",
+					"Sealed and sent. We should celebrate with chocobi, obviously."
+				],
+				"partner": [
+					"Tag pushed, partner. Another one for the KDF record books.",
+					"Shipped clean. We don't leave things half-finished, us two.",
+					"That's out the door. Same solid work Ora's come to expect."
+				],
+				"legend": [
+					"Tag pushed again. Lost track of how many by now.",
+					"Sealed clean, same as it ever is with you now.",
+					"Shipped again, easy as breathing for you at this point."
+				]
+			}
+		},
+		"egg": {
+			"stranger": [
+				"Shinnosuke Nohara. Five years old. Remember the name.",
+				"New here? I rate strangers by snack generosity. Untested so far.",
+				"You smell like a grown-up who forgot how to have fun.",
+				"First time, huh. No elephant dance for strangers. Rules are rules.",
+				"Kasukabe Defense Force is watching. Everything gets reported."
+			],
+			"acquaintance": [
+				"Starting to like you. Don't tell the other grown-ups.",
+				"Would rather chase an onee-san. Sticking around anyway.",
+				"Still not sharing chocobi. But I'm thinking about it.",
+				"You work late like Dad. Minus the beer smell, thankfully.",
+				"Drew you in my notebook. Gave you a mustache. You're welcome."
+			],
+			"friend": [
+				"I'd share my last chocobi with you. Probably. No promises.",
+				"Basically an honorary Kasukabe Defense Force member now.",
+				"Taught Shiro your name. He barked twice. That's a yes.",
+				"Buddy status unlocked. Saved you a seat at snack time.",
+				"Made the friend list. It's short. Be proud of yourself."
+			],
+			"partner": [
+				"Me and you against the world. Mostly against bedtime.",
+				"You get the good chocobi now. The ones I hide from Mom.",
+				"Action Kamen has a sidekick. Ora's apparently one too.",
+				"Told Shiro you're basically family. He didn't argue.",
+				"Partner rank. Saving the elephant dance for a big win."
+			],
+			"legend": [
+				"Known you longer than most of kindergarten. That's legend status.",
+				"You've seen the full elephant dance. Few people earn that.",
+				"Told Mom about you. She said 'that explains a lot.'",
+				"This is basically my origin story now, and you're in it.",
+				"Action Kamen, Shiro, and you. My whole hall of fame."
+			]
+		},
+		"event": {
+			"test_fail": [
+				"Test flopped. Ora's fallen off worse before. Gets back up.",
+				"Red mark, like my report card. Nobody's grounded. We move on.",
+				"One test's crying. Pretend not to notice, then retry."
+			],
+			"build_fail": [
+				"Build fell over. Ora's blaming gremlins, not you, obviously.",
+				"Nothing compiled. Ora's blanket fort failed the same way once.",
+				"Build's stuck. Same face I make at a broken toy. Determined."
+			],
+			"typecheck_fail": [
+				"Types don't match. Like socks after laundry day. Fixable.",
+				"Typecheck says nope. I say nope right back, then try again.",
+				"A type slipped loose. I'm good at chasing loose things."
+			],
+			"lint": [
+				"Linter tidied the room. Mom would be shocked, honestly.",
+				"Style check done. Cleaner than my actual room, easily.",
+				"Lint swept through, found the mess, folded it up neat."
+			],
+			"format": [
+				"Formatted. Straighter lines than my crayon drawings.",
+				"Everything's neat now. I don't trust neat, but fine.",
+				"Code's tidy. Somewhere, Mom's proud of somebody's effort."
+			],
+			"install": [
+				"New packages arrived. Ora's treating them like unopened snacks.",
+				"Dependencies installed. Hoping one of them is chocobi.",
+				"Fresh gear loaded in. Inspecting it before I trust it."
+			],
+			"git": [
+				"History saved. Ora's keeping receipts, mostly for blackmail.",
+				"Commit locked in. My notebook works the same way.",
+				"Timeline updated. My version of events, now official."
+			],
+			"file_edit": [
+				"File's different now. I rearrange my room the same way.",
+				"Edits landed. Small changes, like sneaking veggies off a plate.",
+				"You shuffled things in there. Tidy chaos. I respect it."
+			],
+			"search": [
+				"Hunting through files. I'm good at finding hidden snacks too.",
+				"Searching high and low. Feels like hide-and-seek, kinda fun.",
+				"Combing the code. Found Shiro this way once. Slower, though."
+			],
+			"web_fetch": [
+				"Grabbed something from outside. Like raiding the fridge.",
+				"Fetched from far away. Hoping it beats homework, at least.",
+				"Info came in from outside. New things get inspected first."
+			],
+			"todo_update": [
+				"List got shuffled. My chore list never shrinks this fast.",
+				"New order on the list. Same trick Ora uses on toy piles.",
+				"Big reshuffle here. Bumping the fun stuff to the top, obviously."
+			],
+			"agent_spawn": [
+				"Sent out backup. Kasukabe Defense Force, assemble.",
+				"Passed it to a helper. They run around, I handle snacks.",
+				"Helper's out in the field. I'll stay back and take credit."
+			],
+			"skill_run": [
+				"Special move activated. Not the elephant dance, still respectable.",
+				"Big-kid tool came out. Want one for show-and-tell, honestly.",
+				"A trick got pulled out. Impressed, and I'm hard to impress."
+			],
+			"docker": [
+				"Everything's boxed up. Like my toys, if I ever boxed them.",
+				"Container running. Sealed tighter than my snack bags.",
+				"Stuff packed into a box. Neat trick. I want one my size."
+			],
+			"k8s": [
+				"A whole fleet of boxes marching in line. Better than mine.",
+				"Cluster's humming along. I'd name every single pod.",
+				"Lots of little containers, all doing their job. Show-offs."
+			],
+			"deploy": [
+				"It's out in the world now. Go get 'em, little code.",
+				"Shipped it. Waving it off like Dad leaving for the train.",
+				"Out the door and live. Hoping it lands better than my kicks."
+			],
+			"db_migrate": [
+				"Records shuffled to a new shelf. Same as my snack stash moves.",
+				"The database moved house. Helped Mom move once. Chaos.",
+				"Data's got a new home. Hoping nothing got left behind."
+			],
+			"dangerous": [
+				"Whoa, that command's got teeth. Taking a step back here.",
+				"Big scary move right there. Even Action Kamen would double-check.",
+				"That one's spicy. Respecting it from a safe distance."
+			]
+		},
+		"pressure": {
+			"compact_hint": [
+				"My notebook's getting full. Still room for one more page.",
+				"Lots piling up in here. My head gets like this after cartoons.",
+				"Getting crowded in here. A messy room never scared me though."
+			],
+			"block_limit": [
+				"This stretch is almost up. Even Ora naps eventually.",
+				"Running low on this round. Pacing myself, like before snacktime.",
+				"Near the end of this block. Saving energy for the big finish."
+			],
+			"weekly_limit": [
+				"Big week, huh. Five days of kindergarten wears me out too.",
+				"The week's stretched thin. Still got juice for one more day.",
+				"Long week logged. You earned a big gold star for that one."
+			]
+		},
+		"dateEgg": [
+			"Another year gone. Ora's still five forever, somehow.",
+			"Midnight already? Shiro's asleep. Respect for the night owl.",
+			"New day starting. Already thinking about breakfast.",
+			"Fireworks outside. Pretty sure those are for me.",
+			"Late night session. Even Action Kamen needs a bedtime, probably.",
+			"Season's changing. My wardrobe stays the same: whatever's clean.",
+			"New year, fresh start. Same chocobi budget, sadly.",
+			"Morning already. Negotiating five more minutes, every time.",
+			"Calendar flipped a page. My notebook does that too.",
+			"Quiet hours. Mom's asleep and unaware. Good."
+		],
+		"stack": {
+			"web": {
+				"slow": [
+					"Page's still loading. Ora's grabbed two snacks waiting on it.",
+					"This webpage's slower than Mom checking my report card.",
+					"Spinny wheel again. I've named it Wheel-chan at this point."
+				],
+				"fail": [
+					"Page went blank. Even my crayon drawings look better, honestly.",
+					"Broke mid-load. Shiro barked at the screen, unimpressed.",
+					"Whole page flopped. Ora's had worse Mondays than this one."
+				]
+			},
+			"python": {
+				"slow": [
+					"Snake's crawling through this slow, one line at a time.",
+					"Python's taking its time, slower than Shiro chasing his tail.",
+					"Ora's counted to a hundred waiting on this snake to move."
+				],
+				"fail": [
+					"Python tripped on its own tail. Silly snake, it happens.",
+					"Red words everywhere. Looks like my spelling test, honestly.",
+					"Snake face-planted mid-slither. Ora's seen worse wipeouts."
+				]
+			},
+			"sql": {
+				"slow": [
+					"Tables arguing again. Grown-ups fight about the weirdest stuff.",
+					"Query's dragging like onee-san picking an outfit for school.",
+					"Still waiting on this join. Drumming my crayons on the desk."
+				],
+				"fail": [
+					"Tables had a fight and nobody won. Typical grown-up drama.",
+					"Query came back grumpy. Data throws tantrums too, apparently.",
+					"A table vanished mid-question. Ora blinked, poof, gone."
+				]
+			},
+			"web-framework": {
+				"slow": [
+					"Routes checking in one by one, slower than kindergarten roll call.",
+					"Middleware's snooping everything twice. Real nosy today.",
+					"Half the page showed up. Rest's still picking an outfit, like Mom."
+				],
+				"fail": [
+					"A route got lost. Ora finds the fridge faster than this thing.",
+					"Middleware fell asleep at its post. One guard, snoring loud.",
+					"Page stopped halfway. Half a drawing's still kinda a drawing."
+				]
+			},
+			"docker": {
+				"slow": [
+					"Docker's stacking boxes slow, one at a time, like my toy bins.",
+					"Big picture's downloading. Small patience, real big download.",
+					"Layers piling up. Each one's taking its own little nap."
+				],
+				"fail": [
+					"Whole stack of boxes tipped. Happens to my toy towers too.",
+					"One layer wouldn't sit right. Just needs a redo, no big deal.",
+					"Docker choked halfway through. Wobbled, but didn't topple."
+				]
+			},
+			"java": {
+				"slow": [
+					"JVM's waking up slow, like Dad stalling before Monday work.",
+					"Heap's filling up like my backpack before a field trip.",
+					"So many folders getting checked. Java loves its paperwork."
+				],
+				"fail": [
+					"JVM tripped on something long-winded. Big words, small deal.",
+					"Heap got too crowded, kinda like my toy box, honestly.",
+					"One file went missing from the folder. Just the one, though."
+				]
+			},
+			"go": {
+				"slow": [
+					"Whole squad of goroutines reporting in, single file, like recess.",
+					"Compiler's chewing through it steady, no rush, no panic.",
+					"Channels backed up. Ora's tapping a foot, just a little."
+				],
+				"fail": [
+					"One goroutine tripped and vanished, barely a peep out of it.",
+					"Compiler flagged it quick. Blunt, but fast about it at least.",
+					"Something jammed a channel. Everybody just stopped chatting."
+				]
+			},
+			"node": {
+				"slow": [
+					"npm's downloading forever. Enough time to doodle a dinosaur.",
+					"Everything's waiting on one slow thing. My homework does that too.",
+					"node_modules keeps growing. That folder eats snacks and disk both."
+				],
+				"fail": [
+					"npm install blew up. Bad batch, happens to snack shipments too.",
+					"Everything just stalled out. Give it a shake, it'll loosen up.",
+					"One little callback threw way down the line. Long chain, oof."
+				]
+			},
+			"dotnet": {
+				"slow": [
+					"MSBuild's grinding through every single item on its list.",
+					"Engines warming up cold, like Ora before breakfast, real slow.",
+					"So many files to check, and it reads every last one, slowly."
+				],
+				"fail": [
+					"MSBuild came back cranky. One wire's crossed in there somewhere.",
+					"Big fancy words for what's basically a tiny hiccup, honestly.",
+					"One checkpoint got skipped. Just that one, not the whole build."
+				]
+			},
+			"cpp": {
+				"slow": [
+					"Templates keep unfolding like origami nobody ever finishes.",
+					"Stitching every piece together slow, like sewing Shiro's blanket.",
+					"Compiling forever. Ora's practically aged a whole year here."
+				],
+				"fail": [
+					"Poked at memory it wasn't allowed to touch. Whoops, naughty.",
+					"One name never showed up. Rude, honestly, standing it up.",
+					"Templates tangled themselves up. Messy, but not unfixable."
+				]
+			},
+			"php": {
+				"slow": [
+					"This old script's shuffling along, no particular hurry at all.",
+					"Chewing through the file at grandpa's pace, real leisurely.",
+					"Page by page, slow and steady. This one's been around forever."
+				],
+				"fail": [
+					"It coughed up a warning. Vintage code, vintage attitude, huh.",
+					"Tripped mid-run. Old scripts still miss a step now and then.",
+					"Came back weird. This one's always had its quirks, honestly."
+				]
+			},
+			"rust": {
+				"slow": [
+					"The checker's double, triple-checking every single line here.",
+					"Sorting out who owns what, slow and real careful about it.",
+					"Taking its time. Correct beats fast and broken, every time."
+				],
+				"fail": [
+					"Broke a sharing rule. Can't have that, checker's real firm.",
+					"One rule didn't check out. Strict, but fair, I guess so.",
+					"Checker wasn't having it today. Rules are rules, apparently."
+				]
+			},
+			"kubernetes": {
+				"slow": [
+					"Pods signing in one by one, checking their assigned spot.",
+					"Hunting each pod a home. Slow real estate search, this one.",
+					"Whole cluster's sorting itself. Big job, steady pace though."
+				],
+				"fail": [
+					"One pod dropped out of line. Quiet, nobody even noticed it.",
+					"No open spot yet. Still hunting around, patience required.",
+					"Cluster fumbled one assignment. Everyone else kept marching."
+				]
+			},
+			"ml": {
+				"slow": [
+					"Another lap around the data. Tiny steps, but steps count.",
+					"Numbers creeping downhill slow, but hey, they're moving.",
+					"Crunching big numbers. Takes what it takes, no shortcuts here."
+				],
+				"fail": [
+					"It wandered off somewhere. The numbers got lost, basically.",
+					"Not dropping yet. Cold trail, but worth following still.",
+					"One theory that didn't pan out. Happens to detectives too."
+				]
+			},
+			"android": {
+				"slow": [
+					"Gradle's grinding away. This one takes actual patience, huh.",
+					"Waiting on the little green guy to finish stretching.",
+					"So many pieces stacking up for one tiny phone app, sheesh."
+				],
+				"fail": [
+					"Gradle tripped on the build. Robots have off days too, I guess.",
+					"The pretend phone dropped out. Wasn't real anyway, whatever.",
+					"One piece just didn't fit today. Try again tomorrow, easy."
+				]
+			},
+			"ruby": {
+				"slow": [
+					"Sorting through every gem, real particular about each one.",
+					"Working through a long checklist, one item at a time here.",
+					"Installing slow, like counting jellybeans out by hand."
+				],
+				"fail": [
+					"Couldn't untangle it. Gems get knotted up sometimes, that's life.",
+					"Stumbled getting started. Trains skip a stop now and then too.",
+					"Errored out. Shiny stuff gets scratched too, no big deal."
+				]
+			},
+			"ios": {
+				"slow": [
+					"Indexing every file. Bigger mess than Ora's whole toy box.",
+					"Grown-up paperwork loading, just for a phone app, sheesh.",
+					"Checking its own work twice. Real thorough, this one."
+				],
+				"fail": [
+					"The gatekeeper just wasn't feeling today's key. Rude, honestly.",
+					"Tripped on its own cape mid-strut. Dramatic, but no harm done.",
+					"Whatever it was doing, it's done now. Ora didn't even blink."
+				]
+			},
+			"terraform": {
+				"slow": [
+					"Mapping the whole thing out before touching a single piece.",
+					"Building takes longer than stacking my building blocks, huh.",
+					"Slow inventory check happening. Real thorough about counting."
+				],
+				"fail": [
+					"Something in the blueprint didn't line up right, oops.",
+					"City planners miss a detail sometimes, no need to panic.",
+					"Two hands reached for the same crayon there. Typical, honestly."
+				]
+			},
+			"graphql": {
+				"slow": [
+					"Working through every question, one careful answer at a time.",
+					"Big homework tonight. Lots of questions, taking its time.",
+					"Stitching itself together like a puzzle missing a few pieces."
+				],
+				"fail": [
+					"One field fibbed about what it actually had. Busted, honestly.",
+					"Got tangled up in its own questions. Happens to me too.",
+					"Somebody's story didn't quite match up. Caught red-handed."
+				]
+			},
+			"flutter": {
+				"slow": [
+					"Hot reload's dragging its feet. Even fast stuff needs a breather.",
+					"Rebuilding branch by branch, slow growth, like my crayon tower.",
+					"Checking every little corner. Thorough, if nothing else, huh."
+				],
+				"fail": [
+					"One little piece snapped clean off. Weird looking tree now.",
+					"Gave up on the quick way. The slow way still works, at least.",
+					"Broke on one piece. Loose screw, probably just the one, easy."
+				]
+			},
+			"react-native": {
+				"slow": [
+					"Bundling everything up. That train's really in no hurry today.",
+					"Two sides talking slow today. Laggy conversation, this one.",
+					"Wiring things up. Fiddly work, this part always takes a bit."
+				],
+				"fail": [
+					"The connection dropped mid-call. Rude, but hardly a disaster.",
+					"That train derailed for a second there. Climbing back on now.",
+					"One wire came loose somewhere. Just the one, not the whole thing."
+				]
+			},
+			"scala": {
+				"slow": [
+					"Compiling forever. Worse than waiting for dinner, honestly.",
+					"Working itself out quiet, unbothered, taking its sweet time.",
+					"Really mulling this one over. Deep thinker, this compiler."
+				],
+				"fail": [
+					"Rejected it flat out. Strict, but fair about it, I guess.",
+					"Somebody just didn't show up when they were supposed to.",
+					"One weak spot told the whole story. Typical, honestly."
+				]
+			},
+			"protobuf": {
+				"slow": [
+					"Crawling through the schema, matching every single key.",
+					"Generating slow, careful with every little field, real precise.",
+					"Real strict about getting every last detail right, this one."
+				],
+				"fail": [
+					"Schema and code had a little disagreement. Happens, honestly.",
+					"Signal got garbled. Nothing too dramatic, just static, really.",
+					"Typical mismatch between versions. Somebody didn't update."
+				]
+			},
+			"game": {
+				"slow": [
+					"Frame rate's dipping. Chase scenes shouldn't stutter like this.",
+					"Looking this good takes real effort. Don't rush good art.",
+					"Loading a whole world. Worlds don't just pop up overnight."
+				],
+				"fail": [
+					"Dropped a frame. Barely noticeable, blink and you'd miss it.",
+					"A body flew clean off the screen. Whoops, physics moment.",
+					"Crashed mid-level. Everything just resets, no harm done."
+				]
+			},
+			"docs": {
+				"slow": [
+					"Writing things down takes patience. Doodling's way easier.",
+					"Generating page by page, no shortcuts, no cutting corners here.",
+					"Compiling forever. Ora'd rather just draw the instructions."
+				],
+				"fail": [
+					"One page just up and vanished. Poof, gone, like my homework.",
+					"A single typo tripped up the whole thing. One little letter.",
+					"Wouldn't render. Even words trip over their own feet sometimes."
+				]
+			},
+			"r": {
+				"slow": [
+					"Crunching numbers. Good excuse for a chocobi break, honestly.",
+					"Hard to count this many at once, even for Ora, real hard.",
+					"Numbers keep stacking up. Taking its time with all of it."
+				],
+				"fail": [
+					"Shapes didn't match up this time. Two puzzle pieces, no fit.",
+					"One column's misbehaving. Weird look on its face, honestly.",
+					"Errored out on a single number. Didn't see that one coming."
+				]
+			},
+			"cuda": {
+				"slow": [
+					"Thousands of tiny hands working at once, still takes a minute.",
+					"Slow to get going. Fast stuff needs a countdown too sometimes.",
+					"Lining up before it even starts. Real orderly about it, huh."
+				],
+				"fail": [
+					"Faulted on one bad address. Whoops, wrong door there.",
+					"Wandered somewhere it shouldn't have. Typical, honestly.",
+					"All that power tripped on one tiny wire. Happens to the best."
+				]
+			}
+		}
+	},
+	"spinnerVerbs": [
+		"Wiggling",
+		"Snacking",
+		"Doodling",
+		"Bouncing",
+		"Giggling",
+		"Daydreaming",
+		"Chocobi-munching",
+		"Humming",
+		"Skipping",
+		"Wobbling",
+		"Napping",
+		"Wandering",
+		"Pondering",
+		"Nibbling",
+		"Twirling",
+		"Fidgeting",
+		"Waddling",
+		"Elephant-dancing",
+		"Puttering",
+		"Rummaging",
+		"Toddling",
+		"Zooming",
+		"Dilly-dallying",
+		"Shuffling",
+		"Tiptoeing",
+		"Butt-wiggling",
+		"Crayon-scribbling",
+		"Shiro-petting"
+	]
+}

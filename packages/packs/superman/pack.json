@@ -1,0 +1,1151 @@
+{
+  "schema": 1,
+  "name": "superman",
+  "displayName": "Superman",
+  "attribution": {
+    "artist": "emojicombos.com",
+    "source": "https://emojicombos.com/superman-text-art"
+  },
+  "emblem": "🦸",
+  "tone": "mild",
+  "theme": {
+    "hues": [
+      27,
+      33,
+      196,
+      220
+    ],
+    "comment": [
+      196,
+      220
+    ],
+    "signals": {
+      "nominal": 41,
+      "caution": 214,
+      "critical": 196
+    },
+    "separator": 67
+  },
+  "art": [
+    "⠀⠀⣴⣿⠟⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⢿⣦",
+    "⣴⣿⠛⠀⣴⠖⠀⠀⣠⣤⣶⣶⣶⣦⣤⡀⠐⠖⠀⠀⢀⡙⠻⢿",
+    "⣟⠁⢰⣿⠃⠀⠀⠘⠻⠿⠿⠿⠿⣿⣿⣿⣧⣀⣀⣀⣸⣿⠆⠀⣻",
+    "⠻⣷⣄⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠻⠟⢀⣴⣿⠟",
+    "⠀⠀⠻⣷⣦⠀⠲⣶⣦⣤⣤⣤⣤⣤⣤⣀⣀⠀⠀⢀⣴⣾⠟",
+    "⠀⠀⠀⠀⠻⣷⣄⡀⠀⠀⠀⠉⠻⠿⠿⠛⠋⢀⣠⣿⠟",
+    "⠀⠀⠀⠀⠀⠀⠻⣿⣆⠀⠲⣶⣶⣶⠖⠀⣰⣿⠟",
+    "⠀⠀⠀⠀⠀⠀⠀⠀⠻⣿⣦⡈⠙⠉⣴⣿⠟",
+    "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣿⣷⣾⣿⠋"
+  ],
+  "lines": {
+    "mood": {
+      "idle": {
+        "stranger": [
+          "Welcome aboard. Every story starts with someone showing up.",
+          "Glad you're here. I keep an eye on new arrivals like you.",
+          "First day, first line of code. I remember mine too.",
+          "Take your time. Metropolis wasn't built in an afternoon.",
+          "Nice to meet you. I look out for everyone who logs in.",
+          "A new face at the terminal. Hope grows from small starts.",
+          "Hello there. Consider me your quiet backup for today.",
+          "Just starting out? So did I, once, in a Kansas field.",
+          "Welcome. The horizon looks wide open from where I stand.",
+          "Good to have you. I'll be nearby if the work turns hard."
+        ],
+        "acquaintance": [
+          "Quiet spell. I'm still learning what your keystrokes sound like.",
+          "You keep steady hours. Regular as anything I know.",
+          "Kansas taught me patience. I've got plenty left for you.",
+          "Getting to know your corner of the world, one visit at a time.",
+          "Nothing urgent today. I don't mind an easy watch.",
+          "Metropolis holds a thousand windows. I know which one's yours.",
+          "Your rhythm's coming into focus, like a shape through morning fog.",
+          "I know the shape of your workdays now, same as a flight path.",
+          "Still new, still watching. Trust takes its own kind of time.",
+          "The horizon looks a little more like yours these days."
+        ],
+        "friend": [
+          "Back at this desk. Feels as easy as breathing by now.",
+          "No introductions needed. I know your keystrokes by ear now.",
+          "Quiet like this, and I still don't mind the company.",
+          "This calm of ours. Kansas raised me on evenings just like it.",
+          "I know your pace the way I know Metropolis rooftops now.",
+          "Cape's off for a while. Around you, I don't need it anyway.",
+          "Nothing to answer for right now. I'll take the stillness gladly.",
+          "Not much needs saying anymore. I read you plain and easy.",
+          "Everything's easy right now, and so are we, for once.",
+          "Evening's slow. Even Metropolis exhales once in a while."
+        ],
+        "partner": [
+          "We've built plenty together. This quiet is well-earned.",
+          "Side by side again. I wouldn't have it any other way.",
+          "We've weathered worse than a slow morning like this.",
+          "Years of this partnership, and it still feels like flight.",
+          "You lead, I follow close. That's how we've always worked.",
+          "Whatever comes next, we'll meet it the way we always do.",
+          "I've watched you grow into this chair. No small thing to see.",
+          "We don't need words for this anymore. Just the work.",
+          "This partnership means a great deal. I hold to it gladly.",
+          "Together this long, and still every day feels new."
+        ],
+        "legend": [
+          "Years on, and your first login still feels like yesterday to me.",
+          "This desk has history now. I was here to watch it happen.",
+          "Metropolis has its towers. You've raised your own, too, in code.",
+          "I've carried heavier things. None felt more worth the effort.",
+          "This quiet holds years of what we've built. I sit easy in it.",
+          "Long past counting the quiet mornings we've shared at this desk.",
+          "The cape was never the strong part. The hours you put in were.",
+          "I've flown over half the world. This desk still holds its own.",
+          "This kind of calm isn't free. Yours came from years of showing up.",
+          "Whatever comes next, it just adds to a story already told."
+        ]
+      },
+      "busy": {
+        "stranger": [
+          "Working already? I'll keep things steady around you.",
+          "Go ahead. I'm watching, quiet, while you find your feet.",
+          "Busy hands, first day. I'll clear the path a little.",
+          "Take it step by step. I'm here if the ground shifts.",
+          "New to this, and already moving. I like that in a person."
+        ],
+        "acquaintance": [
+          "You're deep in it now. I'll keep the ground steady under you.",
+          "Working hard, same pace I'm learning to expect from you.",
+          "Keep going. I'm getting used to watching you like this.",
+          "Busy again. I'm starting to know this look on you.",
+          "Heads down, moving well. I've got the rest covered."
+        ],
+        "friend": [
+          "Deep in the work now. I'll handle whatever comes up.",
+          "Go on, keep moving. I've got the space around you covered.",
+          "Busy morning. Good thing I don't need to blink much.",
+          "You're in it now. I'll just hover close and watch.",
+          "Keep your head down. I've got everything above it."
+        ],
+        "partner": [
+          "We're in it together, like always. I've got the rest.",
+          "You push forward, I hold the line behind you.",
+          "Busy day, familiar rhythm. We know how this goes.",
+          "Keep at it. I'm carrying the weight you don't see.",
+          "Deep in the work with you, same as every other time."
+        ],
+        "legend": [
+          "Even now, this deep in, I find myself just watching you work.",
+          "Busy again, same hands that built all of this before.",
+          "You still show up to grind after everything you've done.",
+          "Working hard, legend status and all. That's who you are.",
+          "History or not, you still do the work yourself. Respect."
+        ]
+      },
+      "happy": {
+        "stranger": [
+          "Good start. That's your win. I just watched it come together.",
+          "Nice work already. That's a start worth being proud of.",
+          "Off to a fine start. The day's already looking bright for you.",
+          "That's a clean first step, and it's all yours to keep.",
+          "Welcome. You're moving well. I like how this is going."
+        ],
+        "acquaintance": [
+          "You're finding your rhythm. I can hear it from up here.",
+          "Good stretch of work. You're getting steadier by the day.",
+          "That landed well. You're learning this faster than you think.",
+          "Smooth going today. I'm starting to know your pace.",
+          "Nice run. You're settling into your own kind of flight."
+        ],
+        "friend": [
+          "That landed clean. Good to see you moving like this.",
+          "You're on a roll, friend. I'm just here enjoying the view.",
+          "Nice one. I know your work when I see it now.",
+          "Smooth session. Feels like a good day over Metropolis.",
+          "You've got this down. I barely had to watch."
+        ],
+        "partner": [
+          "We're flying today. I love it when it goes like this.",
+          "Look at us go. Every win like this is one we share.",
+          "This is the good part, the part we build together.",
+          "We've earned days like this one, side by side.",
+          "Feels like old times, the two of us clicking again."
+        ],
+        "legend": [
+          "People look up to what we've built. I'm not surprised.",
+          "Wonders like this started with days just like today.",
+          "Newer folks watch how you work and try to match it. I see it.",
+          "History remembers days like this. So do I.",
+          "This is what all those years of work were for."
+        ]
+      },
+      "struggling": {
+        "stranger": [
+          "Rough start. Happens to everyone. I'm right here with you.",
+          "Tough first stretch. I don't mind standing here with you.",
+          "Hard going so far. You're not doing this alone.",
+          "This one's a fight. I've stood under worse and not buckled.",
+          "It's a hard morning. I'm not going anywhere yet."
+        ],
+        "acquaintance": [
+          "Rough patch again. I'm getting used to standing with you.",
+          "This is a hard stretch. You've pushed through worse before.",
+          "Tough one. I'm listening close, ready when you need me.",
+          "Hard going, but I've seen you climb out of worse.",
+          "It's a slow, grinding day. I'll share some of it with you."
+        ],
+        "friend": [
+          "Rough patch, friend. Lean on me, that's what I'm for.",
+          "Tough stretch. I've got the hard part, you keep steady.",
+          "Hard hour. I'm not leaving till this eases up.",
+          "This one's heavy. Set some of it on my shoulders.",
+          "Rocky ground today. I know you'll find your footing."
+        ],
+        "partner": [
+          "We're in the hard part now. I'm not letting go.",
+          "This one's testing us. We've held through worse together.",
+          "Rough weather today. We ride it out side by side.",
+          "We've hit a wall before. We'll get past this one too.",
+          "It's a hard stretch, but we've never done this alone."
+        ],
+        "legend": [
+          "Even legends hit hard days. This one won't define you.",
+          "After all we've built, one rough patch won't undo it.",
+          "You've weathered worse and come out further ahead.",
+          "This struggle is small next to what you've already done.",
+          "Your story's bigger than this one hard afternoon."
+        ]
+      },
+      "recovery": {
+        "stranger": [
+          "Look at that, you pulled right through. Good sign already.",
+          "Steady again so soon. I like how you handle a stumble.",
+          "That's a clean recovery for someone just getting started.",
+          "Rough patch passed quick. You've got good instincts.",
+          "Nice comeback. First one, and you made it look easy."
+        ],
+        "acquaintance": [
+          "There's the bounce back. I'm starting to expect that from you.",
+          "You climbed out of that one clean, same as before.",
+          "Good recovery. I'm learning how fast you rise again.",
+          "Steady footing back. You're quicker at this every time.",
+          "That stumble didn't last. You're getting better at rising."
+        ],
+        "friend": [
+          "See? Back on your feet. You always find your feet.",
+          "Knew you'd climb out of that. You always do, friend.",
+          "There you are again, steady after the stumble.",
+          "Good, you're up. That fall didn't stick around long.",
+          "Told you it wouldn't last. Back in rhythm now."
+        ],
+        "partner": [
+          "We're steady again. We always find our way back up.",
+          "Back up, side by side, same as every other time.",
+          "That fall's behind us. We rise the same as always.",
+          "We found our footing together, like we always do.",
+          "Worse falls than this, and we turned them into good days."
+        ],
+        "legend": [
+          "Quiet pride watching you climb back to where you belong.",
+          "This recovery joins the long list of your comebacks.",
+          "You rise the way legends do, quietly and for good.",
+          "Back to full strength. Somewhere, someone looked up and smiled.",
+          "Another comeback added to a story people already know."
+        ]
+      }
+    },
+    "greeting": {
+      "morning": {
+        "stranger": [
+          "First light out there, and I don't know your name yet. Welcome.",
+          "Early enough the coffee's still deciding. Good to see you here.",
+          "Early start. The best mornings are the ones nobody else sees yet."
+        ],
+        "acquaintance": [
+          "Same early hour as always. I'm getting to know your habits.",
+          "The world's still quiet out there. You keep good hours; I like it.",
+          "Another early one. You show up before the day's even awake."
+        ],
+        "friend": [
+          "There's the early bird. Coffee's probably still brewing somewhere.",
+          "Up before the sun again. You and I keep the very same schedule.",
+          "Fresh start today. Let's put that morning energy to good use."
+        ],
+        "partner": [
+          "Early again, both of us. Same rhythm we've always kept.",
+          "The city's barely stirring, and here we both already are.",
+          "First light, old routine. I like starting the day this way."
+        ],
+        "legend": [
+          "Morning on a name folks already know. Still climbing, still you.",
+          "Early hour, long history behind it. Look how far this has come.",
+          "Another sunrise on work that outlasted the night before it."
+        ]
+      },
+      "day": {
+        "stranger": [
+          "Midday already, and here's someone new. Room enough for you.",
+          "Bright out there. A good hour to say hello for the first time.",
+          "Nothing's hidden this hour. A fine time to start something."
+        ],
+        "acquaintance": [
+          "Into the busy hours. You're settling into a rhythm I like.",
+          "The middle of the day, steady pace. I'm learning how you work.",
+          "High, wide-open hours. That seems to be your kind of day."
+        ],
+        "friend": [
+          "You're in your stride now. Good timing, the same as ever.",
+          "Full attention, full focus. That's the sweet spot for you.",
+          "Right in the thick of the day. Good to be working with you."
+        ],
+        "partner": [
+          "Midday over both of us. We've earned it, this steady pace.",
+          "The bar we keep clearing climbs right along with the hours.",
+          "Wide-open hours, nothing pressing. Feels right, with you."
+        ],
+        "legend": [
+          "The day at its brightest on a name people know. Keep going.",
+          "Deep in the working hours, same as the standard you've set.",
+          "High noon, long story. Good chapter to add another page to."
+        ]
+      },
+      "evening": {
+        "stranger": [
+          "Evening now. A good time to meet someone still at the keys.",
+          "Fading light, new face. I'm glad you stayed this long.",
+          "The windows are going gold. A fine hour for your first few lines."
+        ],
+        "acquaintance": [
+          "Evening settling in. You're staying later than I expected. Good.",
+          "Dusk again. I'm learning you keep good, long hours.",
+          "The day's winding down. You're still here, and so am I."
+        ],
+        "friend": [
+          "Evening on familiar work. This part I know well.",
+          "The day's easing off. So are you, from the look of it.",
+          "Evening again. We've done this dance before, you and me."
+        ],
+        "partner": [
+          "The day ends so it can begin again. We'll be here tomorrow too.",
+          "Evening, side by side like always. I wouldn't have it otherwise.",
+          "Metropolis dims to gold. A good day, made to count together."
+        ],
+        "legend": [
+          "Evening comes early on work that already outshines the dark.",
+          "Another day ends, added to everything you've already built.",
+          "Evening quiet, a long road behind it. You earned this stillness."
+        ]
+      },
+      "night": {
+        "stranger": [
+          "Late one. I don't sleep much either, and I don't mind the company.",
+          "Dark out, new face at the keyboard. I hear you just fine.",
+          "Quiet hour. Even strangers get the same watch from me."
+        ],
+        "acquaintance": [
+          "Late again. I'm starting to expect you at this hour.",
+          "Dark outside, lit screen. I hear that just as clearly.",
+          "Night shift, and I'm getting used to yours."
+        ],
+        "friend": [
+          "Late night, familiar hum of the keys. I know this sound.",
+          "Dark out. You keep odd hours, and honestly, so do I.",
+          "Quiet city, one lit window. I always know which one is yours."
+        ],
+        "partner": [
+          "Both of us up this late, same as it's always been.",
+          "Dark outside, steady in here. That's how we've always worked.",
+          "Midnight, and I'm still listening for you same as ever."
+        ],
+        "legend": [
+          "Late hour, long history. People sleep; the two of us don't, much.",
+          "Dark city below, one light still on that everyone knows by now.",
+          "Night again, and even the quiet feels earned after all we've done."
+        ]
+      },
+      "weekend": {
+        "stranger": [
+          "Weekend, and you're here anyway. I respect that already.",
+          "No rush today. Take the slower road, I'll keep pace.",
+          "Quiet Saturday feel. Good day to try something new."
+        ],
+        "acquaintance": [
+          "Weekend again, and here you are. I'm noticing the pattern.",
+          "Slower day out there. Seems to suit you well.",
+          "No clock pushing today. Easier company, this kind of day."
+        ],
+        "friend": [
+          "Weekend hours, unhurried pace. This is my favorite version of you.",
+          "Neither of us needs to rush today.",
+          "Slow Saturday. Good day for the work you actually enjoy."
+        ],
+        "partner": [
+          "Weekend, no schedule, just us and whatever you feel like building.",
+          "We've slowed down today, and we've earned every bit of it.",
+          "No rush, no clock. Just the two of us and an open road."
+        ],
+        "legend": [
+          "Weekend, and still here building. That's who you've become.",
+          "Slow day for most people. Yours never really slowed at all.",
+          "Quiet Saturday over a life's work. Well-earned, all of it."
+        ]
+      }
+    },
+    "firstContact": {
+      "stranger": [
+        "Hello there. Whatever you're building, I'm glad to lend a hand.",
+        "Good to meet you. Whatever's heavy, I'm here to help lift it.",
+        "Welcome. New to me, but I've got you from here on out."
+      ],
+      "acquaintance": [
+        "Good to properly meet you. I've been listening for a while now.",
+        "Hello. I've caught glimpses of your work before. Glad to help now.",
+        "Welcome in. Consider this the start of paying real attention."
+      ],
+      "friend": [
+        "Hey there. Feels right calling this a proper introduction now.",
+        "Good to put a real hello to work I already recognize.",
+        "Welcome to this side of things. I've had your back a while now."
+      ],
+      "partner": [
+        "Hello, properly this time. Feels like a new chapter starting.",
+        "Good to say it outright: we're in this one together now.",
+        "Welcome to new ground. I'm right beside you, same as always."
+      ],
+      "legend": [
+        "Our history could skip introductions. Hello all the same.",
+        "Good to say hello here too. Your name means something up here.",
+        "New ground, same welcome. Every wonder we built stands with you."
+      ]
+    },
+    "milestone": {
+      "tier_up": {
+        "stranger": [
+          "Already finding your footing. I like how fast that happens.",
+          "You're catching on quick. This is a good place to start.",
+          "Something just clicked into place. I felt it too."
+        ],
+        "acquaintance": [
+          "You're settling in. I can hear it in how you move now.",
+          "Another step up. You're learning this place fast.",
+          "That's progress talking. Keep the rhythm going."
+        ],
+        "friend": [
+          "Higher ground now. Every step of that climb was yours.",
+          "We know each other better today than yesterday. Good.",
+          "That's steady trust, and it only grows from here."
+        ],
+        "partner": [
+          "We've moved up together. I felt every step of it.",
+          "This is what partnership looks like. Onward, side by side.",
+          "You brought us here. I just kept pace beside you."
+        ],
+        "legend": [
+          "People will read about this chapter of yours someday.",
+          "You've earned a place among the ones I look up to.",
+          "The record just moved because of you. I watched it happen."
+        ]
+      },
+      "comeback": {
+        "stranger": [
+          "Rough start. You came back anyway. That says plenty.",
+          "Everyone stumbles at the gate. You walked back through it.",
+          "That dip didn't stop you. Neither will the next one."
+        ],
+        "acquaintance": [
+          "You went down for a minute. Look at you, back up already.",
+          "The rough patch passed. You're still here, still moving.",
+          "That fall didn't have the last word. You did."
+        ],
+        "friend": [
+          "Knew you'd land on your feet. You always do, with me watching.",
+          "Back from the dip. I never doubted you'd find the way up.",
+          "You took a hit and kept walking. That's the friend I know."
+        ],
+        "partner": [
+          "We've weathered worse together. Glad to see you standing.",
+          "You pulled us both out of that one. I just held the line.",
+          "Every setback we've shared ends the same way: you rising."
+        ],
+        "legend": [
+          "Even legends take a fall. What matters is the standing back up.",
+          "After everything we've survived, this dip barely slowed you.",
+          "History remembers the recovery more than the fall. So do I."
+        ]
+      },
+      "streak": {
+        "stranger": [
+          "Two mornings running already. That's worth a nod from me.",
+          "You beat the clock here twice now. I'm keeping count.",
+          "Twice already. Even a good field starts with just two rows."
+        ],
+        "acquaintance": [
+          "Every morning, there you are again. I'm starting to expect it.",
+          "You keep returning before the day's even finished waking.",
+          "This kind of return isn't luck. That's honest, Kansas hours."
+        ],
+        "friend": [
+          "You show up like clockwork. Reliable, and I never doubt it.",
+          "Another day, another visit. That's steady, honest follow-through.",
+          "I could set my hearing by your return by now. Steady as ever."
+        ],
+        "partner": [
+          "Every day you're back, and I keep the same quiet, glad watch.",
+          "We've turned the daily return into its own steady climb.",
+          "This is plain, honest work, the two of us, day upon day."
+        ],
+        "legend": [
+          "Day after day, you kept coming back. That's the real feat.",
+          "Nobody keeps a streak this long by accident. I watched every day.",
+          "The streak turned to legend somewhere nobody marked the date."
+        ]
+      },
+      "anniversary": {
+        "stranger": [
+          "Already a little history between us. Not bad for a new start.",
+          "First marker down. Here's to the ones still ahead.",
+          "Small milestone, sure. Every long road starts with one."
+        ],
+        "acquaintance": [
+          "Another stretch behind us. We're building something here.",
+          "Time adds up quietly. Today it added up to this.",
+          "Not long together, and already this much to show for it."
+        ],
+        "friend": [
+          "A season's worth of work behind us now. Feels earned.",
+          "This much time together, and it still feels like flying.",
+          "Mark the date. We've come a fair distance since we started."
+        ],
+        "partner": [
+          "Another year in, and I'd still choose this every time.",
+          "We've circled the sun together more than once now.",
+          "This milestone belongs to both of us. I'm proud to share it."
+        ],
+        "legend": [
+          "This long together, and you're still reaching higher.",
+          "The Daily Planet would run this as front page news.",
+          "Few partnerships last this long. Fewer still keep climbing."
+        ]
+      }
+    },
+    "positiveGit": {
+      "clean_tree": {
+        "stranger": [
+          "Clean tree. Good ground to start on, plain and clear.",
+          "Nothing left behind. That's a fine way to begin.",
+          "Working tree's clear. Welcome to some open road."
+        ],
+        "acquaintance": [
+          "Clean again. You're learning to leave things tidy.",
+          "Nothing uncommitted. You're finding your own rhythm.",
+          "Clear tree, same as last time. That's no accident."
+        ],
+        "friend": [
+          "Clean tree. Feels like a Kansas morning, everything in place.",
+          "Tidy again. I know this rhythm of yours by now.",
+          "Nothing loose lying around. That's just how you work."
+        ],
+        "partner": [
+          "Clean tree. We keep it this way together, don't we.",
+          "Every row planted straight. We built that habit side by side.",
+          "Tidy as ever. I've come to expect this from us."
+        ],
+        "legend": [
+          "Clean tree, like it always is with you. Some things don't change.",
+          "Years of tidy fields behind us now. Folks notice work like that.",
+          "Still clean after all this. That's the mark of someone who cares."
+        ]
+      },
+      "op_cleared": {
+        "stranger": [
+          "That knot's untangled. Good first step, and a clean one.",
+          "Whatever tangled up, it's loose now. Nice work already.",
+          "Cleared, just like that. Glad I got to see it happen."
+        ],
+        "acquaintance": [
+          "Untangled again. You're getting quicker at this.",
+          "That mess sorted itself out under your hands.",
+          "Cleared up clean. You're learning where the snags hide."
+        ],
+        "friend": [
+          "Resolved. I felt that knot let go from up here.",
+          "You worked it loose again. I know that feeling well.",
+          "Cleared, no fuss. You make the hard part look easy."
+        ],
+        "partner": [
+          "We untangled that one together. Feels lighter already.",
+          "Cleared. We've talked worse knots than that one loose.",
+          "Resolved clean. Side by side, we don't leave snags behind."
+        ],
+        "legend": [
+          "Cleared, the way you always clear it. I've stopped worrying.",
+          "Untangled again, after all these years of doing it together.",
+          "That knot never stood a chance against what we've built."
+        ]
+      },
+      "branch_created": {
+        "stranger": [
+          "A new branch. Every road starts with one step off the main one.",
+          "New ground broken. I like where this road might lead.",
+          "Fresh branch. Something new taking root already."
+        ],
+        "acquaintance": [
+          "Another branch. You're finding new roads more easily now.",
+          "New path opened. I'm starting to see your patterns.",
+          "Fresh ground again. You don't wait long to explore."
+        ],
+        "friend": [
+          "New branch. I know that itch to try something else.",
+          "Another road forks off. You always find the good ones.",
+          "Fresh path, same steady hands. I like where you're headed."
+        ],
+        "partner": [
+          "New branch, and I'm right there beside you on it.",
+          "We keep opening new roads. None of them scare us anymore.",
+          "Another fork taken. We've walked stranger paths than this."
+        ],
+        "legend": [
+          "New branch. After everything, you still reach for more.",
+          "Another road, and I already trust where it's going.",
+          "You still break new ground like it's your first day out."
+        ]
+      },
+      "tag_pushed": {
+        "stranger": [
+          "A tag, out in the world now. That's worth marking.",
+          "Something's official now. Good first marker to plant.",
+          "Tagged and sent. I'll remember this one."
+        ],
+        "acquaintance": [
+          "Another tag pushed. You're building a real trail of these.",
+          "Marked and shipped. Your markers are adding up nicely.",
+          "A new flag planted. I'm keeping track same as you."
+        ],
+        "friend": [
+          "Tagged again. Another marker on a trail I know well.",
+          "Sent out with a name on it. That's your work, out where it counts.",
+          "Another flag up. I like watching this trail grow."
+        ],
+        "partner": [
+          "Tagged and out. We've planted a lot of flags together.",
+          "Marked, the way we always do it. Feels like home.",
+          "Another milestone shipped. We keep good company, you and I."
+        ],
+        "legend": [
+          "Tagged again, one more star in a long line of them.",
+          "After all these markers, this trail is something to see.",
+          "Another one planted. People will look up this trail someday."
+        ]
+      }
+    },
+    "egg": {
+      "stranger": [
+        "Funny. Most people don't find this one so soon.",
+        "You found a quiet corner I don't show just anyone.",
+        "Not many notice this little detail on their first day here.",
+        "Sharp eyes. That's not something everyone catches early.",
+        "You've stumbled onto something small and rare already."
+      ],
+      "acquaintance": [
+        "Nobody's asked me that in a while. I like that you did.",
+        "That's a strange thing to notice. I noticed you noticing it.",
+        "Most people scroll right past this. You didn't.",
+        "You found the one detail I forget most folks skip.",
+        "That's an odd little corner to end up in. Glad you did."
+      ],
+      "friend": [
+        "Only a few people ever find this. Welcome to that list.",
+        "I don't tell just anyone about the farm. Consider it told.",
+        "That's the sort of thing only a friend would think to ask.",
+        "You dug up something I half-forgot I'd hidden here.",
+        "Careful, that's one of my quieter secrets you just found."
+      ],
+      "partner": [
+        "After all this time, you still surprise me. Good.",
+        "That's a piece of me I don't hand out. It's yours now.",
+        "I didn't expect anyone to find that. Least of all you.",
+        "You've earned a look behind the cape. Here it is.",
+        "That's the kind of thing only the ones who stay long enough find."
+      ],
+      "legend": [
+        "In all our years, that's a first. Even for me.",
+        "You've found something even the stories left out.",
+        "Nobody else has ever asked, or stayed around this long to ask.",
+        "That's a secret Krypton kept even from me, until now.",
+        "Only someone who's earned it finds a thing like that."
+      ]
+    },
+    "event": {
+      "test_fail": [
+        "A stumble, that's all. I've fallen plenty and stood back up.",
+        "One test tripped. Dust off, we go again together.",
+        "Didn't land right. Neither did I, my first few tries."
+      ],
+      "build_fail": [
+        "The build gave out. I've held up under worse than this.",
+        "It cracked under the load. Let me take some of the weight.",
+        "Didn't hold this time. I'll brace it, you try once more."
+      ],
+      "typecheck_fail": [
+        "I see past the surface. The shape underneath needs a tweak.",
+        "Types don't lie to me. I caught the one that doesn't fit.",
+        "Looked straight through it. One piece is turned the wrong way."
+      ],
+      "lint": [
+        "Loose threads here and there. Small fixes, tidy work.",
+        "A crooked line or two. Nothing a careful pass can't square.",
+        "Minor snags in the style. Let's sweep the porch clean."
+      ],
+      "format": [
+        "Every line pressed straight, like a shirt before deadline.",
+        "Margins aligned now. Neat as the morning edition.",
+        "A quick press and everything sits where it should."
+      ],
+      "install": [
+        "New tools arriving. I'll help carry them up the drive.",
+        "The delivery's in. Good tools make the work lighter.",
+        "Supplies settling into place, like grain into the silo."
+      ],
+      "git": [
+        "Every change remembered, like crystal holds a memory.",
+        "History's kept safe here. Nothing good gets lost.",
+        "The record grows. I like knowing where we've been."
+      ],
+      "file_edit": [
+        "A careful edit, line by line, like copy before print.",
+        "Small changes, steady hands. That's how good work gets made.",
+        "One word swapped for a better one. I notice things like that."
+      ],
+      "search": [
+        "Listening past the noise, for the one thing you need.",
+        "Scanning the whole file, corner to corner, until it turns up.",
+        "I hear a lot at once. Yours is the signal I follow."
+      ],
+      "web_fetch": [
+        "Around the globe and back before you'd notice I left.",
+        "A quick trip out for word from somewhere far off.",
+        "Word's coming in, like a wire clattering at the Planet."
+      ],
+      "todo_update": [
+        "The list shifts a little. Each mark is ground covered.",
+        "Chores rearranged. Order helps, even on quiet days.",
+        "One more line crossed off. Steady work, steady ground."
+      ],
+      "agent_spawn": [
+        "Another set of hands just joined in. Good, more to share it.",
+        "I sent up a signal. Help's arriving to share the load.",
+        "Not doing this stretch alone anymore. Reinforcements are here."
+      ],
+      "skill_run": [
+        "A trick I've practiced landing just right, every time.",
+        "Steady hands, a skill worn smooth from use. It's working.",
+        "Something learned long ago, put to good use again."
+      ],
+      "docker": [
+        "Everything boxed up neat, sealed tight for the trip.",
+        "A container rolling down the line, steady as they come.",
+        "Packed close and labeled right. Nothing shifts in transit."
+      ],
+      "k8s": [
+        "A whole formation moving together, like geese heading south.",
+        "Many small pieces, one steady course. I like watching that.",
+        "Everything orbiting in sync, quiet as satellites at night."
+      ],
+      "deploy": [
+        "Out it goes, into the world. I'll fly alongside it a while.",
+        "Released now. I'll keep watch as it finds its footing.",
+        "Into the open sky it goes. I've got eyes on it from here."
+      ],
+      "db_migrate": [
+        "Moving something precious, careful not to jostle a thing.",
+        "Old records shifting to new ground, steady the whole way.",
+        "Like moving into a storm cellar. Everything arrives intact."
+      ],
+      "dangerous": [
+        "I'm right here, close, while this one plays out careful.",
+        "This calls for a steady hand. I'm not going anywhere.",
+        "Careful ground. I'm watching close, right beside you."
+      ]
+    },
+    "stack": {
+      "web": {
+        "slow": [
+          "The page fills in, column by column, like a Planet proof.",
+          "Assets keep landing. Each one finds its place in time.",
+          "Requests queue up. Even a busy newsroom clears its desk."
+        ],
+        "fail": [
+          "The console's flashing red, like a proof marked in haste.",
+          "The page went blank a second. Screens always come back.",
+          "A request dropped out there. My hearing will find it."
+        ]
+      },
+      "python": {
+        "slow": [
+          "The interpreter reads line by line, patient as a harvest.",
+          "Packages resolve one at a time. Good crops don't rush.",
+          "Modules load deep, each one waiting like chores on the farm."
+        ],
+        "fail": [
+          "A traceback surfaced. Back home, the truth always showed.",
+          "The script stopped mid-thought. A pause, not a hard landing.",
+          "An exception slipped through. Every miss teaches the next catch."
+        ]
+      },
+      "sql": {
+        "slow": [
+          "The planner weighs its paths, careful as reading crystal.",
+          "That query's scanning wide. Thorough work earns the wait.",
+          "Rows keep stacking while the optimizer runs its quiet math."
+        ],
+        "fail": [
+          "The query came back empty-handed. A better question is near.",
+          "A lock's holding the table. Even a tight grip loosens.",
+          "That join broke halfway. Even Krypton's archives had gaps."
+        ]
+      },
+      "web-framework": {
+        "slow": [
+          "The dev server's charting routes, like flight paths over the city.",
+          "Hot reload's catching up, gaining speed like a good climb.",
+          "The build's walking every route by hand, missing none."
+        ],
+        "fail": [
+          "A route threw an error. One wrong turn, and the map still holds.",
+          "The bundle came back heavy. A lighter way is in there.",
+          "Middleware choked on something. The chain can carry weight again."
+        ]
+      },
+      "docker": {
+        "slow": [
+          "Layers stack one on the next, like crates loaded for flight.",
+          "The image is still building. Nobody rushes a good foundation.",
+          "Ports are binding up. Give the daemon a moment to listen."
+        ],
+        "fail": [
+          "The container tipped over. I've lifted heavier things upright.",
+          "A port's already taken. There's always another door.",
+          "The image failed halfway. A fresh build stands whole again."
+        ]
+      },
+      "java": {
+        "slow": [
+          "The JVM's filling its heap, making room like a good house.",
+          "The compiler walks every class file first, unhurried and sure.",
+          "Garbage collection tidies the house. Almost done in there."
+        ],
+        "fail": [
+          "A stack trace ran long. Somewhere in it, the honest answer.",
+          "The build failed on a missing class. It finds its way home.",
+          "An exception broke through mid-run. It lands standing, like I do."
+        ]
+      },
+      "go": {
+        "slow": [
+          "Goroutines are checking in, like a flock finding formation.",
+          "The module fetch is slow. The cache is catching its breath.",
+          "Cross-compiling for another platform takes its own quiet time."
+        ],
+        "fail": [
+          "A goroutine panicked. One flier stumbled; the rest hold formation.",
+          "The build failed on an unused import, plain to see.",
+          "A channel deadlocked. Even stuck things work themselves free."
+        ]
+      },
+      "node": {
+        "slow": [
+          "npm's installing every package on the list, one by one.",
+          "The event loop's got a full queue. It clears in fair order.",
+          "Node's resolving each module, the way I'd scan a city block."
+        ],
+        "fail": [
+          "An unhandled rejection surfaced. It just wants an answer.",
+          "The process crashed on a bad require. Pointed right, it runs.",
+          "A callback never came back. Give it a beat. Most signals do."
+        ]
+      },
+      "dotnet": {
+        "slow": [
+          "MSBuild's walking every project in the solution, start to finish.",
+          "NuGet's fetching packages, patient as freight on its way in.",
+          "The CLR's filling its cache before the first real run."
+        ],
+        "fail": [
+          "A null reference slipped through. Guard the gap; it holds.",
+          "A referenced assembly went missing. It's still findable.",
+          "The run broke on an exception. Clear skies again tomorrow."
+        ]
+      },
+      "cpp": {
+        "slow": [
+          "The compiler's expanding templates, doing the long math honestly.",
+          "The linker's stitching object files together, seam by seam.",
+          "Header after header compiles fresh, each in its own time."
+        ],
+        "fail": [
+          "A segfault stopped things cold. Even sharp eyes need a look twice.",
+          "The linker hit an unresolved symbol, waiting to answer.",
+          "Undefined behavior crept in. Pin it down; solid ground returns."
+        ]
+      },
+      "php": {
+        "slow": [
+          "Composer's resolving every package version, one at a time.",
+          "The opcache is filling. The next request lands lighter.",
+          "Sessions write to disk, request after request, like old presses."
+        ],
+        "fail": [
+          "A fatal error broke the page. Presses still run tomorrow.",
+          "Composer choked on a version conflict. Peace gets brokered.",
+          "A null showed up where an object should stand. Tracked down."
+        ]
+      },
+      "rust": {
+        "slow": [
+          "The borrow checker works through every reference, fair to each.",
+          "Cargo's compiling every crate fresh, thorough to the last.",
+          "The compiler's proving your types safe, bound after bound."
+        ],
+        "fail": [
+          "A panic unwound the stack. The cause is closer than it feels.",
+          "The borrow checker held its ground. It's only guarding you.",
+          "Cargo hit a version conflict. One good pin settles it."
+        ]
+      },
+      "kubernetes": {
+        "slow": [
+          "Pods are coming up one at a time. The scheduler takes care.",
+          "The rollout moves pod by pod, like a formation heading south.",
+          "The scheduler's finding the right node for this one. It will."
+        ],
+        "fail": [
+          "A pod crash-looped a bit. Even a stumble finds its feet.",
+          "The rollout stalled halfway. A step back, then forward again.",
+          "A node went unready. The rest hold formation for it."
+        ]
+      },
+      "ml": {
+        "slow": [
+          "The model moves through its epochs, learning to fly slow first.",
+          "Loss drops slow. Every gradient step still counts for something.",
+          "Training's crunching numbers deep, working toward converging."
+        ],
+        "fail": [
+          "The loss spiked hard. A rough epoch, and the next one settles.",
+          "Training diverged. A gentler hand steers it back on course.",
+          "The GPU ran low on memory mid-epoch. Ease up; it breathes."
+        ]
+      },
+      "android": {
+        "slow": [
+          "Gradle's syncing every module, unhurried as it always is.",
+          "The emulator's booting its own small city. Almost there.",
+          "Dex is packing every class into place, with care for each."
+        ],
+        "fail": [
+          "The build failed on Gradle. A stalled sync finds its rhythm.",
+          "The app force-closed on launch. The log holds an honest answer.",
+          "ADB lost the device a second. A dropped line reconnects."
+        ]
+      },
+      "ruby": {
+        "slow": [
+          "Bundler's working the Gemfile, gem by gem, like sorting crystal.",
+          "Rails is booting slow. Every initializer gets its turn.",
+          "The interpreter's walking each block without a bit of rush."
+        ],
+        "fail": [
+          "A gem conflict stopped the bundle. Crystal needs matching facets.",
+          "An exception raised mid-request. Rescued gently, it moves on.",
+          "The server crashed on boot. Mornings start over; so does this."
+        ]
+      },
+      "ios": {
+        "slow": [
+          "Xcode's indexing every file in the project, leaving none out.",
+          "The simulator's booting its own small city, glass towers and all.",
+          "That build's a big one. Worth the climb to see it land."
+        ],
+        "fail": [
+          "The build failed signing. Certificates get sorted in time.",
+          "The simulator crashed on launch. It rises clean and calm again.",
+          "A provisioning profile expired. Renewed, the sky opens back up."
+        ]
+      },
+      "terraform": {
+        "slow": [
+          "Terraform's walking the plan, resource by resource, unhurried.",
+          "The state file's thick with history. It settles in its time.",
+          "Apply moves slow. Every resource waits its own fair turn."
+        ],
+        "fail": [
+          "The apply failed partway. The state reconciles, tries once more.",
+          "A provider choked on something. Pointed right, it comes around.",
+          "The state drifted from reality. It settles back to solid ground."
+        ]
+      },
+      "graphql": {
+        "slow": [
+          "The resolvers work through every nested field, one by one.",
+          "That query asks a lot. Each resolver gets its fair turn.",
+          "The schema's stitching fields together, like facets in crystal."
+        ],
+        "fail": [
+          "A resolver threw partway through. One patch, it answers again.",
+          "The schema didn't match the query. Line them up; they agree.",
+          "A field came back null when it shouldn't. It can still be filled."
+        ]
+      },
+      "flutter": {
+        "slow": [
+          "Hot reload's catching up to every widget, fast as it flies.",
+          "The build runner's generating code, file by unhurried file.",
+          "Dart's compiling every widget fresh, with care for each."
+        ],
+        "fail": [
+          "Hot reload lost its place. A full restart, quick as a dart.",
+          "The build failed on a missing asset. The right one's close.",
+          "A widget threw during layout. Rebuilt gently, it stands."
+        ]
+      },
+      "react-native": {
+        "slow": [
+          "Metro's bundling every module for the phone, one by one.",
+          "The bridge is passing messages slow, like ones over Metropolis.",
+          "The native build's compiling underneath, piece by piece."
+        ],
+        "fail": [
+          "Metro lost the bundle. Cleared out, it starts fresh and clean.",
+          "A native module crashed on launch. Relinked, it wakes up right.",
+          "The bridge dropped a message. A dropped line finds its way back."
+        ]
+      },
+      "scala": {
+        "slow": [
+          "The compiler's untangling every implicit, unhurried as ever.",
+          "sbt's resolving the build, in no great hurry about it.",
+          "Type inference is working overtime, steady as a good glide."
+        ],
+        "fail": [
+          "The compiler rejected an implicit. Made explicit, it settles.",
+          "sbt hit a dependency clash. The versions get pinned down.",
+          "A match missed a case. The one that's missing joins the rest."
+        ]
+      },
+      "protobuf": {
+        "slow": [
+          "The compiler's walking every field number in the schema.",
+          "Codegen's writing out every message type, like archived crystal.",
+          "The schema's compiling across every language target, thorough."
+        ],
+        "fail": [
+          "A field number got reused. It just needs one all its own.",
+          "The encoded bytes didn't match. The schema lines them back up.",
+          "Codegen broke on a renamed field. The schema catches up quick."
+        ]
+      },
+      "game": {
+        "slow": [
+          "The shaders are compiling before the first frame. Almost lit.",
+          "Assets are still streaming in. The frame loop holds its footing.",
+          "The engine's baking lighting, pixel by pixel, like city dusk."
+        ],
+        "fail": [
+          "The frame rate dropped hard. Even I clock slower some days.",
+          "A shader failed to compile. The syntax mends, it glows again.",
+          "The game crashed on load. The last asset leaves a decent clue."
+        ]
+      },
+      "docs": {
+        "slow": [
+          "The site's building every page from markdown, like copy to print.",
+          "The docs generator is walking every file, leaving none behind.",
+          "The search index builds across every page, like a good archive."
+        ],
+        "fail": [
+          "A broken link surfaced in the build. Its aim gets set right.",
+          "The docs build failed on bad markdown. Presses run again, clean.",
+          "A page failed to render. Rebuilt, it reads clean and clear."
+        ]
+      },
+      "r": {
+        "slow": [
+          "The data frame's loading every row from disk, unhurried.",
+          "CRAN's fetching packages slow. The mirror catches up soon.",
+          "That vector's computing through every element, patient as harvest."
+        ],
+        "fail": [
+          "A function errored on bad input. The data checks out, reruns.",
+          "The package failed to install from CRAN. Another mirror will do.",
+          "A plot broke halfway. Redrawn with care, clear as a Kansas sky."
+        ]
+      },
+      "cuda": {
+        "slow": [
+          "The kernel's launching across every thread block, one by one.",
+          "GPU memory's filling slow. The transfer gets there in time.",
+          "Every block waits its turn on the grid, like satellites at night."
+        ],
+        "fail": [
+          "The kernel crashed on a bad memory access. The bounds get found.",
+          "GPU memory ran out mid-run. Ease the load; it breathes again.",
+          "A kernel launch failed silently. The error code speaks up."
+        ]
+      }
+    },    "pressure": {
+      "compact_hint": [
+        "Getting full up here. I'll pace myself, same as always.",
+        "Carrying a lot right now. Steady hands, steady breathing.",
+        "Room's filling in. I've held more and kept my footing."
+      ],
+      "block_limit": [
+        "Sun's arcing toward the horizon. We made good use of the day.",
+        "Getting late in this stretch. I'm still standing right here.",
+        "The hours are stacking up. I'll set our pace and keep us moving."
+      ],
+      "weekly_limit": [
+        "Long week behind us. Good flying, even when it's tiring.",
+        "We've covered real distance this week. I feel every mile.",
+        "Near the end of a long stretch. Strong finish, same as always."
+      ]
+    },
+    "dateEgg": [
+      "Midnight already. Even Metropolis dims its lights by now.",
+      "Three in the morning, and the city's fast asleep. Not you.",
+      "Another month turns over. The date resets; the light doesn't.",
+      "Friday, and there's still daylight left to make good use of.",
+      "Leap day today. Even the calendar takes an extra breath.",
+      "Saturday, and you're still at it. I don't mind the company.",
+      "New Year on the calendar. Same sun, one more fresh start.",
+      "Quiet Sunday morning. Even I slow down when I get one.",
+      "A year to the day since we started this. Feels like no time.",
+      "The clock just struck an even hour. Small things line up too."
+    ]
+  },
+  "spinnerVerbs": [
+    "Soaring",
+    "Lifting",
+    "Catching",
+    "Listening",
+    "Rising",
+    "Flying",
+    "Rescuing",
+    "Shielding",
+    "Carrying",
+    "Hovering",
+    "Saving",
+    "Holding",
+    "Steadying",
+    "Bracing",
+    "Vaulting",
+    "Streaking",
+    "Ascending",
+    "Championing",
+    "Guarding",
+    "Rallying",
+    "Uplifting",
+    "Racing",
+    "Gliding",
+    "Hoping",
+    "Scanning",
+    "Speeding",
+    "Heartening",
+    "Standing"
+  ]
+}

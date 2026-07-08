@@ -54,9 +54,13 @@ test("renders the canonical payload (figure + fields) and persists state, cost, 
 
 	const store = JSON.parse(readFileSync(join(root, "analytics/store.json"), "utf8")) as Record<
 		string,
-		{ project: string; character: string }
+		{ project: string; character: string; updatedMs: number }
 	>;
-	expect(store["sess-123"]).toEqual({ project: "krayong/ccsidekick", character: "batman" });
+	expect(store["sess-123"]).toEqual({
+		project: "krayong/ccsidekick",
+		character: "batman",
+		updatedMs: NOW,
+	});
 });
 
 test("a pack-load failure degrades to the [name] chip and never throws", () => {

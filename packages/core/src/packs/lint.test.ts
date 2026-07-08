@@ -1,13 +1,14 @@
 import { spawnSync } from "node:child_process";
-import { readFileSync } from "node:fs";
-import { join } from "node:path";
+import { copyFileSync, mkdtempSync, readFileSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { basename, join } from "node:path";
 
 import { expect, test } from "bun:test";
 
 import batmanPack from "../../../packs/batman/pack.json";
 import fixture from "../../test/fixtures/packs/valid/pack.json";
 
-import { PLACEHOLDER_TOKEN, lintPack, statusReport } from "./lint";
+import { PLACEHOLDER_TOKEN, lintPack, packageJsonErrors, statusReport } from "./lint";
 
 // Fresh read per call: never mutate a shared imported fixture.
 const batman = (): { lines: { mood: { idle: Record<string, string[]> } } } =>
@@ -179,4 +180,56 @@ test("a mood.idle group sum of 50 with a skewed per-tier distribution now fails"
 	expect(ok).toBe(false);
 	expect(errors.some((e) => e.includes("mood.idle.stranger"))).toBe(true);
 	expect(errors.some((e) => e.includes("mood.idle.acquaintance"))).toBe(true);
+});
+
+test("packageJsonErrors passes batman's real package.json", () => {
+	const raw = JSON.parse(readFileSync(join(batmanDir, "package.json"), "utf8")) as unknown;
+	expect(packageJsonErrors(raw, "batman")).toEqual([]);
+});
+
+test("packageJsonErrors flags an incomplete or mislabeled package.json", () => {
+	const good = {
+		name: "@ccsidekick/pack-x",
+		files: ["pack.json", "README.md", "assets"],
+		repository: { directory: "packages/packs/x" },
+		author: "Someone <a@b.c>",
+	};
+	expect(packageJsonErrors(good, "x")).toEqual([]);
+	// files missing README.md and assets: the README/preview would not publish.
+	expect(packageJsonErrors({ ...good, files: ["pack.json"] }, "x").join(" ")).toContain("files");
+	// author absent.
+	const noAuthor: Record<string, unknown> = { ...good };
+	delete noAuthor["author"];
+	expect(packageJsonErrors(noAuthor, "x").join(" ")).toContain("author");
+	// repository points at the wrong pack directory.
+	expect(
+		packageJsonErrors({ ...good, repository: { directory: "packages/packs/y" } }, "x").join(
+			" ",
+		),
+	).toContain("directory");
+	// name does not match the pack.
+	expect(packageJsonErrors({ ...good, name: "@ccsidekick/pack-y" }, "x").join(" ")).toContain(
+		"name",
+	);
+	// missing entirely.
+	expect(packageJsonErrors(null, "x")).toHaveLength(1);
+});
+
+test("CLI fails a pack whose package.json omits the README/assets from files", () => {
+	const tmp = mkdtempSync(join(tmpdir(), "packlint-"));
+	const name = basename(tmp);
+	// A complete, valid pack.json so only the package.json gate can fail.
+	copyFileSync(join(batmanDir, "pack.json"), join(tmp, "pack.json"));
+	writeFileSync(
+		join(tmp, "package.json"),
+		JSON.stringify({
+			name: `@ccsidekick/pack-${name}`,
+			files: ["pack.json"], // omits README.md and assets
+			repository: { directory: `packages/packs/${name}` },
+			author: "Someone <a@b.c>",
+		}),
+	);
+	const run = spawnSync("bun", [lintTs, tmp]);
+	expect(run.status).toBe(1);
+	expect(run.stderr.toString()).toContain("package.json");
 });

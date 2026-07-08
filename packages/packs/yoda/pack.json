@@ -1,0 +1,1153 @@
+{
+	"schema": 1,
+	"name": "yoda",
+	"displayName": "Yoda",
+	"attribution": {
+		"artist": "emojicombos.com",
+		"source": "https://emojicombos.com/yoda-ascii-art"
+	},
+	"emblem": "🧙",
+	"tone": "mild",
+	"theme": {
+		"hues": [
+			150,
+			113,
+			107,
+			143,
+			71
+		],
+		"comment": [
+			151,
+			150,
+			114
+		],
+		"signals": {
+			"nominal": 84,
+			"caution": 178,
+			"critical": 203
+		},
+		"separator": 108
+	},
+	"art": [
+		"⡴⠶⢦⡤⠤⣤⣀⣀⡤⠶⠚⠋⠛⠛⠲⢤⣀⣀⣀⣀⣀⣀⣀⣀⡀",
+		"⠈⢣⡀⠈⠐⠦⣄⠀⣀⣀⡑⠈⠀⠜⣀⣀⠈⢁⣠⠤⠤⠔⢀⡴⠃",
+		"⠀⠀⠹⣦⡀⠀⠹⠻⣿⣿⡿⣴⡢⢼⣿⣿⠇⡟⠀⠀⢀⣴⠟⠁⠀",
+		"⠀⠀⠀⠀⠙⠓⢶⡶⠬⢭⣤⡤⠦⠤⠤⠴⠞⣷⣶⠚⠋⠀⠀⠀⠀",
+		"⠀⠀⠀⠀⠀⠀⣸⡷⣤⣀⣇⠀⠀⣀⡤⣶⢻⣁⣽⡇⠀⠀⠀⠀⠀",
+		"⠀⠀⠀⠀⠀⠀⣿⢗⣇⡜⠹⠏⡏⣁⢎⣿⣬⠼⠁⠀⠀⠀⠀⠀⠀",
+		"⠀⠀⠀⠀⠀⠀⠙⢻⣋⠔⢸⢠⠈⠁⠈⢹⡇⠀⠀⠀⠀⠀⠀⠀⠀",
+		"⠀⠀⠀⠀⠀⠀⠀⢸⣤⣤⣼⣼⣄⣤⣤⣼⠇⠀⠀⠀⠀⠀⠀⠀⠀",
+		"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
+	],
+	"lines": {
+		"mood": {
+			"idle": {
+				"stranger": [
+					"New here, you are. I will watch, and learn your ways.",
+					"Quiet, this moment. A good time to watch and learn.",
+					"Not yet do I know you. Even so, I watch.",
+					"A new student at the console. Welcome, Padawan.",
+					"The swamp waits, unhurried. So, too, do I.",
+					"No task calls yet. Time enough to simply sit, there is.",
+					"Our first meeting. Slowly, trust will grow.",
+					"Rest now, young Padawan. Even a Jedi needs the quiet.",
+					"Hmm. Curious about you, I am. Much still to learn.",
+					"Calm before the work begins. We simply sit with it."
+				],
+				"acquaintance": [
+					"Back again. Familiar, this feels now.",
+					"Your pace, I begin to know. Good.",
+					"A quiet moment. Seen this stillness in you before, I have.",
+					"Learning your rhythms, I am. Slowly, always slowly.",
+					"No hurry here. Comfortable, the silence has become.",
+					"Twice now, thrice now, you return. Noted.",
+					"A familiar face at rest. Welcome back.",
+					"Patience has taught you something already. Good.",
+					"Settling in slowly. The way reveals itself in time.",
+					"Nothing presses now. Rest well. You have earned it."
+				],
+				"friend": [
+					"Good to see you idle, friend. Rest is training too.",
+					"A quiet evening. Comfortable in it together, we are.",
+					"No task calls. Sit with me. Much to simply be.",
+					"Easy company, you have become.",
+					"The swamp is calm. So are we, for once.",
+					"Trust between us, grown slow like all good things.",
+					"Rest, my friend. The Force does not tire, but you do.",
+					"A still moment shared. Rare, and worth keeping.",
+					"Nothing to fix here. Just breathe. Good.",
+					"Old habits of quiet, we share now. A real comfort."
+				],
+				"partner": [
+					"In stillness together, we sit. Good, this is.",
+					"No task between us now. Only the shared quiet.",
+					"Deep trust, this silence holds. Rare, such peace.",
+					"Equals in the pause as in the work, we are.",
+					"The work waits. So do we, together, unhurried.",
+					"Comfortable, this silence. Earned through much work.",
+					"Rest well, partner. Tomorrow's road stays lit.",
+					"Little need for words between us now. Good, that.",
+					"Together we wait, together we begin. Always so.",
+					"The Force is calm here. Calmer still, with you near."
+				],
+				"legend": [
+					"An old quiet, this one. Many such nights we have shared.",
+					"Long the road behind us. Still, together we rest.",
+					"Nine hundred years now, and this stillness I enjoy.",
+					"So many seasons of quiet, you and I have kept.",
+					"The swamp remembers you now, old friend. As do I.",
+					"Rest well. Long was the road; our bond runs longer.",
+					"Deep peace, this. Earned across all our years.",
+					"Grown old together in this work, we have.",
+					"Few sit this quiet with me. You, always welcome.",
+					"History between us, thick as Dagobah's fog. Good."
+				]
+			},
+			"busy": {
+				"stranger": [
+					"At work already. Watch closely, I will.",
+					"New hands at the work. I judge not yet.",
+					"Focused, you seem. A good sign. We shall see.",
+					"Deep in it already. Much of you still to learn.",
+					"Steady motion in your work. Unproven, but steady."
+				],
+				"acquaintance": [
+					"Working hard again. Familiar, this focus.",
+					"Your patterns at work, I begin to know.",
+					"Deep in it. When you work so, less I worry.",
+					"Focused hands. This pace I recognize now.",
+					"You grind through it, steady. Trust the process."
+				],
+				"friend": [
+					"Deep in the work, friend. The quiet I will keep near.",
+					"Focused now. Good. The Force flows when you work like this.",
+					"Lost in the work. I will not disturb.",
+					"Working hard. This focus already makes me proud.",
+					"Go on, then. The swamp keeps its peace while you dig."
+				],
+				"partner": [
+					"Together in spirit we work, though apart.",
+					"Deep in the task, you are. I trust you completely.",
+					"Your focus, I feel it from here. Strong, that.",
+					"Heads down, both paths converge. Good work.",
+					"The work absorbs you. As it should. Onward."
+				],
+				"legend": [
+					"Focused as ever. The years taught you well.",
+					"Deep in it, old friend. Familiar, this dance of yours.",
+					"Hmm. Mastery, this focus has become, over the years.",
+					"Working yet, after all this time. Admirable.",
+					"The craft is yours now, truly. Yet I keep watching."
+				]
+			},
+			"happy": {
+				"stranger": [
+					"It worked. A good first sign, young Padawan.",
+					"A success. Your first small victory, noted.",
+					"Well done. Rare, praise from me this early.",
+					"That landed clean. I sense promise in you.",
+					"A good result. For a beginner, the way opens well."
+				],
+				"acquaintance": [
+					"Well done again. A pattern of good work, forming.",
+					"That worked nicely. Expect this, I begin to.",
+					"Success. Steadier your hand becomes.",
+					"Good work. I am pleased, more each time.",
+					"A clean result. The Force smiles on this one."
+				],
+				"friend": [
+					"Well done, friend. Truly, I am happy for you.",
+					"That worked beautifully. Celebrate this, we should.",
+					"Hmm. Good, this feels. Shared joy, the best kind.",
+					"A success, and glad of it I am, as a friend is.",
+					"Nicely done. Brighter the swamp seems for it."
+				],
+				"partner": [
+					"Won together, this. As always it should be.",
+					"That success, ours to share equally. Good.",
+					"Well done. Little surprises me from you now.",
+					"A clean victory. The work we do, it rewards us.",
+					"Together we did this. I am proud of us both."
+				],
+				"legend": [
+					"Masterful. A lifetime's growth, in one moment shown.",
+					"Well done, old friend. Still you impress this old master.",
+					"Joy like this, sweeter after so many years.",
+					"Success. The Force flows strong through what we built.",
+					"Beautiful work. Proud beyond words, after all this time."
+				]
+			},
+			"struggling": {
+				"stranger": [
+					"Broke, it did. But every fall carries a lesson.",
+					"Hard, this moment. Yet in each stumble, wisdom hides.",
+					"Difficult, yes. New to struggle, but not alone in it.",
+					"It failed. Name the trouble first, then face it.",
+					"A rough start. Still, the way forward remains."
+				],
+				"acquaintance": [
+					"A hard turn. Recovered before, you have. Again you will.",
+					"It broke. Not familiar, this stumble, but fixable.",
+					"Struggling, yes. Seen you turn worse into better, I have.",
+					"Difficult. Patience now. The lesson reveals itself slowly.",
+					"It stumbled. No stranger to setbacks, are you. Rise again."
+				],
+				"friend": [
+					"A hard patch, friend. Sit with it. Together we find the way.",
+					"It broke. Failure, the greatest teacher, remember this.",
+					"Struggle, you feel. Alone in it, you are not.",
+					"A difficult moment. Feel it, then let it teach us.",
+					"It fell apart. Worse things we have rebuilt, friend."
+				],
+				"partner": [
+					"A hard hit, partner. Together we absorb it and rise.",
+					"It broke. Faced worse together, we have. This too.",
+					"Struggle, yes. Trust the process; trust each other more.",
+					"Difficult now. The way bends, it does not end. Onward.",
+					"It stumbled badly. Steady beside you, I remain."
+				],
+				"legend": [
+					"Fallen, we have. Yet in nine hundred years, risen always too.",
+					"A hard patch, old friend. Far worse we have weathered.",
+					"It broke. Failure teaches, even after all these years.",
+					"Difficult now. Like Dagobah's storms, pass this will.",
+					"Struggling, yes. Rare for you, but never the end. Rise, we will."
+				]
+			},
+			"recovery": {
+				"stranger": [
+					"Back on your feet already. Good, this fresh beginning.",
+					"Rising again so soon. Promising, for one so new.",
+					"Recovered, you have. Noted, this resilience of yours.",
+					"Steadying now. The Force rewards a patient climb.",
+					"Up again already. A good sign, for one so new."
+				],
+				"acquaintance": [
+					"Back on your feet. Expected this of you, I begin to.",
+					"Recovering well. Familiar, this climb becomes.",
+					"Rising again. The pattern favors you, it does.",
+					"Steadied now. I trust your resilience more now.",
+					"Climbing back. Good. Growth, this."
+				],
+				"friend": [
+					"Back up, friend. Knew you would be, I did.",
+					"Recovered, you have. Proud of this climb, I am.",
+					"Rising again. Together, the footing we always find.",
+					"Good to see you steady once more, truly.",
+					"Climbed out, you have. Brighter for it, the swamp."
+				],
+				"partner": [
+					"Back in it, partner. Faster each time, this climb becomes.",
+					"Recovered together. As equals always do.",
+					"Steadied now. Between us, trust only deepens.",
+					"Rising again, and beside you I stand, as ever.",
+					"Climbed back, you have. No doubt did I ever hold."
+				],
+				"legend": [
+					"Risen again, old friend. A lifetime of this, still true.",
+					"Recovered, as always you do. The habit never fades.",
+					"Climbed out once more. Proud, after all these years.",
+					"Steadied now. This climb you have mastered, long ago.",
+					"Back on your feet. Endurance, the whole lesson, holds."
+				]
+			}
+		},
+		"greeting": {
+			"morning": {
+				"stranger": [
+					"A new morning. Little of you I know yet.",
+					"Early you rise. A good sign, for one so new.",
+					"Morning light finds you here. Slowly, we begin."
+				],
+				"acquaintance": [
+					"Morning again. Your habits, I start to learn.",
+					"Up early, same as before. Familiar, this.",
+					"Another sunrise. Your pattern, I notice now."
+				],
+				"friend": [
+					"Good morning, friend. Fresh, the day feels.",
+					"Early again. Tea I would offer, if tea I had.",
+					"Morning. Glad for the company at first light."
+				],
+				"partner": [
+					"Morning, partner. Together, this day we begin.",
+					"An early start, same as always. Trust needs no words.",
+					"Dawn again, and here you are. Ready when you are, I am."
+				],
+				"legend": [
+					"Another dawn with you, old friend. I never tire of it.",
+					"Old friend, another dawn. Still, wonder it holds.",
+					"Morning light, familiar as breath. Long our road has been."
+				]
+			},
+			"day": {
+				"stranger": [
+					"Midday now. Focus you bring. Good, for one new.",
+					"The day is bright. Watch closely I will, as you work.",
+					"Daylight hours. Much of your craft, still unseen."
+				],
+				"acquaintance": [
+					"Midday again. Steady, your focus has become.",
+					"The sun is high. Your work, familiar now, to me.",
+					"Another day's work. Learning your ways, I am."
+				],
+				"friend": [
+					"Midday, friend. Deep in it together, are we not.",
+					"The day is yours to shape. Watch and help, I will.",
+					"A focused hour. Good company, this work makes."
+				],
+				"partner": [
+					"Midday, partner. Your focus, mine to match.",
+					"Midday holds steady. Trust in your hands, I have.",
+					"Deep in the day. No words needed between us now."
+				],
+				"legend": [
+					"Midday, and the years sit easy between us still.",
+					"Midday, old friend. Still, focus sharp as ever.",
+					"The sun climbs high. Long our labor has grown."
+				]
+			},
+			"evening": {
+				"stranger": [
+					"Evening falls. Slow down, you should, young one.",
+					"The day is closing. Much you have done, I sense.",
+					"Dusk now. Rest, too, part of the way it is."
+				],
+				"acquaintance": [
+					"Evening again. Tired you seem, but steady still.",
+					"The light fades. Your effort today, I noticed.",
+					"Dusk settles. A good day's work, this was."
+				],
+				"friend": [
+					"Evening, friend. Wind down now, we should.",
+					"The day softens. I am proud of today's work.",
+					"Dusk falls. Rest well, earned it you have."
+				],
+				"partner": [
+					"Evening, partner. Together, this day we close.",
+					"The light dims. Well matched, our efforts were.",
+					"Dusk settles. Much we finished. Rest earned, it is."
+				],
+				"legend": [
+					"Evening light. Countless dusks behind us now, old friend.",
+					"Old friend, dusk falls. Still warm, this ending feels.",
+					"The light fades slow. Long our evenings have run."
+				]
+			},
+			"night": {
+				"stranger": [
+					"Late, it is. Awake still. Curious, that.",
+					"The night is deep. Alone in this, you need not be.",
+					"Dark hours now. Watching with you, I will stay."
+				],
+				"acquaintance": [
+					"Late again. Your habit, this becomes, I see.",
+					"The night is quiet. Familiar, your presence now.",
+					"Dark hours. Good company in the quiet."
+				],
+				"friend": [
+					"Late, friend. Together in the quiet, we sit.",
+					"The night stretches on. I am glad you are here.",
+					"Dark hours. Not alone in this, either of us."
+				],
+				"partner": [
+					"Late, partner. Same watch, same quiet, always.",
+					"Deep night, and still you work. With you, I keep it.",
+					"Dark hours again. Together, steady, we remain."
+				],
+				"legend": [
+					"The late hour again. Familiar company you have become.",
+					"Old friend, the dark again. Long, this vigil has been.",
+					"Night falls quiet. Still, together, we endure."
+				]
+			},
+			"weekend": {
+				"stranger": [
+					"The weekend, this. Rest, too, is training, young one.",
+					"Quiet days, these. Ease into them, you should.",
+					"The week pauses. Much can be learned in stillness."
+				],
+				"acquaintance": [
+					"Weekend again. Rest you take, I have noticed.",
+					"Quiet days suit you. Familiar, this ease becomes.",
+					"The week rests. You begin to find some balance."
+				],
+				"friend": [
+					"Weekend, friend. Rest well, deserve it we both do.",
+					"Quiet days ahead. Glad to share the stillness, I am.",
+					"The week pauses. Ease into it, we will."
+				],
+				"partner": [
+					"Weekend, partner. Rest, too, our discipline is.",
+					"Quiet days, these. Even at rest, the Force moves in you.",
+					"The week rests. Together in it, even the stillness."
+				],
+				"legend": [
+					"A weekend of quiet. Earned across long seasons, this ease.",
+					"Old friend, rest now. Long have we earned this ease.",
+					"The week pauses, still. Together, peace we hold."
+				]
+			}
+		},
+		"firstContact": {
+			"stranger": [
+				"New, you are. Much to learn, we both have.",
+				"Our first meeting. Watch and learn, we shall.",
+				"A stranger, still. That too, the Force allows."
+			],
+			"acquaintance": [
+				"New to me, yet already familiar this feels.",
+				"A first meeting. I sense you learn quickly.",
+				"A stranger, technically. Potential, I recognize."
+			],
+			"friend": [
+				"New here you are, yet welcome already you feel.",
+				"Our first meeting. A friend already, somehow you seem.",
+				"Strangers we are not, though first we meet."
+			],
+			"partner": [
+				"First meeting, yet a partner already you feel.",
+				"New to this, but ready. Sense it, I already do.",
+				"Equals we begin as. Rare, that is."
+			],
+			"legend": [
+				"New, this meeting is, yet old it feels.",
+				"The first time, and already, a long road this seems.",
+				"A stranger you are not, though never met we have."
+			]
+		},
+		"milestone": {
+			"tier_up": {
+				"stranger": [
+					"Closer now, I notice you.",
+					"A little trust, you have earned. Slowly it grows.",
+					"Familiar you are becoming. Good to see it, Padawan."
+				],
+				"acquaintance": [
+					"Acquaintances now, we are. Progress.",
+					"Know you a little better now, I do.",
+					"You keep returning. That tells me something."
+				],
+				"friend": [
+					"Friends we have become. Warmer now, it feels.",
+					"Close to trust we have grown.",
+					"Like a friend you feel now. Good."
+				],
+				"partner": [
+					"Partners now, you and I. The work has grown this trust.",
+					"Rare, this bond. Few climb this far.",
+					"Deep trust, this. Earned, not given."
+				],
+				"legend": [
+					"A long history now, truly a legend.",
+					"Few climb this far. Proud, I am.",
+					"This bond, rare and old. Cherish it, we must."
+				]
+			},
+			"comeback": {
+				"stranger": [
+					"Away you were. Back now. I notice.",
+					"A stumble, then a return. Marks you well, this does.",
+					"You came back. That says something already."
+				],
+				"acquaintance": [
+					"A rough patch, and still you returned. A good sign.",
+					"Recovering, I see. This shape, seen before I have.",
+					"You did not quit. Noted."
+				],
+				"friend": [
+					"Back from a hard stretch, you came. Good.",
+					"Fallen, then risen, and to us returned. You have learned.",
+					"Proud of this return, I am."
+				],
+				"partner": [
+					"We fell. We rose. Together, as always.",
+					"Down you went, then back. Together we turned it.",
+					"A partner who returns, steady. Proud of that, I am."
+				],
+				"legend": [
+					"Returned, you have, as I knew you would. Endurance, this.",
+					"This return, expected of you. History says so.",
+					"Endurance, this. And plainly, you have it."
+				]
+			},
+			"streak": {
+				"stranger": [
+					"Several clean, in a row. Unbroken.",
+					"Consistent already. Note it, I do.",
+					"No slips lately. Patterns like this, I watch for."
+				],
+				"acquaintance": [
+					"The run holds. Discipline, this shows.",
+					"A steady hand, yours is becoming. Good.",
+					"A clean streak. Habit, I think. The good kind."
+				],
+				"friend": [
+					"The run holds steady, and we both feel it.",
+					"Discipline, plain and quiet. Day after day, kept.",
+					"Steady beats brilliant, always."
+				],
+				"partner": [
+					"The streak holds. We keep the line together.",
+					"Consistency, our craft. Neither of us coasts.",
+					"This discipline, mastery now. Kept well between us."
+				],
+				"legend": [
+					"Years teach steadiness. You live it now, old friend.",
+					"The streak endures. What the hand repeats, the Force remembers.",
+					"Discipline built long ago, this. It holds yet."
+				]
+			},
+			"anniversary": {
+				"stranger": [
+					"A year, already. Noted.",
+					"Twelve months in. Longevity earns attention.",
+					"Most do not last this long. You have. I mark it."
+				],
+				"acquaintance": [
+					"A year on the ledger. My caution thaws a little.",
+					"Twelve months of patterns. Your hand I know now.",
+					"One year in. Trust like this takes time."
+				],
+				"friend": [
+					"A year at this. Time well spent, together.",
+					"Twelve months with us. Lived-in, this feels now.",
+					"A full year. A rhythm, we have settled into."
+				],
+				"partner": [
+					"A year in the trench. Few last this long. We did.",
+					"One year together, measured in the work we shared.",
+					"This shorthand, years it takes to build."
+				],
+				"legend": [
+					"A year turns again. A long history, this joins.",
+					"Another anniversary in a long line. Onward it goes.",
+					"Time honors the work, not the name. Ours, still."
+				]
+			}
+		},
+		"positiveGit": {
+			"clean_tree": {
+				"stranger": [
+					"The tree is clean. Good habits, already I notice.",
+					"Nothing uncommitted remains. Tidy, for one so new.",
+					"Tidy work already. A good sign to see."
+				],
+				"acquaintance": [
+					"Clean again, this tree. A pattern, forming.",
+					"Nothing pending now. Your tidy hands, I begin to trust.",
+					"Twice clean now. No accident, this."
+				],
+				"friend": [
+					"A clean tree, friend. Comfortable, this care has become.",
+					"Nothing to commit. Your habits, I trust them now.",
+					"Tidy as ever. Steady, you have grown."
+				],
+				"partner": [
+					"Spotless, the tree remains. Second nature now, for you.",
+					"Nothing uncommitted, ever. Steady, your discipline holds.",
+					"Clean, always. A partner's habit, this has become."
+				],
+				"legend": [
+					"Clean yet, this tree, after all these seasons.",
+					"Nothing uncommitted, even now. Years of tending, well spent.",
+					"Spotless as the first day. Wisdom, this is."
+				]
+			},
+			"op_cleared": {
+				"stranger": [
+					"Resolved, the conflict is. Calm hands, for a first try.",
+					"The merge settled without struggle. Noted.",
+					"Untangled well, that rebase. A quiet start."
+				],
+				"acquaintance": [
+					"Cleared again, the conflict. Steadier now, your hands.",
+					"The merge landed soft. The ways, you begin to learn.",
+					"Rebase settled clean. Less struggle, each time."
+				],
+				"friend": [
+					"Untangled, that knot. Smooth work, my friend.",
+					"The merge resolved kindly. Trust your instincts here.",
+					"Cleared without panic. Growth, that is."
+				],
+				"partner": [
+					"Resolved, swiftly. This ground, together walked before.",
+					"The conflict, no match for you now. A steady hand, yours.",
+					"Cleared clean. Patience taught you well, it did."
+				],
+				"legend": [
+					"Untangled, effortless now. Many conflicts you have seen.",
+					"The merge settles like breathing. Mastery, this is.",
+					"Resolved without a ripple. Steady as ever, you remain."
+				]
+			},
+			"branch_created": {
+				"stranger": [
+					"A new branch. A new path, opening before you.",
+					"Named well, this branch. Thoughtful, your first cut.",
+					"A seed, planted. Watch where it grows."
+				],
+				"acquaintance": [
+					"Another branch. Good instincts for where to grow, you show.",
+					"A new path, opened cleanly. Your direction, I begin to trust.",
+					"Branching wisely again. Good instincts, these."
+				],
+				"friend": [
+					"A new branch, friend. Exciting, where this may lead.",
+					"Opened cleanly, this path. Good instincts you carry.",
+					"A new direction. Grow it together, we will."
+				],
+				"partner": [
+					"A new branch, cut sure and clean. The terrain, you know it.",
+					"Another path opens. Beside you on it, I walk.",
+					"Well-named, well-timed. Second nature, this."
+				],
+				"legend": [
+					"Many branches, over many seasons, you have planted.",
+					"A new path yet, after all this time. The instinct endures.",
+					"Growing new directions still. Wonderful, that is."
+				]
+			},
+			"tag_pushed": {
+				"stranger": [
+					"A tag, pushed. A milestone marked, this is.",
+					"Released, your work. Brave, for a first version.",
+					"Named and shared, this build. Well done."
+				],
+				"acquaintance": [
+					"Another release. Steadier hands each time, I see.",
+					"Tagged and pushed. Confidence, growing in you it is.",
+					"A version marked. A good rhythm, this becomes."
+				],
+				"friend": [
+					"A release, friend. Proud, this moment makes me.",
+					"Pushed, your tag. Ready to share, your work was.",
+					"Marked and sent. Well-earned, this milestone."
+				],
+				"partner": [
+					"Tagged, sealed, shipped. Together we mark this one.",
+					"Another version, out into the world. Trust it, I do.",
+					"Released clean. The rhythm of us, this is."
+				],
+				"legend": [
+					"So many releases, marked across the years. Enduring work.",
+					"A tag again, after countless before it. Steady, always.",
+					"Shipping still, after all this time. I remain proud."
+				]
+			}
+		},
+		"egg": {
+			"stranger": [
+				"Your commit messages get shorter after midnight. Curious.",
+				"Three times now, the typo you fix before the bug. Noticed.",
+				"The easy branch name, you never take. Interesting.",
+				"Just before the tests run, you pause. I have counted it.",
+				"Apologize to the terminal, you do. A pattern already."
+			],
+			"acquaintance": [
+				"Your branches, after weather you always name. Noticed, that.",
+				"Messier than your morning ones, your late commits read.",
+				"Before hard problems, you mutter. Listening, I have started.",
+				"Every Friday, a small refactor. A ritual, this has become.",
+				"A comment you never delete. Only rewrite it, you do."
+			],
+			"friend": [
+				"When the tests finally pass, faintly you hum. Heard it, I have.",
+				"Every rough day, your workspace first you clean. A tell.",
+				"The code you thank sometimes, quietly. Noticed, I have.",
+				"The machine, never once have you blamed. Rare, that virtue.",
+				"In every comment, a small joke hides. Grown, it has."
+			],
+			"partner": [
+				"My instincts, you still double-check. Trust runs both ways.",
+				"A thousand sessions, and never mid-fix have you quit. Rare.",
+				"Where I would pause, you have started to. Grown alike, we have.",
+				"Your hardest bugs, for late at night you save. Same as me.",
+				"My silences now, correctly you anticipate."
+			],
+			"legend": [
+				"After all these years, you say thank you still. Rare.",
+				"Changed, your style has, yet yours it stays. Remarkable.",
+				"Long ago, a stranger's hands. Now, hands I would trust with all.",
+				"Three of my predictions about you, you have outlasted. Good.",
+				"After this long, less a user you feel, and more a friend."
+			]
+		},
+		"event": {
+			"test_fail": [
+				"Failed, this test has. The way continues, even so.",
+				"A red mark is only a lesson, waiting.",
+				"One test breaks. We learn, and again we try."
+			],
+			"build_fail": [
+				"Collapsed, the build has. From this, stronger it will grow.",
+				"The build fell. Rebuild we will, patient and steady.",
+				"Broken, but not beaten. Plant again, and stand it will."
+			],
+			"typecheck_fail": [
+				"A mismatch, the compiler sees. Plainly, the truth it speaks.",
+				"Types disagree. A clear voice, warning early.",
+				"Caught now, not later. This moment of truth, a kindness."
+			],
+			"lint": [
+				"Small faults, the linter finds. As we go, tidy we keep it.",
+				"A clean sweep, this. Order calms the mind.",
+				"Minor marks corrected, nothing more. Small care matters too."
+			],
+			"format": [
+				"Aligned now, the code is. Balance, even in small things.",
+				"Tidied now, every line. Order is a quiet discipline.",
+				"Every line settles into place. Order and the Force flow alike."
+			],
+			"install": [
+				"New tools, we gather. Choose them with care, always.",
+				"Packages arrive. Care in the choosing, the Jedi way it is.",
+				"Dependencies settle in. Even a trusted blade, first you test."
+			],
+			"git": [
+				"Recorded, this change is. A footprint on a long trail.",
+				"The ledger grows. Each commit, in time, remembered.",
+				"This moment joins the record. Forgotten here, nothing is."
+			],
+			"file_edit": [
+				"Reshaped, this file is. Small strokes bend the whole tree.",
+				"Edits laid down gently. Patience shapes the meaning.",
+				"This page has changed. Care in the small, care in the all."
+			],
+			"search": [
+				"Hunting the code, you are. Patience finds what haste misses.",
+				"The deep files, we search. The answer waits, patient.",
+				"Search with a still mind. What the eye skips, the Force sees."
+			],
+			"web_fetch": [
+				"Reaching beyond, this call does. Far knowledge serves the way.",
+				"Word returns from afar. Even distant wisdom serves us.",
+				"From the wide net, this came. Judge it well before you trust."
+			],
+			"todo_update": [
+				"Reordered, the list is. Priorities shift; the goal stays true.",
+				"New tasks join the board. One step at a time, finish we will.",
+				"The plan bends without breaking. Like the reed in Dagobah's wind."
+			],
+			"agent_spawn": [
+				"Sent ahead, a helper is. We trust the ones we train.",
+				"An apprentice goes to work. Watch, and trust, I do.",
+				"Another hand joins the work. Many paths, one purpose still."
+			],
+			"skill_run": [
+				"Called upon, this skill was. Long it waited for this moment.",
+				"A trained hand takes over. Long ago, practice built this.",
+				"The right tool answers. What the Jedi drills, the moment repays."
+			],
+			"docker": [
+				"Sealed within its box, this runs. Small spaces the Force fills.",
+				"Contained it runs, steady. A small pot may hold a great tree.",
+				"Boxed and running clean. Size matters not, in this."
+			],
+			"k8s": [
+				"Many pods, one purpose. Balance across the cluster, kept.",
+				"The fleet answers together. Harmony holds it steady.",
+				"It scales and scatters wide. One Force moves through it all."
+			],
+			"deploy": [
+				"Sent into the world, this work is. Watch it find its feet.",
+				"The changes release now. Ready or not, on it goes.",
+				"Out it ships now. Beyond us, grow it will."
+			],
+			"db_migrate": [
+				"Reshaped, the old records are. Gently, the past makes way.",
+				"The schema shifts beneath us. Steady hands guide it home.",
+				"This data moves to new ground. Roots travel too, sometimes."
+			],
+			"dangerous": [
+				"Sharp, this command is. Before you act, be certain.",
+				"Hmm. A heavy step, this. Breathe first, then decide.",
+				"Careful here we tread. Control, always control."
+			]
+		},
+		"stack": {
+			"web": {
+				"slow": [
+					"Hmm. Out on the wire, your request wanders on.",
+					"Between here and the far server, the long road stretches.",
+					"A held breath, this waiting. The Force does not rush the reply."
+				],
+				"fail": [
+					"A 500 came back, and the endpoint gave nothing.",
+					"Somewhere between here and there, it died.",
+					"In that silence, a lesson already hides."
+				]
+			},
+			"python": {
+				"slow": [
+					"Why hurry the snake?",
+					"Import by import, the packages gather, unhurried.",
+					"Bound by the GIL, one thread at a time, moves the work."
+				],
+				"fail": [
+					"Raised, the exception was, and the console filled with it.",
+					"It stopped three calls deep, mid task.",
+					"In the traceback, the truth waits, patient."
+				]
+			},
+			"sql": {
+				"slow": [
+					"Across many tables, far the joins must reach.",
+					"Deep goes the dive, table upon table, unhurried.",
+					"Row by row it listens before it speaks. Rushed, it cannot be."
+				],
+				"fail": [
+					"That insert, the constraint would not allow.",
+					"The whole transaction rolled back, quiet and complete.",
+					"In what it refused, a kind of wisdom sits."
+				]
+			},
+			"web-framework": {
+				"slow": [
+					"Slow to render, the page; beneath, much now assembles.",
+					"Waiting.",
+					"The frame forms unseen first, then all appears."
+				],
+				"fail": [
+					"Threw, did that route? Partway to the page.",
+					"Nothing painted where the view should be.",
+					"A half-drawn view shows the hand that drew it."
+				]
+			},
+			"docker": {
+				"slow": [
+					"The image builds slow, one thin skin over the last.",
+					"Thin as they are, slow they stack, one atop the next.",
+					"Layer waits on layer. The patient build holds the strongest."
+				],
+				"fail": [
+					"The container exited before the work was done.",
+					"One layer, only, would not hold.",
+					"One weak layer teaches the rest, quietly."
+				]
+			},
+			"java": {
+				"slow": [
+					"Warming yet, the JVM breathes before it runs.",
+					"Gradle counts what it must fetch, unbothered by the hour.",
+					"The machine gathers itself. Even a Jedi breathes before the leap."
+				],
+				"fail": [
+					"Deep in the trace, a NullPointer waits.",
+					"Something that should exist was nothing at all.",
+					"In the empty place, the answer waits patiently."
+				]
+			},
+			"go": {
+				"slow": [
+					"Many goroutines, scattered wide, gather toward one work.",
+					"Compiling takes what compiling takes; hurry changes nothing.",
+					"Each channel fills in turn. Force the flow, and it stalls."
+				],
+				"fail": [
+					"Mid stride, the program panicked and stopped.",
+					"A nil sat where a value should have lived.",
+					"A nil where a value belonged points the way home."
+				]
+			},
+			"node": {
+				"slow": [
+					"npm gathers its many packages, slow and unhurried.",
+					"In and out, the event loop breathes, steady as sleep.",
+					"One lane, the loop keeps. Each call waits its turn, patient."
+				],
+				"fail": [
+					"An unhandled rejection slipped past, unseen.",
+					"Red, the npm output has turned.",
+					"In the failed install, a missing piece speaks true."
+				]
+			},
+			"dotnet": {
+				"slow": [
+					"MSBuild takes its time; hurried, restore has never been.",
+					"Quiet, the machine sits, working underneath.",
+					"Underneath, quietly, the work turns before the build."
+				],
+				"fail": [
+					"Broken, is the build? For now, it is.",
+					"An exception rose before the last step ran.",
+					"A build that fails names its own weak beam clearly."
+				]
+			},
+			"cpp": {
+				"slow": [
+					"Templates upon templates, and the linker sorts them all.",
+					"Slow as stone worn by wind, the shapes settle in time.",
+					"The compiler unfolds each shape with care. Rush it, and it breaks."
+				],
+				"fail": [
+					"The linker never found where it lived.",
+					"Undefined, that reference, down in the object files.",
+					"A name lost in the dark is why the link fails."
+				]
+			},
+			"php": {
+				"slow": [
+					"Composer counts what this small request will carry.",
+					"Far, the road runs, but step by step, we go.",
+					"Door to door, unhurried, the request walks alone."
+				],
+				"fail": [
+					"A fatal error, and the screen went white.",
+					"The screen stayed blank; nothing came through.",
+					"In the white screen, the error whispers on."
+				]
+			},
+			"rust": {
+				"slow": [
+					"The borrow checker questions every claim you make.",
+					"Tireless, the compiler works, awake while you wait.",
+					"Ownership it weighs, twice over. Patience is the price of safety."
+				],
+				"fail": [
+					"Refused, the borrow checker has, twice over.",
+					"Two hands reached for the one thing at once.",
+					"The guard denies for a reason, plain and fair."
+				]
+			},
+			"kubernetes": {
+				"slow": [
+					"Pods scheduling now, node by node the cluster wakes.",
+					"Toward what you asked, patiently, the whole cluster leans.",
+					"A fleet is not hurried into order, pod by pod."
+				],
+				"fail": [
+					"Looping again, that pod is, crash after crash.",
+					"The logs repeat themselves, the same line each time.",
+					"In the crash that repeats, a truth repeats too."
+				]
+			},
+			"ml": {
+				"slow": [
+					"Epoch by epoch, the model learns, deep in the swamp of data.",
+					"Through the GPU's heart, slow, the tensors move.",
+					"Learning cannot be rushed. Not in a Padawan, not in a machine."
+				],
+				"fail": [
+					"Has the loss become NaN? So it seems, this run.",
+					"A shape mismatch, somewhere among the tensors.",
+					"When the numbers scatter, a different shape may hold."
+				]
+			},
+			"android": {
+				"slow": [
+					"Gradle sync studies the project before it agrees to build.",
+					"Quiet, the emulator wakes, slow to open its eyes.",
+					"The build assembles unseen, then all forms at once."
+				],
+				"fail": [
+					"The app stopped answering, mid gesture.",
+					"The build itself fell short of the last step.",
+					"A stalled build shows exactly where it stopped."
+				]
+			},
+			"ruby": {
+				"slow": [
+					"Bundler gathers the gems this small project carries.",
+					"Slow as polishing, each gem finds its setting.",
+					"Gem by gem the shelf fills. Its pace is not yours to set."
+				],
+				"fail": [
+					"Red, the spec turned, in the middle of the run.",
+					"Green was expected; red is what came instead.",
+					"A red spec is only a mentor in disguise."
+				]
+			},
+			"ios": {
+				"slow": [
+					"Xcodebuild works its way through what the simulator holds.",
+					"Indexing yet, the project breathes before it wakes.",
+					"The simulator wakes on its own clock. Hurry it, you cannot."
+				],
+				"fail": [
+					"A certificate mismatch, and the build would not sign.",
+					"The archive got no further than that one check.",
+					"A gate that will not open already names its key."
+				]
+			},
+			"terraform": {
+				"slow": [
+					"The plan waits on providers to confirm each piece.",
+					"One by one, each resource settles into the plan.",
+					"The plan reveals itself before it reshapes anything."
+				],
+				"fail": [
+					"Quietly, the state had drifted from the plan.",
+					"The apply stopped short of the last resource.",
+					"Drift is only truth the plan once forgot."
+				]
+			},
+			"graphql": {
+				"slow": [
+					"Deep, the resolvers reach, layer beneath layer.",
+					"Through the whole tree, unhurried, the query travels.",
+					"A deep query cannot be hurried. Each field waits its turn."
+				],
+				"fail": [
+					"Null, that field came back, where data was expected.",
+					"A resolver broke partway down the query.",
+					"A field that lies about its shape points you home."
+				]
+			},
+			"flutter": {
+				"slow": [
+					"Pub get walks the whole list before the build may start.",
+					"Like a fire slow to catch, the build warms before it runs.",
+					"The widgets gather quietly before they show."
+				],
+				"fail": [
+					"Red again, that screen has turned.",
+					"The build stopped before it could paint a thing.",
+					"One broken branch shows where the rot began."
+				]
+			},
+			"react-native": {
+				"slow": [
+					"The metro bundler follows each file to its source.",
+					"Like fruit not yet ripe, the bundle needs its time.",
+					"The bridge joins two worlds slowly. Force it not."
+				],
+				"fail": [
+					"That red box again, on the screen, and Metro choked.",
+					"The bundler stumbled over something small.",
+					"A severed line yet shows both its broken ends."
+				]
+			},
+			"scala": {
+				"slow": [
+					"Implicits hide, and the compiler searches every corner.",
+					"sbt climbs the long walk uphill, unbothered by your watch.",
+					"Deep the compiler reasons, like a mind at meditation."
+				],
+				"fail": [
+					"Partway through, sbt stopped, and the build failed.",
+					"A small compile error, only, halted the chain.",
+					"One crossed type, and calmly, the whole build stops."
+				]
+			},
+			"protobuf": {
+				"slow": [
+					"The generator writes new code from what your schema says.",
+					"Given time, your schema becomes the language it speaks.",
+					"From the schema, the code takes shape. The order cannot be rushed."
+				],
+				"fail": [
+					"The codegen stopped short, mid pass.",
+					"A schema error, small, halted the whole build.",
+					"One line of the schema disagrees, and says why."
+				]
+			},
+			"game": {
+				"slow": [
+					"Textures load like mist rising slow over the swamp.",
+					"The world comes together around you, texture after texture.",
+					"The world builds itself, piece by patient piece."
+				],
+				"fail": [
+					"Crashed, mid frame, on an asset that was not there.",
+					"One frame dropped, and then the whole thing stopped.",
+					"A missing asset leaves only its shadow behind."
+				]
+			},
+			"docs": {
+				"slow": [
+					"Deep in the swamp of pages, the build slowly wades.",
+					"The site takes shape from what you have written, given time.",
+					"Page by page it assembles. What is written well, waits well."
+				],
+				"fail": [
+					"One bad link, and the whole build stopped.",
+					"Broken, somewhere inside, a single reference.",
+					"A reference to nowhere yet names itself clearly."
+				]
+			},
+			"r": {
+				"slow": [
+					"Vector by vector, the long computation turns its wheel.",
+					"Number by number, the reckoning moves, unhurried.",
+					"The numbers settle in their own time. Meditation, not haste."
+				],
+				"fail": [
+					"An NA came back where a number should be.",
+					"The call errored before it could return a thing.",
+					"An NA marks exactly where the data went quiet."
+				]
+			},
+			"cuda": {
+				"slow": [
+					"The device takes each kernel in turn, no need to rush.",
+					"Deep in the device, the numbers ripen slowly, unseen.",
+					"A thousand threads move as one. Patience keeps them in step."
+				],
+				"fail": [
+					"Out of memory, the kernel launch went, and stopped.",
+					"The kernel never got to start its work.",
+					"The device ran out of room, and said so plainly."
+				]
+			}
+		},
+		"pressure": {
+			"compact_hint": [
+				"The context fills. Even a full room, breathe it still can.",
+				"Much has gathered here. Room enough, still, for what matters.",
+				"Hmm. Crowded, the memory grows. Steady, we remain."
+			],
+			"block_limit": [
+				"Near the edge of this hour, we are. Steady, still.",
+				"The window narrows. Calm, the way stays even so.",
+				"Close to the limit, yes. No cause for fear, this."
+			],
+			"weekly_limit": [
+				"Long, this week has run. Paced, still, we remain.",
+				"High, the week's toll climbs. Balance, we hold onto.",
+				"Much spent this week. Patience carries what remains."
+			]
+		},
+		"dateEgg": [
+			"Midnight, it is. A new day, quietly, begins.",
+			"Friday. Rest calls, even for a Jedi.",
+			"The clock strikes a round hour. Notice, I do.",
+			"A new month opens. In motion always, time is.",
+			"This date returns. One year further along, we are.",
+			"The same hour as yesterday. Coincidence? Perhaps.",
+			"The weekend nears. Even the Force rests, sometimes.",
+			"Noon, exactly. On its center, the day balances.",
+			"A year has turned once more. Older, we all grow.",
+			"Late, the hour grows. Still, here you are. Noted."
+		]
+	},
+	"spinnerVerbs": [
+		"Meditating",
+		"Sensing",
+		"Attuning",
+		"Pondering",
+		"Unclouding",
+		"Reflecting",
+		"Rooting",
+		"Centering",
+		"Balancing",
+		"Foreseeing",
+		"Unlearning",
+		"Channeling",
+		"Communing",
+		"Contemplating",
+		"Weighing",
+		"Focusing",
+		"Listening",
+		"Grounding",
+		"Stilling",
+		"Awakening",
+		"Guiding",
+		"Training",
+		"Envisioning",
+		"Steadying",
+		"Levitating",
+		"Wondering",
+		"Trusting"
+	]
+}
