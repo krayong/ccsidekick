@@ -17,7 +17,7 @@
   <img src="https://img.shields.io/badge/Claude%20API-none-2ea44f" alt="No Claude API">
   <img src="https://img.shields.io/badge/token%20spend-zero-2ea44f" alt="Zero token spend">
   <img src="https://img.shields.io/badge/data-local--first-2ea44f" alt="Local-first">
-  <img src="https://img.shields.io/badge/themes-70%2B-8a63d2" alt="70+ themes">
+  <img src="https://img.shields.io/badge/themes-55%2B-8a63d2" alt="55+ themes">
   <img src="https://img.shields.io/badge/widgets-33-8a63d2" alt="33 widgets">
   <img src="https://img.shields.io/badge/characters-18%20packs-8a63d2" alt="18 character packs">
 </p>
@@ -34,7 +34,7 @@
 - **A real statusline.** 33 toggleable widgets: directory, model, git (branch, ahead/behind,
   staged/unstaged/untracked, uncommitted changes, stash, worktree, conflicts), token context, cost,
   usage limits, PR state, burn rate, and more. Threshold-colored.
-- **70+ built-in themes.** Dark, light, high-contrast, and retro palettes (Dracula, Nord,
+- **55+ built-in themes.** Dark, high-contrast, and retro palettes (Dracula, Nord,
   Catppuccin, Tokyo Night, Gruvbox, Rosé Pine, Synthwave '84, and dozens more), plus each character
   pack ships its own matching theme.
 - **Cost at a glance.** Chat, per-project, and all-time spend, read straight from your Claude Code
