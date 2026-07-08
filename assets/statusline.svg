@@ -9,9 +9,7 @@
 	<circle cx="18" cy="15" fill="#ff5f56" r="5.5"/>
 	<circle cx="36" cy="15" fill="#ffbd2e" r="5.5"/>
 	<circle cx="54" cy="15" fill="#27c93f" r="5.5"/>
-	<text fill="#8b949e" font-size="12" text-anchor="middle" x="564" y="19">Spider-Man —
-		ccsidekick
-	</text>
+	<text fill="#8b949e" font-size="12" text-anchor="middle" x="564" y="19">ccsidekick — statusLine</text>
 	<text fill="#5fafaf" x="51.6" y="62.4">⣰</text>
 	<text fill="#5fafd7" x="60.0" y="62.4">⠃</text>
 	<text fill="#00d7ff" x="68.4" y="62.4">⣸</text>
