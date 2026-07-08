@@ -23,7 +23,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/statusline.svg" alt="ccsidekick statusline: a braille Batman figure beside directory, model, git branch and file changes, PR, chat/project/total cost, context, block and weekly usage, a helpful quota tip, and an in-character comment" width="900">
+  <img src="assets/statusline.svg" alt="ccsidekick statusline: a braille Spider-Man figure beside directory, model, git branch and file changes, PR, chat/project/total cost, context, block and weekly usage, a helpful quota tip, and an in-character comment" width="900">
 </p>
 
 ## What you get?
