@@ -38,7 +38,9 @@ jobs:
     name: changeset
 
     # Only meaningful on a PR (a push to main has already consumed its changesets via the release flow).
-    if: github.event_name == 'pull_request'
+    # Skip the Changesets "Version Packages" PR: it deliberately consumes every changeset and bumps
+    # package versions, so it legitimately carries no changeset and would always fail this gate.
+    if: github.event_name == 'pull_request' && github.head_ref != 'changeset-release/main'
 
     runs-on: ubuntu-latest
 

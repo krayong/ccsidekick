@@ -1,14 +1,17 @@
 name: Labeler
 
 # Apply path-based labels to a PR from .github/labeler.yml, ensuring each label exists (coloured) first.
-# pull_request_target so PRs from forks get the write token needed to label; safe because this job checks out
-# and runs only this repo's own base-branch code (via `sync-labels.ts`), never the PR's.
+# pull_request (not pull_request_target) so the bot-authored "Version Packages" release PR still runs this
+# job and reports the required `label` check — pull_request_target never fires for github-actions[bot] PRs.
+# A fork PR (read-only token under pull_request) is skipped by the job guard below, so it is not labeled.
 on:
-  pull_request_target:
+  pull_request:
 
 concurrency:
   group: labeler-${{ github.event.pull_request.number }}
-  cancel-in-progress: true
+  # Serialize per PR but don't cancel: a cancelled run reports a `failure` conclusion, which would fail the
+  # required `label` check. Letting a superseded run finish keeps the check green (and avoids racing sync-labels).
+  cancel-in-progress: false
 
 permissions:
   contents: read # checkout the base config + read pack themes
@@ -17,10 +20,14 @@ permissions:
 
 jobs:
   label:
+    # Same-repo PRs only. A fork PR gets a read-only token under pull_request, so labeling would fail; skipping
+    # the job instead reports the required `label` check as passing, so a fork PR is neither labeled nor blocked.
+    if: github.event.pull_request.head.repo.full_name == github.repository
+
     runs-on: ubuntu-latest
 
     steps:
-      # Base ref (trusted) under pull_request_target; persist-credentials off so gh authenticates via GH_TOKEN.
+      # persist-credentials off so gh authenticates via GH_TOKEN (the sync-labels script), not a stored git cred.
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
         with:
           persist-credentials: false
