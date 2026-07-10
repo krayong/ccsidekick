@@ -1,0 +1,20 @@
+{
+	// Static-assets Worker that serves the ccsidekick landing site (packages/core is unrelated;
+	// this only hosts website/). Deployed by .github/workflows/deploy.yml on release tags.
+	"name": "ccsidekick",
+	"compatibility_date": "2026-07-09",
+	"assets": {
+		"directory": "./website",
+		// Unknown paths fall back to the homepage (served at 200), matching the single-page site.
+		"not_found_handling": "single-page-application",
+	},
+	// The custom domain is the only public URL: no *.workers.dev route, no per-version preview URLs.
+	"workers_dev": false,
+	"preview_urls": false,
+	"routes": [
+		{
+			"pattern": "ccsidekick.krayong.com",
+			"custom_domain": true,
+		},
+	],
+}
