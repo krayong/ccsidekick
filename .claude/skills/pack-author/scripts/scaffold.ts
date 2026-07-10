@@ -4,7 +4,7 @@
 // `packs/registry.ts` (`PACKS`) and as a `workspace:*` runtime dependency of `packages/core` (both idempotent).
 // That core dependency is what the render loader resolves the pack through, so without it the statusline shot
 // drops the figure; the author must run `bun install` after scaffolding to materialize the workspace symlink. The
-// skeleton passes `lint-pack --schema-only` and deliberately fails full
+// skeleton passes `pack:lint --schema-only` and deliberately fails full
 // lint (the pools sit at one placeholder per cell, not their authored counts), so an author fills the voice in
 // from a structure that already loads. Runnable as a CLI (`bun scaffold.ts <name> --display <n> --emblem <g>`)
 // or importable as `scaffold(name, opts)`; the optional `opts.root` retargets the workspace for tests.
@@ -151,7 +151,7 @@ A ccsidekick character pack, authored through the \`pack-author\` skill. A pack 
 - Figure: sourced via the \`ascii-art\` skill, credited in \`pack.json\` \`attribution\`.
 - Tone: set in \`pack.json\`.
 
-Lint: \`bun run lint-pack packages/packs/${name}\`. README + shot: \`bun run pack-readme packages/packs/${name}\` (regenerates this file).
+Lint: \`bun run pack:lint packages/packs/${name}\`. README + shot: \`bun run pack:readme packages/packs/${name}\` (regenerates this file).
 `;
 
 const reviewMd = (displayName: string): string =>
@@ -165,7 +165,7 @@ A reviewer who did not author the pack signs this before it ships. Check each it
 - [ ] Variety holds across cells (no line reused between cells, no other pack's signature line).
 - [ ] License and attribution are acceptable.
 
-\`lint-pack\` enforces \`package.json\` completeness (name, \`files\`, \`repository.directory\`, author), so it is not a manual check.
+\`pack:lint\` enforces \`package.json\` completeness (name, \`files\`, \`repository.directory\`, author), so it is not a manual check.
 
 Reviewer (not the author): ____________________    Date: __________
 `;

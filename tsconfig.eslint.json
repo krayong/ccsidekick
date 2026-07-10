@@ -9,6 +9,7 @@
 		"packages/*/test/**/*.ts",
 		"packages/*/test/**/*.tsx",
 		"packages/*/scripts/**/*.ts",
+		"scripts/**/*.ts",
 		".claude/skills/**/*.ts"
 	],
 	"exclude": ["**/dist/**", "**/node_modules/**"]

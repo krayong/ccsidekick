@@ -84,7 +84,8 @@ export const SCENARIOS: readonly Scenario[] = [
 	},
 ];
 
-/** The scenario's payload JSON: its payload overrides merged onto the base fixture for `workdir`. */
-export function scenarioPayloadJson(scenario: Scenario, workdir: string): string {
-	return JSON.stringify(basePayload(workdir, scenario.payload ?? {}));
+/** The scenario's payload JSON: its payload overrides merged onto the base fixture for `workdir`. With `root`,
+ *  the seeded current-session transcript lands under the projects tree so Project cost lifts as in real use. */
+export function scenarioPayloadJson(scenario: Scenario, workdir: string, root?: string): string {
+	return JSON.stringify(basePayload(workdir, scenario.payload ?? {}, root));
 }

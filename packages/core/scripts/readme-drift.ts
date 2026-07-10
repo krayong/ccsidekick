@@ -43,8 +43,19 @@ function widgetIdsFromReadme(): string[] {
 
 const problems: string[] = [];
 
-// --- Themes: a floor claim; the catalog may exceed it, never fall below. ---
-const themeCount = (THEMES.match(/displayName:\s*"/g) ?? []).length;
+// --- Themes: a floor claim; catalog + pack themes may exceed it, never fall below. ---
+// The advertised count is every selectable named theme: the catalog entries plus each pack's own theme block.
+const packsDir = join(root, "packages", "packs");
+const catalogThemeCount = (THEMES.match(/displayName:\s*"/g) ?? []).length;
+const packThemeCount = readdirSync(packsDir, { withFileTypes: true })
+	.filter((e) => e.isDirectory())
+	.filter((e) => {
+		const pj = JSON.parse(readFileSync(join(packsDir, e.name, "pack.json"), "utf8")) as {
+			theme?: unknown;
+		};
+		return pj.theme !== undefined;
+	}).length;
+const themeCount = catalogThemeCount + packThemeCount;
 const themeBadge = group1(/badge\/themes-(\d+)%2B/, README);
 const themeProse = group1(/(\d+)\+ built-in themes/, README);
 if (themeBadge === undefined) problems.push("README theme badge (themes-<n>%2B) not found");
@@ -74,8 +85,8 @@ if (missing.length > 0) problems.push(`widget ids in code but not README: ${miss
 if (extra.length > 0) problems.push(`widget ids in README but not code: ${extra.join(", ")}`);
 
 // --- Packs: exact count of pack directories. ---
-const packCount = readdirSync(join(root, "packages", "packs"), { withFileTypes: true }).filter(
-	(e) => e.isDirectory(),
+const packCount = readdirSync(packsDir, { withFileTypes: true }).filter((e) =>
+	e.isDirectory(),
 ).length;
 const packBadge = group1(/badge\/characters-(\d+)%20packs/, README);
 if (packBadge !== String(packCount)) {

@@ -69,6 +69,7 @@ import {
 	loadConfig,
 	parsePayload,
 	projectKeyForCwd,
+	projectKeyForTranscript,
 	readAttribution,
 	readBalance,
 	readCostCache,
@@ -298,7 +299,13 @@ function build(
 	const pack = loaded.ok ? loaded.pack : null;
 
 	const project = deriveProject(git, payload);
-	const projectKey = projectKeyForCwd(payload.workspace.current_dir ?? payload.cwd ?? "");
+	// Key the current session by its transcript's own directory, not the live cwd: a mid-session `cd` into a
+	// subdirectory moves `current_dir` but not the transcript dir, and a cwd-derived key would then match no
+	// sibling session, collapsing Project to just this session's Chat. Fall back to the cwd only before Claude
+	// Code has written a transcript path.
+	const projectKey =
+		projectKeyForTranscript(payload.transcript_path ?? "") ??
+		projectKeyForCwd(payload.workspace.current_dir ?? payload.cwd ?? "");
 	const resolveProject: ResolveProject = (sess, decodedCwd) =>
 		sess === String(session) ? String(project) : decodedCwd;
 

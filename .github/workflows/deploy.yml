@@ -1,0 +1,46 @@
+name: Deploy Website
+
+# Build the landing site and publish it to Cloudflare Pages. Triggers on a release (any pushed tag) and
+# on manual dispatch. A changesets release pushes several tags at once (one per bumped package); the
+# concurrency group below collapses that burst into a single deploy — each newly-queued run cancels the
+# in-progress one, so only the last completes, and every tag in the burst points at the same release
+# commit, so the deployed content is identical either way. Secrets live in the `prod` GitHub environment
+# (CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID); the job must declare `environment: prod` to read them.
+
+on:
+  push:
+    tags: ["**"] # every release tag, including scoped-package tags with slashes (@ccsidekick/pack-x@1.0.0)
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-site
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    environment: prod
+
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+
+      - uses: ./.github/actions/setup
+
+      - run: bun run site:build # generates website/ (data.js, render-web.js, tokens.css, copied media)
+
+      # DESIGN.md (and any other in-repo .md) is a source doc, not part of the served site. site:build has
+      # already consumed it (tokens.css), so strip .md from the upload dir before deploying.
+      - run: find website -type f -name '*.md' -delete
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@da0e0dfe58b7a431659754fdf3f186c529afbe65 # v3.14.1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          wranglerVersion: "3.90.0"
+          # --branch=main forces a PRODUCTION deploy; without it a detached-HEAD checkout can land a preview URL
+          command: pages deploy website/ --project-name=ccsidekick --branch=main

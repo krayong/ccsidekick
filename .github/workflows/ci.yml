@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
 
       - uses: ./.github/actions/setup
 
@@ -30,23 +30,52 @@ jobs:
 
       - run: bun run readme:drift # README badge/prose counts must match the code
 
+      - run: bun run site:build # smoke the site generators (data.js, render-web.js, media copy)
+
+      - run: bun run site:drift # website data must match the packs/themes/widgets
+
+  changeset:
+    name: changeset
+
+    # Only meaningful on a PR (a push to main has already consumed its changesets via the release flow).
+    if: github.event_name == 'pull_request'
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+        with:
+          fetch-depth: 0 # full history so `changeset status` can diff this branch against the base
+
+      - uses: ./.github/actions/setup
+
+      # Any change under a published package (packages/core or packages/packs/*) must carry a changeset.
+      # For a change that should not release (docs, a comment, tooling that happens to sit in a package),
+      # add an empty changeset: `bun run changeset -- --empty`.
+      - name: changeset present for package changes
+        env:
+          BASE_REF: ${{ github.base_ref }} # PR target branch; via env so it never lands in the shell command
+        run: |
+          git fetch origin "$BASE_REF" # ensure origin/<base> is present for --since
+          bunx changeset status --since="origin/$BASE_REF"
+
   test:
     name: test
 
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
 
       - uses: ./.github/actions/setup
 
       - run: bun run test # includes the .claude pack-author scripts (a dot-dir a bare `bun test` skips)
 
-      - name: lint-pack every pack (full content gate)
+      - name: pack:lint every pack (full content gate)
         run: |
           for d in packages/packs/*/; do
-            echo "== lint-pack $d =="
-            bun run lint-pack "$d"
+            echo "== pack:lint $d =="
+            bun run pack:lint "$d"
           done
 
   build:
@@ -57,7 +86,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
         with: { fetch-depth: 0 } # full history so trufflehog can diff-scan the push
 
       - uses: ./.github/actions/setup

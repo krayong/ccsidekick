@@ -76,4 +76,10 @@ export type {
 	TranscriptScan,
 	Usage,
 } from "./transcript";
-export { projectKeyForCwd, repoRootForCwd, scanCostTree, scanTranscript } from "./transcript";
+export {
+	projectKeyForCwd,
+	projectKeyForTranscript,
+	repoRootForCwd,
+	scanCostTree,
+	scanTranscript,
+} from "./transcript";

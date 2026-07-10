@@ -1,4 +1,4 @@
-import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
+import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 
@@ -34,6 +34,61 @@ function freshEnv(): NodeJS.ProcessEnv {
 	writeFileSync(join(dir, "config.toml"), "");
 	return { CLAUDE_CONFIG_DIR: dir };
 }
+
+/** One priced assistant transcript line for the Project-cost seeding test. */
+function usageLine(session: string, id: string, req: string, input: number, ts: string): string {
+	return JSON.stringify({
+		type: "assistant",
+		sessionId: session,
+		requestId: req,
+		timestamp: ts,
+		message: {
+			id,
+			model: "claude-opus-4-8",
+			usage: {
+				input_tokens: input,
+				output_tokens: 1,
+				cache_read_input_tokens: 0,
+				cache_creation_input_tokens: 0,
+			},
+		},
+	});
+}
+
+test("Project cost keys off the transcript dir, so a subdirectory cwd still matches sibling sessions", () => {
+	// A session filed under `-Users-x-repo` with a priced sibling: Project must include the sibling whether the
+	// live cwd is the repo root or a subdirectory. A `cd` moves `current_dir` but not the transcript's dir, and
+	// keying Project off the live cwd would match no sibling and collapse Project to just this session's Chat.
+	const env = freshEnv();
+	const cfgDir = env["CLAUDE_CONFIG_DIR"] as string;
+	const proj = join(cfgDir, "projects", "-Users-x-repo");
+	mkdirSync(proj, { recursive: true });
+	writeFileSync(
+		join(proj, "sib.jsonl"),
+		`${usageLine("sib", "m-sib", "r1", 100_000, "2026-01-01T00:00:00.000Z")}\n`,
+	);
+	writeFileSync(
+		join(proj, "cur.jsonl"),
+		`${usageLine("cur", "m-cur", "r2", 10, "2026-01-01T00:01:00.000Z")}\n`,
+	);
+	const clock = fixedClock(Date.parse("2026-01-01T01:00:00.000Z"), "UTC");
+
+	const projectCost = (currentDir: string): string => {
+		const payload = JSON.stringify({
+			session_id: "cur",
+			transcript_path: join(proj, "cur.jsonl"),
+			cwd: currentDir,
+			workspace: { current_dir: currentDir },
+			model: { id: "claude-opus-4-8", display_name: "Opus 4.8" },
+		});
+		const line = runRender(payload, env, TERM, clock).line;
+		return /Project Cost: (\$[\d.,]+)/.exec(line)?.[1] ?? "";
+	};
+
+	const atRoot = projectCost("/Users/x/repo");
+	expect(atRoot).not.toBe("$0.00"); // the sibling's cost is present
+	expect(projectCost("/Users/x/repo/subdir")).toBe(atRoot); // and survives a subdirectory cwd
+});
 
 test("overrides.creds forces the team provider badge without reading real creds", () => {
 	const env = freshEnv();

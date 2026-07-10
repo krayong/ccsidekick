@@ -54,6 +54,7 @@
 		"anthropic",
 		"statusline",
 		"status-line",
+		"claude-code-statusline",
 		"cli",
 		"ascii-art",
 		"tui",
@@ -62,18 +63,19 @@
 		"git",
 		"cost-tracking",
 		"token-usage",
+		"usage-tracking",
 		"developer-tools",
 		"coding-companion",
 		"character"
 	],
 	"license": "MIT",
-	"description": "A customizable Claude Code status line with a reactive ASCII character and a full widget layer.",
+	"description": "Free Claude Code status line with a reactive character plus cost, git, and usage widgets. Zero token spend, local-first, MIT.",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/krayong/ccsidekick.git",
 		"directory": "packages/core"
 	},
-	"homepage": "https://github.com/krayong/ccsidekick#readme",
+	"homepage": "https://ccsidekick.krayong.com",
 	"bugs": {
 		"url": "https://github.com/krayong/ccsidekick/issues"
 	},

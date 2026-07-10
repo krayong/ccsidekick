@@ -156,7 +156,7 @@ export function Dashboard(props: DashboardProps): ReactElement {
 	// left/right paging can read the length; the render hook (below) paints the current one off the keystroke path.
 	const savePreviewChars = savePreviewSet(draft, installed, packs);
 	const saveCharIdxClamped = Math.min(saveCharIdx, savePreviewChars.length - 1);
-	const saveCharName = savePreviewChars[saveCharIdxClamped] ?? "batman";
+	const saveCharName = savePreviewChars[saveCharIdxClamped] ?? "spiderman";
 
 	const selectCharacter = (id: string): Config => {
 		const ch = draft.character;
@@ -748,7 +748,7 @@ export function Dashboard(props: DashboardProps): ReactElement {
 	);
 
 	// The figure shows the highlighted pack on the Roster category; on the Mode category it shows the configured
-	// character (the nominal default, batman) so the preview is stable and recognizable rather than whichever pack
+	// character (the nominal default, spiderman) so the preview is stable and recognizable rather than whichever pack
 	// happens to sort first among an all-selected roster.
 	const rosterIdx = Math.max(0, Math.min(characterRail.itemCursor, rosterList.length - 1));
 	const selectedCharId =

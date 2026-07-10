@@ -1,4 +1,4 @@
-// `lint-pack`: the pack authoring gate, runnable as a CLI and importable as `lintPack`. It first narrows the raw
+// `pack:lint`: the pack authoring gate, runnable as a CLI and importable as `lintPack`. It first narrows the raw
 // JSON through the schema guard (`validatePackDetailed`); on a schema failure it short-circuits. Two checks run
 // in every mode (schema-only included): the figure legibility gate and the schema guard's own bounds/width/
 // theme/colorMap/attribution checks. Four further CONTENT gates run only in full mode: pool counts, character-
@@ -19,15 +19,15 @@ import {
 	CHAR_LINE_MAX,
 	CROSS_CELL_JACCARD,
 	JACCARD_DUP,
-	POOL_TOTAL,
-	SPINNER_VERB_MIN,
 	type PackJson,
 	type PackLines,
+	POOL_TOTAL,
+	SPINNER_VERB_MIN,
 } from "../domain";
 import { displayWidth, stripAnsi, themeColorErrors } from "../render";
 
 import { jaccard, tokenSet } from "./jaccard";
-import { LEAF_PATHS, expectedCount } from "./poolShape";
+import { expectedCount, LEAF_PATHS } from "./poolShape";
 import { validatePackDetailed } from "./validate";
 
 // A reserved sentinel the scaffold stamps into every placeholder line: the single Private Use Area code point
@@ -312,7 +312,7 @@ function runCli(): void {
 	const schemaOnly = argv.includes("--schema-only");
 	const dir = argv.find((a) => !a.startsWith("--"));
 	if (dir === undefined) {
-		process.stderr.write("usage: lint-pack [--schema-only] <pack-dir>\n");
+		process.stderr.write("usage: pack:lint [--schema-only] <pack-dir>\n");
 		process.exit(2);
 	}
 	if (argv.includes("--status")) {
@@ -330,7 +330,7 @@ function runCli(): void {
 		raw = JSON.parse(readFileSync(join(dir, "pack.json"), "utf8")) as unknown;
 	} catch (e) {
 		const msg = e instanceof Error ? e.message : String(e);
-		process.stderr.write(`lint-pack: failed to read ${dir}/pack.json: ${msg}\n`);
+		process.stderr.write(`pack:lint: failed to read ${dir}/pack.json: ${msg}\n`);
 		process.exit(2);
 	}
 	const { errors } = lintPack(raw, { schemaOnly });
@@ -344,10 +344,10 @@ function runCli(): void {
 	const allErrors = [...errors, ...packageJsonErrors(pkgRaw, basename(dir))];
 
 	if (allErrors.length === 0) {
-		process.stdout.write(`lint-pack: ${dir} OK${schemaOnly ? " (schema-only)" : ""}\n`);
+		process.stdout.write(`pack:lint: ${dir} OK${schemaOnly ? " (schema-only)" : ""}\n`);
 		process.exit(0);
 	}
-	for (const err of allErrors) process.stderr.write(`lint-pack: ${err}\n`);
+	for (const err of allErrors) process.stderr.write(`pack:lint: ${err}\n`);
 	process.exit(1);
 }
 

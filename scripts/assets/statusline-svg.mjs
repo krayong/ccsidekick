@@ -1,9 +1,14 @@
-#!/usr/bin/env node
+#!/usr/bin/env bun
 // Render the statusline's real ANSI output (read from stdin) into a faithful SVG "terminal shot" for the README.
 // Handles 256-color SGR (`\x1b[38;5;Nm`), OSC 8 hyperlinks, and double-width emoji on a fixed character grid.
-// Usage: ccsidekick-render render < payload.json | node scripts/assets/statusline-svg.mjs "Title" > assets/statusline.svg
+// Run under Bun so it can import the shared xterm-palette module (the single source for the 256-color map).
+// Usage: ccsidekick-render render < payload.json | bun scripts/assets/statusline-svg.mjs "Title" > assets/statusline.svg
+import { palette } from "../website/xterm-palette";
 
 const FONT_SIZE = 14;
+// Corner radius for the card + title bar. Default 10 (rounded window, for the per-pack README shots);
+// set SVG_RADIUS=0 for a square, edge-to-edge card (the reel, so there are no corner gaps to fill).
+const RADIUS = Number(process.env.SVG_RADIUS ?? 10);
 const CELL_W = 8.4; // monospace advance per single-width column
 const LINE_H = 18;
 const PAD = 18;
@@ -22,39 +27,6 @@ const WIDE_WITH_FE0F = new Set(["⚠", "☁", "⚙", "🏷", "🗄", "✍", "�
 // Zero-width: ZWJ, variation selectors, combining marks — they attach to the preceding glyph, never a new cell.
 const isZeroWidth = (cp) =>
 	cp === 0x200d || (cp >= 0xfe00 && cp <= 0xfe0f) || /\p{M}/u.test(String.fromCodePoint(cp));
-
-/** xterm-256 palette index → #rrggbb. */
-function palette(n) {
-	const std = [
-		"#000000",
-		"#cd0000",
-		"#00cd00",
-		"#cdcd00",
-		"#0000ee",
-		"#cd00cd",
-		"#00cdcd",
-		"#e5e5e5",
-		"#7f7f7f",
-		"#ff0000",
-		"#00ff00",
-		"#ffff00",
-		"#5c5cff",
-		"#ff00ff",
-		"#00ffff",
-		"#ffffff",
-	];
-	if (n < 16) return std[n];
-	if (n < 232) {
-		const c = n - 16;
-		const lv = [0, 95, 135, 175, 215, 255];
-		const r = lv[Math.floor(c / 36) % 6];
-		const g = lv[Math.floor(c / 6) % 6];
-		const b = lv[c % 6];
-		return `#${[r, g, b].map((v) => v.toString(16).padStart(2, "0")).join("")}`;
-	}
-	const v = (8 + (n - 232) * 10).toString(16).padStart(2, "0");
-	return `#${v}${v}${v}`;
-}
 
 /** Apply an SGR parameter list (already split on ';') to the current fg, returning the new fg. */
 function applySGR(params, fg) {
@@ -150,9 +122,11 @@ function svg(input, title) {
 	out.push(
 		`<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="${FONT_SIZE}">`,
 	);
-	out.push(`<rect width="${W}" height="${H}" rx="10" fill="${BG}"/>`);
+	out.push(`<rect width="${W}" height="${H}" rx="${RADIUS}" fill="${BG}"/>`);
 	out.push(
-		`<path d="M0 ${TITLEBAR} V10 a10 10 0 0 1 10 -10 H${W - 10} a10 10 0 0 1 10 10 V${TITLEBAR} Z" fill="${TITLEBAR_BG}"/>`,
+		RADIUS > 0 ?
+			`<path d="M0 ${TITLEBAR} V${RADIUS} a${RADIUS} ${RADIUS} 0 0 1 ${RADIUS} -${RADIUS} H${W - RADIUS} a${RADIUS} ${RADIUS} 0 0 1 ${RADIUS} ${RADIUS} V${TITLEBAR} Z" fill="${TITLEBAR_BG}"/>`
+		:	`<rect width="${W}" height="${TITLEBAR}" fill="${TITLEBAR_BG}"/>`,
 	);
 	DOTS.forEach((d, k) =>
 		out.push(`<circle cx="${18 + k * 18}" cy="${TITLEBAR / 2}" r="5.5" fill="${d}"/>`),

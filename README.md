@@ -2,39 +2,41 @@
   <img src="assets/wordmark.svg" alt="ccsidekick" width="620">
 </p>
 
-<p align="center">Your Claude Code sidekick with the whole session at a glance.</p>
-
-<p align="center">
-  <a href="https://github.com/krayong/ccsidekick/actions/workflows/ci.yml"><img src="https://github.com/krayong/ccsidekick/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
-  <a href="https://www.npmjs.com/package/ccsidekick"><img src="https://img.shields.io/npm/v/ccsidekick.svg" alt="npm version"></a>
-  <a href="https://www.npmjs.com/package/ccsidekick"><img src="https://img.shields.io/npm/dm/ccsidekick.svg" alt="npm downloads"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"></a>
-  <img src="https://img.shields.io/badge/runtime-Bun-f9f1e1?logo=bun&logoColor=000" alt="Built with Bun">
-  <img src="https://img.shields.io/badge/TypeScript-3178c6?logo=typescript&logoColor=fff" alt="TypeScript">
-</p>
+<p align="center"><b>A Claude Code status line with a character that reacts to your session.</b> Full cost, git, and usage at a glance, at zero token spend.</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Claude%20API-none-2ea44f" alt="No Claude API">
   <img src="https://img.shields.io/badge/token%20spend-zero-2ea44f" alt="Zero token spend">
   <img src="https://img.shields.io/badge/data-local--first-2ea44f" alt="Local-first">
-  <img src="https://img.shields.io/badge/themes-55%2B-8a63d2" alt="55+ themes">
-  <img src="https://img.shields.io/badge/widgets-33-8a63d2" alt="33 widgets">
-  <img src="https://img.shields.io/badge/characters-18%20packs-8a63d2" alt="18 character packs">
+  <a href="https://github.com/krayong/ccsidekick/actions/workflows/ci.yml"><img src="https://github.com/krayong/ccsidekick/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="https://www.npmjs.com/package/ccsidekick"><img src="https://img.shields.io/npm/v/ccsidekick.svg" alt="npm version"></a>
+  <!-- npm downloads badge hidden until launch (shows 0/month pre-adoption); restore once traffic ramps:
+  <a href="https://www.npmjs.com/package/ccsidekick"><img src="https://img.shields.io/npm/dm/ccsidekick.svg" alt="npm downloads"></a>
+  -->
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"></a>
 </p>
 
 <p align="center">
-  <img src="assets/statusline.svg" alt="ccsidekick statusline: a braille Spider-Man figure beside directory, model, git branch and file changes, PR, chat/project/total cost, context, block and weekly usage, a helpful quota tip, and an in-character comment" width="900">
+  <img src="https://img.shields.io/badge/themes-75%2B-8a63d2" alt="75+ themes">
+  <img src="https://img.shields.io/badge/widgets-33-8a63d2" alt="33 widgets">
+  <img src="https://img.shields.io/badge/characters-18%20packs-8a63d2" alt="18 character packs">
+  <img src="https://img.shields.io/badge/built%20with-Bun-f9f1e1?logo=bun&logoColor=000" alt="Built with Bun">
+  <img src="https://img.shields.io/badge/TypeScript-3178c6?logo=typescript&logoColor=fff" alt="TypeScript">
 </p>
 
-## What you get?
+<p align="center">
+  <img src="assets/characters.gif" alt="Animated reel cycling through ccsidekick's character packs (Batman, Spider-Man, Yoda, and more), each an ASCII figure in its own theme beside a live Claude Code status line of git, cost, context, and usage with an in-character comment" width="900">
+</p>
+
+## What you get
 
 - **A character that reacts.** It notices what Claude is doing (tests passing, builds breaking,
   commits landing, a struggle and then a recovery) and comments in character, warming to you across
   sessions through familiarity tiers.
-- **A real statusline.** 33 toggleable widgets: directory, model, git (branch, ahead/behind,
+- **A real status line.** 33 toggleable widgets: directory, model, git (branch, ahead/behind,
   staged/unstaged/untracked, uncommitted changes, stash, worktree, conflicts), token context, cost,
   usage limits, PR state, burn rate, and more. Threshold-colored.
-- **55+ built-in themes.** Dark, high-contrast, and retro palettes (Dracula, Nord,
+- **75+ built-in themes.** Dark, high-contrast, and retro palettes (Dracula, Nord,
   Catppuccin, Tokyo Night, Gruvbox, Rosé Pine, Synthwave '84, and dozens more), plus each character
   pack ships its own matching theme.
 - **Cost at a glance.** Chat, per-project, and all-time spend, read straight from your Claude Code
@@ -51,10 +53,10 @@ npx ccsidekick
 Running `ccsidekick` in a terminal opens the setup UI. On a first run it walks you through a short
 guided **wizard** (character → theme → comments); later runs open the full **dashboard** to change
 config or view stats, and either view can switch to the other with Ctrl+W / Ctrl+D. It wires
-everything into Claude Code's `settings.json` (backing the file up first). Run `ccsidekick --help`
-for every command, including a clean uninstall.
+everything into Claude Code's `settings.json` (backing the file up first). Run
+`npx ccsidekick --help` for every command, including a clean uninstall.
 
-Prefer no TTY? `ccsidekick setup --character batman --theme houston --mode fixed` configures and
+Prefer no TTY? `npx ccsidekick setup --character spiderman --theme houston --mode fixed` configures and
 wires everything from flags. See [Non-interactive setup](#non-interactive-setup).
 
 ## Characters
@@ -65,12 +67,13 @@ pins one, random mode rotates a roster.
 
 Each pack is data, never code: a single sourced ASCII figure (credited to its original artist; mood
 adds color-only effects, never a new frame), a curated message library, and at least twenty-five
-in-voice spinner verbs. `batman` is the default character.
+in-voice spinner verbs. Out of the box ccsidekick runs in random mode over the full roster, picking a
+character per session; `spiderman` is the default only when you pin one in fixed mode.
 
 **Available packs:**
 
 - **Barbie**: a bright, upbeat pack in signature pink, with a matching theme.
-- **Batman**: an edgy cowled sidekick that ships with the engine, plus its own dark theme.
+- **Batman**: an edgy, cowled sidekick in a dark cowl-and-night palette, with a matching theme.
 - **Ben 10**: a mild, cocky kid-hero pack in Omnitrix lime.
 - **Darth Vader**: an edgy, imperious Sith pack in ember red and cold steel.
 - **Deadpool**: an offensive-tone merc pack in Deadpool red, with a matching theme.
@@ -88,7 +91,7 @@ in-voice spinner verbs. `batman` is the default character.
 - **Superman**: a mild, hopeful pack in Metropolis blue and cape red.
 - **Yoda**: a mild, patient Jedi pack in Dagobah green.
 
-**…and more on the way.** The roster keeps growing - new characters land regularly.
+**…and more on the way.** New characters land as they're authored.
 
 Each pack registers its theme as a selectable option, so every bundled character also adds a
 palette. Authoring your own is a documented path; see below.
@@ -98,7 +101,7 @@ palette. Authoring your own is a documented path; see below.
 No terminal required — configure and wire ccsidekick from flags, ideal for scripts and AI agents:
 
 ```bash
-ccsidekick setup --character batman --theme houston --mode fixed
+npx ccsidekick setup --character spiderman --theme houston --mode fixed
 ```
 
 Only the flags you pass are applied (a partial patch onto the existing config, or the defaults on a
@@ -110,8 +113,8 @@ character, the default), `--currency`, `--budget`, `--comments <on|off>`, `--hel
 Discover valid values and every flag:
 
 ```bash
-ccsidekick list characters   # also: themes, widgets
-ccsidekick setup --help
+npx ccsidekick list characters   # also: themes, widgets
+npx ccsidekick setup --help
 ```
 
 An unknown value (a misspelled theme, say) exits non-zero and prints the valid set; it never
@@ -128,7 +131,7 @@ schema_version = 1
 
 [character]
 mode = "random"       # fixed | random  (random picks once per session)
-name = "batman"       # active pack in fixed mode; the default
+name = "spiderman"    # active pack in fixed mode; the default
 roster = []           # pool for random mode (empty = all characters)
 
 [theme]
@@ -157,7 +160,7 @@ Every field is toggled in `[statusline.widgets]` (the engine owns order and plac
 `cost_chat`, `cost_project`, `cost_total`, `cost_burn`, `block_usage`, `weekly_usage`, `balance`,
 `pay_as_you_go`, `cache_hit`, `token_burn`, `session_duration`, `todo`.
 
-## How it works?
+## How it works
 
 ```
 Claude Code ──stdin JSON──▶  ccsidekick-render render  ──stdout ANSI──▶  status line (main agent only)

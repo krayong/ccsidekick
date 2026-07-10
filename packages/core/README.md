@@ -16,11 +16,11 @@ Remove it with `npx ccsidekick uninstall`.
 
 ## Non-interactive setup (for scripts and AI agents)
 
-No TTY required. `ccsidekick setup` configures and wires everything from flags, so an agent can
+No TTY required. `npx ccsidekick setup` configures and wires everything from flags, so an agent can
 install it in one command:
 
 ```bash
-ccsidekick setup --character batman --theme houston --mode fixed
+npx ccsidekick setup --character spiderman --theme houston --mode fixed
 ```
 
 Only the flags you pass are applied (a partial patch onto the existing config, or the defaults on a
@@ -44,8 +44,9 @@ fresh install), then it writes `config.toml` and wires `settings.json` exactly l
 Discover valid values for scripting, and see every flag:
 
 ```bash
-ccsidekick list characters   # also: themes, widgets
-ccsidekick setup --help
+npx ccsidekick list characters # also: themes, widgets
+npx ccsidekick setup --help
+
 ```
 
 An unknown value (e.g. a misspelled theme) exits non-zero and prints the valid set — it never

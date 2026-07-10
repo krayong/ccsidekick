@@ -42,12 +42,12 @@ interface Pack {
 }
 
 // ── visibility gate ──────────────────────────────────────────────────────────────────────────────
-// themeColorErrors is the shared color-visibility gate (render/themeValidate), the same one lint-pack runs.
+// themeColorErrors is the shared color-visibility gate (render/themeValidate), the same one pack:lint runs.
 
 function validateCandidate(c: Candidate): string[] {
 	// Delegates to the engine's theme-color validator: bounds, visibility (no grey/near-black), and
 	// signal hue families (nominal=green, caution=amber, critical=red). A candidate that passes
-	// here will also pass lint-pack — the check is mechanically equivalent.
+	// here will also pass pack:lint — the check is mechanically equivalent.
 	return themeColorErrors(c, "theme");
 }
 

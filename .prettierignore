@@ -1,7 +1,11 @@
-dist
-node_modules
+# Build artifacts, deps, and all generated/gitignored files are picked up from .gitignore
+# (both files are passed via --ignore-path in the format scripts). This file only lists
+# committed files that Prettier should NOT reformat but git DOES track.
 
 assets
 
 packages/packs/*/pack.json
 packages/core/test/fixtures/**/pack.json
+
+# vendored libraries (committed, so not covered by .gitignore)
+website/vendor

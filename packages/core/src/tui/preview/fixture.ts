@@ -17,11 +17,16 @@ export interface PayloadOverrides {
 }
 
 /** One `compact_boundary` system line, plus one `TodoWrite` snapshot with a completed and an in-progress
- *  item — enough for `scanTranscript` to report `compactions > 0` and a non-empty, in-progress todo list. */
-function seedTranscriptFixture(workdir: string): string {
-	const path = join(workdir, "preview-transcript.jsonl");
+ *  item — enough for `scanTranscript` to report `compactions > 0` and a non-empty, in-progress todo list.
+ *  With `root`, the transcript lands under the projects tree (`projects/<encoded workdir>/`) the way Claude
+ *  Code files it, so the render's transcript-derived Project key matches the sibling seeded by
+ *  `seedCostFixture`; without it (payload-only unit tests) it stays in `workdir`. */
+function seedTranscriptFixture(workdir: string, root?: string): string {
+	const dir =
+		root !== undefined ? join(root, "projects", workdir.replace(/[/.]/g, "-")) : workdir;
+	const path = join(dir, "preview-transcript.jsonl");
 	try {
-		mkdirSync(workdir, { recursive: true });
+		mkdirSync(dir, { recursive: true });
 		if (!existsSync(path)) {
 			const lines = [
 				JSON.stringify({ type: "system", subtype: "compact_boundary" }),
@@ -60,13 +65,17 @@ function seedTranscriptFixture(workdir: string): string {
  * by 1000; the values sit ahead of the preview's fixed clock so countdowns are positive); passing the `null`
  * sentinel omits `rate_limits` from the payload entirely, for providers that carry no quota.
  */
-export function basePayload(workdir: string, over: PayloadOverrides = {}): Record<string, unknown> {
+export function basePayload(
+	workdir: string,
+	over: PayloadOverrides = {},
+	root?: string,
+): Record<string, unknown> {
 	const cost = { total_cost_usd: 0.42, total_duration_ms: 3_600_000, ...over.cost };
 	const cwd = over.cwd ?? workdir;
 	const base: Record<string, unknown> = {
 		session_id: "preview",
 		session_name: "preview",
-		transcript_path: seedTranscriptFixture(workdir),
+		transcript_path: seedTranscriptFixture(workdir, root),
 		cwd,
 		workspace: { current_dir: cwd },
 		model: { id: "claude-opus-4-1", display_name: "Opus 4.1" },

@@ -55,6 +55,11 @@ Thumbs.db
 *.tmp
 tmp/
 
+# Claude scratch
+.agents/
+.claude/skills/
+!.claude/skills/pack-author/
+
 # bun build --compile scratch artifacts
 *.bun-build
 
@@ -62,5 +67,18 @@ tmp/
 .superpowers/
 docs/superpowers/
 
+# Marketing scratch
+docs/marketing/
+
 # Pack author working directories
 packages/packs/*/.author/
+
+# Website: CI-built + copied artifacts (assets/ is canonical; the site is built in CI and deployed to Cloudflare)
+website/data.js
+website/render-web.js
+website/tokens.css
+website/characters.mp4
+website/characters-poster.jpg
+website/wordmark.svg
+website/og.png
+website/apple-touch-icon.png
