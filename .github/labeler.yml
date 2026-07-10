@@ -10,6 +10,7 @@
       - any-glob-to-any-file:
           - "website/**"
           - "scripts/website/**" # site tooling is website work too (also gets ci/cd)
+          - "wrangler.jsonc"
 
 "ci/cd":
   - changed-files:

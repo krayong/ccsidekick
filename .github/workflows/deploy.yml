@@ -1,6 +1,6 @@
 name: Deploy Website
 
-# Build the landing site and publish it to Cloudflare Pages. Triggers on a release (any pushed tag) and
+# Build the landing site and publish it to the Cloudflare Worker (static assets). Triggers on a release (any pushed tag) and
 # on manual dispatch. A changesets release pushes several tags at once (one per bumped package); the
 # concurrency group below collapses that burst into a single deploy — each newly-queued run cancels the
 # in-progress one, so only the last completes, and every tag in the burst points at the same release
@@ -41,6 +41,6 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          wranglerVersion: "3.90.0"
-          # --branch=main forces a PRODUCTION deploy; without it a detached-HEAD checkout can land a preview URL
-          command: pages deploy website/ --project-name=ccsidekick --branch=main
+          wranglerVersion: "4.110.0"
+          # Reads wrangler.jsonc: deploys the static-assets Worker and reconciles the ccsidekick.krayong.com custom domain.
+          command: deploy
