@@ -3,7 +3,7 @@ name: Labeler
 # Apply path-based labels to a PR from .github/labeler.yml, ensuring each label exists (coloured) first.
 # pull_request (not pull_request_target) so the bot-authored "Version Packages" release PR still runs this
 # job and reports the required `label` check — pull_request_target never fires for github-actions[bot] PRs.
-# Trade-off: a fork PR gets a read-only token under pull_request, so labels are not applied for forks.
+# A fork PR (read-only token under pull_request) is skipped by the job guard below, so it is not labeled.
 on:
   pull_request:
 
@@ -18,6 +18,10 @@ permissions:
 
 jobs:
   label:
+    # Same-repo PRs only. A fork PR gets a read-only token under pull_request, so labeling would fail; skipping
+    # the job instead reports the required `label` check as passing, so a fork PR is neither labeled nor blocked.
+    if: github.event.pull_request.head.repo.full_name == github.repository
+
     runs-on: ubuntu-latest
 
     steps:
