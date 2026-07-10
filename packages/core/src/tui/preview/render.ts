@@ -43,7 +43,7 @@ export function renderScenario(
 
 		const term: TermContext = { columns: opts.columns, noColor: opts.noColor, isTTY: true };
 		return runRender(
-			scenarioPayloadJson(scenario, workdir),
+			scenarioPayloadJson(scenario, workdir, root),
 			env,
 			term,
 			clock,

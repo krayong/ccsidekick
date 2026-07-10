@@ -504,6 +504,19 @@ export function projectKeyForCwd(cwd: string): string {
 	return decodeCwd(cwd.replace(/[/.]/g, "-"));
 }
 
+/**
+ * The cost-side Project key for the current session, taken from the directory its transcript is filed under
+ * (the encoded-cwd dir Claude Code named at session start) rather than the live cwd. This is the exact key
+ * `scanCostTree` stores for every sibling session in that dir, so Project matching survives a mid-session `cd`
+ * into a subdirectory — which moves `workspace.current_dir` but never the transcript's directory. Returns
+ * `undefined` when no transcript path is known (the first tick, before Claude Code has written one), so the
+ * caller can fall back to the live cwd.
+ */
+export function projectKeyForTranscript(transcriptPath: string): string | undefined {
+	if (transcriptPath === "") return undefined;
+	return decodeCwd(basename(dirname(transcriptPath)));
+}
+
 const repoRootCache = new Map<string, string>();
 
 /**

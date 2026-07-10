@@ -108,6 +108,6 @@ OUT_DIR="$REPO_ROOT/$PACK_DIR/assets"
 mkdir -p "$OUT_DIR"
 CLAUDE_CONFIG_DIR="$CFG" COLUMNS=160 node "$BIN" render < "$WORK/payload.json" \
   | sed "s#/private$REPO#~/dev/ccsidekick#g; s#$REPO#~/dev/ccsidekick#g" \
-  | node "$REPO_ROOT/scripts/assets/statusline-svg.mjs" "$PACK_TITLE — ccsidekick" \
+  | bun "$REPO_ROOT/scripts/assets/statusline-svg.mjs" "$PACK_TITLE — ccsidekick" \
   > "$OUT_DIR/statusline.svg"
 echo "wrote $PACK_DIR/assets/statusline.svg"

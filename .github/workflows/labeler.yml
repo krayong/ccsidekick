@@ -1,0 +1,36 @@
+name: Labeler
+
+# Apply path-based labels to a PR from .github/labeler.yml, ensuring each label exists (coloured) first.
+# pull_request_target so PRs from forks get the write token needed to label; safe because this job checks out
+# and runs only this repo's own base-branch code (via `sync-labels.ts`), never the PR's.
+on:
+  pull_request_target:
+
+concurrency:
+  group: labeler-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read # checkout the base config + read pack themes
+  issues: write # create/update the repo's labels
+  pull-requests: write # add labels to the PR
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Base ref (trusted) under pull_request_target; persist-credentials off so gh authenticates via GH_TOKEN.
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+        with:
+          persist-credentials: false
+
+      - uses: ./.github/actions/setup
+
+      # Create any missing label (pack labels coloured from the pack's theme, categories fixed) or resync colours.
+      - name: ensure labels exist with theme colours
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bun run scripts/sync-labels.ts
+
+      - uses: actions/labeler@8558fd74291d67161a8a78ce36a881fa63b766a9 # v5.0.0

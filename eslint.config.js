@@ -9,9 +9,23 @@ import unicorn from "eslint-plugin-unicorn";
 import tseslint from "typescript-eslint";
 
 export default tseslint.config(
-	// `.claude/skills/**/*.ts` (the pack-author scripts) ARE linted — they're real TypeScript with tests, held to
-	// the same gate as the rest. Only the non-code parts of `.claude` (skill markdown, templates) are ignored.
-	{ ignores: ["**/dist/**", "**/node_modules/**", ".claude/**/*.md"] },
+	{
+		ignores: [
+			"**/dist/**",
+			"**/node_modules/**",
+			// `.claude/skills/**` is gitignored (locally-installed skills). ESLint doesn't read .gitignore (unlike
+			// Prettier, which gets `--ignore-path .gitignore`), so mirror it here or `eslint .` walks into those
+			// non-project skill scripts. pack-author is the exception: it ships tracked, with tests, held to the same
+			// gate — so re-include it. Skill markdown/templates are never linted regardless.
+			".claude/skills/**",
+			"!.claude/skills/pack-author/**",
+			".claude/**/*.md",
+			// generated engine bundle, generated data, and vendored libraries served by the static site
+			"website/render-web.js",
+			"website/data.js",
+			"website/vendor/**",
+		],
+	},
 	...tseslint.configs.strictTypeChecked,
 	{
 		plugins: { "import-x": importX },

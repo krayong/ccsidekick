@@ -8,6 +8,7 @@ import { asProject, asSession } from "../domain";
 
 import { fixedClock } from "./clock";
 import {
+	projectKeyForTranscript,
 	scanCostTree,
 	scanTranscript,
 	type CostCache,
@@ -21,6 +22,18 @@ const NOW = Date.parse("2026-01-01T05:00:00.000Z"); // 1h after the fixture line
 const clock = fixedClock(NOW);
 
 const sumIO: PriceFn = (u: Usage) => u.input_tokens + u.output_tokens;
+
+test("projectKeyForTranscript: keys by the transcript's own directory, not the live cwd", () => {
+	// A session filed under `-Users-krayong-ccsidekick` keeps that project key even after a mid-session `cd`
+	// moves the live cwd into a subdirectory, so Project still matches every sibling session in the same dir.
+	expect(
+		projectKeyForTranscript("/home/u/.claude/projects/-Users-krayong-ccsidekick/abc.jsonl"),
+	).toBe("/Users/krayong/ccsidekick");
+});
+
+test("projectKeyForTranscript: undefined when no transcript path is known", () => {
+	expect(projectKeyForTranscript("")).toBeUndefined();
+});
 
 test("scanTranscript: dedup, token sums, compaction, todo, speed, burn", () => {
 	const s = scanTranscript(FIXTURE, clock, sumIO);

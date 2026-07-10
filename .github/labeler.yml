@@ -1,0 +1,81 @@
+# PR auto-labels (actions/labeler v5). Keyed by changed-file globs. A file may match several labels.
+# NOTE: adding a new pack needs a new `<name> pack` entry here (packs can't be globbed to distinct labels).
+
+"core":
+  - changed-files:
+      - any-glob-to-any-file: "packages/core/**"
+
+"website":
+  - changed-files:
+      - any-glob-to-any-file:
+          - "website/**"
+          - "scripts/website/**" # site tooling is website work too (also gets ci/cd)
+
+"ci/cd":
+  - changed-files:
+      - any-glob-to-any-file:
+          - "scripts/**"
+          - ".github/**"
+
+"agents":
+  - changed-files:
+      - any-glob-to-any-file:
+          - ".claude/**"
+          - "**/CLAUDE.md"
+          - "**/AGENTS.md"
+
+# --- character packs ---
+"barbie pack":
+  - changed-files:
+      - any-glob-to-any-file: "packages/packs/barbie/**"
+"batman pack":
+  - changed-files:
+      - any-glob-to-any-file: "packages/packs/batman/**"
+"ben10 pack":
+  - changed-files:
+      - any-glob-to-any-file: "packages/packs/ben10/**"
+"darth-vader pack":
+  - changed-files:
+      - any-glob-to-any-file: "packages/packs/darth-vader/**"
+"deadpool pack":
+  - changed-files:
+      - any-glob-to-any-file: "packages/packs/deadpool/**"
+"gandalf pack":
+  - changed-files:
+      - any-glob-to-any-file: "packages/packs/gandalf/**"
+"harry-potter pack":
+  - changed-files:
+      - any-glob-to-any-file: "packages/packs/harry-potter/**"
+"hello-kitty pack":
+  - changed-files:
+      - any-glob-to-any-file: "packages/packs/hello-kitty/**"
+"iron-man pack":
+  - changed-files:
+      - any-glob-to-any-file: "packages/packs/iron-man/**"
+"james-bond pack":
+  - changed-files:
+      - any-glob-to-any-file: "packages/packs/james-bond/**"
+"joker pack":
+  - changed-files:
+      - any-glob-to-any-file: "packages/packs/joker/**"
+"naruto pack":
+  - changed-files:
+      - any-glob-to-any-file: "packages/packs/naruto/**"
+"pikachu pack":
+  - changed-files:
+      - any-glob-to-any-file: "packages/packs/pikachu/**"
+"sherlock-holmes pack":
+  - changed-files:
+      - any-glob-to-any-file: "packages/packs/sherlock-holmes/**"
+"shinchan pack":
+  - changed-files:
+      - any-glob-to-any-file: "packages/packs/shinchan/**"
+"spiderman pack":
+  - changed-files:
+      - any-glob-to-any-file: "packages/packs/spiderman/**"
+"superman pack":
+  - changed-files:
+      - any-glob-to-any-file: "packages/packs/superman/**"
+"yoda pack":
+  - changed-files:
+      - any-glob-to-any-file: "packages/packs/yoda/**"

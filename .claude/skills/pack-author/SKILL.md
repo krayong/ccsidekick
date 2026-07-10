@@ -6,7 +6,7 @@ description: Author a new ccsidekick character pack end-to-end - source the figu
 # Authoring a ccsidekick character pack
 
 A pack is data: one `pack.json` and a `package.json`, never executed code. The engine reads it;
-nothing in a pack runs. All constraints are enforced by `lint-pack`. This skill drives the authoring
+nothing in a pack runs. All constraints are enforced by `pack:lint`. This skill drives the authoring
 loop to a hard finish.
 
 ## Prerequisite
@@ -24,11 +24,10 @@ If it is absent, none of the skill scripts will run.
 
 The pack is done when all four conditions hold:
 
-1. `bun run lint-pack packages/packs/<name>` exits 0: schema guard, placeholder gate, cross-cell
+1. `bun run pack:lint packages/packs/<name>` exits 0: schema guard, placeholder gate, cross-cell
    gate, pool counts, 66-column width, spinner-verb floor, near-duplicate threshold, legibility, and
    `package.json` completeness (name, `files` covering the README and assets,
-   `repository.directory`,
-   author).
+   `repository.directory`, author).
 2. `bun test packages/core/src/packs/registry.test.ts` passes.
 3. Every user-approval gate in the stages below is cleared.
 4. The user has approved the final `pack.json`.
@@ -109,7 +108,7 @@ clears the box and legibility gate.
 **7. Attribution.** Fill `attribution.artist` and `attribution.source`. Both are required; lint
 fails on either being empty.
 
-**Gate:** `bun run lint-pack --schema-only packages/packs/<name>` exits 0.
+**Gate:** `bun run pack:lint --schema-only packages/packs/<name>` exits 0.
 
 ## Stage 2: Emblem
 
@@ -208,21 +207,21 @@ Partition leaf cells into non-overlapping batches.
 
 On Claude: spawn one Sonnet subagent per batch (`model: sonnet`). Hand each writer `voice-pack.md`,
 its assigned cells with per-cell counts, `packages/packs/batman/pack.json` as the structural
-template, and `bun run lint-pack --status packages/packs/<name>` as the self-check command.
+template, and `bun run pack:lint --status packages/packs/<name>` as the self-check command.
 
 **Writers share one working tree, so forbid tree-wide commands in every writer.** A writer edits
-only its assigned `pack.json` cells and runs only `bun run lint-pack` to self-check. It must never
-run `bun run format` (Prettier rewrites the whole workspace) or any mutating git command (`checkout`,
-`add`, `reset`, `stash`) — a writer that formats and then reverts with `git checkout` silently wipes
-every other writer's edits and any staged changeset. Normalize formatting once yourself, after all
-batches merge; never inside a writer.
+only its assigned `pack.json` cells and runs only `bun run pack:lint` to self-check. It must never
+run `bun run format` (Prettier rewrites the whole workspace) or any mutating git command (
+`checkout`, `add`, `reset`, `stash`) — a writer that formats and then reverts with `git checkout`
+silently wipes every other writer's edits and any staged changeset. Normalize formatting once
+yourself, after all batches merge; never inside a writer.
 
 Without subagents: write batches sequentially, same inputs per batch.
 
 After merging all batches, run one cross-cell variety pass: break any joke or phrase that reappears
 across cells, which the per-cell gate cannot catch.
 
-**Gate:** `bun run lint-pack packages/packs/<name>` passes the full content gates.
+**Gate:** `bun run pack:lint packages/packs/<name>` passes the full content gates.
 
 ## Stage 6: Spinner verbs
 
@@ -241,7 +240,7 @@ render binary):
 
 ```
 bun run build
-bun run pack-readme packages/packs/<name>
+bun run pack:readme packages/packs/<name>
 ```
 
 This writes `README.md`: the non-affiliation disclaimer, a tagline, the statusline preview rendered
@@ -249,7 +248,7 @@ in the pack's own theme (`assets/statusline.svg`), the figure as verbatim plain 
 braille blanks preserved), one representative line per pool, and attribution. Do not hand-edit it;
 regenerate whenever the figure, theme, or voice changes — including any hand-edit to `pack.json`
 `art`, which the user may make directly. `README.md` and `assets/statusline.svg` are generated,
-tracked artifacts: after any such change, re-run `bun run pack-readme packages/packs/<name>` (with a
+tracked artifacts: after any such change, re-run `bun run pack:readme packages/packs/<name>` (with a
 current `bun run build`) so both stay in sync with `pack.json`, then eyeball the shot.
 
 The shot only shows the figure if the pack resolves through its workspace link. If the statusline
@@ -292,13 +291,57 @@ quote offenders with their pool/tier location. It must check:
 - **No actionable instructions:** the character reacts to a moment, it never restates a do-this
   directive (no "run /compact", "add to `.gitignore`", "try a shorter query", or any command).
 
-**3. Re-author.** Address every cell the reviewer flags. Re-run `lint-pack` and regenerate the
+**3. Re-author.** Address every cell the reviewer flags. Re-run `pack:lint` and regenerate the
 `README.md` + shot.
 
 **4. Final approval.** Show the user the final `pack.json` and generated `README.md`. Their sign-off
 satisfies terminal-state gate 4.
 
-**5. Add a changeset so the pack gets released.** Releases run
+**5. Reflect the pack in the top-level README, then refresh the reel and the landing page.** Make
+two hand edits to the repo root `README.md` (the `readme:drift` guard enforces the count):
+
+- Add the character to the **Available packs** list — its display name and a one-line description in
+  the existing style (tone + signature palette, e.g. "a mild, upbeat pack that crackles in electric
+  yellow"). Keep the list alphabetical.
+- Bump the `characters-<n>%20packs` count badge to the new pack-directory count. Widgets and themes
+  do not change per pack (themes is an advertised floor, so a growing catalog still passes).
+
+Then regenerate the repo-wide assets. Both the reel and the landing page auto-discover packs from
+`packages/packs/*`, so the new one is picked up with no list to edit:
+
+- the cross-fade reel MP4 (`assets/characters.mp4`, for social) and a slower, size-capped GIF (
+  `assets/characters.gif`, the animated README hero) — every card a live render in a varied session
+  state (different widgets, helpful tip, and mood);
+- the landing page under `website/` — `site:build` re-renders every theme and character shot and
+  regenerates `website/data.js`. The character wall, the theme and widget filmstrips, and the
+  headline counts all derive from `pack.json` and the engine's exported constants, so the new pack's
+  card, its own theme, and the bumped counts appear automatically. Its **position** on the wall is
+  the one thing that is not auto-derived: it comes from the `ORDER` list in
+  `scripts/website/site-data-build.ts`, and `site:drift` fails until the new pack is added there (see
+  below).
+
+```
+bun run build && bun run character:reel     # reel: needs ffmpeg + Chrome
+bun run site:build                          # landing page: re-render every shot + regenerate website/data.js
+bun run readme:drift && bun run site:drift  # confirm the README and the website both match the packs
+```
+
+`site:drift` is the website's counterpart to `readme:drift`: it recomputes `website/data.js` from the
+packs/themes/widgets and deep-compares, failing on any drift (a changed colour, an added pack, a
+relabelled widget). Add the new pack to two ordered lists:
+
+- `ORDER` in `scripts/website/site-data-build.ts` — the authoritative character-wall order.
+  **`site:drift` fails until every pack is listed here**, so add the name wherever you want it on the
+  wall (not just the tail).
+- `CURATED=(…)` in `scripts/assets/character-reel.sh` — the reel order; add the name to lead the pack
+  earlier than the tail.
+
+Also add a `"<name> pack"` entry to `.github/labeler.yml`: every pack has its own PR label, and the CI
+labeler (which colours each pack label from its theme) reads this list. Commit the README and the
+refreshed source assets under `assets/` alongside the pack in step 7; `website/data.js` and the copied
+`website/` media are CI-built and gitignored, so they are not committed.
+
+**6. Add a changeset so the pack gets released.** Releases run
 on [Changesets](https://github.com/changesets/changesets):
 a package is published only when a changeset raises its version. The Release workflow discovers
 packs through a `packages/packs/*` glob, so no workflow edit is ever needed. Just declare the bump:
@@ -318,15 +361,15 @@ the engine (it ships batman). The other packs are engine `devDependencies` and n
 they version independently. Do not add `linked`/`fixed` entries for packs; independent versioning is
 intentional.
 
-**6. Delete `REVIEW.md` and commit.** `REVIEW.md` is transient reviewer scratch, removed at ship
+**7. Delete `REVIEW.md` and commit.** `REVIEW.md` is transient reviewer scratch, removed at ship
 so packs never carry it — the same treatment as the `.author/` working files. Delete it before the
 commit so it never enters history, confirm the parity test, then commit by path (include the
-changeset from step 5):
+changeset from step 6 and the refreshed assets from step 5):
 
 ```
 rm packages/packs/<name>/REVIEW.md
 bun test packages/core/src/packs/registry.test.ts
-git add packages/packs/<name> .changeset
+git add packages/packs/<name> .changeset README.md assets/characters.mp4 assets/characters.gif website/data.js
 git commit -m "feat(packs): add <name> pack"
 ```
 
@@ -341,8 +384,11 @@ you intend). A secret-scanning hook runs on every push.
 | `bun .claude/skills/pack-author/scripts/figure-options.ts <packDir> --candidates <json>`   | Render figure candidates → `.author/figures.html`                                               |
 | `bun .claude/skills/pack-author/scripts/figure-ingest.ts <packDir>`                        | Write `.author/figure.txt` into `pack.json` art; runs `--schema-only` lint                      |
 | `bun .claude/skills/pack-author/scripts/theme-options.ts <packDir> --candidates <json>`    | Render theme candidates → `.author/themes.html`                                                 |
-| `bun run lint-pack --schema-only packages/packs/<name>`                                    | Schema guard + legibility gate (skips content counts)                                           |
-| `bun run lint-pack --status packages/packs/<name>`                                         | Per-cell fill status: current count vs. target per leaf                                         |
-| `bun run lint-pack packages/packs/<name>`                                                  | Full lint: all schema, content, and quality gates                                               |
-| `bun run pack-readme packages/packs/<name>`                                                | Write `README.md` + themed `assets/statusline.svg` (needs `bun run build`)                      |
+| `bun run pack:lint --schema-only packages/packs/<name>`                                    | Schema guard + legibility gate (skips content counts)                                           |
+| `bun run pack:lint --status packages/packs/<name>`                                         | Per-cell fill status: current count vs. target per leaf                                         |
+| `bun run pack:lint packages/packs/<name>`                                                  | Full lint: all schema, content, and quality gates                                               |
+| `bun run pack:readme packages/packs/<name>`                                                | Write `README.md` + themed `assets/statusline.svg` (needs `bun run build`)                      |
+| `bun run character:reel`                                                                   | Regenerate the roster reel: `assets/characters.mp4` (social) + `assets/characters.gif` (README) |
+| `bun run site:build`                                                                       | Rebuild the landing page: re-render every theme/character shot + regenerate `website/data.js`   |
+| `bun run site:drift`                                                                       | Guard: fail if `website/data.js` or the render set is stale against the packs                   |
 | `bun test packages/core/src/packs/registry.test.ts`                                        | Registry parity test                                                                            |

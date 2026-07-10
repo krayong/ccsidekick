@@ -17,6 +17,7 @@ max_line_length = 100
 [*.{yml,yaml}]
 indent_style = space
 indent_size = 2
+ij_yaml_spaces_within_brackets = false
 
 # Markdown: trailing whitespace can be a hard line break, so leave it alone.
 [*.md]

@@ -20,5 +20,5 @@ const pack = JSON.parse(readFileSync(join(packDir, "pack.json"), "utf8")) as Rec
 pack["art"] = rows;
 writeFileSync(join(packDir, "pack.json"), `${JSON.stringify(pack, null, "\t")}\n`);
 // The schema-only lint is the validation: it enforces the 9x25 bound and the legibility gate on the new art.
-execFileSync("bun", ["run", "lint-pack", "--schema-only", packDir], { stdio: "inherit" });
+execFileSync("bun", ["run", "pack:lint", "--schema-only", packDir], { stdio: "inherit" });
 process.stdout.write(`figure-ingest: wrote art into ${packDir}/pack.json and validated.\n`);

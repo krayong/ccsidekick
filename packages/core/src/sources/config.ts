@@ -80,7 +80,7 @@ const DEFAULT_WIDGETS: Readonly<Record<WidgetId, boolean>> = {
 
 export const DEFAULT_CONFIG: Config = {
 	schema_version: 1,
-	character: { enabled: true, mode: "random", name: "batman", roster: [] },
+	character: { enabled: true, mode: "random", name: "spiderman", roster: [] },
 	// "character" (the CHARACTER_THEME sentinel) makes every surface follow the active character's own pack
 	// theme, falling back to houston when a persona ships none or none is active yet.
 	theme: { name: "character", banding: "solid", mood_shift: false, icons: {} },
