@@ -9,7 +9,9 @@ on:
 
 concurrency:
   group: labeler-${{ github.event.pull_request.number }}
-  cancel-in-progress: true
+  # Serialize per PR but don't cancel: a cancelled run reports a `failure` conclusion, which would fail the
+  # required `label` check. Letting a superseded run finish keeps the check green (and avoids racing sync-labels).
+  cancel-in-progress: false
 
 permissions:
   contents: read # checkout the base config + read pack themes
