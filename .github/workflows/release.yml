@@ -46,7 +46,7 @@ jobs:
       # registry you may register it as a trusted publisher on npmjs.com and drop to OIDC. Keeping the token also
       # means a freshly added pack just publishes without a manual bootstrap.
       - name: Use a provenance-capable npm
-        run: npm install -g npm@latest
+        run: npm install -g npm@11
 
       # version: applies pending changesets into a Version Packages PR (bump + changelog + lockfile).
       # publish: runs after that PR merges; ci-publish.sh rewrites workspace:* → concrete and npm-publishes
