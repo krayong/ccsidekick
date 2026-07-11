@@ -121,6 +121,50 @@ for (const m of html.matchAll(/data-to="(\d+)"[^>]*>[\s\S]*?<div class="l">(\w+)
 		problems.push(`index.html stat "${label}" reads ${rawNum}, expected ${want}`);
 }
 
+// JSON-LD SoftwareApplication: its softwareVersion must track the published engine (site:data injects it from
+// packages/core/package.json), and its featureList repeats the same character/theme/widget counts the stat grid
+// shows. Guard both so structured data can't advertise a stale release or a stale count.
+const ldRaw = /<script type="application\/ld\+json">([\s\S]*?)<\/script>/.exec(html)?.[1];
+if (ldRaw !== undefined) {
+	const graph = (JSON.parse(ldRaw) as { "@graph"?: unknown[] })["@graph"] ?? [];
+	const app = graph.find(
+		(n): n is Record<string, unknown> => isObj(n) && n["@type"] === "SoftwareApplication",
+	);
+	if (app === undefined) {
+		problems.push("index.html JSON-LD has no SoftwareApplication node");
+	} else {
+		const coreVersion = (
+			JSON.parse(readFileSync(join(root, "packages", "core", "package.json"), "utf8")) as {
+				version: string;
+			}
+		).version;
+		if (app["softwareVersion"] !== coreVersion)
+			problems.push(
+				`index.html JSON-LD softwareVersion is ${JSON.stringify(app["softwareVersion"])}, expected "${coreVersion}" — run \`bun run site:build\``,
+			);
+		const featureRules: { re: RegExp; key: "themes" | "widgets" | "characters" }[] = [
+			{ re: /theme/i, key: "themes" },
+			{ re: /widget/i, key: "widgets" },
+			{ re: /character pack|bundled character/i, key: "characters" },
+		];
+		const featureList = app["featureList"];
+		if (Array.isArray(featureList))
+			for (const rawEntry of featureList) {
+				const entry = String(rawEntry);
+				const num = /\d+/.exec(entry)?.[0];
+				if (num === undefined) continue;
+				for (const rule of featureRules)
+					if (rule.re.test(entry)) {
+						if (Number(num) !== freshCounts[rule.key])
+							problems.push(
+								`index.html JSON-LD featureList "${entry}" reads ${num}, expected ${freshCounts[rule.key]} ${rule.key}`,
+							);
+						break;
+					}
+			}
+	}
+}
+
 if (problems.length > 0) {
 	console.error(
 		"website is stale — run `bun run site:build`:\n" +

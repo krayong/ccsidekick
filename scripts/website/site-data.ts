@@ -15,6 +15,13 @@ import { buildSiteData } from "./site-data-build";
 const root = join(import.meta.dir, "..", "..");
 const website = join(root, "website");
 
+// The published engine version, used to keep the JSON-LD softwareVersion in step with each release.
+const coreVersion = (
+	JSON.parse(readFileSync(join(root, "packages", "core", "package.json"), "utf8")) as {
+		version: string;
+	}
+).version;
+
 const data = buildSiteData();
 
 writeFileSync(join(website, "data.js"), `window.__CCSK = ${JSON.stringify(data)};\n`);
@@ -35,8 +42,14 @@ html = html.replace(
 		return want === undefined ? m : `${pre}${String(want)}${mid}${label}${post}`;
 	},
 );
+// Patch the JSON-LD softwareVersion to the published engine version. site:build runs on every deploy, so the
+// structured data tracks each release with no hand-edit; site-drift guards it against drifting.
+html = html.replace(
+	/("softwareVersion":\s*")[^"]*(")/,
+	(_m, pre: string, post: string) => `${pre}${coreVersion}${post}`,
+);
 writeFileSync(indexPath, html);
 
 console.log(
-	`wrote website/data.js — ${data.counts.characters} characters, ${data.counts.themes} themes, ${data.counts.widgets} widgets (index.html stats synced)`,
+	`wrote website/data.js — ${data.counts.characters} characters, ${data.counts.themes} themes, ${data.counts.widgets} widgets (index.html stats + softwareVersion ${coreVersion} synced)`,
 );
