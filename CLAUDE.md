@@ -1,9 +1,9 @@
 # CLAUDE.md
 
 Guidance for working on ccsidekick: a Claude Code status line with an animated, reactive character
-and a full widget layer. No Claude API, no token spend. Network use is limited to non-LLM lookups (a
-default weekly currency-rate refresh and a default account-usage call), both off the hot render path
-and disableable.
+and a full widget layer. No Claude API, no token spend. Network use is limited to non-LLM lookups (an
+optional weekly currency-rate refresh and an optional account-usage call, both off by default), off
+the hot render path and enabled only when you turn them on.
 
 ## Architecture
 

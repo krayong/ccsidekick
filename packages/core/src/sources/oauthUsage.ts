@@ -262,8 +262,8 @@ export function readUsageCached(root: string): UsageData | null {
  * Return the cached OAuth `UsageData` synchronously (stale data is served on any fetch failure). When
  * `enabled` and the cache is missing or older than `USAGE_TTL_MS`, fire a detached single-flighted refresh —
  * never awaited, so the fetch can neither block the render nor surface an `unhandledRejection`. The
- * User-Agent version is the stdin payload's `version`. On by default ([network].usage_fetch); sends the
- * account's OAuth bearer token to Anthropic, so it is disableable.
+ * User-Agent version is the stdin payload's `version`. Off by default; opt in via [network].usage_fetch.
+ * When enabled, sends the account's OAuth bearer token to Anthropic.
  */
 export function readUsage(
 	root: string,

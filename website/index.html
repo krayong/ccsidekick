@@ -4,29 +4,31 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#0b0e14" />
-		<title>ccsidekick - a reactive Claude Code status line</title>
+		<title>A reactive character for your Claude Code status line</title>
 		<meta
 			name="description"
-			content="A Claude Code status line with a character that reacts to your session — cost, git, and usage priced from your own transcripts at zero token spend. Free, MIT." />
+			content="A Claude Code status line with a character that reacts, plus cost tracking, git, and token usage from your transcripts at zero token spend. npx ccsidekick" />
 		<meta name="robots" content="index, follow, max-image-preview:large" />
-		<meta property="og:title" content="ccsidekick - a reactive Claude Code status line" />
+		<meta property="og:title" content="A reactive character for your Claude Code status line" />
 		<meta
 			property="og:description"
-			content="A Claude Code status line with a character that reacts to your session — cost, git, and usage priced from your own transcripts at zero token spend. Free, MIT." />
+			content="A Claude Code status line with a character that reacts, plus cost tracking, git, and token usage from your transcripts at zero token spend. npx ccsidekick" />
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://ccsidekick.krayong.com/" />
 		<meta property="og:site_name" content="ccsidekick" />
 		<meta property="og:image" content="https://ccsidekick.krayong.com/og.png" />
-		<meta property="og:image:width" content="1200" />
-		<meta property="og:image:height" content="630" />
+		<meta property="og:image:width" content="1280" />
+		<meta property="og:image:height" content="640" />
 		<meta
 			property="og:image:alt"
 			content="ccsidekick wordmark above a rendered Claude Code status line with a Spider-Man ASCII character" />
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content="ccsidekick - a reactive Claude Code status line" />
+		<meta
+			name="twitter:title"
+			content="A reactive character for your Claude Code status line" />
 		<meta
 			name="twitter:description"
-			content="A Claude Code status line with a character that reacts to your session — cost, git, and usage priced from your own transcripts at zero token spend. Free, MIT." />
+			content="A Claude Code status line with a character that reacts, plus cost tracking, git, and token usage from your transcripts at zero token spend. npx ccsidekick" />
 		<meta name="twitter:image" content="https://ccsidekick.krayong.com/og.png" />
 		<meta
 			name="twitter:image:alt"
@@ -35,9 +37,6 @@
 		<link rel="icon" href="favicon.svg" type="image/svg+xml" />
 		<link rel="apple-touch-icon" href="apple-touch-icon.png" />
 		<link rel="stylesheet" href="tokens.css" />
-		<script src="vendor/gsap.min.js"></script>
-		<script src="vendor/ScrollTrigger.min.js"></script>
-		<script src="data.js"></script>
 		<noscript>
 			<style>
 				.reveal {
@@ -2039,13 +2038,22 @@
 						"@type": "SoftwareApplication",
 						"name": "ccsidekick",
 						"description": "A Claude Code status line with a reactive ASCII character and a full widget layer. Cost, git, and usage priced from your own transcripts at zero token spend.",
+						"featureList": [
+							"Reactive ASCII character that comments on tests, builds, and commits",
+							"Transcript-derived cost tracking, deduped globally by (message.id, requestId)",
+							"33 toggleable status-line widgets: git, PR, token context, burn rate, cost",
+							"75+ built-in themes",
+							"18 bundled character packs",
+							"Zero token spend, no Claude API, local-first"
+						],
+						"keywords": "claude code status line, claude code statusline, claude code cost tracking, claude code themes, claude code widgets",
 						"applicationCategory": "DeveloperApplication",
 						"operatingSystem": "macOS, Linux, Windows",
 						"softwareRequirements": "Node.js 20.6 or newer",
 						"url": "https://ccsidekick.krayong.com/",
 						"downloadUrl": "https://www.npmjs.com/package/ccsidekick",
 						"installUrl": "https://www.npmjs.com/package/ccsidekick",
-						"softwareVersion": "1.3.0",
+						"softwareVersion": "1.4.0",
 						"license": "https://opensource.org/licenses/MIT",
 						"screenshot": "https://ccsidekick.krayong.com/og.png",
 						"image": "https://ccsidekick.krayong.com/og.png",
@@ -2468,7 +2476,7 @@
 								Chat, project, and all-time spend get token-priced straight from
 								your transcripts, then deduped across the whole tree. That corrects
 								the total that Claude Code over-counts when you resume a session. No
-								API calls. Nothing leaves your machine.
+								Claude API, and no network on the render path.
 							</p>
 							<div class="statgrid">
 								<div class="stat">
@@ -2518,8 +2526,8 @@
 							<p>
 								Packs are pure data, never code. Cost comes from your local
 								transcripts. State stays on disk. The only network use is a weekly
-								rate refresh and an account-usage lookup, both on by default, both
-								disableable, and neither on the render path.
+								rate refresh and an account-usage lookup, both off by default and
+								neither on the render path.
 							</p>
 						</div>
 					</div>
@@ -2536,7 +2544,7 @@
 							<p>
 								A Claude Code status line (statusline) with a character that reacts
 								to your session, plus 33 toggleable widgets for cost, git, and
-								usage. Free, MIT, and one command to install.
+								usage. MIT, and one command to install.
 							</p>
 						</details>
 						<details>
@@ -2559,8 +2567,8 @@
 							<p>
 								Yes. It is local-first: all state stays on disk under ~/.claude/.
 								The only network use is an optional weekly rate refresh and an
-								account-usage lookup, both on by default, both disableable, and
-								neither on the render path.
+								account-usage lookup, both off by default and neither on the render
+								path.
 							</p>
 						</details>
 						<details>
@@ -2586,7 +2594,10 @@
 						</details>
 						<details>
 							<summary>What are the requirements?</summary>
-							<p>Node 20.6 or newer (Bun on the render path). MIT licensed.</p>
+							<p>
+								Node 20.6 or newer (the render path runs under plain Node). MIT
+								licensed.
+							</p>
 						</details>
 					</div>
 				</div>
@@ -2601,7 +2612,7 @@
 							"name": "What is ccsidekick?",
 							"acceptedAnswer": {
 								"@type": "Answer",
-								"text": "A Claude Code status line (statusline) with a character that reacts to your session, plus 33 toggleable widgets for cost, git, and usage. Free, MIT, and one command to install."
+								"text": "A Claude Code status line (statusline) with a character that reacts to your session, plus 33 toggleable widgets for cost, git, and usage. MIT, and one command to install."
 							}
 						},
 						{
@@ -2625,7 +2636,7 @@
 							"name": "Is my data private?",
 							"acceptedAnswer": {
 								"@type": "Answer",
-								"text": "Yes. It is local-first: all state stays on disk under ~/.claude/. The only network use is an optional weekly rate refresh and an account-usage lookup, both on by default, both disableable, and neither on the render path."
+								"text": "Yes. It is local-first: all state stays on disk under ~/.claude/. The only network use is an optional weekly rate refresh and an account-usage lookup, both off by default and neither on the render path."
 							}
 						},
 						{
@@ -2657,7 +2668,7 @@
 							"name": "What are the requirements?",
 							"acceptedAnswer": {
 								"@type": "Answer",
-								"text": "Node 20.6 or newer (Bun on the render path). MIT licensed."
+								"text": "Node 20.6 or newer (the render path runs under plain Node). MIT licensed."
 							}
 						}
 					]
@@ -2676,6 +2687,9 @@
 			</div>
 		</footer>
 
+		<script src="vendor/gsap.min.js"></script>
+		<script src="vendor/ScrollTrigger.min.js"></script>
+		<script src="data.js"></script>
 		<script>
 			const D = window.__CCSK || { counts: {}, characters: [], themes: [], widgets: [] };
 			const esc = (s) =>

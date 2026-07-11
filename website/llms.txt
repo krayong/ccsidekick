@@ -16,7 +16,7 @@ ccsidekick replaces Claude Code's status line with a character (Batman, Spider-M
 - Cost is transcript-derived in-house and deduped globally by `(message.id, requestId)`, which fixes Claude Code's resumed-session over-count (its own `cost.total_cost_usd` double-counts replayed context).
 - Character packs are pure data (`pack.json`), never executed code; each pack ships its own theme.
 - Two binaries: `ccsidekick` (setup/TUI) and `ccsidekick-render` (the hot render path, which pulls in no React/Ink).
-- Requires Node 20.6+ (Bun on the render path); MIT licensed.
+- Requires Node 20.6+ (the render path runs under plain Node; Bun is the dev toolchain only); MIT licensed.
 
 ## What makes it different
 
@@ -27,7 +27,7 @@ ccsidekick replaces Claude Code's status line with a character (Batman, Spider-M
 ## FAQ
 
 - Does it use the Claude API or spend tokens? No. Zero token spend, no Claude API; cost is read from your local transcripts.
-- Is my data private? Yes, local-first. The only network use is an optional weekly rate refresh and account-usage lookup, both on by default, both disableable, and neither on the render path.
+- Is my data private? Yes, local-first. The only network use is an optional weekly currency-rate refresh and an optional account-usage lookup, both off by default, and neither on the render path. The account-usage lookup, when you turn it on, sends your Anthropic OAuth token to Anthropic's account-usage endpoint.
 - How do I install it? Run `npx ccsidekick` for the wizard, or `npx ccsidekick setup` with flags for a non-interactive install.
 - Can I add my own character? Yes; packs are pure data, and the pack-author path documents building one.
 

@@ -37,8 +37,8 @@
   staged/unstaged/untracked, uncommitted changes, stash, worktree, conflicts), token context, cost,
   usage limits, PR state, burn rate, and more. Threshold-colored.
 - **75+ built-in themes.** Dark, high-contrast, and retro palettes (Dracula, Nord,
-  Catppuccin, Tokyo Night, Gruvbox, Rosé Pine, Synthwave '84, and dozens more), plus each character
-  pack ships its own matching theme.
+  Catppuccin, Tokyo Night, Gruvbox, Rosé Pine, Synthwave '84, and dozens more), including one tuned
+  to each character pack.
 - **Cost at a glance.** Chat, per-project, and all-time spend, read straight from your Claude Code
   transcripts. No token spend and nothing extra to install.
 - **Character spinner verbs.** The active character rewrites Claude Code's spinner verbs, so even
@@ -144,8 +144,8 @@ helpful = true        # actionable tips above the field rows
 min_severity = "low"  # low | medium | high | critical
 
 [network]
-fx_refresh = true     # weekly currency-rate refresh
-usage_fetch = true    # OAuth account-usage widget (on by default; sends your OAuth token to Anthropic)
+fx_refresh = false    # off by default; weekly currency-rate refresh when on
+usage_fetch = false   # off by default; the account-usage widget sends your OAuth token to Anthropic
 
 [statusline]
 currency = "USD"      # local-currency parenthetical on cost; default follows your system locale
@@ -170,7 +170,7 @@ three PostToolUse-family hooks ──ccsidekick-render classify──▶  events
 
 State lives under `${CLAUDE_CONFIG_DIR:-~/.claude}/ccsidekick/`, partitioned per session so two
 Claude windows never collide. Git runs fresh each tick; cost reads sit behind a short-lived cache.
-The render path prefers Bun and ships as a precompiled bundle, so the per-tick cost stays low.
+The render path runs under plain Node and ships as a precompiled bundle, so the per-tick cost stays low.
 
 ## Development
 
@@ -239,7 +239,9 @@ Prior art in Claude Code statuslines, coding-companion pets, and transcript-base
 
 ## Credits
 
-Every character figure credits its original ASCII artist in the pack's `attribution`.
+Every character figure credits its original ASCII artist in the pack's `attribution`. The characters
+themselves are unofficial fan art of trademarked properties. ccsidekick is a non-commercial hobby
+project, not affiliated with or endorsed by any rights-holder, and any figure is removed on request.
 
 ## Contact
 
@@ -250,5 +252,7 @@ else, email [ccsidekick@krayong.com](mailto:ccsidekick@krayong.com).
 
 ## License
 
-[MIT](LICENSE) © Karan Gourisaria. Character figures remain the property of their original ASCII
-artists, credited per pack.
+[MIT](LICENSE) © Karan Gourisaria. The MIT license covers ccsidekick's own code. The character
+figures are unofficial fan art of trademarked properties owned by their respective rights-holders;
+each ASCII rendering is credited to the artist who drew it (per pack), and figures are removed on a
+rights-holder's request.

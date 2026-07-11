@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Regenerate assets/og.png — the 1200x630 Open Graph / social-share card (og:image / twitter:image).
+# Regenerate assets/og.png — the 1280x640 Open Graph / social-share card (og:image / twitter:image).
+# Content sits inside a 60px safe margin on all four sides.
 #
 # The card is built in two passes because no single rasterizer does both jobs well:
 #   1. The hero is the real Spider-Man status-line render (packages/packs/spiderman/assets/statusline.svg).
@@ -37,7 +38,7 @@ trap 'rm -rf "$TMP"' EXIT
 # 2) Emoji-free frame; wordmark embedded so rsvg needs no external file resolution.
 WM="$(base64 -i "$WORDMARK" | tr -d '\n')"
 cat >"$TMP/frame.svg" <<SVG
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="630" viewBox="0 0 1200 630" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1280" height="640" viewBox="0 0 1280 640" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">
   <defs>
     <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#5fafff"/><stop offset="0.34" stop-color="#64d760"/>
@@ -47,19 +48,19 @@ cat >"$TMP/frame.svg" <<SVG
       <feDropShadow dx="0" dy="10" stdDeviation="22" flood-color="#000000" flood-opacity="0.6"/>
     </filter>
   </defs>
-  <rect width="1200" height="630" fill="#0b0e14"/>
-  <image x="60" y="50" width="392" height="70" xlink:href="data:image/svg+xml;base64,$WM"/>
-  <rect x="62" y="132" width="356" height="3" rx="1.5" fill="url(#g)"/>
-  <text x="62" y="182" font-size="28" fill="#93a1b3">A Claude Code status line with a character that reacts.</text>
-  <rect x="60" y="248" width="1080" height="222" rx="12" fill="#0d1117" stroke="#3a475b" stroke-width="1.5" filter="url(#sh)"/>
-  <text x="62" y="566" font-size="18" fill="#7d899b">18 characters · 75+ themes · 33 widgets · zero token spend · local-first · MIT</text>
+  <rect width="1280" height="640" fill="#0b0e14"/>
+  <image x="60" y="52" width="392" height="70" xlink:href="data:image/svg+xml;base64,$WM"/>
+  <rect x="60" y="134" width="356" height="3" rx="1.5" fill="url(#g)"/>
+  <text x="60" y="184" font-size="28" fill="#93a1b3">A Claude Code status line with a character that reacts.</text>
+  <rect x="60" y="250" width="1160" height="234" rx="12" fill="#0d1117" stroke="#3a475b" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="60" y="577" font-size="18" fill="#7d899b">18 characters · 75+ themes · 33 widgets · zero token spend · local-first · MIT</text>
 </svg>
 SVG
 
-rsvg-convert -w 2400 -h 1260 "$TMP/frame.svg" -o "$TMP/frame.png"
+rsvg-convert -w 2560 -h 1280 "$TMP/frame.svg" -o "$TMP/frame.png"
 
-# 3) Composite the statusline into the panel (60,248 1080x222 -> 2x 120,496 2160x444) and downscale sharp.
-magick "$TMP/frame.png" \( "$TMP/sl.png" -resize 2160x444\! \) -geometry +120+496 -composite \
-	-filter Lanczos -resize 1200x630 -strip -define png:compression-level=9 "$OUT"
+# 3) Composite the statusline into the panel (60,250 1160x234 -> 2x 120,500 2320x468) and downscale sharp.
+magick "$TMP/frame.png" \( "$TMP/sl.png" -resize 2320x468\! \) -geometry +120+500 -composite \
+	-filter Lanczos -resize 1280x640 -strip -define png:compression-level=9 "$OUT"
 
 echo "wrote $OUT ($(magick identify -format '%wx%h, %b' "$OUT"))"
