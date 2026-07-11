@@ -85,7 +85,7 @@ export const DEFAULT_CONFIG: Config = {
 	// theme, falling back to houston when a persona ships none or none is active yet.
 	theme: { name: "character", banding: "solid", mood_shift: false, icons: {} },
 	comments: { character: true, helpful: true, min_severity: "low" },
-	network: { fx_refresh: true, usage_fetch: true, balance_path: "" },
+	network: { fx_refresh: false, usage_fetch: false, balance_path: "" },
 	statusline: { currency: defaultCurrency(), widgets: DEFAULT_WIDGETS },
 };
 
