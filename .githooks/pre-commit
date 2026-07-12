@@ -1,6 +1,9 @@
 #!/bin/sh
 set -e
-echo "[pre-commit] prettier"; bun run format:check
-echo "[pre-commit] eslint";   bun run lint
-echo "[pre-commit] tsc";      bun run typecheck
-echo "[pre-commit] tests";    bun run test
+echo "[pre-commit] prettier";     bun run format:check
+echo "[pre-commit] eslint";       bun run lint
+echo "[pre-commit] tsc";          bun run typecheck
+echo "[pre-commit] tests";        bun run test
+echo "[pre-commit] readme:drift"; bun run readme:drift
+echo "[pre-commit] site:drift";   bun run site:drift
+echo "[pre-commit] pack:lint";    for d in packages/packs/*/; do bun run pack:lint "$d"; done
