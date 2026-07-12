@@ -44,6 +44,7 @@ interface ParsedFlags {
 	helpful?: boolean;
 	minSeverity?: (typeof SEVERITIES)[number];
 	widgets?: readonly WidgetId[];
+	usageFetch?: boolean;
 }
 
 interface Target {
@@ -68,6 +69,7 @@ const VALUE_FLAGS = new Set([
 	"helpful",
 	"min-severity",
 	"widgets",
+	"usage-fetch",
 	"config-dir",
 ]);
 const BOOL_FLAGS = new Set(["global", "local"]);
@@ -199,6 +201,10 @@ const VALIDATORS: Readonly<
 	widgets: (v, f, e) => {
 		listInto(v, WIDGET_IDS, "widgets", e, (x) => (f.widgets = x));
 	},
+	"usage-fetch": (v, f, e) => {
+		const b = parseOnOff("usage-fetch", v, e);
+		if (b !== undefined) f.usageFetch = b;
+	},
 };
 
 /** Parse and validate the setup argv into typed flags plus a save target. Collects every error rather than throwing. */
@@ -254,6 +260,10 @@ export function applySetup(base: Config, flags: ParsedFlags): Config {
 			...(flags.minSeverity !== undefined ? { min_severity: flags.minSeverity } : {}),
 		},
 		theme: flags.theme !== undefined ? { ...base.theme, name: flags.theme } : base.theme,
+		network:
+			flags.usageFetch !== undefined ?
+				{ ...base.network, usage_fetch: flags.usageFetch }
+			:	base.network,
 	};
 }
 
@@ -341,6 +351,7 @@ export function setupHelp(): string {
 		"  --helpful <on|off>      the helpful-tip line",
 		`  --min-severity <sev>    ${SEVERITIES.join(", ")}`,
 		"  --widgets <a,b,c>       statusline widgets to enable (others are turned off)",
+		"  --usage-fetch <on|off>  account-usage lookup to Anthropic (needed by the pay_as_you_go widget; no tokens)",
 		"  --global | --local      save target (default: global)",
 		"  --config-dir <path>     Claude config dir (default: $CLAUDE_CONFIG_DIR or ~/.claude)",
 		"",
