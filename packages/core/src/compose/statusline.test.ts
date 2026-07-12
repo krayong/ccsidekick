@@ -38,6 +38,7 @@ const git: GitState = {
 	changedFiles: 0,
 	upstream: true,
 	upstreamGone: false,
+	remoteBranchExists: false,
 };
 
 const model: ModelInfo = {

@@ -45,11 +45,11 @@ test("statusline.budget parses when present and is absent otherwise", () => {
 	expect(loadConfig('[statusline]\nbudget = "nope"\n').statusline.budget).toBeUndefined();
 });
 
-test("[comments] parses character/helpful/min_severity; defaults are on/on/low", () => {
+test("[comments] parses character/helpful/min_severity; defaults are on/on/medium", () => {
 	const d = loadConfig("");
 	expect(d.comments.character).toBe(true);
 	expect(d.comments.helpful).toBe(true);
-	expect(d.comments.min_severity).toBe("low");
+	expect(d.comments.min_severity).toBe("medium");
 	const c = loadConfig('[comments]\ncharacter = false\nhelpful = false\nmin_severity = "high"\n');
 	expect(c.comments.character).toBe(false);
 	expect(c.comments.helpful).toBe(false);

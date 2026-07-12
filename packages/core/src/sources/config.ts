@@ -84,7 +84,7 @@ export const DEFAULT_CONFIG: Config = {
 	// "character" (the CHARACTER_THEME sentinel) makes every surface follow the active character's own pack
 	// theme, falling back to houston when a persona ships none or none is active yet.
 	theme: { name: "character", banding: "solid", mood_shift: false, icons: {} },
-	comments: { character: true, helpful: true, min_severity: "low" },
+	comments: { character: true, helpful: true, min_severity: "medium" },
 	network: { fx_refresh: false, usage_fetch: false, balance_path: "" },
 	statusline: { currency: defaultCurrency(), widgets: DEFAULT_WIDGETS },
 };

@@ -82,7 +82,7 @@ function buildConfigToml(opts: RenderOptions): string {
 		"[comments]",
 		`character = ${String(comment)}`,
 		`helpful = ${String(helpful)}`,
-		'min_severity = "low"',
+		'min_severity = "medium"',
 		"",
 		"[network]",
 		"fx_refresh = false",
