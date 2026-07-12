@@ -65,6 +65,21 @@ test("no upstream: absent branch.upstream ⇒ ahead/behind undefined, not gone",
 	expect(g?.ahead).toBeUndefined();
 	expect(g?.behind).toBeUndefined();
 	expect(g?.upstreamGone).toBe(false);
+	expect(g?.remoteBranchExists).toBe(false);
+});
+
+test("no upstream but remote-tracking ref present ⇒ remoteBranchExists true (pushed without -u)", () => {
+	const noUp = ["# branch.oid 0123", "# branch.head kv/super-filters", "# stash 0"].join("\n");
+	const run = (args: string[]): string =>
+		({
+			"rev-parse --is-inside-work-tree": "true",
+			"rev-parse --git-dir": "/repo/.git",
+			"status --porcelain=v2 --branch --show-stash": noUp,
+			"rev-parse --verify --quiet refs/remotes/origin/kv/super-filters": "56ed94c",
+		})[args.join(" ")] ?? "";
+	const g = readGit("/repo", run);
+	expect(g?.upstream).toBe(false);
+	expect(g?.remoteBranchExists).toBe(true);
 });
 
 test("upstream present but ab unresolved ⇒ gone", () => {

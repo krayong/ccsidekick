@@ -139,9 +139,9 @@ name = "character"    # "character" matches the active character; or any built-i
 mood_shift = false    # re-tint accent + gradient with the current mood
 
 [comments]
-character = true      # the character's voice line (tone stays pack-owned)
-helpful = true        # actionable tips above the field rows
-min_severity = "low"  # low | medium | high | critical
+character = true         # the character's voice line (tone stays pack-owned)
+helpful = true           # actionable tips above the field rows
+min_severity = "medium"  # low | medium | high | critical
 
 [network]
 fx_refresh = false    # off by default; weekly currency-rate refresh when on

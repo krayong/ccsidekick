@@ -263,7 +263,7 @@ export const HELPFUL_CATALOG: readonly HelpfulTrigger[] = [
 	},
 	{
 		id: "pay_as_you_go_active",
-		severity: "medium",
+		severity: "low",
 		category: "billing",
 		momentary: false,
 		template: "Pay-as-you-go is on. Every request now bills on top of your plan.",
@@ -337,10 +337,10 @@ export const HELPFUL_CATALOG: readonly HelpfulTrigger[] = [
 		severity: "high",
 		category: "context",
 		momentary: false,
-		template: "{pct}% full with uncommitted work. Commit before a compact buries it.",
+		template: "{pct}% full with uncommitted work. Commit now while the context is fresh.",
 		test: (i) => i.context.usedPct > COMPACT_SOON_PCT && dirty(i.git),
 		render: (i) =>
-			`${pct(i.context.usedPct)} full with uncommitted work. Commit before a compact buries it.`,
+			`${pct(i.context.usedPct)} full with uncommitted work. Commit now while the context is fresh.`,
 	},
 	{
 		id: "compaction_thrash",
@@ -472,7 +472,11 @@ export const HELPFUL_CATALOG: readonly HelpfulTrigger[] = [
 		category: "git",
 		momentary: false,
 		template: "No upstream set. `git push -u origin HEAD` to track it.",
-		test: (i) => i.git !== null && i.git.branch !== undefined && !i.git.upstream,
+		test: (i) =>
+			i.git !== null &&
+			i.git.branch !== undefined &&
+			!i.git.upstream &&
+			!i.git.remoteBranchExists,
 		render: () => "No upstream set. `git push -u origin HEAD` to track it.",
 	},
 	{
@@ -553,7 +557,7 @@ export const HELPFUL_CATALOG: readonly HelpfulTrigger[] = [
 	},
 	{
 		id: "detached_head",
-		severity: "low",
+		severity: "medium",
 		category: "git",
 		momentary: false,
 		template: "Detached HEAD. Branch before committing or new commits can vanish.",
@@ -578,7 +582,7 @@ export const HELPFUL_CATALOG: readonly HelpfulTrigger[] = [
 	},
 	{
 		id: "effort_low",
-		severity: "low",
+		severity: "medium",
 		category: "workflow",
 		momentary: false,
 		template: "Effort on low. Hard problems get shallow answers.",

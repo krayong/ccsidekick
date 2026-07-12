@@ -23,6 +23,7 @@ const git: GitState = {
 	changedFiles: 0,
 	upstream: true,
 	upstreamGone: false,
+	remoteBranchExists: false,
 };
 
 const scan: TranscriptScan = {
@@ -86,10 +87,6 @@ const compactSoon: Partial<HelpfulInputs> = {
 		compactPressure: false,
 	},
 };
-const effortLow: Partial<HelpfulInputs> = {
-	payload: { workspace: {}, model: {}, effort: { level: "low" } },
-};
-
 const i = (ms: number) => mk({ nowMs: ms, ...compactSoon });
 const both = (ms: number) => mk({ nowMs: ms, ...conflict(2), ...compactSoon });
 
@@ -125,8 +122,8 @@ test("a diverged repo shows the diverged tip, not the plainer behind_upstream", 
 });
 
 test("min_severity floor drops a low comment before selection", () => {
-	const lowOnly = mk({ nowMs: T0, ...effortLow });
-	expect(resolveHelpful(lowOnly, EMPTY, clockAt(T0), "low").comment?.id).toBe("effort_low");
+	const lowOnly = mk({ nowMs: T0, git: { ...git, ahead: 2 } });
+	expect(resolveHelpful(lowOnly, EMPTY, clockAt(T0), "low").comment?.id).toBe("unpushed_commits");
 	expect(resolveHelpful(lowOnly, EMPTY, clockAt(T0), "medium").comment).toBeNull();
 });
 

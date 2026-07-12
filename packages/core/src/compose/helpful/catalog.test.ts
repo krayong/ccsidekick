@@ -19,6 +19,7 @@ const git: GitState = {
 	changedFiles: 0,
 	upstream: true,
 	upstreamGone: false,
+	remoteBranchExists: false,
 };
 
 const scan: TranscriptScan = {
@@ -270,12 +271,22 @@ test("git hygiene triggers read GitState", () => {
 		changedFiles: 0,
 		upstream: false,
 		upstreamGone: false,
+		remoteBranchExists: false,
 	};
 	expect(find("merge_conflict").test({ ...BASE, git: { ...git, conflict: 3 } })).toBe(true);
 	expect(find("diverged").test({ ...BASE, git: { ...git, ahead: 2, behind: 1 } })).toBe(true);
 	expect(find("detached_head").test({ ...BASE, git: detachedGit })).toBe(true);
 	expect(find("rebase_in_progress").test({ ...BASE, git: { ...git, operation: "rebase" } })).toBe(
 		true,
+	);
+});
+
+test("no_upstream fires without an upstream, but not once the branch is on the remote", () => {
+	const noUp = { ...git, upstream: false, remoteBranchExists: false };
+	expect(find("no_upstream").test({ ...BASE, git: noUp })).toBe(true);
+	// Pushed without `-u`: a remote-tracking ref exists, so the hint is noise and stays quiet.
+	expect(find("no_upstream").test({ ...BASE, git: { ...noUp, remoteBranchExists: true } })).toBe(
+		false,
 	);
 });
 

@@ -41,7 +41,7 @@ test("comments exposes Character + Helpful toggles; Min severity rides under Hel
 	const f = commentsFields(DEFAULT_CONFIG);
 	expect(f.map((x) => x.id)).toEqual(["comments_character", "comments_helpful", "min_severity"]);
 	const sev = f.find((x) => x.id === "min_severity");
-	expect(sev?.next?.(DEFAULT_CONFIG).comments.min_severity).toBe("medium");
+	expect(sev?.next?.(DEFAULT_CONFIG).comments.min_severity).toBe("high");
 });
 
 test("comments hides Min severity when Helpful Comments is off", () => {

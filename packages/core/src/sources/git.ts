@@ -43,6 +43,12 @@ export interface GitState {
 	readonly upstream: boolean;
 	/** Upstream configured but gone (deleted on the remote). */
 	readonly upstreamGone: boolean;
+	/**
+	 * A remote-tracking ref `origin/<branch>` exists locally — the branch is already on the remote (pushed
+	 * without `-u`) even though no upstream is configured. Only computed when there is a branch and no
+	 * upstream (a local ref check, never network); false otherwise.
+	 */
+	readonly remoteBranchExists: boolean;
 	/** Normalized `owner/repo` from `origin`; absent when there is no parseable remote. */
 	readonly originRepo?: string;
 	/** Resolved default branch; undefined when none can be verified. */
@@ -447,6 +453,18 @@ export function readGit(cwd: string, run: Runner = defaultRunner(cwd)): GitState
 		countSubmodules(workTreeRoot) > 0 ? readSubmoduleRollup(run, workTreeRoot) : null;
 	const behindDefault = readBehindDefault(run, status.branch, defaultBranch);
 
+	// The `no_upstream` hint is noise once the branch is already on the remote (pushed without `-u`): only
+	// check when there is a branch and no configured upstream, against the local remote-tracking ref (no network).
+	const remoteBranchExists =
+		status.branch !== undefined && !status.upstream ?
+			run([
+				"rev-parse",
+				"--verify",
+				"--quiet",
+				`refs/remotes/origin/${status.branch}`,
+			]).trim() !== ""
+		:	false;
+
 	return {
 		...opt("branch", status.branch),
 		...opt("sha", status.sha),
@@ -463,6 +481,7 @@ export function readGit(cwd: string, run: Runner = defaultRunner(cwd)): GitState
 		submoduleBranches: rollup?.branches ?? [],
 		upstream: status.upstream,
 		upstreamGone: status.upstreamGone,
+		remoteBranchExists,
 		...opt("originRepo", originRepo),
 		...opt("defaultBranch", defaultBranch),
 		...opt("root", workTreeRoot === "" ? undefined : workTreeRoot),
