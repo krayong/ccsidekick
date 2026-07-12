@@ -1136,6 +1136,20 @@
 				white-space: nowrap;
 			}
 
+			/* a widget carrying a hint wraps instead of ellipsing, so the note stays readable */
+			.cfg-widget .wname:has(.whint) {
+				overflow: visible;
+				white-space: normal;
+			}
+
+			.cfg-widget .whint {
+				display: block;
+				margin-top: 2px;
+				font-size: 10px;
+				line-height: 1.3;
+				color: var(--faint);
+			}
+
 			.cfg-widget[aria-pressed="true"] {
 				color: var(--text);
 				border-color: color-mix(in srgb, var(--green) 40%, var(--line));
@@ -2846,6 +2860,11 @@
 
 			// the engine's default-on widget set, generated from core (DEFAULT_CONFIG) into data.js
 			const CFG_DEFAULT_WIDGETS = D.defaults || [];
+			// pay-as-you-go is the one widget with no local source — its data comes only from the account
+			// usage lookup, so its card says so and selecting it opts the command into --usage-fetch on.
+			const CFG_WIDGET_HINT = {
+				pay_as_you_go: "(requires network fetch; no tokens are spent)",
+			};
 			// roster is the selected characters, in pick order. One = fixed mode (pinned); two or more =
 			// random mode (the engine rotates them). Always at least one entry.
 			const cfgState = {
@@ -2898,7 +2917,7 @@
 						.filter(Boolean)
 						.map(
 							(w) =>
-								`<button class="cfg-widget" type="button" data-w="${esc(w.id)}" data-wgroup="${esc(g)}" aria-pressed="${cfgState.widgets.has(w.id) ? "true" : "false"}"><span class="sw" aria-hidden="true"></span>${w.icon ? `<span class="wico" aria-hidden="true">${esc(w.icon)}</span>` : ""}<span class="wname">${esc(w.label)}</span></button>`,
+								`<button class="cfg-widget" type="button" data-w="${esc(w.id)}" data-wgroup="${esc(g)}" aria-pressed="${cfgState.widgets.has(w.id) ? "true" : "false"}"><span class="sw" aria-hidden="true"></span>${w.icon ? `<span class="wico" aria-hidden="true">${esc(w.icon)}</span>` : ""}<span class="wname">${esc(w.label)}${CFG_WIDGET_HINT[w.id] ? `<small class="whint">${esc(CFG_WIDGET_HINT[w.id])}</small>` : ""}</span></button>`,
 						),
 				)
 				.join("");
@@ -2982,9 +3001,13 @@
 				const r = cfgState.roster;
 				const charPart =
 					r.length > 1 ? `--mode random --roster ${r.join(",")}` : `--character ${r[0]}`;
+				// The pay-as-you-go widget is the one field with no local source: its data comes only from
+				// the account-usage lookup, so selecting it opts the command into usage_fetch (off otherwise).
+				const usagePart = cfgState.widgets.has("pay_as_you_go") ? " --usage-fetch on" : "";
 				return (
 					`npx ccsidekick setup ${charPart} --theme ${cfgState.theme}` +
-					(ws.length ? ` --widgets ${ws.join(",")}` : "")
+					(ws.length ? ` --widgets ${ws.join(",")}` : "") +
+					usagePart
 				);
 			}
 
@@ -3019,8 +3042,8 @@
 			}
 
 			// fit the render to the preview pane: measure the mono char advance once, then pick a
-			// column count that fills the visible width (min 80 keeps the character figure — it drops
-			// below that). Re-measured on resize. Avoids a 120-col line overflowing the pane.
+			// column count that fills the visible width, floored at 80 so the character figure always
+			// renders. Re-measured on resize. Caps at 200 so a wide pane never overflows.
 			let cfgCharW = 0;
 
 			function cfgCols() {
@@ -3038,9 +3061,10 @@
 					cfgScreen.clientWidth -
 					parseFloat(cs.paddingLeft) -
 					parseFloat(cs.paddingRight);
-				// low floor so a narrow (phone) pane renders the engine's compact/figure-drop layout
-				// instead of forcing an 80-col line that horizontal-scrolls
-				return Math.max(24, Math.min(200, Math.floor(avail / cfgCharW)));
+				// floor at 80 (FIGURE_COLS 25 + GAP 2 + MIN_RIGHT_WIDTH 53) so the character figure always
+				// renders — even on a phone, where the pane is narrower than 80 cols and .cfg-screen
+				// (white-space: pre; overflow-x: auto) scrolls horizontally instead of dropping the figure.
+				return Math.max(80, Math.min(200, Math.floor(avail / cfgCharW)));
 			}
 
 			function cfgPaint() {

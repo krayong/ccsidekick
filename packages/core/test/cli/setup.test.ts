@@ -70,6 +70,22 @@ test("applySetup --widgets turns the listed widgets on and every other off", () 
 	expect(out.statusline.widgets.git_branch).toBe(false); // not listed -> off
 });
 
+test("parseSetup accepts --usage-fetch on/off and rejects other values", () => {
+	expect(parseSetup(["--usage-fetch", "on"], "/h", env).flags.usageFetch).toBe(true);
+	expect(parseSetup(["--usage-fetch", "off"], "/h", env).flags.usageFetch).toBe(false);
+	expect(parseSetup(["--usage-fetch", "yes"], "/h", env).errors[0]).toContain(
+		"invalid --usage-fetch",
+	);
+});
+
+test("applySetup --usage-fetch toggles only network.usage_fetch", () => {
+	const out = applySetup(DEFAULT_CONFIG, { usageFetch: true });
+	expect(out.network.usage_fetch).toBe(true);
+	// other network fields untouched
+	expect(out.network.fx_refresh).toBe(DEFAULT_CONFIG.network.fx_refresh);
+	expect(out.network.balance_path).toBe(DEFAULT_CONFIG.network.balance_path);
+});
+
 test("runSetup writes the patched config through the injected save and prints a summary", () => {
 	let saved: Config | null = null;
 	let savedScope = "";
