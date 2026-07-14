@@ -2,13 +2,7 @@
 
 // analytics
 export type { AllMetrics, DayBucket, Familiarity, MetricGroup } from "./analytics";
-export {
-	buildDaily,
-	buildModels,
-	deriveAllMetrics,
-	deriveFamiliarity,
-	TIER_THRESHOLDS,
-} from "./analytics";
+export { buildDaily, buildModels, deriveAllMetrics, deriveFamiliarity } from "./analytics";
 
 // classifier
 export { classify } from "./classifier";
@@ -52,7 +46,7 @@ export { deriveQuota } from "./quota";
 export { deriveSession } from "./session";
 
 // signals
-export { QUOTA_CRITICAL_PCT, band, contextBand, quotaBand } from "./signals";
+export { band, contextBand, quotaBand } from "./signals";
 
 // stack
 export { deriveStacks, pickStack } from "./stack";

@@ -5,10 +5,11 @@ import { join } from "node:path";
 import { afterEach, expect, test } from "bun:test";
 
 import type { Field, TermContext } from "../domain";
+import { loadPack } from "../packs";
 import { resolveTheme } from "../render";
 import { fixedClock, loadConfig } from "../sources";
 
-import { applyThemeIcons, runRender } from "./render";
+import { applyThemeIcons, makePackThemeLookup, runRender } from "./render";
 
 const tmpDirs: string[] = [];
 afterEach(() => {
@@ -34,6 +35,27 @@ function freshEnv(): NodeJS.ProcessEnv {
 	writeFileSync(join(dir, "config.toml"), "");
 	return { CLAUDE_CONFIG_DIR: dir };
 }
+
+test("makePackThemeLookup reuses the loaded persona pack and memoizes other names", () => {
+	let calls = 0;
+	const spyLoad = (n: string): ReturnType<typeof loadPack> => {
+		calls += 1;
+		return loadPack(n);
+	};
+	const loaded = loadPack("batman");
+	const lookup = makePackThemeLookup("batman", loaded, spyLoad);
+
+	// The three surface resolutions under the default sentinel all name the persona: reuse `loaded`, never load.
+	lookup("batman");
+	lookup("batman");
+	lookup("batman");
+	expect(calls).toBe(0);
+
+	// A non-persona name loads exactly once, then serves from the memo.
+	lookup("spiderman");
+	lookup("spiderman");
+	expect(calls).toBe(1);
+});
 
 /** One priced assistant transcript line for the Project-cost seeding test. */
 function usageLine(session: string, id: string, req: string, input: number, ts: string): string {

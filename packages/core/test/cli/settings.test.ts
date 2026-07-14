@@ -48,7 +48,7 @@ const baks = (dir: string): string[] =>
 	readdirSync(dir).filter((f) => f.includes("ccsidekick-bak"));
 const freshDir = (): string => track(mkdtempSync(join(tmpdir(), "cc-settings-")));
 
-test("merges statusLine + three hooks + spinnerVerbs, backs up, preserves other keys", () => {
+test("merges statusLine + the two per-call hooks + spinnerVerbs, backs up, preserves other keys", () => {
 	const dir = freshDir();
 	const p = join(dir, "settings.json");
 	writeFileSync(
@@ -66,11 +66,13 @@ test("merges statusLine + three hooks + spinnerVerbs, backs up, preserves other 
 	expect(s.theme).toBe("dark"); // preserved
 	expect(s.statusLine?.command).toBe("/abs/ccsidekick-render render");
 	expect(s.statusLine?.refreshInterval).toBe(1); // seconds, min 1
-	for (const evt of ["PostToolUse", "PostToolUseFailure", "PostToolBatch"]) {
+	// Only the per-call hooks are wired; PostToolBatch is NOT (it co-fires and would double-count).
+	for (const evt of ["PostToolUse", "PostToolUseFailure"]) {
 		const entry = s.hooks?.[evt]?.[0];
 		expect(entry?.matcher).toBe(MATCHER);
 		expect(entry?.hooks[0]?.command).toBe("/abs/ccsidekick-render classify");
 	}
+	expect(s.hooks?.["PostToolBatch"]).toBeUndefined();
 	expect(s.spinnerVerbs).toEqual({ mode: "replace", verbs: ["brooding", "scheming"] }); // replaced, not merged
 	expect(baks(dir).length).toBe(1); // first install ⇒ one backup (oldest == newest)
 });

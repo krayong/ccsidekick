@@ -1,6 +1,14 @@
 import { parse } from "smol-toml";
 
-import type { WidgetId } from "../domain";
+import {
+	BANDINGS,
+	CHARACTER_MODES,
+	MIN_SEVERITIES,
+	type Banding,
+	type CharacterMode,
+	type MinSeverity,
+	type WidgetId,
+} from "../domain";
 
 import { defaultCurrency } from "./locale";
 
@@ -9,7 +17,7 @@ export interface Config {
 	readonly schema_version: number;
 	readonly character: {
 		readonly enabled: boolean;
-		readonly mode: "fixed" | "random";
+		readonly mode: CharacterMode;
 		readonly name: string;
 		readonly roster: readonly string[];
 	};
@@ -19,7 +27,7 @@ export interface Config {
 		readonly statusline?: string; // optional per-surface override
 		readonly logo?: string; // optional per-surface override
 		readonly comment?: string; // optional per-surface override (a pack name is valid)
-		readonly banding: "solid" | "cycle"; // statusline hue banding: one hue per line, or cycle hues across cells
+		readonly banding: Banding; // statusline hue banding: one hue per line, or cycle hues across cells
 		readonly mood_shift: boolean;
 		readonly icons: Readonly<Record<string, string>>;
 	};
@@ -28,7 +36,7 @@ export interface Config {
 	readonly comments: {
 		readonly character: boolean;
 		readonly helpful: boolean;
-		readonly min_severity: "low" | "medium" | "high" | "critical";
+		readonly min_severity: MinSeverity;
 	};
 	readonly network: {
 		readonly fx_refresh: boolean;
@@ -153,10 +161,12 @@ export function loadConfig(globalToml = "", projectToml = ""): Config {
 	const d = DEFAULT_CONFIG;
 
 	return {
-		schema_version: numv(p["schema_version"] ?? g["schema_version"], d.schema_version),
+		// Per-key project-over-global with type-awareness: a present-but-wrong-typed project value falls back to
+		// the global, then the default (a bare `??` would keep the wrong-typed project value and coerce it away).
+		schema_version: numv(p["schema_version"], numv(g["schema_version"], d.schema_version)),
 		character: {
 			enabled: bool(character["enabled"], d.character.enabled),
-			mode: oneOf(character["mode"], ["fixed", "random"] as const, d.character.mode),
+			mode: oneOf(character["mode"], CHARACTER_MODES, d.character.mode),
 			name: str(character["name"], d.character.name),
 			roster: stringArray(character["roster"], d.character.roster),
 		},
@@ -165,7 +175,7 @@ export function loadConfig(globalToml = "", projectToml = ""): Config {
 			...(typeof theme["statusline"] === "string" ? { statusline: theme["statusline"] } : {}),
 			...(typeof theme["logo"] === "string" ? { logo: theme["logo"] } : {}),
 			...(typeof theme["comment"] === "string" ? { comment: theme["comment"] } : {}),
-			banding: oneOf(theme["banding"], ["solid", "cycle"] as const, d.theme.banding),
+			banding: oneOf(theme["banding"], BANDINGS, d.theme.banding),
 			mood_shift: bool(theme["mood_shift"], d.theme.mood_shift),
 			icons: mergeIcons({
 				...obj(obj(g["theme"])["icons"]),
@@ -175,11 +185,7 @@ export function loadConfig(globalToml = "", projectToml = ""): Config {
 		comments: {
 			character: bool(comments["character"], d.comments.character),
 			helpful: bool(comments["helpful"], d.comments.helpful),
-			min_severity: oneOf(
-				comments["min_severity"],
-				["low", "medium", "high", "critical"] as const,
-				d.comments.min_severity,
-			),
+			min_severity: oneOf(comments["min_severity"], MIN_SEVERITIES, d.comments.min_severity),
 		},
 		network: {
 			fx_refresh: bool(network["fx_refresh"], d.network.fx_refresh),

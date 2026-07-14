@@ -430,13 +430,18 @@ function readSubmoduleRollup(run: Runner, workTreeRoot: string): SubmoduleRollup
 
 /** Read the git state for `cwd` via the injected runner, or `null` when it is not inside a work tree. */
 export function readGit(cwd: string, run: Runner = defaultRunner(cwd)): GitState | null {
-	if (run(["rev-parse", "--is-inside-work-tree"]).trim() !== "true") return null;
+	// One rev-parse invocation answers all three location probes (in flag order), collapsing three fork+execs
+	// into one. Outside a work tree the command fails wholesale (empty output), so line 0 is not "true".
+	const probe = run(["rev-parse", "--is-inside-work-tree", "--git-dir", "--show-toplevel"]).split(
+		"\n",
+	);
+	if ((probe[0] ?? "").trim() !== "true") return null;
 
 	const status = parseStatus(run(["status", "--porcelain=v2", "--branch", "--show-stash"]));
 
-	const gitDirRaw = run(["rev-parse", "--git-dir"]).trim();
+	const gitDirRaw = (probe[1] ?? "").trim();
 	const gitDir = gitDirRaw === "" ? "" : resolve(cwd, gitDirRaw);
-	const workTreeRoot = run(["rev-parse", "--show-toplevel"]).trim();
+	const workTreeRoot = (probe[2] ?? "").trim();
 
 	const tag = run(["describe", "--tags", "--exact-match"]).trim() || undefined;
 	const originRepo = normalizeOriginRepo(run(["remote", "get-url", "origin"]));

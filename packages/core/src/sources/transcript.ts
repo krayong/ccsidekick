@@ -1,4 +1,4 @@
-import { readFileSync, readdirSync, statSync } from "node:fs";
+import { closeSync, openSync, readFileSync, readSync, readdirSync, statSync } from "node:fs";
 import { basename, dirname, join } from "node:path";
 
 import { BURN_WINDOW_MS, COST_TTL_MS, asProject, asSession } from "../domain";
@@ -405,6 +405,74 @@ function readSafe(p: string): string {
 	}
 }
 
+function readBufSafe(p: string): Buffer | null {
+	try {
+		return readFileSync(p);
+	} catch {
+		return null;
+	}
+}
+
+/** Read bytes `[start, end)`; null on any error or short read. Used for the incremental tail + head-hash probes. */
+function readRange(p: string, start: number, end: number): Buffer | null {
+	if (end <= start) return Buffer.alloc(0);
+	let fd: number | undefined;
+	try {
+		fd = openSync(p, "r");
+		const len = end - start;
+		const buf = Buffer.allocUnsafe(len);
+		let off = 0;
+		while (off < len) {
+			const n = readSync(fd, buf, off, len - off, start + off);
+			if (n === 0) break;
+			off += n;
+		}
+		return off === len ? buf : null;
+	} catch {
+		return null;
+	} finally {
+		if (fd !== undefined) closeSync(fd);
+	}
+}
+
+// The active transcript grows every tick; re-reading + JSON.parsing the whole file dominates the cost scan. A
+// cached entry stores the byte offset of its last complete line and a hash of its head, so the next scan reads
+// and prices only the appended tail. The head hash catches a compaction rewrite (prefix changed) ⇒ full reparse.
+const HEAD_HASH_BYTES = 4096;
+
+/** FNV-1a over the given head bytes; a mismatch on resume means the prefix was rewritten. */
+function headHashOf(head: Buffer): string {
+	let h = 0x811c9dc5;
+	for (const b of head) {
+		h ^= b;
+		h = Math.imul(h, 0x01000193);
+	}
+	return (h >>> 0).toString(16);
+}
+
+/** First-seen model interner backed by `models` (mutated in place); `CostLine.m` indexes into it. */
+function makeInternModel(models: string[]): (model: string) => number {
+	const index = new Map<string, number>();
+	models.forEach((m, i) => index.set(m, i));
+	return (model) => {
+		let i = index.get(model);
+		if (i === undefined) {
+			i = models.length;
+			models.push(model);
+			index.set(model, i);
+		}
+		return i;
+	};
+}
+
+/** Byte offset just past the last newline (the end of the last complete line); 0 when the buffer has none. */
+function lastLineEnd(buf: Buffer): number {
+	const i = buf.lastIndexOf(0x0a);
+	return i < 0 ? 0 : i + 1;
+}
+
+const headLen = (byteOffset: number): number => Math.min(HEAD_HASH_BYTES, byteOffset);
+
 const EMPTY_TOKENS: TokenSums = {
 	input: 0,
 	output: 0,
@@ -615,7 +683,12 @@ function priceFile(
 	price: PriceFn,
 	resolveProject: ResolveProject,
 ): CostFileEntry {
-	const lines = parseAll(readSafe(path));
+	// Parse only complete (newline-terminated) lines: a trailing partial line is a write in progress, deferred
+	// to the next scan once it completes. `byteOffset`/`headHash` let the next scan tail-parse only the growth.
+	const buf = readBufSafe(path) ?? Buffer.alloc(0);
+	const byteOffset = lastLineEnd(buf);
+	const headHash = headHashOf(buf.subarray(0, headLen(byteOffset)));
+	const lines = parseAll(buf.subarray(0, byteOffset).toString("utf8"));
 	const { sessionId, start, end } = scanBounds(lines);
 
 	// Collapse each message's streaming writes to its final one before pricing, so a partial early write never
@@ -626,16 +699,7 @@ function priceFile(
 	const gate = makeDedupGate();
 	const costLines: CostLine[] = [];
 	const models: string[] = [];
-	const modelIndex = new Map<string, number>();
-	const internModel = (model: string): number => {
-		let i = modelIndex.get(model);
-		if (i === undefined) {
-			i = models.length;
-			models.push(model);
-			modelIndex.set(model, i);
-		}
-		return i;
-	};
+	const internModel = makeInternModel(models);
 	let total = 0;
 	let input = 0;
 	let output = 0;
@@ -680,12 +744,185 @@ function priceFile(
 	return {
 		mtime: st.mtimeMs,
 		size: st.size,
+		byteOffset,
+		headHash,
 		total,
 		lines: costLines,
 		models,
 		projectPath,
 		record,
 	};
+}
+
+/**
+ * Incremental resume: reprice only the bytes appended since `cached.byteOffset`, folding them into the cached
+ * entry so the result is byte-identical to a full `priceFile` of the grown file. Returns `null` when a resume
+ * is unsound (offset/hash mismatch, truncation, or a partial-only append) so the caller full-reparses.
+ *
+ * Streaming is handled across the tail boundary: an appended write of a key already in `cached.lines` keeps the
+ * higher-output one (its token classes other than output are constant mid-message, so a larger total-token
+ * count means a later write). The per-file dedup gate is replayed over the cached lines to know each key's
+ * counted status, so a sidechain re-log appended in the tail folds out exactly as in a full parse.
+ */
+function resumeCostFile(
+	cached: CostFileEntry,
+	path: string,
+	st: { mtimeMs: number; size: number },
+	price: PriceFn,
+): CostFileEntry | null {
+	const tail = readAppendedTail(cached, path, st);
+	if (tail === null) return null;
+	// Only a partial line was appended (no complete new line yet): content unchanged, refresh the stat only.
+	if (tail === "partial") return { ...cached, mtime: st.mtimeMs, size: st.size };
+
+	const models: string[] = [...cached.models];
+	const keyIndex = new Map<string, number>();
+	cached.lines.forEach((l, i) => {
+		if (l.id !== undefined && l.reqId !== undefined) keyIndex.set(`${l.id}|${l.reqId}`, i);
+	});
+	// Replay the per-file gate over the cached lines: `counted[i]` records whether each line fed the record/total,
+	// and the gate is left in the post-cached state to judge appended keys (incl. sidechain folds by message.id).
+	const gate = makeDedupGate();
+	const acc: TailAcc = {
+		lines: [...cached.lines],
+		models,
+		counted: cached.lines.map((l) => gate(l.id, l.reqId, l.sidechain)),
+		keyIndex,
+		gate,
+		internModel: makeInternModel(models),
+		input: cached.record.tokens.input,
+		output: cached.record.tokens.output,
+		cacheRead: cached.record.tokens.cache_read,
+		cacheCreation: cached.record.tokens.cache_creation,
+		total: cached.total,
+		messages: cached.record.messages,
+		end: cached.record.end,
+	};
+
+	for (const l of collapseStreaming(tail.appended)) foldAppendedLine(acc, l, price);
+
+	return {
+		mtime: st.mtimeMs,
+		size: st.size,
+		byteOffset: tail.newByteOffset,
+		headHash: tail.newHeadHash,
+		total: acc.total,
+		lines: acc.lines,
+		models: acc.models,
+		projectPath: cached.projectPath,
+		record: {
+			...cached.record,
+			end: acc.end,
+			tokens: {
+				input: acc.input,
+				output: acc.output,
+				cache_read: acc.cacheRead,
+				cache_creation: acc.cacheCreation,
+			},
+			messages: acc.messages,
+		},
+	};
+}
+
+/** The mutable running reduction for the incremental fold (cached totals carried forward, grown by the tail). */
+interface TailAcc {
+	readonly lines: CostLine[];
+	readonly models: string[];
+	readonly counted: boolean[];
+	readonly keyIndex: Map<string, number>;
+	readonly gate: (
+		id: string | undefined,
+		reqId: string | undefined,
+		sidechain: boolean,
+	) => boolean;
+	readonly internModel: (model: string) => number;
+	input: number;
+	output: number;
+	cacheRead: number;
+	cacheCreation: number;
+	total: number;
+	messages: number;
+	end: number;
+}
+
+function costLineOf(
+	internModel: (model: string) => number,
+	l: ParsedLine,
+	cost: number,
+	totalTok: number,
+): CostLine {
+	return {
+		...(l.id !== undefined ? { id: l.id } : {}),
+		...(l.requestId !== undefined ? { reqId: l.requestId } : {}),
+		sidechain: l.isSidechain,
+		ts: l.tsMs ?? 0,
+		cost,
+		...(l.model !== undefined ? { m: internModel(l.model) } : {}),
+		tok: totalTok,
+	};
+}
+
+/** Read + validate the appended tail: `"partial"` = only an incomplete line added; `null` = resume unsound. */
+function readAppendedTail(
+	cached: CostFileEntry,
+	path: string,
+	st: { size: number },
+): { appended: ParsedLine[]; newByteOffset: number; newHeadHash: string } | "partial" | null {
+	const offset = cached.byteOffset;
+	if (offset === undefined || offset === 0 || st.size < offset) return null;
+	const head = readRange(path, 0, headLen(offset));
+	if (head === null || headHashOf(head) !== cached.headHash) return null;
+	const tailBuf = readRange(path, offset, st.size);
+	if (tailBuf === null) return null;
+	const added = lastLineEnd(tailBuf);
+	if (added === 0) return "partial";
+	// The head hash covers min(HEAD_HASH_BYTES, byteOffset), which grows for a sub-4KB file — recompute it over
+	// the new head (unchanged prefix ⇒ equals a full parse). Reuse the verified `head` when the range is the same.
+	const newByteOffset = offset + added;
+	const newHead =
+		headLen(newByteOffset) === head.length ? head : readRange(path, 0, headLen(newByteOffset));
+	if (newHead === null) return null;
+	return {
+		appended: parseAll(tailBuf.subarray(0, added).toString("utf8")),
+		newByteOffset,
+		newHeadHash: headHashOf(newHead),
+	};
+}
+
+/** Fold one collapsed appended line into the running reduction, matching a full parse's collapse + dedup. */
+function foldAppendedLine(acc: TailAcc, l: ParsedLine, price: PriceFn): void {
+	const usage = l.usage;
+	if (usage === undefined) return;
+	if (l.tsMs !== undefined && l.tsMs > acc.end) acc.end = l.tsMs;
+	const t = tokenize(usage);
+	const totalTok = t.input + t.output + t.cache_read + t.c5m + t.c1h;
+	const key = l.id !== undefined && l.requestId !== undefined ? `${l.id}|${l.requestId}` : null;
+	const existing = key !== null ? acc.keyIndex.get(key) : undefined;
+	const old = existing !== undefined ? acc.lines[existing] : undefined;
+	if (existing !== undefined && old !== undefined) {
+		// A later streaming write of an already-priced key: keep the higher-output one, adjusting only output.
+		if (totalTok <= (old.tok ?? 0)) return;
+		const cost = price(usage, l.model ?? "", l.tsMs);
+		if (acc.counted[existing] === true) {
+			acc.output += totalTok - (old.tok ?? 0);
+			acc.total += cost - old.cost;
+		}
+		acc.lines[existing] = costLineOf(acc.internModel, l, cost, totalTok);
+		return;
+	}
+	const cost = price(usage, l.model ?? "", l.tsMs);
+	const isCounted = acc.gate(l.id, l.requestId, l.isSidechain);
+	if (key !== null) acc.keyIndex.set(key, acc.lines.length);
+	acc.lines.push(costLineOf(acc.internModel, l, cost, totalTok));
+	acc.counted.push(isCounted);
+	if (isCounted) {
+		acc.input += t.input;
+		acc.output += t.output;
+		acc.cacheRead += t.cache_read;
+		acc.cacheCreation += t.c5m + t.c1h;
+		acc.total += cost;
+		acc.messages += 1;
+	}
 }
 
 interface AggLine extends CostLine {
@@ -765,14 +1002,26 @@ export function scanCostTree(
 
 	const chat = cache.aggregate.chat;
 	const files: Record<string, CostFileEntry> = {};
+	let changed = false;
 	for (const { path, encodedDir } of walkJsonl(root)) {
 		const st = statSafe(path);
 		if (!st) continue;
 		const cached = cache.files[path];
-		files[path] =
-			cached && cached.mtime === st.mtimeMs && cached.size === st.size ?
-				cached
-			:	priceFile(path, encodedDir, st, price, resolveProject);
+		if (cached && cached.mtime === st.mtimeMs && cached.size === st.size) {
+			files[path] = cached;
+		} else {
+			// The active file grows every tick: tail-parse only the appended bytes when the cached prefix is
+			// intact, else full reparse (a fresh file, a truncation, or a compaction rewrite).
+			const resumed = cached ? resumeCostFile(cached, path, st, price) : null;
+			files[path] = resumed ?? priceFile(path, encodedDir, st, price, resolveProject);
+			changed = true;
+		}
 	}
+	// When every file hit the per-file cache and none were added or removed, the deduped aggregate is exactly
+	// the previous one — reuse it and just refresh the scan timestamp, skipping the whole tree flatten + sort +
+	// dedup. An incremental re-merge of only-changed files would be unsound (global first-seen dedup lets an
+	// interleaving timestamp steal or cede first-seen across files), so any change triggers a full rebuild.
+	const sameFileSet = Object.keys(files).length === Object.keys(cache.files).length;
+	if (!changed && sameFileSet) return { files, aggregate: cache.aggregate, lastScanTs: now };
 	return { files, aggregate: buildAggregate(files, chat), lastScanTs: now };
 }

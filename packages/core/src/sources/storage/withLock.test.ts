@@ -1,4 +1,4 @@
-import { mkdtempSync, rmSync, utimesSync, writeFileSync } from "node:fs";
+import { existsSync, mkdtempSync, rmSync, utimesSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 
@@ -61,6 +61,21 @@ test("steals a stale lock older than 30s", () => {
 			() => "ro",
 		),
 	).toBe("wrote");
+});
+
+test("a stale reclaim cleans up its .stale sidecar (no leftover)", () => {
+	const dir = track(mkdtempSync(join(tmpdir(), "cc-")));
+	const lock = join(dir, "x.lock");
+	writeFileSync(lock, "");
+	const old = Date.now() / 1000 - 60;
+	utimesSync(lock, old, old);
+	withLock(
+		lock,
+		() => "wrote",
+		() => "ro",
+	);
+	expect(existsSync(`${lock}.stale`)).toBe(false);
+	expect(existsSync(lock)).toBe(false); // released after fn
 });
 
 test("releases the lock when fn throws, then rethrows", () => {

@@ -1,7 +1,8 @@
 # CLAUDE.md
 
 Guidance for working on ccsidekick: a Claude Code status line with an animated, reactive character
-and a full widget layer. No Claude API, no token spend. Network use is limited to non-LLM lookups (an
+and a full widget layer. No Claude API, no token spend. Network use is limited to non-LLM lookups (
+an
 optional weekly currency-rate refresh and an optional account-usage call, both off by default), off
 the hot render path and enabled only when you turn them on.
 
@@ -76,9 +77,8 @@ are lock-guarded.
   `mood_shift`, `icons`), `[comments]` (`character`, `helpful`, `min_severity` — the Comments
   section's two on/off streams plus the tip severity floor), `[network]` (fx_refresh, usage_fetch,
   balance_path), `[statusline]` (currency, optional `budget`, per-widget `widgets` toggles). The
-  cost cache TTL (
-  1500ms) and the statusline refresh interval (1s) are hardcoded constants, not config; git runs
-  fresh every tick.
+  cost cache TTL (5000ms) and the statusline refresh interval (1s) are hardcoded constants, not
+  config; git runs fresh every tick.
 - **Theme is catalog data + per-pack data; engine logic**: the built-in catalog (`data/themes.ts`)
   holds named `ThemeData` entries; a pack ships an optional `theme` block (same shape, minus
   `displayName`) that registers under the pack's name as a selectable theme. The cell separator is
@@ -88,12 +88,16 @@ are lock-guarded.
 - **Cost is transcript-derived in-house, never Claude Code's stored cost**: Chat, Project (keyed by
   the **Project** term) and Total are all token-priced scans of Claude Code transcripts, deduped
   **globally across the whole tree** by `(message.id, requestId)`, behind a per-file
-  `{mtime, size, …}` cache. Claude Code's payload `cost.total_cost_usd` double-counts replayed
+  `{mtime, size, byteOffset, headHash, …}` cache. The active transcript grows every tick, so a changed
+  file re-prices only its appended tail (resuming from `byteOffset`, the end of the last complete line)
+  and folds it into the cached entry, byte-identically to a full parse; a compaction rewrite (head-hash
+  mismatch) or truncation falls back to a full reparse. Claude Code's payload `cost.total_cost_usd` double-counts replayed
   context on resumed sessions, so it is never a Total/Project source — it (and the persisted
   authoritative cost) is only a first-tick fallback for the current session's Chat, before the tree
-  scan reaches its transcript. The Stats board splits each session's globally-deduped cost across
-  its transcript files in proportion to their per-file totals, so cross-file replay never
-  double-counts. No external usage-tool subprocess, no network on the cost path.
+  scan reaches its transcript. The Stats board attributes each globally-deduped line directly to its
+  own file's session at dedup time (one record per session, summed from `aggregate.tokenPriced`, not
+  the per-file totals — summing those would re-count overlapping replayed history), so cross-file
+  replay never double-counts. No external usage-tool subprocess, no network on the cost path.
 - **State is concurrency-safe:** atomic write-tmp-rename, `O_EXCL` locks with a read-only fallback.
   Session identity prefers `session_id`, then a sha1 of `transcript_path`.
 - **Character voice is pack-owned**: each pack declares `tone` (mild/edgy/offensive). The comment

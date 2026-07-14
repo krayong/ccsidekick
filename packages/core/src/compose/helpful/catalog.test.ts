@@ -225,7 +225,7 @@ test("quota and context triggers read the derived structs", () => {
 	expect(
 		find("block_almost_spent").test({
 			...BASE,
-			quota: { block: { usedPct: 84, band: "critical" } },
+			quota: { block: { usedPct: 84, band: "critical", overPace: true } },
 		}),
 	).toBe(true);
 	expect(
@@ -239,21 +239,57 @@ test("quota and context triggers read the derived structs", () => {
 	).toBe(false);
 });
 
-test("weekly_will_exhaust needs both an off-pace band and usage past the projection floor", () => {
-	const t = find("weekly_will_exhaust");
-	// Early-window pace spike at trivial usage must stay silent (the misfire the gate fixes).
-	expect(t.test({ ...BASE, quota: { weekly: { usedPct: 10, band: "critical" } } })).toBe(false);
-	// Past the halfway floor and off pace ⇒ the projection is credible.
-	expect(t.test({ ...BASE, quota: { weekly: { usedPct: 60, band: "caution" } } })).toBe(true);
-	// Past the floor but on pace ⇒ silent.
-	expect(t.test({ ...BASE, quota: { weekly: { usedPct: 60, band: "nominal" } } })).toBe(false);
+test("almost_spent fires on over-pace usage, not merely high usage (band is not the gate)", () => {
+	// 83% spent but under pace (the week is nearly over): the band is forced critical by absolute usage, yet
+	// overPace is false, so the "ration" nag stays quiet — you cannot spend the rest before reset.
+	expect(
+		find("weekly_almost_spent").test({
+			...BASE,
+			quota: { weekly: { usedPct: 83, band: "critical", overPace: false } },
+		}),
+	).toBe(false);
+	expect(
+		find("block_almost_spent").test({
+			...BASE,
+			quota: { block: { usedPct: 83, band: "critical", overPace: false } },
+		}),
+	).toBe(false);
+	// High AND over pace ⇒ rationing is real advice, so it still fires.
+	expect(
+		find("weekly_almost_spent").test({
+			...BASE,
+			quota: { weekly: { usedPct: 83, band: "critical", overPace: true } },
+		}),
+	).toBe(true);
 });
 
-test("block_will_exhaust needs both an off-pace band and usage past the projection floor", () => {
+test("weekly_will_exhaust needs over-pace usage past the projection floor", () => {
+	const t = find("weekly_will_exhaust");
+	// Over pace but trivial usage (early-window spike) stays silent — below the projection floor.
+	expect(
+		t.test({ ...BASE, quota: { weekly: { usedPct: 10, band: "critical", overPace: true } } }),
+	).toBe(false);
+	// Past the halfway floor and over pace ⇒ the projection is credible.
+	expect(
+		t.test({ ...BASE, quota: { weekly: { usedPct: 60, band: "caution", overPace: true } } }),
+	).toBe(true);
+	// Past the floor but on pace ⇒ silent (even though absolute usage forces a non-nominal band later).
+	expect(
+		t.test({ ...BASE, quota: { weekly: { usedPct: 60, band: "caution", overPace: false } } }),
+	).toBe(false);
+});
+
+test("block_will_exhaust needs over-pace usage past the projection floor", () => {
 	const t = find("block_will_exhaust");
-	expect(t.test({ ...BASE, quota: { block: { usedPct: 10, band: "critical" } } })).toBe(false);
-	expect(t.test({ ...BASE, quota: { block: { usedPct: 60, band: "caution" } } })).toBe(true);
-	expect(t.test({ ...BASE, quota: { block: { usedPct: 60, band: "nominal" } } })).toBe(false);
+	expect(
+		t.test({ ...BASE, quota: { block: { usedPct: 10, band: "critical", overPace: true } } }),
+	).toBe(false);
+	expect(
+		t.test({ ...BASE, quota: { block: { usedPct: 60, band: "caution", overPace: true } } }),
+	).toBe(true);
+	expect(
+		t.test({ ...BASE, quota: { block: { usedPct: 60, band: "caution", overPace: false } } }),
+	).toBe(false);
 });
 
 test("git hygiene triggers read GitState", () => {

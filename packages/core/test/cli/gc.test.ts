@@ -92,6 +92,30 @@ test("drops a cost-cache entry whose transcript has vanished, keeps a live one",
 	expect(Object.keys(after.files)).toEqual([live]);
 });
 
+test("prunes aggregate.chat entries whose session has no live transcript (AN2)", () => {
+	const root = tmpRoot();
+	const liveDir = track(mkdtempSync(join(tmpdir(), "cc-live-")));
+	const live = join(liveDir, "live.jsonl");
+	writeFileSync(live, "x");
+	const cache: CostCache = {
+		files: { [live]: costEntry() }, // costEntry().record.session === "s"
+		aggregate: {
+			chat: { s: 1.5, deadSession: 9.9 },
+			tokenPriced: {},
+			sessionProject: {},
+			byModel: {},
+		},
+		lastScanTs: 5,
+	};
+	mkdirSync(join(root, "cache"), { recursive: true });
+	writeFileSync(join(root, "cache/cost.json"), JSON.stringify(cache));
+
+	runGc(root, fixedClock(0));
+
+	const after = JSON.parse(readFileSync(join(root, "cache/cost.json"), "utf8")) as CostCache;
+	expect(after.aggregate.chat).toEqual({ s: 1.5 }); // dead session pruned, live session's chat kept
+});
+
 test("never touches analytics/store.json", () => {
 	const root = tmpRoot();
 	mkdirSync(join(root, "analytics"), { recursive: true });
@@ -102,6 +126,25 @@ test("never touches analytics/store.json", () => {
 	writeSession(root, "old", 0);
 	runGc(root, fixedClock(1_000 * DAY_MS));
 	expect(readFileSync(store, "utf8")).toBe(content);
+});
+
+test("throttle: a second run within the GC interval does not prune again", () => {
+	const root = tmpRoot();
+	const now = 1_000 * DAY_MS;
+	writeSession(root, "old1", now - 31 * DAY_MS);
+	runGc(root, fixedClock(now)); // first run prunes old1 and stamps the run at `now`
+	const old2 = writeSession(root, "old2", now - 31 * DAY_MS);
+	runGc(root, fixedClock(now + 60_000)); // one minute later, well within the interval ⇒ skipped
+	expect(existsSync(old2)).toBe(true);
+});
+
+test("throttle: a run after the GC interval elapses prunes again", () => {
+	const root = tmpRoot();
+	const now = 1_000 * DAY_MS;
+	runGc(root, fixedClock(now)); // stamps the run
+	const old2 = writeSession(root, "old2", now - 31 * DAY_MS);
+	runGc(root, fixedClock(now + 7 * 60 * 60 * 1000)); // 7h later, past the 6h interval ⇒ runs
+	expect(existsSync(old2)).toBe(false);
 });
 
 test("a missing root is a no-op, never throws", () => {

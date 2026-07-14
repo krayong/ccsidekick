@@ -1,16 +1,13 @@
 // Pure field builders: each form section is `(draft) => FieldSpec[]`. Editors return a new Config; the dashboard
 // owns cursor/dirty/editing. WIDGET_IDS is the ordered widget list (matches DEFAULT_CONFIG.line.widgets keys).
 
-import type { WidgetId } from "../../domain";
+import { BANDINGS, MIN_SEVERITIES, type WidgetId } from "../../domain";
 import { type Config, DEFAULT_CONFIG } from "../../sources";
 import type { FieldSpec } from "../widgets";
 
 const onOff = (b: boolean): string => (b ? "on" : "off");
 
 export const WIDGET_IDS = Object.keys(DEFAULT_CONFIG.statusline.widgets) as readonly WidgetId[];
-
-const SEVERITIES = ["low", "medium", "high", "critical"] as const;
-const BANDINGS = ["solid", "cycle"] as const;
 
 const step = <T extends string>(arr: readonly T[], cur: T, dir: 1 | -1): T => {
 	const n = arr.length;
@@ -113,7 +110,10 @@ export function commentsFields(d: Config): readonly FieldSpec[] {
 		value: d.comments.min_severity,
 		next: (c) => ({
 			...c,
-			comments: { ...c.comments, min_severity: step(SEVERITIES, c.comments.min_severity, 1) },
+			comments: {
+				...c.comments,
+				min_severity: step(MIN_SEVERITIES, c.comments.min_severity, 1),
+			},
 		}),
 	};
 	return d.comments.helpful ?

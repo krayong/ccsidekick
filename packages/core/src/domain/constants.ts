@@ -1,6 +1,7 @@
-export const COST_TTL_MS = 1500;
+export const COST_TTL_MS = 5000;
 export const REFRESH_INTERVAL_SEC = 1; // written to settings.json statusLine.refreshInterval (seconds, min 1)
 export const USAGE_TTL_MS = 300_000;
+export const CREDS_TTL_MS = 3_600_000; // 1h: the subscription tier is near-static, so refresh it rarely
 export const BALANCE_FRESHNESS_MS = 300_000;
 export const FX_TTL_MS = 604_800_000; // 7 days
 export const MIN_RIGHT_WIDTH = 53;
@@ -31,7 +32,9 @@ export const POOL_TOTAL = 620;
 export const SPINNER_VERB_MIN = 25;
 export const BURN_WINDOW_MS = 18_000_000; // 5 hours
 export const COMPACT_URGENT_PCT = 90; // context fullness where auto-compact is imminent
-export const QUOTA_HIGH_PCT = 80; // 5h/weekly quota fullness that trips block_limit/weekly_limit pressure
+export const QUOTA_HIGH_PCT = 80; // 5h/weekly quota fullness: trips block_limit/weekly_limit pressure, the tip threshold, and the always-critical band cutoff
+export const QUOTA_PACE_MIN_PCT = 20; // below this used%, ignore pace (avoids early-window false criticals)
+export const QUOTA_PROJECT_MIN_PCT = 50; // min used% for the "will exhaust at this pace" tips
 export const PAY_AS_YOU_GO_CAUTION_PCT = 60; // PAYG cap fullness above which the caution band kicks in
 export const PAY_AS_YOU_GO_NEAR_PCT = 80; // PAYG credits fullness that flags the near-cap (critical) band
 export const BALANCE_LOW = 25; // prepaid balance (USD) below which the balance band reads low
@@ -45,3 +48,21 @@ export const SIGNAL_HUE_RANGES = {
 	caution: { min: 20, max: 55 }, // amber-family
 	critical: { wrapMax: 15, wrapMin: 345 }, // red-family (wraps 0): h ≤ 15 OR h ≥ 345
 } as const;
+
+// Helpful-tip trigger thresholds (compose/helpful).
+export const COMPACT_SOON_PCT = 60; // context fullness that flags "compact soon"
+export const COMPACTION_THRASH_N = 3; // compactions in a session before flagging thrash
+export const CACHE_RATIO_FLOOR = 0.5; // cache-hit fraction below which the low-cache tip can fire
+export const CACHE_WARMUP_TURNS = 20; // messages before the cache-ratio tip is eligible
+export const BIG_DIFF_LINES = 1000; // |insertions − deletions| that flags a very large diff
+export const UNTRACKED_N = 20; // untracked files that flag clutter
+export const STASH_N = 5; // stashes that flag stash buildup
+export const STALE_BRANCH_N = 20; // commits behind default that flag a stale branch
+export const TODO_STALLED_MIN = 30; // minutes an in-progress todo sits before "stalled"
+
+// Cross-session analytics (derived/analytics, TUI).
+export const TIER_THRESHOLDS = [3, 15, 50, 100] as const; // familiarity tier session-count cutoffs
+export const DAILY_WINDOW_DAYS = 60; // TUI daily-activity window
+
+// Pricing (derived/pricing).
+export const PRICING_TIER_THRESHOLD = 200_000; // input tokens above which tiered (>200k) pricing applies

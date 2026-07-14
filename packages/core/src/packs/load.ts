@@ -12,7 +12,7 @@ import type { PackJson } from "../domain";
 import { isAllowedPackPackage, packPackageName } from "./allowlist";
 import { validatePack } from "./validate";
 
-type LoadResult = { ok: true; pack: PackJson } | { ok: false; reason: string };
+export type LoadResult = { ok: true; pack: PackJson } | { ok: false; reason: string };
 
 const defaultResolver = (spec: string): string => fileURLToPath(import.meta.resolve(spec));
 

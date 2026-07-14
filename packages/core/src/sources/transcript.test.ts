@@ -4,7 +4,7 @@ import { join } from "node:path";
 
 import { expect, test } from "bun:test";
 
-import { asProject, asSession } from "../domain";
+import { asProject, asSession, COST_TTL_MS } from "../domain";
 
 import { fixedClock } from "./clock";
 import {
@@ -108,6 +108,166 @@ const inputPrice: PriceFn = (u: Usage) => u.input_tokens;
 const decodedResolver: ResolveProject = (_session, decodedCwd) => decodedCwd;
 const COST_NOW = 10_000_000_000; // far past any lastScanTs ⇒ the walk runs
 
+// A usage line with an explicit output_tokens (for streaming) and optional sidechain flag.
+const oline = (o: { id: string; req: string; output: number; sidechain?: boolean }): string =>
+	JSON.stringify({
+		type: "assistant",
+		sessionId: "s1",
+		requestId: o.req,
+		...(o.sidechain === true ? { isSidechain: true } : {}),
+		timestamp: "2026-01-01T04:00:00.000Z",
+		message: {
+			id: o.id,
+			model: "claude-x",
+			usage: {
+				input_tokens: 0,
+				output_tokens: o.output,
+				cache_read_input_tokens: 0,
+				cache_creation_input_tokens: 0,
+			},
+		},
+	});
+
+const outPrice: PriceFn = (u: Usage) => u.output_tokens;
+
+test("scanCostTree: incremental tail-parse of a grown file equals a full parse, pricing only the tail", () => {
+	const root = mkdtempSync(join(tmpdir(), "ccsk-cost-inc-"));
+	const enc = "-Users-me-repoA";
+	mkdirSync(join(root, enc));
+	const file = join(root, enc, "s1.jsonl");
+
+	// Tick 1: four plain messages + a streaming message B (writes 100 then 300).
+	const head = [
+		oline({ id: "A", req: "Q1", output: 10 }),
+		oline({ id: "P1", req: "R1", output: 5 }),
+		oline({ id: "P2", req: "R2", output: 5 }),
+		oline({ id: "P3", req: "R3", output: 5 }),
+		oline({ id: "B", req: "Q2", output: 100 }),
+		oline({ id: "B", req: "Q2", output: 300 }),
+	];
+	// Tick 2 appends: B's final streaming write (500, replaces 300 across the boundary), a new message C, and a
+	// sidechain re-log of A's message.id under a new requestId (folds by message.id ⇒ not counted).
+	const tail = [
+		oline({ id: "B", req: "Q2", output: 500 }),
+		oline({ id: "C", req: "Q3", output: 50 }),
+		oline({ id: "A", req: "Q4", output: 20, sidechain: true }),
+	];
+
+	try {
+		const empty: CostCache = {
+			files: {},
+			aggregate: { chat: {}, tokenPriced: {}, sessionProject: {}, byModel: {} },
+			lastScanTs: 0,
+		};
+
+		// Tick 1.
+		writeFileSync(file, `${head.join("\n")}\n`);
+		const cache1 = scanCostTree(root, empty, fixedClock(COST_NOW), outPrice, decodedResolver);
+
+		// Tick 2 (file grew): count price() calls to prove only the tail is priced.
+		writeFileSync(file, `${[...head, ...tail].join("\n")}\n`);
+		let incCalls = 0;
+		const countingPrice: PriceFn = (u) => {
+			incCalls++;
+			return u.output_tokens;
+		};
+		const cache2 = scanCostTree(
+			root,
+			cache1,
+			fixedClock(COST_NOW + COST_TTL_MS + 1),
+			countingPrice,
+			decodedResolver,
+		);
+
+		// Reference: a full parse of the final file from a cold cache.
+		const full = scanCostTree(
+			root,
+			empty,
+			fixedClock(COST_NOW + COST_TTL_MS + 1),
+			outPrice,
+			decodedResolver,
+		);
+
+		// Incremental entry is byte-identical to the full parse.
+		expect(cache2.files[file]).toEqual(full.files[file]);
+		// Deduped total = A(10)+P1(5)+P2(5)+P3(5)+B(500)+C(50) = 575; the sidechain A/Q4 folds out.
+		expect(cache2.files[file]!.total).toBe(575);
+		expect(cache2.files[file]!.record.messages).toBe(6);
+		// Only the three tail lines were priced — not the four unchanged head messages (a full reparse = 7).
+		expect(incCalls).toBe(3);
+	} finally {
+		rmSync(root, { recursive: true, force: true });
+	}
+});
+
+// Each row: how the file changes on tick 2, and whether the change keeps the cached prefix intact. Either way
+// the scan must produce a byte-identical entry to a cold full parse of the final file.
+const incrementalCases: { name: string; tick1: string[]; tick2: string[] }[] = [
+	{
+		name: "compaction rewrite (changed prefix, larger) full-reparses",
+		tick1: [
+			oline({ id: "A", req: "Q1", output: 10 }),
+			oline({ id: "B", req: "Q2", output: 20 }),
+			oline({ id: "C", req: "Q3", output: 30 }),
+		],
+		// A summary replaces the head, then new turns — the prefix bytes differ, so the head hash won't match.
+		tick2: [
+			oline({ id: "SUM", req: "Z0", output: 1 }),
+			oline({ id: "D", req: "Q4", output: 40 }),
+			oline({ id: "E", req: "Q5", output: 50 }),
+			oline({ id: "F", req: "Q6", output: 60 }),
+		],
+	},
+	{
+		name: "truncation (file shrank) full-reparses",
+		tick1: [
+			oline({ id: "A", req: "Q1", output: 10 }),
+			oline({ id: "B", req: "Q2", output: 20 }),
+			oline({ id: "C", req: "Q3", output: 30 }),
+			oline({ id: "D", req: "Q4", output: 40 }),
+		],
+		tick2: [oline({ id: "A", req: "Q1", output: 10 })],
+	},
+	{
+		name: "two successive grows resume correctly",
+		tick1: [
+			oline({ id: "A", req: "Q1", output: 10 }),
+			oline({ id: "B", req: "Q2", output: 100 }),
+		],
+		// note: tick2 keeps tick1's exact prefix and appends (this row is grown a second time below)
+		tick2: [
+			oline({ id: "A", req: "Q1", output: 10 }),
+			oline({ id: "B", req: "Q2", output: 100 }),
+			oline({ id: "B", req: "Q2", output: 250 }),
+			oline({ id: "C", req: "Q3", output: 30 }),
+		],
+	},
+];
+
+test.each(incrementalCases)("scanCostTree incremental: $name equals a full parse", (c) => {
+	const root = mkdtempSync(join(tmpdir(), "ccsk-cost-inc-"));
+	const enc = "-Users-me-repoA";
+	mkdirSync(join(root, enc));
+	const file = join(root, enc, "s1.jsonl");
+	const empty: CostCache = {
+		files: {},
+		aggregate: { chat: {}, tokenPriced: {}, sessionProject: {}, byModel: {} },
+		lastScanTs: 0,
+	};
+	try {
+		writeFileSync(file, `${c.tick1.join("\n")}\n`);
+		const cache1 = scanCostTree(root, empty, fixedClock(COST_NOW), outPrice, decodedResolver);
+		writeFileSync(file, `${c.tick2.join("\n")}\n`);
+		const t2 = fixedClock(COST_NOW + COST_TTL_MS + 1);
+		const cache2 = scanCostTree(root, cache1, t2, outPrice, decodedResolver);
+		const full = scanCostTree(root, empty, t2, outPrice, decodedResolver);
+		expect(cache2.files[file]).toEqual(full.files[file]);
+		expect(cache2.aggregate.tokenPriced).toEqual(full.aggregate.tokenPriced);
+	} finally {
+		rmSync(root, { recursive: true, force: true });
+	}
+});
+
 test("scanCostTree: global dedup, token-priced subtotals + session→project-path map", () => {
 	const { root } = projectsTree();
 	try {
@@ -207,7 +367,7 @@ test("scanCostTree: within TTL reuses the cached aggregate without rebuilding it
 			byModel: {},
 		};
 		const cache: CostCache = { files: {}, aggregate, lastScanTs: COST_NOW };
-		// The clock is only 100ms past lastScanTs — inside COST_TTL_MS (1500ms) — so the tree must not be
+		// The clock is only 100ms past lastScanTs — inside COST_TTL_MS (5000ms) — so the tree must not be
 		// re-walked and the aggregate must not be rebuilt; the exact same object is returned.
 		const scan = scanCostTree(
 			root,
@@ -219,6 +379,31 @@ test("scanCostTree: within TTL reuses the cached aggregate without rebuilding it
 		expect(scan.aggregate).toBe(aggregate);
 		expect(scan.files).toBe(cache.files);
 		expect(scan.lastScanTs).toBe(COST_NOW);
+	} finally {
+		rmSync(root, { recursive: true, force: true });
+	}
+});
+
+test("scanCostTree: after the TTL, an unchanged tree reuses the aggregate without rebuilding (P7)", () => {
+	const { root } = projectsTree();
+	try {
+		const empty: CostCache = {
+			files: {},
+			aggregate: { chat: {}, tokenPriced: {}, sessionProject: {}, byModel: {} },
+			lastScanTs: 0,
+		};
+		const first = scanCostTree(root, empty, fixedClock(COST_NOW), inputPrice, decodedResolver);
+		// A second scan well past the TTL, with no file added/removed/modified: every file hits the per-file
+		// cache, so the deduped aggregate is reused (reference-equal), not flattened+sorted+deduped again.
+		const second = scanCostTree(
+			root,
+			first,
+			fixedClock(COST_NOW + COST_TTL_MS + 1000),
+			inputPrice,
+			decodedResolver,
+		);
+		expect(second.aggregate).toBe(first.aggregate);
+		expect(second.lastScanTs).toBe(COST_NOW + COST_TTL_MS + 1000); // timestamp still refreshed
 	} finally {
 		rmSync(root, { recursive: true, force: true });
 	}

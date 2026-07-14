@@ -10,7 +10,7 @@ import type { Clock } from "./clock";
 import { atomicWrite, backoffStamp, cacheDir, readJson, singleFlight } from "./storage";
 
 const ENDPOINT = "https://api.anthropic.com/api/oauth/usage";
-const KEYCHAIN_SERVICE = "Claude Code-credentials";
+export const KEYCHAIN_SERVICE = "Claude Code-credentials";
 
 /**
  * A single OAuth quota window. `utilization` is 0–100 (the OAuth field name, NOT the payload's
@@ -145,7 +145,7 @@ export function parseOauth(blob: string): OauthToken | undefined {
 }
 
 /** The config dir Claude Code hashes into the keychain service name (and where the creds file lives). */
-function configBase(): string {
+export function configBase(): string {
 	return process.env["CLAUDE_CONFIG_DIR"] ?? join(homedir(), ".claude");
 }
 

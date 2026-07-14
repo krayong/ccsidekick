@@ -58,6 +58,17 @@ export function upsertAttribution(root: string, sessionId: string, rec: Attribut
 		`${path}.lock`,
 		() => {
 			const store = coerceStore(readJson<unknown>(path, undefined));
+			const existing = store[sessionId];
+			// Skip the O(sessions-ever) read-modify-rewrite when the row is unchanged apart from `updatedMs`
+			// (which would otherwise bump every tick). Freezing `updatedMs` at a session's first write is fine
+			// for its only consumer — the coarse cross-session LRU character-recency ordering.
+			if (
+				existing !== undefined &&
+				existing.project === rec.project &&
+				existing.character === rec.character
+			) {
+				return;
+			}
 			store[sessionId] =
 				rec.updatedMs !== undefined ?
 					{ project: rec.project, character: rec.character, updatedMs: rec.updatedMs }

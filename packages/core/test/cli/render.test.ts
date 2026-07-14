@@ -1,7 +1,15 @@
 // End-to-end over the full render pipeline: a real stdin payload + a temp CLAUDE_CONFIG_DIR flow through
 // acquire → derive → compose → render → stdout string, plus the best-effort persist tail. Real disk, no mocks.
 
-import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import {
+	existsSync,
+	mkdirSync,
+	mkdtempSync,
+	readFileSync,
+	rmSync,
+	statSync,
+	writeFileSync,
+} from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 
@@ -36,6 +44,27 @@ const term = (over: Partial<TermContext> = {}): TermContext => ({
 });
 
 const stdin = JSON.stringify(canonical);
+
+test("a second render within the cost TTL leaves cost.json untouched (no-op write skipped)", async () => {
+	const cfg = freshRoot();
+	const env = withGlobalConfig(cfg, '[character]\nmode = "fixed"\nname = "batman"\n');
+	const cacheDir = join(cfg, "ccsidekick", "cache");
+	const costFile = join(cacheDir, "cost.json");
+	// Steady state: GC has already run this window, so it won't prune between the two ticks (a prune of the
+	// current session's chat fallback would otherwise force tick 2 to re-add it and rewrite the file).
+	mkdirSync(cacheDir, { recursive: true });
+	writeFileSync(join(cacheDir, ".gc-stamp"), String(NOW));
+
+	runRender(stdin, env, term(), clock).persist(); // first tick writes cost.json
+	const m1 = statSync(costFile).mtimeMs;
+
+	await new Promise((r) => setTimeout(r, 25)); // real-time gap: a rewrite would bump the mtime
+
+	runRender(stdin, env, term(), clock).persist(); // same clock ⇒ within TTL, chat unchanged ⇒ skip
+	const m2 = statSync(costFile).mtimeMs;
+
+	expect(m2).toBe(m1);
+});
 
 test("renders the canonical payload (figure + fields) and persists state, cost, attribution", () => {
 	const cfg = freshRoot();

@@ -4,10 +4,15 @@ import { classify } from "../derived";
 import { type Clock, appendEvent, ccsidekickRoot, sessionDir } from "../sources";
 
 /**
- * Soft-fail output patterns: a tool that reported success but whose text/flags look like a failure.
- * Only the test/build/typecheck families read the resulting `ok`; every other category ignores it.
+ * Failure-shaped output markers: a tool that reported success but whose text looks like a failure. Kept
+ * tight to avoid false positives on benign summaries — a bare "Error" is excluded (it matches "0 Error(s)"),
+ * counts require a non-zero leading digit ("2 failed", not "0 failed"), and the uppercase status words
+ * `FAIL`/`FAILED` stay case-sensitive (go/jest/pytest print them) while lowercase compiler markers
+ * (`error:`, `error[`, `error TS…`, `error CS…`) catch cargo/clang/tsc/dotnet. Only the test/build/typecheck
+ * families read the resulting `ok`; every other category ignores it.
  */
-const FAIL_RE = /FAILED|Error|✗|not ok|FAIL/;
+const FAIL_RE =
+	/\bFAILED\b|\bFAIL\b|✗|✕|\bnot ok\b|error:|error\[|error TS\d|error CS\d|\bpanic:|Traceback \(most recent call last\)|[1-9]\d* (?:failed|failing|errors?)\b/;
 
 function asObject(v: unknown): Record<string, unknown> | undefined {
 	return typeof v === "object" && v !== null && !Array.isArray(v) ?
@@ -20,10 +25,11 @@ function asString(v: unknown): string | undefined {
 }
 
 /**
- * The soft-fail heuristic for a `PostToolUse`/batch success: flip to a failure when (whichever fields are
- * present) `isError`, a non-empty `stderr`, an output match of `FAIL_RE`, or `interrupted`. A Bash
- * `tool_response` carries no exit code, so a standalone non-empty `stderr` is itself a fail signal. A
- * `tool_response` may arrive as the structured object or as a serialized string.
+ * The soft-fail heuristic for a `PostToolUse` success: flip to a failure when (whichever fields are present)
+ * `isError`, `interrupted`, or the combined `stdout`+`stderr` matches `FAIL_RE`. A non-empty `stderr` is NOT
+ * itself a fail signal — many toolchains (cargo/rustc, node, pip) write progress and warnings to stderr on
+ * success — so failure must be evidenced by a `FAIL_RE` marker. A `tool_response` may arrive as the
+ * structured object or as a serialized string.
  */
 function softFail(toolResponse: unknown): boolean {
 	const text = asString(toolResponse);
@@ -31,9 +37,9 @@ function softFail(toolResponse: unknown): boolean {
 	const r = asObject(toolResponse);
 	if (r === undefined) return false;
 	if (r["isError"] === true || r["interrupted"] === true) return true;
-	const stderr = asString(r["stderr"]);
-	if (stderr !== undefined && stderr !== "") return true;
-	const out = `${asString(r["stdout"]) ?? ""}${stderr ?? ""}`;
+	// Join the two streams with a newline so a marker at the end of stdout keeps its word boundary against
+	// the start of stderr (a bare concatenation could fuse "…failed" + "FAILED…" into one token).
+	const out = `${asString(r["stdout"]) ?? ""}\n${asString(r["stderr"]) ?? ""}`;
 	return FAIL_RE.test(out);
 }
 
@@ -66,21 +72,12 @@ function appendClassified(
 	if (c !== null) appendEvent(dir, { ts, ...c });
 }
 
-/** `PostToolBatch`: classify and append one event per well-formed tool call in the batch. */
-function appendBatch(dir: string, calls: readonly unknown[], ts: number): void {
-	for (const call of calls) {
-		const c = asObject(call);
-		const toolName = c !== undefined ? asString(c["tool_name"]) : undefined;
-		if (c === undefined || toolName === undefined) continue;
-		const ok = !softFail(c["tool_response"]);
-		appendClassified(dir, toolName, commandOf(c["tool_input"]), ok, ts);
-	}
-}
-
 /**
- * Read one hook payload, branch on `hook_event_name` to set each call's success, classify, and append one
- * `Event` per matching tool call to the session log. Never throws: a malformed payload or a disk/append
- * failure is swallowed (no event, no output). Disk only — no API, no tokens.
+ * Read one hook payload, branch on `hook_event_name` to set the call's success, classify, and append one
+ * `Event` to the session log. Never throws: a malformed payload or a disk/append failure is swallowed (no
+ * event, no output). Disk only — no API, no tokens. Only the per-call `PostToolUse`/`PostToolUseFailure`
+ * hooks are handled; `PostToolBatch` co-fires with them (double-counting every call), so it is deliberately
+ * not wired and its payload — which carries no top-level `tool_name` — falls through to a no-op.
  */
 export function runClassify(stdin: string, env: NodeJS.ProcessEnv, clock: Clock): void {
 	try {
@@ -91,12 +88,6 @@ export function runClassify(stdin: string, env: NodeJS.ProcessEnv, clock: Clock)
 		const dir = sessionDir(ccsidekickRoot(env), session);
 		const ts = clock.now();
 		const hook = asString(r["hook_event_name"]);
-
-		if (hook === "PostToolBatch") {
-			const calls = r["tool_calls"];
-			if (Array.isArray(calls)) appendBatch(dir, calls as unknown[], ts);
-			return;
-		}
 
 		const toolName = asString(r["tool_name"]);
 		if (toolName === undefined) return;

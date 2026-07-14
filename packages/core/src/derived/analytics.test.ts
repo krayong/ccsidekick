@@ -301,3 +301,33 @@ test("deriveAllMetrics reduces crafted records: windows, all-time metrics, favor
 	expect(m.daily).toHaveLength(60);
 	expect(m.daily.at(-1)?.day).toBe(TODAY);
 });
+
+test("daysSinceLastSession excludes the current session, so comeback survives an active session (AN4)", () => {
+	// A previous session 10 days ago plus today's (current) session, both attributed to batman. Excluding the
+	// current session, the gap to the last session is 10 days — not ~0 — so a comeback can fire.
+	const recs: Rec[] = [
+		{ session: "prev", project: "owner/repo", day: TODAY - 10 },
+		{ session: "cur", project: "owner/repo", day: TODAY },
+	];
+	const attr = attribution({
+		prev: { project: "owner/repo", character: "batman" },
+		cur: { project: "owner/repo", character: "batman" },
+	});
+	const withoutExcl = deriveFamiliarity(attr, "batman", buildCache(recs), REPO, clock);
+	expect(withoutExcl.daysSinceLastSession).toBe(0); // current session's end ~now dominates
+	const excl = deriveFamiliarity(attr, "batman", buildCache(recs), REPO, clock, "cur");
+	expect(excl.daysSinceLastSession).toBe(10); // measures the gap to the previous session
+});
+
+test("same-repo sessions merge under one project key even when only some are attributed (AN3)", () => {
+	// Session `a` was attributed (owner/repo form); session `b` of the same checkout never got attribution, so
+	// its cost record carries the filesystem path. They must land in ONE project bucket, not split into an
+	// owner/repo bucket and a /path bucket.
+	const cache = buildCache([
+		{ session: "a", project: "/Users/x/repo", day: TODAY },
+		{ session: "b", project: "/Users/x/repo", day: TODAY },
+	]);
+	const attr = attribution({ a: { project: "owner/repo", character: "batman" } });
+	const m = deriveAllMetrics(attr, cache, clock);
+	expect(m.projects.map((p) => p.key)).toEqual(["owner/repo"]);
+});

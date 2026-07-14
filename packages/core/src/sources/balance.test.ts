@@ -16,6 +16,14 @@ function snapshotFile(body: string): string {
 	return path;
 }
 
+test("a balance file larger than the cap is ignored (never read on the render path)", () => {
+	const pad = "x".repeat(70 * 1024); // push the file past the 64 KB read cap
+	const path = snapshotFile(
+		JSON.stringify({ amount: 42.5, currency: "USD", ts: NOW - 1000, pad }),
+	);
+	expect(readBalance(path, fixedClock(NOW))).toBeNull();
+});
+
 test("fresh snapshot within freshness ⇒ returns it", () => {
 	const path = snapshotFile(JSON.stringify({ amount: 42.5, currency: "USD", ts: NOW - 1000 }));
 	try {

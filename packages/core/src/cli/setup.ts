@@ -10,15 +10,13 @@ import { homedir } from "node:os";
 import { join } from "node:path";
 
 import { THEMES } from "../data";
-import type { WidgetId } from "../domain";
+import { CHARACTER_MODES, MIN_SEVERITIES, type MinSeverity, type WidgetId } from "../domain";
 import { PACKS } from "../packs";
 import { CHARACTER_THEME } from "../render";
 import { type Config, DEFAULT_CONFIG, loadConfig } from "../sources";
 import type { SaveScope } from "../tui";
 
 const WIDGET_IDS = Object.keys(DEFAULT_CONFIG.statusline.widgets) as readonly WidgetId[];
-const MODES = ["fixed", "random"] as const;
-const SEVERITIES = ["low", "medium", "high", "critical"] as const;
 
 /** The valid `--theme` values: the character sentinel, the built-in theme catalog, and every pack's own theme. */
 export function themeNames(): readonly string[] {
@@ -42,7 +40,7 @@ interface ParsedFlags {
 	budget?: number;
 	comments?: boolean;
 	helpful?: boolean;
-	minSeverity?: (typeof SEVERITIES)[number];
+	minSeverity?: MinSeverity;
 	widgets?: readonly WidgetId[];
 	usageFetch?: boolean;
 }
@@ -169,7 +167,7 @@ const VALIDATORS: Readonly<
 		enumInto(v, PACKS, "character", e, (x) => (f.character = x));
 	},
 	mode: (v, f, e) => {
-		enumInto(v, MODES, "mode", e, (x) => (f.mode = x));
+		enumInto(v, CHARACTER_MODES, "mode", e, (x) => (f.mode = x));
 	},
 	roster: (v, f, e) => {
 		listInto(v, PACKS, "roster", e, (x) => (f.roster = x));
@@ -196,7 +194,7 @@ const VALIDATORS: Readonly<
 		if (b !== undefined) f.helpful = b;
 	},
 	"min-severity": (v, f, e) => {
-		enumInto(v, SEVERITIES, "min-severity", e, (x) => (f.minSeverity = x));
+		enumInto(v, MIN_SEVERITIES, "min-severity", e, (x) => (f.minSeverity = x));
 	},
 	widgets: (v, f, e) => {
 		listInto(v, WIDGET_IDS, "widgets", e, (x) => (f.widgets = x));
@@ -342,14 +340,14 @@ export function setupHelp(): string {
 		"",
 		"Flags (only the ones you pass are applied):",
 		`  --character <name>      ${PACKS.join(", ")}`,
-		`  --mode <mode>           ${MODES.join(", ")}`,
+		`  --mode <mode>           ${CHARACTER_MODES.join(", ")}`,
 		"  --roster <a,b,c>        characters for random mode (from --character's list)",
 		`  --theme <name>          ${themeNames().join(", ")}`,
 		"  --currency <code>       e.g. USD, EUR, INR",
 		"  --budget <usd>          monthly budget, a number >= 0",
 		"  --comments <on|off>     the character's own comment line",
 		"  --helpful <on|off>      the helpful-tip line",
-		`  --min-severity <sev>    ${SEVERITIES.join(", ")}`,
+		`  --min-severity <sev>    ${MIN_SEVERITIES.join(", ")}`,
 		"  --widgets <a,b,c>       statusline widgets to enable (others are turned off)",
 		"  --usage-fetch <on|off>  account-usage lookup to Anthropic (needed by the pay_as_you_go widget; no tokens)",
 		"  --global | --local      save target (default: global)",
