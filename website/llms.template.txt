@@ -37,8 +37,10 @@ ccsidekick replaces Claude Code's status line with a character (Batman, Spider-M
 
 ## Links
 
-- Website: {{baseUrl}}
-- Repository: {{repoUrl}}
-- npm: {{npmUrl}}
-- README: {{repoUrl}}#readme
-- License: {{repoUrl}}/blob/main/LICENSE
+- [Website]({{baseUrl}}): the landing page and live configurator.
+- [Repository]({{repoUrl}}): source, issues, and the character packs.
+- [npm package]({{npmUrl}}): install with `{{installCmd}}`.
+- [README]({{repoUrl}}#readme): full documentation.
+- [Setup]({{repoUrl}}#non-interactive-setup): non-interactive setup and wiring from flags.
+- [Configuration]({{repoUrl}}#configuration): every config table, default, and widget toggle.
+- [License]({{repoUrl}}/blob/main/LICENSE): MIT.

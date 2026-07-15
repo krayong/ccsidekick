@@ -24,6 +24,9 @@
 		<link rel="canonical" href="{{baseUrl}}/" />
 		<link rel="icon" href="favicon.svg" type="image/svg+xml" />
 		<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+		<!-- The hero reel's poster is the LCP element. Preload it at high priority so it is
+			discoverable in the initial document (the 2.9 MB video itself stays preload="none"). -->
+		<link rel="preload" as="image" href="characters-poster.jpg" fetchpriority="high" />
 		<link rel="stylesheet" href="tokens.css" />
 		<noscript>
 			<style>
@@ -89,7 +92,7 @@
 		<nav id="nav">
 			<div class="wrap">
 				<a class="brand" href="#top" aria-label="{{productName}} home"
-					><img src="wordmark.svg" alt="{{productName}}"
+					><img src="wordmark.svg" alt="{{productName}}" fetchpriority="high"
 				/></a>
 				<div class="links">
 					<div id="navmenu" class="navmenu">
@@ -172,7 +175,7 @@
 								class="reel-copy"
 								id="copy"
 								type="button"
-								aria-label="Copy: {{installCmd}}">
+								aria-label="Copy command: {{installCmd}}">
 								<svg viewBox="0 0 16 16" aria-hidden="true">
 									<path
 										d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z" />
@@ -190,7 +193,7 @@
 						href="{{repoUrl}}"
 						target="_blank"
 						rel="noopener"
-						aria-label="Star {{productName}} on GitHub">
+						aria-label="Star on GitHub: {{productName}}">
 						<svg viewBox="0 0 24 24" aria-hidden="true">
 							<path
 								d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" /></svg
@@ -1602,13 +1605,8 @@
 			const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 			if (!reduce && window.gsap) {
 				gsap.registerPlugin(ScrollTrigger);
-				// hero elements start hidden via .reveal (opacity:0, y:24); animate TO visible.
-				gsap.timeline({ defaults: { ease: "power3.out", opacity: 1, y: 0 } })
-					.to(".hero-logo", { duration: 0.85 })
-					.to(".sub", { duration: 0.7 }, "-=0.45")
-					.to(".hero-reel", { duration: 0.8 }, "-=0.5")
-					.to(".hero-actions", { duration: 0.6 }, "-=0.4")
-					.to(".scrollcue", { duration: 0.6 }, "-=0.3");
+				// hero elements reveal via CSS animation on load (see .hero .reveal in styles.css),
+				// so the above-the-fold LCP paint never waits for this library to download and run.
 				gsap.utils.toArray(".reveal").forEach((el) => {
 					if (el.closest(".hero")) return;
 					gsap.to(el, {
@@ -1656,10 +1654,17 @@
 				}
 			}
 		</script>
-		<!-- Cloudflare Web Analytics: privacy-first RUM, no cookies -->
-		<script
-			defer
-			src="https://static.cloudflareinsights.com/beacon.min.js"
-			data-cf-beacon='{"token": "e834d2ed234e491aa70615b7c0bf9e03"}'></script>
+		<!-- Cloudflare Web Analytics: privacy-first RUM, no cookies. Only on the production
+			origin — the beacon POSTs cross-origin, which CORS-blocks (and logs a console error)
+			on localhost and preview hosts where the analytics are meaningless anyway. -->
+		<script>
+			if (location.origin === "{{baseUrl}}") {
+				const b = document.createElement("script");
+				b.defer = true;
+				b.src = "https://static.cloudflareinsights.com/beacon.min.js";
+				b.setAttribute("data-cf-beacon", '{"token": "e834d2ed234e491aa70615b7c0bf9e03"}');
+				document.head.appendChild(b);
+			}
+		</script>
 	</body>
 </html>

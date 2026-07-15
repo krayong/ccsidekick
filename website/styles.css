@@ -1509,9 +1509,48 @@ footer img {
 	transform: translateY(24px);
 }
 
+/* Hero reveal is CSS, not GSAP: it fires at first paint so the above-the-fold LCP element
+	never waits for the animation library to download and execute. Below-the-fold .reveal
+	elements are still scroll-triggered by GSAP. */
+@keyframes heroRise {
+	from {
+		opacity: 0;
+		transform: translateY(24px);
+	}
+
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+.hero .reveal {
+	animation: heroRise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero .sub {
+	animation-delay: 0.12s;
+}
+
+.hero .hero-reel {
+	animation-delay: 0.22s;
+}
+
+.hero .hero-actions {
+	animation-delay: 0.36s;
+}
+
+.hero .scrollcue {
+	animation-delay: 0.48s;
+}
+
 @media (prefers-reduced-motion: reduce) {
 	html {
 		scroll-behavior: auto;
+	}
+
+	.hero .reveal {
+		animation: none;
 	}
 
 	.cursor {
