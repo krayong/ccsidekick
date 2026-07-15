@@ -1,0 +1,1571 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="{{bgColor}}" />
+		<title>{{tagline}}</title>
+		<meta name="description" content="{{description}}" />
+		<meta name="robots" content="index, follow, max-image-preview:large" />
+		<meta property="og:title" content="{{tagline}}" />
+		<meta property="og:description" content="{{description}}" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="{{baseUrl}}/" />
+		<meta property="og:site_name" content="{{productName}}" />
+		<meta property="og:image" content="{{baseUrl}}/og.png" />
+		<meta property="og:image:width" content="1280" />
+		<meta property="og:image:height" content="640" />
+		<meta property="og:image:alt" content="{{ogAlt}}" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="{{tagline}}" />
+		<meta name="twitter:description" content="{{description}}" />
+		<meta name="twitter:image" content="{{baseUrl}}/og.png" />
+		<meta name="twitter:image:alt" content="{{ogAlt}}" />
+		<link rel="canonical" href="{{baseUrl}}/" />
+		<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+		<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+		<link rel="stylesheet" href="tokens.css" />
+		<noscript>
+			<style>
+				.reveal {
+					opacity: 1 !important;
+					transform: none !important;
+				}
+			</style>
+		</noscript>
+		<link rel="stylesheet" href="styles.css" />
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@graph": [
+					{
+						"@type": "SoftwareApplication",
+						"name": "{{productName}}",
+						"description": "{{description}}",
+						"featureList": [
+							"{{features.0}}",
+							"{{features.1}}",
+							"{{features.2}}",
+							"{{features.3}}",
+							"{{features.4}}",
+							"{{features.5}}"
+						],
+						"keywords": "{{keywords}}",
+						"applicationCategory": "DeveloperApplication",
+						"operatingSystem": "{{os}}",
+						"softwareRequirements": "{{nodeReq}}",
+						"url": "{{baseUrl}}/",
+						"downloadUrl": "{{npmUrl}}",
+						"installUrl": "{{npmUrl}}",
+						"softwareVersion": "{{version}}",
+						"license": "{{licenseUrl}}",
+						"screenshot": "{{baseUrl}}/og.png",
+						"image": "{{baseUrl}}/og.png",
+						"sameAs": ["{{repoUrl}}", "{{npmUrl}}"],
+						"offers": {
+							"@type": "Offer",
+							"price": "0",
+							"priceCurrency": "USD",
+							"availability": "https://schema.org/InStock"
+						},
+						"author": {
+							"@type": "Person",
+							"name": "{{author}}",
+							"url": "{{ownerUrl}}"
+						}
+					},
+					{
+						"@type": "WebSite",
+						"name": "{{productName}}",
+						"url": "{{baseUrl}}/"
+					}
+				]
+			}
+		</script>
+	</head>
+	<body id="top">
+		<div id="a11yStatus" aria-live="polite" class="sr"></div>
+		<canvas class="particles" id="particles"></canvas>
+		<nav id="nav">
+			<div class="wrap">
+				<a class="brand" href="#top" aria-label="{{productName}} home"
+					><img src="wordmark.svg" alt="{{productName}}"
+				/></a>
+				<div class="links">
+					<div id="navmenu" class="navmenu">
+						<a class="navlink" href="#build">Build</a>
+						<a class="navlink" href="#characters">Characters</a>
+						<a class="navlink" href="#theme">Theme</a>
+						<a class="navlink" href="#widgets">Widgets</a>
+						<a class="navlink" href="#cost">Cost</a>
+						<a class="navlink" href="#about">About</a>
+						<span class="navicons">
+							<a
+								class="iconlink"
+								href="{{repoUrl}}"
+								aria-label="{{productName}} on GitHub"
+								><svg viewBox="0 0 24 24" aria-hidden="true">
+									<path
+										d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" /></svg
+							></a>
+							<a
+								class="iconlink"
+								href="{{npmUrl}}"
+								aria-label="{{productName}} on npm"
+								><svg viewBox="0 0 24 24" aria-hidden="true">
+									<path
+										d="M1.763 0C.786 0 0 .786 0 1.763v20.474C0 23.214.786 24 1.763 24h20.474c.977 0 1.763-.786 1.763-1.763V1.763C24 .786 23.214 0 22.237 0zM5.13 5.323l13.837.019-.009 13.836h-3.464l.01-10.382h-3.456L12.04 19.17H5.113z" /></svg
+							></a>
+							<a
+								class="iconlink mailicon"
+								href="mailto:{{email}}"
+								aria-label="Email {{email}}"
+								><svg viewBox="0 0 16 16" aria-hidden="true">
+									<path
+										d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z" /></svg
+							></a>
+						</span>
+					</div>
+					<button
+						class="navtoggle"
+						id="navToggle"
+						type="button"
+						aria-expanded="false"
+						aria-controls="navmenu"
+						aria-label="Open menu">
+						<span class="navtoggle-bars" aria-hidden="true"></span>
+					</button>
+				</div>
+			</div>
+		</nav>
+
+		<header class="hero">
+			<div class="glow"></div>
+			<div class="wrap">
+				<h1 class="sr">{{copy.hero.heading}}</h1>
+				<div class="hero-logo reveal" role="img" aria-label="{{productName}}"></div>
+				<p class="sub reveal">{{copy.hero.subtitle}}</p>
+				<div class="hero-reel reveal">
+					<div class="reel-halo"></div>
+					<div class="reel-unit">
+						<video
+							id="reelVideo"
+							class="reel-video"
+							autoplay
+							muted
+							loop
+							playsinline
+							preload="none"
+							poster="characters-poster.jpg"
+							width="1740"
+							height="352"
+							aria-label="{{reelAria}}">
+							<source src="characters.mp4" type="video/mp4" />
+							<img src="characters-poster.jpg" alt="{{reelAria}}" />
+						</video>
+						<div class="reel-cmd">
+							<code class="reel-cmd-code"
+								><span class="s">$</span> <span id="twhero">{{installCmd}} </span
+								><span class="cursor"></span
+							></code>
+							<button
+								class="reel-copy"
+								id="copy"
+								type="button"
+								aria-label="Copy: {{installCmd}}">
+								<svg viewBox="0 0 16 16" aria-hidden="true">
+									<path
+										d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z" />
+									<path
+										d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Z" />
+								</svg>
+								<span class="reel-copy-txt" id="hint">Copy command</span>
+							</button>
+						</div>
+					</div>
+				</div>
+				<a class="scrollcue reveal" href="#build" aria-label="Scroll to explore"></a>
+			</div>
+		</header>
+
+		<main id="main-content">
+			<section class="blk" id="build">
+				<div class="wrap">
+					<p class="kicker reveal">{{copy.build.kicker}}</p>
+					<h2 class="reveal">{{copy.build.heading}}</h2>
+					<p class="lede reveal">{{copy.build.lede}}</p>
+					<div class="cfg reveal">
+						<div class="cfg-preview">
+							<div class="window">
+								<div class="tbar">
+									<span class="dot r"></span><span class="dot y"></span
+									><span class="dot g"></span><b>~/dev/ccsidekick — zsh</b>
+								</div>
+								<div id="cfgTerm" role="img" aria-label="Live status line preview">
+									<pre
+										class="cfg-screen"
+										id="cfgScreen"
+										aria-hidden="true"><span class="cfg-skel">rendering…</span></pre>
+								</div>
+							</div>
+						</div>
+						<div class="cfg-summary" id="cfgSummary"></div>
+						<div class="cfg-bar">
+							<div
+								class="cfg-tabs"
+								role="tablist"
+								aria-label="Configure your status line">
+								<button
+									class="cfg-tab"
+									type="button"
+									role="tab"
+									data-tab="character"
+									aria-selected="true">
+									Character
+								</button>
+								<button
+									class="cfg-tab"
+									type="button"
+									role="tab"
+									data-tab="theme"
+									aria-selected="false">
+									Theme
+								</button>
+								<button
+									class="cfg-tab"
+									type="button"
+									role="tab"
+									data-tab="widgets"
+									aria-selected="false">
+									Widgets
+								</button>
+							</div>
+							<button
+								class="cfg-copy"
+								id="cfgCopy"
+								type="button"
+								aria-label="Copy command to install">
+								<svg class="ci" viewBox="0 0 16 16" aria-hidden="true">
+									<path
+										d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z" />
+									<path
+										d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Z" />
+								</svg>
+								<span class="cfg-copy-txt">Copy command to install</span>
+							</button>
+						</div>
+						<div class="cfg-panel" data-panel="character">
+							<input
+								class="cfg-search"
+								id="cfgCharSearch"
+								type="text"
+								placeholder="Search…"
+								aria-label="Search characters"
+								autocomplete="off" />
+							<p class="cfg-hint">{{copy.build.charHint}}</p>
+							<div class="cfg-chars" id="cfgChars"></div>
+						</div>
+						<div class="cfg-panel" data-panel="theme" hidden>
+							<input
+								class="cfg-search"
+								id="cfgThemeSearch"
+								type="text"
+								placeholder="Search…"
+								aria-label="Search themes"
+								autocomplete="off" />
+							<div class="cfg-subtabs" role="tablist" aria-label="Theme set">
+								<button
+									class="cfg-subtab"
+									type="button"
+									role="tab"
+									data-set="character"
+									aria-selected="true">
+									Character Themes <span class="n" id="cfgTCountChar"></span>
+								</button>
+								<button
+									class="cfg-subtab"
+									type="button"
+									role="tab"
+									data-set="generic"
+									aria-selected="false">
+									Generic Themes <span class="n" id="cfgTCountGen"></span>
+								</button>
+							</div>
+							<div class="cfg-themes" id="cfgThemes"></div>
+						</div>
+						<div class="cfg-panel" data-panel="widgets" hidden>
+							<input
+								class="cfg-search"
+								id="cfgWidgetSearch"
+								type="text"
+								placeholder="Search…"
+								aria-label="Search widgets"
+								autocomplete="off" />
+							<div class="cfg-subtabs" role="tablist" aria-label="Widget group">
+								<button
+									class="cfg-subtab"
+									type="button"
+									role="tab"
+									data-wgroup="Git"
+									aria-selected="true">
+									Git
+								</button>
+								<button
+									class="cfg-subtab"
+									type="button"
+									role="tab"
+									data-wgroup="Model"
+									aria-selected="false">
+									Model
+								</button>
+								<button
+									class="cfg-subtab"
+									type="button"
+									role="tab"
+									data-wgroup="Context"
+									aria-selected="false">
+									Context
+								</button>
+								<button
+									class="cfg-subtab"
+									type="button"
+									role="tab"
+									data-wgroup="Cost"
+									aria-selected="false">
+									Cost
+								</button>
+								<button
+									class="cfg-subtab"
+									type="button"
+									role="tab"
+									data-wgroup="Usage"
+									aria-selected="false">
+									Usage
+								</button>
+								<button
+									class="cfg-subtab"
+									type="button"
+									role="tab"
+									data-wgroup="Session"
+									aria-selected="false">
+									Session
+								</button>
+							</div>
+							<div class="cfg-widgets" id="cfgWidgets"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="blk" id="characters">
+				<div class="wrap">
+					<p class="kicker reveal">{{copy.characters.kicker}}</p>
+					<h2 class="reveal">
+						<span id="c-chars">{{counts.characters}}</span> sidekicks, each with its own
+						voice and theme.
+					</h2>
+					<p class="lede reveal">{{copy.characters.lede}}</p>
+					<div class="theme-browse reveal">
+						<input
+							class="theme-search"
+							id="charSearch"
+							type="text"
+							placeholder="Search…"
+							aria-label="Search characters"
+							autocomplete="off" />
+					</div>
+					<div class="wall" id="wall"></div>
+					<p class="wall-soon reveal">{{copy.characters.soon}}</p>
+				</div>
+			</section>
+
+			<section class="blk" id="theme">
+				<div class="wrap">
+					<p class="kicker reveal">{{copy.theme.kicker}}</p>
+					<h2 class="reveal">
+						<span id="c-themes">{{counts.themes}}+</span> themes, from your editor's
+						palette to a character's own.
+					</h2>
+					<p class="lede reveal">{{copy.theme.lede}}</p>
+					<div class="theme-browse reveal">
+						<input
+							class="theme-search"
+							id="themeSearch"
+							type="text"
+							placeholder="Search…"
+							aria-label="Search themes"
+							autocomplete="off" />
+						<div class="subtabs" role="tablist" aria-label="Theme set">
+							<button
+								class="subtab"
+								type="button"
+								role="tab"
+								data-set="character"
+								aria-selected="true">
+								Character Themes <span class="n" id="tCountChar"></span>
+							</button>
+							<button
+								class="subtab"
+								type="button"
+								role="tab"
+								data-set="generic"
+								aria-selected="false">
+								Generic Themes <span class="n" id="tCountGen"></span>
+							</button>
+						</div>
+					</div>
+					<div class="tgrid reveal" id="themeGrid"></div>
+					<p class="th-empty" id="themeEmpty">{{copy.theme.empty}}</p>
+				</div>
+			</section>
+
+			<section class="blk" id="widgets">
+				<div class="wrap">
+					<p class="kicker reveal">{{copy.widgets.kicker}}</p>
+					<h2 class="reveal">{{copy.widgets.heading}}</h2>
+					<p class="lede reveal">{{copy.widgets.lede}}</p>
+					<div class="theme-browse reveal">
+						<input
+							class="theme-search"
+							id="widgetSecSearch"
+							type="text"
+							placeholder="Search…"
+							aria-label="Search widgets"
+							autocomplete="off" />
+					</div>
+					<div class="wgrid reveal" id="widgetGrid"></div>
+					<p class="th-empty" id="widgetSecEmpty">{{copy.widgets.empty}}</p>
+				</div>
+			</section>
+
+			<section class="blk" id="cost">
+				<div class="wrap">
+					<p class="kicker reveal">{{copy.cost.kicker}}</p>
+					<div class="split">
+						<div class="reveal">
+							<h2 class="big">
+								See what a session really costs.<br /><span class="gtext"
+									>Zero tokens to find out.</span
+								>
+							</h2>
+							<p class="lede">{{copy.cost.lede}}</p>
+							<div class="statgrid">
+								<div class="stat">
+									<div class="n gtext" data-to="{{counts.characters}}">0</div>
+									<div class="l">characters</div>
+								</div>
+								<div class="stat">
+									<div class="n gtext" data-to="{{counts.themes}}" data-suf="+">
+										0
+									</div>
+									<div class="l">themes</div>
+								</div>
+								<div class="stat">
+									<div class="n gtext" data-to="{{counts.widgets}}">0</div>
+									<div class="l">widgets</div>
+								</div>
+								<div class="stat">
+									<div class="n gtext" data-to="0">0</div>
+									<div class="l">tokens spent</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="blk" id="about">
+				<div class="wrap">
+					<p class="kicker reveal">{{copy.about.kicker}}</p>
+					<h2 class="reveal">{{copy.about.heading}}</h2>
+					<div class="cols">
+						<div class="col reveal">
+							<h3>{{copy.about.cols.0.heading}}</h3>
+							<p>{{copy.about.cols.0.body}}</p>
+						</div>
+						<div class="col reveal">
+							<h3>{{copy.about.cols.1.heading}}</h3>
+							<p>{{copy.about.cols.1.body}}</p>
+						</div>
+						<div class="col reveal">
+							<h3>{{copy.about.cols.2.heading}}</h3>
+							<p>{{copy.about.cols.2.body}}</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="blk" id="faq">
+				<div class="wrap">
+					<p class="kicker reveal">{{copy.faq.kicker}}</p>
+					<h2 class="reveal">{{copy.faq.heading}}</h2>
+					<div class="faq">
+						<details>
+							<summary>{{faq.0.q}}</summary>
+							<p>{{faq.0.a}}</p>
+						</details>
+						<details>
+							<summary>{{faq.1.q}}</summary>
+							<p>{{faq.1.a}}</p>
+						</details>
+						<details>
+							<summary>{{faq.2.q}}</summary>
+							<p>{{faq.2.a}}</p>
+						</details>
+						<details>
+							<summary>{{faq.3.q}}</summary>
+							<p>{{faq.3.a}}</p>
+						</details>
+						<details>
+							<summary>{{faq.4.q}}</summary>
+							<p>{{faq.4.a}}</p>
+						</details>
+						<details>
+							<summary>{{faq.5.q}}</summary>
+							<p>{{faq.5.a}}</p>
+						</details>
+						<details>
+							<summary>{{faq.6.q}}</summary>
+							<p>{{faq.6.a}}</p>
+						</details>
+						<details>
+							<summary>{{faq.7.q}}</summary>
+							<p>{{faq.7.a}}</p>
+						</details>
+					</div>
+				</div>
+			</section>
+			<script type="application/ld+json">
+				{
+					"@context": "https://schema.org",
+					"@type": "FAQPage",
+					"mainEntity": [
+						{
+							"@type": "Question",
+							"name": "{{faq.0.q}}",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "{{faq.0.a}}"
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "{{faq.1.q}}",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "{{faq.1.a}}"
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "{{faq.2.q}}",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "{{faq.2.a}}"
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "{{faq.3.q}}",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "{{faq.3.a}}"
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "{{faq.4.q}}",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "{{faq.4.a}}"
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "{{faq.5.q}}",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "{{faq.5.a}}"
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "{{faq.6.q}}",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "{{faq.6.a}}"
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "{{faq.7.q}}",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "{{faq.7.a}}"
+							}
+						}
+					]
+				}
+			</script>
+		</main>
+
+		<footer>
+			<div class="wrap">
+				<img src="wordmark.svg" alt="{{productName}}" />
+				<div class="foot-links">
+					<span class="fade">{{copy.footer}}</span>
+				</div>
+			</div>
+		</footer>
+
+		<script src="vendor/gsap.min.js"></script>
+		<script src="vendor/ScrollTrigger.min.js"></script>
+		<script src="data.js"></script>
+		<script>
+			const D = window.__CCSK || { counts: {}, characters: [], themes: [], widgets: [] };
+			const esc = (s) =>
+				String(s).replace(
+					/[&<>"]/g,
+					(c) =>
+						({
+							"&": "&amp;",
+							"<": "&lt;",
+							">": "&gt;",
+							'"': "&quot;",
+						})[c],
+				);
+
+			// character wall — real emblem, tone, and signature colour, straight from each pack.json.
+			// each card loads that character into the configurator below.
+			document.getElementById("wall").innerHTML = D.characters
+				.map(
+					(c) =>
+						`<a class="pk" href="#build" data-char="${esc(c.name)}" aria-label="Build with ${esc(c.display)}" style="--c:${esc(c.color)}"><div class="badge">${esc(c.emblem)}</div><div class="nm">${esc(c.display)}</div></a>`,
+				)
+				.join("");
+
+			// widgets section — each card is the widget rendered like a status-line segment:
+			// icon, label, then the value in its real signal colour. --accent tints the hover glow/sheen
+			// (same effect as the character cards), keyed to the widget's own signal colour.
+			const WSIG_COLOR = {
+				ok: "var(--green)",
+				warn: "var(--amber)",
+				crit: "var(--coral)",
+				acc: "var(--blue)",
+			};
+			document.getElementById("widgetGrid").innerHTML = (D.widgets || [])
+				.map(
+					(w) =>
+						`<div class="wcard" role="button" tabindex="0" aria-label="${esc(w.label)}" data-id="${esc(w.id)}" data-name="${esc((w.label + " " + w.id).toLowerCase())}" style="--accent:${WSIG_COLOR[w.sig] || "var(--muted)"}">${w.icon ? `<span class="wic" aria-hidden="true">${esc(w.icon)}</span>` : ""}<span class="wlbl">${esc(w.label)}</span><span class="wval s-${esc(w.sig || "fg")}">${esc(w.sample)}</span></div>`,
+				)
+				.join("");
+
+			// counts → headings + stat counters
+			const CN = D.counts || {};
+			const setTxt = (id, v) => {
+				const el = document.getElementById(id);
+				if (el && v != null) el.textContent = v;
+			};
+			setTxt("c-chars", CN.characters);
+			setTxt("c-themes", CN.themes != null ? CN.themes + "+" : null);
+			[
+				{ to: CN.characters ?? 0, suf: "" },
+				{ to: CN.themes ?? 0, suf: "+" },
+				{ to: CN.widgets ?? 0, suf: "" },
+				{ to: 0, suf: "" },
+			].forEach((s, i) => {
+				const n = document.querySelectorAll(".stat .n")[i];
+				if (n) {
+					n.dataset.to = String(s.to);
+					n.dataset.suf = s.suf;
+				}
+			});
+
+			// copy
+			const hint = document.getElementById("hint");
+			const a11ySay = (m) => {
+				const el = document.getElementById("a11yStatus");
+				if (el) el.textContent = m;
+			};
+			const copyBtn = document.getElementById("copy");
+			copyBtn.addEventListener("click", async () => {
+				try {
+					await navigator.clipboard.writeText("{{installCmd}}");
+					hint.textContent = "Copied ✓";
+					copyBtn.classList.add("done");
+					a11ySay("{{installCmd}} copied to clipboard");
+					setTimeout(() => {
+						hint.textContent = "Copy command";
+						copyBtn.classList.remove("done");
+					}, 1500);
+				} catch (e) {
+					hint.textContent = "Press ⌘C";
+				}
+			});
+
+			// ── configurator: live status-line preview from the browser render bundle ──
+			// ANSI → HTML parser (256-colour SGR + resets + OSC-8 links, all stripped to spans)
+			// xterm-256 palette comes from data.js (generated by xterm-palette.ts) — single source, no re-impl here
+			const ANSI_PAL = D.palette || [];
+			const DEF = "#8b949e"; // fallback grey when an ANSI colour is absent
+			const ansiPal = (n) => ANSI_PAL[n] || DEF;
+
+			function ansiToHtml(input) {
+				const escc = (s) =>
+					s.replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" })[c]);
+				let fg = DEF,
+					out = "",
+					i = 0,
+					open = false;
+				const openSpan = () => {
+					if (open) out += "</span>";
+					out += `<span style="color:${fg}">`;
+					open = true;
+				};
+				while (i < input.length) {
+					const c = input[i];
+					if (c === "\x1b" && input[i + 1] === "[") {
+						let j = i + 2;
+						while (j < input.length && !/[A-Za-z]/.test(input[j])) j++;
+						if (input[j] === "m") {
+							const p = input.slice(i + 2, j);
+							if (p === "" || p === "0") fg = DEF;
+							else {
+								const t = p.split(";");
+								for (let k = 0; k < t.length; k++) {
+									if (t[k] === "0") fg = DEF;
+									else if (t[k] === "38" && t[k + 1] === "5") {
+										fg = ansiPal(+t[k + 2]);
+										k += 2;
+									}
+								}
+							}
+							openSpan();
+						}
+						i = j + 1;
+						continue;
+					}
+					if (c === "\x1b" && input[i + 1] === "]") {
+						let j = i + 2;
+						while (
+							j < input.length &&
+							input[j] !== "\x07" &&
+							!(input[j] === "\x1b" && input[j + 1] === "\\")
+						)
+							j++;
+						i = input[j] === "\x07" ? j + 1 : j + 2;
+						continue;
+					}
+					if (c === "\n") {
+						if (open) {
+							out += "</span>";
+							open = false;
+						}
+						out += "\n";
+						i++;
+						continue;
+					}
+					const cp = input.codePointAt(i);
+					const ch = String.fromCodePoint(cp);
+					if (!open) openSpan();
+					out += escc(ch);
+					i += ch.length;
+				}
+				if (open) out += "</span>";
+				return out;
+			}
+
+			// the engine's default-on widget set, generated from core (DEFAULT_CONFIG) into data.js
+			const CFG_DEFAULT_WIDGETS = D.defaults || [];
+			// pay-as-you-go is the one widget with no local source — its data comes only from the account
+			// usage lookup, so its card says so and selecting it opts the command into --usage-fetch on.
+			const CFG_WIDGET_HINT = {
+				pay_as_you_go: "(requires network fetch; no tokens are spent)",
+			};
+			// roster is the selected characters, in pick order. One = fixed mode (pinned); two or more =
+			// random mode (the engine rotates them). Always at least one entry.
+			const cfgState = {
+				roster: ["spiderman"],
+				theme: "character",
+				widgets: new Set(CFG_DEFAULT_WIDGETS),
+			};
+			const cfgCharsEl = document.getElementById("cfgChars");
+			const cfgThemesEl = document.getElementById("cfgThemes");
+			const cfgWidgetsEl = document.getElementById("cfgWidgets");
+			const cfgThemeSearch = document.getElementById("cfgThemeSearch");
+			const cfgWidgetSearch = document.getElementById("cfgWidgetSearch");
+			const cfgCharSearch = document.getElementById("cfgCharSearch");
+			const cfgScreen = document.getElementById("cfgScreen");
+			const cfgTerm = document.getElementById("cfgTerm");
+			const cfgCopy = document.getElementById("cfgCopy");
+			const cfgCopyTxt = cfgCopy.querySelector(".cfg-copy-txt");
+			const cfgSummary = document.getElementById("cfgSummary");
+			const cfgCharByName = (n) => D.characters.find((c) => c.name === n);
+			const cfgThemeByName = (n) => (D.themes || []).find((t) => t.name === n);
+
+			// widget taxonomy, generated from core (tui WIDGET_GROUPS) into data.js; drives the widget subtabs
+			const WIDGET_GROUPS = Object.fromEntries(
+				(D.groups || []).map((g) => [g.name, g.widgets]),
+			);
+
+			// controls: real buttons, aria-pressed state, one per pack/theme/widget
+			cfgCharsEl.innerHTML = D.characters
+				.map(
+					(c) =>
+						`<button class="cfg-char" type="button" data-char="${esc(c.name)}" aria-pressed="${cfgState.roster.includes(c.name) ? "true" : "false"}" style="--c:${esc(c.color)}"><span class="em" aria-hidden="true">${esc(c.emblem)}</span><span class="cnm">${esc(c.display)}</span></button>`,
+				)
+				.join("");
+			// theme pills, tinted by the theme's own dominant colour and tagged by set. Match-Character
+			// (adaptive) leads the Character set as a gradient pill rather than a full-width banner.
+			const themeTint = (t) => (t.hues && t.hues[0]) || t.fg || "";
+			cfgThemesEl.innerHTML =
+				`<button class="cfg-theme cfg-theme-match" type="button" data-theme="character" data-set="character" aria-pressed="${cfgState.theme === "character" ? "true" : "false"}">✦ Match Character</button>` +
+				(D.themes || [])
+					.map(
+						(t) =>
+							`<button class="cfg-theme" type="button" data-theme="${esc(t.name)}" data-set="${t.character ? "character" : "generic"}" aria-pressed="${t.name === cfgState.theme ? "true" : "false"}" style="--c:${esc(themeTint(t))}">${esc(t.display)}</button>`,
+					)
+					.join("");
+			// widget toggles, emitted in TUI group order so each subtab shows a contiguous run
+			cfgWidgetsEl.innerHTML = Object.entries(WIDGET_GROUPS)
+				.flatMap(([g, ids]) =>
+					ids
+						.map((id) => (D.widgets || []).find((w) => w.id === id))
+						.filter(Boolean)
+						.map(
+							(w) =>
+								`<button class="cfg-widget" type="button" data-w="${esc(w.id)}" data-wgroup="${esc(g)}" aria-pressed="${cfgState.widgets.has(w.id) ? "true" : "false"}"><span class="sw" aria-hidden="true"></span>${w.icon ? `<span class="wico" aria-hidden="true">${esc(w.icon)}</span>` : ""}<span class="wname">${esc(w.label)}${CFG_WIDGET_HINT[w.id] ? `<small class="whint">${esc(CFG_WIDGET_HINT[w.id])}</small>` : ""}</span></button>`,
+						),
+				)
+				.join("");
+			document.getElementById("cfgTCountChar").textContent = (D.themes || []).filter(
+				(t) => t.character,
+			).length;
+			document.getElementById("cfgTCountGen").textContent = (D.themes || []).filter(
+				(t) => !t.character,
+			).length;
+
+			// active subtab per panel; pills/toggles are rendered once and shown by set/group + search
+			let cfgThemeSet = "character";
+			let cfgWidgetGroup = "Git";
+			const THEME_SETS = ["character", "generic"];
+			const WIDGET_GROUP_NAMES = Object.keys(WIDGET_GROUPS);
+
+			// point a panel's subtabs at the active value (data-set for themes, data-wgroup for widgets)
+			function cfgSyncSubtabs(attr, active) {
+				document
+					.querySelectorAll(`.cfg-subtab[data-${attr}]`)
+					.forEach((t) =>
+						t.setAttribute(
+							"aria-selected",
+							t.dataset[attr] === active ? "true" : "false",
+						),
+					);
+			}
+
+			// search spans every subtab: if the active set/group has no hit, jump to the first one that does
+			function cfgThemeFilter() {
+				const q = cfgThemeSearch.value.trim().toLowerCase();
+				const pills = [...cfgThemesEl.querySelectorAll(".cfg-theme")];
+				const hit = (el) =>
+					!q ||
+					el.dataset.theme.toLowerCase().includes(q) ||
+					el.textContent.toLowerCase().includes(q);
+				if (q && !pills.some((el) => el.dataset.set === cfgThemeSet && hit(el))) {
+					const target = THEME_SETS.find((s) =>
+						pills.some((el) => el.dataset.set === s && hit(el)),
+					);
+					if (target) {
+						cfgThemeSet = target;
+						cfgSyncSubtabs("set", cfgThemeSet);
+					}
+				}
+				pills.forEach((el) =>
+					el.classList.toggle("hidden", !(el.dataset.set === cfgThemeSet && hit(el))),
+				);
+			}
+
+			function cfgWidgetFilter() {
+				const q = cfgWidgetSearch.value.trim().toLowerCase();
+				const items = [...cfgWidgetsEl.querySelectorAll(".cfg-widget")];
+				const hit = (el) =>
+					!q ||
+					el.dataset.w.toLowerCase().includes(q) ||
+					el.textContent.toLowerCase().includes(q);
+				if (q && !items.some((el) => el.dataset.wgroup === cfgWidgetGroup && hit(el))) {
+					const target = WIDGET_GROUP_NAMES.find((g) =>
+						items.some((el) => el.dataset.wgroup === g && hit(el)),
+					);
+					if (target) {
+						cfgWidgetGroup = target;
+						cfgSyncSubtabs("wgroup", cfgWidgetGroup);
+					}
+				}
+				items.forEach((el) =>
+					el.classList.toggle(
+						"hidden",
+						!(el.dataset.wgroup === cfgWidgetGroup && hit(el)),
+					),
+				);
+			}
+
+			cfgThemeFilter();
+			cfgWidgetFilter();
+
+			// the generated install command (plain text — the copy button hands it over; users paste, not read)
+			function cfgCommandText() {
+				const ws = [...cfgState.widgets];
+				const r = cfgState.roster;
+				const charPart =
+					r.length > 1 ? `--mode random --roster ${r.join(",")}` : `--character ${r[0]}`;
+				// The pay-as-you-go widget is the one field with no local source: its data comes only from
+				// the account-usage lookup, so selecting it opts the command into usage_fetch (off otherwise).
+				const usagePart = cfgState.widgets.has("pay_as_you_go") ? " --usage-fetch on" : "";
+				return (
+					`{{installCmd}} setup ${charPart} --theme ${cfgState.theme}` +
+					(ws.length ? ` --widgets ${ws.join(",")}` : "") +
+					usagePart
+				);
+			}
+
+			function cfgUpdateMeta() {
+				const r = cfgState.roster;
+				const random = r.length > 1;
+				const primary = cfgCharByName(r[0]);
+				const themeLabel =
+					cfgState.theme === "character" ?
+						"its own theme"
+					:	`the ${cfgState.theme} theme`;
+				cfgTerm.setAttribute(
+					"aria-label",
+					random ?
+						`Live status line preview: a random roster of ${r.length} characters in ${themeLabel}.`
+					:	`Live status line preview: ${primary ? primary.display : r[0]} in ${themeLabel}.`,
+				);
+				// status strip: the current build, │-delimited like the product
+				const themeDisp =
+					cfgState.theme === "character" ?
+						"Match Character"
+					:	(cfgThemeByName(cfgState.theme)?.display ?? cfgState.theme);
+				const charVal =
+					random ?
+						`🎲 Random · ${r.length} characters`
+					:	`${esc(primary ? primary.emblem : "•")} ${esc(primary ? primary.display : r[0])}`;
+				const n = cfgState.widgets.size;
+				cfgSummary.innerHTML =
+					`<span class="k">Character:</span> <span class="val">${charVal}</span> ` +
+					`<span class="sep">│</span> <span class="k">Theme:</span> <span class="val">${esc(themeDisp)}</span> ` +
+					`<span class="sep">│</span> <span class="k">Widgets:</span> <span class="val">${n}</span>`;
+			}
+
+			// fit the render to the preview pane: measure the mono char advance once, then pick a
+			// column count that fills the visible width, floored at 80 so the character figure always
+			// renders. Re-measured on resize. Caps at 200 so a wide pane never overflows.
+			let cfgCharW = 0;
+
+			function cfgCols() {
+				if (!cfgCharW) {
+					const probe = document.createElement("span");
+					probe.style.cssText =
+						"position:absolute;visibility:hidden;white-space:pre;font-family:var(--mono);font-size:12.5px";
+					probe.textContent = "0".repeat(50);
+					cfgScreen.appendChild(probe);
+					cfgCharW = probe.getBoundingClientRect().width / 50 || 7.5;
+					probe.remove();
+				}
+				const cs = getComputedStyle(cfgScreen);
+				const avail =
+					cfgScreen.clientWidth -
+					parseFloat(cs.paddingLeft) -
+					parseFloat(cs.paddingRight);
+				// floor at 80 (FIGURE_COLS 25 + GAP 2 + MIN_RIGHT_WIDTH 53) so the character figure always
+				// renders — even on a phone, where the pane is narrower than 80 cols and .cfg-screen
+				// (white-space: pre; overflow-x: auto) scrolls horizontally instead of dropping the figure.
+				return Math.max(80, Math.min(200, Math.floor(avail / cfgCharW)));
+			}
+
+			function cfgPaint() {
+				if (!window.CCSKRender) return;
+				const r = cfgState.roster;
+				let ansi;
+				try {
+					ansi = window.CCSKRender.renderStatusline({
+						character: r[0],
+						mode: r.length > 1 ? "random" : "fixed",
+						roster: r,
+						theme: cfgState.theme,
+						widgets: [...cfgState.widgets],
+						columns: cfgCols(),
+					});
+				} catch (e) {
+					return;
+				}
+				cfgScreen.innerHTML = ansiToHtml(ansi);
+			}
+
+			function renderPreview() {
+				cfgUpdateMeta();
+				if (!window.CCSKRender) return;
+				if (reduce) {
+					cfgPaint();
+					return;
+				}
+				cfgScreen.style.transition = "opacity 120ms ease-out";
+				cfgScreen.style.opacity = "0";
+				setTimeout(() => {
+					cfgPaint();
+					cfgScreen.style.opacity = "1";
+				}, 120);
+			}
+
+			cfgUpdateMeta(); // command + label are correct before the render bundle loads
+
+			// tabs: show one control panel at a time (character / theme / widgets)
+			const cfgTabs = [...document.querySelectorAll(".cfg-tab")];
+			const cfgPanels = [...document.querySelectorAll(".cfg-panel")];
+
+			function cfgSelectTab(name) {
+				cfgTabs.forEach((t) =>
+					t.setAttribute("aria-selected", t.dataset.tab === name ? "true" : "false"),
+				);
+				cfgPanels.forEach((p) => (p.hidden = p.dataset.panel !== name));
+			}
+
+			cfgTabs.forEach((t) => t.addEventListener("click", () => cfgSelectTab(t.dataset.tab)));
+
+			let cfgResizeT;
+			addEventListener("resize", () => {
+				clearTimeout(cfgResizeT);
+				cfgResizeT = setTimeout(() => {
+					if (window.CCSKRender) cfgPaint();
+				}, 150);
+			});
+
+			function cfgSyncCharPressed() {
+				cfgCharsEl.querySelectorAll(".cfg-char").forEach((el) => {
+					el.setAttribute(
+						"aria-pressed",
+						cfgState.roster.includes(el.dataset.char) ? "true" : "false",
+					);
+				});
+			}
+
+			// panel tap: toggle a character in/out of the roster (multi-select). Never empty the roster —
+			// tapping the last remaining pick is a no-op. One = fixed, two or more = random mode.
+			function cfgToggleChar(name) {
+				const r = cfgState.roster;
+				const i = r.indexOf(name);
+				if (i >= 0) {
+					if (r.length > 1) r.splice(i, 1);
+				} else {
+					r.push(name);
+				}
+				cfgSyncCharPressed();
+				renderPreview();
+			}
+
+			// wall/deep-link: pin exactly this one character (replaces the roster), i.e. fixed mode.
+			function cfgSetChar(name) {
+				cfgState.roster = [name];
+				cfgSyncCharPressed();
+				renderPreview();
+			}
+
+			cfgCharsEl.addEventListener("click", (e) => {
+				const b = e.target.closest(".cfg-char");
+				if (b) cfgToggleChar(b.dataset.char);
+			});
+			cfgCharSearch.addEventListener("input", () => {
+				const q = cfgCharSearch.value.trim().toLowerCase();
+				cfgCharsEl.querySelectorAll(".cfg-char").forEach((el) => {
+					const match =
+						!q ||
+						el.dataset.char.toLowerCase().includes(q) ||
+						el.textContent.toLowerCase().includes(q);
+					el.classList.toggle("hidden", !match);
+				});
+			});
+
+			// theme selection: one pressed pill (Match-Character leads the Character set)
+			function cfgSelectTheme(name) {
+				cfgState.theme = name;
+				cfgThemesEl.querySelectorAll(".cfg-theme").forEach((el) => {
+					el.setAttribute("aria-pressed", el.dataset.theme === name ? "true" : "false");
+				});
+				renderPreview();
+			}
+
+			cfgThemesEl.addEventListener("click", (e) => {
+				const b = e.target.closest(".cfg-theme");
+				if (b) cfgSelectTheme(b.dataset.theme);
+			});
+			// theme subtabs (Character / Generic): a manual pick clears the search so it stays put
+			document.querySelectorAll(".cfg-subtab[data-set]").forEach((tab) => {
+				tab.addEventListener("click", () => {
+					cfgThemeSearch.value = "";
+					cfgThemeSet = tab.dataset.set;
+					cfgSyncSubtabs("set", cfgThemeSet);
+					cfgThemeFilter();
+				});
+			});
+			cfgThemeSearch.addEventListener("input", cfgThemeFilter);
+			cfgWidgetsEl.addEventListener("click", (e) => {
+				const b = e.target.closest(".cfg-widget");
+				if (!b) return;
+				const id = b.dataset.w;
+				const on = !cfgState.widgets.has(id);
+				if (on) cfgState.widgets.add(id);
+				else cfgState.widgets.delete(id);
+				b.setAttribute("aria-pressed", on ? "true" : "false");
+				renderPreview();
+			});
+			// widget subtabs (Git / Model / … same groups as the TUI): a manual pick clears the search
+			document.querySelectorAll(".cfg-subtab[data-wgroup]").forEach((tab) => {
+				tab.addEventListener("click", () => {
+					cfgWidgetSearch.value = "";
+					cfgWidgetGroup = tab.dataset.wgroup;
+					cfgSyncSubtabs("wgroup", cfgWidgetGroup);
+					cfgWidgetFilter();
+				});
+			});
+			cfgWidgetSearch.addEventListener("input", cfgWidgetFilter);
+			cfgCopy.addEventListener("click", async () => {
+				try {
+					await navigator.clipboard.writeText(cfgCommandText());
+					cfgCopyTxt.textContent = "Copied to clipboard ✓";
+					a11ySay("Setup command copied to clipboard");
+					cfgCopy.classList.add("done");
+					setTimeout(() => {
+						cfgCopyTxt.textContent = "Copy command to install";
+						cfgCopy.classList.remove("done");
+					}, 1500);
+				} catch (e) {
+					cfgCopyTxt.textContent = "Press ⌘C to copy";
+				}
+			});
+
+			// lazy-load the 834KB render bundle only when the configurator nears the viewport
+			(function cfgLazy() {
+				const section = document.getElementById("build");
+				if (!section) return;
+				let started = false;
+				const boot = () => {
+					if (started) return;
+					started = true;
+					if (window.CCSKRender) {
+						renderPreview();
+						return;
+					}
+					const s = document.createElement("script");
+					s.src = "render-web.js";
+					s.onload = () => renderPreview();
+					s.onerror = () => {
+						cfgScreen.textContent = "preview unavailable";
+					};
+					document.head.appendChild(s);
+				};
+				if ("IntersectionObserver" in window) {
+					const io = new IntersectionObserver(
+						(es, obs) =>
+							es.forEach((e) => {
+								if (e.isIntersecting) {
+									obs.disconnect();
+									boot();
+								}
+							}),
+						{ rootMargin: "600px" },
+					);
+					io.observe(section);
+				} else {
+					boot();
+				}
+			})();
+
+			// wall card → load that character into the configurator and scroll to it
+			document.querySelectorAll("#wall .pk").forEach((card) => {
+				card.addEventListener("click", (e) => {
+					e.preventDefault();
+					cfgSetChar(card.dataset.char);
+					document.getElementById("build").scrollIntoView({
+						behavior: motionOK ? "smooth" : "auto",
+						block: "start",
+					});
+				});
+			});
+
+			// ── themes section: each card is a status line painted in the theme (name only), with
+			// Character / Generic subtabs and search; tapping one loads it into the build above ──
+			(function themesSection() {
+				const themeGrid = document.getElementById("themeGrid");
+				if (!themeGrid) return;
+				const themeSearch = document.getElementById("themeSearch");
+				const themeEmpty = document.getElementById("themeEmpty");
+				const themeCard = (t) => {
+					const hue = (i) => t.hues[i] ?? t.hues[t.hues.length - 1] ?? t.fg;
+					const sep = `<span class="sep" style="color:${esc(t.sep)}">│</span>`;
+					const row1 =
+						`<span style="color:${esc(t.fg)}">~/dev</span>` +
+						sep +
+						`<span style="color:${esc(hue(0))}">◆ Opus</span>` +
+						sep +
+						`<span style="color:${esc(hue(1))}">🌿 main</span>`;
+					const row2 =
+						`<span style="color:${esc(t.warn)}">43%</span>` +
+						sep +
+						`<span style="color:${esc(t.ok)}">$1.58</span>` +
+						sep +
+						`<span style="color:${esc(t.crit)}">86% ⚠</span>`;
+					return `<div class="tcard" role="button" tabindex="0" data-name="${esc(t.name)}" data-display="${esc(t.display.toLowerCase())}" data-set="${t.character ? "character" : "generic"}" style="--accent:${esc(hue(0))}"><div class="tscreen"><div class="row">${row1}</div><div class="row">${row2}</div></div><div class="tfoot"><span class="swatch" style="background:${esc(hue(0))}"></span><span class="nm">${esc(t.display)}</span></div></div>`;
+				};
+				themeGrid.innerHTML = (D.themes || []).map(themeCard).join("");
+				document.getElementById("tCountChar").textContent = (D.themes || []).filter(
+					(t) => t.character,
+				).length;
+				document.getElementById("tCountGen").textContent = (D.themes || []).filter(
+					(t) => !t.character,
+				).length;
+
+				let themeSectionSet = "character";
+				const syncSectionSubtabs = () =>
+					document
+						.querySelectorAll(".subtab[data-set]")
+						.forEach((t) =>
+							t.setAttribute(
+								"aria-selected",
+								t.dataset.set === themeSectionSet ? "true" : "false",
+							),
+						);
+
+				function themeSectionFilter() {
+					const q = themeSearch.value.trim().toLowerCase();
+					const cards = [...themeGrid.querySelectorAll(".tcard")];
+					const hit = (el) =>
+						!q || el.dataset.display.includes(q) || el.dataset.name.includes(q);
+					// search spans both sets: jump to the set that holds the results
+					if (q && !cards.some((el) => el.dataset.set === themeSectionSet && hit(el))) {
+						const target = ["character", "generic"].find((s) =>
+							cards.some((el) => el.dataset.set === s && hit(el)),
+						);
+						if (target) {
+							themeSectionSet = target;
+							syncSectionSubtabs();
+						}
+					}
+					let shown = 0;
+					cards.forEach((el) => {
+						const show = el.dataset.set === themeSectionSet && hit(el);
+						el.classList.toggle("hidden", !show);
+						if (show) shown++;
+					});
+					themeEmpty.style.display = shown === 0 ? "block" : "none";
+				}
+
+				document.querySelectorAll(".subtab[data-set]").forEach((tab) => {
+					tab.addEventListener("click", () => {
+						themeSearch.value = "";
+						themeSectionSet = tab.dataset.set;
+						syncSectionSubtabs();
+						themeSectionFilter();
+					});
+				});
+				themeSearch.addEventListener("input", themeSectionFilter);
+				themeGrid.addEventListener("click", (e) => {
+					const card = e.target.closest(".tcard");
+					if (!card) return;
+					cfgSelectTheme(card.dataset.name);
+					cfgSelectTab("theme");
+					cfgThemeSet = card.dataset.set;
+					document
+						.querySelectorAll(".cfg-subtab[data-set]")
+						.forEach((t) =>
+							t.setAttribute(
+								"aria-selected",
+								t.dataset.set === cfgThemeSet ? "true" : "false",
+							),
+						);
+					cfgThemeFilter();
+					document
+						.getElementById("build")
+						.scrollIntoView({ behavior: motionOK ? "smooth" : "auto", block: "start" });
+				});
+				themeSectionFilter();
+			})();
+
+			// characters section: search filters the wall
+			(function charSection() {
+				const el = document.getElementById("charSearch");
+				const wall = document.getElementById("wall");
+				if (!el || !wall) return;
+				el.addEventListener("input", () => {
+					const q = el.value.trim().toLowerCase();
+					wall.querySelectorAll(".pk").forEach((card) => {
+						const match =
+							!q ||
+							card.dataset.char.toLowerCase().includes(q) ||
+							card.textContent.toLowerCase().includes(q);
+						card.classList.toggle("hidden", !match);
+					});
+				});
+			})();
+
+			// widgets section: search filters the grid; tapping a card enables that field in the build
+			(function widgetSection() {
+				const el = document.getElementById("widgetSecSearch");
+				const grid = document.getElementById("widgetGrid");
+				const empty = document.getElementById("widgetSecEmpty");
+				if (!el || !grid) return;
+				el.addEventListener("input", () => {
+					const q = el.value.trim().toLowerCase();
+					let shown = 0;
+					grid.querySelectorAll(".wcard").forEach((card) => {
+						const match = !q || card.dataset.name.includes(q);
+						card.classList.toggle("hidden", !match);
+						if (match) shown++;
+					});
+					if (empty) empty.style.display = shown === 0 ? "block" : "none";
+				});
+				const groupOf = (id) =>
+					Object.entries(WIDGET_GROUPS).find(([, ids]) => ids.includes(id))?.[0];
+				grid.addEventListener("click", (e) => {
+					const card = e.target.closest(".wcard");
+					if (!card) return;
+					const id = card.dataset.id;
+					cfgState.widgets.add(id);
+					const toggle = cfgWidgetsEl.querySelector(`.cfg-widget[data-w="${id}"]`);
+					if (toggle) toggle.setAttribute("aria-pressed", "true");
+					cfgSelectTab("widgets");
+					const grp = groupOf(id);
+					if (grp) {
+						cfgWidgetSearch.value = "";
+						cfgWidgetGroup = grp;
+						cfgSyncSubtabs("wgroup", cfgWidgetGroup);
+						cfgWidgetFilter();
+					}
+					renderPreview();
+					document
+						.getElementById("build")
+						.scrollIntoView({ behavior: motionOK ? "smooth" : "auto", block: "start" });
+				});
+			})();
+
+			document.addEventListener("keydown", (e) => {
+				if (e.key !== "Enter" && e.key !== " ") return;
+				const card = e.target.closest && e.target.closest(".tcard, .wcard");
+				if (card) {
+					e.preventDefault();
+					card.click();
+				}
+			});
+
+			// FAQ: wrap each answer so the accordion can animate its height (grid-rows 0fr → 1fr in CSS).
+			// Native <details> keeps the toggle accessible and keyboard-driven; JS only adds the wrapper.
+			document.querySelectorAll(".faq details > p").forEach((p) => {
+				const a = document.createElement("div");
+				a.className = "faq-a";
+				const inner = document.createElement("div");
+				inner.className = "faq-a-in";
+				p.parentNode.insertBefore(a, p);
+				inner.appendChild(p);
+				a.appendChild(inner);
+			});
+
+			const navToggleEl = document.getElementById("navToggle");
+			const navEl = document.getElementById("nav");
+			if (navToggleEl && navEl) {
+				navToggleEl.addEventListener("click", () => {
+					const open = navEl.classList.toggle("menu-open");
+					navToggleEl.setAttribute("aria-expanded", open ? "true" : "false");
+					navToggleEl.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+					// move focus into the revealed menu so keyboard users don't have to Shift+Tab back to it
+					if (open) navEl.querySelector(".navmenu .navlink")?.focus();
+				});
+				navEl.querySelectorAll(".navmenu .navlink").forEach((a) =>
+					a.addEventListener("click", () => {
+						navEl.classList.remove("menu-open");
+						navToggleEl.setAttribute("aria-expanded", "false");
+					}),
+				);
+			}
+
+			// ── effects (1 shimmer via CSS; 2 typewriter, 4 particles, 5 parallax, 6 tilt here) ──
+			const motionOK = !matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+			// 02 typewriter: type a command out char by char
+			const typeOut = (el, delay) => {
+				if (!el || !motionOK) return;
+				const s = el.textContent;
+				el.textContent = "";
+				let i = 0;
+				setTimeout(() => {
+					const t = setInterval(() => {
+						el.textContent = s.slice(0, ++i);
+						if (i >= s.length) clearInterval(t);
+					}, 90);
+				}, delay);
+			};
+			typeOut(document.getElementById("twhero"), 650); // hero command types on load
+
+			if (motionOK) {
+				// 04 particle field behind the hero
+				(() => {
+					const c = document.getElementById("particles");
+					if (!c) return;
+					const x = c.getContext("2d");
+					const dpr = Math.min(devicePixelRatio || 1, 2);
+					let w, h, pts;
+					const R = () => {
+						w = c.width = c.offsetWidth * dpr;
+						h = c.height = c.offsetHeight * dpr;
+						pts = Array.from(
+							{ length: Math.min(72, Math.round(c.offsetWidth / 16)) },
+							() => ({
+								x: Math.random() * w,
+								y: Math.random() * h,
+								vx: (Math.random() - 0.5) * 0.25 * dpr,
+								vy: (Math.random() - 0.5) * 0.25 * dpr,
+							}),
+						);
+					};
+					R();
+					addEventListener("resize", R);
+					const m = 90 * dpr;
+					(function loop() {
+						x.clearRect(0, 0, w, h);
+						for (const p of pts) {
+							p.x = (p.x + p.vx + w) % w;
+							p.y = (p.y + p.vy + h) % h;
+							x.fillStyle = "rgba(95,175,255,0.7)";
+							x.beginPath();
+							x.arc(p.x, p.y, 1.5 * dpr, 0, 7);
+							x.fill();
+						}
+						for (let a = 0; a < pts.length; a++)
+							for (let b = a + 1; b < pts.length; b++) {
+								const dx = pts[a].x - pts[b].x,
+									dy = pts[a].y - pts[b].y,
+									d = Math.hypot(dx, dy);
+								if (d < m) {
+									x.strokeStyle = `rgba(100,215,96,${0.14 * (1 - d / m)})`;
+									x.beginPath();
+									x.moveTo(pts[a].x, pts[a].y);
+									x.lineTo(pts[b].x, pts[b].y);
+									x.stroke();
+								}
+							}
+						requestAnimationFrame(loop);
+					})();
+				})();
+
+				// 05 mouse parallax: only the background glow + particles drift (logo stays put, no jump)
+				(() => {
+					const hero = document.querySelector(".hero"),
+						glow = document.querySelector(".glow"),
+						particles = document.getElementById("particles");
+					if (!hero) return;
+					hero.addEventListener("mousemove", (e) => {
+						const r = hero.getBoundingClientRect(),
+							mx = (e.clientX - r.left) / r.width - 0.5,
+							my = (e.clientY - r.top) / r.height - 0.5;
+						if (glow) glow.style.transform = `translate(${mx * 30}px, ${my * 20}px)`;
+						if (particles)
+							particles.style.transform = `translate(${mx * 12}px, ${my * 8}px)`;
+					});
+					hero.addEventListener("mouseleave", () => {
+						if (glow) glow.style.transform = "";
+						if (particles) particles.style.transform = "";
+					});
+				})();
+
+				// 06 3D tilt + sheen — instant follow, smooth return, no vertical shift. Same effect on the
+				// character wall, the theme cards, and the widget cards (each tints its own --c/--accent).
+				const addTilt = (sel, deg) =>
+					document.querySelectorAll(sel).forEach((card) => {
+						card.addEventListener("mousemove", (e) => {
+							const r = card.getBoundingClientRect(),
+								px = (e.clientX - r.left) / r.width,
+								py = (e.clientY - r.top) / r.height;
+							card.style.transition = "none";
+							card.style.transform = `perspective(760px) rotateY(${(px - 0.5) * deg}deg) rotateX(${(0.5 - py) * deg}deg)`;
+							card.style.setProperty("--mx", px * 100 + "%");
+							card.style.setProperty("--my", py * 100 + "%");
+						});
+						card.addEventListener("mouseleave", () => {
+							card.style.transition = "transform 0.4s ease";
+							card.style.transform = "";
+						});
+					});
+				addTilt("#wall .pk", 9);
+				addTilt("#themeGrid .tcard", 7);
+				addTilt("#widgetGrid .wcard", 7);
+			}
+
+			// nav shadow on scroll
+			const nav = document.getElementById("nav");
+			const onScroll = () => nav.classList.toggle("scrolled", scrollY > 8);
+			addEventListener("scroll", onScroll, { passive: true });
+			onScroll();
+
+			// animations
+			const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+			if (!reduce && window.gsap) {
+				gsap.registerPlugin(ScrollTrigger);
+				// hero elements start hidden via .reveal (opacity:0, y:24); animate TO visible.
+				gsap.timeline({ defaults: { ease: "power3.out", opacity: 1, y: 0 } })
+					.to(".hero-logo", { duration: 0.85 })
+					.to(".sub", { duration: 0.7 }, "-=0.45")
+					.to(".hero-reel", { duration: 0.8 }, "-=0.5")
+					.to(".scrollcue", { duration: 0.6 }, "-=0.3");
+				gsap.utils.toArray(".reveal").forEach((el) => {
+					if (el.closest(".hero")) return;
+					gsap.to(el, {
+						opacity: 1,
+						y: 0,
+						duration: 0.75,
+						ease: "power2.out",
+						scrollTrigger: { trigger: el, start: "top 88%" },
+					});
+				});
+				// opacity-only (no transform) so the reveal never fights the hover tilt
+				gsap.from("#wall .pk", {
+					opacity: 0,
+					duration: 0.5,
+					stagger: 0.028,
+					ease: "power2.out",
+					clearProps: "opacity",
+					scrollTrigger: { trigger: "#wall", start: "top 82%" },
+				});
+				gsap.utils.toArray(".stat .n").forEach((el) => {
+					const to = +el.dataset.to,
+						suf = el.dataset.suf || "",
+						o = { v: 0 };
+					gsap.to(o, {
+						v: to,
+						duration: 1.3,
+						ease: "power1.out",
+						scrollTrigger: { trigger: el, start: "top 92%" },
+						onUpdate: () => (el.textContent = Math.round(o.v) + suf),
+					});
+				});
+			} else {
+				document.querySelectorAll(".reveal").forEach((el) => {
+					el.style.opacity = 1;
+					el.style.transform = "none";
+				});
+				document.querySelectorAll(".stat .n").forEach((el) => {
+					el.textContent = el.dataset.to + (el.dataset.suf || "");
+				});
+				// reduced motion: don't auto-play the reel, leave its poster frame
+				const reel = document.getElementById("reelVideo");
+				if (reel) {
+					reel.removeAttribute("autoplay");
+					reel.pause();
+				}
+			}
+		</script>
+		<!-- Cloudflare Web Analytics: privacy-first RUM, no cookies -->
+		<script
+			defer
+			src="https://static.cloudflareinsights.com/beacon.min.js"
+			data-cf-beacon='{"token": "e834d2ed234e491aa70615b7c0bf9e03"}'></script>
+	</body>
+</html>

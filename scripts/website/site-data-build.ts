@@ -2,9 +2,7 @@
 // The single source of truth for the landing page's data payload. buildSiteData() derives the character wall,
 // the per-character theme cards, the theme catalog, the widget cards, and every count straight from the packs
 // (pack.json) plus the engine's exported constants (DEFAULT_ICONS / DEFAULT_CONFIG / THEMES / PACKS /
-// WIDGET_GROUPS). Both `site:data` (which writes website/data.js) and `site:drift` (which recomputes and
-// deep-compares the committed data.js against this) call it, so the guard checks exactly what the writer emits —
-// a colour, label, sample, emblem, or ordering change can't slip past drift the way a bare count/name check would.
+// WIDGET_GROUPS). `site:data` calls it to write website/data.js.
 // Build/CI-time only (Bun APIs are fine here).
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -52,7 +50,7 @@ interface PackJson {
 // DEFAULT_ICONS (source of truth), so the site never shows an icon the real status line wouldn't; several
 // fields (model, git_changes, …) intentionally have no icon and come back "" so the site omits the glyph.
 // Labels/samples are site presentation copy (the engine has no per-widget sample value to reuse); a new widget
-// with no entry here gets a titleCase label and an empty sample, which site:drift flags rather than shipping.
+// with no entry here gets a titleCase label and an empty sample, which the website test suite flags rather than shipping.
 const WIDGET_META: Record<string, { label: string; sample: string }> = {
 	dir: { label: "Directory", sample: "~/dev/ccsidekick" },
 	added_dirs: { label: "Added Dirs", sample: "+2 dirs" },
@@ -113,7 +111,7 @@ const SIG: Record<string, "ok" | "warn" | "crit" | "acc"> = {
 };
 
 // The character wall's display order (and the character-theme cards'). This is the authoritative roster order:
-// EVERY pack must be listed here — a pack missing from ORDER fails site:drift (add the new pack to this list).
+// EVERY pack must be listed here — a pack missing from ORDER is caught by the website test suite (add the new pack to this list).
 export const ORDER = [
 	"spiderman",
 	"batman",

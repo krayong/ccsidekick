@@ -69,8 +69,14 @@ jobs:
       # A tag pushed with GITHUB_TOKEN can't trigger the Deploy workflow — GitHub suppresses workflow runs
       # for token-generated push events. workflow_dispatch is exempt from that suppression, so dispatch Deploy
       # explicitly once a publish actually happened (skip the version-PR-only run).
-      - name: Deploy the site after a publish
-        if: steps.changesets.outputs.published == 'true'
+      - name: Deploy the site after a core publish
+        # A new pack is a runtime dependency of core with updateInternalDependencies: "patch"
+        # (.changeset/config.json), so adding a pack patch-bumps and republishes ccsidekick — this gate
+        # therefore still redeploys on a new character. If packs ever move to devDependencies this stops
+        # firing; keep packs in core's "dependencies".
+        if: >-
+          steps.changesets.outputs.published == 'true' &&
+          contains(fromJSON(steps.changesets.outputs.publishedPackages).*.name, 'ccsidekick')
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow run deploy.yml

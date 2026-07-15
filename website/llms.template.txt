@@ -1,0 +1,44 @@
+# ccsidekick
+
+> A Claude Code status line with a reactive ASCII character and a full widget layer. Zero token spend, no Claude API, local-first, MIT. Cost, git, and usage read straight from your Claude Code transcripts.
+
+ccsidekick replaces Claude Code's status line with a character (Batman, Spider-Man, Yoda, and {{charactersMore}} more) that reacts to your session and warms to you over time, next to a real status line of {{counts.widgets}} toggleable widgets across {{counts.themes}}+ themes. It never calls the Claude API and spends zero tokens; all state lives on disk under `~/.claude/`.
+
+## Install
+
+- `{{installCmd}}` runs the guided setup wizard (character, theme, comments) and wires it into Claude Code's settings.
+- `{{installCmd}} setup --character spiderman --theme houston --mode fixed` configures and wires everything from flags, with no TUI (good for scripts and agents).
+
+## Key facts
+
+- {{counts.characters}} bundled characters, {{counts.themes}}+ themes, {{counts.widgets}} widgets, all shipped with no install/browse/download step.
+- Zero token spend, no Claude API, and no network on the render path (local-first; state on disk under `~/.claude/`).
+- Cost is transcript-derived in-house and deduped globally by `(message.id, requestId)`, which fixes Claude Code's resumed-session over-count (its own `cost.total_cost_usd` double-counts replayed context).
+- Character packs are pure data (`pack.json`), never executed code; each pack ships its own theme.
+- Two binaries: `ccsidekick` (setup/TUI) and `ccsidekick-render` (the hot render path, which pulls in no React/Ink).
+- Requires {{nodeReq}} (the render path runs under plain Node; Bun is the dev toolchain only); MIT licensed.
+
+## What makes it different
+
+- A reactive, in-character figure that comments on session events and warms over time. No other Claude Code status line has this.
+- Correct cost: the global `(message.id, requestId)` dedup fixes the over-count Claude Code reports on resumed sessions.
+- Breadth in the box: {{counts.characters}} characters, {{counts.themes}}+ themes, {{counts.widgets}} widgets, no download step.
+
+## FAQ
+
+- {{faq.0.q}} {{faq.0.a}}
+- {{faq.1.q}} {{faq.1.a}}
+- {{faq.2.q}} {{faq.2.a}}
+- {{faq.3.q}} {{faq.3.a}}
+- {{faq.4.q}} {{faq.4.a}}
+- {{faq.5.q}} {{faq.5.a}}
+- {{faq.6.q}} {{faq.6.a}}
+- {{faq.7.q}} {{faq.7.a}}
+
+## Links
+
+- Website: {{baseUrl}}
+- Repository: {{repoUrl}}
+- npm: {{npmUrl}}
+- README: {{repoUrl}}#readme
+- License: {{repoUrl}}/blob/main/LICENSE

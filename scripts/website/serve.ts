@@ -3,7 +3,15 @@
 // a small Bun static server, no external `serve` package, no python. Pairs with site:build.
 //
 //   bun run site:serve      # -> http://localhost:8129/
+import { spawnSync } from "node:child_process";
 import { join, normalize } from "node:path";
+
+// The served files are generated (data.js, tokens.css, render-web.js, and the resolved templates), so
+// build before serving so a fresh checkout previews correctly.
+spawnSync("bun", ["run", "site:build"], {
+	cwd: join(import.meta.dir, "..", ".."),
+	stdio: "inherit",
+});
 
 const root = join(import.meta.dir, "..", "..", "website");
 const envPort = Number(process.env["PORT"]);
