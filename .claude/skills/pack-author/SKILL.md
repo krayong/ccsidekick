@@ -178,7 +178,7 @@ character emotes; it does not scold.
 The voice library is exactly **620 lines**, lint-enforced:
 
 | pool                                      | per cell | cells                 | lines |
-| ----------------------------------------- | -------- | --------------------- | ----- |
+|-------------------------------------------|----------|-----------------------|-------|
 | mood idle                                 | 10       | 5 tiers               | 50    |
 | mood busy / happy / struggling / recovery | 5        | 4 × 5 tiers           | 100   |
 | greeting                                  | 3        | 5 buckets × 5 tiers   | 75    |
@@ -317,8 +317,8 @@ Then regenerate the repo-wide assets. Both the reel and the landing page auto-di
   headline counts all derive from `pack.json` and the engine's exported constants, so the new pack's
   card, its own theme, and the bumped counts appear automatically. Its **position** on the wall is
   the one thing that is not auto-derived: it comes from the `ORDER` list in
-  `scripts/website/site-data-build.ts`, and `site:drift` fails until the new pack is added there (see
-  below).
+  `scripts/website/site-data-build.ts`, and `site:drift` fails until the new pack is added there (
+  see below).
 
 ```
 bun run build && bun run character:reel     # reel: needs ffmpeg + Chrome
@@ -326,20 +326,21 @@ bun run site:build                          # landing page: re-render every shot
 bun run readme:drift && bun run site:drift  # confirm the README and the website both match the packs
 ```
 
-`site:drift` is the website's counterpart to `readme:drift`: it recomputes `website/data.js` from the
+`site:drift` is the website's counterpart to `readme:drift`: it recomputes `website/data.js` from
+the
 packs/themes/widgets and deep-compares, failing on any drift (a changed colour, an added pack, a
 relabelled widget). Add the new pack to two ordered lists:
 
 - `ORDER` in `scripts/website/site-data-build.ts` — the authoritative character-wall order.
-  **`site:drift` fails until every pack is listed here**, so add the name wherever you want it on the
-  wall (not just the tail).
-- `CURATED=(…)` in `scripts/assets/character-reel.sh` — the reel order; add the name to lead the pack
-  earlier than the tail.
+  **`site:drift` fails until every pack is listed here**, so add the name wherever you want it on
+  the wall (not just the tail).
+- `CURATED=(…)` in `scripts/assets/character-reel.sh` — the reel order; add the name to lead the
+  pack earlier than the tail.
 
-Also add a `"<name> pack"` entry to `.github/labeler.yml`: every pack has its own PR label, and the CI
-labeler (which colours each pack label from its theme) reads this list. Commit the README and the
-refreshed source assets under `assets/` alongside the pack in step 7; `website/data.js` and the copied
-`website/` media are CI-built and gitignored, so they are not committed.
+Also add a `"<name> pack"` entry to `.github/labeler.yml`: every pack has its own PR label, and the
+CI labeler (which colours each pack label from its theme) reads this list. Commit the README and the
+refreshed source assets under `assets/` alongside the pack in step 7; `website/data.js` and the
+copied `website/` media are CI-built and gitignored, so they are not committed.
 
 **6. Add a changeset so the pack gets released.** Releases run
 on [Changesets](https://github.com/changesets/changesets):
@@ -379,7 +380,7 @@ you intend). A secret-scanning hook runs on every push.
 ## Quick reference
 
 | Command                                                                                    | Purpose                                                                                         |
-| ------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
+|--------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
 | `bun .claude/skills/pack-author/scripts/scaffold.ts <name> --display "<N>" --emblem "<g>"` | Create skeleton pack, register in `PACKS`, link as core runtime dependency (then `bun install`) |
 | `bun .claude/skills/pack-author/scripts/figure-options.ts <packDir> --candidates <json>`   | Render figure candidates → `.author/figures.html`                                               |
 | `bun .claude/skills/pack-author/scripts/figure-ingest.ts <packDir>`                        | Write `.author/figure.txt` into `pack.json` art; runs `--schema-only` lint                      |
