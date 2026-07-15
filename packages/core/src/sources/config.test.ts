@@ -3,6 +3,9 @@ import { expect, test } from "bun:test";
 import { loadConfig } from "./config";
 
 test("default config resolves theme.name = character (Match Character) and no per-surface overrides", () => {
+	const c0 = loadConfig("schema_version = 2\n", 'schema_version = "oops"\n');
+	expect(c0.schema_version).toBe(2); // wrong-typed project value falls back to the global, not the default
+
 	const c = loadConfig("", "");
 	expect(c.theme.name).toBe("character");
 	expect(c.theme.statusline).toBeUndefined();

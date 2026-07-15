@@ -1,7 +1,9 @@
 import {
 	COMEBACK_GAP_DAYS,
+	DAILY_WINDOW_DAYS,
 	RECENT_WINDOW_DAYS,
 	STREAK_GRACE_DAYS,
+	TIER_THRESHOLDS,
 	type Project,
 	type Tier,
 } from "../domain";
@@ -23,6 +25,7 @@ export interface Familiarity {
 
 /** One joined session record: a transcript record + its recorded character (default `"unknown"`) and project. */
 interface Joined {
+	readonly session: string;
 	readonly character: string;
 	readonly project: string;
 	readonly start: number;
@@ -96,6 +99,7 @@ function joinRecords(attribution: AttributionStore, cache: CostCache, tz: string
 	for (const [session, g] of groupBySession(cache)) {
 		const attr = attribution[session];
 		out.push({
+			session,
 			character: attr?.character ?? "unknown",
 			project: attr?.project ?? g.projectRaw,
 			start: g.start,
@@ -105,9 +109,6 @@ function joinRecords(attribution: AttributionStore, cache: CostCache, tz: string
 	}
 	return out;
 }
-
-/** Session-count boundaries between familiarity tiers; also the exact tier-up milestone counts. */
-export const TIER_THRESHOLDS = [3, 15, 50, 100] as const;
 
 function tierForCount(n: number): Tier {
 	const [t1, t2, t3, t4] = TIER_THRESHOLDS;
@@ -149,6 +150,10 @@ export function deriveFamiliarity(
 	cache: CostCache,
 	project: Project,
 	clock: Clock,
+	/** The current session id, excluded from the "days since last session" gap (its end is ~now, which would
+	 * otherwise zero out the gap and suppress the comeback signal). Defaults to none for callers that don't
+	 * track it (e.g. the analytics catalog). */
+	currentSession = "",
 ): Familiarity {
 	const tz = clock.timezone();
 	const records = joinRecords(attribution, cache, tz);
@@ -165,8 +170,11 @@ export function deriveFamiliarity(
 	let lastEnd = Number.NEGATIVE_INFINITY;
 	let workingSinceMs = Number.POSITIVE_INFINITY;
 	for (const r of mine) {
-		if (r.end > lastEnd) lastEnd = r.end;
 		if (r.start < workingSinceMs) workingSinceMs = r.start;
+		// The current session ends ~now; counting it as the "last session" zeroes the gap and hides comeback.
+		// Skip it so the gap measures to the previous session, regardless of when attribution was written.
+		if (r.session === currentSession) continue;
+		if (r.end > lastEnd) lastEnd = r.end;
 	}
 	const daysSinceLastSession =
 		Number.isFinite(lastEnd) ?
@@ -269,8 +277,6 @@ interface ModelCost {
 	readonly share: number;
 }
 
-const DAILY_WINDOW_DAYS = 60;
-
 /** Bucket records by day into a zero-filled trailing window ending on `today`, oldest first. */
 export function buildDaily(
 	records: readonly { readonly day: number; readonly cost: number }[],
@@ -330,12 +336,23 @@ function joinFull(
 	normalizeProject: (key: string) => string,
 ): FullRecord[] {
 	const tokenPriced = cache.aggregate.tokenPriced;
-	const out: FullRecord[] = [];
-	for (const [session, g] of groupBySession(cache)) {
+	const groups = [...groupBySession(cache)];
+	// Learn each repo's checkout-root → owner/repo name from attributed sessions: their attribution carries the
+	// `owner/repo` form while their cost record carries the filesystem path, so `normalizeProject(path)` (the
+	// `.git`-root walk) keys the map. Unattributed sessions of the same repo then merge under one key instead of
+	// splitting into an `owner/repo` bucket (attributed) and a `/abs/path` bucket (unattributed/legacy).
+	const rootToName = new Map<string, string>();
+	for (const [session, g] of groups) {
 		const attr = attribution[session];
+		if (attr !== undefined) rootToName.set(normalizeProject(g.projectRaw), attr.project);
+	}
+	const out: FullRecord[] = [];
+	for (const [session, g] of groups) {
+		const attr = attribution[session];
+		const root = normalizeProject(g.projectRaw);
 		out.push({
 			session,
-			project: normalizeProject(attr?.project ?? g.projectRaw),
+			project: attr?.project ?? rootToName.get(root) ?? root,
 			character: attr?.character ?? "unknown",
 			start: g.start,
 			end: g.end,

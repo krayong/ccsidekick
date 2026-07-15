@@ -14,8 +14,12 @@ import { type Config, atomicWrite } from "../sources";
 const MATCHER =
 	"Bash|Edit|Write|NotebookEdit|Read|Grep|Glob|WebFetch|WebSearch|Agent|TaskCreate|TaskUpdate|Task|Skill|TodoWrite";
 
-/** Tool-success, tool-failure, and batched-tool-call hook surfaces — all wired to the same classify command. */
-const HOOK_EVENTS = ["PostToolUse", "PostToolUseFailure", "PostToolBatch"] as const;
+/**
+ * The per-call hook surfaces the classify command is wired into: success and failure. `PostToolBatch` is
+ * deliberately excluded — it co-fires with these per-call hooks, so classifying it too would double-count
+ * every event.
+ */
+const HOOK_EVENTS = ["PostToolUse", "PostToolUseFailure"] as const;
 
 interface InstallSettingsOptions {
 	readonly settingsPath: string;

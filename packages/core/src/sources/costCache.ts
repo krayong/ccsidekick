@@ -41,6 +41,14 @@ export interface CostLine {
 export interface CostFileEntry {
 	readonly mtime: number;
 	readonly size: number;
+	/**
+	 * Byte offset of the end of the last complete (newline-terminated) line priced into this entry — the resume
+	 * point for an incremental tail-parse. Absent on entries written before tail-parse existed (they full-reparse
+	 * once). A trailing partial line is excluded, so `byteOffset ≤ size`.
+	 */
+	readonly byteOffset?: number;
+	/** FNV-1a hash of the file's first bytes; a mismatch on resume means the prefix was rewritten (compaction) ⇒ full reparse. */
+	readonly headHash?: string;
 	/** Per-file deduped total (the analytics-side subtotal); Project/Total are summed from `lines` globally. */
 	readonly total: number;
 	/** Every usage-bearing line, priced, for the global first-seen dedup at aggregation time. */
@@ -214,7 +222,19 @@ function coerceEntry(v: unknown): CostFileEntry | undefined {
 		Array.isArray(v["models"]) ?
 			v["models"].filter((x): x is string => typeof x === "string")
 		:	[];
-	return { mtime, size, total, lines, models, projectPath, record };
+	const byteOffset = asNumber(v["byteOffset"]);
+	const headHash = typeof v["headHash"] === "string" ? v["headHash"] : undefined;
+	return {
+		mtime,
+		size,
+		total,
+		lines,
+		models,
+		projectPath,
+		record,
+		...(byteOffset !== undefined ? { byteOffset } : {}),
+		...(headHash !== undefined ? { headHash } : {}),
+	};
 }
 
 function coerceByModel(v: unknown): Record<string, ModelSpend> {

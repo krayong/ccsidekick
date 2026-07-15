@@ -1,10 +1,20 @@
 import type { ContextInfo, QuotaInfo } from "../../derived";
 import {
 	BALANCE_LOW,
+	BIG_DIFF_LINES,
+	CACHE_RATIO_FLOOR,
+	CACHE_WARMUP_TURNS,
+	COMPACT_SOON_PCT,
 	COMPACT_URGENT_PCT,
+	COMPACTION_THRASH_N,
 	HOT_MS,
 	PAY_AS_YOU_GO_NEAR_PCT,
 	QUOTA_HIGH_PCT,
+	QUOTA_PROJECT_MIN_PCT,
+	STALE_BRANCH_N,
+	STASH_N,
+	TODO_STALLED_MIN,
+	UNTRACKED_N,
 	type Event,
 	type Severity,
 } from "../../domain";
@@ -21,18 +31,6 @@ import type {
 
 export { BALANCE_LOW, COMPACT_URGENT_PCT, HOT_MS, PAY_AS_YOU_GO_NEAR_PCT, QUOTA_HIGH_PCT };
 
-/** Thresholds owned by the helpful module. Self-calibrating triggers carry no constant. */
-const COMPACT_SOON_PCT = 60;
-/** Absolute usage floor for the pace-projection "will exhaust" triggers: below it the pace ratio is noise. */
-const QUOTA_PROJECT_MIN_PCT = 50;
-const COMPACTION_THRASH_N = 3;
-const CACHE_RATIO_FLOOR = 0.5;
-const CACHE_WARMUP_TURNS = 20;
-const BIG_DIFF_LINES = 1000;
-const UNTRACKED_N = 20;
-const STASH_N = 5;
-const STALE_BRANCH_N = 20;
-const TODO_STALLED_MIN = 30;
 const EFFORT_LOW_LEVEL = "low";
 const PROD_CONTEXT_PATTERN = /prod/i;
 
@@ -282,7 +280,13 @@ export const HELPFUL_CATALOG: readonly HelpfulTrigger[] = [
 		category: "quota",
 		momentary: false,
 		template: "5h limit at {pct}%, {reset} to reset. Save heavy asks for after.",
-		test: (i) => i.quota.block !== undefined && i.quota.block.usedPct > QUOTA_HIGH_PCT,
+		// High usage AND over pace: rationing only helps when you would otherwise exhaust the window before it
+		// resets. `band` can't gate this — it forces critical at absolute-high usage regardless of pace — so key
+		// off `overPace`, which stays false for a high-but-under-pace window (e.g. the window is nearly over).
+		test: (i) =>
+			i.quota.block !== undefined &&
+			i.quota.block.usedPct > QUOTA_HIGH_PCT &&
+			i.quota.block.overPace === true,
 		render: (i) =>
 			`5h limit at ${pct(i.quota.block?.usedPct ?? 0)}, ${bare(i.quota.block?.resetIn)} to reset. Save heavy asks for after.`,
 	},
@@ -292,7 +296,12 @@ export const HELPFUL_CATALOG: readonly HelpfulTrigger[] = [
 		category: "quota",
 		momentary: false,
 		template: "Weekly quota {pct}% spent, {reset} to go. Ration the big requests.",
-		test: (i) => i.quota.weekly !== undefined && i.quota.weekly.usedPct > QUOTA_HIGH_PCT,
+		// Same pace gate as the 5h tip: at 83% with the week nearly over you are under pace and cannot spend
+		// the rest before reset, so "ration" would be misleading. Gate on `overPace`, not `band`.
+		test: (i) =>
+			i.quota.weekly !== undefined &&
+			i.quota.weekly.usedPct > QUOTA_HIGH_PCT &&
+			i.quota.weekly.overPace === true,
 		render: (i) =>
 			`Weekly quota ${pct(i.quota.weekly?.usedPct ?? 0)} spent, ${bare(i.quota.weekly?.resetIn)} to go. Ration the big requests.`,
 	},
@@ -304,8 +313,8 @@ export const HELPFUL_CATALOG: readonly HelpfulTrigger[] = [
 		template: "This burn rate empties the 5h block before reset, cutting you off mid-task.",
 		test: (i) =>
 			i.quota.block !== undefined &&
-			i.quota.block.band !== "nominal" &&
-			i.quota.block.usedPct > QUOTA_PROJECT_MIN_PCT,
+			i.quota.block.usedPct > QUOTA_PROJECT_MIN_PCT &&
+			i.quota.block.overPace === true,
 		render: () => "This burn rate empties the 5h block before reset, cutting you off mid-task.",
 	},
 	{
@@ -316,8 +325,8 @@ export const HELPFUL_CATALOG: readonly HelpfulTrigger[] = [
 		template: "At this pace the weekly quota runs dry before reset, locking you out for days.",
 		test: (i) =>
 			i.quota.weekly !== undefined &&
-			i.quota.weekly.band !== "nominal" &&
-			i.quota.weekly.usedPct > QUOTA_PROJECT_MIN_PCT,
+			i.quota.weekly.usedPct > QUOTA_PROJECT_MIN_PCT &&
+			i.quota.weekly.overPace === true,
 		render: () =>
 			"At this pace the weekly quota runs dry before reset, locking you out for days.",
 	},

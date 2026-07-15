@@ -101,6 +101,16 @@ export type ReactionCategory = (typeof REACTION_CATEGORIES)[number];
 export const SEVERITIES = ["none", "low", "medium", "high", "critical"] as const;
 export type Severity = (typeof SEVERITIES)[number];
 
+// User-selectable config vocabularies (also the valid values the config loader coerces against).
+export const MIN_SEVERITIES = ["low", "medium", "high", "critical"] as const; // Severity minus "none"
+export type MinSeverity = (typeof MIN_SEVERITIES)[number];
+
+export const CHARACTER_MODES = ["fixed", "random"] as const;
+export type CharacterMode = (typeof CHARACTER_MODES)[number];
+
+export const BANDINGS = ["solid", "cycle"] as const;
+export type Banding = (typeof BANDINGS)[number];
+
 // Mantle is the Bedrock Mantle *endpoint*, resolved to the `bedrock` provider — not a distinct provider.
 export const PROVIDERS = [
 	"bedrock",

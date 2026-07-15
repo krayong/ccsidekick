@@ -102,7 +102,11 @@ test("higher severity wins among the active set", () => {
 
 test("a severity tie breaks by category order (quota before git)", () => {
 	const r = resolveHelpful(
-		mk({ nowMs: T0, quota: { block: { usedPct: 84, band: "critical" } }, ...conflict(2) }),
+		mk({
+			nowMs: T0,
+			quota: { block: { usedPct: 84, band: "critical", overPace: true } },
+			...conflict(2),
+		}),
 		EMPTY,
 		clockAt(T0),
 		"low",

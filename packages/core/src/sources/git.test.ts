@@ -18,10 +18,25 @@ const STATUS_V2 = [
 	"? b.ts", // untracked
 ].join("\n");
 
+test("batches the three rev-parse probes into one subprocess call", () => {
+	const calls: string[] = [];
+	const run = (args: string[]): string => {
+		calls.push(args.join(" "));
+		if (args[0] === "rev-parse" && args[1] === "--is-inside-work-tree") {
+			return "true\n/repo/.git\n/repo";
+		}
+		return "";
+	};
+	readGit("/repo", run);
+	// The inside-work-tree / git-dir / show-toplevel probes are a single rev-parse invocation, not three.
+	expect(calls).toContain("rev-parse --is-inside-work-tree --git-dir --show-toplevel");
+	expect(calls).not.toContain("rev-parse --git-dir");
+	expect(calls).not.toContain("rev-parse --show-toplevel");
+});
+
 test("parses injected porcelain=v2 output", () => {
 	const responses: Record<string, string> = {
-		"rev-parse --is-inside-work-tree": "true",
-		"rev-parse --git-dir": "/repo/.git",
+		"rev-parse --is-inside-work-tree --git-dir --show-toplevel": "true\n/repo/.git",
 		"status --porcelain=v2 --branch --show-stash": STATUS_V2,
 		"remote get-url origin": "git@github.com:owner/repo.git",
 		"symbolic-ref --short refs/remotes/origin/HEAD": "origin/main",
@@ -43,8 +58,7 @@ test("detached HEAD: branch.head (detached) ⇒ sha from branch.oid, no upstream
 	const detached = ["# branch.oid deadbeef", "# branch.head (detached)", "# stash 0"].join("\n");
 	const run = (args: string[]): string =>
 		({
-			"rev-parse --is-inside-work-tree": "true",
-			"rev-parse --git-dir": "/repo/.git",
+			"rev-parse --is-inside-work-tree --git-dir --show-toplevel": "true\n/repo/.git",
 			"status --porcelain=v2 --branch --show-stash": detached,
 		})[args.join(" ")] ?? "";
 	const g = readGit("/repo", run);
@@ -57,8 +71,7 @@ test("no upstream: absent branch.upstream ⇒ ahead/behind undefined, not gone",
 	const noUp = ["# branch.oid 0123", "# branch.head feature", "# stash 0"].join("\n");
 	const run = (args: string[]): string =>
 		({
-			"rev-parse --is-inside-work-tree": "true",
-			"rev-parse --git-dir": "/repo/.git",
+			"rev-parse --is-inside-work-tree --git-dir --show-toplevel": "true\n/repo/.git",
 			"status --porcelain=v2 --branch --show-stash": noUp,
 		})[args.join(" ")] ?? "";
 	const g = readGit("/repo", run);
@@ -72,8 +85,7 @@ test("no upstream but remote-tracking ref present ⇒ remoteBranchExists true (p
 	const noUp = ["# branch.oid 0123", "# branch.head kv/super-filters", "# stash 0"].join("\n");
 	const run = (args: string[]): string =>
 		({
-			"rev-parse --is-inside-work-tree": "true",
-			"rev-parse --git-dir": "/repo/.git",
+			"rev-parse --is-inside-work-tree --git-dir --show-toplevel": "true\n/repo/.git",
 			"status --porcelain=v2 --branch --show-stash": noUp,
 			"rev-parse --verify --quiet refs/remotes/origin/kv/super-filters": "56ed94c",
 		})[args.join(" ")] ?? "";
@@ -91,8 +103,7 @@ test("upstream present but ab unresolved ⇒ gone", () => {
 	].join("\n");
 	const run = (args: string[]): string =>
 		({
-			"rev-parse --is-inside-work-tree": "true",
-			"rev-parse --git-dir": "/repo/.git",
+			"rev-parse --is-inside-work-tree --git-dir --show-toplevel": "true\n/repo/.git",
 			"status --porcelain=v2 --branch --show-stash": gone,
 		})[args.join(" ")] ?? "";
 	const g = readGit("/repo", run);
@@ -111,8 +122,7 @@ test("MM increments both staged and unstaged; rename + paths-with-spaces", () =>
 	].join("\n");
 	const run = (args: string[]): string =>
 		({
-			"rev-parse --is-inside-work-tree": "true",
-			"rev-parse --git-dir": "/repo/.git",
+			"rev-parse --is-inside-work-tree --git-dir --show-toplevel": "true\n/repo/.git",
 			"status --porcelain=v2 --branch --show-stash": out,
 		})[args.join(" ")] ?? "";
 	const g = readGit("/repo", run);
@@ -125,8 +135,7 @@ test("MM increments both staged and unstaged; rename + paths-with-spaces", () =>
 test("behindDefault counts HEAD..origin/<default>, preferring the remote ref", () => {
 	const feature = ["# branch.oid 0123", "# branch.head feature", "# stash 0"].join("\n");
 	const responses: Record<string, string> = {
-		"rev-parse --is-inside-work-tree": "true",
-		"rev-parse --git-dir": "/repo/.git",
+		"rev-parse --is-inside-work-tree --git-dir --show-toplevel": "true\n/repo/.git",
 		"status --porcelain=v2 --branch --show-stash": feature,
 		"symbolic-ref --short refs/remotes/origin/HEAD": "origin/main",
 		"rev-parse --verify --quiet refs/remotes/origin/main": "abc123",
@@ -139,8 +148,7 @@ test("behindDefault counts HEAD..origin/<default>, preferring the remote ref", (
 test("behindDefault is undefined on the default branch itself", () => {
 	const onMain = ["# branch.oid 0123", "# branch.head main", "# stash 0"].join("\n");
 	const responses: Record<string, string> = {
-		"rev-parse --is-inside-work-tree": "true",
-		"rev-parse --git-dir": "/repo/.git",
+		"rev-parse --is-inside-work-tree --git-dir --show-toplevel": "true\n/repo/.git",
 		"status --porcelain=v2 --branch --show-stash": onMain,
 		"symbolic-ref --short refs/remotes/origin/HEAD": "origin/main",
 		"rev-list --count HEAD..origin/main": "7",
@@ -154,9 +162,7 @@ test("uninitializedSubmodule reads the first `-` line of git submodule status", 
 	try {
 		writeFileSync(join(root, ".gitmodules"), '[submodule "a"]\n\tpath = sub\n\turl = ./a\n');
 		const responses: Record<string, string> = {
-			"rev-parse --is-inside-work-tree": "true",
-			"rev-parse --git-dir": join(root, ".git"),
-			"rev-parse --show-toplevel": root,
+			"rev-parse --is-inside-work-tree --git-dir --show-toplevel": `true\n${join(root, ".git")}\n${root}`,
 			"status --porcelain=v2 --branch --show-stash": "# branch.head main\n# stash 0",
 			"submodule status --recursive": "-deadbeef sub\n",
 		};
@@ -172,9 +178,7 @@ test("uninitializedSubmodule is undefined when all submodules are checked out", 
 	try {
 		writeFileSync(join(root, ".gitmodules"), '[submodule "a"]\n\tpath = sub\n\turl = ./a\n');
 		const responses: Record<string, string> = {
-			"rev-parse --is-inside-work-tree": "true",
-			"rev-parse --git-dir": join(root, ".git"),
-			"rev-parse --show-toplevel": root,
+			"rev-parse --is-inside-work-tree --git-dir --show-toplevel": `true\n${join(root, ".git")}\n${root}`,
 			"status --porcelain=v2 --branch --show-stash": "# branch.head main\n# stash 0",
 			"submodule status --recursive": " deadbeef sub (v1.0)\n",
 		};

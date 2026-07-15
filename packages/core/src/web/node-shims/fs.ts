@@ -40,14 +40,34 @@ interface Stat {
 	isFile(): boolean;
 }
 
-export function readFileSync(path: unknown): string {
-	const p = String(path);
+function readVfs(p: string): string {
 	// The project override (`<dir>/.ccsidekick/config.toml`) is always empty; the global one carries our config.
 	if (p.endsWith(`.ccsidekick/config.toml`)) return "";
 	const file = vfs.files.get(p);
 	if (file !== undefined) return file;
 	if (p.endsWith("config.toml")) return vfs.configToml;
-	return enoent(path);
+	return enoent(p);
+}
+
+// The cost scan's byte-offset probes call `readFileSync(p)` with no encoding, expecting the `Buffer` form. There
+// is no `Buffer` global in the browser bundle, so serve a minimal UTF-8 byte view over the vfs string: a
+// `Uint8Array` subclass whose `toString` decodes and whose `subarray` stays a `WebBuffer` (typed-array species),
+// covering the `.subarray`/`.toString("utf8")`/`.lastIndexOf(0x0a)`/byte-iteration surface the scan uses.
+class WebBuffer extends Uint8Array {
+	override toString(): string {
+		return new TextDecoder().decode(this);
+	}
+}
+
+/** Return a string for an encoded read (every caller passes `"utf8"`) and a byte view for a raw read. */
+export function readFileSync(path: unknown, encoding?: unknown): string | Uint8Array {
+	const s = readVfs(String(path));
+	return typeof encoding === "string" ? s : new WebBuffer(new TextEncoder().encode(s));
+}
+
+/** Never reached at runtime — `openSync` throws ENOENT in the browser, so the incremental tail is never read. */
+export function readSync(): number {
+	return 0;
 }
 
 export function existsSync(path: unknown): boolean {

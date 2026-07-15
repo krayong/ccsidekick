@@ -1,7 +1,8 @@
 # CLAUDE.md
 
 Guidance for working on ccsidekick: a Claude Code status line with an animated, reactive character
-and a full widget layer. No Claude API, no token spend. Network use is limited to non-LLM lookups (an
+and a full widget layer. No Claude API, no token spend. Network use is limited to non-LLM lookups (
+an
 optional weekly currency-rate refresh and an optional account-usage call, both off by default), off
 the hot render path and enabled only when you turn them on.
 
@@ -76,9 +77,8 @@ are lock-guarded.
   `mood_shift`, `icons`), `[comments]` (`character`, `helpful`, `min_severity` — the Comments
   section's two on/off streams plus the tip severity floor), `[network]` (fx_refresh, usage_fetch,
   balance_path), `[statusline]` (currency, optional `budget`, per-widget `widgets` toggles). The
-  cost cache TTL (
-  1500ms) and the statusline refresh interval (1s) are hardcoded constants, not config; git runs
-  fresh every tick.
+  cost cache TTL (5000ms) and the statusline refresh interval (1s) are hardcoded constants, not
+  config; git runs fresh every tick.
 - **Theme is catalog data + per-pack data; engine logic**: the built-in catalog (`data/themes.ts`)
   holds named `ThemeData` entries; a pack ships an optional `theme` block (same shape, minus
   `displayName`) that registers under the pack's name as a selectable theme. The cell separator is
@@ -88,25 +88,32 @@ are lock-guarded.
 - **Cost is transcript-derived in-house, never Claude Code's stored cost**: Chat, Project (keyed by
   the **Project** term) and Total are all token-priced scans of Claude Code transcripts, deduped
   **globally across the whole tree** by `(message.id, requestId)`, behind a per-file
-  `{mtime, size, …}` cache. Claude Code's payload `cost.total_cost_usd` double-counts replayed
+  `{mtime, size, byteOffset, headHash, …}` cache. The active transcript grows every tick, so a changed
+  file re-prices only its appended tail (resuming from `byteOffset`, the end of the last complete line)
+  and folds it into the cached entry, byte-identically to a full parse; a compaction rewrite (head-hash
+  mismatch) or truncation falls back to a full reparse. Claude Code's payload `cost.total_cost_usd` double-counts replayed
   context on resumed sessions, so it is never a Total/Project source — it (and the persisted
   authoritative cost) is only a first-tick fallback for the current session's Chat, before the tree
-  scan reaches its transcript. The Stats board splits each session's globally-deduped cost across
-  its transcript files in proportion to their per-file totals, so cross-file replay never
-  double-counts. No external usage-tool subprocess, no network on the cost path.
+  scan reaches its transcript. The Stats board attributes each globally-deduped line directly to its
+  own file's session at dedup time (one record per session, summed from `aggregate.tokenPriced`, not
+  the per-file totals — summing those would re-count overlapping replayed history), so cross-file
+  replay never double-counts. No external usage-tool subprocess, no network on the cost path.
 - **State is concurrency-safe:** atomic write-tmp-rename, `O_EXCL` locks with a read-only fallback.
   Session identity prefers `session_id`, then a sha1 of `transcript_path`.
 - **Character voice is pack-owned**: each pack declares `tone` (mild/edgy/offensive). The comment
   always renders when `[comments].enabled` (selection walks a priority chain and falls through to an
   idle line), and is omitted only when disabled or the pack ships no usable voice. There is no user
   verbosity or edgy config.
-- **The classifier is three-hook and soft-failing**: the same `ccsidekick-render classify`
-  command is wired into `PostToolUse`, `PostToolUseFailure`, and `PostToolBatch`.
-  `PostToolUseFailure` is a hard fail; a `PostToolUse`/batch success flips to a failure when the
-  `tool_response` shows `isError`, a non-empty `stderr`, a `FAIL_RE` match, or `interrupted` (a Bash
-  response carries no exit code, so a standalone non-empty `stderr` is itself a fail signal). The
-  hook reads tool command text in process to classify it, never persists or stores it, and always
-  exits 0 writing nothing to stdout or stderr.
+- **The classifier is two-hook and soft-failing**: the same `ccsidekick-render classify` command is
+  wired into the per-call `PostToolUse` and `PostToolUseFailure` hooks. `PostToolBatch` is
+  deliberately not wired — it co-fires with the per-call hooks, so classifying it too would
+  double-count every event — and its payload (no top-level `tool_name`) falls through to a no-op if
+  present; `uninstall` still strips any legacy `PostToolBatch` entry. `PostToolUseFailure` is a hard
+  fail; a `PostToolUse` success flips to a failure when the `tool_response` shows `isError`,
+  `interrupted`, or a `FAIL_RE` match over the combined `stdout`+`stderr`. A non-empty `stderr` is
+  not itself a fail signal (many toolchains write progress and warnings to stderr on success), so a
+  failure must be evidenced by a `FAIL_RE` marker. The hook reads tool command text in process to
+  classify it, never persists or stores it, and always exits 0 writing nothing to stdout or stderr.
 - The shipped core avoids Bun-only runtime APIs so it stays Node-portable; `bun:test` is test-only.
   Setup-time code (the TUI and the bundle build) may use Bun APIs (e.g. `Bun.build`).
 

@@ -34,17 +34,17 @@ import {
 	freshestEvent,
 	pickStack,
 	priceMessage,
-	TIER_THRESHOLDS,
 } from "../derived";
 import {
 	COMEBACK_GAP_DAYS,
 	SESSION_MILESTONES,
 	STREAK_MILESTONES,
+	TIER_THRESHOLDS,
 	type Field,
 	type Segment,
 	type TermContext,
 } from "../domain";
-import { PACKS, loadPack } from "../packs";
+import { type LoadResult, PACKS, loadPack } from "../packs";
 import {
 	type LayoutInput,
 	type ResolvedTheme,
@@ -73,10 +73,11 @@ import {
 	readAttribution,
 	readBalance,
 	readCostCache,
-	readCreds,
+	readCredsCached,
 	readEnv,
 	readEvents,
 	readFx,
+	refreshCreds,
 	readFxCached,
 	readGit,
 	readHelpfulEnv,
@@ -185,7 +186,7 @@ function readGated(
 ): GatedReads {
 	const creds =
 		overrides?.creds !== undefined ? overrides.creds
-		: envInputs.hasApiKey || config.network.usage_fetch ? readCreds()
+		: envInputs.hasApiKey || config.network.usage_fetch ? readCredsCached(root)
 		: null;
 	const usage =
 		overrides?.usage !== undefined ? overrides.usage
@@ -201,11 +202,32 @@ function readGated(
 
 const DEFAULT_EMBLEM = "❝";
 
-/** Map an installed pack's theme block to a ThemeData, by pack name; null if absent/unloadable. */
-function lookupPackTheme(name: string): ThemeData | null {
-	const loaded = loadPack(name);
+/** Map a loaded pack to its theme block as a ThemeData, or null when it ships none / failed to load. */
+function packThemeOf(loaded: LoadResult): ThemeData | null {
 	if (!loaded.ok || loaded.pack.theme === undefined) return null;
 	return { displayName: loaded.pack.displayName, ...loaded.pack.theme };
+}
+
+/**
+ * Build a per-tick pack→theme lookup for `resolveTheme`. `resolveTheme` resolves up to three surfaces
+ * (statusline/logo/comment), each of which under the default `[theme].name = "character"` sentinel names the
+ * active `persona`; a naive lookup would re-read and re-validate the same ~49 KB `pack.json` once per surface.
+ * This memoizes by name and reuses the pack already loaded for the figure (`loaded`) for the persona name, so
+ * the default case loads a pack exactly once per tick instead of four times.
+ */
+export function makePackThemeLookup(
+	persona: string,
+	loaded: LoadResult,
+	load: (name: string) => LoadResult = loadPack,
+): (name: string) => ThemeData | null {
+	const memo = new Map<string, ThemeData | null>();
+	return (name: string): ThemeData | null => {
+		const cached = memo.get(name);
+		if (cached !== undefined || memo.has(name)) return cached ?? null;
+		const theme = packThemeOf(name === persona ? loaded : load(name));
+		memo.set(name, theme);
+		return theme;
+	};
 }
 
 const NOOP = (): void => {
@@ -345,10 +367,17 @@ function build(
 	const stacks = deriveStacks(markers, events);
 	const fresh = freshestEvent(events);
 	const stack = pickStack(stacks, fresh?.stack);
-	const familiarity = deriveFamiliarity(attribution, persona, scannedCache, project, clock);
+	const familiarity = deriveFamiliarity(
+		attribution,
+		persona,
+		scannedCache,
+		project,
+		clock,
+		String(session),
+	);
 
 	// ── Compose ─────────────────────────────────────────────────────────────────
-	const theme = resolveTheme(config, lookupPackTheme, persona);
+	const theme = resolveTheme(config, makePackThemeLookup(persona, loaded), persona);
 	const composeInputs: ComposeInputs = {
 		provider,
 		model,
@@ -462,6 +491,16 @@ function build(
 			// Remember the current session's authoritative payload cost so Total/Project reconcile across
 			// ticks. The "default" session is never recorded.
 			const payloadChat = payload.cost?.total_cost_usd;
+			// Within the cost TTL `scanCostTree` returns the on-disk cache object untouched (a new scan yields a
+			// fresh object), so `scannedCache !== costCache` means a rescan happened. When neither a rescan nor a
+			// change to this session's chat value occurred, a write would be byte-identical — skip the multi-MB
+			// serialize + atomic rewrite.
+			const rescanned = scannedCache !== costCache;
+			const chatChanged =
+				!isDefault &&
+				payloadChat !== undefined &&
+				scannedCache.aggregate.chat[String(session)] !== payloadChat;
+			if (!rescanned && !chatChanged) return;
 			const toWrite =
 				!isDefault && payloadChat !== undefined ?
 					{
@@ -488,6 +527,10 @@ function build(
 		});
 		swallow(() => {
 			void readUsage(root, clock, { enabled: config.network.usage_fetch });
+		});
+		swallow(() => {
+			// Refresh the cached subscription tier (TTL-gated) so the hot path never spawns the keychain itself.
+			if (envInputs.hasApiKey || config.network.usage_fetch) refreshCreds(root, clock);
 		});
 		swallow(() => {
 			runGc(root, clock);

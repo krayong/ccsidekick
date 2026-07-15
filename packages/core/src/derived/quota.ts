@@ -7,12 +7,19 @@ import {
 import { fmtLeft, symbolFor } from "../format";
 import type { BalanceSnapshot, Clock, OAuthQuota, Payload, UsageData } from "../sources";
 
-import { quotaBand } from "./signals";
+import { overQuotaPace, quotaBand } from "./signals";
 
 /** One quota window (block or weekly): usage percent, its band, and a reset countdown when known. */
 interface QuotaWindow {
 	readonly usedPct: number;
 	readonly band: SignalLevel;
+	/**
+	 * Whether usage is running ahead of the clock (will empty the window before it resets). Distinct from
+	 * `band`, which forces critical at absolute-high usage regardless of pace; `overPace` stays false for a
+	 * high-but-under-pace window. `deriveQuota` always sets it (false when `resets_at` is unknown); it is
+	 * optional only so test fixtures that don't exercise pace need not specify it.
+	 */
+	readonly overPace?: boolean;
 	/** Reset countdown string (`fmtLeft`); omitted when `resets_at` is unknown (countdown hidden). */
 	readonly resetIn?: string;
 }
@@ -72,12 +79,13 @@ function buildWindow(
 	}
 
 	const band = quotaBand(usedPct, resetsAtMs, windowMs, clock.now());
-	if (resetsAtMs === undefined) return { usedPct, band };
+	const overPace = overQuotaPace(usedPct, resetsAtMs, windowMs, clock.now());
+	if (resetsAtMs === undefined) return { usedPct, band, overPace };
 
 	const left = resetsAtMs - clock.now();
-	if (left <= 0) return { usedPct, band };
+	if (left <= 0) return { usedPct, band, overPace };
 
-	return { usedPct, band, resetIn: fmtLeft(left) };
+	return { usedPct, band, overPace, resetIn: fmtLeft(left) };
 }
 
 /** PAYG from the OAuth `extra_usage`, gated on `is_enabled`; unsigned under the caution threshold, then caution/critical. */

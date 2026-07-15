@@ -1,8 +1,8 @@
 import pricingData from "../data/pricing.json";
+import { PRICING_TIER_THRESHOLD } from "../domain";
 import type { Usage } from "../sources";
 
 const PER_MILLION = 1_000_000;
-const TIER_THRESHOLD = 200_000;
 
 /** One resolved price row, per-million-tokens in USD, plus the fast-mode multiplier (default `1`). */
 interface PriceRow {
@@ -145,8 +145,8 @@ export function modelKeyOf(modelId: string, aliases: ModelAliases = NO_ALIASES):
 
 /** Flat `tokens × base`, unless an `above`-200k rate applies (no Claude model carries one — reserved). */
 function tiered(tokens: number, base: number, above?: number): number {
-	if (tokens <= TIER_THRESHOLD || above === undefined) return tokens * base;
-	return TIER_THRESHOLD * base + (tokens - TIER_THRESHOLD) * above;
+	if (tokens <= PRICING_TIER_THRESHOLD || above === undefined) return tokens * base;
+	return PRICING_TIER_THRESHOLD * base + (tokens - PRICING_TIER_THRESHOLD) * above;
 }
 
 /**

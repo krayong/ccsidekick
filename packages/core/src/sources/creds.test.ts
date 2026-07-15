@@ -4,7 +4,8 @@ import { join } from "node:path";
 
 import { expect, test } from "bun:test";
 
-import { type Runner, readCreds } from "./creds";
+import { fixedClock } from "./clock";
+import { type Runner, readCreds, readCredsCached, refreshCreds } from "./creds";
 import { keychainService } from "./oauthUsage";
 
 const blob = (sub: unknown): string =>
@@ -22,6 +23,26 @@ function withConfigDir(dir: string, fn: () => void): void {
 		rmSync(dir, { recursive: true, force: true });
 	}
 }
+
+test("refreshCreds caches the tier (TTL-gated); readCredsCached serves it without spawning (P8)", () => {
+	const root = mkdtempSync(join(tmpdir(), "ccsk-creds-cache-"));
+	try {
+		let spawns = 0;
+		const run: Runner = (cmd) => {
+			spawns += 1;
+			return cmd === "security" ? blob("max") : "";
+		};
+		expect(readCredsCached(root)).toBeNull(); // nothing cached yet ⇒ hot path reads null, no spawn
+		refreshCreds(root, fixedClock(1000), run);
+		expect(spawns).toBeGreaterThan(0); // cold cache ⇒ refreshed once
+		expect(readCredsCached(root)).toEqual({ present: true, subscriptionType: "max" });
+		const after = spawns;
+		refreshCreds(root, fixedClock(1000 + 60_000), run); // within the 1h TTL
+		expect(spawns).toBe(after); // no re-spawn
+	} finally {
+		rmSync(root, { recursive: true, force: true });
+	}
+});
 
 test("keychain blob ⇒ parses subscriptionType, present true", () => {
 	// eslint-disable-next-line unicorn/consistent-function-scoping -- the name run is reused across tests, cannot share one module-scope binding

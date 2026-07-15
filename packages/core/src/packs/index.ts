@@ -8,7 +8,7 @@ export { jaccard, tokenSet } from "./jaccard";
 export { lintPack, packageJsonErrors, PLACEHOLDER_TOKEN, statusReport } from "./lint";
 
 // load.ts
-export { loadPack } from "./load";
+export { type LoadResult, loadPack } from "./load";
 
 // poolShape.ts
 export { expectedCount, LEAF_PATHS } from "./poolShape";

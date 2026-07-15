@@ -1,4 +1,4 @@
-import { mkdirSync, mkdtempSync, openSync, rmSync, writeFileSync } from "node:fs";
+import { mkdirSync, mkdtempSync, openSync, rmSync, statSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 
@@ -19,6 +19,22 @@ test("upsert two sessions for the same character; the store has both", () => {
 			"sess-1": { project: "owner/repo", character: "batman" },
 			"sess-2": { project: "owner/repo", character: "batman" },
 		});
+	} finally {
+		rmSync(root, { recursive: true, force: true });
+	}
+});
+
+test("upsert skips the rewrite when only updatedMs would change, but rewrites on a real change (AN2)", async () => {
+	const root = tmp();
+	try {
+		upsertAttribution(root, "s", { project: "p", character: "c", updatedMs: 1 });
+		const path = join(root, "analytics/store.json");
+		const m1 = statSync(path).mtimeMs;
+		await new Promise((r) => setTimeout(r, 20)); // real-time gap so a rewrite would bump the mtime
+		upsertAttribution(root, "s", { project: "p", character: "c", updatedMs: 999 }); // only updatedMs differs
+		expect(statSync(path).mtimeMs).toBe(m1); // skipped
+		upsertAttribution(root, "s", { project: "p", character: "other", updatedMs: 1000 }); // character changed
+		expect(statSync(path).mtimeMs).toBeGreaterThan(m1); // rewritten
 	} finally {
 		rmSync(root, { recursive: true, force: true });
 	}

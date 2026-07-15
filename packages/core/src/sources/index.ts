@@ -24,7 +24,7 @@ export { readCostCache, writeCostCache } from "./costCache";
 
 // creds
 export type { CredsInfo } from "./creds";
-export { readCreds } from "./creds";
+export { readCreds, readCredsCached, refreshCreds } from "./creds";
 
 // env
 export type { EnvInputs } from "./env";
