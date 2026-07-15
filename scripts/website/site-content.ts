@@ -20,6 +20,7 @@ export interface Identity {
 	repoUrl: string;
 	npmUrl: string;
 	ownerUrl: string;
+	formUrl: string;
 	email: string;
 	productName: string;
 	installCmd: string;
@@ -47,7 +48,7 @@ export interface Content extends Identity {
 			cols: readonly { readonly heading: string; readonly body: string }[];
 		};
 		faq: { kicker: string; heading: string };
-		footer: string;
+		footer: { license: string; copyright: string };
 	};
 }
 
@@ -59,6 +60,9 @@ const IDENTITY: Identity = {
 	repoUrl: "https://github.com/krayong/ccsidekick",
 	npmUrl: "https://www.npmjs.com/package/ccsidekick",
 	ownerUrl: "https://github.com/krayong",
+	// Branded first-party path for the "Request a character" CTA; website/_redirects 302s it to the
+	// Google Form, so the real forms.gle URL lives in exactly one place (that redirect).
+	formUrl: "/request-a-character",
 	email: "ccsidekick@krayong.com",
 	productName: "ccsidekick",
 	installCmd: "npx ccsidekick",
@@ -137,7 +141,7 @@ export function buildContent(counts: {
 			characters: {
 				kicker: "pick your fighter",
 				lede: "Pin one in fixed mode, or rotate a roster at random. Tap any character to see its theme.",
-				soon: "More characters coming soon. Requests welcome on GitHub.",
+				soon: "More characters added regularly.",
 			},
 			theme: {
 				kicker: "every surface, themed",
@@ -176,7 +180,10 @@ export function buildContent(counts: {
 				kicker: "questions",
 				heading: "FAQ",
 			},
-			footer: `Released under the MIT License. Copyright © 2026 ${IDENTITY.author}`,
+			footer: {
+				license: "MIT License",
+				copyright: `Copyright © 2026 ${IDENTITY.author}`,
+			},
 		},
 	};
 }

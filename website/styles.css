@@ -282,6 +282,44 @@ nav .iconlink.mailicon svg {
 	}
 }
 
+/* hero secondary action: a GitHub star sits in blue so it reads as subordinate to the
+			   green install command welded into the reel above it */
+.hero-actions {
+	margin-top: 28px;
+	display: flex;
+	justify-content: center;
+}
+
+.starbtn {
+	display: inline-flex;
+	align-items: center;
+	gap: 9px;
+	font-family: var(--mono);
+	font-size: 13px;
+	font-weight: 600;
+	color: var(--text);
+	background: var(--surface2);
+	border: 1px solid var(--line2);
+	border-radius: var(--r-sm);
+	padding: 10px 17px;
+	cursor: pointer;
+	transition:
+		background 0.15s,
+		border-color 0.15s;
+}
+
+.starbtn:hover {
+	background: color-mix(in srgb, var(--text) 7%, var(--surface2));
+	border-color: color-mix(in srgb, var(--text) 22%, var(--line2));
+}
+
+.starbtn svg {
+	width: 15px;
+	height: 15px;
+	fill: currentColor;
+	opacity: 0.9;
+}
+
 /* ── hero reel: the character reel floats over a halo, with the install command
 			   welded to its base so the demo and the action are one object ── */
 .hero-reel {
@@ -579,6 +617,21 @@ h2 {
 		font-size: 10.5px;
 	}
 
+	.req {
+		padding: 14px 6px 12px;
+	}
+
+	.req .rb {
+		width: 36px;
+		height: 36px;
+		font-size: 20px;
+	}
+
+	.req .rn {
+		margin-top: 9px;
+		font-size: 10.5px;
+	}
+
 	.wcard {
 		padding: 11px 8px;
 		gap: 4px;
@@ -639,7 +692,9 @@ h2 {
 	overflow: hidden;
 }
 
-.pk::after {
+.pk::after,
+.req::after,
+.reqbtn::after {
 	content: "";
 	position: absolute;
 	inset: 0;
@@ -654,13 +709,107 @@ h2 {
 	pointer-events: none;
 }
 
-.pk:hover {
+.pk:hover,
+.req:hover,
+.reqbtn:hover {
 	border-color: var(--c);
 	box-shadow: 0 16px 40px -18px var(--c);
 }
 
-.pk:hover::after {
+.pk:hover::after,
+.req:hover::after,
+.reqbtn:hover::after {
 	opacity: 1;
+}
+
+/* request-a-character ghost slot: sits in the wall's last-row gap (or as a full-width
+			   button when the row is flush). Blue accent, but the hover lift/glow/sheen use the shared
+			   tile mechanism above (--c) so it highlights exactly like every character tile. */
+.req {
+	--c: var(--blue);
+	display: block;
+	position: relative;
+	border: 1px dashed var(--line2);
+	border-radius: var(--r-lg);
+	padding: 20px 12px 18px;
+	text-align: center;
+	background: transparent;
+	color: var(--muted);
+	cursor: pointer;
+	transition:
+		transform 0.12s ease-out,
+		border-color 0.16s ease,
+		box-shadow 0.16s ease,
+		color 0.16s ease;
+	transform-style: preserve-3d;
+	overflow: hidden;
+}
+
+.req .rb {
+	width: 46px;
+	height: 46px;
+	margin: 0 auto;
+	border-radius: var(--r-sm);
+	display: grid;
+	place-items: center;
+	font-size: 26px;
+	line-height: 1;
+	color: var(--blue);
+	background: color-mix(in srgb, var(--blue) 8%, transparent);
+	border: 1px dashed color-mix(in srgb, var(--blue) 45%, var(--line2));
+}
+
+.req .rn {
+	margin-top: 12px;
+	font-size: 12.5px;
+	line-height: 1.35;
+	color: inherit;
+}
+
+.req:hover {
+	color: var(--text);
+}
+
+.reqbtn {
+	--c: var(--blue);
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 11px;
+	width: 100%;
+	margin-top: 14px;
+	padding: 15px 20px;
+	border: 1px dashed var(--line2);
+	border-radius: var(--r-lg);
+	background: transparent;
+	color: var(--muted);
+	font-family: var(--mono);
+	font-size: 13.5px;
+	font-weight: 600;
+	cursor: pointer;
+	overflow: hidden;
+	transition:
+		border-color 0.16s ease,
+		box-shadow 0.16s ease,
+		color 0.16s ease;
+}
+
+.reqbtn .rp {
+	display: grid;
+	place-items: center;
+	width: 22px;
+	height: 22px;
+	border-radius: var(--r-xs);
+	font-size: 16px;
+	line-height: 1;
+	color: var(--blue);
+	background: color-mix(in srgb, var(--blue) 8%, transparent);
+	border: 1px dashed color-mix(in srgb, var(--blue) 45%, var(--line2));
+}
+
+.reqbtn:hover {
+	color: var(--text);
 }
 
 .pk .badge {
@@ -1313,6 +1462,33 @@ footer img {
 	align-items: center;
 	color: var(--muted);
 	font-size: 13px;
+	flex-wrap: wrap;
+}
+
+.foot-links a {
+	display: inline-flex;
+	align-items: center;
+	gap: 7px;
+	transition: color 0.15s;
+}
+
+.foot-links a:hover {
+	color: var(--text);
+}
+
+.foot-links a svg {
+	width: 15px;
+	height: 15px;
+	fill: currentColor;
+	opacity: 0.85;
+}
+
+.foot-links .fsep {
+	color: var(--text);
+	font-size: 15px;
+	line-height: 1;
+	opacity: 0.85;
+	user-select: none;
 }
 
 .foot-links .fade {

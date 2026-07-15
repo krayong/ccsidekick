@@ -184,6 +184,19 @@
 						</div>
 					</div>
 				</div>
+				<div class="hero-actions reveal">
+					<a
+						class="starbtn"
+						href="{{repoUrl}}"
+						target="_blank"
+						rel="noopener"
+						aria-label="Star {{productName}} on GitHub">
+						<svg viewBox="0 0 24 24" aria-hidden="true">
+							<path
+								d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" /></svg
+						>Star on GitHub</a
+					>
+				</div>
 				<a class="scrollcue reveal" href="#build" aria-label="Scroll to explore"></a>
 			</div>
 		</header>
@@ -613,7 +626,30 @@
 			<div class="wrap">
 				<img src="wordmark.svg" alt="{{productName}}" />
 				<div class="foot-links">
-					<span class="fade">{{copy.footer}}</span>
+					<a href="{{repoUrl}}" target="_blank" rel="noopener"
+						><svg viewBox="0 0 24 24" aria-hidden="true">
+							<path
+								d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" /></svg
+						>GitHub</a
+					>
+					<span class="fsep" aria-hidden="true">✦</span>
+					<a href="{{npmUrl}}" target="_blank" rel="noopener"
+						><svg viewBox="0 0 24 24" aria-hidden="true">
+							<path
+								d="M1.763 0C.786 0 0 .786 0 1.763v20.474C0 23.214.786 24 1.763 24h20.474c.977 0 1.763-.786 1.763-1.763V1.763C24 .786 23.214 0 22.237 0zM5.13 5.323l13.837.019-.009 13.836h-3.464l.01-10.382h-3.456L12.04 19.17H5.113z" /></svg
+						>npm</a
+					>
+					<span class="fsep" aria-hidden="true">✦</span>
+					<a href="mailto:{{email}}"
+						><svg viewBox="0 0 16 16" aria-hidden="true">
+							<path
+								d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z" /></svg
+						>Contact</a
+					>
+					<span class="fsep" aria-hidden="true">✦</span>
+					<span class="fade">{{copy.footer.license}}</span>
+					<span class="fsep" aria-hidden="true">✦</span>
+					<span class="fade">{{copy.footer.copyright}}</span>
 				</div>
 			</div>
 		</footer>
@@ -643,6 +679,63 @@
 						`<a class="pk" href="#build" data-char="${esc(c.name)}" aria-label="Build with ${esc(c.display)}" style="--c:${esc(c.color)}"><div class="badge">${esc(c.emblem)}</div><div class="nm">${esc(c.display)}</div></a>`,
 				)
 				.join("");
+
+			// request-a-character CTA — grid-aware: a ghost tile fills a gap in the wall's last row,
+			// else a full-width button when the row is flush. Both link to the Google Form. Its own
+			// classes (.req/.reqbtn, never .pk) keep it out of the wall's search filter and click handler.
+			(function () {
+				const FORM_URL = "{{formUrl}}";
+				const wallEl = document.getElementById("wall");
+				const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+				// same tilt + cursor-tracked sheen the wall's .pk cards get (deg 0 = sheen only, no tilt)
+				const followSheen = (el, deg) => {
+					if (reduceMotion) return;
+					el.addEventListener("mousemove", (e) => {
+						const r = el.getBoundingClientRect(),
+							px = (e.clientX - r.left) / r.width,
+							py = (e.clientY - r.top) / r.height;
+						el.style.transition = "none";
+						if (deg)
+							el.style.transform = `perspective(760px) rotateY(${(px - 0.5) * deg}deg) rotateX(${(0.5 - py) * deg}deg)`;
+						el.style.setProperty("--mx", px * 100 + "%");
+						el.style.setProperty("--my", py * 100 + "%");
+					});
+					el.addEventListener("mouseleave", () => {
+						el.style.transition = "transform 0.4s ease";
+						el.style.transform = "";
+					});
+				};
+				const tile = document.createElement("a");
+				tile.className = "req";
+				tile.href = FORM_URL;
+				tile.target = "_blank";
+				tile.rel = "noopener";
+				tile.setAttribute("aria-label", "Request a character");
+				tile.innerHTML =
+					'<div class="rb" aria-hidden="true">+</div><div class="rn">Request a character</div>';
+				followSheen(tile, 9);
+				const btn = document.createElement("a");
+				btn.className = "reqbtn";
+				btn.href = FORM_URL;
+				btn.target = "_blank";
+				btn.rel = "noopener";
+				btn.innerHTML = '<span class="rp" aria-hidden="true">+</span>Request a character';
+				followSheen(btn, 0);
+				const placeRequest = () => {
+					const cols = getComputedStyle(wallEl).gridTemplateColumns.split(" ").length;
+					const flush = D.characters.length % cols === 0;
+					tile.remove();
+					btn.remove();
+					if (flush) wallEl.insertAdjacentElement("afterend", btn);
+					else wallEl.appendChild(tile);
+				};
+				placeRequest();
+				let rzT;
+				addEventListener("resize", () => {
+					clearTimeout(rzT);
+					rzT = setTimeout(placeRequest, 150);
+				});
+			})();
 
 			// widgets section — each card is the widget rendered like a status-line segment:
 			// icon, label, then the value in its real signal colour. --accent tints the hover glow/sheen
@@ -1514,6 +1607,7 @@
 					.to(".hero-logo", { duration: 0.85 })
 					.to(".sub", { duration: 0.7 }, "-=0.45")
 					.to(".hero-reel", { duration: 0.8 }, "-=0.5")
+					.to(".hero-actions", { duration: 0.6 }, "-=0.4")
 					.to(".scrollcue", { duration: 0.6 }, "-=0.3");
 				gsap.utils.toArray(".reveal").forEach((el) => {
 					if (el.closest(".hero")) return;
