@@ -130,6 +130,11 @@ const oline = (o: { id: string; req: string; output: number; sidechain?: boolean
 
 const outPrice: PriceFn = (u: Usage) => u.output_tokens;
 
+// A user/tool line carries a timestamp but no usage — appended after the last assistant message (the common
+// mid-turn state), its timestamp is the file's true end, which a full parse's `scanBounds` takes.
+const nonUsage = (iso: string): string =>
+	JSON.stringify({ type: "user", sessionId: "s1", timestamp: iso, message: { role: "user" } });
+
 test("scanCostTree: incremental tail-parse of a grown file equals a full parse, pricing only the tail", () => {
 	const root = mkdtempSync(join(tmpdir(), "ccsk-cost-inc-"));
 	const enc = "-Users-me-repoA";
@@ -195,6 +200,102 @@ test("scanCostTree: incremental tail-parse of a grown file equals a full parse, 
 		expect(cache2.files[file]!.record.messages).toBe(6);
 		// Only the three tail lines were priced — not the four unchanged head messages (a full reparse = 7).
 		expect(incCalls).toBe(3);
+	} finally {
+		rmSync(root, { recursive: true, force: true });
+	}
+});
+
+test("scanCostTree: incremental resume folds record.end from a trailing non-usage line", () => {
+	const root = mkdtempSync(join(tmpdir(), "ccsk-cost-inc-"));
+	const enc = "-Users-me-repoA";
+	mkdirSync(join(root, enc));
+	const file = join(root, enc, "s1.jsonl");
+
+	const head = [oline({ id: "A", req: "Q1", output: 10 })];
+	// The tail's last line is a non-usage line stamped later than every assistant message.
+	const tail = [oline({ id: "B", req: "Q2", output: 20 }), nonUsage("2026-01-01T04:30:00.000Z")];
+
+	try {
+		const empty: CostCache = {
+			files: {},
+			aggregate: { chat: {}, tokenPriced: {}, sessionProject: {}, byModel: {} },
+			lastScanTs: 0,
+		};
+
+		writeFileSync(file, `${head.join("\n")}\n`);
+		const cache1 = scanCostTree(root, empty, fixedClock(COST_NOW), outPrice, decodedResolver);
+
+		writeFileSync(file, `${[...head, ...tail].join("\n")}\n`);
+		const cache2 = scanCostTree(
+			root,
+			cache1,
+			fixedClock(COST_NOW + COST_TTL_MS + 1),
+			outPrice,
+			decodedResolver,
+		);
+
+		const full = scanCostTree(
+			root,
+			empty,
+			fixedClock(COST_NOW + COST_TTL_MS + 1),
+			outPrice,
+			decodedResolver,
+		);
+
+		// The resumed entry — including record.end — is byte-identical to a cold full parse.
+		expect(cache2.files[file]).toEqual(full.files[file]);
+		expect(cache2.files[file]!.record.end).toBe(Date.parse("2026-01-01T04:30:00.000Z"));
+	} finally {
+		rmSync(root, { recursive: true, force: true });
+	}
+});
+
+test("scanCostTree: incremental resume folds record.start from a leading timestamp-less line", () => {
+	const root = mkdtempSync(join(tmpdir(), "ccsk-cost-inc-"));
+	const enc = "-Users-me-repoA";
+	mkdirSync(join(root, enc));
+	const file = join(root, enc, "s1.jsonl");
+
+	// A resumed session can open with an undated `summary` line; `scanBounds` clamps `start` to 0 when the first
+	// scan captures only that line. Later dated lines appended in the tail must widen `start` to the real first
+	// timestamp — exactly as a full parse would — instead of leaving the 0 clamp frozen.
+	const summary = JSON.stringify({ type: "summary", summary: "resumed" }); // no timestamp
+	const head = [summary];
+	const tail = [
+		oline({ id: "A", req: "Q1", output: 10 }),
+		oline({ id: "B", req: "Q2", output: 20 }),
+	];
+
+	try {
+		const empty: CostCache = {
+			files: {},
+			aggregate: { chat: {}, tokenPriced: {}, sessionProject: {}, byModel: {} },
+			lastScanTs: 0,
+		};
+
+		writeFileSync(file, `${head.join("\n")}\n`);
+		const cache1 = scanCostTree(root, empty, fixedClock(COST_NOW), outPrice, decodedResolver);
+		expect(cache1.files[file]!.record.start).toBe(0); // no dated line captured yet ⇒ clamp
+
+		writeFileSync(file, `${[...head, ...tail].join("\n")}\n`);
+		const cache2 = scanCostTree(
+			root,
+			cache1,
+			fixedClock(COST_NOW + COST_TTL_MS + 1),
+			outPrice,
+			decodedResolver,
+		);
+
+		const full = scanCostTree(
+			root,
+			empty,
+			fixedClock(COST_NOW + COST_TTL_MS + 1),
+			outPrice,
+			decodedResolver,
+		);
+
+		expect(cache2.files[file]).toEqual(full.files[file]);
+		expect(cache2.files[file]!.record.start).toBe(Date.parse("2026-01-01T04:00:00.000Z"));
 	} finally {
 		rmSync(root, { recursive: true, force: true });
 	}

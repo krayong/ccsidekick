@@ -796,6 +796,7 @@ function resumeCostFile(
 		cacheCreation: cached.record.tokens.cache_creation,
 		total: cached.total,
 		messages: cached.record.messages,
+		start: cached.record.start,
 		end: cached.record.end,
 	};
 
@@ -812,6 +813,7 @@ function resumeCostFile(
 		projectPath: cached.projectPath,
 		record: {
 			...cached.record,
+			start: acc.start,
 			end: acc.end,
 			tokens: {
 				input: acc.input,
@@ -842,6 +844,7 @@ interface TailAcc {
 	cacheCreation: number;
 	total: number;
 	messages: number;
+	start: number;
 	end: number;
 }
 
@@ -890,10 +893,22 @@ function readAppendedTail(
 }
 
 /** Fold one collapsed appended line into the running reduction, matching a full parse's collapse + dedup. */
+/**
+ * Widen `record.start`/`record.end` to span the min/max timestamp over *all* lines (a full parse's `scanBounds`),
+ * not just usage-bearing ones — a trailing user/tool line is commonly the newest, and a leading summary line the
+ * oldest. A stored `start` of 0 is `scanBounds`'s "no finite timestamp yet" clamp (a real timestamp is never
+ * epoch 0), so the first dated line seeds it.
+ */
+function widenBounds(acc: TailAcc, tsMs: number | undefined): void {
+	if (tsMs === undefined) return;
+	if (tsMs > acc.end) acc.end = tsMs;
+	if (acc.start === 0 || tsMs < acc.start) acc.start = tsMs;
+}
+
 function foldAppendedLine(acc: TailAcc, l: ParsedLine, price: PriceFn): void {
+	widenBounds(acc, l.tsMs);
 	const usage = l.usage;
 	if (usage === undefined) return;
-	if (l.tsMs !== undefined && l.tsMs > acc.end) acc.end = l.tsMs;
 	const t = tokenize(usage);
 	const totalTok = t.input + t.output + t.cache_read + t.c5m + t.c1h;
 	const key = l.id !== undefined && l.requestId !== undefined ? `${l.id}|${l.requestId}` : null;

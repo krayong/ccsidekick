@@ -104,13 +104,16 @@ are lock-guarded.
   always renders when `[comments].enabled` (selection walks a priority chain and falls through to an
   idle line), and is omitted only when disabled or the pack ships no usable voice. There is no user
   verbosity or edgy config.
-- **The classifier is three-hook and soft-failing**: the same `ccsidekick-render classify`
-  command is wired into `PostToolUse`, `PostToolUseFailure`, and `PostToolBatch`.
-  `PostToolUseFailure` is a hard fail; a `PostToolUse`/batch success flips to a failure when the
-  `tool_response` shows `isError`, a non-empty `stderr`, a `FAIL_RE` match, or `interrupted` (a Bash
-  response carries no exit code, so a standalone non-empty `stderr` is itself a fail signal). The
-  hook reads tool command text in process to classify it, never persists or stores it, and always
-  exits 0 writing nothing to stdout or stderr.
+- **The classifier is two-hook and soft-failing**: the same `ccsidekick-render classify` command is
+  wired into the per-call `PostToolUse` and `PostToolUseFailure` hooks. `PostToolBatch` is
+  deliberately not wired — it co-fires with the per-call hooks, so classifying it too would
+  double-count every event — and its payload (no top-level `tool_name`) falls through to a no-op if
+  present; `uninstall` still strips any legacy `PostToolBatch` entry. `PostToolUseFailure` is a hard
+  fail; a `PostToolUse` success flips to a failure when the `tool_response` shows `isError`,
+  `interrupted`, or a `FAIL_RE` match over the combined `stdout`+`stderr`. A non-empty `stderr` is
+  not itself a fail signal (many toolchains write progress and warnings to stderr on success), so a
+  failure must be evidenced by a `FAIL_RE` marker. The hook reads tool command text in process to
+  classify it, never persists or stores it, and always exits 0 writing nothing to stdout or stderr.
 - The shipped core avoids Bun-only runtime APIs so it stays Node-portable; `bun:test` is test-only.
   Setup-time code (the TUI and the bundle build) may use Bun APIs (e.g. `Bun.build`).
 
