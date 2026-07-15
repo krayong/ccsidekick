@@ -32,8 +32,6 @@ jobs:
 
       - run: bun run site:build # smoke the site generators (data.js, render-web.js, media copy)
 
-      - run: bun run site:drift # website data must match the packs/themes/widgets
-
   changeset:
     name: changeset
 
@@ -70,6 +68,8 @@ jobs:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
 
       - uses: ./.github/actions/setup
+
+      - run: bun run site:build # the website suites assert on built assets + the render-web bundle
 
       - run: bun run test # includes the .claude pack-author scripts (a dot-dir a bare `bun test` skips)
 

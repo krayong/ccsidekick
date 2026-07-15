@@ -17,4 +17,4 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-Sitemap: https://ccsidekick.krayong.com/sitemap.xml
+Sitemap: {{baseUrl}}/sitemap.xml

@@ -28,7 +28,7 @@ right tone vs wrong tone. Fill in 6 minimum; add up to 10 where the character's 
 miss.
 
 | DO (on voice) | DON'T (off voice) |
-| ------------- | ----------------- |
+|---------------|-------------------|
 | …             | …                 |
 | …             | …                 |
 | …             | …                 |
@@ -54,7 +54,7 @@ A character line is flavor; it must **not** restate an instruction the engine al
 to the moment, leave the fix to the engine.
 
 | engine category | the engine already says (do not restate)                                                                  |
-| --------------- | --------------------------------------------------------------------------------------------------------- |
+|-----------------|-----------------------------------------------------------------------------------------------------------|
 | safety          | ignore a secret file, branch off a detached HEAD, warn after a force-push, check a prod cluster           |
 | billing         | unset `ANTHROPIC_API_KEY`, raise the pay-as-you-go cap, top up the prepaid balance                        |
 | quota           | ration heavy requests against the 5h block and the weekly limit                                           |

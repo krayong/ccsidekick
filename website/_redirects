@@ -1,0 +1,3 @@
+# Cloudflare Workers static-assets redirects. Matched before the SPA fallback.
+# Branded request link → the Google Form (site CTA points at /request-a-character).
+/request-a-character   https://forms.gle/LRy9zpbbtQQY5s3e8   302

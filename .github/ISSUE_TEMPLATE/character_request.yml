@@ -1,0 +1,46 @@
+name: Character Request
+
+description: Request a character pack
+
+labels: ["enhancement", "character-request"]
+
+body:
+  - type: input
+    id: character
+    attributes:
+      label: Which character?
+      description: The character you want as a pack.
+    validations:
+      required: true
+
+  - type: input
+    id: source
+    attributes:
+      label: Where are they from?
+      description: Franchise, show, game, or source — helps get the likeness and voice right.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reference
+    attributes:
+      label: Reference image or link
+      description: A poster, wiki page, or image URL we can source the ASCII art from.
+    validations:
+      required: false
+
+  - type: textarea
+    id: vibe
+    attributes:
+      label: Why this one?
+      description: Any voice, tone, or details we should nail.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: not-duplicate
+    attributes:
+      label: Before you submit
+      options:
+        - label: I checked the [existing characters](https://ccsidekick.krayong.com/#characters) and this isn't already a pack.
+          required: true

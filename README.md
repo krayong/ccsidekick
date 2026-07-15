@@ -56,8 +56,8 @@ config or view stats, and either view can switch to the other with Ctrl+W / Ctrl
 everything into Claude Code's `settings.json` (backing the file up first). Run
 `npx ccsidekick --help` for every command, including a clean uninstall.
 
-Prefer no TTY? `npx ccsidekick setup --character spiderman --theme houston --mode fixed` configures and
-wires everything from flags. See [Non-interactive setup](#non-interactive-setup).
+Prefer no TTY? `npx ccsidekick setup --character spiderman --theme houston --mode fixed` configures
+and wires everything from flags. See [Non-interactive setup](#non-interactive-setup).
 
 ## Characters
 
@@ -67,8 +67,8 @@ pins one, random mode rotates a roster.
 
 Each pack is data, never code: a single sourced ASCII figure (credited to its original artist; mood
 adds color-only effects, never a new frame), a curated message library, and at least twenty-five
-in-voice spinner verbs. Out of the box ccsidekick runs in random mode over the full roster, picking a
-character per session; `spiderman` is the default only when you pin one in fixed mode.
+in-voice spinner verbs. Out of the box ccsidekick runs in random mode over the full roster, picking
+a character per session; `spiderman` is the default only when you pin one in fixed mode.
 
 **Available packs:**
 
@@ -170,7 +170,8 @@ three PostToolUse-family hooks ──ccsidekick-render classify──▶  events
 
 State lives under `${CLAUDE_CONFIG_DIR:-~/.claude}/ccsidekick/`, partitioned per session so two
 Claude windows never collide. Git runs fresh each tick; cost reads sit behind a short-lived cache.
-The render path runs under plain Node and ships as a precompiled bundle, so the per-tick cost stays low.
+The render path runs under plain Node and ships as a precompiled bundle, so the per-tick cost stays
+low.
 
 ## Development
 

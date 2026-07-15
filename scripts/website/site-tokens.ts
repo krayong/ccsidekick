@@ -1,7 +1,6 @@
 #!/usr/bin/env bun
 // Generate website/tokens.css (the :root token block) from website/DESIGN.md, the single source of truth
-// for the site's design tokens. Keeps the CSS variables and the design system in lockstep; site-drift fails
-// if the committed pair drifts. Build/CI-time only.
+// for the site's design tokens. Keeps the CSS variables and the design system in lockstep. Build/CI-time only.
 //
 //   bun run site:tokens    # -> website/tokens.css
 import { readFileSync, writeFileSync } from "node:fs";

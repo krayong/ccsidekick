@@ -51,6 +51,15 @@ State lives under `~/.claude/ccsidekick/` (honoring `CLAUDE_CONFIG_DIR`), partit
 under `sessions/<id>/`. The cross-session analytics store (`analytics/`) and the per-file cost cache
 are lock-guarded.
 
+### Landing site
+
+The `ccsidekick.krayong.com` landing page lives in `website/` (served files) with its build logic in
+`scripts/website/*.ts`; it is deployed as a Cloudflare static-assets Worker, separate from the npm
+packages. Most of `website/` is generated (gitignored) from committed sources: copy from
+`scripts/website/site-content.ts`, tokens from `website/DESIGN.md`, and the live-demo render bundle
+from `packages/core/src/web/**`. See `website/CLAUDE.md` before touching it. Run `bun run site:build`
+to rebuild and `bun run site:serve` to preview.
+
 ## Load-bearing invariants
 
 - **Pack art is a single 9×25 figure:** `art: readonly string[]` — one figure, its rows, keyed by
@@ -88,16 +97,17 @@ are lock-guarded.
 - **Cost is transcript-derived in-house, never Claude Code's stored cost**: Chat, Project (keyed by
   the **Project** term) and Total are all token-priced scans of Claude Code transcripts, deduped
   **globally across the whole tree** by `(message.id, requestId)`, behind a per-file
-  `{mtime, size, byteOffset, headHash, …}` cache. The active transcript grows every tick, so a changed
-  file re-prices only its appended tail (resuming from `byteOffset`, the end of the last complete line)
-  and folds it into the cached entry, byte-identically to a full parse; a compaction rewrite (head-hash
-  mismatch) or truncation falls back to a full reparse. Claude Code's payload `cost.total_cost_usd` double-counts replayed
-  context on resumed sessions, so it is never a Total/Project source — it (and the persisted
-  authoritative cost) is only a first-tick fallback for the current session's Chat, before the tree
-  scan reaches its transcript. The Stats board attributes each globally-deduped line directly to its
-  own file's session at dedup time (one record per session, summed from `aggregate.tokenPriced`, not
-  the per-file totals — summing those would re-count overlapping replayed history), so cross-file
-  replay never double-counts. No external usage-tool subprocess, no network on the cost path.
+  `{mtime, size, byteOffset, headHash, …}` cache. The active transcript grows every tick, so a
+  changed file re-prices only its appended tail (resuming from `byteOffset`, the end of the last
+  complete line) and folds it into the cached entry, byte-identically to a full parse; a compaction
+  rewrite (head-hash mismatch) or truncation falls back to a full reparse. Claude Code's payload
+  `cost.total_cost_usd` double-counts replayed context on resumed sessions, so it is never a
+  Total/Project source — it (and the persisted authoritative cost) is only a first-tick fallback for
+  the current session's Chat, before the tree scan reaches its transcript. The Stats board
+  attributes each globally-deduped line directly to its own file's session at dedup time (one record
+  per session, summed from `aggregate.tokenPriced`, not the per-file totals — summing those would
+  re-count overlapping replayed history), so cross-file replay never double-counts. No external
+  usage-tool subprocess, no network on the cost path.
 - **State is concurrency-safe:** atomic write-tmp-rename, `O_EXCL` locks with a read-only fallback.
   Session identity prefers `session_id`, then a sha1 of `transcript_path`.
 - **Character voice is pack-owned**: each pack declares `tone` (mild/edgy/offensive). The comment
