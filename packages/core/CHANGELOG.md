@@ -1,5 +1,15 @@
 # ccsidekick
 
+## 1.6.3
+
+### Patch Changes
+
+- 45e0846: Let the render clock be pinned for reproducible snapshots. `ccsidekick-render render` now honors `CCSIDEKICK_NOW` (epoch milliseconds, with an optional `CCSIDEKICK_TZ`): when it holds a finite number, the figure shimmer phase and every countdown derive from that fixed instant, so a generated status-line shot is byte-identical from one run to the next. Left unset, the binary reads the system clock exactly as before.
+- Updated dependencies [45e0846]
+- Updated dependencies [45e0846]
+    - @ccsidekick/pack-joker@1.0.2
+    - @ccsidekick/pack-shinchan@1.0.1
+
 ## 1.6.2
 
 ### Patch Changes
