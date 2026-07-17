@@ -3,7 +3,7 @@ import { readFileSync } from "node:fs";
 
 import { runClassify, runRender } from "../cli";
 import { DEFAULT_COLUMNS, type TermContext } from "../domain";
-import { systemClock } from "../sources";
+import { resolveClock, systemClock } from "../sources";
 
 const sub = process.argv[2];
 
@@ -27,7 +27,8 @@ function dispatchRender(): void {
 			readFileSync(0, "utf8"),
 			process.env,
 			term,
-			systemClock,
+			// systemClock normally; a fixed clock when CCSIDEKICK_NOW pins it, so generated snapshots reproduce.
+			resolveClock(process.env),
 		);
 		process.stdout.write(`${line}\n`);
 		persist();

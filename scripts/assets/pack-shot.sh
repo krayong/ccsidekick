@@ -8,7 +8,9 @@
 #
 #   bun run build && scripts/assets/pack-shot.sh packages/packs/batman
 #
-# Portable: epoch timestamps come from node, not macOS-only `date -v`, so it runs on Linux/CI too.
+# Reproducible: the render clock is pinned to a fixed instant (CCSIDEKICK_NOW), so the figure shimmer phase and
+# every countdown are frozen and re-running produces a byte-identical SVG. Quota-reset epochs are plain integer
+# arithmetic (no macOS-only `date -v`), so it runs on Linux/CI too.
 set -euo pipefail
 cd "$(dirname "$0")/../.."
 REPO_ROOT="$PWD"
@@ -21,10 +23,13 @@ PACK_DIR="${1:-}"
 PACK_NAME="$(node -e 'process.stdout.write(require(process.argv[1]).name)' "$REPO_ROOT/$PACK_DIR/pack.json")"
 PACK_TITLE="$(node -e 'process.stdout.write(require(process.argv[1]).displayName)' "$REPO_ROOT/$PACK_DIR/pack.json")"
 
-# Portable epoch timestamps for the quota resets (block ~2h14m out, weekly ~3d5h out).
-NOW="$(node -e 'console.log(Math.floor(Date.now()/1000))')"
-FIVE_H_AT="$(node -e 'console.log(Math.floor(Date.now()/1000)+2*3600+14*60)')"
-SEVEN_D_AT="$(node -e 'console.log(Math.floor(Date.now()/1000)+3*86400+5*3600)')"
+# Fixed reference instant (2026-07-01T12:00:00Z) — passed to the binary as CCSIDEKICK_NOW so the render clock,
+# figure shimmer phase, and countdowns are all deterministic. Quota resets are relative to it (block ~2h14m out,
+# weekly ~3d5h out), so the "time left" the render shows is stable too.
+NOW_MS=1782907200000
+NOW=$((NOW_MS / 1000))
+FIVE_H_AT=$((NOW + 2 * 3600 + 14 * 60))
+SEVEN_D_AT=$((NOW + 3 * 86400 + 5 * 3600))
 
 WORK="$(mktemp -d)"
 trap 'rm -rf "$WORK"' EXIT
@@ -106,7 +111,7 @@ JSON
 # dir through /private on macOS, so strip that prefix too when rewriting the path.
 OUT_DIR="$REPO_ROOT/$PACK_DIR/assets"
 mkdir -p "$OUT_DIR"
-CLAUDE_CONFIG_DIR="$CFG" COLUMNS=160 node "$BIN" render < "$WORK/payload.json" \
+CLAUDE_CONFIG_DIR="$CFG" CCSIDEKICK_NOW="$NOW_MS" COLUMNS=160 node "$BIN" render < "$WORK/payload.json" \
   | sed "s#/private$REPO#~/dev/ccsidekick#g; s#$REPO#~/dev/ccsidekick#g" \
   | bun "$REPO_ROOT/scripts/assets/statusline-svg.mjs" "$PACK_TITLE — ccsidekick" \
   > "$OUT_DIR/statusline.svg"

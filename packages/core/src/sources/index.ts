@@ -12,7 +12,7 @@ export { readBalance } from "./balance";
 
 // clock
 export type { Clock } from "./clock";
-export { fixedClock, systemClock } from "./clock";
+export { fixedClock, resolveClock, systemClock } from "./clock";
 
 // config
 export type { Config } from "./config";
