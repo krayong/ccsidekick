@@ -37,10 +37,7 @@ One representative line per pool:
 - **stack**: Page's still loading. Ora's grabbed two snacks waiting on it.
 - **pressure**: My notebook's getting full. Still room for one more page.
 - **dateEgg**: Another year gone. Ora's still five forever, somehow.
-- **spinnerVerbs**: Wiggling, Snacking, Doodling, Bouncing, Giggling, Daydreaming, Chocobi-munching,
-  Humming, Skipping, Wobbling, Napping, Wandering, Pondering, Nibbling, Twirling, Fidgeting,
-  Waddling, Elephant-dancing, Puttering, Rummaging, Toddling, Zooming, Dilly-dallying, Shuffling,
-  Tiptoeing, Butt-wiggling, Crayon-scribbling, Shiro-petting
+- **spinnerVerbs**: Wiggling, Snacking, Doodling, Bouncing, Giggling, Daydreaming, Chocobi-munching, Humming, Skipping, Wobbling, Napping, Wandering, Pondering, Nibbling, Twirling, Fidgeting, Waddling, Elephant-dancing, Puttering, Rummaging, Toddling, Zooming, Dilly-dallying, Shuffling, Tiptoeing, Butt-wiggling, Crayon-scribbling, Shiro-petting
 
 ## Attribution
 
