@@ -114,10 +114,20 @@ function parse(input) {
 	return { cells, cols: maxCol, rows: row + (col > 0 ? 1 : 0) };
 }
 
+// SVG_MIN_COLS / SVG_MIN_ROWS pad the card out to a common width/height, so a reel of cards with differing
+// content all share one geometry — a full-width title bar on every card, and equal frame dimensions the
+// cross-fade can morph between. Content stays left-aligned (a terminal starts at the left edge) but is
+// centered vertically, so a short card sits in the middle of its terminal instead of hugging the top.
+const MIN_COLS = Number(process.env.SVG_MIN_COLS ?? 0);
+const MIN_ROWS = Number(process.env.SVG_MIN_ROWS ?? 0);
+
 function svg(input, title) {
 	const { cells, cols, rows } = parse(input);
-	const W = Math.ceil(PAD * 2 + cols * CELL_W);
-	const H = Math.ceil(TITLEBAR + PAD + rows * LINE_H + PAD);
+	const boxCols = Math.max(cols, MIN_COLS);
+	const boxRows = Math.max(rows, MIN_ROWS);
+	const rowOffset = (boxRows - rows) / 2;
+	const W = Math.ceil(PAD * 2 + boxCols * CELL_W);
+	const H = Math.ceil(TITLEBAR + PAD + boxRows * LINE_H + PAD);
 	const out = [];
 	out.push(
 		`<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="${FONT_SIZE}">`,
@@ -137,7 +147,7 @@ function svg(input, title) {
 		);
 	for (const { ch, col, row, fg, href } of cells) {
 		const x = (PAD + col * CELL_W).toFixed(1);
-		const y = (TITLEBAR + PAD + (row + 0.8) * LINE_H).toFixed(1);
+		const y = (TITLEBAR + PAD + (row + rowOffset + 0.8) * LINE_H).toFixed(1);
 		const text = `<text x="${x}" y="${y}" fill="${fg}">${xml(ch)}</text>`;
 		out.push(href ? `<a xlink:href="${xml(href)}">${text}</a>` : text);
 	}
