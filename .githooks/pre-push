@@ -2,7 +2,10 @@
 set -e
 if command -v trufflehog >/dev/null 2>&1; then
   echo "[pre-push] trufflehog"
-  trufflehog git "file://$(git rev-parse --show-toplevel)" --since-commit HEAD --only-verified --fail
+  # --no-update: the self-updater rewrites the binary in place, which fails on the root-owned
+  # /usr/local/bin install the official script produces. That failure exits non-zero and blocks the
+  # push without ever scanning, so the gate has to run with updates off.
+  trufflehog --no-update git "file://$(git rev-parse --show-toplevel)" --since-commit HEAD --only-verified --fail
 else
   echo "############################################################" >&2
   echo "[pre-push] WARNING: trufflehog NOT installed — LOCAL SECRET SCAN SKIPPED." >&2
