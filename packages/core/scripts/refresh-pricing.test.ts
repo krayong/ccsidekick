@@ -15,6 +15,7 @@ const FIXTURE = `
 <tr><th>Model</th><th>Base Input Tokens</th><th>5m Cache Writes</th><th>1h Cache Writes</th><th>Cache Hits &amp; Refreshes</th><th>Output Tokens</th></tr>
 <tr><td>Claude Fable 5</td><td>$10 / MTok</td><td>$12.50 / MTok</td><td>$20 / MTok</td><td>$1 / MTok</td><td>$50 / MTok</td></tr>
 <tr><td>Claude Mythos 5 (<a href="x">limited availability</a>)</td><td>$10 / MTok</td><td>$12.50 / MTok</td><td>$20 / MTok</td><td>$1 / MTok</td><td>$50 / MTok</td></tr>
+<tr><td>Claude Opus 5</td><td>$5 / MTok</td><td>$6.25 / MTok</td><td>$10 / MTok</td><td>$0.50 / MTok</td><td>$25 / MTok</td></tr>
 <tr><td>Claude Opus 4.8</td><td>$5 / MTok</td><td>$6.25 / MTok</td><td>$10 / MTok</td><td>$0.50 / MTok</td><td>$25 / MTok</td></tr>
 <tr><td>Claude Sonnet 5<br><a href="x">through August 31, 2026</a></td><td>$2 / MTok</td><td>$2.50 / MTok</td><td>$4 / MTok</td><td>$0.20 / MTok</td><td>$10 / MTok</td></tr>
 <tr><td>Claude Sonnet 5<br>starting September 1, 2026</td><td>$3 / MTok</td><td>$3.75 / MTok</td><td>$6 / MTok</td><td>$0.30 / MTok</td><td>$15 / MTok</td></tr>
@@ -24,6 +25,7 @@ const FIXTURE = `
 <tr><th>Model</th><th>Batch input</th><th>Batch output</th></tr>
 <tr><td>Claude Fable 5</td><td>$5 / MTok</td><td>$25 / MTok</td></tr>
 <tr><td>Claude Mythos 5</td><td>$5 / MTok</td><td>$25 / MTok</td></tr>
+<tr><td>Claude Opus 5</td><td>$2.50 / MTok</td><td>$12.50 / MTok</td></tr>
 <tr><td>Claude Opus 4.8</td><td>$2.50 / MTok</td><td>$12.50 / MTok</td></tr>
 <tr><td>Claude Sonnet 5<br>through August 31, 2026</td><td>$1 / MTok</td><td>$5 / MTok</td></tr>
 <tr><td>Claude Sonnet 5<br>starting September 1, 2026</td><td>$1.50 / MTok</td><td>$7.50 / MTok</td></tr>
@@ -31,7 +33,7 @@ const FIXTURE = `
 </table>
 <table>
 <tr><th>Model</th><th>Input</th><th>Output</th></tr>
-<tr><td>Claude Opus 4.8</td><td>$10 / MTok</td><td>$50 / MTok</td></tr>
+<tr><td>Claude Opus 5 / Claude Opus 4.8</td><td>$10 / MTok</td><td>$50 / MTok</td></tr>
 </table>
 `;
 
@@ -64,6 +66,15 @@ test("buildRows maps names to keys, skips untracked, and prices every lane", () 
 test("buildRows derives the fast multiplier from the fast table (10/5 = 2)", () => {
 	const opus = byId(buildRows(FIXTURE), "claude-opus-4-8");
 	expect(opus?.fast_mult).toBe(2);
+});
+
+// The page bills one fast lane for several models by listing them in a single slash-separated cell
+// ("Claude Opus 5 / Claude Opus 4.8"). Keying the map on the raw cell matches no model, which silently
+// drops fast_mult from every row and under-prices fast messages by the multiplier.
+test("buildRows applies a slash-combined fast row to every model it names", () => {
+	const rows = buildRows(FIXTURE);
+	expect(byId(rows, "claude-opus-5")?.fast_mult).toBe(2);
+	expect(byId(rows, "claude-opus-4-8")?.fast_mult).toBe(2);
 });
 
 test("buildRows produces two Sonnet 5 rows: intro with an until, standard open-ended", () => {
@@ -116,4 +127,29 @@ test("mergeRows updates on-page rows in place, preserves historical, appends new
 	expect(byId(merged, "claude-3-opus")?.input).toBe(15);
 	// a brand-new on-page key (fable-5) is appended
 	expect(byId(merged, "claude-fable-5")).toBeDefined();
+});
+
+// The fast table lists only models currently offering a fast lane. When one drops off (Opus 4.7 did),
+// transcripts recorded while it was offered still need the old multiplier to price correctly, so an
+// established fast_mult carries forward instead of silently reverting those messages to ×1.
+test("mergeRows carries an established fast_mult forward when the fast table drops the model", () => {
+	const existing: PricingRow[] = [
+		{
+			key: "claude-opus-4-8",
+			input: 5,
+			output: 25,
+			cache_write_5m: 6.25,
+			cache_write_1h: 10,
+			cache_read: 0.5,
+			batch_input: 2.5,
+			batch_output: 12.5,
+			fast_mult: 6,
+		},
+	];
+	// FIXTURE's fast table prices opus-4-8 at ×2, so a listed model is still re-derived, not frozen.
+	expect(byId(mergeRows(existing, buildRows(FIXTURE)), "claude-opus-4-8")?.fast_mult).toBe(2);
+
+	// With the model absent from the fast table, the established multiplier survives.
+	const noFastTable = FIXTURE.replace("Claude Opus 5 / Claude Opus 4.8", "Claude Fable 5");
+	expect(byId(mergeRows(existing, buildRows(noFastTable)), "claude-opus-4-8")?.fast_mult).toBe(6);
 });
