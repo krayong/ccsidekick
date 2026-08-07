@@ -17,8 +17,7 @@
 		"cache_write_1h": 10,
 		"cache_read": 0.5,
 		"batch_input": 2.5,
-		"batch_output": 12.5,
-		"fast_mult": 2
+		"batch_output": 12.5
 	},
 	{
 		"key": "claude-opus-4-8",
@@ -28,8 +27,7 @@
 		"cache_write_1h": 10,
 		"cache_read": 0.5,
 		"batch_input": 2.5,
-		"batch_output": 12.5,
-		"fast_mult": 2
+		"batch_output": 12.5
 	},
 	{
 		"key": "claude-opus-4-7",
@@ -39,8 +37,7 @@
 		"cache_write_1h": 10,
 		"cache_read": 0.5,
 		"batch_input": 2.5,
-		"batch_output": 12.5,
-		"fast_mult": 6
+		"batch_output": 12.5
 	},
 	{
 		"key": "claude-opus-4-6",
