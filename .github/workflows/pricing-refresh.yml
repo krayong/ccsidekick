@@ -97,7 +97,18 @@ jobs:
 
           git checkout -B "$branch"
 
-          git add packages/core/src/data/pricing.json
+          # pricing.json ships inside the published `ccsidekick` package, so CI's changeset gate requires one.
+          # A fixed filename keeps this idempotent: the branch is recreated from main on every run, and a
+          # re-run overwrites the same file instead of stacking duplicate changesets.
+          cat > .changeset/automated-pricing-refresh.md <<'EOF'
+          ---
+          "ccsidekick": minor
+          ---
+
+          Sync the bundled pricing table with the published Anthropic pricing page.
+          EOF
+
+          git add packages/core/src/data/pricing.json .changeset/automated-pricing-refresh.md
 
           git commit -m "chore(pricing): sync pricing.json with published rates"
 
