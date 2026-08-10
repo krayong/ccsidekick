@@ -24,6 +24,8 @@ export interface Identity {
 	email: string;
 	productName: string;
 	installCmd: string;
+	pluginAddCmd: string;
+	pluginInstallCmd: string;
 	author: string;
 	keywords: string;
 	os: string;
@@ -66,6 +68,11 @@ const IDENTITY: Identity = {
 	email: "ccsidekick@krayong.com",
 	productName: "ccsidekick",
 	installCmd: "npx ccsidekick",
+	// The repo is its own plugin marketplace (.claude-plugin/marketplace.json), so both slash commands
+	// are fixed strings tied to the repo slug. The plugin ships the /ccsidekick-setup command only; the
+	// engine still comes from npm the first time that command runs.
+	pluginAddCmd: "/plugin marketplace add krayong/ccsidekick",
+	pluginInstallCmd: "/plugin install ccsidekick@ccsidekick",
 	author: "Karan Gourisaria",
 	keywords:
 		"claude code status line, claude code statusline, claude code cost tracking, claude code themes, claude code widgets",
