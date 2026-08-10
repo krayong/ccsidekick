@@ -790,6 +790,7 @@
 					hint.textContent = "Copied ✓";
 					copyBtn.classList.add("done");
 					a11ySay("{{installCmd}} copied to clipboard");
+					window.__track?.("install_copied");
 					setTimeout(() => {
 						hint.textContent = "Copy command";
 						copyBtn.classList.remove("done");
@@ -1230,6 +1231,7 @@
 					await navigator.clipboard.writeText(cfgCommandText());
 					cfgCopyTxt.textContent = "Copied to clipboard ✓";
 					a11ySay("Setup command copied to clipboard");
+					window.__track?.("install_copied");
 					cfgCopy.classList.add("done");
 					setTimeout(() => {
 						cfgCopyTxt.textContent = "Copy command to install";
@@ -1238,6 +1240,17 @@
 				} catch (e) {
 					cfgCopyTxt.textContent = "Press ⌘C to copy";
 				}
+			});
+			document.querySelectorAll('a[href*="github.com/krayong"]').forEach((a) => {
+				a.addEventListener("click", () => window.__track?.("github_clicked"));
+			});
+			// Once per page load, so a fiddler poking every character does not swamp the dataset. A reload
+			// re-arms it, so read the metric as "page loads with a demo interaction", not unique sessions.
+			let demoTracked = false;
+			document.getElementById("cfgChars")?.addEventListener("click", () => {
+				if (demoTracked) return;
+				demoTracked = true;
+				window.__track?.("demo_interacted");
 			});
 
 			// lazy-load the 834KB render bundle only when the configurator nears the viewport
@@ -1664,6 +1677,9 @@
 				b.src = "https://static.cloudflareinsights.com/beacon.min.js";
 				b.setAttribute("data-cf-beacon", '{"token": "e834d2ed234e491aa70615b7c0bf9e03"}');
 				document.head.appendChild(b);
+				window.__track = (name) => {
+					navigator.sendBeacon("/e", name);
+				};
 			}
 		</script>
 	</body>

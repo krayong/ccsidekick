@@ -36,10 +36,16 @@ jobs:
 
       - run: find website -type f -name '*.template.*' -delete # never serve raw {{tokens}}
 
+      # The fingerprint must cover everything `wrangler deploy` uploads, not just the asset tree. The site is
+      # no longer assets-only: wrangler.jsonc names a Worker entrypoint and scripts/website/worker.ts is that
+      # entrypoint, and neither lives under website/. Hashing only website/ would make a Worker-only change
+      # (a new event name, a bug fix, or the documented rollback that removes `main`) produce a byte-identical
+      # tree, hit the cache, skip the deploy, and still report green.
       - name: Hash the deployable site
         id: sitehash
         run: |
-          H="$(find website -type f -exec sha256sum {} + | sort | sha256sum | cut -d' ' -f1)"
+          H="$(find website scripts/website/worker.ts wrangler.jsonc -type f -exec sha256sum {} + \
+                | sort | sha256sum | cut -d' ' -f1)"
           echo "hash=$H" >> "$GITHUB_OUTPUT"
 
       - name: Check whether this exact output already shipped

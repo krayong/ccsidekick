@@ -1,8 +1,14 @@
 # CLAUDE.md: landing site
 
-The ccsidekick landing page: a single static page deployed as a Cloudflare static-assets Worker at
+The ccsidekick landing page: a single page deployed as a Cloudflare Worker at
 `ccsidekick.krayong.com`. Everything in `website/` is served as-is; the build logic that produces
 the generated files lives in `scripts/website/*.ts`.
+
+**It is no longer assets-only.** `wrangler.jsonc` sets `main` to `scripts/website/worker.ts` and
+`assets.run_worker_first` to `["/e"]`, so every path except `/e` keeps asset-first behaviour and
+`/e` alone reaches the Worker. That Worker is an event sink: it accepts a `POST` of one name from a
+closed allowlist and writes a single Workers Analytics Engine data point. Cloudflare Web Analytics
+is pageviews only and does not support custom events, which is why it exists.
 
 ## The one rule: edit sources, not outputs
 
@@ -53,9 +59,19 @@ Run from the workspace root:
 - Deployed by `.github/workflows/deploy.yml` on release tags via `wrangler deploy` (config:
   `wrangler.jsonc` at the repo root). No `*.workers.dev` URL; the custom domain is the only entry.
 - `_headers` sets a **strict CSP**: `default-src 'self'`, `connect-src 'self'`,
-  `form-action 'none'`, `object-src 'none'`. The page makes no external requests and cannot post a
-  form anywhere. Anything new that would fetch, embed, or post off-origin needs a deliberate CSP
-  change here first.
+  `form-action 'none'`, `object-src 'none'`. The only off-origin request is the Cloudflare Web
+  Analytics beacon, allowed explicitly in `script-src`/`connect-src`; the `/e` event POST is
+  same-origin and needs nothing. Anything new that would fetch, embed, or post off-origin needs a
+  deliberate CSP change here first. Note `_headers` does not apply to responses the Worker itself
+  generates, only to asset responses.
+- `scripts/website/worker.ts` is the Worker entrypoint, covered by `scripts/website/worker.test.ts`.
+  There is no preview URL and no staging origin (`workers_dev` and `preview_urls` are both false),
+  so those tests are the only exercise it gets before production. `/e` is public and unauthenticated:
+  its Origin check stops cross-site abuse and nothing else, so volume abuse is held off by a
+  Cloudflare Rate Limiting rule configured in the dashboard, not in this repo.
+- The deploy fingerprint in `deploy.yml` hashes `website/`, `wrangler.jsonc`, and
+  `scripts/website/worker.ts` together. Adding a deployable file outside those paths means adding it
+  there too, or a change to it will hit the cache and silently skip the deploy.
 - `_redirects` holds branded redirects (matched before the SPA fallback). The "Request a character"
   CTA links to `/request-a-character`, which 302s to the Google Form, so the form URL lives in one
   place, not in site content.
