@@ -59,6 +59,20 @@ everything into Claude Code's `settings.json` (backing the file up first). Run
 Prefer no TTY? `npx ccsidekick setup --character spiderman --theme houston --mode fixed` configures
 and wires everything from flags. See [Non-interactive setup](#non-interactive-setup).
 
+### From inside Claude Code
+
+The repo is its own plugin marketplace, so you can wire everything up without leaving Claude Code:
+
+```
+/plugin marketplace add krayong/ccsidekick
+/plugin install ccsidekick@ccsidekick
+```
+
+That adds a `/ccsidekick-setup` slash command. Describe what you want in plain words
+(`/ccsidekick-setup batman with the dracula theme and no cost widgets`) and Claude picks the flags
+and runs the setup for you. The plugin carries the command and nothing else; the engine still comes
+from npm the first time you run it.
+
 New characters and widgets land regularly.
 [Watch this repo for releases](https://github.com/krayong/ccsidekick/subscription) to hear about
 them.

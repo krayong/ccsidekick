@@ -8,6 +8,7 @@ ccsidekick replaces Claude Code's status line with a character (Batman, Spider-M
 
 - `{{installCmd}}` runs the guided setup wizard (character, theme, comments) and wires it into Claude Code's settings.
 - `{{installCmd}} setup --character spiderman --theme houston --mode fixed` configures and wires everything from flags, with no TUI (good for scripts and agents).
+- From inside Claude Code: `{{pluginAddCmd}}` then `{{pluginInstallCmd}}`. The repo is its own plugin marketplace, and the plugin adds a `/ccsidekick-setup` slash command that maps a plain-words request onto the setup flags. It carries that command only; the engine still installs from npm the first time the command runs.
 
 ## Key facts
 
