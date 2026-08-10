@@ -33,7 +33,8 @@
 		"site:html": "bun run scripts/website/site-html.ts",
 		"site:serve": "bun run scripts/website/serve.ts",
 		"changeset": "changeset",
-		"ci:version": "changeset version && bun install",
+		"plugin:sync-version": "bun run scripts/sync-plugin-version.ts",
+		"ci:version": "changeset version && bun run plugin:sync-version && bun install",
 		"ci:publish": "bash scripts/publish/ci-publish.sh && changeset tag"
 	},
 	"devDependencies": {

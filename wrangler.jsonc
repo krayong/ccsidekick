@@ -1,13 +1,20 @@
 {
-	// Static-assets Worker that serves the ccsidekick landing site (packages/core is unrelated;
-	// this only hosts website/). Deployed by .github/workflows/deploy.yml on release tags.
+	// Worker that serves the ccsidekick landing site (packages/core is unrelated). Assets in website/ are
+	// served first for every path except /e, which run_worker_first routes to scripts/website/worker.ts, an
+	// event sink writing to the EVENTS Analytics Engine dataset. Deployed by .github/workflows/deploy.yml.
 	"name": "ccsidekick",
 	"compatibility_date": "2026-07-09",
+	"main": "./scripts/website/worker.ts",
 	"assets": {
 		"directory": "./website",
+		"binding": "ASSETS",
+		// Assets are served first by default, so /e would resolve to the SPA fallback and never reach the
+		// Worker. This routes that one path to the script; everything else keeps asset-first behaviour.
+		"run_worker_first": ["/e"],
 		// Unknown paths fall back to the homepage (served at 200), matching the single-page site.
 		"not_found_handling": "single-page-application",
 	},
+	"analytics_engine_datasets": [{ "binding": "EVENTS", "dataset": "ccsidekick_events" }],
 	// The custom domain is the only public URL: no *.workers.dev route, no per-version preview URLs.
 	"workers_dev": false,
 	"preview_urls": false,

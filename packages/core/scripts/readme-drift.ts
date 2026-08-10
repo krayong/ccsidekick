@@ -93,6 +93,44 @@ if (packBadge !== String(packCount)) {
 	problems.push(`pack badge says ${packBadge ?? "?"}, tree has ${String(packCount)} packs`);
 }
 
+// --- The npm README: the page every `npx ccsidekick` visitor lands on. ---
+// It repeats the same three counts plus the roster by display name, and none of it is generated. A new pack
+// would otherwise leave the npm landing page wrong while every other gate stayed green.
+const NPM_README = readFileSync(join(root, "packages", "core", "README.md"), "utf8");
+
+const npmWidgets = group1(/(\d+) widgets/, NPM_README);
+if (npmWidgets !== n) {
+	problems.push(`npm README widget count says ${npmWidgets ?? "?"}, code has ${n}`);
+}
+
+const npmThemeFloor = group1(/(\d+)\+ themes/, NPM_README);
+if (npmThemeFloor === undefined) {
+	problems.push('npm README theme floor ("<n>+ themes") not found');
+} else if (themeCount < Number(npmThemeFloor)) {
+	problems.push(
+		`npm README advertises ${npmThemeFloor}+ themes, catalog has ${String(themeCount)}`,
+	);
+}
+
+// The roster is written as prose display names, so compare against each pack's own displayName.
+const packDirs = readdirSync(packsDir, { withFileTypes: true })
+	.filter((e) => e.isDirectory())
+	.map((e) => e.name)
+	.sort();
+const displayNames = packDirs.map((dir) => {
+	const pj = JSON.parse(readFileSync(join(packsDir, dir, "pack.json"), "utf8")) as {
+		displayName?: unknown;
+	};
+	return typeof pj.displayName === "string" ? pj.displayName : dir;
+});
+// Prettier wraps the roster paragraph, so a two-word name like "James Bond" can straddle a newline. Collapse
+// whitespace before matching, or the check reports a pack missing that is present.
+const npmFlat = NPM_README.replaceAll(/\s+/g, " ");
+const absent = displayNames.filter((name) => !npmFlat.includes(name));
+if (absent.length > 0) {
+	problems.push(`npm README is missing packs: ${absent.join(", ")}`);
+}
+
 if (problems.length > 0) {
 	process.stderr.write("README drift detected:\n");
 	for (const p of problems) process.stderr.write(`  ✗ ${p}\n`);

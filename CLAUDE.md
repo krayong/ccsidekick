@@ -54,8 +54,9 @@ are lock-guarded.
 ### Landing site
 
 The `ccsidekick.krayong.com` landing page lives in `website/` (served files) with its build logic in
-`scripts/website/*.ts`; it is deployed as a Cloudflare static-assets Worker, separate from the npm
-packages. Most of `website/` is generated (gitignored) from committed sources: copy from
+`scripts/website/*.ts`; it is deployed as a Cloudflare Worker, separate from the npm
+packages: `website/` is served asset-first, and `/e` alone routes to `scripts/website/worker.ts`, an
+event sink writing to Workers Analytics Engine. Most of `website/` is generated (gitignored) from committed sources: copy from
 `scripts/website/site-content.ts`, tokens from `website/DESIGN.md`, and the live-demo render bundle
 from `packages/core/src/web/**`. See `website/CLAUDE.md` before touching it. Run `bun run site:build`
 to rebuild and `bun run site:serve` to preview.

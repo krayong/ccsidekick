@@ -1,0 +1,21 @@
+{
+	"name": "ccsidekick",
+	"version": "1.6.4",
+	"description": "Claude Code status line with a reactive ASCII character, 33 widgets, and 75+ themes. Zero token spend, local-first, MIT.",
+	"author": {
+		"name": "Karan Gourisaria",
+		"email": "ccsidekick@krayong.com"
+	},
+	"homepage": "https://ccsidekick.krayong.com",
+	"repository": "https://github.com/krayong/ccsidekick",
+	"license": "MIT",
+	"keywords": [
+		"statusline",
+		"status-line",
+		"ascii-art",
+		"themes",
+		"cost-tracking",
+		"character",
+		"git"
+	]
+}

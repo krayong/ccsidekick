@@ -59,6 +59,10 @@ everything into Claude Code's `settings.json` (backing the file up first). Run
 Prefer no TTY? `npx ccsidekick setup --character spiderman --theme houston --mode fixed` configures
 and wires everything from flags. See [Non-interactive setup](#non-interactive-setup).
 
+New characters and widgets land regularly.
+[Watch this repo for releases](https://github.com/krayong/ccsidekick/subscription) to hear about
+them.
+
 ## Characters
 
 Every character ships bundled with the engine, so a fresh install has them all — no download or
@@ -95,6 +99,30 @@ a character per session; `spiderman` is the default only when you pin one in fix
 
 Each pack registers its theme as a selectable option, so every bundled character also adds a
 palette. Authoring your own is a documented path; see below.
+
+## Author your own character
+
+Every character is **data, not code**: a single `pack.json` holding one ASCII figure, a message
+library, a theme, and its spinner verbs. There is no plugin API to learn and nothing to compile. If
+your favourite character is missing, you can add it.
+
+What a pack needs:
+
+- **One figure**, at most 9 rows by 25 columns, sourced through the `ascii-art` image-to-ASCII skill
+  rather than drawn freehand, crediting the original artist in `attribution`.
+- **A voice**: the message library plus at least 25 in-character spinner verbs.
+- **A theme** (optional), which then becomes selectable by every user rather than only yours.
+
+The authoring kit width-normalizes the figure, checks coverage and legibility, and generates the
+pack's README with a live statusline preview in its own theme.
+`bun run pack:lint packages/packs/<name>` gates all of it before you open a pull request.
+
+Start at [CONTRIBUTING.md](CONTRIBUTING.md#contributing-a-character-pack); the full contract lives in
+the `pack-author` skill at `.claude/skills/pack-author`. Claude Code picks it up in a clone of this
+repo, so you can just ask it to author a pack.
+
+Would rather just ask? Open a
+[character request](https://github.com/krayong/ccsidekick/issues/new?template=character_request.yml).
 
 ## Non-interactive setup
 
@@ -219,11 +247,8 @@ The package ships two executables:
 
 ### Authoring a character pack
 
-Art is sourced through tooling, never hand-drawn, and every figure credits its creator. The
-`ascii-art` image-to-ASCII skill supplies figures; the authoring kit width-normalizes them, checks
-coverage and legibility, and generates the pack's `README.md` with a statusline preview rendered in
-the pack's own theme. The full contract lives in the `pack-author` skill (
-`.claude/skills/pack-author`).
+See [Author your own character](#author-your-own-character) above for the contract and the entry
+point.
 
 ## Inspirations
 
