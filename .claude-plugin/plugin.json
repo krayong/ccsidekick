@@ -1,6 +1,6 @@
 {
 	"name": "ccsidekick",
-	"version": "1.6.4",
+	"version": "1.6.5",
 	"description": "Claude Code status line with a reactive ASCII character, 33 widgets, and 75+ themes. Zero token spend, local-first, MIT.",
 	"author": {
 		"name": "Karan Gourisaria",
