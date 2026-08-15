@@ -2,7 +2,7 @@ import { expect, test } from "bun:test";
 
 import type { Usage } from "../sources";
 
-import { modelKeyOf, priceMessage, resolvePrice } from "./pricing";
+import { modelKeyOf, pickRow, priceMessage, resolvePrice } from "./pricing";
 
 const usage = (over: Partial<Usage>): Usage => ({
 	input_tokens: 0,
@@ -56,20 +56,32 @@ test("the 5-minute and 1-hour cache writes use their own explicit rates", () => 
 	expect(priceMessage(c1h, "claude-opus-4-8")).toBeCloseTo(10, 9);
 });
 
-test("Sonnet 5 uses introductory pricing before Sep 1 2026 and standard pricing from Sep 1", () => {
+// No model in the bundled table is date-scoped today, so `pickRow` is exercised directly: an introductory
+// window priced against a message timestamp is how a launch-time promo bills, and getting the boundary wrong
+// re-prices every message on one side of it.
+test("pickRow selects the window covering atMs, and the open-ended row from its cutover on", () => {
+	const lane = { cache_write_5m: 0, cache_write_1h: 0, cache_read: 0, fast_mult: 1 };
+	const intro = { ...lane, input: 2, output: 10, untilMs: Date.parse("2026-09-01") };
+	const std = { ...lane, input: 3, output: 15, untilMs: Number.POSITIVE_INFINITY };
+	const rows = [intro, std];
+
+	expect(pickRow(rows, Date.parse("2026-08-15"))).toBe(intro);
+	// `until` is exclusive: the cutover instant itself already bills at the standard rate.
+	expect(pickRow(rows, Date.parse("2026-09-01"))).toBe(std);
+	expect(pickRow(rows, Date.parse("2026-08-31T23:59:59.999Z"))).toBe(intro);
+	// no timestamp ⇒ the current (open-ended) row
+	expect(pickRow(rows, undefined)).toBe(std);
+	expect(pickRow([], undefined)).toBeNull();
+});
+
+test("Sonnet 5 prices at its single published rate, with or without a timestamp", () => {
 	const u = usage({ input_tokens: M, output_tokens: M });
-	// introductory: input $2/M + output $10/M = $12
+	// input $2/M + output $10/M = $12, on an open-ended row that no longer splits at a cutover date.
+	expect(priceMessage(u, "claude-sonnet-5")).toBeCloseTo(12, 9);
 	expect(priceMessage(u, "claude-sonnet-5", undefined, Date.parse("2026-08-15"))).toBeCloseTo(
 		12,
 		9,
 	);
-	// standard from Sep 1: input $3/M + output $15/M = $18
-	expect(priceMessage(u, "claude-sonnet-5", undefined, Date.parse("2026-09-01"))).toBeCloseTo(
-		18,
-		9,
-	);
-	// no timestamp ⇒ current (standard) pricing
-	expect(priceMessage(u, "claude-sonnet-5")).toBeCloseTo(18, 9);
 });
 
 test("modelKeyOf canonicalizes provider id variants and passes unknown ids through", () => {

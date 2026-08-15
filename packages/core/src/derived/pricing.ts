@@ -65,7 +65,7 @@ const TABLE: ReadonlyMap<string, readonly DatedRow[]> = (() => {
 })();
 
 /** Pick the row in effect at `atMs` (earliest window that still covers it); `undefined` ⇒ the current price. */
-function pickRow(rows: readonly DatedRow[], atMs: number | undefined): PriceRow | null {
+export function pickRow(rows: readonly DatedRow[], atMs: number | undefined): PriceRow | null {
 	const t = atMs ?? Number.POSITIVE_INFINITY;
 	for (const r of rows) {
 		if (t < r.untilMs) return r;
@@ -122,7 +122,8 @@ function resolveKey(modelId: string, aliases: ModelAliases): string | null {
 
 /**
  * Resolve a model id to its price row, or `null` when unknown. `atMs` selects the row in effect at that instant
- * for models with date-dependent pricing (Sonnet 5); omit it for the current price.
+ * for a model carrying a date-scoped `until` row; omit it for the current price. No model in the bundled table
+ * is date-scoped today — the lane stays live because introductory-pricing windows recur at model launches.
  */
 export function resolvePrice(
 	modelId: string,
@@ -153,8 +154,8 @@ function tiered(tokens: number, base: number, above?: number): number {
  * Price one `message.usage` for `modelId`. Pure: a substring match on the normalized key, no AWS/network. An
  * unresolved id (including `<synthetic>` and ARNs with no model) prices to 0. Each cache lane uses its own
  * published rate (`cache_write_5m`, `cache_write_1h`, `cache_read`); `usage.speed === "fast"` applies the row's
- * `fast_mult`. `atMs` (the message timestamp) selects the price in effect at that instant for date-dependent
- * models (Sonnet 5); when omitted, the current price applies. The injected `aliases` map (from `sources/env`)
+ * `fast_mult`. `atMs` (the message timestamp) selects the price in effect at that instant for a date-scoped
+ * model; when omitted, the current price applies. The injected `aliases` map (from `sources/env`)
  * supplies user `CCSIDEKICK_MODEL_ALIASES` overrides.
  */
 export function priceMessage(

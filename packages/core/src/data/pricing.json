@@ -90,17 +90,6 @@
 		"cache_write_1h": 4,
 		"cache_read": 0.2,
 		"batch_input": 1,
-		"batch_output": 5,
-		"until": "2026-09-01"
-	},
-	{
-		"key": "claude-sonnet-5",
-		"input": 2,
-		"output": 10,
-		"cache_write_5m": 2.5,
-		"cache_write_1h": 4,
-		"cache_read": 0.2,
-		"batch_input": 1,
 		"batch_output": 5
 	},
 	{
