@@ -1,5 +1,11 @@
 # ccsidekick
 
+## 1.7.0
+
+### Minor Changes
+
+- e117ef8: Sync the bundled pricing table with the published Anthropic pricing page.
+
 ## 1.6.5
 
 ### Patch Changes
