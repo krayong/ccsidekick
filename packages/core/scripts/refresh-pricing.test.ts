@@ -13,6 +13,8 @@ import {
 const FIXTURE = `
 <table>
 <tr><th>Model</th><th>Base Input Tokens</th><th>5m Cache Writes</th><th>1h Cache Writes</th><th>Cache Hits &amp; Refreshes</th><th>Output Tokens</th></tr>
+<tr><td>Claude Fable 5.1</td><td>$10 / MTok</td><td>$12.50 / MTok</td><td>$20 / MTok</td><td>$0.25 / MTok</td><td>$50 / MTok</td></tr>
+<tr><td>Claude Mythos 5.1 (<a href="x">limited availability</a>)</td><td>$10 / MTok</td><td>$12.50 / MTok</td><td>$20 / MTok</td><td>$0.25 / MTok</td><td>$50 / MTok</td></tr>
 <tr><td>Claude Fable 5</td><td>$10 / MTok</td><td>$12.50 / MTok</td><td>$20 / MTok</td><td>$1 / MTok</td><td>$50 / MTok</td></tr>
 <tr><td>Claude Mythos 5 (<a href="x">limited availability</a>)</td><td>$10 / MTok</td><td>$12.50 / MTok</td><td>$20 / MTok</td><td>$1 / MTok</td><td>$50 / MTok</td></tr>
 <tr><td>Claude Opus 5</td><td>$5 / MTok</td><td>$6.25 / MTok</td><td>$10 / MTok</td><td>$0.50 / MTok</td><td>$25 / MTok</td></tr>
@@ -23,6 +25,8 @@ const FIXTURE = `
 </table>
 <table>
 <tr><th>Model</th><th>Batch input</th><th>Batch output</th></tr>
+<tr><td>Claude Fable 5.1</td><td>$5 / MTok</td><td>$25 / MTok</td></tr>
+<tr><td>Claude Mythos 5.1</td><td>$5 / MTok</td><td>$25 / MTok</td></tr>
 <tr><td>Claude Fable 5</td><td>$5 / MTok</td><td>$25 / MTok</td></tr>
 <tr><td>Claude Mythos 5</td><td>$5 / MTok</td><td>$25 / MTok</td></tr>
 <tr><td>Claude Opus 5</td><td>$2.50 / MTok</td><td>$12.50 / MTok</td></tr>
@@ -57,7 +61,8 @@ test("buildRows maps names to keys, skips untracked, and prices every lane", () 
 		batch_input: 5,
 		batch_output: 25,
 	});
-	// Mythos 5 is intentionally untracked ⇒ absent.
+	expect(byId(rows, "claude-fable-5-1")).toMatchObject({ input: 10, cache_read: 0.25 });
+	// Every Mythos generation is intentionally untracked ⇒ absent.
 	expect(rows.some((r) => r.key.includes("mythos"))).toBe(false);
 	// Haiku 3.5 maps to the API-style key.
 	expect(byId(rows, "claude-3-5-haiku")?.input).toBe(0.8);
