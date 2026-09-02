@@ -1,5 +1,11 @@
 # ccsidekick
 
+## 1.8.0
+
+### Minor Changes
+
+- 1cf88a7: Price Claude Fable 5.1 from the bundled table, and skip the limited-availability Claude Mythos 5.1.
+
 ## 1.7.0
 
 ### Minor Changes
