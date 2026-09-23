@@ -1,5 +1,11 @@
 # ccsidekick
 
+## 1.9.0
+
+### Minor Changes
+
+- 816e83e: Price Claude Opus 5.5 from the bundled table.
+
 ## 1.8.0
 
 ### Minor Changes
