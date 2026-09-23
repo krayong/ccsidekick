@@ -1,6 +1,7 @@
 # Daily monitor of the published Anthropic pricing page. Regenerates packages/core/src/data/pricing.json from
-# the page and, when the rates have moved, opens (or updates) a single PR for review. If the page shows a model
-# with no key mapping in the generator, it opens an issue instead so a human can decide the canonical key.
+# the page and, when the rates have moved or a new model appears, opens (or updates) a single PR for review. A new
+# release in a known family (Opus, Sonnet, Haiku, Fable) gets its key from the naming convention and lands in that
+# PR. Only a name outside every known family opens an issue, so a human can decide the canonical key.
 #
 # Note: a PR opened with the default GITHUB_TOKEN does not itself trigger the CI workflow (GitHub's loop guard).
 # Re-run CI by closing/reopening the PR, or wire a PAT here if automatic CI on these PRs becomes important.
@@ -63,10 +64,10 @@ jobs:
           fi
 
           {
-            echo "The daily pricing refresh saw a model on the page with no key mapping in"
-            echo "\`packages/core/scripts/refresh-pricing.ts\` (\`NAME_TO_KEY\`)."
+            echo "The daily pricing refresh saw a model on the page outside every known family in"
+            echo "\`packages/core/scripts/refresh-pricing.ts\` (\`keyFor\`)."
             echo
-            echo "Add the mapping (or an explicit \`null\` skip), then let the refresh regenerate \`pricing.json\`."
+            echo "Add a \`NAME_TO_KEY\` entry (or an explicit \`null\` skip), then let the refresh regenerate \`pricing.json\`."
             echo
             echo '```'
             cat refresh.log
@@ -114,10 +115,22 @@ jobs:
 
           git push -f origin "$branch"
 
-          if gh pr list --head "$branch" --state open --json number -q '.[0].number' | grep -q .; then
-            echo "existing PR updated via force-push"
+          # New keys come from the naming convention, so the PR lists them for a reviewer to check against the model ids.
+          {
+            echo "Automated daily sync from the [Anthropic pricing page](https://platform.claude.com/docs/en/about-claude/pricing). Review the rate changes before merging."
+            if grep -q '^New model key' refresh.log; then
+              echo
+              grep '^New model key' refresh.log
+            fi
+          } > pr-body.md
+
+          pr=$(gh pr list --head "$branch" --state open --json number -q '.[0].number')
+
+          if [ -n "$pr" ]; then
+            gh pr edit "$pr" --body-file pr-body.md
+            echo "existing PR #$pr updated via force-push"
           else
             gh pr create --base main --head "$branch" \
               --title "chore(pricing): sync pricing.json with published rates" \
-              --body "Automated daily sync from the [Anthropic pricing page](https://platform.claude.com/docs/en/about-claude/pricing). Review the rate changes before merging."
+              --body-file pr-body.md
           fi
