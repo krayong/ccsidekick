@@ -17,7 +17,8 @@ export interface ContextInfo {
 
 /**
  * Context-window usage and compactions. The band uses the fixed context cutoffs (`signals.contextBand`);
- * `cacheHitPct = cache_read / (input + cache_read + cache_creation)`; `compactPressure` trips when usage
+ * `cacheHitPct` is the payload's `prompt_cache.hit_ratio` as a percent, falling back (older CLIs, or a null
+ * ratio) to `cache_read / (input + cache_read + cache_creation)` over the transcript; `compactPressure` trips when usage
  * passes the auto-compact-imminent cutoff.
  */
 export function deriveContext(payload: Payload, scan: TranscriptScan): ContextInfo {
@@ -29,7 +30,11 @@ export function deriveContext(payload: Payload, scan: TranscriptScan): ContextIn
 	const t = scan.tokens;
 	const cacheCreation = t.cache_creation_5m + t.cache_creation_1h;
 	const denom = t.input + t.cache_read + cacheCreation;
-	const cacheHitPct = denom > 0 ? (t.cache_read / denom) * 100 : 0;
+	const hitRatio = payload.prompt_cache?.hit_ratio;
+	const cacheHitPct =
+		hitRatio !== undefined ? hitRatio * 100
+		: denom > 0 ? (t.cache_read / denom) * 100
+		: 0;
 
 	return {
 		usedPct,

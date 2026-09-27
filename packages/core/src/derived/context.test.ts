@@ -49,6 +49,21 @@ test("band uses the fixed context cutoffs at 33/34 and 66/67", () => {
 	expect(bandAt(67)).toBe("critical");
 });
 
+test("cacheHitPct prefers the payload's prompt_cache.hit_ratio over the transcript", () => {
+	const c = deriveContext(
+		{ ...base, prompt_cache: { hit_ratio: 0.91 } },
+		scan({ tokens: { input: 100, cache_read: 300, cache_creation_5m: 100 } }),
+	);
+	expect(c.cacheHitPct).toBeCloseTo(91, 6);
+	// prompt_cache without a hit_ratio falls back to the transcript
+	expect(
+		deriveContext(
+			{ ...base, prompt_cache: {} },
+			scan({ tokens: { input: 100, cache_read: 300, cache_creation_5m: 100 } }),
+		).cacheHitPct,
+	).toBeCloseTo(60, 6);
+});
+
 test("cacheHitPct = cache_read / (input + cache_read + cache_creation)", () => {
 	// input 100, cache_read 300, cache_creation 100 (5m) ⇒ 300 / 500 = 60%
 	const c = deriveContext(

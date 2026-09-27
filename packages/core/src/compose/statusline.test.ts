@@ -307,6 +307,18 @@ test("pr appends review_state as a signal-colored word", () => {
 	]);
 });
 
+test("a GitLab merge request (pr.kind mr) renders as MR: !n", () => {
+	const mr = composeStatusline({
+		...base,
+		payload: { ...payload, pr: { number: 12, url: "https://gitlab.test/mr/12", kind: "mr" } },
+	}).fields.find((f) => f.id === "pr");
+	expect(mr?.segments.filter((s) => s.role === "value").map((s) => s.text)).toEqual([
+		"MR:",
+		"!12",
+	]);
+	expect(mr?.segments.find((s) => s.text === "!12")?.href).toBe("https://gitlab.test/mr/12");
+});
+
 test("only the #n segment carries the href; pr.url absent ⇒ no href", () => {
 	const withUrl = composeStatusline({
 		...base,

@@ -18,7 +18,7 @@ export interface ModelInfo {
 
 /**
  * The model field's inputs. `name` strips a leading `"Claude "` from the provider-resolved model name; `fast`
- * comes from the transcript scan (no payload field carries it); effort/thinking/style/agent come from the
+ * prefers the payload's `fast_mode`, falling back to the transcript scan's speed on older CLIs; effort/thinking/style/agent come from the
  * payload. Effort renders inline in the model, so it is not a widget of its own.
  */
 export function deriveModel(
@@ -40,7 +40,7 @@ export function deriveModel(
 		name,
 		contextLabel,
 		...(effort !== undefined ? { effort } : {}),
-		fast: scan.speed === "fast",
+		fast: payload.fast_mode ?? scan.speed === "fast",
 		thinking: payload.thinking?.enabled ?? false,
 		...(outputStyle !== undefined ? { outputStyle } : {}),
 		...(agentName !== undefined ? { agentName } : {}),
