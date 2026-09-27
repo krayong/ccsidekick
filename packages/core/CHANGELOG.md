@@ -1,5 +1,11 @@
 # ccsidekick
 
+## 1.10.0
+
+### Minor Changes
+
+- 1eb688f: Read three newer statusline payload fields. The `cache_hit` widget now shows Claude Code's session-wide `prompt_cache.hit_ratio`, and `fast_mode` reads the payload's `fast_mode` flag. Both fall back to the transcript on older Claude Code versions. The `pr` widget shows a GitLab merge request as `MR: !n`.
+
 ## 1.9.0
 
 ### Minor Changes
