@@ -42,6 +42,26 @@ test("reads the full canonical field set", () => {
 	expect(p?.pr?.review_state).toBe("approved");
 });
 
+test("reads fast_mode, prompt_cache.hit_ratio, and pr.kind", () => {
+	const p = parsePayload({
+		fast_mode: true,
+		prompt_cache: { warm: true, hit_ratio: 0.91 },
+		pr: { number: 12, kind: "mr" },
+	});
+	expect(p?.fast_mode).toBe(true);
+	expect(p?.prompt_cache?.hit_ratio).toBe(0.91);
+	expect(p?.pr?.kind).toBe("mr");
+	// hit_ratio is null while the session has no input-class tokens
+	expect(
+		parsePayload({ prompt_cache: { hit_ratio: null } })?.prompt_cache?.hit_ratio,
+	).toBeUndefined();
+	// all three are absent on older CLIs
+	const old = parsePayload({ pr: { number: 12 } });
+	expect(old?.fast_mode).toBeUndefined();
+	expect(old?.prompt_cache).toBeUndefined();
+	expect(old?.pr?.kind).toBeUndefined();
+});
+
 test("dir prefers workspace.current_dir, falls back to top-level cwd", () => {
 	expect(
 		parsePayload({ workspace: { current_dir: "/a" }, cwd: "/b" })?.workspace.current_dir,

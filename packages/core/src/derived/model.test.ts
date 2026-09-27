@@ -55,7 +55,13 @@ test("name keeps a non-'Claude ' prefix verbatim", () => {
 	expect(deriveModel(base, provider("Opus 4.8"), EMPTY_SCAN).name).toBe("Opus 4.8");
 });
 
-test("fast comes from the transcript scan speed, not the payload", () => {
+test("fast prefers the payload's fast_mode over the transcript scan speed", () => {
+	const fastScan = { ...EMPTY_SCAN, speed: "fast" };
+	expect(deriveModel({ ...base, fast_mode: true }, provider("X"), EMPTY_SCAN).fast).toBe(true);
+	expect(deriveModel({ ...base, fast_mode: false }, provider("X"), fastScan).fast).toBe(false);
+});
+
+test("fast falls back to the transcript scan speed when the payload has no fast_mode", () => {
 	expect(deriveModel(base, provider("X"), EMPTY_SCAN).fast).toBe(false);
 	expect(deriveModel(base, provider("X"), { ...EMPTY_SCAN, speed: "fast" }).fast).toBe(true);
 	expect(deriveModel(base, provider("X"), { ...EMPTY_SCAN, speed: "slow" }).fast).toBe(false);

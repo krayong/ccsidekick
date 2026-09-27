@@ -1,7 +1,7 @@
 /** The Claude Code statusline stdin JSON, narrowed from `unknown`. */
 export interface Payload {
 	readonly session_id?: string;
-	readonly session_name?: string; // best-effort: absent from the official available-data table
+	readonly session_name?: string;
 	readonly version?: string; // CLI version, used for the oauthUsage User-Agent
 	readonly transcript_path?: string;
 	readonly cwd?: string; // fall back here when workspace.current_dir is absent
@@ -21,19 +21,22 @@ export interface Payload {
 	readonly model: { readonly id?: string; readonly display_name?: string };
 	readonly output_style?: { readonly name?: string };
 	readonly thinking?: { readonly enabled?: boolean };
+	readonly fast_mode?: boolean;
 	readonly effort?: { readonly level?: string };
-	readonly agent?: { readonly name?: string }; // best-effort: absent from the official available-data table
+	readonly agent?: { readonly name?: string };
 	readonly cost?: { readonly total_cost_usd?: number; readonly total_duration_ms?: number };
 	readonly context_window?: {
 		readonly used_percentage?: number;
 		readonly total_input_tokens?: number;
 		readonly context_window_size?: number;
 	};
+	readonly prompt_cache?: { readonly hit_ratio?: number }; // hit_ratio is 0–1
 	readonly rate_limits?: { readonly five_hour?: Quota; readonly seven_day?: Quota };
 	readonly pr?: {
 		readonly number?: number;
 		readonly url?: string;
 		readonly review_state?: string;
+		readonly kind?: string; // "mr" for a GitLab merge request, absent for a GitHub PR
 	};
 	// extra_usage (PAYG) is NOT here — it lives on UsageData (OAuth response).
 }
@@ -122,6 +125,7 @@ function parsePr(v: unknown): Payload["pr"] {
 		...opt("number", num(r["number"])),
 		...opt("url", str(r["url"])),
 		...opt("review_state", str(r["review_state"])),
+		...opt("kind", str(r["kind"])),
 	};
 }
 
@@ -154,6 +158,7 @@ export function parsePayload(raw: unknown): Payload | null {
 				{ ...opt("enabled", bool(obj(r["thinking"])["enabled"])) }
 			:	undefined,
 		),
+		...opt("fast_mode", bool(r["fast_mode"])),
 		...opt(
 			"effort",
 			r["effort"] !== undefined ?
@@ -181,6 +186,12 @@ export function parsePayload(raw: unknown): Payload | null {
 					...opt("total_input_tokens", num(ctx["total_input_tokens"])),
 					...opt("context_window_size", num(ctx["context_window_size"])),
 				}
+			:	undefined,
+		),
+		...opt(
+			"prompt_cache",
+			r["prompt_cache"] !== undefined ?
+				{ ...opt("hit_ratio", num(obj(r["prompt_cache"])["hit_ratio"])) }
 			:	undefined,
 		),
 		...opt("rate_limits", parseRateLimits(r["rate_limits"])),

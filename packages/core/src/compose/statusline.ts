@@ -254,12 +254,15 @@ const FIELD_REGISTRY: readonly RegistryEntry[] = [
 			const icon = ICON["pr"];
 			if (icon !== undefined) segs.push({ role: "icon", text: icon });
 			// Only the `#n` is the clickable, dotted-underlined link; the `PR:` lead-in stays plain text.
-			segs.push({ role: "value", text: "PR:" });
+			// A GitLab merge request (`kind: "mr"`) uses GitLab's own `MR:` / `!n` notation.
+			const mr = ctx.payload.pr?.kind === "mr";
+			segs.push({ role: "value", text: mr ? "MR:" : "PR:" });
+			const ref = `${mr ? "!" : "#"}${n}`;
 			const url = ctx.payload.pr?.url;
 			segs.push(
 				url !== undefined && url !== "" ?
-					{ role: "value", text: `#${n}`, href: url }
-				:	{ role: "value", text: `#${n}` },
+					{ role: "value", text: ref, href: url }
+				:	{ role: "value", text: ref },
 			);
 			const state = ctx.payload.pr?.review_state;
 			if (state !== undefined && state !== "") {
