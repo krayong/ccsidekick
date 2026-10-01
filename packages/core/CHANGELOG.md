@@ -1,5 +1,11 @@
 # ccsidekick
 
+## 1.11.0
+
+### Minor Changes
+
+- 0346793: Sync the bundled pricing table with the published Anthropic pricing page.
+
 ## 1.10.0
 
 ### Minor Changes
