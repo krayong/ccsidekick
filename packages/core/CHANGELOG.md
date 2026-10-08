@@ -1,5 +1,15 @@
 # ccsidekick
 
+## 1.12.0
+
+### Minor Changes
+
+- 6235999: Price Claude Haiku 5.5, including its prompt-size tier: a request whose prompt (input plus cache writes and reads) exceeds 100,000 tokens bills every lane at the higher rates. Pricing rows can now carry a `long_context` block, and the pricing refresh reads the two-row tier layout on the published page. Also syncs Sonnet 5.5's cache-read rate to $0.10 / MTok.
+
+### Patch Changes
+
+- 6235999: Fix account usage and exchange rates never refreshing from the status line. Claude Code kills the statusline process before a network fetch can finish, so the usage cache kept serving its first snapshot and Enterprise and Team plans showed no current spend. The render now hands each due refresh to a detached `ccsidekick-render refresh` child, and the fetch completes even when the statusline process is killed straight away.
+
 ## 1.11.0
 
 ### Minor Changes
