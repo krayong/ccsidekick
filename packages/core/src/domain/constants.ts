@@ -63,6 +63,3 @@ export const TODO_STALLED_MIN = 30; // minutes an in-progress todo sits before "
 // Cross-session analytics (derived/analytics, TUI).
 export const TIER_THRESHOLDS = [3, 15, 50, 100] as const; // familiarity tier session-count cutoffs
 export const DAILY_WINDOW_DAYS = 60; // TUI daily-activity window
-
-// Pricing (derived/pricing).
-export const PRICING_TIER_THRESHOLD = 200_000; // input tokens above which tiered (>200k) pricing applies

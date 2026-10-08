@@ -118,3 +118,36 @@ test("an injected alias maps a custom id to a known table key", () => {
 	expect(priceMessage(usage({ input_tokens: M }), "my-opus", aliases)).toBeCloseTo(5, 9);
 	expect(resolvePrice("my-opus", aliases)).not.toBeNull();
 });
+
+test("Haiku 5.5 bills every lane at its long-context rates once the prompt exceeds 100k tokens", () => {
+	// Prompt = input + cache writes + cache reads. At exactly 100k it stays on the base rates.
+	const atLimit = usage({
+		input_tokens: 40_000,
+		cache_read_input_tokens: 60_000,
+		output_tokens: 10_000,
+	});
+	expect(priceMessage(atLimit, "claude-haiku-5-5")).toBeCloseTo(
+		(40_000 * 0.1 + 60_000 * 0.01 + 10_000 * 0.5) / M,
+		12,
+	);
+	// One token over moves the whole request, output included, to the long-context rates.
+	const over = usage({
+		input_tokens: 40_001,
+		cache_read_input_tokens: 60_000,
+		output_tokens: 10_000,
+	});
+	expect(priceMessage(over, "claude-haiku-5-5")).toBeCloseTo(
+		(40_001 * 0.5 + 60_000 * 0.05 + 10_000 * 2.5) / M,
+		12,
+	);
+	// Cache writes count toward the prompt size and bill at the long-context write rates.
+	const writes = usage({
+		input_tokens: 1,
+		cache_creation: { ephemeral_5m_input_tokens: 100_000, ephemeral_1h_input_tokens: 50_000 },
+		cache_creation_input_tokens: 150_000,
+	});
+	expect(priceMessage(writes, "claude-haiku-5-5")).toBeCloseTo(
+		(1 * 0.5 + 100_000 * 0.625 + 50_000 * 1) / M,
+		12,
+	);
+});

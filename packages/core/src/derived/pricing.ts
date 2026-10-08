@@ -1,17 +1,29 @@
 import pricingData from "../data/pricing.json";
-import { PRICING_TIER_THRESHOLD } from "../domain";
 import type { Usage } from "../sources";
 
 const PER_MILLION = 1_000_000;
 
-/** One resolved price row, per-million-tokens in USD, plus the fast-mode multiplier (default `1`). */
-interface PriceRow {
+/** The five standard-API lanes, per-million-tokens in USD. */
+interface Lanes {
 	readonly input: number;
 	readonly output: number;
 	readonly cache_write_5m: number;
 	readonly cache_write_1h: number;
 	readonly cache_read: number;
+}
+
+/** The lanes a request bills at once its prompt exceeds `above_tokens`. */
+interface LongContext extends Lanes {
+	readonly above_tokens: number;
+}
+
+/**
+ * One resolved price row, plus the fast-mode multiplier (default `1`) and, for a model priced by prompt size,
+ * the long-context lanes.
+ */
+interface PriceRow extends Lanes {
 	readonly fast_mult: number;
+	readonly long_context?: LongContext;
 }
 
 /**
@@ -19,6 +31,8 @@ interface PriceRow {
  * `pricing.json`: base `input`/`output`, the two cache-write lanes and the cache-read lane, the 50%-off
  * `batch_*` lane (reference only — Claude Code makes no Batch API calls, so nothing prices against it), and the
  * `fast_mult` premium (omitted ⇒ `1`). `until` is an exclusive ISO-date upper bound for date-scoped prices.
+ * `long_context` carries the rates every lane bills at once a request's prompt exceeds its `above_tokens`
+ * (with the reference-only batch pair alongside).
  */
 interface RawRow {
 	readonly key: string;
@@ -31,6 +45,10 @@ interface RawRow {
 	readonly batch_input: number;
 	readonly batch_output: number;
 	readonly fast_mult?: number;
+	readonly long_context?: LongContext & {
+		readonly batch_input: number;
+		readonly batch_output: number;
+	};
 }
 
 /** A price row tagged with the instant it stops applying (`+Infinity` when open-ended). */
@@ -54,6 +72,18 @@ const TABLE: ReadonlyMap<string, readonly DatedRow[]> = (() => {
 			cache_write_1h: r.cache_write_1h,
 			cache_read: r.cache_read,
 			fast_mult: r.fast_mult ?? 1,
+			...(r.long_context !== undefined ?
+				{
+					long_context: {
+						above_tokens: r.long_context.above_tokens,
+						input: r.long_context.input,
+						output: r.long_context.output,
+						cache_write_5m: r.long_context.cache_write_5m,
+						cache_write_1h: r.long_context.cache_write_1h,
+						cache_read: r.long_context.cache_read,
+					},
+				}
+			:	{}),
 			untilMs: r.until !== undefined ? Date.parse(r.until) : Number.POSITIVE_INFINITY,
 		};
 		const rows = byKey.get(r.key);
@@ -144,17 +174,12 @@ export function modelKeyOf(modelId: string, aliases: ModelAliases = NO_ALIASES):
 	return resolveKey(modelId, aliases) ?? modelId;
 }
 
-/** Flat `tokens × base`, unless an `above`-200k rate applies (no Claude model carries one — reserved). */
-function tiered(tokens: number, base: number, above?: number): number {
-	if (tokens <= PRICING_TIER_THRESHOLD || above === undefined) return tokens * base;
-	return PRICING_TIER_THRESHOLD * base + (tokens - PRICING_TIER_THRESHOLD) * above;
-}
-
 /**
  * Price one `message.usage` for `modelId`. Pure: a substring match on the normalized key, no AWS/network. An
  * unresolved id (including `<synthetic>` and ARNs with no model) prices to 0. Each cache lane uses its own
  * published rate (`cache_write_5m`, `cache_write_1h`, `cache_read`); `usage.speed === "fast"` applies the row's
- * `fast_mult`. `atMs` (the message timestamp) selects the price in effect at that instant for a date-scoped
+ * `fast_mult`. For a model priced by prompt size, a prompt (input + cache writes + cache reads) over the row's
+ * `long_context.above_tokens` bills every lane, output included, at the long-context rates. `atMs` (the message timestamp) selects the price in effect at that instant for a date-scoped
  * model; when omitted, the current price applies. The injected `aliases` map (from `sources/env`)
  * supplies user `CCSIDEKICK_MODEL_ALIASES` overrides.
  */
@@ -167,24 +192,23 @@ export function priceMessage(
 	const row = resolvePrice(modelId, aliases, atMs);
 	if (row === null) return 0;
 
-	const input = row.input / PER_MILLION;
-	const output = row.output / PER_MILLION;
-	const cacheWrite5m = row.cache_write_5m / PER_MILLION;
-	const cacheWrite1h = row.cache_write_1h / PER_MILLION;
-	const cacheRead = row.cache_read / PER_MILLION;
-
 	const c5m =
 		usage.cache_creation ?
 			usage.cache_creation.ephemeral_5m_input_tokens
 		:	usage.cache_creation_input_tokens;
 	const c1h = usage.cache_creation ? usage.cache_creation.ephemeral_1h_input_tokens : 0;
 
+	const prompt = usage.input_tokens + c5m + c1h + usage.cache_read_input_tokens;
+	const long = row.long_context;
+	const rates: Lanes = long !== undefined && prompt > long.above_tokens ? long : row;
+
 	const cost =
-		tiered(usage.input_tokens, input) +
-		tiered(usage.output_tokens, output) +
-		tiered(c5m, cacheWrite5m) +
-		tiered(c1h, cacheWrite1h) +
-		tiered(usage.cache_read_input_tokens, cacheRead);
+		(usage.input_tokens * rates.input +
+			usage.output_tokens * rates.output +
+			c5m * rates.cache_write_5m +
+			c1h * rates.cache_write_1h +
+			usage.cache_read_input_tokens * rates.cache_read) /
+		PER_MILLION;
 
 	const speedMult = usage.speed === "fast" ? row.fast_mult : 1;
 	return cost * speedMult;

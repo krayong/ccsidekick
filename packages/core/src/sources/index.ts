@@ -6,6 +6,10 @@
 export type { AttributionEntry, AttributionStore } from "./analyticsStore";
 export { readAttribution, upsertAttribution } from "./analyticsStore";
 
+// backgroundRefresh
+export type { RefreshKind, StartRefresh } from "./backgroundRefresh";
+export { spawnRefresh } from "./backgroundRefresh";
+
 // balance
 export type { BalanceSnapshot } from "./balance";
 export { readBalance } from "./balance";
@@ -34,7 +38,7 @@ export { readEnv, readModelAliases } from "./env";
 export { appendEvent, readEvents } from "./events";
 
 // fx
-export { readFx, readFxCached } from "./fx";
+export { claimFxRefresh, readFx, readFxCached, runFxRefresh } from "./fx";
 
 // git
 export type { GitState } from "./git";
@@ -53,7 +57,7 @@ export { learnModelName, readModelNames } from "./modelNames";
 
 // oauthUsage
 export type { OAuthQuota, UsageData } from "./oauthUsage";
-export { readUsage, readUsageCached } from "./oauthUsage";
+export { claimUsageRefresh, readUsage, readUsageCached, runUsageRefresh } from "./oauthUsage";
 
 // payload
 export type { Payload } from "./payload";

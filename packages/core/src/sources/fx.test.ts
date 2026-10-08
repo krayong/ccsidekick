@@ -5,7 +5,7 @@ import { join } from "node:path";
 import { expect, test } from "bun:test";
 
 import { fixedClock } from "./clock";
-import { readFx, readFxCached } from "./fx";
+import { claimFxRefresh, readFx, readFxCached, runFxRefresh } from "./fx";
 
 const NOW = 1_700_000_000_000;
 
@@ -202,6 +202,39 @@ test("readFxCached: bundled fallback merged over the cache, no refresh fired", (
 		expect(bundled["INR"]).toBeGreaterThan(0);
 		seedCache(root, { rates: { INR: 1 }, fetchedAt: NOW, nextUpdateAt: NOW + 1 });
 		expect(readFxCached(root)["INR"]).toBe(1); // cached override wins
+	} finally {
+		rmSync(root, { recursive: true, force: true });
+	}
+});
+
+test("claimFxRefresh: a stale cache is claimed once, then the slot is held", () => {
+	const root = tmpRoot();
+	try {
+		expect(claimFxRefresh(root, fixedClock(NOW))).toBe(true); // no cache yet ⇒ due
+		expect(claimFxRefresh(root, fixedClock(NOW))).toBe(false); // already claimed
+	} finally {
+		rmSync(root, { recursive: true, force: true });
+	}
+});
+
+test("claimFxRefresh: a cache before its nextUpdateAt is never claimed", () => {
+	const root = tmpRoot();
+	try {
+		seedCache(root, { rates: { INR: 83 }, fetchedAt: NOW, nextUpdateAt: NOW + 1 });
+		expect(claimFxRefresh(root, fixedClock(NOW))).toBe(false);
+	} finally {
+		rmSync(root, { recursive: true, force: true });
+	}
+});
+
+test("runFxRefresh: fetches under the caller's claim and writes the cache", async () => {
+	const root = tmpRoot();
+	const stub = okStub({ rates: { USD: 1, INR: 84 } });
+	try {
+		expect(claimFxRefresh(root, fixedClock(NOW))).toBe(true);
+		await runFxRefresh(root, fixedClock(NOW), { fetchImpl: stub.fetchImpl });
+		expect(stub.count()).toBe(1);
+		expect(readCache(root).rates["INR"]).toBe(84);
 	} finally {
 		rmSync(root, { recursive: true, force: true });
 	}

@@ -209,8 +209,28 @@
 		"output": 10,
 		"cache_write_5m": 2.5,
 		"cache_write_1h": 4,
-		"cache_read": 0.2,
+		"cache_read": 0.1,
 		"batch_input": 1,
 		"batch_output": 5
+	},
+	{
+		"key": "claude-haiku-5-5",
+		"input": 0.1,
+		"output": 0.5,
+		"cache_write_5m": 0.125,
+		"cache_write_1h": 0.2,
+		"cache_read": 0.01,
+		"batch_input": 0.05,
+		"batch_output": 0.25,
+		"long_context": {
+			"above_tokens": 100000,
+			"input": 0.5,
+			"output": 2.5,
+			"cache_write_5m": 0.625,
+			"cache_write_1h": 1,
+			"cache_read": 0.05,
+			"batch_input": 0.25,
+			"batch_output": 1.25
+		}
 	}
 ]

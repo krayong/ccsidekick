@@ -7,11 +7,13 @@ import { expect, test } from "bun:test";
 import { fixedClock } from "./clock";
 import {
 	type UsageData,
+	claimUsageRefresh,
 	keychainService,
 	keychainToken,
 	parseOauth,
 	readUsage,
 	readUsageCached,
+	runUsageRefresh,
 } from "./oauthUsage";
 
 const NOW = 1_700_000_000_000;
@@ -285,6 +287,43 @@ test("readUsageCached: returns the cached data synchronously, null when absent",
 		expect(readUsageCached(root)).toBeNull(); // no cache yet
 		seedCache(root, SAMPLE, NOW);
 		expect(readUsageCached(root)?.rate_limits.five_hour?.utilization).toBe(12);
+	} finally {
+		rmSync(root, { recursive: true, force: true });
+	}
+});
+
+test("claimUsageRefresh: a stale cache is claimed once, then the slot is held", () => {
+	const root = tmpRoot();
+	try {
+		expect(claimUsageRefresh(root, fixedClock(NOW))).toBe(true); // no cache yet ⇒ due
+		expect(claimUsageRefresh(root, fixedClock(NOW))).toBe(false); // already claimed
+	} finally {
+		rmSync(root, { recursive: true, force: true });
+	}
+});
+
+test("claimUsageRefresh: a fresh cache is never claimed", () => {
+	const root = tmpRoot();
+	try {
+		seedCache(root, SAMPLE, NOW);
+		expect(claimUsageRefresh(root, fixedClock(NOW))).toBe(false);
+	} finally {
+		rmSync(root, { recursive: true, force: true });
+	}
+});
+
+test("runUsageRefresh: fetches under the caller's claim and writes the cache", async () => {
+	const root = tmpRoot();
+	const stub = okStub({
+		extra_usage: { used_credits: 67_883, monthly_limit: 120_000, is_enabled: true },
+	});
+	try {
+		expect(claimUsageRefresh(root, fixedClock(NOW))).toBe(true);
+		await withToken(() =>
+			runUsageRefresh(root, fixedClock(NOW), { fetchImpl: stub.fetchImpl }),
+		);
+		expect(stub.count()).toBe(1);
+		expect(readCache(root).data.extra_usage?.used_credits).toBe(67_883);
 	} finally {
 		rmSync(root, { recursive: true, force: true });
 	}

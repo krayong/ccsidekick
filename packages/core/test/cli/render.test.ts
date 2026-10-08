@@ -210,3 +210,33 @@ function track(d: string): string {
 	tmpDirs.push(d);
 	return d;
 }
+
+test("persist claims due network refreshes and hands them to the starter, once per slot", () => {
+	const cfg = freshRoot();
+	const env = withGlobalConfig(
+		cfg,
+		'[character]\nmode = "fixed"\nname = "batman"\n\n[network]\nfx_refresh = true\nusage_fetch = true\n',
+	);
+	const root = join(cfg, "ccsidekick");
+	const started: [string, string][] = [];
+	const starter = (kind: string, at: string): void => {
+		started.push([kind, at]);
+	};
+
+	runRender(stdin, env, term(), clock).persist(starter);
+	expect(started.sort()).toEqual([
+		["fx", root],
+		["usage", root],
+	]);
+
+	runRender(stdin, env, term(), clock).persist(starter); // both slots already claimed
+	expect(started.length).toBe(2);
+});
+
+test("persist without a starter claims no network refresh", () => {
+	const cfg = freshRoot();
+	const env = withGlobalConfig(cfg, "[network]\nfx_refresh = true\nusage_fetch = true\n");
+	runRender(stdin, env, term(), clock).persist();
+	expect(existsSync(join(cfg, "ccsidekick", "cache", "usage.stamp"))).toBe(false);
+	expect(existsSync(join(cfg, "ccsidekick", "cache", "fx.stamp"))).toBe(false);
+});

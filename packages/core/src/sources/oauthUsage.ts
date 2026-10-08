@@ -212,29 +212,43 @@ const FETCH_TIMEOUT_MS = 3000;
 /** A failed refresh frees the single-flight slot after this backoff, not the full 5-minute TTL. */
 const FAIL_BACKOFF_MS = 30_000; // 30s
 
+/** Whether the cache is missing or older than `USAGE_TTL_MS`. */
+function usageStale(root: string, now: number): boolean {
+	const cached = readCachedUsage(root);
+	return cached === null || now - cached.fetchedAt > USAGE_TTL_MS;
+}
+
 /**
- * Detached single-flighted refresh of the OAuth usage cache. Never blocks a render. The claim stamp only sticks
- * for the full TTL on success; any failure rolls it back to a short retry backoff.
+ * Claim the single-flight refresh slot when the cache is due. True means the caller now owns the refresh and
+ * must run `runUsageRefresh` (in process or in a detached child); false means the cache is fresh or another
+ * refresh holds the slot.
  */
-async function refresh(
+export function claimUsageRefresh(root: string, clock: Clock): boolean {
+	const now = clock.now();
+	return usageStale(root, now) && singleFlight(usageStamp(root), USAGE_TTL_MS, now);
+}
+
+/**
+ * Fetch and store the OAuth usage under a slot the caller already claimed. The claim stamp only sticks for the
+ * full TTL on success; any failure rolls it back to a short retry backoff.
+ */
+export async function runUsageRefresh(
 	root: string,
 	clock: Clock,
-	fetchImpl: typeof fetch,
-	version: string | undefined,
+	opts: { version?: string; fetchImpl?: typeof fetch },
 ): Promise<void> {
 	const now = clock.now();
-	if (!singleFlight(usageStamp(root), USAGE_TTL_MS, now)) return;
 	const token = readToken();
 	// A missing token is a stable logged-out state (not a transient fetch failure), so keep the full-TTL claim
 	// rather than backing off — this avoids a keychain read on every render tick while signed out.
 	if (token === undefined) return;
 	let ok = false;
 	try {
-		const res = await fetchImpl(ENDPOINT, {
+		const res = await (opts.fetchImpl ?? fetch)(ENDPOINT, {
 			headers: {
 				Authorization: `Bearer ${token}`,
 				"anthropic-beta": "oauth-2025-04-20",
-				"User-Agent": `claude-code/${version ?? "unknown"}`,
+				"User-Agent": `claude-code/${opts.version ?? "unknown"}`,
 			},
 			signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
 		});
@@ -250,8 +264,8 @@ async function refresh(
 }
 
 /**
- * The cached OAuth `UsageData`, read synchronously with no refresh — for the hot render path. The refresh
- * runs on the persist tail (which calls `readUsage`).
+ * The cached OAuth `UsageData`, read synchronously with no refresh — for the hot render path. The render's
+ * persist tail claims the refresh (`claimUsageRefresh`) and hands it to a detached child (`runUsageRefresh`).
  */
 export function readUsageCached(root: string): UsageData | null {
 	const cached = readCachedUsage(root);
@@ -260,9 +274,10 @@ export function readUsageCached(root: string): UsageData | null {
 
 /**
  * Return the cached OAuth `UsageData` synchronously (stale data is served on any fetch failure). When
- * `enabled` and the cache is missing or older than `USAGE_TTL_MS`, fire a detached single-flighted refresh —
- * never awaited, so the fetch can neither block the render nor surface an `unhandledRejection`. The
- * User-Agent version is the stdin payload's `version`. Off by default; opt in via [network].usage_fetch.
+ * `enabled` and the cache is missing or older than `USAGE_TTL_MS`, fire a single-flighted in-process refresh —
+ * never awaited, so the fetch can neither block the caller nor surface an `unhandledRejection`. Only a
+ * long-lived process can rely on this: Claude Code kills the statusline process before a fetch lands, so
+ * the render hands its refresh to a detached child instead. The User-Agent version is the stdin payload's `version`. Off by default; opt in via [network].usage_fetch.
  * When enabled, sends the account's OAuth bearer token to Anthropic.
  */
 export function readUsage(
@@ -271,9 +286,8 @@ export function readUsage(
 	opts: { enabled: boolean; version?: string; fetchImpl?: typeof fetch },
 ): Promise<UsageData | null> {
 	const cached = readCachedUsage(root);
-	const now = clock.now();
-	if (opts.enabled && (cached === null || now - cached.fetchedAt > USAGE_TTL_MS)) {
-		void refresh(root, clock, opts.fetchImpl ?? fetch, opts.version).catch(() => {
+	if (opts.enabled && claimUsageRefresh(root, clock)) {
+		void runUsageRefresh(root, clock, opts).catch(() => {
 			/* fetch failures keep the stale cached data */
 		});
 	}
