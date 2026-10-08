@@ -63,8 +63,11 @@ import {
 	type MarkerSet,
 	type PriceFn,
 	type ResolveProject,
+	type StartRefresh,
 	type UsageData,
 	ccsidekickRoot,
+	claimFxRefresh,
+	claimUsageRefresh,
 	learnModelName,
 	loadConfig,
 	parsePayload,
@@ -76,7 +79,6 @@ import {
 	readCredsCached,
 	readEnv,
 	readEvents,
-	readFx,
 	refreshCreds,
 	readFxCached,
 	readGit,
@@ -85,7 +87,6 @@ import {
 	readModelAliases,
 	readModelNames,
 	readState,
-	readUsage,
 	readUsageCached,
 	scanCostTree,
 	scanTranscript,
@@ -99,8 +100,11 @@ import { runGc } from "./gc";
 
 interface RenderResult {
 	readonly line: string;
-	/** Best-effort, lock-guarded side effects run AFTER the line is flushed; never throws, never delays the line. */
-	readonly persist: () => void;
+	/**
+	 * Best-effort, lock-guarded side effects run AFTER the line is flushed; never throws, never delays the line.
+	 * Each due network refresh is claimed here and handed to `startRefresh`; without one, none is claimed.
+	 */
+	readonly persist: (startRefresh?: StartRefresh) => void;
 }
 
 const EMPTY_HELPFUL_ENV: HelpfulEnv = {};
@@ -469,7 +473,19 @@ function build(
 	const line = layout(layoutInput, term);
 
 	// ── Persist (best-effort; runs after the line is flushed) ────────────────────
-	const persist = (): void => {
+	const persist = (startRefresh?: StartRefresh): void => {
+		// Hand off the network refreshes first: claiming and spawning take a millisecond, while the writes below can
+		// take long enough for Claude Code to kill this process before it reaches them.
+		swallow(() => {
+			if (startRefresh && config.network.fx_refresh && claimFxRefresh(root, clock)) {
+				startRefresh("fx", root);
+			}
+		});
+		swallow(() => {
+			if (startRefresh && config.network.usage_fetch && claimUsageRefresh(root, clock)) {
+				startRefresh("usage", root);
+			}
+		});
 		swallow(() => {
 			upsertAttribution(root, String(session), {
 				project: String(project),
@@ -521,12 +537,6 @@ function build(
 			if (isArnModel && rawModelName !== "" && rawModelName !== rawModelId) {
 				learnModelName(root, modelNames, rawModelId, rawModelName);
 			}
-		});
-		swallow(() => {
-			void readFx(root, clock, { enabled: config.network.fx_refresh });
-		});
-		swallow(() => {
-			void readUsage(root, clock, { enabled: config.network.usage_fetch });
 		});
 		swallow(() => {
 			// Refresh the cached subscription tier (TTL-gated) so the hot path never spawns the keychain itself.

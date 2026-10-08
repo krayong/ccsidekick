@@ -222,3 +222,55 @@ test("buildRows derives keys for unseen releases in known families", () => {
 	expect(byId(rows, "claude-sonnet-6-1")?.input).toBe(4);
 	expect(rows.some((r) => r.key.includes("mythos"))).toBe(false);
 });
+
+// A model priced by prompt size spans two rows: the name cell carries rowSpan="2", the first row holds the rates
+// "for prompts up to N tokens" and the continuation row (one cell short) holds the rates "for prompts over N".
+const tierNote = (price: string, note: string): string =>
+	`<td><div>${price}<!-- --> <span>/ MTok</span><span>${note}</span></div></td>`;
+const haikuName = `<td rowSpan="2"><div><div><a href="x">Claude Haiku 5.5</a><span>For high-volume, latency-sensitive tasks</span></div></div></td>`;
+const TIERED = `
+<table><thead>
+<tr><th scope="colgroup">Model</th><th colSpan="2">Base tokens</th><th colSpan="3">Prompt caching</th></tr>
+<tr><th>Name</th><th>Input</th><th>Output</th><th>5m writes</th><th>1h writes</th><th>Hits and refreshes</th></tr>
+</thead><tbody>
+<tr>${haikuName}${tierNote("$0.10", "for prompts up to 100,000 tokens")}${mtok("$0.50")}${mtok("$0.125")}${mtok("$0.20")}${mtok("$0.01")}</tr>
+<tr>${tierNote("$0.50", "for prompts over 100,000 tokens")}${mtok("$2.50")}${mtok("$0.625")}${mtok("$1")}${mtok("$0.05")}</tr>
+<tr>${nameCell("Claude Haiku 4.5")}${mtok("$1")}${mtok("$5")}${mtok("$1.25")}${mtok("$2")}${mtok("$0.10")}</tr>
+</tbody></table>
+<table><thead>
+<tr><th>Model</th><th colSpan="2">Batch tokens</th></tr>
+<tr><th>Name</th><th>Input</th><th>Output</th></tr>
+</thead><tbody>
+<tr>${haikuName}${tierNote("$0.05", "for prompts up to 100,000 tokens")}${mtok("$0.25")}</tr>
+<tr>${tierNote("$0.25", "for prompts over 100,000 tokens")}${mtok("$1.25")}</tr>
+<tr>${nameCell("Claude Haiku 4.5")}${mtok("$0.50")}${mtok("$2.50")}</tr>
+</tbody></table>
+`;
+
+test("buildRows folds a rowSpan'd prompt-size tier into one row with a long_context block", () => {
+	const rows = buildRows(TIERED);
+	expect(rows.filter((r) => r.key === "claude-haiku-5-5")).toHaveLength(1);
+	expect(byId(rows, "claude-haiku-5-5")).toEqual({
+		key: "claude-haiku-5-5",
+		input: 0.1,
+		output: 0.5,
+		cache_write_5m: 0.125,
+		cache_write_1h: 0.2,
+		cache_read: 0.01,
+		batch_input: 0.05,
+		batch_output: 0.25,
+		long_context: {
+			above_tokens: 100_000,
+			input: 0.5,
+			output: 2.5,
+			cache_write_5m: 0.625,
+			cache_write_1h: 1,
+			cache_read: 0.05,
+			batch_input: 0.25,
+			batch_output: 1.25,
+		},
+	});
+	// The row after the span is untouched by it.
+	expect(byId(rows, "claude-haiku-4-5")).toMatchObject({ input: 1, batch_input: 0.5 });
+	expect(byId(rows, "claude-haiku-4-5")?.long_context).toBeUndefined();
+});

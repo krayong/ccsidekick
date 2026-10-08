@@ -31,3 +31,8 @@ export function spawnSync(cmd: unknown, args?: readonly unknown[]): SpawnSyncRes
 export function execFileSync(): never {
 	throw new Error("child_process is unavailable in the browser");
 }
+
+/** No detached children in the browser; the demo never runs the persist tail that would spawn one. */
+export function spawn(): never {
+	throw new Error("child_process is unavailable in the browser");
+}

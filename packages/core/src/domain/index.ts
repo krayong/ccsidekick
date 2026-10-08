@@ -54,7 +54,6 @@ export {
 	TODO_STALLED_MIN,
 	TIER_THRESHOLDS,
 	DAILY_WINDOW_DAYS,
-	PRICING_TIER_THRESHOLD,
 } from "./constants";
 
 export {

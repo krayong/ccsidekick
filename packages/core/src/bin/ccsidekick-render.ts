@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 import { readFileSync } from "node:fs";
 
-import { runClassify, runRender } from "../cli";
+import { runClassify, runRefresh, runRender } from "../cli";
 import { DEFAULT_COLUMNS, type TermContext } from "../domain";
-import { resolveClock, systemClock } from "../sources";
+import { resolveClock, spawnRefresh, systemClock } from "../sources";
 
 const sub = process.argv[2];
 
@@ -31,7 +31,14 @@ function dispatchRender(): void {
 			resolveClock(process.env),
 		);
 		process.stdout.write(`${line}\n`);
-		persist();
+		const script = process.argv[1];
+		persist(
+			script === undefined ? undefined : (
+				(kind, root) => {
+					spawnRefresh(script, kind, root);
+				}
+			),
+		);
 	} catch {
 		/* never surface a render error to Claude Code */
 	}
@@ -51,11 +58,25 @@ function dispatchClassify(): void {
 	}
 }
 
+/**
+ * The detached child `spawnRefresh` starts: run one claimed network refresh to completion, then exit 0. It
+ * writes nothing, and nothing reads its output.
+ */
+function dispatchRefresh(): void {
+	runRefresh(process.argv.slice(3), systemClock)
+		.catch(() => {
+			/* a failed refresh already rolled its claim back to the retry backoff */
+		})
+		.finally(() => process.exit(0));
+}
+
 if (sub === "classify") {
 	dispatchClassify();
+} else if (sub === "refresh") {
+	dispatchRefresh();
 } else if (sub === "render") {
 	dispatchRender();
 } else {
-	process.stderr.write("usage: ccsidekick-render <render|classify>\n");
+	process.stderr.write("usage: ccsidekick-render <render|classify|refresh>\n");
 	process.exit(2);
 }

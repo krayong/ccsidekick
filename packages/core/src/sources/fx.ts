@@ -68,15 +68,33 @@ const FETCH_TIMEOUT_MS = 3000;
 const FAIL_BACKOFF_MS = 300_000; // 5 min
 
 /**
- * Detached weekly refresh; single-flighted, validates rates, atomic-writes the cache. Never blocks a render. The
- * claim stamp only sticks for the full TTL on success; any failure rolls it back to a short retry backoff.
+ * Claim the single-flight refresh slot when the cached `nextUpdateAt` has passed (or there is no cache). True
+ * means the caller now owns the refresh and must run `runFxRefresh` (in process or in a detached child).
  */
-async function refresh(root: string, clock: Clock, fetchImpl: typeof fetch): Promise<void> {
+export function claimFxRefresh(root: string, clock: Clock): boolean {
 	const now = clock.now();
-	if (!singleFlight(fxStamp(root), FX_TTL_MS, now)) return;
+	const cached = readCachedFx(root);
+	return (
+		(cached === null || now >= cached.nextUpdateAt) &&
+		singleFlight(fxStamp(root), FX_TTL_MS, now)
+	);
+}
+
+/**
+ * Fetch, validate and atomic-write the rates under a slot the caller already claimed. The claim stamp only
+ * sticks for the full TTL on success; any failure rolls it back to a short retry backoff.
+ */
+export async function runFxRefresh(
+	root: string,
+	clock: Clock,
+	opts: { fetchImpl?: typeof fetch },
+): Promise<void> {
+	const now = clock.now();
 	let ok = false;
 	try {
-		const res = await fetchImpl(ENDPOINT, { signal: AbortSignal.timeout(FETCH_TIMEOUT_MS) });
+		const res = await (opts.fetchImpl ?? fetch)(ENDPOINT, {
+			signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
+		});
 		if (!res.ok) return;
 		const json: unknown = await res.json();
 		if (!isObject(json)) return;
@@ -95,7 +113,8 @@ async function refresh(root: string, clock: Clock, fetchImpl: typeof fetch): Pro
 
 /**
  * The bundled fallback table merged over `cache/fx.json`, read synchronously with no refresh. The hot render
- * path needs the rate now and leaves the weekly refresh to the persist tail (which calls `readFx`).
+ * path needs the rate now; its persist tail claims the weekly refresh (`claimFxRefresh`) and hands it to a
+ * detached child (`runFxRefresh`).
  */
 export function readFxCached(root: string): RateTable {
 	const cached = readCachedFx(root);
@@ -104,8 +123,9 @@ export function readFxCached(root: string): RateTable {
 
 /**
  * Return the bundled fallback table merged over `cache/fx.json`, synchronously. When `enabled` and the cached
- * `nextUpdateAt` has passed (a 7-day `FX_TTL_MS` floor), fire a detached single-flighted refresh — never
- * awaited, so the fetch can neither block the render nor surface an `unhandledRejection`.
+ * `nextUpdateAt` has passed (a 7-day `FX_TTL_MS` floor), fire a single-flighted in-process refresh — never
+ * awaited, so the fetch can neither block the caller nor surface an `unhandledRejection`. For long-lived
+ * callers (the TUI); the short-lived render process hands its refresh to a detached child instead.
  */
 export function readFx(
 	root: string,
@@ -114,8 +134,8 @@ export function readFx(
 ): Promise<RateTable> {
 	const cached = readCachedFx(root);
 	const table: RateTable = cached !== null ? { ...FALLBACK, ...cached.rates } : { ...FALLBACK };
-	if (opts.enabled && (cached === null || clock.now() >= cached.nextUpdateAt)) {
-		void refresh(root, clock, opts.fetchImpl ?? fetch).catch(() => {
+	if (opts.enabled && claimFxRefresh(root, clock)) {
+		void runFxRefresh(root, clock, opts).catch(() => {
 			/* fetch failures keep the cached/bundled table */
 		});
 	}

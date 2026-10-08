@@ -4,6 +4,9 @@ export { runClassify } from "./classify";
 // gc.ts
 export { runGc } from "./gc";
 
+// refresh.ts
+export { runRefresh } from "./refresh";
+
 // render.ts
 export { runRender } from "./render";
 export type { RenderOverrides } from "./render";
