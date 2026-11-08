@@ -31,7 +31,7 @@ test("every section is jumpable by name", () => {
 test("field entries only come from the form sections (where the cursor is authoritative)", () => {
 	const fields = buildFindIndex(deps).filter((e) => e.kind === "field");
 	// Comments/Network are the FormSection-backed sections; Statusline moved onto the widget rail, so its
-	// 33 toggles are indexed as actions (below) instead. Every field label is prefixed by one of these two.
+	// 34 toggles are indexed as actions (below) instead. Every field label is prefixed by one of these two.
 	for (const f of fields) {
 		expect(["Comments", "Network"].some((s) => f.label.startsWith(s))).toBe(true);
 	}

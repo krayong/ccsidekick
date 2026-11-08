@@ -173,8 +173,13 @@ const fitRow = (row: RowId, cells: readonly Field[], avail: number, sepGlyph: st
 	for (const id of dropOrder(row)) {
 		if (rowPlainWidth(present, sepGlyph) <= avail) break;
 		if (isProtected(id)) continue; // never remove a protected field; only its value truncates (below)
-		const idx = present.findIndex((c) => c.id === id);
-		if (idx >= 0) present.splice(idx, 1);
+		// A multi-cell widget (promo_credit) sheds its cells last-first, one at a time, until the row fits.
+		let idx = present.findLastIndex((c) => c.id === id);
+		while (idx >= 0) {
+			present.splice(idx, 1);
+			if (rowPlainWidth(present, sepGlyph) <= avail) break;
+			idx = present.findLastIndex((c) => c.id === id);
+		}
 	}
 	return fitCells(present, avail, sepGlyph);
 };

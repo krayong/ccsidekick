@@ -20,6 +20,7 @@ test("the table covers env providers, creds providers, and usage states", () => 
 	expect(SCENARIOS.some((s) => s.overrides?.creds?.subscriptionType === "pro")).toBe(true);
 	expect(SCENARIOS.some((s) => s.overrides?.usage?.extra_usage?.is_enabled === true)).toBe(true);
 	expect(SCENARIOS.some((s) => s.overrides?.balance != null)).toBe(true);
+	expect(SCENARIOS.some((s) => (s.overrides?.usage?.promo_credits?.length ?? 0) > 0)).toBe(true);
 });
 
 test("env-provider scenarios set exactly the reader's env key", () => {

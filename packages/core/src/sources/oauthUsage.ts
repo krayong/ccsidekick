@@ -28,6 +28,19 @@ interface ExtraUsage {
 	readonly is_enabled?: boolean;
 }
 
+/**
+ * A promotional model credit (e.g. the Frontier model credit), from the OAuth `promo_credits[]` list. Amounts are
+ * whole dollars (not cents, unlike `extra_usage`); `resets_at` is epoch **ms**, the end of the current period.
+ */
+export interface PromoCredit {
+	readonly label: string;
+	readonly used_dollars: number;
+	readonly limit_dollars: number;
+	readonly resets_at?: number;
+	readonly used_up_notice?: boolean;
+	readonly locked_reason?: string;
+}
+
 /** The OAuth usage response narrowed into a payload-mirroring shape (quotas wrapped under `rate_limits`). */
 export interface UsageData {
 	readonly rate_limits: {
@@ -35,6 +48,8 @@ export interface UsageData {
 		readonly seven_day?: OAuthQuota;
 	};
 	readonly extra_usage?: ExtraUsage;
+	/** Server order, malformed entries dropped; absent when the account has no promo. */
+	readonly promo_credits?: readonly PromoCredit[];
 }
 
 interface UsageCache {
@@ -86,16 +101,64 @@ function parseExtra(v: unknown): ExtraUsage | undefined {
 	};
 }
 
+/**
+ * One promo entry; `resetsAt` turns the raw `resets_at` into epoch ms (the fetched ISO string or the stored
+ * number). An entry without both dollar amounts is dropped.
+ */
+function parsePromo(
+	v: unknown,
+	resetsAt: (raw: unknown) => number | undefined,
+): PromoCredit | undefined {
+	if (!isObject(v)) return undefined;
+	const used_dollars = asNumber(v["used_dollars"]);
+	const limit_dollars = asNumber(v["limit_dollars"]);
+	if (used_dollars === undefined || limit_dollars === undefined) return undefined;
+	const label = typeof v["label"] === "string" ? v["label"] : "";
+	const usedUp = v["used_up_notice"];
+	const locked = v["locked_reason"];
+	return {
+		label,
+		used_dollars,
+		limit_dollars,
+		...opt("resets_at", resetsAt(v["resets_at"])),
+		...opt("used_up_notice", typeof usedUp === "boolean" ? usedUp : undefined),
+		// Any string is a lock (null is the unlocked value), so an empty reason still reads as locked.
+		...opt("locked_reason", typeof locked === "string" ? locked : undefined),
+	};
+}
+
+function parsePromos(
+	v: unknown,
+	resetsAt: (raw: unknown) => number | undefined,
+): readonly PromoCredit[] | undefined {
+	if (!Array.isArray(v)) return undefined;
+	const out = v.flatMap((e: unknown) => parsePromo(e, resetsAt) ?? []);
+	return out.length > 0 ? out : undefined;
+}
+
+const isoMs = (raw: unknown): number | undefined => {
+	if (typeof raw !== "string") return undefined;
+	const parsed = Date.parse(raw);
+	return Number.isFinite(parsed) ? parsed : undefined;
+};
+
 /** Narrow the raw OAuth response (top-level `five_hour`/`seven_day`/`extra_usage`) into `UsageData`. */
 function parseFetchedUsage(v: unknown): UsageData | null {
 	if (!isObject(v)) return null;
 	const five = parseFetchedQuota(v["five_hour"]);
 	const seven = parseFetchedQuota(v["seven_day"]);
 	const extra = parseExtra(v["extra_usage"]);
-	if (five === undefined && seven === undefined && extra === undefined) return null;
+	const promos = parsePromos(v["promo_credits"], isoMs);
+	// A present `promo_credits` array (even empty) is a real answer: it must overwrite the cache so a promo
+	// the server dropped stops rendering, rather than the response being rejected as empty.
+	const promoAnswer = Array.isArray(v["promo_credits"]);
+	if (five === undefined && seven === undefined && extra === undefined && !promoAnswer) {
+		return null;
+	}
 	return {
 		rate_limits: { ...opt("five_hour", five), ...opt("seven_day", seven) },
 		...opt("extra_usage", extra),
+		...opt("promo_credits", promos),
 	};
 }
 
@@ -106,9 +169,11 @@ function coerceStoredUsage(v: unknown): UsageData | null {
 	const five = coerceStoredQuota(rl["five_hour"]);
 	const seven = coerceStoredQuota(rl["seven_day"]);
 	const extra = parseExtra(v["extra_usage"]);
+	const promos = parsePromos(v["promo_credits"], asNumber);
 	return {
 		rate_limits: { ...opt("five_hour", five), ...opt("seven_day", seven) },
 		...opt("extra_usage", extra),
+		...opt("promo_credits", promos),
 	};
 }
 

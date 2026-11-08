@@ -53,7 +53,7 @@ cat >"$TMP/frame.svg" <<SVG
   <rect x="60" y="134" width="356" height="3" rx="1.5" fill="url(#g)"/>
   <text x="60" y="184" font-size="28" fill="#93a1b3">A Claude Code status line with a character that reacts.</text>
   <rect x="60" y="250" width="1160" height="234" rx="12" fill="#0d1117" stroke="#3a475b" stroke-width="1.5" filter="url(#sh)"/>
-  <text x="60" y="577" font-size="18" fill="#7d899b">18 characters · 75+ themes · 33 widgets · zero token spend · local-first · MIT</text>
+  <text x="60" y="577" font-size="18" fill="#7d899b">18 characters · 75+ themes · 34 widgets · zero token spend · local-first · MIT</text>
 </svg>
 SVG
 

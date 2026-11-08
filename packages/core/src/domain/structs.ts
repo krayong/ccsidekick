@@ -69,6 +69,7 @@ export type WidgetId =
 	| "weekly_usage"
 	| "balance"
 	| "pay_as_you_go"
+	| "promo_credit"
 	| "cache_hit"
 	| "token_burn"
 	| "session_duration"

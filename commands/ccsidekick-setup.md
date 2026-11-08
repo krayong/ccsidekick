@@ -51,7 +51,7 @@ Set up the ccsidekick status line for this user. What they asked for, if anythin
     read their current set, say so and ask rather than guessing.
 
     **`--usage-fetch=on` turns on a network call.** It is off by default. Enabling it makes ccsidekick send the
-    user's OAuth token to Anthropic to read account usage, which the `pay_as_you_go` and limit widgets need. It
+    user's OAuth token to Anthropic to read account usage, which the `pay_as_you_go`, `promo_credit` and limit widgets need. It
     spends no model tokens, but it is a credentialed request leaving their machine. Only pass it if they asked
     for account-usage or pay-as-you-go information, tell them plainly what it does, and get a yes first.
 

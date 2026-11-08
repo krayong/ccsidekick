@@ -59,6 +59,15 @@ export const SCENARIOS: readonly Scenario[] = [
 			usage: {
 				rate_limits: { five_hour: { utilization: 12 } },
 				extra_usage: { is_enabled: true, used_credits: 8, monthly_limit: 100 },
+				// resets_at sits 12d 5h after the preview's fixed clock (day 20000, 12:00 UTC).
+				promo_credits: [
+					{
+						label: "Frontier model credit",
+						used_dollars: 312.4,
+						limit_dollars: 2000,
+						resets_at: 20_012 * 86_400_000 + 17 * 3_600_000,
+					},
+				],
 			},
 		},
 	},

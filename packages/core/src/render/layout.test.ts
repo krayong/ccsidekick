@@ -456,3 +456,18 @@ test("the ⋯ placeholder segment renders faint in the separator color", () => {
 	expect(out).toContain(`\x1b[2;38;5;${RESOLVED.statusline.separator}m⋯`);
 	expect(out).not.toContain("\x1b[5m");
 });
+
+test("under width pressure, every promo_credit cell sheds before pay_as_you_go", () => {
+	const fields: Field[] = [
+		field("context_usage", "9% (92k/1M)"),
+		field("pay_as_you_go", "$13.91/$1200"),
+		field("promo_credit", "PROMO-A $11.08/$20000 (26d 9h left)"),
+		field("promo_credit", "PROMO-B $2/$50 (4d left)"),
+	];
+	const row = stripAnsi(layout(base({ fields }), term({ columns: 80 })))
+		.split("\n")
+		.find((l) => l.includes("9%"));
+	expect(row).toContain("$13.91/$1200");
+	expect(row?.includes("PROMO-A")).toBe(false);
+	expect(row?.includes("PROMO-B")).toBe(false);
+});

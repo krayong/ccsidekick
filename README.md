@@ -18,7 +18,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/themes-75%2B-8a63d2" alt="75+ themes">
-  <img src="https://img.shields.io/badge/widgets-33-8a63d2" alt="33 widgets">
+  <img src="https://img.shields.io/badge/widgets-34-8a63d2" alt="34 widgets">
   <img src="https://img.shields.io/badge/characters-18%20packs-8a63d2" alt="18 character packs">
   <img src="https://img.shields.io/badge/built%20with-Bun-f9f1e1?logo=bun&logoColor=000" alt="Built with Bun">
   <img src="https://img.shields.io/badge/TypeScript-3178c6?logo=typescript&logoColor=fff" alt="TypeScript">
@@ -33,7 +33,7 @@
 - **A character that reacts.** It notices what Claude is doing (tests passing, builds breaking,
   commits landing, a struggle and then a recovery) and comments in character, warming to you across
   sessions through familiarity tiers.
-- **A real status line.** 33 toggleable widgets: directory, model, git (branch, ahead/behind,
+- **A real status line.** 34 toggleable widgets: directory, model, git (branch, ahead/behind,
   staged/unstaged/untracked, uncommitted changes, stash, worktree, conflicts), token context, cost,
   usage limits, PR state, burn rate, and more. Threshold-colored.
 - **75+ built-in themes.** Dark, high-contrast, and retro palettes (Dracula, Nord,
@@ -200,7 +200,7 @@ Every field is toggled in `[statusline.widgets]` (the engine owns order and plac
 `git_changes`, `git_ahead_behind`, `git_status`, `git_conflict`, `git_operation`, `git_stash`, `pr`,
 `model`, `fast_mode`, `thinking`, `output_style`, `agent`, `context_usage`, `compactions`,
 `cost_chat`, `cost_project`, `cost_total`, `cost_burn`, `block_usage`, `weekly_usage`, `balance`,
-`pay_as_you_go`, `cache_hit`, `token_burn`, `session_duration`, `todo`.
+`pay_as_you_go`, `promo_credit`, `cache_hit`, `token_burn`, `session_duration`, `todo`.
 
 ## How it works
 

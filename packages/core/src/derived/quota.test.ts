@@ -128,3 +128,78 @@ test("balance from the snapshot, low band below the floor", () => {
 test("no sources ⇒ empty quota info", () => {
 	expect(deriveQuota(base, null, null, clock)).toEqual({});
 });
+
+const promo = (over: Partial<NonNullable<UsageData["promo_credits"]>[number]> = {}): UsageData => ({
+	rate_limits: {},
+	promo_credits: [
+		{
+			label: "Frontier model credit",
+			used_dollars: 11.08,
+			limit_dollars: 20_000,
+			resets_at: NOW + 26 * DAY + 9 * HR,
+			...over,
+		},
+	],
+});
+
+test("promo credits: title-cased server label, dollars, and a reset countdown", () => {
+	expect(deriveQuota(base, promo(), null, clock).promos).toEqual([
+		{
+			label: "Frontier Model Credit",
+			usedUsd: 11.08,
+			limitUsd: 20_000,
+			band: "nominal",
+			resetIn: "26d 9h left",
+		},
+	]);
+});
+
+test("promo credits keep server order, one entry per promo", () => {
+	const two: UsageData = {
+		rate_limits: {},
+		promo_credits: [
+			{ label: "frontier model credit", used_dollars: 1, limit_dollars: 10 },
+			{ label: "spring promo", used_dollars: 2, limit_dollars: 50 },
+		],
+	};
+	expect(deriveQuota(base, two, null, clock).promos?.map((p) => p.label)).toEqual([
+		"Frontier Model Credit",
+		"Spring Promo",
+	]);
+});
+
+test("promo label falls back to Promo Credit when the server sends none", () => {
+	expect(deriveQuota(base, promo({ label: "  " }), null, clock).promos?.[0]?.label).toBe(
+		"Promo Credit",
+	);
+});
+
+const promoBand = (over: Parameters<typeof promo>[0]) =>
+	deriveQuota(base, promo(over), null, clock).promos?.[0]?.band;
+
+test("promo band follows the PAYG thresholds", () => {
+	expect(promoBand({ used_dollars: 50, limit_dollars: 100 })).toBe("nominal");
+	expect(promoBand({ used_dollars: 70, limit_dollars: 100 })).toBe("caution");
+	expect(promoBand({ used_dollars: 85, limit_dollars: 100 })).toBe("critical");
+});
+
+test("promo goes critical on the server's used-up notice or a lock", () => {
+	expect(promoBand({ used_up_notice: true })).toBe("critical");
+	expect(promoBand({ locked_reason: "exhausted" })).toBe("critical");
+	expect(promoBand({ locked_reason: "" })).toBe("critical");
+});
+
+test("promo countdown is hidden when resets_at is missing or past", () => {
+	expect(deriveQuota(base, promo({ resets_at: NOW - 1 }), null, clock).promos?.[0]?.resetIn).toBe(
+		undefined,
+	);
+	const noReset: UsageData = {
+		rate_limits: {},
+		promo_credits: [{ label: "x", used_dollars: 1, limit_dollars: 2 }],
+	};
+	expect(deriveQuota(base, noReset, null, clock).promos?.[0]?.resetIn).toBeUndefined();
+});
+
+test("no promo_credits ⇒ no promos", () => {
+	expect(deriveQuota(base, { rate_limits: {} }, null, clock).promos).toBeUndefined();
+});

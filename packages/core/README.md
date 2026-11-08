@@ -1,6 +1,6 @@
 # ccsidekick
 
-**Claude Code status line with a reactive ASCII character, 33 widgets, and 75+ themes.**
+**Claude Code status line with a reactive ASCII character, 34 widgets, and 75+ themes.**
 
 ![Animated reel cycling through ccsidekick's character packs (Batman, Spider-Man, Yoda, and more), each an ASCII figure in its own theme beside a live Claude Code status line of git, cost, context, and usage with an in-character comment](https://raw.githubusercontent.com/krayong/ccsidekick/main/assets/characters.gif)
 

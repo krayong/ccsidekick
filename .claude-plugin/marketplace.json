@@ -1,6 +1,6 @@
 {
 	"name": "ccsidekick",
-	"description": "ccsidekick: a Claude Code status line with a reactive ASCII character, 33 widgets, and 75+ themes.",
+	"description": "ccsidekick: a Claude Code status line with a reactive ASCII character, 34 widgets, and 75+ themes.",
 	"owner": {
 		"name": "Karan Gourisaria",
 		"url": "https://github.com/krayong"
@@ -9,7 +9,7 @@
 		{
 			"name": "ccsidekick",
 			"source": "./",
-			"description": "ccsidekick: a Claude Code status line with a reactive ASCII character, 33 widgets, and 75+ themes."
+			"description": "ccsidekick: a Claude Code status line with a reactive ASCII character, 34 widgets, and 75+ themes."
 		}
 	]
 }

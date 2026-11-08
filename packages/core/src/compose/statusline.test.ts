@@ -166,6 +166,7 @@ test("data-gated widgets are omitted when their data is absent", () => {
 		"compactions",
 		"balance",
 		"pay_as_you_go",
+		"promo_credit",
 		"session_name",
 	] satisfies WidgetId[]) {
 		expect(fields.find((f) => f.id === id)).toBeUndefined();
@@ -576,4 +577,64 @@ test("isProtected covers only the orientation + work-safety core", () => {
 	for (const id of ["fast_mode", "git_hash", "cost_chat", "weekly_usage", "todo"] as const) {
 		expect(isProtected(id)).toBe(false);
 	}
+});
+
+const frontier = {
+	label: "Frontier Model Credit",
+	usedUsd: 11.08,
+	limitUsd: 20_000,
+	band: "nominal",
+	resetIn: "26d 9h left",
+} as const;
+
+test("promo_credit renders icon, the promo's own label, spent/limit and the reset countdown", () => {
+	const ctx: ComposeInputs = {
+		...base,
+		currency: { code: "USD", rate: 1 },
+		quota: { promos: [frontier] },
+	};
+	const f = composeStatusline(ctx).fields.find((x) => x.id === "promo_credit");
+	expect(f?.segments).toEqual([
+		{ role: "icon", text: "🎁" },
+		{ role: "label", text: "Frontier Model Credit:" },
+		{ role: "value", text: "$11.08/$20000 (26d 9h left)" },
+	]);
+});
+
+test("promo_credit emits one field per promo in order, right after pay_as_you_go", () => {
+	const ctx: ComposeInputs = {
+		...base,
+		currency: { code: "USD", rate: 1 },
+		quota: {
+			payg: { usedCredits: 13.91, monthlyLimit: 1200, band: "nominal" },
+			promos: [
+				frontier,
+				{ label: "Spring Promo", usedUsd: 45, limitUsd: 50, band: "critical" },
+			],
+		},
+	};
+	const { fields } = composeStatusline(ctx);
+	const ids = fields.map((f) => f.id);
+	const at = ids.indexOf("pay_as_you_go");
+	expect(ids.slice(at, at + 3)).toEqual(["pay_as_you_go", "promo_credit", "promo_credit"]);
+	const second = fields[at + 2]?.segments;
+	expect(second?.find((s) => s.role === "label")?.text).toBe("Spring Promo:");
+	// No countdown when the reset is unknown; an elevated band paints the value.
+	expect(second?.find((s) => s.role === "value")).toEqual({
+		role: "value",
+		text: "$45/$50",
+		signal: "critical",
+	});
+});
+
+test("promo_credit adds the local pair under a non-USD line currency", () => {
+	const ctx: ComposeInputs = {
+		...base,
+		currency: { code: "INR", rate: 1 },
+		quota: { promos: [frontier] },
+	};
+	const v = composeStatusline(ctx)
+		.fields.find((x) => x.id === "promo_credit")
+		?.segments.find((s) => s.role === "value");
+	expect(v?.text).toBe("$11.08/$20000 (₹12/₹20000) (26d 9h left)");
 });

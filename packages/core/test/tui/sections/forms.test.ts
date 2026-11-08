@@ -15,8 +15,8 @@ test("statuslineFields leads with currency and budget, then a toggle per widget"
 	expect(f[0]?.kind).toBe("text");
 	expect(f[1]?.id).toBe("budget");
 	expect(f[1]?.kind).toBe("number");
-	// 2 leading + 33 widget toggles
-	expect(f).toHaveLength(35);
+	// 2 leading + 34 widget toggles
+	expect(f).toHaveLength(36);
 	const dir = f.find((x) => x.id === "widget:dir");
 	expect(dir?.kind).toBe("toggle");
 	expect(dir?.value).toBe("on"); // dir defaults on
