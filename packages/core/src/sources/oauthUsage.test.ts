@@ -328,3 +328,114 @@ test("runUsageRefresh: fetches under the caller's claim and writes the cache", a
 		rmSync(root, { recursive: true, force: true });
 	}
 });
+
+const PROMO = {
+	label: "Frontier model credit",
+	limit_dollars: 20_000,
+	used_dollars: 11.082_794,
+	remaining_dollars: 19_988.917_206,
+	resets_at: "2026-12-04T20:55:17+00:00",
+	used_up_notice: false,
+	locked_reason: null,
+	program_id: "model_promo_fable",
+};
+
+test("runUsageRefresh: parses promo_credits in server order and drops malformed entries", async () => {
+	const root = tmpRoot();
+	const stub = okStub({
+		five_hour: null,
+		promo_credits: [
+			PROMO,
+			{ label: "No numbers" },
+			"junk",
+			{
+				label: "Spring promo",
+				limit_dollars: 50,
+				used_dollars: 2,
+				resets_at: "not-a-date",
+				used_up_notice: true,
+				locked_reason: "exhausted",
+			},
+		],
+	});
+	try {
+		expect(claimUsageRefresh(root, fixedClock(NOW))).toBe(true);
+		await withToken(() =>
+			runUsageRefresh(root, fixedClock(NOW), { fetchImpl: stub.fetchImpl }),
+		);
+		expect(readCache(root).data.promo_credits).toEqual([
+			{
+				label: "Frontier model credit",
+				used_dollars: 11.082_794,
+				limit_dollars: 20_000,
+				resets_at: Date.parse("2026-12-04T20:55:17+00:00"),
+				used_up_notice: false,
+			},
+			{
+				label: "Spring promo",
+				used_dollars: 2,
+				limit_dollars: 50,
+				used_up_notice: true,
+				locked_reason: "exhausted",
+			},
+		]);
+	} finally {
+		rmSync(root, { recursive: true, force: true });
+	}
+});
+
+test("a cached promo_credits list survives the read-back coercion", () => {
+	const root = tmpRoot();
+	try {
+		const promo = {
+			label: "Frontier model credit",
+			used_dollars: 11,
+			limit_dollars: 20_000,
+			resets_at: NOW + 5000,
+		};
+		seedCache(root, { rate_limits: {}, promo_credits: [promo] }, NOW);
+		expect(readUsageCached(root)?.promo_credits).toEqual([promo]);
+	} finally {
+		rmSync(root, { recursive: true, force: true });
+	}
+});
+
+test("a promo removed server-side clears the cached promo even when nothing else is in the response", async () => {
+	const root = tmpRoot();
+	try {
+		seedCache(
+			root,
+			{
+				rate_limits: {},
+				promo_credits: [{ label: "Old", used_dollars: 1, limit_dollars: 2 }],
+			},
+			NOW - 10 * 60_000,
+		);
+		const stub = okStub({ five_hour: null, extra_usage: null, promo_credits: [] });
+		expect(claimUsageRefresh(root, fixedClock(NOW))).toBe(true);
+		await withToken(() =>
+			runUsageRefresh(root, fixedClock(NOW), { fetchImpl: stub.fetchImpl }),
+		);
+		expect(readCache(root).fetchedAt).toBe(NOW);
+		expect(readCache(root).data.promo_credits).toBeUndefined();
+	} finally {
+		rmSync(root, { recursive: true, force: true });
+	}
+});
+
+test("an empty-string locked_reason still counts as locked", async () => {
+	const root = tmpRoot();
+	const stub = okStub({
+		promo_credits: [{ label: "x", used_dollars: 1, limit_dollars: 100, locked_reason: "" }],
+	});
+	try {
+		expect(claimUsageRefresh(root, fixedClock(NOW))).toBe(true);
+		await withToken(() =>
+			runUsageRefresh(root, fixedClock(NOW), { fetchImpl: stub.fetchImpl }),
+		);
+		expect(readCache(root).data.promo_credits?.[0]?.locked_reason).toBe("");
+		expect(readUsageCached(root)?.promo_credits?.[0]?.locked_reason).toBe("");
+	} finally {
+		rmSync(root, { recursive: true, force: true });
+	}
+});

@@ -65,6 +65,7 @@ export const DEFAULT_ICONS: Readonly<Record<string, string>> = {
 	weekly_usage: "📅",
 	balance: "💳",
 	pay_as_you_go: "💸",
+	promo_credit: "🎁",
 	cache_hit: "🎯",
 	token_burn: "🔥",
 	session_duration: "⏳",

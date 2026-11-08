@@ -5,7 +5,7 @@
 // subprocess, so this fixture supplies a self-consistent value for every one of those inputs — a fully populated
 // payload, a synthetic transcript tree (served through the fs shim), a canned `git` state (served through the
 // child_process shim), and the OAuth-usage / prepaid-balance snapshots (passed as render overrides). The result
-// is that every one of the 33 statusline widgets has a representative value, so toggling any widget in the
+// is that every one of the 34 statusline widgets has a representative value, so toggling any widget in the
 // configurator visibly changes the preview. All values are deterministic (the fixed preview clock) and
 // self-consistent (cost_chat ≤ cost_project ≤ cost_total; small ahead/behind; a plausible branch and tag).
 
@@ -168,11 +168,19 @@ export function demoFiles(nowMs: number): Record<string, string> {
 	};
 }
 
-/** OAuth-usage (pay_as_you_go) and prepaid-balance snapshots, injected as pipeline overrides (network is off). */
+/** OAuth-usage (pay_as_you_go, promo_credit) and prepaid-balance snapshots, injected as pipeline overrides (network is off). */
 export function demoOverrides(nowMs: number): RenderOverrides {
 	const usage: UsageData = {
 		rate_limits: {},
 		extra_usage: { used_credits: 1_250, monthly_limit: 5_000, is_enabled: true },
+		promo_credits: [
+			{
+				label: "Frontier model credit",
+				used_dollars: 312.4,
+				limit_dollars: 2_000,
+				resets_at: nowMs + 12 * 86_400_000 + 5 * 3_600_000,
+			},
+		],
 	};
 	const balance: BalanceSnapshot = { amount: 42.5, currency: "USD", ts: nowMs };
 	return { usage, balance };

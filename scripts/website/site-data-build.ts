@@ -81,6 +81,7 @@ const WIDGET_META: Record<string, { label: string; sample: string }> = {
 	weekly_usage: { label: "Weekly Usage", sample: "63% (3d4h left)" },
 	balance: { label: "Balance", sample: "$12.50" },
 	pay_as_you_go: { label: "Cost / Limit", sample: "$3.10 / $20" },
+	promo_credit: { label: "Frontier Model Credit", sample: "$312.40/$2000 (12d 5h left)" },
 	cache_hit: { label: "Cache Hit", sample: "78%" },
 	token_burn: { label: "Token Burn", sample: "12k/min" },
 	session_duration: { label: "Chat Duration", sample: "1h 24m" },

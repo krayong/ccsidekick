@@ -80,6 +80,7 @@ const DEFAULT_WIDGETS: Readonly<Record<WidgetId, boolean>> = {
 	weekly_usage: true,
 	balance: true,
 	pay_as_you_go: true,
+	promo_credit: true,
 	cache_hit: false,
 	token_burn: false,
 	session_duration: false,

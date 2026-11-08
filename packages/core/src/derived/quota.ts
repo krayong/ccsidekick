@@ -39,11 +39,24 @@ interface BalanceInfo {
 	readonly usd?: number;
 }
 
+/** A promotional model credit (e.g. the Frontier model credit) in dollars, with a near-cap band. */
+interface PromoInfo {
+	/** The server label, title-cased; `Promo Credit` when the server sends none. */
+	readonly label: string;
+	readonly usedUsd: number;
+	readonly limitUsd: number;
+	readonly band: SignalLevel;
+	/** Countdown to the current period's reset (`fmtLeft`); omitted when unknown or already past. */
+	readonly resetIn?: string;
+}
+
 export interface QuotaInfo {
 	readonly block?: QuotaWindow;
 	readonly weekly?: QuotaWindow;
 	readonly payg?: PaygInfo;
 	readonly balance?: BalanceInfo;
+	/** One entry per OAuth promo credit, in server order; absent when the account has none. */
+	readonly promos?: readonly PromoInfo[];
 }
 
 type PayloadQuota = NonNullable<Payload["rate_limits"]>["five_hour"];
@@ -107,6 +120,35 @@ function buildPayg(usage: UsageData | null): PaygInfo | undefined {
 	return { usedCredits: credits / 100, monthlyLimit: (limit ?? 0) / 100, band };
 }
 
+const titleCase = (s: string): string =>
+	s
+		.trim()
+		.split(/\s+/)
+		.map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+		.join(" ");
+
+/** Promo credits from the OAuth `promo_credits`, banded on fullness like PAYG; a used-up or locked promo is critical. */
+function buildPromos(usage: UsageData | null, clock: Clock): readonly PromoInfo[] | undefined {
+	const promos = usage?.promo_credits;
+	if (promos === undefined || promos.length === 0) return undefined;
+	return promos.map((p) => {
+		const ratioPct = p.limit_dollars > 0 ? (100 * p.used_dollars) / p.limit_dollars : 0;
+		const band: SignalLevel =
+			p.used_up_notice === true || p.locked_reason !== undefined ? "critical"
+			: ratioPct > PAY_AS_YOU_GO_NEAR_PCT ? "critical"
+			: ratioPct > PAY_AS_YOU_GO_CAUTION_PCT ? "caution"
+			: "nominal";
+		const left = p.resets_at !== undefined ? p.resets_at - clock.now() : 0;
+		return {
+			label: p.label.trim() !== "" ? titleCase(p.label) : "Promo Credit",
+			usedUsd: p.used_dollars,
+			limitUsd: p.limit_dollars,
+			band,
+			...(left > 0 ? { resetIn: fmtLeft(left) } : {}),
+		};
+	});
+}
+
 function buildBalance(balance: BalanceSnapshot | null): BalanceInfo | undefined {
 	if (balance === null) return undefined;
 	// Symbol-prefixed amount (`$8.40`); an unknown currency falls back to a `CODE ` prefix via symbolFor.
@@ -141,11 +183,13 @@ export function deriveQuota(
 	);
 	const payg = buildPayg(usage);
 	const bal = buildBalance(balance);
+	const promos = buildPromos(usage, clock);
 
 	return {
 		...(block !== undefined ? { block } : {}),
 		...(weekly !== undefined ? { weekly } : {}),
 		...(payg !== undefined ? { payg } : {}),
 		...(bal !== undefined ? { balance: bal } : {}),
+		...(promos !== undefined ? { promos } : {}),
 	};
 }

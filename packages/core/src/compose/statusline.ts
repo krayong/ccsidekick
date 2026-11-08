@@ -39,11 +39,18 @@ export interface ComposeInputs {
 	readonly homeDir: string;
 }
 
-interface RegistryEntry {
-	readonly id: WidgetId;
-	readonly row: RowId;
-	readonly build: (ctx: ComposeInputs) => readonly Segment[] | null;
-}
+/** A registry entry builds one field, or (`buildAll`) one field per item, all under the same id. */
+type RegistryEntry =
+	| {
+			readonly id: WidgetId;
+			readonly row: RowId;
+			readonly build: (ctx: ComposeInputs) => readonly Segment[] | null;
+	  }
+	| {
+			readonly id: WidgetId;
+			readonly row: RowId;
+			readonly buildAll: (ctx: ComposeInputs) => readonly (readonly Segment[])[];
+	  };
 
 // Icon-bearing field glyphs, single-sourced from the engine's default icon set so the glyph list
 // isn't duplicated. These are only compose-time fallbacks: the render path re-resolves every icon through the
@@ -84,12 +91,20 @@ const LABEL: Partial<Record<WidgetId, string>> = {
 	session_duration: "Chat Duration:",
 };
 
-/** Assemble a field's segments: optional icon, optional label, then the required value (with optional signal). */
-function field(id: WidgetId, value: string, signal?: SignalLevel): readonly Segment[] {
+/**
+ * Assemble a field's segments: optional icon, optional label, then the required value (with optional signal).
+ * `labelText` overrides the fixed `LABEL` for a field whose label comes from its data (promo_credit).
+ */
+function field(
+	id: WidgetId,
+	value: string,
+	signal?: SignalLevel,
+	labelText?: string,
+): readonly Segment[] {
 	const segs: Segment[] = [];
 	const icon = ICON[id];
 	if (icon !== undefined && icon !== "") segs.push({ role: "icon", text: icon });
-	const label = LABEL[id];
+	const label = labelText ?? LABEL[id];
 	if (label !== undefined) segs.push({ role: "label", text: label });
 	segs.push(
 		signal !== undefined ?
@@ -483,6 +498,26 @@ const FIELD_REGISTRY: readonly RegistryEntry[] = [
 					);
 		},
 	},
+	{
+		id: "promo_credit",
+		row: 4,
+		// One field per promo, in server order. The label is the promo's own (title-cased in derive); the value
+		// mirrors pay_as_you_go's `$spend/$cap (local/local)`, then the period-reset countdown when known.
+		buildAll: (ctx) =>
+			(ctx.quota.promos ?? []).map((p) => {
+				const local = localParen(
+					`${fmtLocal(p.usedUsd, ctx.currency.rate, ctx.currency.code)}/${fmtLocal(p.limitUsd, ctx.currency.rate, ctx.currency.code)}`,
+					ctx.currency.code,
+				);
+				const reset = p.resetIn !== undefined ? ` (${p.resetIn})` : "";
+				return field(
+					"promo_credit",
+					`${fmtUsdTrim(p.usedUsd)}/${fmtUsdTrim(p.limitUsd)}${local}${reset}`,
+					elevated(p.band),
+					`${p.label}:`,
+				);
+			}),
+	},
 	// Row 5 — session & misc: session_duration · cache_hit · compactions · token_burn · todo
 	{
 		id: "session_duration",
@@ -574,7 +609,7 @@ const DROP_ORDER: Readonly<Record<RowId, readonly WidgetId[]>> = {
 	3: ["cost_burn", "cost_project", "cost_total", "cost_chat"],
 	// Usage: context_usage is protected (drops last); the binding limit (weekly quota / prepaid balance) sheds
 	// near-last so the resource you can actually run out of survives longest.
-	4: ["block_usage", "pay_as_you_go", "balance", "weekly_usage", "context_usage"],
+	4: ["block_usage", "promo_credit", "pay_as_you_go", "balance", "weekly_usage", "context_usage"],
 	// Session & misc: no protected anchor; the rate / ratio metrics shed first.
 	5: ["token_burn", "compactions", "cache_hit", "todo", "session_duration"],
 };
@@ -632,8 +667,8 @@ export function composeStatusline(ctx: ComposeInputs): {
 	const fields: Field[] = [];
 	for (const entry of FIELD_REGISTRY) {
 		if (!ctx.widgets[entry.id]) continue;
-		const segments = entry.build(ctx);
-		if (segments !== null) fields.push({ id: entry.id, segments });
+		const runs = "buildAll" in entry ? entry.buildAll(ctx) : [entry.build(ctx)];
+		for (const segments of runs) if (segments !== null) fields.push({ id: entry.id, segments });
 	}
 
 	const providerBadge: Segment[] | null =

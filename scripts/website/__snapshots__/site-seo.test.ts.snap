@@ -1663,6 +1663,13 @@ exports[`data source invariants (widget samples + ORDER completeness) semantic s
       "sig": "",
     },
     {
+      "icon": "🎁",
+      "id": "promo_credit",
+      "label": "Frontier Model Credit",
+      "sample": "$312.40/$2000 (12d 5h left)",
+      "sig": "",
+    },
+    {
       "icon": "🎯",
       "id": "cache_hit",
       "label": "Cache Hit",

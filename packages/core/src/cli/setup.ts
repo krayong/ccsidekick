@@ -349,7 +349,7 @@ export function setupHelp(): string {
 		"  --helpful <on|off>      the helpful-tip line",
 		`  --min-severity <sev>    ${MIN_SEVERITIES.join(", ")}`,
 		"  --widgets <a,b,c>       statusline widgets to enable (others are turned off)",
-		"  --usage-fetch <on|off>  account-usage lookup to Anthropic (needed by the pay_as_you_go widget; no tokens)",
+		"  --usage-fetch <on|off>  account-usage lookup to Anthropic (needed by the pay_as_you_go and promo_credit widgets; no tokens)",
 		"  --global | --local      save target (default: global)",
 		"  --config-dir <path>     Claude config dir (default: $CLAUDE_CONFIG_DIR or ~/.claude)",
 		"",

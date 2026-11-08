@@ -874,10 +874,11 @@
 
 			// the engine's default-on widget set, generated from core (DEFAULT_CONFIG) into data.js
 			const CFG_DEFAULT_WIDGETS = D.defaults || [];
-			// pay-as-you-go is the one widget with no local source — its data comes only from the account
-			// usage lookup, so its card says so and selecting it opts the command into --usage-fetch on.
+			// pay-as-you-go and promo credit have no local source — their data comes only from the account
+			// usage lookup, so their cards say so and selecting either opts the command into --usage-fetch on.
 			const CFG_WIDGET_HINT = {
 				pay_as_you_go: "(requires network fetch; no tokens are spent)",
+				promo_credit: "(requires network fetch; no tokens are spent)",
 			};
 			// roster is the selected characters, in pick order. One = fixed mode (pinned); two or more =
 			// random mode (the engine rotates them). Always at least one entry.
@@ -1015,9 +1016,12 @@
 				const r = cfgState.roster;
 				const charPart =
 					r.length > 1 ? `--mode random --roster ${r.join(",")}` : `--character ${r[0]}`;
-				// The pay-as-you-go widget is the one field with no local source: its data comes only from
-				// the account-usage lookup, so selecting it opts the command into usage_fetch (off otherwise).
-				const usagePart = cfgState.widgets.has("pay_as_you_go") ? " --usage-fetch on" : "";
+				// The pay-as-you-go and promo-credit widgets have no local source: their data comes only from
+				// the account-usage lookup, so selecting either opts the command into usage_fetch (off otherwise).
+				const usagePart =
+					cfgState.widgets.has("pay_as_you_go") || cfgState.widgets.has("promo_credit") ?
+						" --usage-fetch on"
+					:	"";
 				return (
 					`{{installCmd}} setup ${charPart} --theme ${cfgState.theme}` +
 					(ws.length ? ` --widgets ${ws.join(",")}` : "") +

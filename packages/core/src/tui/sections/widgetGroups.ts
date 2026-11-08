@@ -43,7 +43,7 @@ export const WIDGET_GROUPS: readonly WidgetGroup[] = [
 	},
 	{
 		name: "Usage",
-		widgets: ["block_usage", "weekly_usage", "balance", "pay_as_you_go"],
+		widgets: ["block_usage", "weekly_usage", "balance", "pay_as_you_go", "promo_credit"],
 	},
 	{
 		name: "Session",
@@ -80,6 +80,7 @@ export const WIDGET_DESCRIPTIONS: Readonly<Record<WidgetId, string>> = {
 	weekly_usage: "Weekly quota used, for subscription plans.",
 	balance: "The remaining pay-as-you-go balance.",
 	pay_as_you_go: "Spend against the pay-as-you-go budget.",
+	promo_credit: "Promotional model credit, such as the Frontier model credit.",
 	dir: "The current working directory.",
 	added_dirs: "Additional directories added to the session.",
 	session_name: "The session's name.",
