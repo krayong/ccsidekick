@@ -232,5 +232,16 @@
 			"batch_input": 0.25,
 			"batch_output": 1.25
 		}
+	},
+	{
+		"key": "claude-fable-5-2",
+		"input": 8,
+		"output": 40,
+		"cache_write_5m": 10,
+		"cache_write_1h": 16,
+		"cache_read": 0.2,
+		"batch_input": 4,
+		"batch_output": 20,
+		"fast_mult": 2
 	}
 ]
